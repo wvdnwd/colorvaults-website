@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>ColorVaults</title>
+    <meta http-equiv="refresh" content="0; url=/en">
+    <script>
+      // Basic language detection redirect
+      var lang = navigator.language || navigator.userLanguage;
+      if (lang && lang.startsWith('nl')) {
+        window.location.replace('/nl');
+      } else {
+        window.location.replace('/en');
+      }
+    </script>
+  </head>
+  <body>
+    <p>Redirecting to <a href="/en">English</a> / <a href="/nl">Nederlands</a>...</p>
+  </body>
+</html>

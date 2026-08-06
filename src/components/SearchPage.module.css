@@ -1,0 +1,92 @@
+.wrapper { max-width: 760px; margin: 0 auto; }
+
+.searchBar {
+  position: relative;
+  display: flex;
+  align-items: center;
+  background: white;
+  border: 2px solid var(--gray-200);
+  border-radius: var(--radius-lg);
+  padding: 0 1.25rem;
+  box-shadow: var(--shadow-md);
+  transition: border-color 0.2s;
+}
+.searchBar:focus-within { border-color: var(--primary); }
+
+.searchIcon { font-size: 1.2rem; flex-shrink: 0; }
+
+.input {
+  flex: 1;
+  border: none;
+  outline: none;
+  font-family: inherit;
+  font-size: 1.1rem;
+  font-weight: 500;
+  color: var(--foreground);
+  background: transparent;
+  padding: 1rem 0.75rem;
+}
+
+.clearBtn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: var(--gray-400);
+  font-size: 0.9rem;
+  padding: 0.25rem;
+  border-radius: 50%;
+  transition: background 0.15s;
+}
+.clearBtn:hover { background: var(--gray-100); color: var(--gray-700); }
+
+.hint {
+  text-align: center;
+  color: var(--gray-400);
+  font-size: 0.9rem;
+  margin-top: 2rem;
+}
+
+.resultCount {
+  font-size: 0.85rem;
+  color: var(--gray-500);
+  margin-top: 1.5rem;
+  margin-bottom: 0.75rem;
+}
+
+.results { display: flex; flex-direction: column; gap: 0.75rem; }
+
+.result {
+  display: block;
+  background: white;
+  border: 1px solid var(--gray-200);
+  border-radius: var(--radius-lg);
+  padding: 1.25rem 1.5rem;
+  text-decoration: none;
+  transition: all 0.2s;
+  box-shadow: var(--shadow-sm);
+}
+.result:hover {
+  border-color: var(--primary);
+  transform: translateX(4px);
+  box-shadow: var(--shadow-md);
+}
+
+.resultTop { display: flex; align-items: center; gap: 0.75rem; margin-bottom: 0.4rem; }
+
+.badge {
+  font-size: 0.7rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.07em;
+  padding: 0.2rem 0.6rem;
+  border-radius: 100px;
+  flex-shrink: 0;
+}
+
+.resultTitle { font-size: 1rem; font-weight: 700; color: var(--foreground); }
+
+.resultDesc { font-size: 0.85rem; color: var(--gray-500); line-height: 1.5; margin-bottom: 0.4rem; }
+
+.resultUrl { font-size: 0.75rem; color: var(--primary); font-weight: 500; }
+
+.empty { text-align: center; padding: 3rem 1rem; color: var(--gray-600); }

@@ -1,0 +1,30 @@
+.breadcrumbs {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  flex-wrap: wrap;
+  font-size: 0.8rem;
+  color: var(--gray-400);
+  font-weight: 500;
+}
+
+.breadcrumbs a {
+  color: var(--gray-500);
+  text-decoration: none;
+  transition: color 0.15s;
+  font-weight: 600;
+}
+
+.breadcrumbs a:hover {
+  color: var(--primary);
+}
+
+.separator {
+  color: var(--gray-300);
+  font-size: 0.7rem;
+}
+
+.current {
+  color: var(--primary);
+  font-weight: 700;
+}

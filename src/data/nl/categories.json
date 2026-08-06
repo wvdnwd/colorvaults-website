@@ -1,0 +1,36 @@
+[
+  {
+    "id": "animals",
+    "slug": "dieren",
+    "title": "Dieren Kleurplaten",
+    "meta_title": "Gratis Printbare Dieren Kleurplaten | ColorVaults",
+    "meta_description": "Download gratis dieren kleurplaten van hoge kwaliteit. Perfect voor kinderen en volwassenen om hun favoriete dieren in te kleuren.",
+    "intro_text": "Ontdek onze enorme collectie dieren kleurplaten. Van schattige kittens tot wilde oerwouddieren, we hebben voor ieder wat wils.",
+    "seo_body": "Dieren inkleuren helpt bij de ontwikkeling van de fijne motoriek. Onze premium printbare kleurplaten zijn ontworpen voor urenlang plezier.",
+    "faq": [
+      {
+        "question": "Zijn deze dieren kleurplaten gratis?",
+        "answer": "Ja, al onze kleurplaten zijn volledig gratis te downloaden en te printen voor persoonlijk gebruik."
+      }
+    ],
+    "featured_image": "/images/categories/animals.jpg",
+    "related_categories": ["natuur"]
+  },
+  {
+    "id": "nature",
+    "slug": "natuur",
+    "title": "Natuur Kleurplaten",
+    "meta_title": "Natuur & Landschap Kleurplaten | ColorVaults",
+    "meta_description": "Prachtige natuurtaferelen en landschappen om in te kleuren. Download onze gratis printbare natuur kleurplaten.",
+    "intro_text": "Ontspan en kom tot rust met onze prachtige natuur kleurplaten, met bossen, bloemen en landschappen.",
+    "seo_body": "Natuur kleurplaten zijn perfect voor volwassenen die op zoek zijn naar stressverlichting. Elke kleurplaat biedt ingewikkelde details van bomen en bloemen.",
+    "faq": [
+      {
+        "question": "Wat is het beste papier om op te printen?",
+        "answer": "We raden aan dikker papier of karton te gebruiken als je stiften of waterverf wilt gebruiken."
+      }
+    ],
+    "featured_image": "/images/categories/nature.jpg",
+    "related_categories": ["dieren"]
+  }
+]
