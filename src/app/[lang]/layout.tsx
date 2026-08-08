@@ -5,6 +5,7 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import CookieBanner from "@/components/CookieBanner";
 import BackToTop from "@/components/BackToTop";
+import ThemeProvider from "@/components/ThemeProvider";
 
 const plusJakarta = Plus_Jakarta_Sans({ subsets: ["latin"], weight: ["400", "500", "600", "700", "800"] });
 
@@ -46,15 +47,17 @@ export default async function RootLayout({
   const { lang } = await params;
 
   return (
-    <html lang={lang} data-scroll-behavior="smooth">
+    <html lang={lang} data-scroll-behavior="smooth" suppressHydrationWarning>
       <body className={plusJakarta.className}>
-        <div className="layout-container">
-          <Navbar lang={lang} />
-          <main>{children}</main>
-          <Footer lang={lang} />
-          <CookieBanner lang={lang} />
-          <BackToTop />
-        </div>
+        <ThemeProvider>
+          <div className="layout-container">
+            <Navbar lang={lang} />
+            <main>{children}</main>
+            <Footer lang={lang} />
+            <CookieBanner lang={lang} />
+            <BackToTop />
+          </div>
+        </ThemeProvider>
       </body>
     </html>
   );

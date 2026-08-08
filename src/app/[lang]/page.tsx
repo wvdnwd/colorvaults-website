@@ -1,6 +1,8 @@
+import Image from 'next/image';
 import { getMainHubs, getColoringPages } from '@/lib/api';
 import styles from './page.module.css';
 import Link from 'next/link';
+import MotionCard from '@/components/MotionCard';
 
 export default async function HomePage({ params }: { params: Promise<{ lang: string }> }) {
   const { lang } = await params;
@@ -93,18 +95,7 @@ export default async function HomePage({ params }: { params: Promise<{ lang: str
           </div>
           <div className="grid-4">
             {featuredPages.map(page => (
-              <Link
-                key={page.id}
-                href={`/${lang}/${page.parentHub}/${page.parentTheme}/${page.ageGroup}/${page.slug}`}
-                className="card"
-              >
-                {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img src={page.preview} alt={page.title} className="card-img" />
-                <div className="card-body">
-                  <h3 className="card-title">{page.title}</h3>
-                  <p className="card-desc">{page.shortDescription}</p>
-                </div>
-              </Link>
+              <MotionCard key={page.id} page={page} lang={lang} isEn={isEn} />
             ))}
           </div>
         </section>

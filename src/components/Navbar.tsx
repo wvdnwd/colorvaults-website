@@ -5,6 +5,7 @@ import { usePathname } from 'next/navigation';
 import Image from 'next/image';
 import { useState, useRef, useEffect } from 'react';
 import styles from './Navbar.module.css';
+import ThemeToggle from './ThemeToggle';
 
 interface NavItem {
   label: string;
@@ -115,15 +116,19 @@ export default function Navbar({ lang }: { lang: string }) {
           ))}
         </div>
 
-        {/* Right: search + lang + hamburger */}
+        {/* Right: search + fav + lang + theme + hamburger */}
         <div className={styles.navRight}>
           <Link href={`/${lang}/search`} className={styles.searchBtn} aria-label={isEn ? 'Search' : 'Zoeken'}>
             🔍
+          </Link>
+          <Link href={`/${lang}/favorites`} className={styles.searchBtn} aria-label={isEn ? 'Favorites' : 'Favorieten'}>
+            ❤️
           </Link>
           <div className={styles.langSwitcher}>
             <Link href={getLangLink('en')} className={`${styles.langBtn} ${isEn ? styles.langActive : ''}`}>EN</Link>
             <Link href={getLangLink('nl')} className={`${styles.langBtn} ${isNl ? styles.langActive : ''}`}>NL</Link>
           </div>
+          <ThemeToggle />
           <button
             className={styles.hamburger}
             onClick={() => setMobileOpen(!mobileOpen)}

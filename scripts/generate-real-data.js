@@ -3,7 +3,7 @@ const path = require('path');
 
 // Configure this to match your DigitalOcean Spaces URL once you buy it
 const SPACES_BASE_URL = process.env.NEXT_PUBLIC_IMAGE_HOST || 'https://colorvaults.ams3.cdn.digitaloceanspaces.com';
-const inputDir = 'c:\\Users\\Gebruiker\\Desktop\\colorvaults\\output';
+const inputDir = 'c:\\Users\\Gebruiker\\Desktop\\colorvaults\\Gecontroleerd';
 const dataDir = path.join(__dirname, '..', 'src', 'data');
 
 if (!fs.existsSync(dataDir)) fs.mkdirSync(dataDir, { recursive: true });

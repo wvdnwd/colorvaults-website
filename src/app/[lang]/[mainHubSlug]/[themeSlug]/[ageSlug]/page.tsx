@@ -2,6 +2,7 @@ import { getAgePages, getAgePageBySlug, getMainHubs, getThemes, getPagesByAgeGro
 import { notFound } from 'next/navigation';
 import Link from 'next/link';
 import Breadcrumbs from '@/components/Breadcrumbs';
+import MotionCard from '@/components/MotionCard';
 
 export async function generateStaticParams() {
   const agesEn = getAgePages('en').map(a => ({ lang: 'en', mainHubSlug: a.parentHub, themeSlug: a.parentTheme, ageSlug: a.ageGroup }));
@@ -23,8 +24,17 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
   };
 }
 
-export default async function AgePage({ params }: { params: Promise<{ lang: string, mainHubSlug: string, themeSlug: string, ageSlug: string }> }) {
+import Image from 'next/image';
+
+export default async function AgePage({ 
+  params,
+  searchParams 
+}: { 
+  params: Promise<{ lang: string, mainHubSlug: string, themeSlug: string, ageSlug: string }>,
+  searchParams: Promise<{ [key: string]: string | string[] | undefined }>
+}) {
   const { lang, mainHubSlug, themeSlug, ageSlug } = await params;
+  const { page } = await searchParams;
 
   const agePage = getAgePageBySlug(lang, mainHubSlug, themeSlug, ageSlug);
   if (!agePage) return notFound();
@@ -33,8 +43,13 @@ export default async function AgePage({ params }: { params: Promise<{ lang: stri
   const theme = getThemes(lang).find(t => t.slug === themeSlug && t.parentHub === mainHubSlug);
   if (!hub || !theme) return notFound();
 
-  const coloringPages = getPagesByAgeGroup(lang, mainHubSlug, themeSlug, ageSlug);
+  const allColoringPages = getPagesByAgeGroup(lang, mainHubSlug, themeSlug, ageSlug);
   const isEn = lang === 'en';
+
+  const PER_PAGE = 40;
+  const currentPage = Number(page) || 1;
+  const totalPages = Math.ceil(allColoringPages.length / PER_PAGE);
+  const coloringPages = allColoringPages.slice((currentPage - 1) * PER_PAGE, currentPage * PER_PAGE);
 
   return (
     <>
@@ -53,7 +68,7 @@ export default async function AgePage({ params }: { params: Promise<{ lang: stri
             {agePage.introText}
           </p>
           <p style={{ fontSize: '0.85rem', color: 'var(--gray-400)', marginTop: '0.75rem', fontWeight: 600 }}>
-            {coloringPages.length} {isEn ? 'pages available — all free' : 'pagina\'s beschikbaar — allemaal gratis'}
+            {allColoringPages.length} {isEn ? 'pages available — all free' : 'pagina\'s beschikbaar — allemaal gratis'}
           </p>
         </div>
       </div>
@@ -73,31 +88,32 @@ export default async function AgePage({ params }: { params: Promise<{ lang: stri
         ) : (
           <div className="grid-4">
             {coloringPages.map(page => (
-              <Link
-                key={page.slug}
-                href={`/${lang}/${hub.slug}/${theme.slug}/${agePage.ageGroup}/${page.slug}`}
-                className="card"
-              >
-                {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img src={page.preview} alt={page.title} className="card-img" />
-                <div className="card-body">
-                  <h3 className="card-title">{page.title}</h3>
-                  <p className="card-desc">{page.shortDescription}</p>
-                  <div style={{
-                    display: 'inline-flex',
-                    alignItems: 'center',
-                    gap: '0.35rem',
-                    marginTop: '0.75rem',
-                    color: 'var(--primary)',
-                    fontSize: '0.8rem',
-                    fontWeight: 700
-                  }}>
-                    <span>🆓</span>
-                    <span>{isEn ? 'Free Download' : 'Gratis Downloaden'}</span>
-                  </div>
-                </div>
-              </Link>
+              <MotionCard key={page.slug} page={page} lang={lang} isEn={isEn} />
             ))}
+          </div>
+        )}
+
+        {totalPages > 1 && (
+          <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', gap: '1rem', marginTop: '3rem' }}>
+            {currentPage > 1 ? (
+              <Link href={`/${lang}/${hub.slug}/${theme.slug}/${agePage.ageGroup}?page=${currentPage - 1}`} className="btn-secondary">
+                ← {isEn ? 'Previous' : 'Vorige'}
+              </Link>
+            ) : (
+              <span className="btn-secondary" style={{ opacity: 0.5, pointerEvents: 'none' }}>← {isEn ? 'Previous' : 'Vorige'}</span>
+            )}
+            
+            <span style={{ fontWeight: 600, color: 'var(--gray-600)' }}>
+              {currentPage} / {totalPages}
+            </span>
+
+            {currentPage < totalPages ? (
+              <Link href={`/${lang}/${hub.slug}/${theme.slug}/${agePage.ageGroup}?page=${currentPage + 1}`} className="btn-secondary">
+                {isEn ? 'Next' : 'Volgende'} →
+              </Link>
+            ) : (
+              <span className="btn-secondary" style={{ opacity: 0.5, pointerEvents: 'none' }}>{isEn ? 'Next' : 'Volgende'} →</span>
+            )}
           </div>
         )}
 

@@ -16,32 +16,30 @@ interface SearchEntry {
 export default function SearchClient({ lang }: { lang: string }) {
   const [query, setQuery] = useState('');
   const [results, setResults] = useState<SearchEntry[]>([]);
-  const [index, setIndex] = useState<SearchEntry[]>([]);
-  const [loaded, setLoaded] = useState(false);
+  const [loading, setLoading] = useState(false);
   const isEn = lang === 'en';
 
-  // Load the search index once
   useEffect(() => {
-    fetch('/search-index.json')
-      .then(r => r.json())
-      .then((data: SearchEntry[]) => {
-        setIndex(data.filter(e => e.lang === lang));
-        setLoaded(true);
-      });
-  }, [lang]);
+    if (!query.trim()) {
+      setResults([]);
+      return;
+    }
 
-  const search = useCallback((q: string) => {
-    if (!q.trim()) { setResults([]); return; }
-    const lower = q.toLowerCase();
-    const matched = index.filter(e =>
-      e.title.toLowerCase().includes(lower) ||
-      e.description?.toLowerCase().includes(lower) ||
-      e.tags?.some(t => t.toLowerCase().includes(lower))
-    ).slice(0, 30);
-    setResults(matched);
-  }, [index]);
+    const timer = setTimeout(async () => {
+      setLoading(true);
+      try {
+        const res = await fetch(`/api/search?q=${encodeURIComponent(query)}&lang=${lang}`);
+        const data = await res.json();
+        setResults(data);
+      } catch (e) {
+        console.error('Search failed', e);
+      } finally {
+        setLoading(false);
+      }
+    }, 300); // 300ms debounce
 
-  useEffect(() => { search(query); }, [query, search]);
+    return () => clearTimeout(timer);
+  }, [query, lang]);
 
   const typeLabel = (type: string) => {
     if (type === 'hub') return isEn ? 'Collection' : 'Collectie';
@@ -72,17 +70,17 @@ export default function SearchClient({ lang }: { lang: string }) {
         )}
       </div>
 
-      {!loaded && (
-        <p className={styles.hint}>{isEn ? 'Loading search index...' : 'Zoekindex laden...'}</p>
+      {loading && (
+        <p className={styles.hint}>{isEn ? 'Searching...' : 'Zoeken...'}</p>
       )}
 
-      {loaded && !query && (
+      {!loading && !query && (
         <p className={styles.hint}>
-          {isEn ? `Search across ${index.length} coloring pages, themes, and collections.` : `Zoek door ${index.length} kleurplaten, thema's en collecties.`}
+          {isEn ? `Search our huge collection of coloring pages, themes, and collections.` : `Zoek door onze enorme collectie kleurplaten, thema's en collecties.`}
         </p>
       )}
 
-      {loaded && query && results.length === 0 && (
+      {!loading && query && results.length === 0 && (
         <div className={styles.empty}>
           <p style={{ fontSize: '2.5rem', marginBottom: '0.75rem' }}>😔</p>
           <p style={{ fontWeight: 700, marginBottom: '0.5rem' }}>{isEn ? 'No results found' : 'Geen resultaten gevonden'}</p>

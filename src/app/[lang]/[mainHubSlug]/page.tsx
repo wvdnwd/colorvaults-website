@@ -1,7 +1,9 @@
 import { getMainHubs, getThemes, validateDataModel } from '@/lib/api';
 import { notFound } from 'next/navigation';
 import Link from 'next/link';
+import Image from 'next/image';
 import Breadcrumbs from '@/components/Breadcrumbs';
+import * as motion from 'framer-motion/client';
 
 export async function generateStaticParams() {
   try { validateDataModel(); } catch(e) { console.error(e); throw e; }
@@ -52,28 +54,36 @@ export default async function MainHubPage({ params }: { params: Promise<{ lang: 
           <h2 className="title-h2">{isEn ? 'Choose a Theme' : 'Kies een Thema'}</h2>
         </div>
         <div className="grid-4">
-          {allThemes.map(theme => (
-            <Link key={theme.slug} href={`/${lang}/${hub.slug}/${theme.slug}`} className="card">
-              {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img src={theme.image} alt={theme.title} className="card-img" />
-              <div className="card-body">
-                <h3 className="card-title">{theme.title}</h3>
-                <p className="card-desc">{theme.description}</p>
-                <div style={{ display: 'flex', gap: '0.4rem', flexWrap: 'wrap', marginTop: '0.75rem' }}>
-                  {theme.availableAges.map(age => (
-                    <span key={age} style={{
-                      background: 'var(--primary-light)',
-                      color: 'var(--primary)',
-                      borderRadius: '100px',
-                      padding: '0.15rem 0.6rem',
-                      fontSize: '0.7rem',
-                      fontWeight: 700,
-                      textTransform: 'capitalize'
-                    }}>{age}</span>
-                  ))}
+          {allThemes.map((theme, i) => (
+            <motion.div 
+              key={theme.slug}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: '-50px' }}
+              transition={{ duration: 0.3, delay: Math.min(i * 0.05, 0.3) }}
+              whileHover={{ y: -6 }}
+            >
+              <Link href={`/${lang}/${hub.slug}/${theme.slug}`} className="card" style={{ height: '100%' }}>
+                <Image src={theme.image} alt={theme.title} width={400} height={400} className="card-img" />
+                <div className="card-body">
+                  <h3 className="card-title">{theme.title}</h3>
+                  <p className="card-desc">{theme.description}</p>
+                  <div style={{ display: 'flex', gap: '0.4rem', flexWrap: 'wrap', marginTop: '0.75rem' }}>
+                    {theme.availableAges.map(age => (
+                      <span key={age} style={{
+                        background: 'var(--primary-light)',
+                        color: 'var(--primary)',
+                        borderRadius: '100px',
+                        padding: '0.15rem 0.6rem',
+                        fontSize: '0.7rem',
+                        fontWeight: 700,
+                        textTransform: 'capitalize'
+                      }}>{age}</span>
+                    ))}
+                  </div>
                 </div>
-              </div>
-            </Link>
+              </Link>
+            </motion.div>
           ))}
         </div>
 
