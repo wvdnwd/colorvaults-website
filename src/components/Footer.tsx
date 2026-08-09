@@ -10,14 +10,14 @@ export default function Footer({ lang }: { lang: string }) {
       <div className={styles.footerContainer}>
         <div className={styles.footerTop}>
 
-          <div className={styles.brand}>
+          <div className={styles.footerBrand}>
             <Link href={`/${lang}`} className={styles.logo}>
-              <img src="/images/logo.jpg" alt="ColorVaults" style={{ height: '70px', width: 'auto', objectFit: 'contain' }} />
+              <img src="/images/logo_cropped.png" alt="ColorVaults" style={{ height: '45px', width: 'auto' }} />
             </Link>
-            <p className={styles.tagline}>
-              {isEn
-                ? 'Thousands of free, high-quality printable coloring pages for every age and interest.'
-                : 'Duizenden gratis, hoogwaardige kleurplaten voor elke leeftijd en interesse.'}
+            <p className={styles.brandDesc}>
+              {isEn 
+                ? 'Your premier destination for high-quality, free printable coloring pages. Spark creativity today!'
+                : 'Jouw bestemming voor gratis printbare kleurplaten van topkwaliteit. Stimuleer creativiteit vandaag!'}
             </p>
             <p className={styles.taglineSmall}>
               {isEn ? '🌍 Available in English & Dutch' : '🌍 Beschikbaar in Engels & Nederlands'}

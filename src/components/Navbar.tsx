@@ -85,14 +85,12 @@ export default function Navbar({ lang }: { lang: string }) {
         {/* Logo */}
         <Link href={`/${lang}`} className={styles.logo}>
           <img 
-            src="/images/logo.jpg" 
+            src="/images/logo_cropped.png" 
             alt="ColorVaults" 
             style={{ 
-              height: '70px', 
+              height: '45px', 
               width: 'auto', 
-              objectFit: 'contain', 
-              transform: 'scale(2.2)', 
-              transformOrigin: 'left center' 
+              objectFit: 'contain'
             }} 
           />
         </Link>
