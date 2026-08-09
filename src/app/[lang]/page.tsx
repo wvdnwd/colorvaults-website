@@ -12,12 +12,7 @@ export default async function HomePage({ params }: { params: Promise<{ lang: str
   const featuredPages = getColoringPages(lang).slice(0, 8);
   const isEn = lang === 'en';
 
-  const stats = [
-    { num: '10,000+', label: isEn ? 'Coloring Pages' : 'Kleurplaten' },
-    { num: '100%', label: isEn ? 'Free to Download' : 'Gratis te Downloaden' },
-    { num: '2', label: isEn ? 'Languages' : 'Talen' },
-    { num: '4+', label: isEn ? 'Age Groups' : 'Leeftijdsgroepen' },
-  ];
+
 
   return (
     <>
@@ -60,14 +55,7 @@ export default async function HomePage({ params }: { params: Promise<{ lang: str
               {isEn ? 'Mandalas & Adults' : "Mandala's & Volwassenen"}
             </Link>
           </div>
-          <div className={styles.statsRow}>
-            {stats.map(s => (
-              <div key={s.label} className={styles.statItem}>
-                <span className={styles.statNum}>{s.num}</span>
-                <span className={styles.statLabel}>{s.label}</span>
-              </div>
-            ))}
-          </div>
+
         </div>
         <div className={styles.heroBgImg} />
       </section>
