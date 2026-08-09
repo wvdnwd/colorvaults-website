@@ -170,13 +170,26 @@ const generateData = () => {
       const fileUrlParts = file.split('/').map(encodeURIComponent).join('/');
       const imageUrl = `${SPACES_BASE_URL}/${fileUrlParts}`;
       
+      // Extract a nice title from the filename!
+      const fileName = file.split('/').pop() || '';
+      // Remove the _1784881533249.png part (timestamp and extension)
+      let niceTitle = fileName.replace(/_\d{13}\.(png|jpg|jpeg|webp)$/i, '');
+      // Replace underscores with spaces
+      niceTitle = niceTitle.replace(/_/g, ' ').trim();
+      // Clean up multiple spaces
+      niceTitle = niceTitle.replace(/\s+/g, ' ');
+      // If it ends up empty, fallback to the old way
+      if (!niceTitle || niceTitle.length < 3) {
+        niceTitle = `${themeName} ${index + 1}`;
+      }
+
       const ageGroupKey = agesList[index % agesList.length];
       const enAge = ageGroupKey;
       const nlAge = ageTranslations[ageGroupKey].nl.toLowerCase();
 
       enPages.push({
         id: pageId,
-        title: `${themeName} ${index + 1}`,
+        title: niceTitle,
         slug: pageSlug,
         parentHub: 'collections',
         parentTheme: themeSlug,
@@ -184,11 +197,11 @@ const generateData = () => {
         image: imageUrl,
         preview: imageUrl,
         downloadableFile: imageUrl,
-        metaTitle: `${themeName} ${index + 1} Coloring Page`,
-        metaDescription: `Printable ${themeName} page ${index + 1}`,
+        metaTitle: `${niceTitle} - Coloring Page`,
+        metaDescription: `Printable ${themeName} coloring page: ${niceTitle}`,
         shortDescription: `Beautiful ${themeName} coloring page.`,
-        longDescription: `This is a beautiful coloring page featuring ${themeName}. Perfect for ${ageTranslations[ageGroupKey].en} who love being creative.`,
-        altText: `Easy ${themeName} coloring page with bold outlines`,
+        longDescription: `This is a beautiful coloring page featuring ${niceTitle}. Perfect for ${ageTranslations[ageGroupKey].en} who love being creative.`,
+        altText: niceTitle,
         tags: [themeSlug],
         relatedPages: [],
         language: 'en'
@@ -196,7 +209,7 @@ const generateData = () => {
 
       nlPages.push({
         id: pageId,
-        title: `${themeName} ${index + 1}`,
+        title: niceTitle,
         slug: pageSlug,
         parentHub: 'collecties',
         parentTheme: themeSlug,
@@ -204,11 +217,11 @@ const generateData = () => {
         image: imageUrl,
         preview: imageUrl,
         downloadableFile: imageUrl,
-        metaTitle: `${themeName} ${index + 1} Kleurplaat`,
-        metaDescription: `Printbare ${themeName} pagina ${index + 1}`,
+        metaTitle: `${niceTitle} - Kleurplaat`,
+        metaDescription: `Printbare ${themeName} kleurplaat: ${niceTitle}`,
         shortDescription: `Prachtige ${themeName} kleurplaat.`,
-        longDescription: `Dit is een prachtige kleurplaat van ${themeName}. Perfect voor ${ageTranslations[ageGroupKey].nl.toLowerCase()} die graag creatief bezig zijn.`,
-        altText: `Makkelijke ${themeName} kleurplaat met dikke lijnen`,
+        longDescription: `Dit is een prachtige kleurplaat van ${niceTitle}. Perfect voor ${ageTranslations[ageGroupKey].nl.toLowerCase()} die graag creatief bezig zijn.`,
+        altText: niceTitle,
         tags: [themeSlug],
         relatedPages: [],
         language: 'nl'
