@@ -8,8 +8,24 @@ import React from 'react';
 
 export default async function HomePage({ params }: { params: Promise<{ lang: string }> }) {
   const { lang } = await params;
-  const topThemes = getThemes(lang).slice(0, 12);
-  const featuredPages = getColoringPages(lang).slice(0, 8);
+  // Hand-pick the best popular themes to show on the homepage
+  const popularSlugs = [
+    'dinosaurs', 'unicorns', 'space-exploration', 'fairies', 
+    'mandalas', 'princesses-castles', 'animals', 'vehicles', 
+    'disney-princesses', 'paw-patrol', 'superheroes', 'ocean-life'
+  ];
+  
+  const allThemes = getThemes(lang);
+  
+  // Filter for our preferred slugs, fallback to nice looking themes (no "A_..." folders)
+  let topThemes = allThemes.filter(t => popularSlugs.includes(t.slug));
+  if (topThemes.length < 8) {
+    const others = allThemes.filter(t => !popularSlugs.includes(t.slug) && !t.title.startsWith('A '));
+    topThemes = [...topThemes, ...others];
+  }
+  topThemes = topThemes.slice(0, 8); // Show exactly 8
+
+  const featuredPages = getColoringPages(lang).filter(p => !p.title.startsWith('A ')).slice(0, 8);
   const isEn = lang === 'en';
 
   const ageCards = [
@@ -40,7 +56,7 @@ export default async function HomePage({ params }: { params: Promise<{ lang: str
       desc: isEn ? 'Detailed anime, gaming & fantasy' : 'Gedetailleerde anime, games & fantasie',
       className: styles.ageTeens,
       hubSlug: isEn ? 'games-and-pop-culture' : 'games-en-popcultuur',
-      themeSlug: 'pokemon',
+      themeSlug: 'dragonball',
       ageSlug: isEn ? 'teens' : 'tieners'
     },
     {
@@ -58,9 +74,9 @@ export default async function HomePage({ params }: { params: Promise<{ lang: str
   const quickSearchPills = [
     { name: isEn ? 'Dinosaurs' : 'Dinosaurussen', query: 'dinosaur' },
     { name: isEn ? 'Unicorns' : 'Eenhoorns', query: 'unicorn' },
-    { name: isEn ? 'Pokemon' : 'Pokemon', query: 'pokemon' },
+    { name: isEn ? 'Anime' : 'Anime', query: 'anime' },
     { name: isEn ? 'Disney' : 'Disney', query: 'disney' },
-    { name: 'SpongeBob', query: 'spongebob' },
+    { name: 'Paw Patrol', query: 'paw patrol' },
     { name: 'Mandalas', query: 'mandala' }
   ];
 
