@@ -1,38 +1,5 @@
 [
   {
-    "title": "Afgekeurd_of_Twijfel voor Kinderen",
-    "slug": "kinderen",
-    "parentHub": "collecties",
-    "parentTheme": "afgekeurd-of-twijfel",
-    "ageGroup": "kinderen",
-    "introText": "Geweldige Afgekeurd_of_Twijfel kleurplaten voor Kinderen.",
-    "seoText": "Download de beste Afgekeurd_of_Twijfel kleurplaten voor Kinderen",
-    "faq": [],
-    "language": "nl"
-  },
-  {
-    "title": "Afgekeurd_of_Twijfel voor Tieners",
-    "slug": "tieners",
-    "parentHub": "collecties",
-    "parentTheme": "afgekeurd-of-twijfel",
-    "ageGroup": "tieners",
-    "introText": "Geweldige Afgekeurd_of_Twijfel kleurplaten voor Tieners.",
-    "seoText": "Download de beste Afgekeurd_of_Twijfel kleurplaten voor Tieners",
-    "faq": [],
-    "language": "nl"
-  },
-  {
-    "title": "Afgekeurd_of_Twijfel voor Volwassenen",
-    "slug": "volwassenen",
-    "parentHub": "collecties",
-    "parentTheme": "afgekeurd-of-twijfel",
-    "ageGroup": "volwassenen",
-    "introText": "Geweldige Afgekeurd_of_Twijfel kleurplaten voor Volwassenen.",
-    "seoText": "Download de beste Afgekeurd_of_Twijfel kleurplaten voor Volwassenen",
-    "faq": [],
-    "language": "nl"
-  },
-  {
     "title": "Ancient Mythology - Teens voor Kinderen",
     "slug": "kinderen",
     "parentHub": "collecties",
@@ -5177,39 +5144,6 @@
     "ageGroup": "volwassenen",
     "introText": "Geweldige Dragons _12 Extra Needed_ kleurplaten voor Volwassenen.",
     "seoText": "Download de beste Dragons _12 Extra Needed_ kleurplaten voor Volwassenen",
-    "faq": [],
-    "language": "nl"
-  },
-  {
-    "title": "Dubbele_Fotos voor Kinderen",
-    "slug": "kinderen",
-    "parentHub": "collecties",
-    "parentTheme": "dubbele-fotos",
-    "ageGroup": "kinderen",
-    "introText": "Geweldige Dubbele_Fotos kleurplaten voor Kinderen.",
-    "seoText": "Download de beste Dubbele_Fotos kleurplaten voor Kinderen",
-    "faq": [],
-    "language": "nl"
-  },
-  {
-    "title": "Dubbele_Fotos voor Tieners",
-    "slug": "tieners",
-    "parentHub": "collecties",
-    "parentTheme": "dubbele-fotos",
-    "ageGroup": "tieners",
-    "introText": "Geweldige Dubbele_Fotos kleurplaten voor Tieners.",
-    "seoText": "Download de beste Dubbele_Fotos kleurplaten voor Tieners",
-    "faq": [],
-    "language": "nl"
-  },
-  {
-    "title": "Dubbele_Fotos voor Volwassenen",
-    "slug": "volwassenen",
-    "parentHub": "collecties",
-    "parentTheme": "dubbele-fotos",
-    "ageGroup": "volwassenen",
-    "introText": "Geweldige Dubbele_Fotos kleurplaten voor Volwassenen.",
-    "seoText": "Download de beste Dubbele_Fotos kleurplaten voor Volwassenen",
     "faq": [],
     "language": "nl"
   },
