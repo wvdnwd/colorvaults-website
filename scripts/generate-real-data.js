@@ -160,7 +160,9 @@ const generateData = () => {
   const groupedThemes = {};
 
   for (const folder of folders) {
-    const themeSlug = slugify(folder);
+    let cleanFolderName = folder.replace(/_?\d+\s*extra\s*needed_?/gi, '').replace(/_?\d+_ex_?/gi, '');
+    cleanFolderName = cleanFolderName.replace(/_/g, ' ').replace(/\s+/g, ' ').trim();
+    const themeSlug = slugify(cleanFolderName);
     const themePath = path.join(inputDir, folder);
     const absoluteFiles = getAllImages(themePath);
     
@@ -171,7 +173,7 @@ const generateData = () => {
 
     if (!groupedThemes[themeSlug]) {
       groupedThemes[themeSlug] = {
-        themeName: capitalize(folder), // use first encountered folder name
+        themeName: capitalize(cleanFolderName), // use cleaned folder name
         originalFolderName: folder,
         files: []
       };
