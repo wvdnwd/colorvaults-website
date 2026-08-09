@@ -3102,39 +3102,6 @@
     "language": "nl"
   },
   {
-    "title": "Cozy_Life voor Kinderen",
-    "slug": "kinderen",
-    "parentHub": "collecties",
-    "parentTheme": "cozy-life",
-    "ageGroup": "kinderen",
-    "introText": "Geweldige Cozy_Life kleurplaten voor Kinderen.",
-    "seoText": "Download de beste Cozy_Life kleurplaten voor Kinderen",
-    "faq": [],
-    "language": "nl"
-  },
-  {
-    "title": "Cozy_Life voor Tieners",
-    "slug": "tieners",
-    "parentHub": "collecties",
-    "parentTheme": "cozy-life",
-    "ageGroup": "tieners",
-    "introText": "Geweldige Cozy_Life kleurplaten voor Tieners.",
-    "seoText": "Download de beste Cozy_Life kleurplaten voor Tieners",
-    "faq": [],
-    "language": "nl"
-  },
-  {
-    "title": "Cozy_Life voor Volwassenen",
-    "slug": "volwassenen",
-    "parentHub": "collecties",
-    "parentTheme": "cozy-life",
-    "ageGroup": "volwassenen",
-    "introText": "Geweldige Cozy_Life kleurplaten voor Volwassenen.",
-    "seoText": "Download de beste Cozy_Life kleurplaten voor Volwassenen",
-    "faq": [],
-    "language": "nl"
-  },
-  {
     "title": "Cozy_Life _57 Extra Needed_ voor Kinderen",
     "slug": "kinderen",
     "parentHub": "collecties",
@@ -9401,39 +9368,6 @@
     "ageGroup": "volwassenen",
     "introText": "Geweldige Space _11 Extra Needed_ kleurplaten voor Volwassenen.",
     "seoText": "Download de beste Space _11 Extra Needed_ kleurplaten voor Volwassenen",
-    "faq": [],
-    "language": "nl"
-  },
-  {
-    "title": "Space_Exploration voor Kinderen",
-    "slug": "kinderen",
-    "parentHub": "collecties",
-    "parentTheme": "space-exploration",
-    "ageGroup": "kinderen",
-    "introText": "Geweldige Space_Exploration kleurplaten voor Kinderen.",
-    "seoText": "Download de beste Space_Exploration kleurplaten voor Kinderen",
-    "faq": [],
-    "language": "nl"
-  },
-  {
-    "title": "Space_Exploration voor Tieners",
-    "slug": "tieners",
-    "parentHub": "collecties",
-    "parentTheme": "space-exploration",
-    "ageGroup": "tieners",
-    "introText": "Geweldige Space_Exploration kleurplaten voor Tieners.",
-    "seoText": "Download de beste Space_Exploration kleurplaten voor Tieners",
-    "faq": [],
-    "language": "nl"
-  },
-  {
-    "title": "Space_Exploration voor Volwassenen",
-    "slug": "volwassenen",
-    "parentHub": "collecties",
-    "parentTheme": "space-exploration",
-    "ageGroup": "volwassenen",
-    "introText": "Geweldige Space_Exploration kleurplaten voor Volwassenen.",
-    "seoText": "Download de beste Space_Exploration kleurplaten voor Volwassenen",
     "faq": [],
     "language": "nl"
   },

@@ -3102,39 +3102,6 @@
     "language": "en"
   },
   {
-    "title": "Cozy_Life for Kids",
-    "slug": "kids",
-    "parentHub": "collections",
-    "parentTheme": "cozy-life",
-    "ageGroup": "kids",
-    "introText": "Great Cozy_Life coloring pages for Kids.",
-    "seoText": "Download the best Cozy_Life coloring pages for Kids",
-    "faq": [],
-    "language": "en"
-  },
-  {
-    "title": "Cozy_Life for Teens",
-    "slug": "teens",
-    "parentHub": "collections",
-    "parentTheme": "cozy-life",
-    "ageGroup": "teens",
-    "introText": "Great Cozy_Life coloring pages for Teens.",
-    "seoText": "Download the best Cozy_Life coloring pages for Teens",
-    "faq": [],
-    "language": "en"
-  },
-  {
-    "title": "Cozy_Life for Adults",
-    "slug": "adults",
-    "parentHub": "collections",
-    "parentTheme": "cozy-life",
-    "ageGroup": "adults",
-    "introText": "Great Cozy_Life coloring pages for Adults.",
-    "seoText": "Download the best Cozy_Life coloring pages for Adults",
-    "faq": [],
-    "language": "en"
-  },
-  {
     "title": "Cozy_Life _57 Extra Needed_ for Kids",
     "slug": "kids",
     "parentHub": "collections",
@@ -9401,39 +9368,6 @@
     "ageGroup": "adults",
     "introText": "Great Space _11 Extra Needed_ coloring pages for Adults.",
     "seoText": "Download the best Space _11 Extra Needed_ coloring pages for Adults",
-    "faq": [],
-    "language": "en"
-  },
-  {
-    "title": "Space_Exploration for Kids",
-    "slug": "kids",
-    "parentHub": "collections",
-    "parentTheme": "space-exploration",
-    "ageGroup": "kids",
-    "introText": "Great Space_Exploration coloring pages for Kids.",
-    "seoText": "Download the best Space_Exploration coloring pages for Kids",
-    "faq": [],
-    "language": "en"
-  },
-  {
-    "title": "Space_Exploration for Teens",
-    "slug": "teens",
-    "parentHub": "collections",
-    "parentTheme": "space-exploration",
-    "ageGroup": "teens",
-    "introText": "Great Space_Exploration coloring pages for Teens.",
-    "seoText": "Download the best Space_Exploration coloring pages for Teens",
-    "faq": [],
-    "language": "en"
-  },
-  {
-    "title": "Space_Exploration for Adults",
-    "slug": "adults",
-    "parentHub": "collections",
-    "parentTheme": "space-exploration",
-    "ageGroup": "adults",
-    "introText": "Great Space_Exploration coloring pages for Adults.",
-    "seoText": "Download the best Space_Exploration coloring pages for Adults",
     "faq": [],
     "language": "en"
   },

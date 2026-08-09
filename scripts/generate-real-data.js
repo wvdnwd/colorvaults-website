@@ -77,22 +77,37 @@ const generateData = () => {
     .map(dirent => dirent.name);
 
   let globalIdCounter = 1;
+  const groupedThemes = {};
 
   for (const folder of folders) {
-    const themeName = capitalize(folder);
     const themeSlug = slugify(folder);
     const themePath = path.join(inputDir, folder);
     const absoluteFiles = getAllImages(themePath);
     
     if (absoluteFiles.length === 0) continue;
 
-    // Convert absolute paths back to relative paths to the folder for URL generation
-    const files = absoluteFiles.map(abs => path.relative(themePath, abs).replace(/\\/g, '/'));
+    // Convert absolute paths back to relative paths for URL generation
+    const files = absoluteFiles.map(abs => path.relative(inputDir, abs).replace(/\\/g, '/'));
+
+    if (!groupedThemes[themeSlug]) {
+      groupedThemes[themeSlug] = {
+        themeName: capitalize(folder), // use first encountered folder name
+        files: []
+      };
+    }
+    
+    groupedThemes[themeSlug].files.push(...files);
+  }
+
+  for (const [themeSlug, data] of Object.entries(groupedThemes)) {
+    const themeName = data.themeName;
+    const files = data.files;
 
     console.log(`Processing theme: ${themeName} (${files.length} images)`);
 
+    // Use the first file to construct the banner image URL correctly
     const firstFileUrlParts = files[0].split('/').map(encodeURIComponent).join('/');
-    const themeImage = `${SPACES_BASE_URL}/${encodeURIComponent(folder)}/${firstFileUrlParts}`;
+    const themeImage = `${SPACES_BASE_URL}/${firstFileUrlParts}`;
     
     enThemes.push({
       title: themeName,
@@ -114,7 +129,6 @@ const generateData = () => {
       language: 'nl'
     });
 
-    // Create pages and distribute them evenly across ages to make the site look populated
     const agesList = Object.keys(ageTranslations);
     
     for (const age of agesList) {
@@ -148,14 +162,13 @@ const generateData = () => {
       });
     }
 
-    // Now process all images and randomly assign them an age group
     files.forEach((file, index) => {
       const pageId = `page-${globalIdCounter++}`;
       const pageSlug = `${themeSlug}-${index + 1}`;
-      const fileUrlParts = file.split('/').map(encodeURIComponent).join('/');
-      const imageUrl = `${SPACES_BASE_URL}/${encodeURIComponent(folder)}/${fileUrlParts}`;
       
-      // Rotate through ages: index % 3
+      const fileUrlParts = file.split('/').map(encodeURIComponent).join('/');
+      const imageUrl = `${SPACES_BASE_URL}/${fileUrlParts}`;
+      
       const ageGroupKey = agesList[index % agesList.length];
       const enAge = ageGroupKey;
       const nlAge = ageTranslations[ageGroupKey].nl.toLowerCase();
