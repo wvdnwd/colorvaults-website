@@ -29,9 +29,9 @@ export default async function HomePage({ params }: { params: Promise<{ lang: str
           </span>
           <h1 className={styles.heroTitle}>
             {isEn ? (
-              <>Free Premium<br /><span className="gradient-text">Coloring Pages</span></>
+              <>Free Premium<br /><span>Coloring Pages</span></>
             ) : (
-              <>Gratis Premium<br /><span className="gradient-text">Kleurplaten</span></>
+              <>Gratis Premium<br /><span>Kleurplaten</span></>
             )}
           </h1>
           <p className={styles.heroSubtitle}>
@@ -39,6 +39,19 @@ export default async function HomePage({ params }: { params: Promise<{ lang: str
               ? 'Download thousands of high-quality, free printable coloring pages for toddlers, kids, teens, and adults. Spark creativity today!'
               : 'Download duizenden gratis printbare kleurplaten van hoge kwaliteit voor peuters, kinderen, tieners en volwassenen. Stimuleer creativiteit vandaag!'}
           </p>
+
+          <form className={styles.searchWrapper} action={`/${lang}/search`} method="GET">
+            <input 
+              type="text" 
+              name="q"
+              placeholder={isEn ? "Search for coloring pages..." : "Zoek naar kleurplaten..."} 
+              className={styles.searchInput}
+              required
+            />
+            <button type="submit" className={styles.searchBtn}>
+              {isEn ? "Search" : "Zoeken"}
+            </button>
+          </form>
           <div className={styles.heroCtas}>
             <Link href={`/${lang}/tv-series-and-movies`} className="btn-primary">
               {isEn ? '🎨 Start Exploring' : '🎨 Begin met Ontdekken'}
