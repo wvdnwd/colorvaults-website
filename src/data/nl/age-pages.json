@@ -9900,39 +9900,6 @@
     "language": "nl"
   },
   {
-    "title": "Te_Herstellen voor Kinderen",
-    "slug": "kinderen",
-    "parentHub": "collecties",
-    "parentTheme": "te-herstellen",
-    "ageGroup": "kinderen",
-    "introText": "Geweldige Te_Herstellen kleurplaten voor Kinderen.",
-    "seoText": "Download de beste Te_Herstellen kleurplaten voor Kinderen",
-    "faq": [],
-    "language": "nl"
-  },
-  {
-    "title": "Te_Herstellen voor Tieners",
-    "slug": "tieners",
-    "parentHub": "collecties",
-    "parentTheme": "te-herstellen",
-    "ageGroup": "tieners",
-    "introText": "Geweldige Te_Herstellen kleurplaten voor Tieners.",
-    "seoText": "Download de beste Te_Herstellen kleurplaten voor Tieners",
-    "faq": [],
-    "language": "nl"
-  },
-  {
-    "title": "Te_Herstellen voor Volwassenen",
-    "slug": "volwassenen",
-    "parentHub": "collecties",
-    "parentTheme": "te-herstellen",
-    "ageGroup": "volwassenen",
-    "introText": "Geweldige Te_Herstellen kleurplaten voor Volwassenen.",
-    "seoText": "Download de beste Te_Herstellen kleurplaten voor Volwassenen",
-    "faq": [],
-    "language": "nl"
-  },
-  {
     "title": "Underwater voor Kinderen",
     "slug": "kinderen",
     "parentHub": "collecties",
