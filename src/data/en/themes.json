@@ -1,23 +1,10 @@
 [
   {
-    "title": "Ancient Mythology - Teens",
-    "slug": "ancient-mythology-teens",
+    "title": "Ancient Mythology",
+    "slug": "ancient-mythology",
     "parentHub": "collections",
-    "description": "Best Ancient Mythology - Teens coloring pages.",
-    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Ancient%20Mythology%20-%20Teens/A_detailed_scene_of_Perseus_facing_Medus_1784881515148.png",
-    "availableAges": [
-      "kids",
-      "teens",
-      "adults"
-    ],
-    "language": "en"
-  },
-  {
-    "title": "Ancient Mythology - Toddlers",
-    "slug": "ancient-mythology-toddlers",
-    "parentHub": "toddler-specific",
-    "description": "Best Ancient Mythology - Toddlers coloring pages.",
-    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Ancient%20Mythology%20-%20Toddlers/A_cute_baby_Hercules_lifting_a_small_toy_1784881406451.png",
+    "description": "Best Ancient Mythology coloring pages.",
+    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Ancient%20Mythology/Ancient_Mythology_-_Teens_tra_need_1786118571841.png",
     "availableAges": [
       "kids",
       "teens",
@@ -30,7 +17,7 @@
     "slug": "animals",
     "parentHub": "animals-and-nature",
     "description": "Best Animals coloring pages.",
-    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/animals/Animals_An_intricate_fantasy_animal_kin_1785061615957.png",
+    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/animals/Animals_An_intricate_fantasy_animal_kin_1785061615957_1.png",
     "availableAges": [
       "kids",
       "teens",
@@ -43,7 +30,7 @@
     "slug": "anime",
     "parentHub": "tv-series-and-movies",
     "description": "Best Anime coloring pages.",
-    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Anime/Anime_Manga_A_fantastic_scene_of_an_e_1785059696334.png",
+    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Anime/Anime_Manga_-_Kids_tra_needed_1786137410450.png",
     "availableAges": [
       "kids",
       "teens",
@@ -56,7 +43,7 @@
     "slug": "anime-dragonball",
     "parentHub": "tv-series-and-movies",
     "description": "Best Anime - Dragonball coloring pages.",
-    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Anime%20-%20Dragonball%20_14%20extra%20needed_/Anime_-_Dragonball_tra_needed_Go_1786104722333.png",
+    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Anime%20-%20Dragonball/Anime_-_Dragonball_tra_needed_Go_1786104722333.png",
     "availableAges": [
       "kids",
       "teens",
@@ -69,7 +56,7 @@
     "slug": "anime-naruto",
     "parentHub": "tv-series-and-movies",
     "description": "Best Anime - Naruto coloring pages.",
-    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Anime%20-%20Naruto%20_14%20extra%20needed_/Anime_-_Naruto_tra_needed_A_ninj_1786104891234.png",
+    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Anime%20-%20Naruto/Anime_-_Naruto_tra_needed_A_ninj_1786104891234.png",
     "availableAges": [
       "kids",
       "teens",
@@ -82,7 +69,7 @@
     "slug": "anime-one-piece",
     "parentHub": "tv-series-and-movies",
     "description": "Best Anime - One Piece coloring pages.",
-    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Anime%20-%20One%20Piece%20_14%20extra%20needed_/Anime_-_One_Piece_tra_needed_Cho_1786104836956.png",
+    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Anime%20-%20One%20Piece/Anime_-_One_Piece_tra_needed_Cho_1786104836956.png",
     "availableAges": [
       "kids",
       "teens",
@@ -95,189 +82,7 @@
     "slug": "anime-sailor-moon",
     "parentHub": "tv-series-and-movies",
     "description": "Best Anime - Sailor Moon coloring pages.",
-    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Anime%20-%20Sailor%20Moon%20_14%20extra%20needed_/Anime_-_Sailor_Moon_tra_needed_S_1786104963653.png",
-    "availableAges": [
-      "kids",
-      "teens",
-      "adults"
-    ],
-    "language": "en"
-  },
-  {
-    "title": "Anime Manga",
-    "slug": "anime-manga",
-    "parentHub": "tv-series-and-movies",
-    "description": "Best Anime Manga coloring pages.",
-    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Anime%20Manga/SEO_Anime_Manga_00001.png",
-    "availableAges": [
-      "kids",
-      "teens",
-      "adults"
-    ],
-    "language": "en"
-  },
-  {
-    "title": "Anime Manga - Kids",
-    "slug": "anime-manga-kids",
-    "parentHub": "tv-series-and-movies",
-    "description": "Best Anime Manga - Kids coloring pages.",
-    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Anime%20_%20Manga%20-%20Kids/Anime_Manga_A_cool_ninja_holding_a_hu_1785059574715.png",
-    "availableAges": [
-      "kids",
-      "teens",
-      "adults"
-    ],
-    "language": "en"
-  },
-  {
-    "title": "Anime Manga - Teens",
-    "slug": "anime-manga-teens",
-    "parentHub": "tv-series-and-movies",
-    "description": "Best Anime Manga - Teens coloring pages.",
-    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Anime%20_%20Manga%20-%20Teens/Anime_Manga_anime_battle_in_a_1785059580761.png",
-    "availableAges": [
-      "kids",
-      "teens",
-      "adults"
-    ],
-    "language": "en"
-  },
-  {
-    "title": "Anime Manga - Toddlers",
-    "slug": "anime-manga-toddlers",
-    "parentHub": "tv-series-and-movies",
-    "description": "Best Anime Manga - Toddlers coloring pages.",
-    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Anime%20_%20Manga%20-%20Toddlers/Anime_Manga_A_amazing_scene_of_cute_a_1785059411152.png",
-    "availableAges": [
-      "kids",
-      "teens",
-      "adults"
-    ],
-    "language": "en"
-  },
-  {
-    "title": "An Elaborate Floral Pastry Mandala With",
-    "slug": "an-elaborate-floral-pastry-mandala-with",
-    "parentHub": "mandalas",
-    "description": "Best An Elaborate Floral Pastry Mandala With coloring pages.",
-    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/An_elaborate_floral_pastry_mandala_with/An_elaborate_floral_pastry_mandala_with_1784877934690.png",
-    "availableAges": [
-      "kids",
-      "teens",
-      "adults"
-    ],
-    "language": "en"
-  },
-  {
-    "title": "An Elaborate Line Art Collage Depicting",
-    "slug": "an-elaborate-line-art-collage-depicting",
-    "parentHub": "collections",
-    "description": "Best An Elaborate Line Art Collage Depicting coloring pages.",
-    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/An_elaborate_line_art_collage_depicting/An_elaborate_line_art_collage_depicting_1784881986059.png",
-    "availableAges": [
-      "kids",
-      "teens",
-      "adults"
-    ],
-    "language": "en"
-  },
-  {
-    "title": "An Elaborate Line Art Collage Featuring",
-    "slug": "an-elaborate-line-art-collage-featuring",
-    "parentHub": "collections",
-    "description": "Best An Elaborate Line Art Collage Featuring coloring pages.",
-    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/An_elaborate_line_art_collage_featuring/An_elaborate_line_art_collage_featuring_1784880530949.png",
-    "availableAges": [
-      "kids",
-      "teens",
-      "adults"
-    ],
-    "language": "en"
-  },
-  {
-    "title": "An Elaborate Line Art Illustration Of A",
-    "slug": "an-elaborate-line-art-illustration-of-a",
-    "parentHub": "collections",
-    "description": "Best An Elaborate Line Art Illustration Of A coloring pages.",
-    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/An_elaborate_line_art_illustration_of_a/An_elaborate_line_art_illustration_of_a_1784879836754.png",
-    "availableAges": [
-      "kids",
-      "teens",
-      "adults"
-    ],
-    "language": "en"
-  },
-  {
-    "title": "An Elaborate Mandala Design Composed Of",
-    "slug": "an-elaborate-mandala-design-composed-of",
-    "parentHub": "mandalas",
-    "description": "Best An Elaborate Mandala Design Composed Of coloring pages.",
-    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/An_elaborate_mandala_design_composed_of/An_elaborate_mandala_design_composed_of_1784879383645.png",
-    "availableAges": [
-      "kids",
-      "teens",
-      "adults"
-    ],
-    "language": "en"
-  },
-  {
-    "title": "An Intricate Botanical Mandala Composed",
-    "slug": "an-intricate-botanical-mandala-composed",
-    "parentHub": "mandalas",
-    "description": "Best An Intricate Botanical Mandala Composed coloring pages.",
-    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/An_intricate_botanical_mandala_composed/An_intricate_botanical_mandala_composed_1784879776385.png",
-    "availableAges": [
-      "kids",
-      "teens",
-      "adults"
-    ],
-    "language": "en"
-  },
-  {
-    "title": "An Intricate Line Drawing Of An Ancient",
-    "slug": "an-intricate-line-drawing-of-an-ancient",
-    "parentHub": "animals-and-nature",
-    "description": "Best An Intricate Line Drawing Of An Ancient coloring pages.",
-    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/An_intricate_line_drawing_of_an_ancient/An_intricate_line_drawing_of_an_ancient_1784877620761.png",
-    "availableAges": [
-      "kids",
-      "teens",
-      "adults"
-    ],
-    "language": "en"
-  },
-  {
-    "title": "An Intricate Mandala Blending Geometric",
-    "slug": "an-intricate-mandala-blending-geometric",
-    "parentHub": "mandalas",
-    "description": "Best An Intricate Mandala Blending Geometric coloring pages.",
-    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/An_intricate_mandala_blending_geometric/An_intricate_mandala_blending_geometric_1784876459636.png",
-    "availableAges": [
-      "kids",
-      "teens",
-      "adults"
-    ],
-    "language": "en"
-  },
-  {
-    "title": "An Intricate Mandala Built From Circuit",
-    "slug": "an-intricate-mandala-built-from-circuit",
-    "parentHub": "mandalas",
-    "description": "Best An Intricate Mandala Built From Circuit coloring pages.",
-    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/An_intricate_mandala_built_from_circuit/An_intricate_mandala_built_from_circuit_1784881225329.png",
-    "availableAges": [
-      "kids",
-      "teens",
-      "adults"
-    ],
-    "language": "en"
-  },
-  {
-    "title": "An Intricate Zentangle Mandala Composed",
-    "slug": "an-intricate-zentangle-mandala-composed",
-    "parentHub": "mandalas",
-    "description": "Best An Intricate Zentangle Mandala Composed coloring pages.",
-    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/An_intricate_zentangle_mandala_composed/An_intricate_zentangle_mandala_composed_1784877922609.png",
+    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Anime%20-%20Sailor%20Moon/Anime_-_Sailor_Moon_tra_needed_S_1786104963653.png",
     "availableAges": [
       "kids",
       "teens",
@@ -312,154 +117,11 @@
     "language": "en"
   },
   {
-    "title": "A Cargo Airplane Loading Colorful Boxes",
-    "slug": "a-cargo-airplane-loading-colorful-boxes",
-    "parentHub": "collections",
-    "description": "Best A Cargo Airplane Loading Colorful Boxes coloring pages.",
-    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/A_cargo_airplane_loading_colorful_boxes/A_cargo_airplane_loading_colorful_boxes_1784879275026.png",
-    "availableAges": [
-      "kids",
-      "teens",
-      "adults"
-    ],
-    "language": "en"
-  },
-  {
-    "title": "A Complex Mandala Formed By Overlapping",
-    "slug": "a-complex-mandala-formed-by-overlapping",
-    "parentHub": "mandalas",
-    "description": "Best A Complex Mandala Formed By Overlapping coloring pages.",
-    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/A_complex_mandala_formed_by_overlapping/A_complex_mandala_formed_by_overlapping_1784876866186.png",
-    "availableAges": [
-      "kids",
-      "teens",
-      "adults"
-    ],
-    "language": "en"
-  },
-  {
-    "title": "A Complex Mandala Framed By Intricately",
-    "slug": "a-complex-mandala-framed-by-intricately",
-    "parentHub": "mandalas",
-    "description": "Best A Complex Mandala Framed By Intricately coloring pages.",
-    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/A_complex_mandala_framed_by_intricately/A_complex_mandala_framed_by_intricately_1784880536991.png",
-    "availableAges": [
-      "kids",
-      "teens",
-      "adults"
-    ],
-    "language": "en"
-  },
-  {
-    "title": "A Complex Mandala Styled Astronaut Suit",
-    "slug": "a-complex-mandala-styled-astronaut-suit",
-    "parentHub": "mandalas",
-    "description": "Best A Complex Mandala Styled Astronaut Suit coloring pages.",
-    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/A_complex_mandala_styled_astronaut_suit/A_complex_mandala_styled_astronaut_suit_1784876471716.png",
-    "availableAges": [
-      "kids",
-      "teens",
-      "adults"
-    ],
-    "language": "en"
-  },
-  {
-    "title": "A Detailed Blueprint Style Drawing Of A",
-    "slug": "a-detailed-blueprint-style-drawing-of-a",
-    "parentHub": "collections",
-    "description": "Best A Detailed Blueprint Style Drawing Of A coloring pages.",
-    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/A_detailed_blueprint_style_drawing_of_a/A_detailed_blueprint_style_drawing_of_a_1784879311240.png",
-    "availableAges": [
-      "kids",
-      "teens",
-      "adults"
-    ],
-    "language": "en"
-  },
-  {
-    "title": "A Highly Detailed Line Art Depiction Of",
-    "slug": "a-highly-detailed-line-art-depiction-of",
-    "parentHub": "collections",
-    "description": "Best A Highly Detailed Line Art Depiction Of coloring pages.",
-    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/A_highly_detailed_line_art_depiction_of/A_highly_detailed_line_art_depiction_of_1784877644935.png",
-    "availableAges": [
-      "kids",
-      "teens",
-      "adults"
-    ],
-    "language": "en"
-  },
-  {
-    "title": "A Hyper-detailed Line Art Portrait Of A",
-    "slug": "a-hyper-detailed-line-art-portrait-of-a",
-    "parentHub": "collections",
-    "description": "Best A Hyper-detailed Line Art Portrait Of A coloring pages.",
-    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/A_hyper-detailed_line_art_portrait_of_a/A_hyper-detailed_line_art_portrait_of_a_1784878653286.png",
-    "availableAges": [
-      "kids",
-      "teens",
-      "adults"
-    ],
-    "language": "en"
-  },
-  {
-    "title": "A Hyper-detailed Line Art Tapestry Of A",
-    "slug": "a-hyper-detailed-line-art-tapestry-of-a",
-    "parentHub": "collections",
-    "description": "Best A Hyper-detailed Line Art Tapestry Of A coloring pages.",
-    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/A_hyper-detailed_line_art_tapestry_of_a/A_hyper-detailed_line_art_tapestry_of_a_1784880567199.png",
-    "availableAges": [
-      "kids",
-      "teens",
-      "adults"
-    ],
-    "language": "en"
-  },
-  {
-    "title": "A Simple Doughnut With A Chocolate Ring",
-    "slug": "a-simple-doughnut-with-a-chocolate-ring",
-    "parentHub": "collections",
-    "description": "Best A Simple Doughnut With A Chocolate Ring coloring pages.",
-    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/A_simple_doughnut_with_a_chocolate_ring/A_simple_doughnut_with_a_chocolate_ring_1784877663045.png",
-    "availableAges": [
-      "kids",
-      "teens",
-      "adults"
-    ],
-    "language": "en"
-  },
-  {
-    "title": "A Simple Futuristic Tower With A Pointy",
-    "slug": "a-simple-futuristic-tower-with-a-pointy",
-    "parentHub": "collections",
-    "description": "Best A Simple Futuristic Tower With A Pointy coloring pages.",
-    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/A_simple_futuristic_tower_with_a_pointy/A_simple_futuristic_tower_with_a_pointy_1784880977792.png",
-    "availableAges": [
-      "kids",
-      "teens",
-      "adults"
-    ],
-    "language": "en"
-  },
-  {
-    "title": "A Smiling Chocolate Chip Cookie Sitting",
-    "slug": "a-smiling-chocolate-chip-cookie-sitting",
-    "parentHub": "collections",
-    "description": "Best A Smiling Chocolate Chip Cookie Sitting coloring pages.",
-    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/A_smiling_chocolate_chip_cookie_sitting/A_smiling_chocolate_chip_cookie_sitting_1784877675100.png",
-    "availableAges": [
-      "kids",
-      "teens",
-      "adults"
-    ],
-    "language": "en"
-  },
-  {
     "title": "Birds",
     "slug": "birds",
     "parentHub": "animals-and-nature",
     "description": "Best Birds coloring pages.",
-    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Birds/SEO_Birds_00002.png",
+    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Birds/Birds_tra_needed_A_beautiful_rep_1786142140028.png",
     "availableAges": [
       "kids",
       "teens",
@@ -468,11 +130,11 @@
     "language": "en"
   },
   {
-    "title": "Blippi - Kids",
-    "slug": "blippi-kids",
+    "title": "Blippi",
+    "slug": "blippi",
     "parentHub": "tv-series-and-movies",
-    "description": "Best Blippi - Kids coloring pages.",
-    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Blippi%20-%20Kids/Blippi_Black-and-white_coloring_page_of_1784892136089.png",
+    "description": "Best Blippi coloring pages.",
+    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Blippi/Blippi_-_Kids_tra_needed_1786129491580.png",
     "availableAges": [
       "kids",
       "teens",
@@ -481,11 +143,11 @@
     "language": "en"
   },
   {
-    "title": "Blippi - Toddlers",
-    "slug": "blippi-toddlers",
+    "title": "Bluey",
+    "slug": "bluey",
     "parentHub": "tv-series-and-movies",
-    "description": "Best Blippi - Toddlers coloring pages.",
-    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Blippi%20-%20Toddlers/Blippi_Black-and-white_coloring_page_of_1784891961006.png",
+    "description": "Best Bluey coloring pages.",
+    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Bluey/Bluey_-_Kids_tra_needed_1786132024072.png",
     "availableAges": [
       "kids",
       "teens",
@@ -494,50 +156,11 @@
     "language": "en"
   },
   {
-    "title": "Bluey - Kids",
-    "slug": "bluey-kids",
-    "parentHub": "tv-series-and-movies",
-    "description": "Best Bluey - Kids coloring pages.",
-    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Bluey%20-%20Kids/Bluey_Black-and-white_coloring_page_of_1784889877984.png",
-    "availableAges": [
-      "kids",
-      "teens",
-      "adults"
-    ],
-    "language": "en"
-  },
-  {
-    "title": "Bluey - Toddlers",
-    "slug": "bluey-toddlers",
-    "parentHub": "tv-series-and-movies",
-    "description": "Best Bluey - Toddlers coloring pages.",
-    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Bluey%20-%20Toddlers/Bluey_Black-and-white_coloring_page_of_1784889787503.png",
-    "availableAges": [
-      "kids",
-      "teens",
-      "adults"
-    ],
-    "language": "en"
-  },
-  {
-    "title": "Botanical Gardens - Kids",
-    "slug": "botanical-gardens-kids",
+    "title": "Botanical Gardens",
+    "slug": "botanical-gardens",
     "parentHub": "animals-and-nature",
-    "description": "Best Botanical Gardens - Kids coloring pages.",
-    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Botanical%20Gardens%20-%20Kids/A_beautiful_garden_archway_covered_in_bl_1784879595224.png",
-    "availableAges": [
-      "kids",
-      "teens",
-      "adults"
-    ],
-    "language": "en"
-  },
-  {
-    "title": "Botanical Gardens - Toddlers",
-    "slug": "botanical-gardens-toddlers",
-    "parentHub": "animals-and-nature",
-    "description": "Best Botanical Gardens - Toddlers coloring pages.",
-    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Botanical%20Gardens%20-%20Toddlers/A_basic_clover_leaf_with_three_round_hea_1784879571068.png",
+    "description": "Best Botanical Gardens coloring pages.",
+    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Botanical%20Gardens/A_basic_clover_leaf_with_three_round_hea_1784879571068.png",
     "availableAges": [
       "kids",
       "teens",
@@ -550,7 +173,7 @@
     "slug": "butterflies",
     "parentHub": "collections",
     "description": "Best Butterflies coloring pages.",
-    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/butterflies/Butterflies_black_and_white_coloring_pa_1785055127507.png",
+    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/butterflies/Butterflies_black_and_white_coloring_pa_1785055127507_1.png",
     "availableAges": [
       "kids",
       "teens",
@@ -576,7 +199,7 @@
     "slug": "cars-trucks",
     "parentHub": "collections",
     "description": "Best Cars Trucks coloring pages.",
-    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Cars%20Trucks/SEO_Cars_Trucks_00001.png",
+    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Cars%20Trucks/Cars_Trucks_tra_needed_An_intere_1786142475692.png",
     "availableAges": [
       "kids",
       "teens",
@@ -589,20 +212,7 @@
     "slug": "christmas",
     "parentHub": "adults",
     "description": "Best Christmas coloring pages.",
-    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Christmas/SEO_Christmas_00001.png",
-    "availableAges": [
-      "kids",
-      "teens",
-      "adults"
-    ],
-    "language": "en"
-  },
-  {
-    "title": "Christmas - Kids",
-    "slug": "christmas-kids",
-    "parentHub": "adults",
-    "description": "Best Christmas - Kids coloring pages.",
-    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Christmas%20-%20Kids/Christmas_black_and_white_coloring_page_1785055490502.png",
+    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Christmas/Christmas_-_Kids_tra_needed_An_e_1786139278988.png",
     "availableAges": [
       "kids",
       "teens",
@@ -615,59 +225,7 @@
     "slug": "cocomelon",
     "parentHub": "tv-series-and-movies",
     "description": "Best CoComelon coloring pages.",
-    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/CoComelon/CoComelon_Black-and-white_coloring_page_1784892476058.png",
-    "availableAges": [
-      "kids",
-      "teens",
-      "adults"
-    ],
-    "language": "en"
-  },
-  {
-    "title": "CoComelon - Adults",
-    "slug": "cocomelon-adults",
-    "parentHub": "tv-series-and-movies",
-    "description": "Best CoComelon - Adults coloring pages.",
-    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/CoComelon%20-%20Adults/CoComelon_Black-and-white_coloring_page_1784892727573.png",
-    "availableAges": [
-      "kids",
-      "teens",
-      "adults"
-    ],
-    "language": "en"
-  },
-  {
-    "title": "CoComelon - Kids",
-    "slug": "cocomelon-kids",
-    "parentHub": "tv-series-and-movies",
-    "description": "Best CoComelon - Kids coloring pages.",
-    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/CoComelon%20-%20Kids/CoComelon_Black-and-white_coloring_page_1784892518305.png",
-    "availableAges": [
-      "kids",
-      "teens",
-      "adults"
-    ],
-    "language": "en"
-  },
-  {
-    "title": "CoComelon - Toddlers",
-    "slug": "cocomelon-toddlers",
-    "parentHub": "tv-series-and-movies",
-    "description": "Best CoComelon - Toddlers coloring pages.",
-    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/CoComelon%20-%20Toddlers/CoComelon_Black-and-white_coloring_page_1784892439853.png",
-    "availableAges": [
-      "kids",
-      "teens",
-      "adults"
-    ],
-    "language": "en"
-  },
-  {
-    "title": "Construction Vehicles - Toddlers",
-    "slug": "construction-vehicles-toddlers",
-    "parentHub": "toddler-specific",
-    "description": "Best Construction Vehicles - Toddlers coloring pages.",
-    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Construction%20Vehicles%20-%20Toddlers/Construction_Vehicles_black_and_white_c_1785055847120.png",
+    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/CoComelon/CoComelon_-_Adults_tra_needed_An_1786112232313.png",
     "availableAges": [
       "kids",
       "teens",
@@ -680,7 +238,7 @@
     "slug": "construction-vehicles",
     "parentHub": "toddler-specific",
     "description": "Best Construction Vehicles coloring pages.",
-    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Construction_Vehicles/Construction_Vehicles_black_and_white_c_1785055908105.png",
+    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Construction%20Vehicles/Construction_Vehicles_-_Toddlers_t_1786140468268.png",
     "availableAges": [
       "kids",
       "teens",
@@ -706,7 +264,7 @@
     "slug": "cozy-life",
     "parentHub": "adults",
     "description": "Best Cozy Life coloring pages.",
-    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/cozy%20life/ComfyUI_00789.png",
+    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/cozy%20life/ComfyUI_00789_1.png",
     "availableAges": [
       "kids",
       "teens",
@@ -715,11 +273,11 @@
     "language": "en"
   },
   {
-    "title": "Cozy Life Hygge - Adults",
-    "slug": "cozy-life-hygge-adults",
+    "title": "Cozy Life Hygge",
+    "slug": "cozy-life-hygge",
     "parentHub": "adults",
-    "description": "Best Cozy Life Hygge - Adults coloring pages.",
-    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Cozy%20Life%20_%20Hygge%20-%20Adults/Cozy_Life_Hygge_A_amazing_scene_of_co_1785046128050.png",
+    "description": "Best Cozy Life Hygge coloring pages.",
+    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Cozy%20Life%20Hygge/Cozy_Life_Hygge_-_Adults_tra_nee_1786132515028.png",
     "availableAges": [
       "kids",
       "teens",
@@ -728,76 +286,11 @@
     "language": "en"
   },
   {
-    "title": "Cozy Life Hygge - Kids",
-    "slug": "cozy-life-hygge-kids",
+    "title": "Cozy Winter Wonderland",
+    "slug": "cozy-winter-wonderland",
     "parentHub": "adults",
-    "description": "Best Cozy Life Hygge - Kids coloring pages.",
-    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Cozy%20Life%20_%20Hygge%20-%20Kids/Cozy_Life_Hygge_A_amazing_scene_of_ki_1785045893091.png",
-    "availableAges": [
-      "kids",
-      "teens",
-      "adults"
-    ],
-    "language": "en"
-  },
-  {
-    "title": "Cozy Life Hygge - Teens",
-    "slug": "cozy-life-hygge-teens",
-    "parentHub": "adults",
-    "description": "Best Cozy Life Hygge - Teens coloring pages.",
-    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Cozy%20Life%20_%20Hygge%20-%20Teens/Cozy_Life_Hygge_An_art_studio_with_lo_1785045987948.png",
-    "availableAges": [
-      "kids",
-      "teens",
-      "adults"
-    ],
-    "language": "en"
-  },
-  {
-    "title": "Cozy Life Hygge - Toddlers",
-    "slug": "cozy-life-hygge-toddlers",
-    "parentHub": "toddler-specific",
-    "description": "Best Cozy Life Hygge - Toddlers coloring pages.",
-    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Cozy%20Life%20_%20Hygge%20-%20Toddlers/Cozy_Life_Hygge_A_creative_scene_of_w_1785045809963.png",
-    "availableAges": [
-      "kids",
-      "teens",
-      "adults"
-    ],
-    "language": "en"
-  },
-  {
-    "title": "Cozy Winter Wonderland - Kids",
-    "slug": "cozy-winter-wonderland-kids",
-    "parentHub": "adults",
-    "description": "Best Cozy Winter Wonderland - Kids coloring pages.",
-    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Cozy%20Winter%20Wonderland%20-%20Kids/An_ice_castle_surrounded_by_sparkling_sn_1784880748333.png",
-    "availableAges": [
-      "kids",
-      "teens",
-      "adults"
-    ],
-    "language": "en"
-  },
-  {
-    "title": "Cozy Winter Wonderland - Teens",
-    "slug": "cozy-winter-wonderland-teens",
-    "parentHub": "adults",
-    "description": "Best Cozy Winter Wonderland - Teens coloring pages.",
-    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Cozy%20Winter%20Wonderland%20-%20Teens/An_intricate_illustration_of_delicate_ge_1784880808713.png",
-    "availableAges": [
-      "kids",
-      "teens",
-      "adults"
-    ],
-    "language": "en"
-  },
-  {
-    "title": "Cozy Winter Wonderland - Toddlers",
-    "slug": "cozy-winter-wonderland-toddlers",
-    "parentHub": "toddler-specific",
-    "description": "Best Cozy Winter Wonderland - Toddlers coloring pages.",
-    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Cozy%20Winter%20Wonderland%20-%20Toddlers/A_cute_baby_seal_resting_on_an_ice_block_1784880639678.png",
+    "description": "Best Cozy Winter Wonderland coloring pages.",
+    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Cozy%20Winter%20Wonderland/An_ice_castle_surrounded_by_sparkling_sn_1784880748333.png",
     "availableAges": [
       "kids",
       "teens",
@@ -810,7 +303,7 @@
     "slug": "creepy-kawaii",
     "parentHub": "adults",
     "description": "Best Creepy Kawaii coloring pages.",
-    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/creepy%20kawaii/ComfyUI_00928.png",
+    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/creepy%20kawaii/ComfyUI_00928_1.png",
     "availableAges": [
       "kids",
       "teens",
@@ -819,50 +312,11 @@
     "language": "en"
   },
   {
-    "title": "Creepy Kawaii - Kids",
-    "slug": "creepy-kawaii-kids",
-    "parentHub": "adults",
-    "description": "Best Creepy Kawaii - Kids coloring pages.",
-    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Creepy%20Kawaii%20-%20Kids/Creepy_Kawaii_A_awesome_scene_of_cauldr_1785058546199.png",
-    "availableAges": [
-      "kids",
-      "teens",
-      "adults"
-    ],
-    "language": "en"
-  },
-  {
-    "title": "Creepy Kawaii - Teens",
-    "slug": "creepy-kawaii-teens",
-    "parentHub": "adults",
-    "description": "Best Creepy Kawaii - Teens coloring pages.",
-    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Creepy%20Kawaii%20-%20Teens/Creepy_Kawaii_A_creepy_cute_potion_shop_1785058678932.png",
-    "availableAges": [
-      "kids",
-      "teens",
-      "adults"
-    ],
-    "language": "en"
-  },
-  {
-    "title": "Creepy Kawaii - Toddlers",
-    "slug": "creepy-kawaii-toddlers",
-    "parentHub": "toddler-specific",
-    "description": "Best Creepy Kawaii - Toddlers coloring pages.",
-    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Creepy%20Kawaii%20-%20Toddlers/Creepy_Kawaii_A_amazing_scene_of_smilin_1785058443118.png",
-    "availableAges": [
-      "kids",
-      "teens",
-      "adults"
-    ],
-    "language": "en"
-  },
-  {
-    "title": "Cute Pets Animals - Adults",
-    "slug": "cute-pets-animals-adults",
+    "title": "Cute Pets Animals",
+    "slug": "cute-pets-animals",
     "parentHub": "animals-and-nature",
-    "description": "Best Cute Pets Animals - Adults coloring pages.",
-    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Cute%20Pets%20_%20Animals%20-%20Adults/An_elaborate_Celtic_knotwork_design_feat_1784878315114.png",
+    "description": "Best Cute Pets Animals coloring pages.",
+    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Cute%20Pets%20Animals/An_elaborate_Celtic_knotwork_design_feat_1784878315114.png",
     "availableAges": [
       "kids",
       "teens",
@@ -871,76 +325,11 @@
     "language": "en"
   },
   {
-    "title": "Cute Pets Animals - Kids",
-    "slug": "cute-pets-animals-kids",
-    "parentHub": "animals-and-nature",
-    "description": "Best Cute Pets Animals - Kids coloring pages.",
-    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Cute%20Pets%20_%20Animals%20-%20Kids/A_cute_hamster_running_inside_a_colorful_1784878121907.png",
-    "availableAges": [
-      "kids",
-      "teens",
-      "adults"
-    ],
-    "language": "en"
-  },
-  {
-    "title": "Cute Pets Animals - Toddlers",
-    "slug": "cute-pets-animals-toddlers",
-    "parentHub": "animals-and-nature",
-    "description": "Best Cute Pets Animals - Toddlers coloring pages.",
-    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Cute%20Pets%20_%20Animals%20-%20Toddlers/A_cute_baby_chick_hatching_out_of_an_egg_1784878049459.png",
-    "availableAges": [
-      "kids",
-      "teens",
-      "adults"
-    ],
-    "language": "en"
-  },
-  {
-    "title": "Cyberpunk City - Adults",
-    "slug": "cyberpunk-city-adults",
+    "title": "Cyberpunk City",
+    "slug": "cyberpunk-city",
     "parentHub": "games-and-pop-culture",
-    "description": "Best Cyberpunk City - Adults coloring pages.",
-    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Cyberpunk%20City%20-%20Adults/An_elaborate_line_art_collage_depicting_1784881255500.png",
-    "availableAges": [
-      "kids",
-      "teens",
-      "adults"
-    ],
-    "language": "en"
-  },
-  {
-    "title": "Cyberpunk City - Kids",
-    "slug": "cyberpunk-city-kids",
-    "parentHub": "games-and-pop-culture",
-    "description": "Best Cyberpunk City - Kids coloring pages.",
-    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Cyberpunk%20City%20-%20Kids/A_cool_kid_wearing_futuristic_glowing_go_1784881074389.png",
-    "availableAges": [
-      "kids",
-      "teens",
-      "adults"
-    ],
-    "language": "en"
-  },
-  {
-    "title": "Cyberpunk City - Teens",
-    "slug": "cyberpunk-city-teens",
-    "parentHub": "games-and-pop-culture",
-    "description": "Best Cyberpunk City - Teens coloring pages.",
-    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Cyberpunk%20City%20-%20Teens/An_elaborate_cyberpunk_street_market_wit_1784881152897.png",
-    "availableAges": [
-      "kids",
-      "teens",
-      "adults"
-    ],
-    "language": "en"
-  },
-  {
-    "title": "Cyberpunk City - Toddlers",
-    "slug": "cyberpunk-city-toddlers",
-    "parentHub": "games-and-pop-culture",
-    "description": "Best Cyberpunk City - Toddlers coloring pages.",
-    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Cyberpunk%20City%20-%20Toddlers/A_cute_little_drone_flying_with_four_pro_1784881001918.png",
+    "description": "Best Cyberpunk City coloring pages.",
+    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Cyberpunk%20City/An_elaborate_cyberpunk_street_market_wit_1784881152897.png",
     "availableAges": [
       "kids",
       "teens",
@@ -962,128 +351,11 @@
     "language": "en"
   },
   {
-    "title": "Dinosaur Adventures - Adults",
-    "slug": "dinosaur-adventures-adults",
+    "title": "Dinosaur Adventures",
+    "slug": "dinosaur-adventures",
     "parentHub": "animals-and-nature",
-    "description": "Best Dinosaur Adventures - Adults coloring pages.",
-    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Dinosaur%20Adventures%20-%20Adults/An_elaborate_mandala_design_featuring_st_1784877572472.png",
-    "availableAges": [
-      "kids",
-      "teens",
-      "adults"
-    ],
-    "language": "en"
-  },
-  {
-    "title": "Dinosaur Adventures - Kids",
-    "slug": "dinosaur-adventures-kids",
-    "parentHub": "animals-and-nature",
-    "description": "Best Dinosaur Adventures - Kids coloring pages.",
-    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Dinosaur%20Adventures%20-%20Kids/A_baby_dinosaur_learning_to_fly_with_sma_1784877427569.png",
-    "availableAges": [
-      "kids",
-      "teens",
-      "adults"
-    ],
-    "language": "en"
-  },
-  {
-    "title": "Dinosaur Adventures - Teens",
-    "slug": "dinosaur-adventures-teens",
-    "parentHub": "animals-and-nature",
-    "description": "Best Dinosaur Adventures - Teens coloring pages.",
-    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Dinosaur%20Adventures%20-%20Teens/An_intricate_fossil_skeleton_of_a_dinosa_1784877500019.png",
-    "availableAges": [
-      "kids",
-      "teens",
-      "adults"
-    ],
-    "language": "en"
-  },
-  {
-    "title": "Dinosaur Adventures - Toddlers",
-    "slug": "dinosaur-adventures-toddlers",
-    "parentHub": "animals-and-nature",
-    "description": "Best Dinosaur Adventures - Toddlers coloring pages.",
-    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Dinosaur%20Adventures%20-%20Toddlers/A_basic_dinosaur_egg_resting_in_a_simple_1784877355081.png",
-    "availableAges": [
-      "kids",
-      "teens",
-      "adults"
-    ],
-    "language": "en"
-  },
-  {
-    "title": "Dinosaurs",
-    "slug": "dinosaurs",
-    "parentHub": "animals-and-nature",
-    "description": "Best Dinosaurs coloring pages.",
-    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/dinosaurs/ComfyUI_01229.png",
-    "availableAges": [
-      "kids",
-      "teens",
-      "adults"
-    ],
-    "language": "en"
-  },
-  {
-    "title": "Dinosaurs - Kids",
-    "slug": "dinosaurs-kids",
-    "parentHub": "animals-and-nature",
-    "description": "Best Dinosaurs - Kids coloring pages.",
-    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Dinosaurs%20-%20Kids/Dinosaurs_A_awesome_scene_of_dinosaur_f_1785060491181.png",
-    "availableAges": [
-      "kids",
-      "teens",
-      "adults"
-    ],
-    "language": "en"
-  },
-  {
-    "title": "Dinosaurs - Teens",
-    "slug": "dinosaurs-teens",
-    "parentHub": "animals-and-nature",
-    "description": "Best Dinosaurs - Teens coloring pages.",
-    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Dinosaurs%20-%20Teens/Dinosaurs_A_awesome_scene_of_highly_det_1785060568595.png",
-    "availableAges": [
-      "kids",
-      "teens",
-      "adults"
-    ],
-    "language": "en"
-  },
-  {
-    "title": "Dinosaurs - Toddlers",
-    "slug": "dinosaurs-toddlers",
-    "parentHub": "animals-and-nature",
-    "description": "Best Dinosaurs - Toddlers coloring pages.",
-    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Dinosaurs%20-%20Toddlers/Dinosaurs_A_amazing_scene_of_cute_t-rex_1785060341533.png",
-    "availableAges": [
-      "kids",
-      "teens",
-      "adults"
-    ],
-    "language": "en"
-  },
-  {
-    "title": "Disney",
-    "slug": "disney",
-    "parentHub": "disney-and-fairy-tales",
-    "description": "Best Disney coloring pages.",
-    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/disney/ComfyUI_00015.png",
-    "availableAges": [
-      "kids",
-      "teens",
-      "adults"
-    ],
-    "language": "en"
-  },
-  {
-    "title": "Disney - Ariel - Kids",
-    "slug": "disney-ariel-kids",
-    "parentHub": "disney-and-fairy-tales",
-    "description": "Best Disney - Ariel - Kids coloring pages.",
-    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Disney%20-%20Ariel%20-%20Kids%20_11%20extra%20needed_/Disney_-_Ariel_-_Kids_tra_needed_1786109468503.png",
+    "description": "Best Dinosaur Adventures coloring pages.",
+    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Dinosaur%20Adventures/An_elaborate_mandala_design_featuring_st_1784877572472.png",
     "availableAges": [
       "kids",
       "teens",
@@ -1096,20 +368,7 @@
     "slug": "disney-ariel",
     "parentHub": "disney-and-fairy-tales",
     "description": "Best Disney - Ariel coloring pages.",
-    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Disney%20-%20Ariel%20_11%20extra%20needed_/Disney_-_Ariel_tra_needed_Ariel_1786109818796.png",
-    "availableAges": [
-      "kids",
-      "teens",
-      "adults"
-    ],
-    "language": "en"
-  },
-  {
-    "title": "Disney - Belle - Kids",
-    "slug": "disney-belle-kids",
-    "parentHub": "disney-and-fairy-tales",
-    "description": "Best Disney - Belle - Kids coloring pages.",
-    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Disney%20-%20Belle%20-%20Kids%20_11%20extra%20needed_/Disney_-_Belle_-_Kids_tra_needed_1786109607283.png",
+    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Disney%20-%20Ariel/Disney_-_Ariel_-_Kids_tra_needed_1786109468503.png",
     "availableAges": [
       "kids",
       "teens",
@@ -1122,20 +381,7 @@
     "slug": "disney-belle",
     "parentHub": "disney-and-fairy-tales",
     "description": "Best Disney - Belle coloring pages.",
-    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Disney%20-%20Belle%20_11%20extra%20needed_/Disney_-_Belle_tra_needed_Belle_1786109967646.png",
-    "availableAges": [
-      "kids",
-      "teens",
-      "adults"
-    ],
-    "language": "en"
-  },
-  {
-    "title": "Disney - Cinderella - Kids",
-    "slug": "disney-cinderella-kids",
-    "parentHub": "disney-and-fairy-tales",
-    "description": "Best Disney - Cinderella - Kids coloring pages.",
-    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Disney%20-%20Cinderella%20-%20Kids%20_11%20extra%20needed_/Disney_-_Cinderella_-_Kids_tra_nee_1786109389850.png",
+    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Disney%20-%20Belle/Disney_-_Belle_-_Kids_tra_needed_1786109607283.png",
     "availableAges": [
       "kids",
       "teens",
@@ -1148,20 +394,7 @@
     "slug": "disney-cinderella",
     "parentHub": "disney-and-fairy-tales",
     "description": "Best Disney - Cinderella coloring pages.",
-    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Disney%20-%20Cinderella%20_11%20extra%20needed_/Disney_-_Cinderella_tra_needed_C_1786109756428.png",
-    "availableAges": [
-      "kids",
-      "teens",
-      "adults"
-    ],
-    "language": "en"
-  },
-  {
-    "title": "Disney - Frozen - Kids",
-    "slug": "disney-frozen-kids",
-    "parentHub": "disney-and-fairy-tales",
-    "description": "Best Disney - Frozen - Kids coloring pages.",
-    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Disney%20-%20Frozen%20-%20Kids%20_11%20extra%20needed_/Disney_-_Frozen_-_Kids_tra_needed_1786109534891.png",
+    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Disney%20-%20Cinderella/Disney_-_Cinderella_-_Kids_tra_nee_1786109389850.png",
     "availableAges": [
       "kids",
       "teens",
@@ -1174,20 +407,7 @@
     "slug": "disney-frozen",
     "parentHub": "disney-and-fairy-tales",
     "description": "Best Disney - Frozen coloring pages.",
-    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Disney%20-%20Frozen%20_11%20extra%20needed_/Disney_-_Frozen_tra_needed_Anna_1786109901279.png",
-    "availableAges": [
-      "kids",
-      "teens",
-      "adults"
-    ],
-    "language": "en"
-  },
-  {
-    "title": "Disney - Snow White - Kids",
-    "slug": "disney-snow-white-kids",
-    "parentHub": "disney-and-fairy-tales",
-    "description": "Best Disney - Snow White - Kids coloring pages.",
-    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Disney%20-%20Snow%20White%20-%20Kids%20_11%20extra%20needed_/Disney_-_Snow_White_-_Kids_tra_nee_1786109669774.png",
+    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Disney%20-%20Frozen/Disney_-_Frozen_-_Kids_tra_needed_1786109534891.png",
     "availableAges": [
       "kids",
       "teens",
@@ -1200,33 +420,7 @@
     "slug": "disney-snow-white",
     "parentHub": "disney-and-fairy-tales",
     "description": "Best Disney - Snow White coloring pages.",
-    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Disney%20-%20Snow%20White%20_11%20extra%20needed_/Disney_-_Snow_White_tra_needed_S_1786110028005.png",
-    "availableAges": [
-      "kids",
-      "teens",
-      "adults"
-    ],
-    "language": "en"
-  },
-  {
-    "title": "Disney Princesses - Kids",
-    "slug": "disney-princesses-kids",
-    "parentHub": "disney-and-fairy-tales",
-    "description": "Best Disney Princesses - Kids coloring pages.",
-    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Disney%20Princesses%20-%20Kids/Disney_Princesses_A_black-and-white_col_1784893357951.png",
-    "availableAges": [
-      "kids",
-      "teens",
-      "adults"
-    ],
-    "language": "en"
-  },
-  {
-    "title": "Disney Princesses - Toddlers",
-    "slug": "disney-princesses-toddlers",
-    "parentHub": "disney-and-fairy-tales",
-    "description": "Best Disney Princesses - Toddlers coloring pages.",
-    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Disney%20Princesses%20-%20Toddlers/Disney_Princesses_A_black-and-white_col_1784893249389.png",
+    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Disney%20-%20Snow%20White/Disney_-_Snow_White_-_Kids_tra_nee_1786109669774.png",
     "availableAges": [
       "kids",
       "teens",
@@ -1239,7 +433,7 @@
     "slug": "disney-princesses",
     "parentHub": "disney-and-fairy-tales",
     "description": "Best Disney Princesses coloring pages.",
-    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Disney_Princesses/Disney_Princesses_A_highly_intricate_bl_1784893615584.png",
+    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Disney%20Princesses/ComfyUI_00015.png",
     "availableAges": [
       "kids",
       "teens",
@@ -1252,7 +446,7 @@
     "slug": "dolphins-underwater",
     "parentHub": "animals-and-nature",
     "description": "Best Dolphins Underwater coloring pages.",
-    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Dolphins%20Underwater/SEO_Dolphins_Underwater_00001.png",
+    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Dolphins%20Underwater/Dolphins_Underwater_tra_needed_A_1786142041979.png",
     "availableAges": [
       "kids",
       "teens",
@@ -1265,7 +459,7 @@
     "slug": "dragonball",
     "parentHub": "tv-series-and-movies",
     "description": "Best Dragonball coloring pages.",
-    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/dragonball/ComfyUI_02556.png",
+    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/dragonball/ComfyUI_02556_1.png",
     "availableAges": [
       "kids",
       "teens",
@@ -1278,7 +472,7 @@
     "slug": "dragons",
     "parentHub": "disney-and-fairy-tales",
     "description": "Best Dragons coloring pages.",
-    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Dragons/SEO_Dragons_00001.png",
+    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Dragons/Dragons_tra_needed_1786142200378.png",
     "availableAges": [
       "kids",
       "teens",
@@ -1300,50 +494,11 @@
     "language": "en"
   },
   {
-    "title": "Enchanted Forest - Adults",
-    "slug": "enchanted-forest-adults",
+    "title": "Enchanted Forest",
+    "slug": "enchanted-forest",
     "parentHub": "collections",
-    "description": "Best Enchanted Forest - Adults coloring pages.",
-    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Enchanted%20Forest%20-%20Adults/An_elaborate_Celtic_knotwork_design_feat_1784877228326.png",
-    "availableAges": [
-      "kids",
-      "teens",
-      "adults"
-    ],
-    "language": "en"
-  },
-  {
-    "title": "Enchanted Forest - Kids",
-    "slug": "enchanted-forest-kids",
-    "parentHub": "collections",
-    "description": "Best Enchanted Forest - Kids coloring pages.",
-    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Enchanted%20Forest%20-%20Kids/An_enchanted_tree_with_a_friendly_carved_1784877053264.png",
-    "availableAges": [
-      "kids",
-      "teens",
-      "adults"
-    ],
-    "language": "en"
-  },
-  {
-    "title": "Enchanted Forest - Teens",
-    "slug": "enchanted-forest-teens",
-    "parentHub": "collections",
-    "description": "Best Enchanted Forest - Teens coloring pages.",
-    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Enchanted%20Forest%20-%20Teens/An_ancient_stone_portal_covered_in_runes_1784877125711.png",
-    "availableAges": [
-      "kids",
-      "teens",
-      "adults"
-    ],
-    "language": "en"
-  },
-  {
-    "title": "Enchanted Forest - Toddlers",
-    "slug": "enchanted-forest-toddlers",
-    "parentHub": "toddler-specific",
-    "description": "Best Enchanted Forest - Toddlers coloring pages.",
-    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Enchanted%20Forest%20-%20Toddlers/A_basic_fairy_with_simple_tiny_wings_1784877004960.png",
+    "description": "Best Enchanted Forest coloring pages.",
+    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Enchanted%20Forest/An_ancient_stone_portal_covered_in_runes_1784877125711.png",
     "availableAges": [
       "kids",
       "teens",
@@ -1356,7 +511,7 @@
     "slug": "fairies",
     "parentHub": "collections",
     "description": "Best Fairies coloring pages.",
-    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Fairies/Fairies_A_black-and-white_coloring_page_1784894505101.png",
+    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Fairies/Fairies_-_Kids_tra_needed_A_beau_1786123367053.png",
     "availableAges": [
       "kids",
       "teens",
@@ -1365,76 +520,11 @@
     "language": "en"
   },
   {
-    "title": "Fairies - Kids",
-    "slug": "fairies-kids",
-    "parentHub": "collections",
-    "description": "Best Fairies - Kids coloring pages.",
-    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Fairies%20-%20Kids/Fairies_A_black-and-white_coloring_page_1784894444739.png",
-    "availableAges": [
-      "kids",
-      "teens",
-      "adults"
-    ],
-    "language": "en"
-  },
-  {
-    "title": "Fairies - Toddlers",
-    "slug": "fairies-toddlers",
-    "parentHub": "toddler-specific",
-    "description": "Best Fairies - Toddlers coloring pages.",
-    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Fairies%20-%20Toddlers/Fairies_A_black-and-white_coloring_page_1784894360195.png",
-    "availableAges": [
-      "kids",
-      "teens",
-      "adults"
-    ],
-    "language": "en"
-  },
-  {
-    "title": "Fairy Tale Kingdom - Adults",
-    "slug": "fairy-tale-kingdom-adults",
+    "title": "Fairy Tale Kingdom",
+    "slug": "fairy-tale-kingdom",
     "parentHub": "disney-and-fairy-tales",
-    "description": "Best Fairy Tale Kingdom - Adults coloring pages.",
-    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Fairy%20Tale%20Kingdom%20-%20Adults/An_elaborate_line_art_collage_depicting_1784880168706.png",
-    "availableAges": [
-      "kids",
-      "teens",
-      "adults"
-    ],
-    "language": "en"
-  },
-  {
-    "title": "Fairy Tale Kingdom - Kids",
-    "slug": "fairy-tale-kingdom-kids",
-    "parentHub": "disney-and-fairy-tales",
-    "description": "Best Fairy Tale Kingdom - Kids coloring pages.",
-    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Fairy%20Tale%20Kingdom%20-%20Kids/A_beautiful_fairy_tale_castle_with_flags_1784879957414.png",
-    "availableAges": [
-      "kids",
-      "teens",
-      "adults"
-    ],
-    "language": "en"
-  },
-  {
-    "title": "Fairy Tale Kingdom - Teens",
-    "slug": "fairy-tale-kingdom-teens",
-    "parentHub": "disney-and-fairy-tales",
-    "description": "Best Fairy Tale Kingdom - Teens coloring pages.",
-    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Fairy%20Tale%20Kingdom%20-%20Teens/An_elaborate_fantasy_royal_throne_room_w_1784880078171.png",
-    "availableAges": [
-      "kids",
-      "teens",
-      "adults"
-    ],
-    "language": "en"
-  },
-  {
-    "title": "Fairy Tale Kingdom - Toddlers",
-    "slug": "fairy-tale-kingdom-toddlers",
-    "parentHub": "disney-and-fairy-tales",
-    "description": "Best Fairy Tale Kingdom - Toddlers coloring pages.",
-    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Fairy%20Tale%20Kingdom%20-%20Toddlers/A_cute_frog_wearing_a_small_gold_crown_1784879897068.png",
+    "description": "Best Fairy Tale Kingdom coloring pages.",
+    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Fairy%20Tale%20Kingdom/An_elaborate_fantasy_royal_throne_room_w_1784880078171.png",
     "availableAges": [
       "kids",
       "teens",
@@ -1447,7 +537,7 @@
     "slug": "fantasy-creatures",
     "parentHub": "disney-and-fairy-tales",
     "description": "Best Fantasy Creatures coloring pages.",
-    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Fantasy%20Creatures/SEO_Fantasy_Creatures_00001.png",
+    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Fantasy%20Creatures/Fantasy_Creatures_tra_needed_An_1786142481726.png",
     "availableAges": [
       "kids",
       "teens",
@@ -1499,7 +589,7 @@
     "slug": "flowers",
     "parentHub": "animals-and-nature",
     "description": "Best Flowers coloring pages.",
-    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/flowers/ComfyUI_01028.png",
+    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/flowers/ComfyUI_01028_1.png",
     "availableAges": [
       "kids",
       "teens",
@@ -1538,7 +628,7 @@
     "slug": "games",
     "parentHub": "games-and-pop-culture",
     "description": "Best Games coloring pages.",
-    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/games/ComfyUI_00924.png",
+    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/games/ComfyUI_00924_1.png",
     "availableAges": [
       "kids",
       "teens",
@@ -1551,7 +641,7 @@
     "slug": "gaming",
     "parentHub": "games-and-pop-culture",
     "description": "Best Gaming coloring pages.",
-    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Gaming/SEO_Gaming_00001.png",
+    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Gaming/Gaming_tra_needed_1786142267985.png",
     "availableAges": [
       "kids",
       "teens",
@@ -1560,11 +650,11 @@
     "language": "en"
   },
   {
-    "title": "Generatie 1 Kanto - Teens",
-    "slug": "generatie-1-kanto-teens",
+    "title": "Generatie 1 Kanto",
+    "slug": "generatie-1-kanto",
     "parentHub": "games-and-pop-culture",
-    "description": "Best Generatie 1 Kanto - Teens coloring pages.",
-    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Generatie%201%20_Kanto_%20-%20Teens/Generatie_1_Kanto_The_Pokemon_Abra_r_1786001419538.png",
+    "description": "Best Generatie 1 Kanto coloring pages.",
+    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Generatie%201%20Kanto/Generatie_1_Kanto_The_Pokemon_Abra_r_1786001419538.png",
     "availableAges": [
       "kids",
       "teens",
@@ -1573,11 +663,11 @@
     "language": "en"
   },
   {
-    "title": "Generatie 2 Johto - Teens",
-    "slug": "generatie-2-johto-teens",
+    "title": "Generatie 2 Johto",
+    "slug": "generatie-2-johto",
     "parentHub": "games-and-pop-culture",
-    "description": "Best Generatie 2 Johto - Teens coloring pages.",
-    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Generatie%202%20_Johto_%20-%20Teens/Generatie_2_Johto_The_Pokemon_Aipom_1786002231814.png",
+    "description": "Best Generatie 2 Johto coloring pages.",
+    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Generatie%202%20Johto/Generatie_2_Johto_The_Pokemon_Aipom_1786002231814.png",
     "availableAges": [
       "kids",
       "teens",
@@ -1586,11 +676,11 @@
     "language": "en"
   },
   {
-    "title": "Generatie 3 Hoenn - Teens",
-    "slug": "generatie-3-hoenn-teens",
+    "title": "Generatie 3 Hoenn",
+    "slug": "generatie-3-hoenn",
     "parentHub": "games-and-pop-culture",
-    "description": "Best Generatie 3 Hoenn - Teens coloring pages.",
-    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Generatie%203%20_Hoenn_%20-%20Teens/Generatie_3_Hoenn_The_Pokemon_Absol_1786003311821.png",
+    "description": "Best Generatie 3 Hoenn coloring pages.",
+    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Generatie%203%20Hoenn/Generatie_3_Hoenn_The_Pokemon_Absol_1786003311821.png",
     "availableAges": [
       "kids",
       "teens",
@@ -1599,11 +689,11 @@
     "language": "en"
   },
   {
-    "title": "Generatie 4 Sinnoh - Teens",
-    "slug": "generatie-4-sinnoh-teens",
+    "title": "Generatie 4 Sinnoh",
+    "slug": "generatie-4-sinnoh",
     "parentHub": "games-and-pop-culture",
-    "description": "Best Generatie 4 Sinnoh - Teens coloring pages.",
-    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Generatie%204%20_Sinnoh_%20-%20Teens/Generatie_4_Sinnoh_The_Pokemon_Abomas_1786003975941.png",
+    "description": "Best Generatie 4 Sinnoh coloring pages.",
+    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Generatie%204%20Sinnoh/Generatie_4_Sinnoh_The_Pokemon_Abomas_1786003975941.png",
     "availableAges": [
       "kids",
       "teens",
@@ -1612,11 +702,11 @@
     "language": "en"
   },
   {
-    "title": "Generatie 5 Unova - Teens",
-    "slug": "generatie-5-unova-teens",
+    "title": "Generatie 5 Unova",
+    "slug": "generatie-5-unova",
     "parentHub": "games-and-pop-culture",
-    "description": "Best Generatie 5 Unova - Teens coloring pages.",
-    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Generatie%205%20_Unova_%20-%20Teens/Generatie_5_Unova_The_Pokemon_Accelgo_1786004983962.png",
+    "description": "Best Generatie 5 Unova coloring pages.",
+    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Generatie%205%20Unova/Generatie_5_Unova_The_Pokemon_Accelgo_1786004983962.png",
     "availableAges": [
       "kids",
       "teens",
@@ -1625,11 +715,11 @@
     "language": "en"
   },
   {
-    "title": "Generatie 6 Kalos - Teens",
-    "slug": "generatie-6-kalos-teens",
+    "title": "Generatie 6 Kalos",
+    "slug": "generatie-6-kalos",
     "parentHub": "games-and-pop-culture",
-    "description": "Best Generatie 6 Kalos - Teens coloring pages.",
-    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Generatie%206%20_Kalos_%20-%20Teens/Generatie_6_Kalos_The_Pokemon_Aegisla_1786005391949.png",
+    "description": "Best Generatie 6 Kalos coloring pages.",
+    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Generatie%206%20Kalos/Generatie_6_Kalos_The_Pokemon_Aegisla_1786005391949.png",
     "availableAges": [
       "kids",
       "teens",
@@ -1638,11 +728,11 @@
     "language": "en"
   },
   {
-    "title": "Generatie 7 Alola - Teens",
-    "slug": "generatie-7-alola-teens",
+    "title": "Generatie 7 Alola",
+    "slug": "generatie-7-alola",
     "parentHub": "games-and-pop-culture",
-    "description": "Best Generatie 7 Alola - Teens coloring pages.",
-    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Generatie%207%20_Alola_%20-%20Teens/Generatie_7_Alola_The_Pokemon_Bewear_1786005936125.png",
+    "description": "Best Generatie 7 Alola coloring pages.",
+    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Generatie%207%20Alola/Generatie_7_Alola_The_Pokemon_Bewear_1786005936125.png",
     "availableAges": [
       "kids",
       "teens",
@@ -1651,11 +741,11 @@
     "language": "en"
   },
   {
-    "title": "Generatie 8 Galar Hisui - Teens",
-    "slug": "generatie-8-galar-hisui-teens",
+    "title": "Generatie 8 Galar Hisui",
+    "slug": "generatie-8-galar-hisui",
     "parentHub": "games-and-pop-culture",
-    "description": "Best Generatie 8 Galar Hisui - Teens coloring pages.",
-    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Generatie%208%20_Galar_%20Hisui_%20-%20Teens/Generatie_8_Galar_Hisui_The_Pokemon_1786006299028.png",
+    "description": "Best Generatie 8 Galar Hisui coloring pages.",
+    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Generatie%208%20Galar%20Hisui/Generatie_8_Galar_Hisui_The_Pokemon_1786006299028.png",
     "availableAges": [
       "kids",
       "teens",
@@ -1664,11 +754,11 @@
     "language": "en"
   },
   {
-    "title": "Generatie 9 Paldea - Teens",
-    "slug": "generatie-9-paldea-teens",
+    "title": "Generatie 9 Paldea",
+    "slug": "generatie-9-paldea",
     "parentHub": "games-and-pop-culture",
-    "description": "Best Generatie 9 Paldea - Teens coloring pages.",
-    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Generatie%209%20_Paldea_%20-%20Teens/Generatie_9_Paldea_The_Pokemon_Annihi_1786007317984.png",
+    "description": "Best Generatie 9 Paldea coloring pages.",
+    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Generatie%209%20Paldea/Generatie_9_Paldea_The_Pokemon_Annihi_1786007317984.png",
     "availableAges": [
       "kids",
       "teens",
@@ -1681,7 +771,7 @@
     "slug": "halloween",
     "parentHub": "adults",
     "description": "Best Halloween coloring pages.",
-    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Halloween/SEO_Halloween_00001.png",
+    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Halloween/Halloween_tra_needed_1786142554076.png",
     "availableAges": [
       "kids",
       "teens",
@@ -1690,50 +780,11 @@
     "language": "en"
   },
   {
-    "title": "Halloween Spooky Creatures - Adults",
-    "slug": "halloween-spooky-creatures-adults",
+    "title": "Halloween Spooky Creatures",
+    "slug": "halloween-spooky-creatures",
     "parentHub": "adults",
-    "description": "Best Halloween Spooky Creatures - Adults coloring pages.",
-    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Halloween%20_%20Spooky%20Creatures%20-%20Adults/An_elaborate_line_art_portrait_of_a_dark_1784880512840.png",
-    "availableAges": [
-      "kids",
-      "teens",
-      "adults"
-    ],
-    "language": "en"
-  },
-  {
-    "title": "Halloween Spooky Creatures - Kids",
-    "slug": "halloween-spooky-creatures-kids",
-    "parentHub": "adults",
-    "description": "Best Halloween Spooky Creatures - Kids coloring pages.",
-    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Halloween%20_%20Spooky%20Creatures%20-%20Kids/A_candy_monster_eating_piles_of_chocolat_1784880392062.png",
-    "availableAges": [
-      "kids",
-      "teens",
-      "adults"
-    ],
-    "language": "en"
-  },
-  {
-    "title": "Halloween Spooky Creatures - Teens",
-    "slug": "halloween-spooky-creatures-teens",
-    "parentHub": "adults",
-    "description": "Best Halloween Spooky Creatures - Teens coloring pages.",
-    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Halloween%20_%20Spooky%20Creatures%20-%20Teens/An_elaborate_illustration_of_a_phantom_p_1784880470556.png",
-    "availableAges": [
-      "kids",
-      "teens",
-      "adults"
-    ],
-    "language": "en"
-  },
-  {
-    "title": "Halloween Spooky Creatures - Toddlers",
-    "slug": "halloween-spooky-creatures-toddlers",
-    "parentHub": "toddler-specific",
-    "description": "Best Halloween Spooky Creatures - Toddlers coloring pages.",
-    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Halloween%20_%20Spooky%20Creatures%20-%20Toddlers/A_cute_baby_mummy_wrapped_in_simple_band_1784880271324.png",
+    "description": "Best Halloween Spooky Creatures coloring pages.",
+    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Halloween%20Spooky%20Creatures/An_elaborate_illustration_of_a_phantom_p_1784880470556.png",
     "availableAges": [
       "kids",
       "teens",
@@ -1768,11 +819,11 @@
     "language": "en"
   },
   {
-    "title": "Large Print Flowers - Seniors",
-    "slug": "large-print-flowers-seniors",
+    "title": "Large Print Flowers",
+    "slug": "large-print-flowers",
     "parentHub": "animals-and-nature",
-    "description": "Best Large Print Flowers - Seniors coloring pages.",
-    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Large%20Print%20Flowers%20-%20Seniors/Large_Print_Flowers_black_and_white_col_1785055666103.png",
+    "description": "Best Large Print Flowers coloring pages.",
+    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Large%20Print%20Flowers/Large_Print_Flowers_-_Seniors_tra_1786140896048.png",
     "availableAges": [
       "kids",
       "teens",
@@ -1781,24 +832,11 @@
     "language": "en"
   },
   {
-    "title": "Lilo Stitch - Kids",
-    "slug": "lilo-stitch-kids",
+    "title": "Lilo Stitch",
+    "slug": "lilo-stitch",
     "parentHub": "tv-series-and-movies",
-    "description": "Best Lilo Stitch - Kids coloring pages.",
-    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Lilo%20_%20Stitch%20-%20Kids/Lilo_Stitch_A_black-and-white_colorin_1784893712150.png",
-    "availableAges": [
-      "kids",
-      "teens",
-      "adults"
-    ],
-    "language": "en"
-  },
-  {
-    "title": "Lilo Stitch - Toddlers",
-    "slug": "lilo-stitch-toddlers",
-    "parentHub": "tv-series-and-movies",
-    "description": "Best Lilo Stitch - Toddlers coloring pages.",
-    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Lilo%20_%20Stitch%20-%20Toddlers/Lilo_Stitch_A_black-and-white_colorin_1784893621622.png",
+    "description": "Best Lilo Stitch coloring pages.",
+    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Lilo%20Stitch/Lilo_Stitch_-_Kids_tra_needed_1786124565048.png",
     "availableAges": [
       "kids",
       "teens",
@@ -1811,7 +849,7 @@
     "slug": "magic-wizards",
     "parentHub": "disney-and-fairy-tales",
     "description": "Best Magic Wizards coloring pages.",
-    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Magic%20Wizards/SEO_Magic_Wizards_00001.png",
+    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Magic%20Wizards/Magic_Wizards_tra_needed_1786142669922.png",
     "availableAges": [
       "kids",
       "teens",
@@ -1820,11 +858,11 @@
     "language": "en"
   },
   {
-    "title": "Magical Forest - Kids",
-    "slug": "magical-forest-kids",
+    "title": "Magical Forest",
+    "slug": "magical-forest",
     "parentHub": "collections",
-    "description": "Best Magical Forest - Kids coloring pages.",
-    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Magical%20Forest%20-%20Kids/Magical_Forest_A_awesome_scene_of_unico_1785046418357.png",
+    "description": "Best Magical Forest coloring pages.",
+    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Magical%20Forest/Magical_Forest_-_Kids_tra_needed_1786141615816.png",
     "availableAges": [
       "kids",
       "teens",
@@ -1833,76 +871,11 @@
     "language": "en"
   },
   {
-    "title": "Magical Forest - Teens",
-    "slug": "magical-forest-teens",
-    "parentHub": "collections",
-    "description": "Best Magical Forest - Teens coloring pages.",
-    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Magical%20Forest%20-%20Teens/Magical_Forest_An_enchanted_bridge_with_1785046496864.png",
-    "availableAges": [
-      "kids",
-      "teens",
-      "adults"
-    ],
-    "language": "en"
-  },
-  {
-    "title": "Magical Forest - Toddlers",
-    "slug": "magical-forest-toddlers",
-    "parentHub": "toddler-specific",
-    "description": "Best Magical Forest - Toddlers coloring pages.",
-    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Magical%20Forest%20-%20Toddlers/Magical_Forest_A_amazing_scene_of_magic_1785046242731.png",
-    "availableAges": [
-      "kids",
-      "teens",
-      "adults"
-    ],
-    "language": "en"
-  },
-  {
-    "title": "Magical Unicorns Dragons - Adults",
-    "slug": "magical-unicorns-dragons-adults",
+    "title": "Magical Unicorns Dragons",
+    "slug": "magical-unicorns-dragons",
     "parentHub": "disney-and-fairy-tales",
-    "description": "Best Magical Unicorns Dragons - Adults coloring pages.",
-    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Magical%20Unicorns%20_%20Dragons%20-%20Adults/An_elaborate_stained_glass_window_design_1784879057781.png",
-    "availableAges": [
-      "kids",
-      "teens",
-      "adults"
-    ],
-    "language": "en"
-  },
-  {
-    "title": "Magical Unicorns Dragons - Kids",
-    "slug": "magical-unicorns-dragons-kids",
-    "parentHub": "disney-and-fairy-tales",
-    "description": "Best Magical Unicorns Dragons - Kids coloring pages.",
-    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Magical%20Unicorns%20_%20Dragons%20-%20Kids/A_baby_unicorn_playing_with_colorful_but_1784878840437.png",
-    "availableAges": [
-      "kids",
-      "teens",
-      "adults"
-    ],
-    "language": "en"
-  },
-  {
-    "title": "Magical Unicorns Dragons - Teens",
-    "slug": "magical-unicorns-dragons-teens",
-    "parentHub": "disney-and-fairy-tales",
-    "description": "Best Magical Unicorns Dragons - Teens coloring pages.",
-    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Magical%20Unicorns%20_%20Dragons%20-%20Teens/An_elaborate_illustration_of_a_dragon_tr_1784879003435.png",
-    "availableAges": [
-      "kids",
-      "teens",
-      "adults"
-    ],
-    "language": "en"
-  },
-  {
-    "title": "Magical Unicorns Dragons - Toddlers",
-    "slug": "magical-unicorns-dragons-toddlers",
-    "parentHub": "disney-and-fairy-tales",
-    "description": "Best Magical Unicorns Dragons - Toddlers coloring pages.",
-    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Magical%20Unicorns%20_%20Dragons%20-%20Toddlers/A_basic_magical_castle_with_simple_tower_1784878761923.png",
+    "description": "Best Magical Unicorns Dragons coloring pages.",
+    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Magical%20Unicorns%20Dragons/An_elaborate_illustration_of_a_dragon_tr_1784879003435.png",
     "availableAges": [
       "kids",
       "teens",
@@ -1928,7 +901,7 @@
     "slug": "mermaids",
     "parentHub": "collections",
     "description": "Best Mermaids coloring pages.",
-    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Mermaids/SEO_Mermaids_00001.png",
+    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Mermaids/Mermaids_tra_needed_1786142347670.png",
     "availableAges": [
       "kids",
       "teens",
@@ -1976,50 +949,11 @@
     "language": "en"
   },
   {
-    "title": "Ocean Life - Adults",
-    "slug": "ocean-life-adults",
+    "title": "Ocean Life",
+    "slug": "ocean-life",
     "parentHub": "animals-and-nature",
-    "description": "Best Ocean Life - Adults coloring pages.",
-    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Ocean%20Life%20-%20Adults/An_elaborate_line_art_octopus_with_compl_1784876848075.png",
-    "availableAges": [
-      "kids",
-      "teens",
-      "adults"
-    ],
-    "language": "en"
-  },
-  {
-    "title": "Ocean Life - Kids",
-    "slug": "ocean-life-kids",
-    "parentHub": "animals-and-nature",
-    "description": "Best Ocean Life - Kids coloring pages.",
-    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Ocean%20Life%20-%20Kids/A_colorful_clownfish_swimming_inside_a_s_1784876683056.png",
-    "availableAges": [
-      "kids",
-      "teens",
-      "adults"
-    ],
-    "language": "en"
-  },
-  {
-    "title": "Ocean Life - Teens",
-    "slug": "ocean-life-teens",
-    "parentHub": "animals-and-nature",
-    "description": "Best Ocean Life - Teens coloring pages.",
-    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Ocean%20Life%20-%20Teens/An_elaborate_sea_turtle_swimming_through_1784876737395.png",
-    "availableAges": [
-      "kids",
-      "teens",
-      "adults"
-    ],
-    "language": "en"
-  },
-  {
-    "title": "Ocean Life - Toddlers",
-    "slug": "ocean-life-toddlers",
-    "parentHub": "animals-and-nature",
-    "description": "Best Ocean Life - Toddlers coloring pages.",
-    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Ocean%20Life%20-%20Toddlers/A_basic_clam_shell_holding_a_big_round_p_1784876616651.png",
+    "description": "Best Ocean Life coloring pages.",
+    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Ocean%20Life/An_elaborate_line_art_octopus_with_compl_1784876848075.png",
     "availableAges": [
       "kids",
       "teens",
@@ -2045,7 +979,7 @@
     "slug": "paw-patrol",
     "parentHub": "tv-series-and-movies",
     "description": "Best Paw Patrol coloring pages.",
-    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Paw_Patrol/Paw_Patrol_Black-and-white_coloring_pag_1784890427295.png",
+    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Paw%20Patrol/Paw_Patrol_Black-and-white_coloring_pag_1784890427295.png",
     "availableAges": [
       "kids",
       "teens",
@@ -2071,7 +1005,7 @@
     "slug": "princesses-castles",
     "parentHub": "disney-and-fairy-tales",
     "description": "Best Princesses Castles coloring pages.",
-    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Princesses%20Castles/SEO_Princesses_Castles_00001.png",
+    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Princesses%20Castles/Princesses_Castles_tra_needed_Ar_1786142742476.png",
     "availableAges": [
       "kids",
       "teens",
@@ -2084,7 +1018,7 @@
     "slug": "robots",
     "parentHub": "games-and-pop-culture",
     "description": "Best Robots coloring pages.",
-    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Robots/SEO_Robots_00002.png",
+    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Robots/Robots_tra_needed_1786141792112.png",
     "availableAges": [
       "kids",
       "teens",
@@ -2093,50 +1027,11 @@
     "language": "en"
   },
   {
-    "title": "Safari Wildlife - Adults",
-    "slug": "safari-wildlife-adults",
+    "title": "Safari Wildlife",
+    "slug": "safari-wildlife",
     "parentHub": "collections",
-    "description": "Best Safari Wildlife - Adults coloring pages.",
-    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Safari%20Wildlife%20-%20Adults/An_elaborate_portrait_of_a_cheetah_rende_1784878713654.png",
-    "availableAges": [
-      "kids",
-      "teens",
-      "adults"
-    ],
-    "language": "en"
-  },
-  {
-    "title": "Safari Wildlife - Kids",
-    "slug": "safari-wildlife-kids",
-    "parentHub": "collections",
-    "description": "Best Safari Wildlife - Kids coloring pages.",
-    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Safari%20Wildlife%20-%20Kids/An_ostrich_family_going_for_a_walk_acros_1784878538526.png",
-    "availableAges": [
-      "kids",
-      "teens",
-      "adults"
-    ],
-    "language": "en"
-  },
-  {
-    "title": "Safari Wildlife - Teens",
-    "slug": "safari-wildlife-teens",
-    "parentHub": "collections",
-    "description": "Best Safari Wildlife - Teens coloring pages.",
-    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Safari%20Wildlife%20-%20Teens/An_elaborate_portrait_of_a_silverback_go_1784878604957.png",
-    "availableAges": [
-      "kids",
-      "teens",
-      "adults"
-    ],
-    "language": "en"
-  },
-  {
-    "title": "Safari Wildlife - Toddlers",
-    "slug": "safari-wildlife-toddlers",
-    "parentHub": "toddler-specific",
-    "description": "Best Safari Wildlife - Toddlers coloring pages.",
-    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Safari%20Wildlife%20-%20Toddlers/A_basic_rhino_with_a_small_smooth_horn_1784878423801.png",
+    "description": "Best Safari Wildlife coloring pages.",
+    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Safari%20Wildlife/An_elaborate_portrait_of_a_cheetah_rende_1784878713654.png",
     "availableAges": [
       "kids",
       "teens",
@@ -2149,20 +1044,7 @@
     "slug": "shenron",
     "parentHub": "tv-series-and-movies",
     "description": "Best Shenron coloring pages.",
-    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Shenron/Shenron_A_complex_mandala_design_featur_1785003512543.png",
-    "availableAges": [
-      "kids",
-      "teens",
-      "adults"
-    ],
-    "language": "en"
-  },
-  {
-    "title": "Shenron - Adults",
-    "slug": "shenron-adults",
-    "parentHub": "tv-series-and-movies",
-    "description": "Best Shenron - Adults coloring pages.",
-    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Shenron%20-%20Adults/Shenron_A_massive_highly_detailed_lands_1785003498467.png",
+    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Shenron/Shenron_-_Adults_tra_needed_An_e_1786113315285.png",
     "availableAges": [
       "kids",
       "teens",
@@ -2201,59 +1083,7 @@
     "slug": "space-exploration",
     "parentHub": "collections",
     "description": "Best Space Exploration coloring pages.",
-    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/space%20exploration/ComfyUI_00062.png",
-    "availableAges": [
-      "kids",
-      "teens",
-      "adults"
-    ],
-    "language": "en"
-  },
-  {
-    "title": "Space Exploration - Adults",
-    "slug": "space-exploration-adults",
-    "parentHub": "collections",
-    "description": "Best Space Exploration - Adults coloring pages.",
-    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Space%20Exploration%20-%20Adults/An_elaborate_alien_landscape_filled_with_1784876520021.png",
-    "availableAges": [
-      "kids",
-      "teens",
-      "adults"
-    ],
-    "language": "en"
-  },
-  {
-    "title": "Space Exploration - Kids",
-    "slug": "space-exploration-kids",
-    "parentHub": "collections",
-    "description": "Best Space Exploration - Kids coloring pages.",
-    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Space%20Exploration%20-%20Kids/An_astronaut_dog_chasing_a_moon_rock_in_1784876288610.png",
-    "availableAges": [
-      "kids",
-      "teens",
-      "adults"
-    ],
-    "language": "en"
-  },
-  {
-    "title": "Space Exploration - Teens",
-    "slug": "space-exploration-teens",
-    "parentHub": "collections",
-    "description": "Best Space Exploration - Teens coloring pages.",
-    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Space%20Exploration%20-%20Teens/An_alien_biome_city_built_inside_a_massi_1784876379120.png",
-    "availableAges": [
-      "kids",
-      "teens",
-      "adults"
-    ],
-    "language": "en"
-  },
-  {
-    "title": "Space Exploration - Toddlers",
-    "slug": "space-exploration-toddlers",
-    "parentHub": "toddler-specific",
-    "description": "Best Space Exploration - Toddlers coloring pages.",
-    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Space%20Exploration%20-%20Toddlers/A_basic_shooting_star_with_cute_eyes_1784876204173.png",
+    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/space%20exploration/An_alien_biome_city_built_inside_a_massi_1784876379120.png",
     "availableAges": [
       "kids",
       "teens",
@@ -2279,46 +1109,7 @@
     "slug": "steampunk",
     "parentHub": "collections",
     "description": "Best Steampunk coloring pages.",
-    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/steampunk/ComfyUI_00558.png",
-    "availableAges": [
-      "kids",
-      "teens",
-      "adults"
-    ],
-    "language": "en"
-  },
-  {
-    "title": "Steampunk - Kids",
-    "slug": "steampunk-kids",
-    "parentHub": "collections",
-    "description": "Best Steampunk - Kids coloring pages.",
-    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Steampunk%20-%20Kids/Steampunk_A_magical_scene_of_robot_work_1785061019130.png",
-    "availableAges": [
-      "kids",
-      "teens",
-      "adults"
-    ],
-    "language": "en"
-  },
-  {
-    "title": "Steampunk - Teens",
-    "slug": "steampunk-teens",
-    "parentHub": "collections",
-    "description": "Best Steampunk - Teens coloring pages.",
-    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Steampunk%20-%20Teens/Steampunk_A_beautiful_scene_of_highly_d_1785061031201.png",
-    "availableAges": [
-      "kids",
-      "teens",
-      "adults"
-    ],
-    "language": "en"
-  },
-  {
-    "title": "Steampunk - Toddlers",
-    "slug": "steampunk-toddlers",
-    "parentHub": "toddler-specific",
-    "description": "Best Steampunk - Toddlers coloring pages.",
-    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Steampunk%20-%20Toddlers/Steampunk_A_magical_scene_of_friendly_b_1785060845180.png",
+    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/steampunk/ComfyUI_00558_1.png",
     "availableAges": [
       "kids",
       "teens",
@@ -2340,50 +1131,11 @@
     "language": "en"
   },
   {
-    "title": "Sweet Treats Desserts - Adults",
-    "slug": "sweet-treats-desserts-adults",
+    "title": "Sweet Treats Desserts",
+    "slug": "sweet-treats-desserts",
     "parentHub": "girls-themes",
-    "description": "Best Sweet Treats Desserts - Adults coloring pages.",
-    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Sweet%20Treats%20_%20Desserts%20-%20Adults/An_elaborate_line_illustration_of_a_coff_1784877964909.png",
-    "availableAges": [
-      "kids",
-      "teens",
-      "adults"
-    ],
-    "language": "en"
-  },
-  {
-    "title": "Sweet Treats Desserts - Kids",
-    "slug": "sweet-treats-desserts-kids",
-    "parentHub": "girls-themes",
-    "description": "Best Sweet Treats Desserts - Kids coloring pages.",
-    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Sweet%20Treats%20_%20Desserts%20-%20Kids/A_bubble_tea_cup_with_cute_boba_pearls_s_1784877801899.png",
-    "availableAges": [
-      "kids",
-      "teens",
-      "adults"
-    ],
-    "language": "en"
-  },
-  {
-    "title": "Sweet Treats Desserts - Teens",
-    "slug": "sweet-treats-desserts-teens",
-    "parentHub": "girls-themes",
-    "description": "Best Sweet Treats Desserts - Teens coloring pages.",
-    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Sweet%20Treats%20_%20Desserts%20-%20Teens/An_elaborate_dessert_table_display_fille_1784877832089.png",
-    "availableAges": [
-      "kids",
-      "teens",
-      "adults"
-    ],
-    "language": "en"
-  },
-  {
-    "title": "Sweet Treats Desserts - Toddlers",
-    "slug": "sweet-treats-desserts-toddlers",
-    "parentHub": "toddler-specific",
-    "description": "Best Sweet Treats Desserts - Toddlers coloring pages.",
-    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Sweet%20Treats%20_%20Desserts%20-%20Toddlers/A_cute_bowl_of_round_ice_cream_scoops_1784877705292.png",
+    "description": "Best Sweet Treats Desserts coloring pages.",
+    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Sweet%20Treats%20Desserts/An_elaborate_dessert_table_display_fille_1784877832089.png",
     "availableAges": [
       "kids",
       "teens",
@@ -2396,7 +1148,7 @@
     "slug": "underwater",
     "parentHub": "animals-and-nature",
     "description": "Best Underwater coloring pages.",
-    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/underwater/ComfyUI_00565.png",
+    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/underwater/ComfyUI_00565_1.png",
     "availableAges": [
       "kids",
       "teens",
@@ -2405,24 +1157,11 @@
     "language": "en"
   },
   {
-    "title": "Underwater Lost Cities - Kids",
-    "slug": "underwater-lost-cities-kids",
+    "title": "Underwater Lost Cities",
+    "slug": "underwater-lost-cities",
     "parentHub": "animals-and-nature",
-    "description": "Best Underwater Lost Cities - Kids coloring pages.",
-    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Underwater%20Lost%20Cities%20-%20Kids/A_cute_crab_wearing_a_crown_inside_a_sun_1784881859306.png",
-    "availableAges": [
-      "kids",
-      "teens",
-      "adults"
-    ],
-    "language": "en"
-  },
-  {
-    "title": "Underwater Lost Cities - Toddlers",
-    "slug": "underwater-lost-cities-toddlers",
-    "parentHub": "animals-and-nature",
-    "description": "Best Underwater Lost Cities - Toddlers coloring pages.",
-    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Underwater%20Lost%20Cities%20-%20Toddlers/A_cute_simple_anchor_resting_near_a_shel_1784881744576.png",
+    "description": "Best Underwater Lost Cities coloring pages.",
+    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Underwater%20Lost%20Cities/A_cute_crab_wearing_a_crown_inside_a_sun_1784881859306.png",
     "availableAges": [
       "kids",
       "teens",
@@ -2448,7 +1187,7 @@
     "slug": "unsorted",
     "parentHub": "collections",
     "description": "Best Unsorted coloring pages.",
-    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/unsorted/ComfyUI_00546.png",
+    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/unsorted/An_elaborate_floral_pastry_mandala_with_1784877934690_1.png",
     "availableAges": [
       "kids",
       "teens",
@@ -2461,7 +1200,7 @@
     "slug": "vehicles",
     "parentHub": "toddler-specific",
     "description": "Best Vehicles coloring pages.",
-    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/vehicles/ComfyUI_00542.png",
+    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/vehicles/ComfyUI_00542_1.png",
     "availableAges": [
       "kids",
       "teens",
