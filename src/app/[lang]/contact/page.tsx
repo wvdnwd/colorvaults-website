@@ -1,3 +1,5 @@
+import ContactForm from "@/components/ContactForm";
+
 export async function generateStaticParams() {
   return [{ lang: 'en' }, { lang: 'nl' }];
 }
@@ -71,78 +73,9 @@ export default async function ContactPage({ params }: { params: Promise<{ lang: 
           </div>
 
           {/* Contact form */}
-          <div style={{ background: 'white', borderRadius: 'var(--radius-lg)', border: '2px solid var(--gray-200)', padding: '2.5rem', boxShadow: 'var(--shadow-md)' }}>
-            <h2 style={{ fontSize: '1.5rem', fontWeight: 800, marginBottom: '1.75rem' }}>
-              {isEn ? 'Send Us a Message' : 'Stuur Ons een Bericht'}
-            </h2>
-            <form style={{ display: 'flex', flexDirection: 'column', gap: '1.25rem' }}>
-              <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem' }}>
-                <div>
-                  <label style={{ display: 'block', fontSize: '0.82rem', fontWeight: 700, marginBottom: '0.4rem', color: 'var(--gray-700)' }}>
-                    {isEn ? 'First Name' : 'Voornaam'} *
-                  </label>
-                  <input type="text" required style={inputStyle} placeholder={isEn ? 'John' : 'Jan'} />
-                </div>
-                <div>
-                  <label style={{ display: 'block', fontSize: '0.82rem', fontWeight: 700, marginBottom: '0.4rem', color: 'var(--gray-700)' }}>
-                    {isEn ? 'Last Name' : 'Achternaam'}
-                  </label>
-                  <input type="text" style={inputStyle} placeholder={isEn ? 'Doe' : 'Jansen'} />
-                </div>
-              </div>
-
-              <div>
-                <label style={{ display: 'block', fontSize: '0.82rem', fontWeight: 700, marginBottom: '0.4rem', color: 'var(--gray-700)' }}>
-                  {isEn ? 'Email Address' : 'E-mailadres'} *
-                </label>
-                <input type="email" required style={inputStyle} placeholder="you@example.com" />
-              </div>
-
-              <div>
-                <label style={{ display: 'block', fontSize: '0.82rem', fontWeight: 700, marginBottom: '0.4rem', color: 'var(--gray-700)' }}>
-                  {isEn ? 'Subject' : 'Onderwerp'} *
-                </label>
-                <select required style={inputStyle}>
-                  <option value="">{isEn ? 'Select a topic...' : 'Kies een onderwerp...'}</option>
-                  <option value="request">{isEn ? 'Page Request' : 'Pagina Aanvragen'}</option>
-                  <option value="bug">{isEn ? 'Report a Bug' : 'Bug Melden'}</option>
-                  <option value="business">{isEn ? 'Business / Licensing' : 'Zakelijk / Licentie'}</option>
-                  <option value="copyright">{isEn ? 'Copyright Issue' : 'Auteursrechtprobleem'}</option>
-                  <option value="other">{isEn ? 'Other' : 'Anders'}</option>
-                </select>
-              </div>
-
-              <div>
-                <label style={{ display: 'block', fontSize: '0.82rem', fontWeight: 700, marginBottom: '0.4rem', color: 'var(--gray-700)' }}>
-                  {isEn ? 'Message' : 'Bericht'} *
-                </label>
-                <textarea required rows={5} style={{ ...inputStyle, resize: 'vertical' }}
-                  placeholder={isEn ? 'Tell us how we can help...' : 'Vertel ons hoe we kunnen helpen...'} />
-              </div>
-
-              <button type="submit" className="btn-primary" style={{ width: '100%', justifyContent: 'center' }}>
-                {isEn ? '✉️ Send Message' : '✉️ Bericht Versturen'}
-              </button>
-              <p style={{ fontSize: '0.75rem', color: 'var(--gray-400)', textAlign: 'center' }}>
-                {isEn ? 'By submitting you agree to our Privacy Policy.' : 'Door te versturen ga je akkoord met ons Privacybeleid.'}
-              </p>
-            </form>
-          </div>
+          <ContactForm lang={lang} isEn={isEn} />
         </div>
       </div>
     </>
   );
 }
-
-const inputStyle: React.CSSProperties = {
-  width: '100%',
-  padding: '0.75rem 1rem',
-  borderRadius: 'var(--radius)',
-  border: '1.5px solid var(--gray-200)',
-  fontSize: '0.9rem',
-  fontFamily: 'inherit',
-  color: 'var(--foreground)',
-  background: 'var(--gray-50)',
-  outline: 'none',
-  transition: 'border-color 0.2s',
-};

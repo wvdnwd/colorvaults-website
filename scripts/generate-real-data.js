@@ -1,7 +1,6 @@
 const fs = require('fs');
 const path = require('path');
 
-// Configure this to match your DigitalOcean Spaces URL once you buy it
 const SPACES_BASE_URL = process.env.NEXT_PUBLIC_IMAGE_HOST || 'https://colorvaults.ams3.cdn.digitaloceanspaces.com';
 const inputDir = 'c:\\Users\\Gebruiker\\Desktop\\colorvaults\\Gecontroleerd';
 const dataDir = path.join(__dirname, '..', 'src', 'data');
@@ -41,6 +40,85 @@ const ageTranslations = {
   adults: { en: 'Adults', nl: 'Volwassenen' }
 };
 
+const hubsConfig = [
+  {
+    en: { title: 'Collections', slug: 'collections', description: 'Explore all our coloring page collections.', image: `${SPACES_BASE_URL}/banner/default.jpg` },
+    nl: { title: 'Collecties', slug: 'collecties', description: 'Ontdek al onze kleurplaat collecties.', image: `${SPACES_BASE_URL}/banner/default.jpg` }
+  },
+  {
+    en: { title: 'TV Series and Movies', slug: 'tv-series-and-movies', description: 'Explore all TV series and movie coloring pages.', image: `${SPACES_BASE_URL}/banner/default.jpg` },
+    nl: { title: 'TV Series en Films', slug: 'tv-series-en-films', description: 'Ontdek alle TV-series en film kleurplaten.', image: `${SPACES_BASE_URL}/banner/default.jpg` }
+  },
+  {
+    en: { title: 'Disney and Fairy Tales', slug: 'disney-and-fairy-tales', description: 'Explore Disney and fairy tale coloring pages.', image: `${SPACES_BASE_URL}/banner/default.jpg` },
+    nl: { title: 'Disney en Sprookjes', slug: 'disney-en-sprookjes', description: 'Ontdek alle Disney en sprookjes kleurplaten.', image: `${SPACES_BASE_URL}/banner/default.jpg` }
+  },
+  {
+    en: { title: 'Games and Pop Culture', slug: 'games-and-pop-culture', description: 'Explore games and pop culture coloring pages.', image: `${SPACES_BASE_URL}/banner/default.jpg` },
+    nl: { title: 'Games en Popcultuur', slug: 'games-en-popcultuur', description: 'Ontdek alle games en popcultuur kleurplaten.', image: `${SPACES_BASE_URL}/banner/default.jpg` }
+  },
+  {
+    en: { title: 'Animals and Nature', slug: 'animals-and-nature', description: 'Explore animals and nature coloring pages.', image: `${SPACES_BASE_URL}/banner/default.jpg` },
+    nl: { title: 'Dieren en Natuur', slug: 'dieren-en-natuur', description: 'Ontdek alle dieren en natuur kleurplaten.', image: `${SPACES_BASE_URL}/banner/default.jpg` }
+  },
+  {
+    en: { title: 'Toddler Specific', slug: 'toddler-specific', description: 'Explore toddler specific coloring pages.', image: `${SPACES_BASE_URL}/banner/default.jpg` },
+    nl: { title: 'Speciaal voor Peuters', slug: 'speciaal-voor-peuters', description: 'Ontdek alle kleurplaten speciaal voor peuters.', image: `${SPACES_BASE_URL}/banner/default.jpg` }
+  },
+  {
+    en: { title: 'Girls Themes', slug: 'girls-themes', description: 'Explore girls themes coloring pages.', image: `${SPACES_BASE_URL}/banner/default.jpg` },
+    nl: { title: 'Meisjes Thema\'s', slug: 'meisjes-themas', description: 'Ontdek alle meisjes thema\'s.', image: `${SPACES_BASE_URL}/banner/default.jpg` }
+  },
+  {
+    en: { title: 'Adults', slug: 'adults', description: 'Explore adult coloring pages.', image: `${SPACES_BASE_URL}/banner/default.jpg` },
+    nl: { title: 'Volwassenen', slug: 'volwassenen', description: 'Ontdek alle kleurplaten voor volwassenen.', image: `${SPACES_BASE_URL}/banner/default.jpg` }
+  },
+  {
+    en: { title: 'Mandalas', slug: 'mandalas', description: 'Explore mandala coloring pages.', image: `${SPACES_BASE_URL}/banner/default.jpg` },
+    nl: { title: 'Mandala\'s', slug: 'mandalas', description: 'Ontdek alle mandala kleurplaten.', image: `${SPACES_BASE_URL}/banner/default.jpg` }
+  },
+  {
+    en: { title: 'Calendars', slug: 'calendars', description: 'Explore calendar coloring pages.', image: `${SPACES_BASE_URL}/banner/default.jpg` },
+    nl: { title: 'Kalenders', slug: 'calendars', description: 'Ontdek alle kalender kleurplaten.', image: `${SPACES_BASE_URL}/banner/default.jpg` }
+  },
+  {
+    en: { title: 'Printables', slug: 'school-education-templates', description: 'Explore school and education templates.', image: `${SPACES_BASE_URL}/banner/default.jpg` },
+    nl: { title: 'Printables', slug: 'school-en-educatie-sjablonen', description: 'Ontdek alle school- en educatiesjablonen.', image: `${SPACES_BASE_URL}/banner/default.jpg` }
+  }
+];
+
+function getParentHubSlug(folderName, lang) {
+  const lower = folderName.toLowerCase();
+  const isEn = lang === 'en';
+  
+  if (lower.includes('mandala')) {
+    return 'mandalas';
+  }
+  if (lower.includes('bluey') || lower.includes('paw_patrol') || lower.includes('paw patrol') || lower.includes('spongebob') || lower.includes('peppa') || lower.includes('thomas') || lower.includes('blippi') || lower.includes('cocomelon') || lower.includes('anime') || lower.includes('dragonball') || lower.includes('naruto') || lower.includes('one piece') || lower.includes('sailor moon') || lower.includes('shenron') || lower.includes('lilo') || lower.includes('stitch')) {
+    return isEn ? 'tv-series-and-movies' : 'tv-series-en-films';
+  }
+  if (lower.includes('disney') || lower.includes('fairy') || lower.includes('princess') || lower.includes('ariel') || lower.includes('belle') || lower.includes('cinderella') || lower.includes('frozen') || lower.includes('snow white') || lower.includes('unicorn') || lower.includes('dragon') || lower.includes('fantasy') || lower.includes('wizard')) {
+    return isEn ? 'disney-and-fairy-tales' : 'disney-en-sprookjes';
+  }
+  if (lower.includes('pokemon') || lower.includes('pokémon') || lower.includes('generatie') || lower.includes('sonic') || lower.includes('mario') || lower.includes('ninjago') || lower.includes('fortnite') || lower.includes('gaming') || lower.includes('robot') || lower.includes('ninja') || lower.includes('samurai') || lower.includes('monster') || lower.includes('cyberpunk') || lower.includes('superhero') || lower.includes('games')) {
+    return isEn ? 'games-and-pop-culture' : 'games-en-popcultuur';
+  }
+  if (lower.includes('dog') || lower.includes('cat') || lower.includes('farm') || lower.includes('sea') || lower.includes('ocean') || lower.includes('dolphin') || lower.includes('underwater') || lower.includes('dinosaur') || lower.includes('animal') || lower.includes('bird') || lower.includes('butterfly') || lower.includes('flower') || lower.includes('botanical') || lower.includes('landscape')) {
+    return isEn ? 'animals-and-nature' : 'dieren-en-natuur';
+  }
+  if (lower.includes('toddler') || lower.includes('peuter') || lower.includes('large shape') || lower.includes('smiley') || lower.includes('vehicle') || lower.includes('construction') || lower.includes('senior')) {
+    return isEn ? 'toddler-specific' : 'speciaal-voor-peuters';
+  }
+  if (lower.includes('fashion') || lower.includes('sweet') || lower.includes('food') || lower.includes('treat') || lower.includes('pet')) {
+    return isEn ? 'girls-themes' : 'meisjes-themas';
+  }
+  if (lower.includes('cozy') || lower.includes('hygge') || lower.includes('cottagecore') || lower.includes('creepy') || lower.includes('autumn') || lower.includes('christmas') || lower.includes('easter') || lower.includes('halloween') || lower.includes('sinterklaas')) {
+    return isEn ? 'adults' : 'volwassenen';
+  }
+  
+  return isEn ? 'collections' : 'collecties';
+}
+
 const generateData = () => {
   console.log('Scanning directory:', inputDir);
   
@@ -49,21 +127,22 @@ const generateData = () => {
     return;
   }
 
-  const enHubs = [{
-    title: 'Collections',
-    slug: 'collections',
-    description: 'Explore all our coloring page collections.',
-    image: `${SPACES_BASE_URL}/banner/default.jpg`,
+  // Define hubs
+  const enHubs = hubsConfig.map(h => ({
+    title: h.en.title,
+    slug: h.en.slug,
+    description: h.en.description,
+    image: h.en.image,
     language: 'en'
-  }];
-  
-  const nlHubs = [{
-    title: 'Collecties',
-    slug: 'collecties',
-    description: 'Ontdek al onze kleurplaat collecties.',
-    image: `${SPACES_BASE_URL}/banner/default.jpg`,
+  }));
+
+  const nlHubs = hubsConfig.map(h => ({
+    title: h.nl.title,
+    slug: h.nl.slug,
+    description: h.nl.description,
+    image: h.nl.image,
     language: 'nl'
-  }];
+  }));
 
   const enThemes = [];
   const nlThemes = [];
@@ -93,6 +172,7 @@ const generateData = () => {
     if (!groupedThemes[themeSlug]) {
       groupedThemes[themeSlug] = {
         themeName: capitalize(folder), // use first encountered folder name
+        originalFolderName: folder,
         files: []
       };
     }
@@ -102,6 +182,7 @@ const generateData = () => {
 
   for (const [themeSlug, data] of Object.entries(groupedThemes)) {
     const themeName = data.themeName;
+    const folder = data.originalFolderName;
     const files = data.files;
 
     console.log(`Processing theme: ${themeName} (${files.length} images)`);
@@ -110,10 +191,13 @@ const generateData = () => {
     const firstFileUrlParts = files[0].split('/').map(encodeURIComponent).join('/');
     const themeImage = `${SPACES_BASE_URL}/${firstFileUrlParts}`;
     
+    const parentHubEn = getParentHubSlug(folder, 'en');
+    const parentHubNl = getParentHubSlug(folder, 'nl');
+
     enThemes.push({
       title: themeName,
       slug: themeSlug,
-      parentHub: 'collections',
+      parentHub: parentHubEn,
       description: `Best ${themeName} coloring pages.`,
       image: themeImage,
       availableAges: Object.keys(ageTranslations),
@@ -123,7 +207,7 @@ const generateData = () => {
     nlThemes.push({
       title: themeName,
       slug: themeSlug,
-      parentHub: 'collecties',
+      parentHub: parentHubNl,
       description: `Beste ${themeName} kleurplaten.`,
       image: themeImage,
       availableAges: Object.keys(ageTranslations).map(a => ageTranslations[a].nl.toLowerCase()),
@@ -141,7 +225,7 @@ const generateData = () => {
       enAges.push({
         title: `${themeName} for ${enAgeTitle}`,
         slug: enAge,
-        parentHub: 'collections',
+        parentHub: parentHubEn,
         parentTheme: themeSlug,
         ageGroup: enAge,
         introText: `Great ${themeName} coloring pages for ${enAgeTitle}.`,
@@ -153,7 +237,7 @@ const generateData = () => {
       nlAges.push({
         title: `${themeName} voor ${nlAgeTitle}`,
         slug: nlAge,
-        parentHub: 'collecties',
+        parentHub: parentHubNl,
         parentTheme: themeSlug,
         ageGroup: nlAge,
         introText: `Geweldige ${themeName} kleurplaten voor ${nlAgeTitle}.`,
@@ -191,7 +275,7 @@ const generateData = () => {
         id: pageId,
         title: niceTitle,
         slug: pageSlug,
-        parentHub: 'collections',
+        parentHub: parentHubEn,
         parentTheme: themeSlug,
         ageGroup: enAge,
         image: imageUrl,
@@ -211,7 +295,7 @@ const generateData = () => {
         id: pageId,
         title: niceTitle,
         slug: pageSlug,
-        parentHub: 'collecties',
+        parentHub: parentHubNl,
         parentTheme: themeSlug,
         ageGroup: nlAge,
         image: imageUrl,
@@ -229,6 +313,230 @@ const generateData = () => {
     });
   }
 
+  // --- CUSTOM CALENDARS INJECTION ---
+  const calendarThemes = [
+    { en: 'Blank Calendars', nl: 'Blanco Kalenders', slug: 'blank-calendars', images: ['blank-calendars-1.jpg', 'blank-calendars-2.jpg'] },
+    { en: 'Monthly Calendars', nl: 'Maandkalenders', slug: 'monthly-calendars', images: ['monthly-calendars-1.jpg', 'monthly-calendars-2.jpg'] },
+    { en: 'Yearly Calendars', nl: 'Jaarkalenders', slug: 'yearly-calendars', images: ['yearly-calendars-1.jpg', 'yearly-calendars-2.jpg'] }
+  ];
+
+  calendarThemes.forEach(ct => {
+    enThemes.push({
+      title: ct.en,
+      slug: ct.slug,
+      parentHub: 'calendars',
+      description: `Free printable ${ct.en} for planning and organization.`,
+      image: `/images/pages/${ct.images[0]}`,
+      availableAges: ['kids', 'teens', 'adults'],
+      language: 'en'
+    });
+
+    nlThemes.push({
+      title: ct.nl,
+      slug: ct.slug,
+      parentHub: 'calendars',
+      description: `Gratis printbare ${ct.nl} voor planning en organisatie.`,
+      image: `/images/pages/${ct.images[0]}`,
+      availableAges: ['kinderen', 'tieners', 'volwassenen'],
+      language: 'nl'
+    });
+
+    const enAgesList = ['kids', 'teens', 'adults'];
+    const nlAgesList = ['kinderen', 'tieners', 'volwassenen'];
+
+    enAgesList.forEach(age => {
+      enAges.push({
+        title: `${ct.en} for ${age}`,
+        slug: age,
+        parentHub: 'calendars',
+        parentTheme: ct.slug,
+        ageGroup: age,
+        introText: `Download free printable ${ct.en} for ${age}.`,
+        seoText: `High-quality ${ct.en} for ${age}.`,
+        faq: [],
+        language: 'en'
+      });
+    });
+
+    nlAgesList.forEach(age => {
+      nlAges.push({
+        title: `${ct.nl} voor ${age}`,
+        slug: age,
+        parentHub: 'calendars',
+        parentTheme: ct.slug,
+        ageGroup: age,
+        introText: `Download gratis printbare ${ct.nl} voor ${age}.`,
+        seoText: `Hoge kwaliteit ${ct.nl} voor ${age}.`,
+        faq: [],
+        language: 'nl'
+      });
+    });
+
+    ct.images.forEach((imgName, index) => {
+      const pageId = `page-calendar-${ct.slug}-${index + 1}`;
+      const pageSlug = `${ct.slug}-${index + 1}`;
+      const imagePath = `/images/pages/${imgName}`;
+      const niceTitleEn = `${ct.en} Style ${index + 1}`;
+      const niceTitleNl = `${ct.nl} Stijl ${index + 1}`;
+
+      enAgesList.forEach(age => {
+        enPages.push({
+          id: `${pageId}-${age}`,
+          title: niceTitleEn,
+          slug: `${pageSlug}-${age}`,
+          parentHub: 'calendars',
+          parentTheme: ct.slug,
+          ageGroup: age,
+          image: imagePath,
+          preview: imagePath,
+          downloadableFile: imagePath,
+          metaTitle: `${niceTitleEn} - Free Printable Calendar`,
+          metaDescription: `Printable ${ct.en}: ${niceTitleEn}`,
+          shortDescription: `Beautiful ${ct.en} printable.`,
+          longDescription: `This is a beautiful printable calendar page featuring ${niceTitleEn}. Perfect for staying organized and creative.`,
+          altText: niceTitleEn,
+          tags: ['calendars'],
+          relatedPages: [],
+          language: 'en'
+        });
+      });
+
+      nlAgesList.forEach(age => {
+        nlPages.push({
+          id: `${pageId}-${age}`,
+          title: niceTitleNl,
+          slug: `${pageSlug}-${age}`,
+          parentHub: 'calendars',
+          parentTheme: ct.slug,
+          ageGroup: age,
+          image: imagePath,
+          preview: imagePath,
+          downloadableFile: imagePath,
+          metaTitle: `${niceTitleNl} - Gratis Printbare Kalender`,
+          metaDescription: `Printbare ${ct.nl}: ${niceTitleNl}`,
+          shortDescription: `Prachtige ${ct.nl} printable.`,
+          longDescription: `Dit is een prachtige printbare kalender van ${niceTitleNl}. Perfect om georganiseerd en creatief te blijven.`,
+          altText: niceTitleNl,
+          tags: ['kalenders'],
+          relatedPages: [],
+          language: 'nl'
+        });
+      });
+    });
+  });
+
+  // --- CUSTOM PRINTABLES INJECTION ---
+  const printableThemes = [
+    { en: 'Classroom Templates', nl: 'Klaslokaal Sjablonen', slug: 'classroom-templates', image: 'school-education-templates.png' }
+  ];
+
+  printableThemes.forEach(pt => {
+    enThemes.push({
+      title: pt.en,
+      slug: pt.slug,
+      parentHub: 'school-education-templates',
+      description: `Free printable ${pt.en} for teachers, students, and classroom activities.`,
+      image: `/images/categories/${pt.image}`,
+      availableAges: ['kids', 'teens'],
+      language: 'en'
+    });
+
+    nlThemes.push({
+      title: pt.nl,
+      slug: pt.slug,
+      parentHub: 'school-en-educatie-sjablonen',
+      description: `Gratis printbare ${pt.nl} voor leraren, studenten en klasactiviteiten.`,
+      image: `/images/categories/${pt.image}`,
+      availableAges: ['kinderen', 'tieners'],
+      language: 'nl'
+    });
+
+    const enAgesList = ['kids', 'teens'];
+    const nlAgesList = ['kinderen', 'tieners'];
+
+    enAgesList.forEach(age => {
+      enAges.push({
+        title: `${pt.en} for ${age}`,
+        slug: age,
+        parentHub: 'school-education-templates',
+        parentTheme: pt.slug,
+        ageGroup: age,
+        introText: `Download free printable ${pt.en} for ${age}.`,
+        seoText: `High-quality classroom templates for ${age}.`,
+        faq: [],
+        language: 'en'
+      });
+    });
+
+    nlAgesList.forEach(age => {
+      nlAges.push({
+        title: `${pt.nl} voor ${age}`,
+        slug: age,
+        parentHub: 'school-en-educatie-sjablonen',
+        parentTheme: pt.slug,
+        ageGroup: age,
+        introText: `Download gratis printbare ${pt.nl} voor ${age}.`,
+        seoText: `Hoge kwaliteit classroom templates voor ${age}.`,
+        faq: [],
+        language: 'nl'
+      });
+    });
+
+    const mockSchoolFiles = ['blank-calendars-1.jpg', 'yearly-calendars-2.jpg'];
+
+    mockSchoolFiles.forEach((imgName, index) => {
+      const pageId = `page-printable-${pt.slug}-${index + 1}`;
+      const pageSlug = `${pt.slug}-${index + 1}`;
+      const imagePath = `/images/pages/${imgName}`;
+      const niceTitleEn = `${pt.en} Style ${index + 1}`;
+      const niceTitleNl = `${pt.nl} Stijl ${index + 1}`;
+
+      enAgesList.forEach(age => {
+        enPages.push({
+          id: `${pageId}-${age}`,
+          title: niceTitleEn,
+          slug: `${pageSlug}-${age}`,
+          parentHub: 'school-education-templates',
+          parentTheme: pt.slug,
+          ageGroup: age,
+          image: imagePath,
+          preview: imagePath,
+          downloadableFile: imagePath,
+          metaTitle: `${niceTitleEn} - Free Classroom Printable`,
+          metaDescription: `Printable ${pt.en}: ${niceTitleEn}`,
+          shortDescription: `Beautiful classroom printable.`,
+          longDescription: `This is a beautiful classroom printable worksheet featuring ${niceTitleEn}. Perfect for teaching and student activities.`,
+          altText: niceTitleEn,
+          tags: ['classroom'],
+          relatedPages: [],
+          language: 'en'
+        });
+      });
+
+      nlAgesList.forEach(age => {
+        nlPages.push({
+          id: `${pageId}-${age}`,
+          title: niceTitleNl,
+          slug: `${pageSlug}-${age}`,
+          parentHub: 'school-en-educatie-sjablonen',
+          parentTheme: pt.slug,
+          ageGroup: age,
+          image: imagePath,
+          preview: imagePath,
+          downloadableFile: imagePath,
+          metaTitle: `${niceTitleNl} - Gratis Klaslokaal Printable`,
+          metaDescription: `Printbare ${pt.nl}: ${niceTitleNl}`,
+          shortDescription: `Prachtige classroom printable.`,
+          longDescription: `Dit is een prachtige klaslokaal printable van ${niceTitleNl}. Perfect voor lesgeven en studentenactiviteiten.`,
+          altText: niceTitleNl,
+          tags: ['klaslokaal'],
+          relatedPages: [],
+          language: 'nl'
+        });
+      });
+    });
+  });
+
   console.log(`\nGenerated data for ${enThemes.length} themes and ${enPages.length} coloring pages.`);
 
   fs.writeFileSync(path.join(dataDir, 'en', 'main-hubs.json'), JSON.stringify(enHubs, null, 2));
@@ -242,4 +550,4 @@ const generateData = () => {
 };
 
 generateData();
-console.log('Successfully generated real data set.');
+console.log('Successfully generated real data set with correct multi-hub category mapping.');

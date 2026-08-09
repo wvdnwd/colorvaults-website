@@ -5,5 +5,75 @@
     "description": "Ontdek al onze kleurplaat collecties.",
     "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/banner/default.jpg",
     "language": "nl"
+  },
+  {
+    "title": "TV Series en Films",
+    "slug": "tv-series-en-films",
+    "description": "Ontdek alle TV-series en film kleurplaten.",
+    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/banner/default.jpg",
+    "language": "nl"
+  },
+  {
+    "title": "Disney en Sprookjes",
+    "slug": "disney-en-sprookjes",
+    "description": "Ontdek alle Disney en sprookjes kleurplaten.",
+    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/banner/default.jpg",
+    "language": "nl"
+  },
+  {
+    "title": "Games en Popcultuur",
+    "slug": "games-en-popcultuur",
+    "description": "Ontdek alle games en popcultuur kleurplaten.",
+    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/banner/default.jpg",
+    "language": "nl"
+  },
+  {
+    "title": "Dieren en Natuur",
+    "slug": "dieren-en-natuur",
+    "description": "Ontdek alle dieren en natuur kleurplaten.",
+    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/banner/default.jpg",
+    "language": "nl"
+  },
+  {
+    "title": "Speciaal voor Peuters",
+    "slug": "speciaal-voor-peuters",
+    "description": "Ontdek alle kleurplaten speciaal voor peuters.",
+    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/banner/default.jpg",
+    "language": "nl"
+  },
+  {
+    "title": "Meisjes Thema's",
+    "slug": "meisjes-themas",
+    "description": "Ontdek alle meisjes thema's.",
+    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/banner/default.jpg",
+    "language": "nl"
+  },
+  {
+    "title": "Volwassenen",
+    "slug": "volwassenen",
+    "description": "Ontdek alle kleurplaten voor volwassenen.",
+    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/banner/default.jpg",
+    "language": "nl"
+  },
+  {
+    "title": "Mandala's",
+    "slug": "mandalas",
+    "description": "Ontdek alle mandala kleurplaten.",
+    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/banner/default.jpg",
+    "language": "nl"
+  },
+  {
+    "title": "Kalenders",
+    "slug": "calendars",
+    "description": "Ontdek alle kalender kleurplaten.",
+    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/banner/default.jpg",
+    "language": "nl"
+  },
+  {
+    "title": "Printables",
+    "slug": "school-en-educatie-sjablonen",
+    "description": "Ontdek alle school- en educatiesjablonen.",
+    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/banner/default.jpg",
+    "language": "nl"
   }
 ]

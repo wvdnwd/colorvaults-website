@@ -1,3 +1,5 @@
+import RequestForm from "@/components/RequestForm";
+
 export async function generateStaticParams() {
   return [{ lang: 'en' }, { lang: 'nl' }];
 }
@@ -60,64 +62,7 @@ export default async function RequestPage({ params }: { params: Promise<{ lang: 
             </div>
           </div>
 
-          <div style={{ background: 'white', borderRadius: 'var(--radius-lg)', border: '2px solid var(--gray-200)', padding: '2.5rem', boxShadow: 'var(--shadow-md)' }}>
-            <h2 style={{ fontSize: '1.5rem', fontWeight: 800, marginBottom: '1.5rem' }}>
-              {isEn ? 'Submit Your Request' : 'Stuur Je Aanvraag'}
-            </h2>
-            <div style={{ display: 'flex', flexDirection: 'column', gap: '1.25rem' }}>
-              {[
-                { label: isEn ? 'Your Name' : 'Jouw Naam', placeholder: isEn ? 'Enter your name' : 'Voer je naam in', type: 'text' },
-                { label: isEn ? 'Email Address' : 'E-mailadres', placeholder: isEn ? 'Enter your email' : 'Voer je e-mail in', type: 'email' },
-                { label: isEn ? 'What would you like?' : 'Wat wil je graag?', placeholder: isEn ? 'e.g. Sonic the Hedgehog for teens' : 'bijv. Sonic the Hedgehog voor tieners', type: 'text' },
-              ].map(field => (
-                <div key={field.label}>
-                  <label style={{ display: 'block', fontSize: '0.85rem', fontWeight: 700, marginBottom: '0.4rem', color: 'var(--gray-700)' }}>
-                    {field.label}
-                  </label>
-                  <input
-                    type={field.type}
-                    placeholder={field.placeholder}
-                    style={{
-                      width: '100%',
-                      padding: '0.75rem 1rem',
-                      borderRadius: 'var(--radius)',
-                      border: '1.5px solid var(--gray-200)',
-                      fontSize: '0.9rem',
-                      fontFamily: 'inherit',
-                      outline: 'none',
-                      transition: 'border-color 0.2s',
-                    }}
-                  />
-                </div>
-              ))}
-              <div>
-                <label style={{ display: 'block', fontSize: '0.85rem', fontWeight: 700, marginBottom: '0.4rem', color: 'var(--gray-700)' }}>
-                  {isEn ? 'Additional Details' : 'Extra Details'}
-                </label>
-                <textarea
-                  rows={4}
-                  placeholder={isEn ? 'Any extra details about your request...' : 'Extra details over je aanvraag...'}
-                  style={{
-                    width: '100%',
-                    padding: '0.75rem 1rem',
-                    borderRadius: 'var(--radius)',
-                    border: '1.5px solid var(--gray-200)',
-                    fontSize: '0.9rem',
-                    fontFamily: 'inherit',
-                    resize: 'vertical',
-                    outline: 'none',
-                  }}
-                />
-              </div>
-              <button
-                type="button"
-                className="btn-primary"
-                style={{ width: '100%', justifyContent: 'center' }}
-              >
-                {isEn ? '🚀 Submit Request' : '🚀 Aanvraag Indienen'}
-              </button>
-            </div>
-          </div>
+          <RequestForm lang={lang} isEn={isEn} />
         </div>
       </div>
     </>
