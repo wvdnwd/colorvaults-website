@@ -56,7 +56,7 @@ export default async function HomePage({ params }: { params: Promise<{ lang: str
       desc: isEn ? 'Detailed anime, gaming & fantasy' : 'Gedetailleerde anime, games & fantasie',
       className: styles.ageTeens,
       hubSlug: isEn ? 'games-and-pop-culture' : 'games-en-popcultuur',
-      themeSlug: 'dragonball',
+      themeSlug: 'pokemon',
       ageSlug: isEn ? 'teens' : 'tieners'
     },
     {
@@ -74,9 +74,9 @@ export default async function HomePage({ params }: { params: Promise<{ lang: str
   const quickSearchPills = [
     { name: isEn ? 'Dinosaurs' : 'Dinosaurussen', query: 'dinosaur' },
     { name: isEn ? 'Unicorns' : 'Eenhoorns', query: 'unicorn' },
-    { name: isEn ? 'Anime' : 'Anime', query: 'anime' },
+    { name: isEn ? 'Pokemon' : 'Pokemon', query: 'pokemon' },
     { name: isEn ? 'Disney' : 'Disney', query: 'disney' },
-    { name: 'Paw Patrol', query: 'paw patrol' },
+    { name: 'SpongeBob', query: 'spongebob' },
     { name: 'Mandalas', query: 'mandala' }
   ];
 
