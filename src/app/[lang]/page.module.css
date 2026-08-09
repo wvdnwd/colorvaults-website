@@ -2,9 +2,9 @@
 .hero {
   position: relative;
   text-align: center;
-  padding: 6rem 1.5rem 5rem;
+  padding: 6rem 1.5rem 6rem;
   overflow: hidden;
-  background: linear-gradient(160deg, #fdfbff 0%, #f3eeff 40%, #fce7f3 100%);
+  background: radial-gradient(circle at 50% -20%, #ffedd5 0%, #f3e8ff 40%, #fce7f3 80%, var(--background) 100%);
   border-bottom: 1px solid var(--gray-200);
 }
 
@@ -14,8 +14,10 @@
   background-image: url('/images/banner.jpg');
   background-size: cover;
   background-position: center;
-  opacity: 0.06;
+  opacity: 0.15;
   z-index: 0;
+  mask-image: linear-gradient(to bottom, black 30%, transparent 100%);
+  -webkit-mask-image: linear-gradient(to bottom, black 30%, transparent 100%);
 }
 
 .heroInner {
@@ -70,8 +72,15 @@
   gap: 2.5rem;
   justify-content: center;
   flex-wrap: wrap;
-  padding-top: 2rem;
-  border-top: 1px solid var(--gray-200);
+  padding: 1.5rem 3rem;
+  background: rgba(255, 255, 255, 0.4);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  border-radius: var(--radius-xl);
+  box-shadow: var(--shadow-md);
+  margin: 0 auto;
+  max-width: fit-content;
 }
 
 .statItem {

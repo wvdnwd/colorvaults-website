@@ -84,7 +84,7 @@ export default function Navbar({ lang }: { lang: string }) {
       <div className={styles.navContainer}>
         {/* Logo */}
         <Link href={`/${lang}`} className={styles.logo}>
-          <img src="/images/logo.jpg" alt="ColorVaults" width={180} height={56} style={{ objectFit: 'contain' }} />
+          <img src="/images/logo.jpg" alt="ColorVaults" style={{ height: '70px', width: 'auto', objectFit: 'contain' }} />
         </Link>
 
         {/* Desktop Nav Items */}

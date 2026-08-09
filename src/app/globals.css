@@ -31,12 +31,12 @@
   --radius-lg: 1.25rem;
   --radius-xl: 2rem;
 
-  /* Shadows */
-  --shadow-sm: 0 1px 2px rgba(0,0,0,0.05);
-  --shadow: 0 4px 6px -1px rgba(0,0,0,0.07), 0 2px 4px -1px rgba(0,0,0,0.05);
-  --shadow-md: 0 10px 15px -3px rgba(0,0,0,0.08), 0 4px 6px -2px rgba(0,0,0,0.04);
-  --shadow-lg: 0 20px 25px -5px rgba(0,0,0,0.1), 0 10px 10px -5px rgba(0,0,0,0.04);
-  --shadow-purple: 0 10px 30px -5px rgba(124,58,237,0.25);
+  /* Shadows - Softer Premium Look */
+  --shadow-sm: 0 2px 8px rgba(0,0,0,0.04);
+  --shadow: 0 8px 24px rgba(0,0,0,0.06);
+  --shadow-md: 0 12px 32px rgba(0,0,0,0.08);
+  --shadow-lg: 0 24px 48px rgba(0,0,0,0.12);
+  --shadow-purple: 0 10px 30px -5px rgba(124,58,237,0.3);
 }
 
 [data-theme='dark'] {
@@ -145,10 +145,18 @@ main {
 
 /* Gradient Text */
 .gradient-text {
-  background: linear-gradient(135deg, var(--primary) 0%, #a855f7 50%, #ec4899 100%);
+  background: linear-gradient(90deg, #ff4b82, #ff9a44, #f9cb28, #00d2ff, #7c3aed);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
+  background-size: 200% auto;
+  animation: shine 5s linear infinite;
+}
+
+@keyframes shine {
+  to {
+    background-position: 200% center;
+  }
 }
 
 /* Buttons */
@@ -156,24 +164,23 @@ main {
   display: inline-flex;
   align-items: center;
   gap: 0.5rem;
-  background: var(--primary);
+  background: linear-gradient(135deg, var(--primary) 0%, #a855f7 100%);
   color: white;
   padding: 0.8rem 1.75rem;
-  border-radius: var(--radius);
-  font-weight: 700;
-  font-size: 1rem;
+  border-radius: 100px; /* pill shape for a more premium playful look */
+  font-weight: 800;
+  font-size: 1.05rem;
   font-family: inherit;
   border: none;
   cursor: pointer;
-  transition: all 0.2s ease;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   box-shadow: var(--shadow-purple);
   text-decoration: none;
 }
 
 .btn-primary:hover {
-  background: var(--primary-hover);
-  transform: translateY(-2px);
-  box-shadow: 0 15px 35px -5px rgba(124,58,237,0.35);
+  transform: translateY(-3px) scale(1.02);
+  box-shadow: 0 20px 40px -10px rgba(124,58,237,0.5);
 }
 
 .btn-secondary {
