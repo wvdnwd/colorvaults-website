@@ -10,6 +10,7 @@ import ThemeProvider from "@/components/ThemeProvider";
 const plusJakarta = Plus_Jakarta_Sans({ subsets: ["latin"], weight: ["400", "500", "600", "700", "800"] });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://colorvaults.com"),
   title: {
     template: "%s | ColorVaults",
     default: "ColorVaults | Free Premium Coloring Pages",

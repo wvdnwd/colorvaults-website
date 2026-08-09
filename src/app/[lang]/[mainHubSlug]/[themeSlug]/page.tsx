@@ -2,6 +2,7 @@ import { getThemes, getThemeBySlug, getMainHubs } from '@/lib/api';
 import { notFound } from 'next/navigation';
 import Link from 'next/link';
 import Breadcrumbs from '@/components/Breadcrumbs';
+import AdSlot from '@/components/AdSlot';
 
 export async function generateStaticParams() {
   const themesEn = getThemes('en').map(t => ({ lang: 'en', mainHubSlug: t.parentHub, themeSlug: t.slug }));
@@ -58,17 +59,20 @@ export default async function ThemePage({ params }: { params: Promise<{ lang: st
           <h1 className="title-h1" style={{ marginTop: '1rem' }}>
             {isEn ? `${theme.title} Coloring Pages` : `${theme.title} Kleurplaten`}
           </h1>
-          <p style={{ color: 'var(--gray-600)', fontSize: '1.1rem', marginTop: '0.5rem', lineHeight: 1.7 }}>
+          <p style={{ color: 'var(--gray-600)', fontSize: '1.1rem', marginTop: '0.6rem', lineHeight: 1.7, maxWidth: '640px' }}>
             {theme.description}
           </p>
         </div>
       </div>
 
       <div className="container section">
+        <AdSlot type="banner" text={isEn ? "Sponsored Content" : "Gesponsord"} />
+
         <div className="section-header">
           <h2 className="title-h2">{isEn ? 'Select an Age Group' : 'Kies een Leeftijdsgroep'}</h2>
         </div>
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(220px, 1fr))', gap: '1.25rem' }}>
+
+        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(240px, 1fr))', gap: '1.5rem' }}>
           {theme.availableAges.map(age => {
             const label = ageLabels[age];
             return (
@@ -79,13 +83,13 @@ export default async function ThemePage({ params }: { params: Promise<{ lang: st
                 style={{ textDecoration: 'none' }}
               >
                 <div className="age-card">
-                  <div style={{ fontSize: '2.5rem', marginBottom: '0.75rem' }}>
+                  <div style={{ fontSize: '3rem', marginBottom: '0.75rem' }}>
                     {label?.emoji || '🎨'}
                   </div>
-                  <h3 style={{ fontSize: '1.1rem', fontWeight: 800, color: 'var(--foreground)', marginBottom: '0.25rem', textTransform: 'capitalize' }}>
+                  <h3 style={{ fontSize: '1.25rem', fontWeight: 800, color: 'var(--foreground)', marginBottom: '0.35rem', textTransform: 'capitalize' }}>
                     {label ? (isEn ? label.en : label.nl) : age}
                   </h3>
-                  <p style={{ fontSize: '0.8rem', color: 'var(--gray-500)', marginTop: '0.5rem' }}>
+                  <p style={{ fontSize: '0.85rem', color: 'var(--gray-500)', fontWeight: 600 }}>
                     {isEn ? 'Browse pages →' : 'Bladeren →'}
                   </p>
                 </div>
@@ -94,7 +98,9 @@ export default async function ThemePage({ params }: { params: Promise<{ lang: st
           })}
         </div>
 
-        <div className="seo-block" style={{ marginTop: '4rem' }}>
+        <AdSlot type="banner" text={isEn ? "Sponsored Content" : "Gesponsord"} />
+
+        <div className="seo-block" style={{ marginTop: '3.5rem' }}>
           <h2>{isEn ? `About ${theme.title} Coloring Pages` : `Over ${theme.title} Kleurplaten`}</h2>
           <p>{theme.description} {isEn
             ? `Find the perfect ${theme.title} coloring page for any age group. All pages are free to download and print.`

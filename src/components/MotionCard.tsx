@@ -28,20 +28,21 @@ export default function MotionCard({ page, lang, isEn }: MotionCardProps) {
       initial={{ opacity: 0, y: 20 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, margin: '-50px' }}
-      whileHover={{ y: -6 }}
-      transition={{ duration: 0.3 }}
+      whileHover={{ y: -8 }}
+      transition={{ duration: 0.3, ease: [0.34, 1.56, 0.64, 1] }}
       style={{ position: 'relative' }}
     >
       <Link href={url} className="card" style={{ height: '100%' }}>
-        <div style={{ position: 'relative' }}>
+        <div className="card-img-wrapper" style={{ aspectRatio: '3/4', position: 'relative', background: '#FFFFFF', padding: '1rem', borderBottom: '1px solid var(--gray-200)' }}>
           <Image 
             src={page.preview} 
             alt={page.title} 
             width={400} 
             height={400} 
             className="card-img" 
+            style={{ objectFit: 'contain', width: '100%', height: '100%' }}
           />
-          <div style={{ position: 'absolute', top: '10px', right: '10px', zIndex: 10 }}>
+          <div style={{ position: 'absolute', top: '12px', right: '12px', zIndex: 10 }}>
             <FavoriteButton 
               item={{ 
                 id: page.id, 
@@ -52,21 +53,41 @@ export default function MotionCard({ page, lang, isEn }: MotionCardProps) {
               }} 
             />
           </div>
+          <div style={{
+            position: 'absolute',
+            bottom: '12px',
+            left: '12px',
+            background: 'rgba(255, 255, 255, 0.9)',
+            backdropFilter: 'blur(8px)',
+            borderRadius: 'var(--radius-full)',
+            padding: '0.2rem 0.65rem',
+            fontSize: '0.72rem',
+            fontWeight: 800,
+            color: 'var(--primary)',
+            textTransform: 'capitalize',
+            border: '1px solid rgba(108, 92, 231, 0.15)'
+          }}>
+            {page.ageGroup}
+          </div>
         </div>
+        
         <div className="card-body">
           <h3 className="card-title">{page.title}</h3>
-          <p className="card-desc">{page.shortDescription}</p>
+          <p className="card-desc" style={{ display: '-webkit-box', WebkitLineClamp: 2, WebkitBoxOrient: 'vertical', overflow: 'hidden' }}>
+            {page.shortDescription}
+          </p>
           <div style={{
             display: 'inline-flex',
             alignItems: 'center',
-            gap: '0.35rem',
-            marginTop: '0.75rem',
+            gap: '0.4rem',
+            marginTop: 'auto',
+            paddingTop: '0.75rem',
             color: 'var(--primary)',
-            fontSize: '0.8rem',
-            fontWeight: 700
+            fontSize: '0.825rem',
+            fontWeight: 800
           }}>
-            <span>🆓</span>
-            <span>{isEn ? 'Free Download' : 'Gratis Downloaden'}</span>
+            <span>✨</span>
+            <span>{isEn ? 'Print & Download' : 'Printen & Downloaden'}</span>
           </div>
         </div>
       </Link>

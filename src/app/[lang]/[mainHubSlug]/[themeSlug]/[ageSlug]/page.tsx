@@ -3,6 +3,8 @@ import { notFound } from 'next/navigation';
 import Link from 'next/link';
 import Breadcrumbs from '@/components/Breadcrumbs';
 import MotionCard from '@/components/MotionCard';
+import AdSlot from '@/components/AdSlot';
+import React from 'react';
 
 export async function generateStaticParams() {
   const agesEn = getAgePages('en').map(a => ({ lang: 'en', mainHubSlug: a.parentHub, themeSlug: a.parentTheme, ageSlug: a.ageGroup }));
@@ -23,10 +25,6 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
     }
   };
 }
-
-import Image from 'next/image';
-import AdSlot from '@/components/AdSlot';
-import React from 'react';
 
 export default async function AgePage({ 
   params,
@@ -66,16 +64,18 @@ export default async function AgePage({
             lang={lang}
           />
           <h1 className="title-h1" style={{ marginTop: '1rem' }}>{agePage.title}</h1>
-          <p style={{ color: 'var(--gray-600)', fontSize: '1.1rem', marginTop: '0.5rem', lineHeight: 1.7, maxWidth: '600px' }}>
+          <p style={{ color: 'var(--gray-600)', fontSize: '1.1rem', marginTop: '0.6rem', lineHeight: 1.7, maxWidth: '640px' }}>
             {agePage.introText}
           </p>
-          <p style={{ fontSize: '0.85rem', color: 'var(--gray-400)', marginTop: '0.75rem', fontWeight: 600 }}>
-            {allColoringPages.length} {isEn ? 'pages available — all free' : 'pagina\'s beschikbaar — allemaal gratis'}
-          </p>
+          <span className="badge" style={{ marginTop: '1.25rem' }}>
+            ✨ {allColoringPages.length} {isEn ? 'pages available — 100% free' : 'pagina\'s beschikbaar — 100% gratis'}
+          </span>
         </div>
       </div>
 
       <div className="container section">
+        <AdSlot type="banner" text={isEn ? "Sponsored Content" : "Gesponsord"} />
+
         <div className="section-header">
           <h2 className="title-h2">
             {isEn ? 'All Coloring Pages' : 'Alle Kleurplaten'}
@@ -83,21 +83,22 @@ export default async function AgePage({
         </div>
 
         {coloringPages.length === 0 ? (
-          <div style={{ textAlign: 'center', padding: '4rem', color: 'var(--gray-400)' }}>
-            <p style={{ fontSize: '3rem', marginBottom: '1rem' }}>🎨</p>
-            <p>{isEn ? 'Pages coming soon! Check back later.' : 'Kleurplaten binnenkort beschikbaar!'}</p>
+          <div style={{ textAlign: 'center', padding: '5rem 2rem', color: 'var(--gray-400)', background: 'var(--surface)', borderRadius: 'var(--radius-xl)', border: '1px solid var(--gray-200)' }}>
+            <p style={{ fontSize: '3.5rem', marginBottom: '1rem' }}>🎨</p>
+            <p style={{ fontSize: '1.2rem', fontWeight: 700, color: 'var(--foreground)' }}>
+              {isEn ? 'Pages coming soon! Check back later.' : 'Kleurplaten binnenkort beschikbaar!'}
+            </p>
           </div>
         ) : (
           <div className="grid-4">
             {coloringPages.map((page, index) => {
-              // Inject an ad after every 8 items (index 7, 15, 23, etc.)
               const shouldShowAd = (index + 1) % 8 === 0;
               
               return (
                 <React.Fragment key={page.slug}>
                   <MotionCard page={page} lang={lang} isEn={isEn} />
                   {shouldShowAd && (
-                    <AdSlot type="rectangle" text={isEn ? "Advertisement" : "Advertentie"} />
+                    <AdSlot type="in-feed" text={isEn ? "Sponsored" : "Gesponsord"} />
                   )}
                 </React.Fragment>
               );
@@ -106,16 +107,16 @@ export default async function AgePage({
         )}
 
         {totalPages > 1 && (
-          <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', gap: '1rem', marginTop: '3rem' }}>
+          <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', gap: '1rem', marginTop: '3.5rem' }}>
             {currentPage > 1 ? (
               <Link href={`/${lang}/${hub.slug}/${theme.slug}/${agePage.ageGroup}?page=${currentPage - 1}`} className="btn-secondary">
                 ← {isEn ? 'Previous' : 'Vorige'}
               </Link>
             ) : (
-              <span className="btn-secondary" style={{ opacity: 0.5, pointerEvents: 'none' }}>← {isEn ? 'Previous' : 'Vorige'}</span>
+              <span className="btn-secondary" style={{ opacity: 0.4, pointerEvents: 'none' }}>← {isEn ? 'Previous' : 'Vorige'}</span>
             )}
             
-            <span style={{ fontWeight: 600, color: 'var(--gray-600)' }}>
+            <span style={{ fontWeight: 800, color: 'var(--foreground)', padding: '0.5rem 1rem', background: 'var(--surface-2)', borderRadius: 'var(--radius-full)' }}>
               {currentPage} / {totalPages}
             </span>
 
@@ -124,12 +125,14 @@ export default async function AgePage({
                 {isEn ? 'Next' : 'Volgende'} →
               </Link>
             ) : (
-              <span className="btn-secondary" style={{ opacity: 0.5, pointerEvents: 'none' }}>{isEn ? 'Next' : 'Volgende'} →</span>
+              <span className="btn-secondary" style={{ opacity: 0.4, pointerEvents: 'none' }}>{isEn ? 'Next' : 'Volgende'} →</span>
             )}
           </div>
         )}
 
-        <div className="seo-block" style={{ marginTop: '4rem' }}>
+        <AdSlot type="banner" text={isEn ? "Sponsored Content" : "Gesponsord"} />
+
+        <div className="seo-block" style={{ marginTop: '3.5rem' }}>
           <h2>{isEn ? `About These Pages` : `Over Deze Kleurplaten`}</h2>
           <p>{agePage.seoText}</p>
         </div>

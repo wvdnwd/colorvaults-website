@@ -2,7 +2,6 @@
 
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import Image from 'next/image';
 import { useState, useRef, useEffect } from 'react';
 import styles from './Navbar.module.css';
 import ThemeToggle from './ThemeToggle';
@@ -17,10 +16,19 @@ export default function Navbar({ lang }: { lang: string }) {
   const pathname = usePathname();
   const [openDropdown, setOpenDropdown] = useState<string | null>(null);
   const [mobileOpen, setMobileOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
   const navRef = useRef<HTMLDivElement>(null);
 
   const isEn = lang === 'en';
   const isNl = lang === 'nl';
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrolled(window.scrollY > 20);
+    };
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
 
   const getLangLink = (targetLang: string) => {
     if (!pathname) return `/${targetLang}`;
@@ -37,26 +45,26 @@ export default function Navbar({ lang }: { lang: string }) {
     {
       label: isEn ? 'Coloring Pages' : 'Kleurplaten',
       children: [
-        { label: isEn ? 'TV Series & Movies' : 'TV Series & Films', href: `/${lang}/tv-series-and-movies` },
-        { label: isEn ? 'Disney & Fairy Tales' : 'Disney & Sprookjes', href: `/${lang}/disney-and-fairy-tales` },
-        { label: isEn ? 'Games & Pop Culture' : 'Games & Popcultuur', href: `/${lang}/games-and-pop-culture` },
-        { label: isEn ? 'Animals & Nature' : 'Dieren & Natuur', href: `/${lang}/animals-and-nature` },
-        { label: isEn ? 'Girls Themes' : "Meisjes Thema's", href: `/${lang}/girls-themes` },
-        { label: isEn ? 'Toddler Specific' : 'Speciaal voor Peuters', href: `/${lang}/toddler-specific` },
-        { label: isEn ? 'Adults' : 'Volwassenen', href: `/${lang}/adults` },
+        { label: isEn ? '🎬 TV Series & Movies' : '🎬 TV Series & Films', href: `/${lang}/tv-series-and-movies` },
+        { label: isEn ? '👑 Disney & Fairy Tales' : '👑 Disney & Sprookjes', href: `/${lang}/disney-and-fairy-tales` },
+        { label: isEn ? '🎮 Games & Pop Culture' : '🎮 Games & Popcultuur', href: `/${lang}/games-and-pop-culture` },
+        { label: isEn ? '🦁 Animals & Nature' : '🦁 Dieren & Natuur', href: `/${lang}/animals-and-nature` },
+        { label: isEn ? '💖 Girls Themes' : "💖 Meisjes Thema's", href: `/${lang}/girls-themes` },
+        { label: isEn ? '👶 Toddler Specific' : '👶 Speciaal voor Peuters', href: `/${lang}/toddler-specific` },
+        { label: isEn ? '✨ Adults & Mandalas' : '✨ Volwassenen & Mandala\'s', href: `/${lang}/adults` },
       ],
     },
-    { label: isEn ? 'Calendars' : 'Kalenders', href: `/${lang}/calendars` },
-    { label: isEn ? 'Printables' : 'Printables', href: `/${lang}/school-education-templates` },
-    { label: isEn ? 'Mandalas' : "Mandala's", href: `/${lang}/mandalas` },
+    { label: isEn ? '📅 Calendars' : '📅 Kalenders', href: `/${lang}/calendars` },
+    { label: isEn ? '✏️ Printables' : '✏️ Printables', href: `/${lang}/school-education-templates` },
+    { label: isEn ? '🧘 Mandalas' : "🧘 Mandala's", href: `/${lang}/mandalas` },
     {
       label: isEn ? 'About' : 'Over',
       children: [
-        { label: isEn ? 'About Us' : 'Over Ons', href: `/${lang}/about` },
-        { label: 'Contact', href: `/${lang}/contact` },
-        { label: isEn ? 'Contest' : 'Wedstrijd', href: `/${lang}/contest` },
-        { label: isEn ? 'Request a Page' : 'Pagina Aanvragen', href: `/${lang}/request` },
-        { label: isEn ? 'Licensing' : 'Licentie', href: `/${lang}/licensing` },
+        { label: isEn ? 'ℹ️ About Us' : 'ℹ️ Over Ons', href: `/${lang}/about` },
+        { label: '📧 Contact', href: `/${lang}/contact` },
+        { label: isEn ? '🏆 Contest' : '🏆 Wedstrijd', href: `/${lang}/contest` },
+        { label: isEn ? '💡 Request a Page' : '💡 Pagina Aanvragen', href: `/${lang}/request` },
+        { label: isEn ? '📜 Licensing' : '📜 Licentie', href: `/${lang}/licensing` },
       ],
     },
   ];
@@ -80,27 +88,24 @@ export default function Navbar({ lang }: { lang: string }) {
   }, [pathname]);
 
   return (
-    <nav className={styles.navbar} ref={navRef}>
+    <header className={`${styles.navbar} ${scrolled ? styles.scrolled : ''}`} ref={navRef}>
       <div className={styles.navContainer}>
-        {/* Logo */}
+        {/* Brand Logo */}
         <Link href={`/${lang}`} className={styles.logo}>
-          <img 
-            src="/images/logo_cropped.png" 
-            alt="ColorVaults" 
-            style={{ 
-              height: '45px', 
-              width: 'auto', 
-              objectFit: 'contain'
-            }} 
-          />
+          <div className={styles.logoBadge}>🎨</div>
+          <span className={styles.logoText}>
+            Color<span className={styles.logoAccent}>Vaults</span>
+          </span>
         </Link>
 
         {/* Desktop Nav Items */}
-        <div className={styles.navLinks}>
+        <nav className={styles.navLinks}>
           {navItems.map(item => (
             <div key={item.label} className={styles.navItem}>
               {item.href && !item.children ? (
-                <Link href={item.href} className={styles.link}>{item.label}</Link>
+                <Link href={item.href} className={`${styles.link} ${pathname === item.href ? styles.active : ''}`}>
+                  {item.label}
+                </Link>
               ) : (
                 <button
                   className={`${styles.link} ${styles.dropdownTrigger} ${openDropdown === item.label ? styles.active : ''}`}
@@ -108,7 +113,7 @@ export default function Navbar({ lang }: { lang: string }) {
                   aria-expanded={openDropdown === item.label}
                 >
                   {item.label}
-                  <span className={styles.chevron} aria-hidden="true">{openDropdown === item.label ? '▴' : '▾'}</span>
+                  <span className={styles.chevron}>{openDropdown === item.label ? '▴' : '▾'}</span>
                 </button>
               )}
               {item.children && openDropdown === item.label && (
@@ -122,21 +127,24 @@ export default function Navbar({ lang }: { lang: string }) {
               )}
             </div>
           ))}
-        </div>
+        </nav>
 
-        {/* Right: search + fav + lang + theme + hamburger */}
+        {/* Right Actions */}
         <div className={styles.navRight}>
-          <Link href={`/${lang}/search`} className={styles.searchBtn} aria-label={isEn ? 'Search' : 'Zoeken'}>
+          <Link href={`/${lang}/search`} className={styles.iconBtn} aria-label={isEn ? 'Search' : 'Zoeken'} title={isEn ? 'Search' : 'Zoeken'}>
             🔍
           </Link>
-          <Link href={`/${lang}/favorites`} className={styles.searchBtn} aria-label={isEn ? 'Favorites' : 'Favorieten'}>
+          <Link href={`/${lang}/favorites`} className={styles.iconBtn} aria-label={isEn ? 'Favorites' : 'Favorieten'} title={isEn ? 'Favorites' : 'Favorieten'}>
             ❤️
           </Link>
+
           <div className={styles.langSwitcher}>
             <Link href={getLangLink('en')} className={`${styles.langBtn} ${isEn ? styles.langActive : ''}`}>EN</Link>
             <Link href={getLangLink('nl')} className={`${styles.langBtn} ${isNl ? styles.langActive : ''}`}>NL</Link>
           </div>
+
           <ThemeToggle />
+
           <button
             className={styles.hamburger}
             onClick={() => setMobileOpen(!mobileOpen)}
@@ -162,11 +170,13 @@ export default function Navbar({ lang }: { lang: string }) {
               ) : (
                 <>
                   <span className={styles.mobileSectionTitle}>{item.label}</span>
-                  {item.children?.map(child => (
-                    <Link key={child.href} href={child.href} className={styles.mobileLinkSub} onClick={() => setMobileOpen(false)}>
-                      → {child.label}
-                    </Link>
-                  ))}
+                  <div className={styles.mobileGrid}>
+                    {item.children?.map(child => (
+                      <Link key={child.href} href={child.href} className={styles.mobileLinkSub} onClick={() => setMobileOpen(false)}>
+                        {child.label}
+                      </Link>
+                    ))}
+                  </div>
                 </>
               )}
             </div>
@@ -177,6 +187,6 @@ export default function Navbar({ lang }: { lang: string }) {
           </div>
         </div>
       )}
-    </nav>
+    </header>
   );
 }

@@ -1,42 +1,106 @@
 .adSlot {
-  background: linear-gradient(135deg, var(--gray-50), var(--gray-100));
-  border: 1px solid var(--gray-200);
-  box-shadow: inset 0 0 20px rgba(0,0,0,0.02);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: var(--gray-500);
-  width: 100%;
-  border-radius: var(--radius);
-  overflow: hidden;
-  position: relative;
-}
-
-.adContent {
+  background: var(--surface);
+  border: 1px dashed rgba(108, 92, 231, 0.2);
+  border-radius: var(--radius-lg);
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 0.5rem;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+  margin: 2rem 0;
+  transition: all 0.25s ease;
+  box-shadow: var(--shadow-sm);
+}
+
+.adSlot:hover {
+  border-color: var(--primary);
+  box-shadow: var(--shadow);
+}
+
+.adHeader {
+  position: absolute;
+  top: 8px;
+  right: 12px;
+  z-index: 2;
+}
+
+.adTag {
+  font-size: 0.65rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--gray-400);
+  background: var(--primary-light);
+  padding: 0.15rem 0.5rem;
+  border-radius: var(--radius-full);
+}
+
+.adContainer {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  min-height: inherit;
+}
+
+.adPlaceholder {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.35rem;
+  padding: 1.5rem;
+  color: var(--gray-500);
+  text-align: center;
 }
 
 .adIcon {
   font-size: 1.5rem;
-  opacity: 0.5;
+  opacity: 0.7;
 }
 
-.adText {
-  font-size: 0.75rem;
+.adLabel {
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--foreground);
+}
+
+.adSublabel {
+  font-size: 0.7rem;
+  color: var(--gray-400);
   font-weight: 600;
-  letter-spacing: 0.05em;
-  text-transform: uppercase;
 }
 
+/* Variant Styles */
 .adSlot.banner {
-  min-height: 120px;
-  margin: 3rem 0;
+  min-height: 110px;
+  max-width: 100%;
+  width: 100%;
 }
 
 .adSlot.rectangle {
   min-height: 300px;
   width: 100%;
+}
+
+.adSlot.in-feed {
+  min-height: 320px;
+  height: 100%;
+  margin: 0;
+  border-style: solid;
+  border-color: var(--gray-200);
+  background: var(--surface-2);
+}
+
+@media (max-width: 768px) {
+  .adSlot.banner {
+    min-height: 80px;
+    margin: 1.5rem 0;
+  }
+  .adSlot.rectangle {
+    min-height: 250px;
+  }
 }

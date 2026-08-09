@@ -3,6 +3,7 @@ import { notFound } from 'next/navigation';
 import Link from 'next/link';
 import Image from 'next/image';
 import Breadcrumbs from '@/components/Breadcrumbs';
+import AdSlot from '@/components/AdSlot';
 import * as motion from 'framer-motion/client';
 
 export async function generateStaticParams() {
@@ -40,19 +41,22 @@ export default async function MainHubPage({ params }: { params: Promise<{ lang: 
         <div className="container">
           <Breadcrumbs items={[{ label: hub.title, href: `/${lang}/${hub.slug}` }]} lang={lang} />
           <h1 className="title-h1" style={{ marginTop: '1rem' }}>{hub.title}</h1>
-          <p style={{ color: 'var(--gray-600)', fontSize: '1.1rem', maxWidth: '600px', marginTop: '0.5rem', lineHeight: 1.7 }}>
+          <p style={{ color: 'var(--gray-600)', fontSize: '1.1rem', maxWidth: '640px', marginTop: '0.6rem', lineHeight: 1.7 }}>
             {hub.description}
           </p>
-          <p style={{ color: 'var(--gray-400)', fontSize: '0.85rem', marginTop: '1rem', fontWeight: 600 }}>
-            {allThemes.length} {isEn ? 'themes available' : 'thema\'s beschikbaar'}
-          </p>
+          <span className="badge" style={{ marginTop: '1.25rem' }}>
+            ✨ {allThemes.length} {isEn ? 'themes available' : 'thema\'s beschikbaar'}
+          </span>
         </div>
       </div>
 
       <div className="container section">
+        <AdSlot type="banner" text={isEn ? "Sponsored Content" : "Gesponsord"} />
+
         <div className="section-header">
-          <h2 className="title-h2">{isEn ? 'Choose a Theme' : 'Kies een Thema'}</h2>
+          <h2 className="title-h2">{isEn ? 'Explore Themes' : 'Kies een Thema'}</h2>
         </div>
+        
         <div className="grid-4">
           {allThemes.map((theme, i) => (
             <motion.div 
@@ -64,19 +68,21 @@ export default async function MainHubPage({ params }: { params: Promise<{ lang: 
               whileHover={{ y: -6 }}
             >
               <Link href={`/${lang}/${hub.slug}/${theme.slug}`} className="card" style={{ height: '100%' }}>
-                <Image src={theme.image} alt={theme.title} width={400} height={400} className="card-img" />
+                <div className="card-img-wrapper" style={{ aspectRatio: '4/3' }}>
+                  <Image src={theme.image} alt={theme.title} width={400} height={300} className="card-img" />
+                </div>
                 <div className="card-body">
                   <h3 className="card-title">{theme.title}</h3>
                   <p className="card-desc">{theme.description}</p>
-                  <div style={{ display: 'flex', gap: '0.4rem', flexWrap: 'wrap', marginTop: '0.75rem' }}>
+                  <div style={{ display: 'flex', gap: '0.4rem', flexWrap: 'wrap', marginTop: 'auto', paddingTop: '0.75rem' }}>
                     {theme.availableAges.map(age => (
                       <span key={age} style={{
                         background: 'var(--primary-light)',
                         color: 'var(--primary)',
-                        borderRadius: '100px',
-                        padding: '0.15rem 0.6rem',
-                        fontSize: '0.7rem',
-                        fontWeight: 700,
+                        borderRadius: 'var(--radius-full)',
+                        padding: '0.2rem 0.65rem',
+                        fontSize: '0.72rem',
+                        fontWeight: 800,
                         textTransform: 'capitalize'
                       }}>{age}</span>
                     ))}
@@ -87,7 +93,9 @@ export default async function MainHubPage({ params }: { params: Promise<{ lang: 
           ))}
         </div>
 
-        <div className="seo-block" style={{ marginTop: '4rem' }}>
+        <AdSlot type="banner" text={isEn ? "Sponsored Content" : "Gesponsord"} />
+
+        <div className="seo-block" style={{ marginTop: '3.5rem' }}>
           <h2>{isEn ? `About ${hub.title} Coloring Pages` : `Over ${hub.title} Kleurplaten`}</h2>
           <p>{hub.description} {isEn
             ? `Explore our full collection of ${hub.title} themed coloring pages, carefully organized by theme and age group to help you find exactly what you need.`

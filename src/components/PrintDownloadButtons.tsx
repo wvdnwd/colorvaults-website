@@ -42,21 +42,19 @@ export default function PrintDownloadButtons({
       ctx.drawImage(img, 0, 0);
 
       // Draw watermark
-      ctx.fillStyle = 'rgba(0, 0, 0, 0.5)';
-      const fontSize = Math.max(14, img.width * 0.02); // Dynamic font size based on image width
+      ctx.fillStyle = 'rgba(0, 0, 0, 0.45)';
+      const fontSize = Math.max(16, img.width * 0.022);
       ctx.font = `bold ${fontSize}px sans-serif`;
       ctx.textAlign = 'right';
       ctx.textBaseline = 'bottom';
       
-      // Text shadow for readability
       ctx.shadowColor = 'white';
       ctx.shadowBlur = 4;
       ctx.shadowOffsetX = 0;
       ctx.shadowOffsetY = 0;
       
-      ctx.fillText('© ColorVaults.com', canvas.width - 20, canvas.height - 20);
+      ctx.fillText('© ColorVaults.com', canvas.width - 24, canvas.height - 24);
 
-      // Convert to blob and download
       canvas.toBlob((watermarkedBlob) => {
         if (!watermarkedBlob) return;
         const url = URL.createObjectURL(watermarkedBlob);
@@ -71,7 +69,6 @@ export default function PrintDownloadButtons({
       }, 'image/jpeg', 0.95);
     } catch (err) {
       console.error('Failed to add watermark, falling back to direct download', err);
-      // Fallback
       const a = document.createElement('a');
       a.href = fileUrl;
       a.download = fileUrl.split('/').pop() || 'colorvaults-page.jpg';
@@ -83,13 +80,13 @@ export default function PrintDownloadButtons({
   };
 
   return (
-    <div style={{ marginTop: '1.25rem', display: 'flex', flexDirection: 'column', gap: '0.75rem' }}>
+    <div style={{ marginTop: '1.5rem', display: 'flex', flexDirection: 'column', gap: '0.85rem' }}>
       <button
         onClick={handlePrint}
         className="download-btn"
         style={{ width: '100%', justifyContent: 'center', cursor: 'pointer' }}
       >
-        🖨️ {isEn ? 'Print Coloring Page' : 'Kleurplaat Printen'}
+        🖨️ {isEn ? 'Print Free Coloring Page' : 'Gratis Kleurplaat Printen'}
       </button>
 
       <button
@@ -98,7 +95,7 @@ export default function PrintDownloadButtons({
         className="btn-secondary"
         style={{ width: '100%', justifyContent: 'center', cursor: downloading ? 'not-allowed' : 'pointer' }}
       >
-        ⬇️ {downloading ? (isEn ? 'Processing...' : 'Verwerken...') : (isEn ? 'Download Image File' : 'Download Afbeelding')}
+        ⬇️ {downloading ? (isEn ? 'Preparing Image...' : 'Afbeelding Verwerken...') : (isEn ? 'Download Image File' : 'Download Afbeelding')}
       </button>
     </div>
   );
