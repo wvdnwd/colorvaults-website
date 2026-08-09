@@ -25,6 +25,8 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
 }
 
 import Image from 'next/image';
+import AdSlot from '@/components/AdSlot';
+import React from 'react';
 
 export default async function AgePage({ 
   params,
@@ -87,9 +89,19 @@ export default async function AgePage({
           </div>
         ) : (
           <div className="grid-4">
-            {coloringPages.map(page => (
-              <MotionCard key={page.slug} page={page} lang={lang} isEn={isEn} />
-            ))}
+            {coloringPages.map((page, index) => {
+              // Inject an ad after every 8 items (index 7, 15, 23, etc.)
+              const shouldShowAd = (index + 1) % 8 === 0;
+              
+              return (
+                <React.Fragment key={page.slug}>
+                  <MotionCard page={page} lang={lang} isEn={isEn} />
+                  {shouldShowAd && (
+                    <AdSlot type="rectangle" text={isEn ? "Advertisement" : "Advertentie"} />
+                  )}
+                </React.Fragment>
+              );
+            })}
           </div>
         )}
 

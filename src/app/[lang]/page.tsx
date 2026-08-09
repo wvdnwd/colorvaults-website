@@ -1,12 +1,14 @@
 import Image from 'next/image';
-import { getMainHubs, getColoringPages } from '@/lib/api';
+import { getThemes, getColoringPages } from '@/lib/api';
 import styles from './page.module.css';
 import Link from 'next/link';
 import MotionCard from '@/components/MotionCard';
+import AdSlot from '@/components/AdSlot';
+import React from 'react';
 
 export default async function HomePage({ params }: { params: Promise<{ lang: string }> }) {
   const { lang } = await params;
-  const hubs = getMainHubs(lang);
+  const topThemes = getThemes(lang).slice(0, 12);
   const featuredPages = getColoringPages(lang).slice(0, 8);
   const isEn = lang === 'en';
 
@@ -58,25 +60,36 @@ export default async function HomePage({ params }: { params: Promise<{ lang: str
       </section>
 
       <div className="container">
+        
+        <AdSlot type="banner" text={isEn ? "Sponsored Content" : "Gesponsord"} />
 
         {/* Main Collections */}
         <section className="section">
           <div className="section-header">
             <div>
-              <span className="badge">📚 {isEn ? 'Collections' : 'Collecties'}</span>
+              <span className="badge">✨ {isEn ? 'Popular Categories' : 'Populaire Categorieën'}</span>
               <h2 className="title-h2" style={{ marginTop: '0.75rem' }}>
-                {isEn ? 'Browse All Categories' : 'Alle Categorieën Bekijken'}
+                {isEn ? 'Explore Our Top Themes' : 'Ontdek Onze Top Thema\'s'}
               </h2>
             </div>
           </div>
-          <div className={styles.hubGrid}>
-            {hubs.map((hub, i) => (
-              <Link key={hub.slug} href={`/${lang}/${hub.slug}`} className={`${styles.hubCard} card`}>
-                <div className={styles.hubCardEmoji}>{getHubEmoji(i)}</div>
+          <div className="grid-4">
+            {topThemes.map((theme) => (
+              <Link key={theme.slug} href={`/${lang}/${theme.parentHub}/${theme.slug}`} className="card" style={{ textDecoration: 'none' }}>
+                <div className="card-img-wrapper" style={{ aspectRatio: '1/1' }}>
+                  <Image 
+                    src={theme.image} 
+                    alt={theme.title} 
+                    fill 
+                    className="card-img" 
+                    sizes="(max-width: 768px) 50vw, 25vw"
+                  />
+                </div>
                 <div className="card-body">
-                  <h3 className="card-title">{hub.title}</h3>
-                  <p className="card-desc">{hub.description}</p>
-                  <span className={styles.hubCardArrow}>→</span>
+                  <h3 className="card-title">{theme.title}</h3>
+                  <p className="card-desc" style={{ marginBottom: '0' }}>
+                    {isEn ? 'Browse Collection →' : 'Bekijk Collectie →'}
+                  </p>
                 </div>
               </Link>
             ))}
@@ -94,9 +107,18 @@ export default async function HomePage({ params }: { params: Promise<{ lang: str
             </div>
           </div>
           <div className="grid-4">
-            {featuredPages.map(page => (
-              <MotionCard key={page.id} page={page} lang={lang} isEn={isEn} />
-            ))}
+            {featuredPages.map((page, index) => {
+              // Inject an ad at the 5th position (index 4)
+              if (index === 4) {
+                return (
+                  <React.Fragment key="ad-latest">
+                    <AdSlot type="rectangle" text={isEn ? "Advertisement" : "Advertentie"} />
+                    <MotionCard key={page.id} page={page} lang={lang} isEn={isEn} />
+                  </React.Fragment>
+                );
+              }
+              return <MotionCard key={page.id} page={page} lang={lang} isEn={isEn} />;
+            })}
           </div>
         </section>
 
@@ -141,11 +163,10 @@ export default async function HomePage({ params }: { params: Promise<{ lang: str
           </div>
         </div>
       </section>
+      
+      <div className="container">
+        <AdSlot type="banner" text={isEn ? "Sponsored Content" : "Gesponsord"} />
+      </div>
     </>
   );
-}
-
-function getHubEmoji(index: number): string {
-  const emojis = ['📺', '🏰', '🎮', '🦊', '👶', '👧', '🧘', '🕉️', '📅', '🏫'];
-  return emojis[index] || '🎨';
 }
