@@ -75,7 +75,7 @@ const generateData = () => {
   const folders = fs.readdirSync(inputDir, { withFileTypes: true })
     .filter(dirent => dirent.isDirectory())
     .map(dirent => dirent.name)
-    .filter(name => name !== 'Afgekeurd_of_Twijfel' && name !== 'Dubbele_Fotos' && name !== 'Te_Herstellen');
+    .filter(name => !['Afgekeurd', 'Twijfel_Score_6', 'Afgekeurd_of_Twijfel', 'Dubbele_Fotos', 'Te_Herstellen'].includes(name));
 
   let globalIdCounter = 1;
   const groupedThemes = {};
