@@ -5,7 +5,6 @@ import Link from 'next/link';
 import MotionCard from '@/components/MotionCard';
 import AdSlot from '@/components/AdSlot';
 import ScrollReveal from '@/components/ScrollReveal';
-import HeroCarousel from '@/components/HeroCarousel';
 import React from 'react';
 
 export async function generateMetadata({ params }: { params: Promise<{ lang: string }> }) {
@@ -104,68 +103,80 @@ export default async function HomePage({ params }: { params: Promise<{ lang: str
 
   return (
     <>
-      {/* ── Hero Section — dark teal with stagger reveal ── */}
+      {/* ── Hero Section ── */}
       <section className={styles.hero}>
-        {/* Decorative ink blobs */}
+        {/* Decorative ink blobs — pointer-events: none in CSS */}
         <div className={`ink-blob ${styles.blobTopLeft}`} aria-hidden="true" />
         <div className={`ink-blob ${styles.blobBottomRight}`} aria-hidden="true" />
         <div className={styles.blobCenter} aria-hidden="true" />
 
-        {/* 3D rotating carousel of coloring page thumbnails */}
-        <HeroCarousel
-          images={topThemes.map(t => ({ src: t.image, alt: t.title }))}
-        />
+        <div className="container">
+          <div className={styles.heroLayout}>
 
-        <div className={styles.heroInner}>
-          {/* Staggered hero reveal */}
-          <span className={`${styles.heroBadge} hero-anim-0`}>
-            ✨ {isEn ? '100% Free — High Resolution Printables' : '100% Gratis — Hoge Resolutie Printables'}
-          </span>
-          <h1 className={`${styles.heroTitle} hero-anim-1`}>
-            {isEn ? (
-              <>Free Premium<br /><span>Coloring Pages</span></>
-            ) : (
-              <>Gratis Premium<br /><span>Kleurplaten</span></>
-            )}
-          </h1>
-          <p className={`${styles.heroSubtitle} hero-anim-2`}>
-            {isEn
-              ? 'Thousands of high-quality printable coloring pages for toddlers, kids, teens, and adults. Free instant downloads — no account needed!'
-              : 'Duizenden gratis printbare kleurplaten voor peuters, kinderen, tieners en volwassenen. Direct gratis downloaden — geen account nodig!'}
-          </p>
+            {/* LEFT: text content */}
+            <div className={styles.heroContent}>
+              <span className={`${styles.heroBadge} hero-anim-0`}>
+                ✨ {isEn ? '100% Free — High Resolution Printables' : '100% Gratis — Hoge Resolutie Printables'}
+              </span>
+              <h1 className={`${styles.heroTitle} hero-anim-1`}>
+                {isEn ? (
+                  <>Free Premium<br /><span>Coloring Pages</span></>
+                ) : (
+                  <>Gratis Premium<br /><span>Kleurplaten</span></>
+                )}
+              </h1>
+              <p className={`${styles.heroSubtitle} hero-anim-2`}>
+                {isEn
+                  ? 'Thousands of high-quality printable coloring pages for toddlers, kids, teens, and adults. Free instant downloads — no account needed!'
+                  : 'Duizenden gratis printbare kleurplaten voor peuters, kinderen, tieners en volwassenen. Direct gratis downloaden — geen account nodig!'}
+              </p>
 
-          <form className={`${styles.searchWrapper} hero-anim-3`} action={`/${lang}/search`} method="GET">
-            <input
-              type="text"
-              name="q"
-              placeholder={isEn ? 'Search 10,000+ coloring pages (e.g. Paw Patrol, Dragon...)' : 'Zoek 10.000+ kleurplaten (bijv. Paw Patrol, Draken...)'}
-              className={styles.searchInput}
-              required
-            />
-            <button type="submit" className={styles.searchBtn}>
-              {isEn ? 'Search' : 'Zoeken'}
-            </button>
-          </form>
+              <form className={`${styles.searchWrapper} hero-anim-3`} action={`/${lang}/search`} method="GET">
+                <input
+                  type="text"
+                  name="q"
+                  placeholder={isEn ? 'Search 10,000+ coloring pages...' : 'Zoek 10.000+ kleurplaten...'}
+                  className={styles.searchInput}
+                  required
+                />
+                <button type="submit" className={styles.searchBtn}>
+                  {isEn ? 'Search' : 'Zoeken'}
+                </button>
+              </form>
 
-          <div className={`${styles.quickPills} hero-anim-3`}>
-            <span className={styles.pillLabel}>{isEn ? 'Trending:' : 'Populair:'}</span>
-            {quickSearchPills.map((pill) => (
-              <Link key={pill.name} href={`/${lang}/search?q=${pill.query}`} className={styles.quickPill}>
-                {pill.name}
-              </Link>
-            ))}
-          </div>
+              <div className={`${styles.quickPills} hero-anim-3`}>
+                <span className={styles.pillLabel}>{isEn ? 'Trending:' : 'Populair:'}</span>
+                {quickSearchPills.map((pill) => (
+                  <Link key={pill.name} href={`/${lang}/search?q=${pill.query}`} className={styles.quickPill}>
+                    {pill.name}
+                  </Link>
+                ))}
+              </div>
 
-          <div className={`${styles.heroCtas} hero-anim-4`}>
-            <Link href={`/${lang}/collections`} className="btn-primary">
-              🎨 {isEn ? 'Explore All Collections' : 'Alle Collecties Bekijken'}
-            </Link>
-            <Link href={`/${lang}/mandalas`} className="btn-secondary">
-              🧘 {isEn ? 'Adult Mandalas' : 'Volwassenen Mandala\'s'}
-            </Link>
+              <div className={`${styles.heroCtas} hero-anim-4`}>
+                <Link href={`/${lang}/collections`} className="btn-primary">
+                  🎨 {isEn ? 'Explore All Collections' : 'Alle Collecties Bekijken'}
+                </Link>
+                <Link href={`/${lang}/mandalas`} className="btn-secondary">
+                  🧘 {isEn ? 'Adult Mandalas' : 'Volwassenen Mandala\'s'}
+                </Link>
+              </div>
+            </div>
+
+            {/* RIGHT: fanned card stack */}
+            <div className={`${styles.heroVisual} hero-anim-1`} aria-hidden="true">
+              {topThemes.slice(0, 5).map((theme) => (
+                <div key={theme.slug} className={styles.heroCard}>
+                  {/* eslint-disable-next-line @next/next/no-img-element */}
+                  <img src={theme.image} alt="" />
+                </div>
+              ))}
+            </div>
+
           </div>
         </div>
       </section>
+
 
       {/* ── Section 1: Popular Categories — dark teal ── */}
       <section className="section-dark">

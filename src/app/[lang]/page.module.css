@@ -1,61 +1,19 @@
 /* ── Hero Section ─────────────────────────────────────────────────────────── */
 .hero {
   position: relative;
-  text-align: center;
-  padding: 7rem 1.5rem 6rem;
-  min-height: 620px;
-  overflow: hidden;
+  padding: 5.5rem 0 5rem;
   background: var(--gradient-hero);
   border-bottom: 1px solid rgba(253, 246, 233, 0.08);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-/* Floating thumbnail mosaic */
-.heroMosaic {
-  position: absolute;
-  inset: 0;
-  pointer-events: none;
   overflow: hidden;
-  z-index: 0;
 }
 
-.heroThumb {
-  position: absolute;
-  width: 108px;
-  height: 136px;
-  border-radius: 14px;
-  overflow: hidden;
-  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.35);
-  border: 3px solid rgba(253, 246, 233, 0.18);
-  opacity: 0.45;
-}
-
-.heroThumb img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
-.heroThumb:nth-child(1)  { top: 8%;  left: 2%;  animation: floatA 6s ease-in-out infinite; }
-.heroThumb:nth-child(2)  { top: 45%; left: 1%;  animation: floatB 7s ease-in-out infinite 1s; }
-.heroThumb:nth-child(3)  { top: 72%; left: 4%;  animation: floatC 5.5s ease-in-out infinite 0.5s; }
-.heroThumb:nth-child(4)  { top: 5%;  right: 3%; animation: floatB 6.5s ease-in-out infinite 0.8s; }
-.heroThumb:nth-child(5)  { top: 40%; right: 1%; animation: floatA 7.5s ease-in-out infinite 1.5s; }
-.heroThumb:nth-child(6)  { top: 70%; right: 4%; animation: floatC 6s ease-in-out infinite 2s; }
-
-@media (max-width: 768px) {
-  .heroThumb { display: none; }
-}
-
-/* Ink blob backgrounds in hero */
+/* Ink blob backgrounds */
 .blobTopLeft {
   top: -80px;
   left: -120px;
   width: 500px;
   height: 400px;
-  background: radial-gradient(circle, rgba(255, 107, 74, 0.22) 0%, transparent 70%);
+  background: radial-gradient(circle, rgba(255, 107, 74, 0.18) 0%, transparent 70%);
   border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
   animation: floatA 14s ease-in-out infinite;
 }
@@ -65,7 +23,7 @@
   right: -80px;
   width: 420px;
   height: 360px;
-  background: radial-gradient(circle, rgba(201, 163, 216, 0.18) 0%, transparent 70%);
+  background: radial-gradient(circle, rgba(201, 163, 216, 0.15) 0%, transparent 70%);
   border-radius: 40% 60% 70% 30% / 40% 50% 60% 50%;
   animation: floatC 18s ease-in-out infinite 2s;
 }
@@ -75,7 +33,7 @@
   left: 35%;
   width: 700px;
   height: 300px;
-  background: radial-gradient(ellipse, rgba(30, 100, 102, 0.35) 0%, transparent 65%);
+  background: radial-gradient(ellipse, rgba(30, 100, 102, 0.3) 0%, transparent 65%);
   border-radius: 50%;
   filter: blur(60px);
   pointer-events: none;
@@ -83,11 +41,19 @@
   opacity: 1;
 }
 
-.heroInner {
+/* Two-column layout */
+.heroLayout {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+  align-items: center;
   position: relative;
-  z-index: 1;
-  max-width: 860px;
-  margin: 0 auto;
+  z-index: 2;
+}
+
+/* ── Left: text content ───────────────────────────────────────────────────── */
+.heroContent {
+  text-align: left;
 }
 
 .heroBadge {
@@ -101,17 +67,16 @@
   font-size: 0.82rem;
   font-weight: 700;
   color: var(--color-accent);
-  margin-bottom: 1.75rem;
+  margin-bottom: 1.5rem;
 }
 
 .heroTitle {
-  font-size: clamp(2.8rem, 6vw, 5rem);
+  font-size: clamp(2.4rem, 4.5vw, 4rem);
   font-weight: 700;
   line-height: 1.08;
-  margin-bottom: 1.25rem;
+  margin-bottom: 1.1rem;
   color: var(--color-text-light);
   font-family: var(--font-display), 'Fredoka', sans-serif;
-  letter-spacing: -0.01em;
 }
 
 .heroTitle span {
@@ -121,41 +86,39 @@
 }
 
 .heroSubtitle {
-  font-size: clamp(1.05rem, 2vw, 1.2rem);
+  font-size: 1.05rem;
   color: var(--color-text-muted);
-  max-width: 620px;
-  margin: 0 auto 2.25rem;
+  margin-bottom: 2rem;
   line-height: 1.7;
+  max-width: 500px;
 }
 
 /* ── Search ───────────────────────────────────────────────────────────────── */
 .searchWrapper {
-  max-width: 620px;
-  margin: 0 auto 2rem;
   display: flex;
   box-shadow: 0 12px 36px rgba(0, 0, 0, 0.3);
   border-radius: var(--radius-full);
   overflow: hidden;
   border: 2px solid rgba(253, 246, 233, 0.15);
-  background: rgba(15, 61, 62, 0.8);
+  background: rgba(15, 61, 62, 0.85);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
-  position: relative;
-  z-index: 2;
   transition: all 0.3s ease;
+  margin-bottom: 1.25rem;
+  position: relative;
+  z-index: 5;
 }
 
 .searchWrapper:focus-within {
   border-color: var(--color-accent);
   box-shadow: 0 16px 44px rgba(255, 107, 74, 0.22);
-  transform: translateY(-2px);
 }
 
 .searchInput {
   flex: 1;
   border: none;
-  padding: 1.1rem 1.75rem;
-  font-size: 1rem;
+  padding: 0.95rem 1.5rem;
+  font-size: 0.95rem;
   font-family: var(--font-body), sans-serif;
   outline: none;
   color: var(--color-text-light);
@@ -170,59 +133,138 @@
   background: var(--gradient-primary);
   color: white;
   border: none;
-  padding: 0 2rem;
+  padding: 0 1.75rem;
   font-family: var(--font-body), sans-serif;
   font-weight: 800;
-  font-size: 1rem;
+  font-size: 0.95rem;
   cursor: pointer;
   transition: opacity 0.2s;
   flex-shrink: 0;
 }
 
-.searchBtn:hover {
-  opacity: 0.9;
-}
+.searchBtn:hover { opacity: 0.9; }
 
-/* ── Quick Pills ──────────────────────────────────────────────────────────── */
+/* ── Trending pills ───────────────────────────────────────────────────────── */
 .quickPills {
   display: flex;
   align-items: center;
-  justify-content: center;
-  gap: 0.5rem;
+  gap: 0.4rem;
   flex-wrap: wrap;
-  margin-bottom: 2.25rem;
+  margin-bottom: 2rem;
+  position: relative;
+  z-index: 5;
 }
 
 .pillLabel {
-  font-size: 0.8rem;
+  font-size: 0.78rem;
   font-weight: 700;
   color: var(--color-text-muted);
+  white-space: nowrap;
 }
 
 .quickPill {
   font-size: 0.78rem;
   font-weight: 700;
   color: var(--color-text-light);
-  background: rgba(253, 246, 233, 0.08);
-  border: 1px solid rgba(253, 246, 233, 0.18);
-  padding: 0.28rem 0.8rem;
+  background: rgba(253, 246, 233, 0.1);
+  border: 1px solid rgba(253, 246, 233, 0.2);
+  padding: 0.3rem 0.75rem;
   border-radius: var(--radius-full);
   transition: all 0.2s ease;
   text-decoration: none;
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  z-index: 5;
 }
 
 .quickPill:hover {
   border-color: var(--color-accent);
   color: var(--color-accent);
-  background: rgba(255, 107, 74, 0.1);
+  background: rgba(255, 107, 74, 0.12);
 }
 
 .heroCtas {
   display: flex;
-  gap: 1rem;
-  justify-content: center;
+  gap: 0.75rem;
   flex-wrap: wrap;
+  position: relative;
+  z-index: 5;
 }
+
+/* ── Right: animated card fan ─────────────────────────────────────────────── */
+.heroVisual {
+  position: relative;
+  height: 420px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.heroCard {
+  position: absolute;
+  width: 175px;
+  height: 230px;
+  border-radius: 18px;
+  overflow: hidden;
+  border: 3px solid rgba(253, 246, 233, 0.22);
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.45), 0 0 0 1px rgba(255,107,74,0.1);
+  background: var(--color-secondary);
+  pointer-events: none;
+  will-change: transform;
+  transition: box-shadow 0.3s ease;
+}
+
+.heroCard img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* Glossy shine on each card */
+.heroCard::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    135deg,
+    rgba(255,255,255,0.18) 0%,
+    transparent 50%,
+    rgba(0,0,0,0.1) 100%
+  );
+  pointer-events: none;
+  border-radius: inherit;
+}
+
+/* Fan of 5 cards */
+.heroCard:nth-child(1) {
+  transform: rotate(-14deg) translate(-140px, 30px);
+  z-index: 1;
+  animation: floatA 7s ease-in-out infinite;
+}
+.heroCard:nth-child(2) {
+  transform: rotate(-7deg) translate(-70px, 10px);
+  z-index: 2;
+  animation: floatC 8s ease-in-out infinite 0.5s;
+}
+.heroCard:nth-child(3) {
+  transform: rotate(0deg) translate(0px, -10px);
+  z-index: 3;
+  animation: floatB 7.5s ease-in-out infinite 1s;
+}
+.heroCard:nth-child(4) {
+  transform: rotate(7deg) translate(70px, 10px);
+  z-index: 2;
+  animation: floatA 9s ease-in-out infinite 1.5s;
+}
+.heroCard:nth-child(5) {
+  transform: rotate(14deg) translate(140px, 30px);
+  z-index: 1;
+  animation: floatC 7s ease-in-out infinite 2s;
+}
+
+
 
 /* ── Age Grid ─────────────────────────────────────────────────────────────── */
 .ageGrid {
