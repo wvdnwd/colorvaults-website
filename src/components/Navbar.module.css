@@ -1,22 +1,23 @@
+/* ── Navbar — Teal Glassmorphism ──────────────────────────────────────────── */
 .navbar {
-  background: var(--surface-glass);
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
+  background: var(--glass-bg);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
   border-bottom: 1px solid var(--glass-border);
   position: sticky;
   top: 0;
   z-index: 200;
-  transition: all 0.3s ease;
+  transition: background 0.3s ease, box-shadow 0.3s ease;
 }
 
 .scrolled {
-  box-shadow: 0 10px 30px rgba(108, 92, 231, 0.12);
-  background: rgba(255, 255, 255, 0.92);
+  background: rgba(10, 46, 47, 0.94);
+  box-shadow: 0 10px 36px rgba(0, 0, 0, 0.45);
 }
 
 [data-theme='dark'] .scrolled {
-  background: rgba(24, 24, 43, 0.92);
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+  background: rgba(5, 22, 23, 0.96);
+  box-shadow: 0 10px 36px rgba(0, 0, 0, 0.7);
 }
 
 .navContainer {
@@ -30,16 +31,18 @@
   gap: 1.5rem;
 }
 
+/* ── Logo ─────────────────────────────────────────────────────────────────── */
 .logo {
   display: flex;
   align-items: center;
   gap: 0.65rem;
   font-size: 1.5rem;
-  font-weight: 900;
-  color: var(--foreground);
+  font-weight: 700;
+  color: var(--color-text-light);
   text-decoration: none;
-  letter-spacing: -0.03em;
+  letter-spacing: -0.01em;
   flex-shrink: 0;
+  font-family: var(--font-display), 'Fredoka', sans-serif;
 }
 
 .logoBadge {
@@ -51,7 +54,7 @@
   align-items: center;
   justify-content: center;
   font-size: 1.25rem;
-  box-shadow: var(--shadow-purple);
+  box-shadow: 0 6px 18px var(--color-accent-glow);
   transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
 }
 
@@ -60,7 +63,7 @@
 }
 
 .logoText {
-  font-family: 'Outfit', sans-serif;
+  font-family: var(--font-display), 'Fredoka', sans-serif;
 }
 
 .logoAccent {
@@ -69,7 +72,7 @@
   -webkit-text-fill-color: transparent;
 }
 
-/* Desktop Navigation */
+/* ── Desktop Navigation ───────────────────────────────────────────────────── */
 .navLinks {
   display: flex;
   align-items: center;
@@ -86,7 +89,7 @@
   display: inline-flex;
   align-items: center;
   gap: 0.4rem;
-  color: var(--gray-700);
+  color: var(--color-text-muted);
   font-weight: 700;
   font-size: 0.85rem;
   padding: 0.55rem 0.85rem;
@@ -97,13 +100,13 @@
   cursor: pointer;
   background: none;
   border: none;
-  font-family: inherit;
+  font-family: var(--font-body), sans-serif;
   white-space: nowrap;
 }
 
 .link:hover, .link.active {
-  color: var(--primary);
-  background: var(--primary-light);
+  color: var(--color-text-light);
+  background: rgba(253, 246, 233, 0.08);
 }
 
 .dropdownTrigger {
@@ -112,21 +115,23 @@
 
 .chevron {
   font-size: 0.65rem;
-  opacity: 0.7;
+  opacity: 0.6;
 }
 
-/* Dropdown Menu */
+/* ── Dropdown Menu ────────────────────────────────────────────────────────── */
 .dropdown {
   position: absolute;
   top: calc(100% + 8px);
   left: 50%;
   transform: translateX(-50%);
-  background: var(--surface);
-  border: 1px solid var(--gray-200);
+  background: rgba(12, 46, 47, 0.97);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(253, 246, 233, 0.1);
   border-radius: var(--radius-lg);
-  box-shadow: var(--shadow-lg);
+  box-shadow: 0 20px 48px rgba(0, 0, 0, 0.5);
   padding: 0.6rem;
-  min-width: 220px;
+  min-width: 230px;
   z-index: 300;
   animation: dropIn 0.2s cubic-bezier(0.34, 1.56, 0.64, 1);
 }
@@ -140,21 +145,22 @@
   display: block;
   padding: 0.65rem 1rem;
   border-radius: var(--radius);
-  color: var(--gray-700);
+  color: var(--color-text-muted);
   font-weight: 600;
   font-size: 0.875rem;
   text-decoration: none;
   transition: all 0.2s ease;
   white-space: nowrap;
+  font-family: var(--font-body), sans-serif;
 }
 
 .dropdownItem:hover {
-  background: var(--primary-light);
-  color: var(--primary);
+  background: rgba(255, 107, 74, 0.12);
+  color: var(--color-accent);
   transform: translateX(4px);
 }
 
-/* Right Navigation Actions */
+/* ── Right Nav Actions ────────────────────────────────────────────────────── */
 .navRight {
   display: flex;
   align-items: center;
@@ -170,20 +176,21 @@
   height: 40px;
   border-radius: var(--radius-full);
   font-size: 1.1rem;
-  background: var(--gray-100);
+  background: rgba(253, 246, 233, 0.07);
   transition: all 0.2s ease;
   text-decoration: none;
+  color: var(--color-text-light);
 }
 
 .iconBtn:hover {
-  background: var(--primary-light);
+  background: rgba(255, 107, 74, 0.15);
   transform: translateY(-2px);
 }
 
 .langSwitcher {
   display: flex;
   gap: 0.2rem;
-  background: var(--gray-100);
+  background: rgba(253, 246, 233, 0.07);
   padding: 0.2rem;
   border-radius: var(--radius-full);
 }
@@ -192,20 +199,21 @@
   padding: 0.35rem 0.75rem;
   border-radius: var(--radius-full);
   text-decoration: none;
-  color: var(--gray-500);
+  color: var(--color-text-muted);
   font-size: 0.78rem;
   font-weight: 800;
   transition: all 0.2s ease;
   letter-spacing: 0.04em;
+  font-family: var(--font-body), sans-serif;
 }
 
 .langActive {
-  background: var(--surface);
-  color: var(--primary);
+  background: rgba(253, 246, 233, 0.12);
+  color: var(--color-text-light);
   box-shadow: var(--shadow-sm);
 }
 
-/* Hamburger Toggle */
+/* ── Hamburger ────────────────────────────────────────────────────────────── */
 .hamburger {
   display: none;
   flex-direction: column;
@@ -219,14 +227,14 @@
 }
 
 .hamburger:hover {
-  background: var(--gray-100);
+  background: rgba(253, 246, 233, 0.08);
 }
 
 .hamburgerLine {
   display: block;
   width: 22px;
   height: 2.5px;
-  background: var(--foreground);
+  background: var(--color-text-light);
   border-radius: 2px;
   transition: all 0.25s ease;
 }
@@ -235,10 +243,12 @@
 .hamburgerLine.open:nth-child(2) { opacity: 0; transform: scaleX(0); }
 .hamburgerLine.open:nth-child(3) { transform: translateY(-7.5px) rotate(-45deg); }
 
-/* Mobile Drawer */
+/* ── Mobile Drawer ────────────────────────────────────────────────────────── */
 .mobileMenu {
-  border-top: 1px solid var(--gray-200);
-  background: var(--surface);
+  border-top: 1px solid rgba(253, 246, 233, 0.08);
+  background: rgba(10, 38, 39, 0.98);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
   padding: 1.25rem 1.5rem 2rem;
   display: flex;
   flex-direction: column;
@@ -258,7 +268,7 @@
   flex-direction: column;
   gap: 0.35rem;
   padding-bottom: 1rem;
-  border-bottom: 1px solid var(--gray-100);
+  border-bottom: 1px solid rgba(253, 246, 233, 0.06);
 }
 
 .mobileSectionTitle {
@@ -266,8 +276,9 @@
   font-weight: 800;
   text-transform: uppercase;
   letter-spacing: 0.08em;
-  color: var(--gray-400);
+  color: var(--color-text-muted);
   padding: 0.4rem 0;
+  font-family: var(--font-body), sans-serif;
 }
 
 .mobileGrid {
@@ -278,26 +289,28 @@
 
 .mobileLink {
   font-size: 1.05rem;
-  font-weight: 800;
-  color: var(--foreground);
+  font-weight: 700;
+  color: var(--color-text-light);
   padding: 0.5rem 0;
   text-decoration: none;
+  font-family: var(--font-body), sans-serif;
 }
 
 .mobileLinkSub {
   font-size: 0.85rem;
   font-weight: 600;
-  color: var(--gray-600);
+  color: var(--color-text-muted);
   padding: 0.5rem 0.75rem;
   text-decoration: none;
-  background: var(--gray-50);
+  background: rgba(253, 246, 233, 0.05);
   border-radius: var(--radius);
   transition: all 0.2s;
+  font-family: var(--font-body), sans-serif;
 }
 
 .mobileLinkSub:hover {
-  color: var(--primary);
-  background: var(--primary-light);
+  color: var(--color-accent);
+  background: rgba(255, 107, 74, 0.1);
 }
 
 .mobileLangRow {
@@ -314,8 +327,9 @@
   font-size: 0.9rem;
   font-weight: 700;
   text-decoration: none;
-  color: var(--gray-600);
-  background: var(--gray-100);
+  color: var(--color-text-muted);
+  background: rgba(253, 246, 233, 0.06);
+  font-family: var(--font-body), sans-serif;
 }
 
 .mobileLangBtn.langActive {

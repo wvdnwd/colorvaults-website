@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Plus_Jakarta_Sans, Outfit } from "next/font/google";
+import { Fredoka, Nunito } from "next/font/google";
 import "../globals.css";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
@@ -10,16 +10,16 @@ import { FavoritesProvider } from "@/context/FavoritesContext";
 import { safeJsonLd } from "@/lib/api";
 import PageTransition from "@/components/PageTransition";
 
-const plusJakarta = Plus_Jakarta_Sans({ 
+const fredoka = Fredoka({ 
   subsets: ['latin'], 
-  weight: ['400', '500', '600', '700', '800'],
-  variable: '--font-jakarta',
+  weight: ['300', '400', '500', '600', '700'],
+  variable: '--font-display',
   display: 'swap',
 });
-const outfit = Outfit({ 
+const nunito = Nunito({ 
   subsets: ['latin'], 
   weight: ['400', '500', '600', '700', '800', '900'],
-  variable: '--font-outfit',
+  variable: '--font-body',
   display: 'swap',
 });
 
@@ -62,7 +62,7 @@ export default async function RootLayout({
   const { lang } = await params;
 
   return (
-    <html lang={lang} className={`${plusJakarta.variable} ${outfit.variable}`} suppressHydrationWarning>
+    <html lang={lang} className={`${fredoka.variable} ${nunito.variable}`} suppressHydrationWarning>
       <body>
         <a href="#main-content" className="skip-link">
           {lang === 'en' ? 'Skip to main content' : 'Naar hoofdinhoud springen'}
