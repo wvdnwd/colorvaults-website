@@ -4,7 +4,7 @@ import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { useState, useRef, useEffect } from 'react';
 import styles from './Navbar.module.css';
-import ThemeToggle from './ThemeToggle';
+
 
 interface NavItem {
   label: string;
@@ -220,8 +220,6 @@ export default function Navbar({ lang }: { lang: string }) {
               aria-current={isNl ? 'true' : undefined}
             >NL</Link>
           </div>
-
-          <ThemeToggle />
 
           <button
             className={styles.hamburger}

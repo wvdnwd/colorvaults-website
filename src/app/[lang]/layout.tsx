@@ -62,7 +62,7 @@ export default async function RootLayout({
   const { lang } = await params;
 
   return (
-    <html lang={lang} className={`${fredoka.variable} ${nunito.variable}`} suppressHydrationWarning>
+    <html lang={lang} className={`${fredoka.variable} ${nunito.variable}`} data-theme="dark">
       <body>
         <a href="#main-content" className="skip-link">
           {lang === 'en' ? 'Skip to main content' : 'Naar hoofdinhoud springen'}
