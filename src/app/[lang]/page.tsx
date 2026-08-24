@@ -5,6 +5,7 @@ import Link from 'next/link';
 import MotionCard from '@/components/MotionCard';
 import AdSlot from '@/components/AdSlot';
 import ScrollReveal from '@/components/ScrollReveal';
+import HeroCarousel from '@/components/HeroCarousel';
 import React from 'react';
 
 export async function generateMetadata({ params }: { params: Promise<{ lang: string }> }) {
@@ -163,14 +164,11 @@ export default async function HomePage({ params }: { params: Promise<{ lang: str
               </div>
             </div>
 
-            {/* RIGHT: fanned card stack */}
-            <div className={`${styles.heroVisual} hero-anim-1`} aria-hidden="true">
-              {topThemes.slice(0, 5).map((theme) => (
-                <div key={theme.slug} className={styles.heroCard}>
-                  {/* eslint-disable-next-line @next/next/no-img-element */}
-                  <img src={theme.image} alt="" />
-                </div>
-              ))}
+            {/* RIGHT: 3D rotating carousel */}
+            <div className={`${styles.heroVisual} hero-anim-1`}>
+              <HeroCarousel
+                images={topThemes.map(t => ({ src: t.image, alt: t.title }))}
+              />
             </div>
 
           </div>

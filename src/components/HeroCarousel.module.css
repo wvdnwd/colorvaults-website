@@ -1,23 +1,22 @@
-/* ── 3D Scene container ───────────────────────────────────────────────────── */
+/* ── 3D Scene — fits inside .heroVisual column ────────────────────────────── */
 .scene {
-  position: absolute;
-  inset: 0;
+  width: 100%;
+  height: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
-  perspective: 1100px;
+  perspective: 900px;
   pointer-events: none;
-  overflow: hidden;
-  z-index: 0;
+  overflow: visible;
 }
 
 /* ── Spinning ring ────────────────────────────────────────────────────────── */
 .ring {
   position: relative;
-  width: 160px;   /* card width — radius is computed in CSS */
+  width: 160px;
   height: 220px;
   transform-style: preserve-3d;
-  animation: spinRing 22s linear infinite;
+  animation: spinRing 18s linear infinite;
 }
 
 @keyframes spinRing {
@@ -37,20 +36,12 @@
   border: 3px solid rgba(253, 246, 233, 0.22);
   box-shadow:
     0 16px 40px rgba(0, 0, 0, 0.5),
-    0 0 0 1px rgba(255, 107, 74, 0.15);
-  /* Position each card around the ring:
-     translateZ pushes it out, rotateY rotates to its position */
+    0 0 0 1px rgba(255, 107, 74, 0.12);
+  background: var(--color-secondary);
+  backface-visibility: hidden;
   transform:
     rotateY(calc(360deg / var(--count) * var(--i)))
-    translateZ(380px);
-  background: var(--color-secondary);
-  transition: border-color 0.3s ease;
-  backface-visibility: hidden;
-}
-
-/* Hover glow effect (when pointer-events re-enabled per card via JS) */
-.card:hover {
-  border-color: rgba(255, 107, 74, 0.6);
+    translateZ(260px);
 }
 
 /* ── Coloring page image ──────────────────────────────────────────────────── */
@@ -59,8 +50,7 @@
   height: 100%;
   object-fit: cover;
   display: block;
-  /* Slight desaturate so it doesn't fight the teal hero background */
-  filter: contrast(1.05) brightness(0.96);
+  filter: contrast(1.04) brightness(0.97);
 }
 
 /* ── Glossy shine overlay ─────────────────────────────────────────────────── */
@@ -79,14 +69,10 @@
 
 /* ── Pause on reduced motion ──────────────────────────────────────────────── */
 @media (prefers-reduced-motion: reduce) {
-  .ring {
-    animation: none;
-  }
+  .ring { animation: none; }
 }
 
-/* ── Hide on mobile (too cramped) ─────────────────────────────────────────── */
-@media (max-width: 768px) {
-  .scene {
-    display: none;
-  }
+/* ── Hide on mobile ───────────────────────────────────────────────────────── */
+@media (max-width: 900px) {
+  .scene { display: none; }
 }
