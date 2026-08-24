@@ -256,8 +256,28 @@ const generateData = () => {
       const fileUrlParts = file.split('/').map(encodeURIComponent).join('/');
       const imageUrl = `${SPACES_BASE_URL}/${fileUrlParts}`;
       
-      // Generate a clean title based on the theme and index
-      const niceTitle = `${themeName} ${index + 1}`;
+      // Generate a clean title based on the filename, falling back to theme and index if generic
+      const rawFilename = path.basename(file, path.extname(file));
+      // Remove 13-digit timestamp (e.g., _1786116493671)
+      let nameWithoutTimestamp = rawFilename.replace(/_\d{13}$/, "");
+      // Remove trailing number suffixes if they exist
+      nameWithoutTimestamp = nameWithoutTimestamp.replace(/_\d+$/, "");
+      // Replace underscores with spaces
+      let parsedTitle = nameWithoutTimestamp.replace(/_/g, " ").replace(/\s+/g, " ").trim();
+      
+      // Capitalize first letter
+      if (parsedTitle) {
+        parsedTitle = parsedTitle.charAt(0).toUpperCase() + parsedTitle.slice(1);
+      }
+
+      // Check if the title is generic (e.g., ComfyUI_00015 or is empty/just numbers)
+      const isGeneric = !parsedTitle || 
+                        /^[0-9\-\s]+$/.test(parsedTitle) || 
+                        parsedTitle.toLowerCase().includes("comfyui") || 
+                        parsedTitle.toLowerCase() === "coloring page" || 
+                        parsedTitle.toLowerCase() === "coloringpage";
+                        
+      const niceTitle = isGeneric ? `${themeName} ${index + 1}` : parsedTitle;
 
       const ageGroupKey = agesList[index % agesList.length];
       const enAge = ageGroupKey;
@@ -274,8 +294,12 @@ const generateData = () => {
         preview: imageUrl,
         downloadableFile: imageUrl,
         metaTitle: `${niceTitle} - Coloring Page`,
-        metaDescription: `Printable ${themeName} coloring page: ${niceTitle}`,
-        shortDescription: `Beautiful ${themeName} coloring page.`,
+        metaDescription: isGeneric
+          ? `Printable ${themeName} coloring page: ${niceTitle}`
+          : `Printable coloring page: ${niceTitle}`,
+        shortDescription: isGeneric
+          ? `Beautiful ${themeName} coloring page.`
+          : `Beautiful coloring page of ${niceTitle.toLowerCase()}.`,
         longDescription: `This is a beautiful coloring page featuring ${niceTitle}. Perfect for ${ageTranslations[ageGroupKey].en} who love being creative.`,
         altText: niceTitle,
         tags: [themeSlug],
@@ -294,8 +318,12 @@ const generateData = () => {
         preview: imageUrl,
         downloadableFile: imageUrl,
         metaTitle: `${niceTitle} - Kleurplaat`,
-        metaDescription: `Printbare ${themeName} kleurplaat: ${niceTitle}`,
-        shortDescription: `Prachtige ${themeName} kleurplaat.`,
+        metaDescription: isGeneric
+          ? `Printbare ${themeName} kleurplaat: ${niceTitle}`
+          : `Printbare kleurplaat: ${niceTitle}`,
+        shortDescription: isGeneric
+          ? `Prachtige ${themeName} kleurplaat.`
+          : `Prachtige kleurplaat van ${niceTitle.toLowerCase()}.`,
         longDescription: `Dit is een prachtige kleurplaat van ${niceTitle}. Perfect voor ${ageTranslations[ageGroupKey].nl.toLowerCase()} die graag creatief bezig zijn.`,
         altText: niceTitle,
         tags: [themeSlug],
