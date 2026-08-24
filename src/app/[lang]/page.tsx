@@ -107,6 +107,15 @@ export default async function HomePage({ params }: { params: Promise<{ lang: str
       {/* Hero Section */}
       <section className={styles.hero}>
         <div className={styles.heroBgGlow} />
+        {/* Floating thumbnail mosaic — decorative, hidden on mobile */}
+        <div className={styles.heroMosaic} aria-hidden="true">
+          {topThemes.slice(0, 6).map((theme) => (
+            <div key={theme.slug} className={styles.heroThumb}>
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img src={theme.image} alt="" />
+            </div>
+          ))}
+        </div>
         <div className={styles.heroInner}>
           <span className={styles.heroBadge}>
             ✨ {isEn ? '100% Free — High Resolution Printables' : '100% Gratis — Hoge Resolutie Printables'}

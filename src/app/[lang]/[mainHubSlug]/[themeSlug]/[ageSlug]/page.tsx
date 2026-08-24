@@ -124,26 +124,55 @@ export default async function AgePage({
         )}
 
         {totalPages > 1 && (
-          <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', gap: '1rem', marginTop: '3.5rem' }}>
-            {currentPage > 1 ? (
-              <Link href={`/${lang}/${hub.slug}/${theme.slug}/${agePage.ageGroup}?page=${currentPage - 1}`} className="btn-secondary">
-                ← {isEn ? 'Previous' : 'Vorige'}
-              </Link>
-            ) : (
-              <span className="btn-secondary" style={{ opacity: 0.4, pointerEvents: 'none' }}>← {isEn ? 'Previous' : 'Vorige'}</span>
-            )}
-            
-            <span style={{ fontWeight: 800, color: 'var(--foreground)', padding: '0.5rem 1rem', background: 'var(--surface-2)', borderRadius: 'var(--radius-full)' }}>
-              {currentPage} / {totalPages}
-            </span>
+          <div style={{ marginTop: '3.5rem' }}>
+            {/* Progress indicator */}
+            <div style={{ marginBottom: '1.5rem', textAlign: 'center' }}>
+              <p style={{ fontSize: '0.85rem', color: 'var(--gray-500)', fontWeight: 600, marginBottom: '0.6rem' }}>
+                {isEn
+                  ? `Page ${currentPage} of ${totalPages} — ${Math.min(currentPage * PER_PAGE, allColoringPages.length)} of ${allColoringPages.length} coloring pages`
+                  : `Pagina ${currentPage} van ${totalPages} — ${Math.min(currentPage * PER_PAGE, allColoringPages.length)} van ${allColoringPages.length} kleurplaten`
+                }
+              </p>
+              <div style={{
+                height: '6px',
+                background: 'var(--gray-200)',
+                borderRadius: '9999px',
+                overflow: 'hidden',
+                maxWidth: '320px',
+                margin: '0 auto',
+              }}>
+                <div style={{
+                  height: '100%',
+                  width: `${(currentPage / totalPages) * 100}%`,
+                  background: 'linear-gradient(90deg, var(--primary), #A29BFE)',
+                  borderRadius: '9999px',
+                  transition: 'width 0.4s ease',
+                }} />
+              </div>
+            </div>
 
-            {currentPage < totalPages ? (
-              <Link href={`/${lang}/${hub.slug}/${theme.slug}/${agePage.ageGroup}?page=${currentPage + 1}`} className="btn-secondary">
-                {isEn ? 'Next' : 'Volgende'} →
-              </Link>
-            ) : (
-              <span className="btn-secondary" style={{ opacity: 0.4, pointerEvents: 'none' }}>{isEn ? 'Next' : 'Volgende'} →</span>
-            )}
+            {/* Prev / Next buttons */}
+            <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', gap: '1rem' }}>
+              {currentPage > 1 ? (
+                <Link href={`/${lang}/${hub.slug}/${theme.slug}/${agePage.ageGroup}?page=${currentPage - 1}`} className="btn-secondary">
+                  ← {isEn ? 'Previous' : 'Vorige'}
+                </Link>
+              ) : (
+                <span className="btn-secondary" style={{ opacity: 0.4, pointerEvents: 'none' }}>← {isEn ? 'Previous' : 'Vorige'}</span>
+              )}
+              
+              <span style={{ fontWeight: 800, color: 'var(--foreground)', padding: '0.5rem 1rem', background: 'var(--surface-2)', borderRadius: 'var(--radius-full)' }}>
+                {currentPage} / {totalPages}
+              </span>
+
+              {currentPage < totalPages ? (
+                <Link href={`/${lang}/${hub.slug}/${theme.slug}/${agePage.ageGroup}?page=${currentPage + 1}`} className="btn-secondary">
+                  {isEn ? 'Next' : 'Volgende'} →
+                </Link>
+              ) : (
+                <span className="btn-secondary" style={{ opacity: 0.4, pointerEvents: 'none' }}>{isEn ? 'Next' : 'Volgende'} →</span>
+              )}
+            </div>
           </div>
         )}
 

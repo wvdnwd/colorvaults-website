@@ -55,6 +55,28 @@
   --shadow-lg: 0 16px 36px rgba(108, 92, 231, 0.16);
   --shadow-purple: 0 10px 25px rgba(108, 92, 231, 0.25);
   --shadow-hover: 0 20px 40px rgba(108, 92, 231, 0.18);
+
+  /* Hub Accent Colors */
+  --hub-tv: #6366f1;
+  --hub-tv-light: #EEF2FF;
+  --hub-disney: #f59e0b;
+  --hub-disney-light: #FFFBEB;
+  --hub-games: #10b981;
+  --hub-games-light: #ECFDF5;
+  --hub-animals: #059669;
+  --hub-animals-light: #D1FAE5;
+  --hub-girls: #ec4899;
+  --hub-girls-light: #FDF2F8;
+  --hub-toddler: #f97316;
+  --hub-toddler-light: #FFF7ED;
+  --hub-adults: #8b5cf6;
+  --hub-adults-light: #F5F3FF;
+  --hub-mandalas: #7c3aed;
+  --hub-mandalas-light: #EDE9FE;
+  --hub-calendars: #0ea5e9;
+  --hub-calendars-light: #F0F9FF;
+  --hub-school: #84cc16;
+  --hub-school-light: #F7FEE7;
 }
 
 [data-theme='dark'] {
@@ -297,16 +319,32 @@ main {
   background: #ffffff;
 }
 
+.card-img-wrapper::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(108, 92, 231, 0.0) 0%, rgba(108, 92, 231, 0.13) 100%);
+  opacity: 0;
+  transition: opacity 0.35s ease;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.card:hover .card-img-wrapper::after {
+  opacity: 1;
+}
+
 .card-img {
   width: 100%;
   height: 100%;
   object-fit: cover;
   display: block;
-  transition: transform 0.4s ease;
+  transition: transform 0.4s ease, filter 0.4s ease;
 }
 
 .card:hover .card-img {
   transform: scale(1.06);
+  filter: brightness(1.05);
 }
 
 .card-body {
@@ -389,6 +427,33 @@ main {
   background: radial-gradient(circle, rgba(108, 92, 231, 0.12) 0%, rgba(253, 121, 168, 0.05) 50%, transparent 70%);
   border-radius: 50%;
   pointer-events: none;
+}
+
+/* Hub-themed hero accents */
+.page-hero[data-hub="tv-series-and-movies"]        { background: linear-gradient(180deg, #EEF2FF 0%, var(--background) 100%); border-bottom-color: #c7d2fe; }
+.page-hero[data-hub="disney-and-fairy-tales"]      { background: linear-gradient(180deg, #FFFBEB 0%, var(--background) 100%); border-bottom-color: #fde68a; }
+.page-hero[data-hub="games-and-pop-culture"]       { background: linear-gradient(180deg, #ECFDF5 0%, var(--background) 100%); border-bottom-color: #a7f3d0; }
+.page-hero[data-hub="animals-and-nature"]          { background: linear-gradient(180deg, #D1FAE5 0%, var(--background) 100%); border-bottom-color: #6ee7b7; }
+.page-hero[data-hub="girls-themes"]                { background: linear-gradient(180deg, #FDF2F8 0%, var(--background) 100%); border-bottom-color: #fbcfe8; }
+.page-hero[data-hub="toddler-specific"]            { background: linear-gradient(180deg, #FFF7ED 0%, var(--background) 100%); border-bottom-color: #fed7aa; }
+.page-hero[data-hub="adults"]                      { background: linear-gradient(180deg, #F5F3FF 0%, var(--background) 100%); border-bottom-color: #ddd6fe; }
+.page-hero[data-hub="mandalas"]                    { background: linear-gradient(180deg, #EDE9FE 0%, var(--background) 100%); border-bottom-color: #c4b5fd; }
+.page-hero[data-hub="calendars"]                   { background: linear-gradient(180deg, #F0F9FF 0%, var(--background) 100%); border-bottom-color: #bae6fd; }
+.page-hero[data-hub="school-education-templates"]  { background: linear-gradient(180deg, #F7FEE7 0%, var(--background) 100%); border-bottom-color: #d9f99d; }
+.page-hero[data-hub="collections"]                 { background: linear-gradient(180deg, #F5F3FF 0%, var(--background) 100%); border-bottom-color: #ddd6fe; }
+
+/* Floating thumbnail animation */
+@keyframes floatA {
+  0%, 100% { transform: translateY(0px) rotate(-3deg); }
+  50%       { transform: translateY(-14px) rotate(-1deg); }
+}
+@keyframes floatB {
+  0%, 100% { transform: translateY(0px) rotate(3deg); }
+  50%       { transform: translateY(-10px) rotate(5deg); }
+}
+@keyframes floatC {
+  0%, 100% { transform: translateY(0px) rotate(1deg); }
+  50%       { transform: translateY(-18px) rotate(-1deg); }
 }
 
 /* SEO Block */

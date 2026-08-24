@@ -1,6 +1,7 @@
 'use client';
 
 import { useState } from 'react';
+import PrintPreviewModal from './PrintPreviewModal';
 
 export default function PrintDownloadButtons({
   isEn,
@@ -10,10 +11,10 @@ export default function PrintDownloadButtons({
   fileUrl: string;
 }) {
   const [downloading, setDownloading] = useState(false);
+  const [showPreview, setShowPreview] = useState(false);
 
-  const handlePrint = () => {
-    window.print();
-  };
+  const handlePrintClick = () => setShowPreview(true);
+  const doActualPrint = () => window.print();
 
   const handleDownload = async (e: React.MouseEvent) => {
     e.preventDefault();
@@ -98,24 +99,38 @@ export default function PrintDownloadButtons({
     }
   };
 
-  return (
-    <div style={{ marginTop: '1.5rem', display: 'flex', flexDirection: 'column', gap: '0.85rem' }}>
-      <button
-        onClick={handlePrint}
-        className="download-btn"
-        style={{ width: '100%', justifyContent: 'center', cursor: 'pointer' }}
-      >
-        <span aria-hidden="true">🖨️</span> {isEn ? 'Print Free Coloring Page' : 'Gratis Kleurplaat Printen'}
-      </button>
+  const previewUrl = `/api/proxy-image?url=${encodeURIComponent(fileUrl)}`;
+  const pageTitle = fileUrl.split('/').pop()?.replace(/_/g, ' ').replace(/\.[^.]+$/, '') || 'Coloring Page';
 
-      <button
-        onClick={handleDownload}
-        disabled={downloading}
-        className="btn-secondary"
-        style={{ width: '100%', justifyContent: 'center', cursor: downloading ? 'not-allowed' : 'pointer' }}
-      >
-        <span aria-hidden="true">⬇️</span> {downloading ? (isEn ? 'Preparing Image...' : 'Afbeelding Verwerken...') : (isEn ? 'Download Image File' : 'Download Afbeelding')}
-      </button>
-    </div>
+  return (
+    <>
+      <div style={{ marginTop: '1.5rem', display: 'flex', flexDirection: 'column', gap: '0.85rem' }}>
+        <button
+          onClick={handlePrintClick}
+          className="download-btn"
+          style={{ width: '100%', justifyContent: 'center', cursor: 'pointer' }}
+        >
+          <span aria-hidden="true">🖨️</span> {isEn ? 'Print Free Coloring Page' : 'Gratis Kleurplaat Printen'}
+        </button>
+
+        <button
+          onClick={handleDownload}
+          disabled={downloading}
+          className="btn-secondary"
+          style={{ width: '100%', justifyContent: 'center', cursor: downloading ? 'not-allowed' : 'pointer' }}
+        >
+          <span aria-hidden="true">⬇️</span> {downloading ? (isEn ? 'Preparing Image...' : 'Afbeelding Verwerken...') : (isEn ? 'Download Image File' : 'Download Afbeelding')}
+        </button>
+      </div>
+
+      <PrintPreviewModal
+        imageUrl={previewUrl}
+        title={pageTitle}
+        isOpen={showPreview}
+        onClose={() => setShowPreview(false)}
+        onConfirmPrint={doActualPrint}
+        isEn={isEn}
+      />
+    </>
   );
 }

@@ -5,6 +5,13 @@ import SafeImage from './SafeImage';
 import Link from 'next/link';
 import FavoriteButton from './FavoriteButton';
 
+const TRENDING_SLUGS = new Set([
+  'paw-patrol-1', 'paw-patrol-2', 'unicorn-1', 'unicorn-2',
+  'mandala-1', 'mandala-2', 'pokemon-1', 'pikachu-1',
+  'disney-princess-1', 'frozen-elsa-1', 'spongebob-1',
+  'dinosaur-1', 'dinosaur-2', 'bluey-1', 'bluey-2',
+]);
+
 interface MotionCardProps {
   page: {
     id: string;
@@ -22,6 +29,7 @@ interface MotionCardProps {
 
 export default function MotionCard({ page, lang, isEn }: MotionCardProps) {
   const url = `/${lang}/${page.parentHub}/${page.parentTheme}/${page.ageGroup}/${page.slug}`;
+  const isTrending = TRENDING_SLUGS.has(page.slug);
 
   return (
     <motion.div
@@ -54,6 +62,28 @@ export default function MotionCard({ page, lang, isEn }: MotionCardProps) {
               }} 
             />
           </div>
+          {isTrending && (
+            <div style={{
+              position: 'absolute',
+              top: '12px',
+              left: '12px',
+              zIndex: 10,
+              background: 'linear-gradient(135deg, #ff6b35, #f7c59f)',
+              color: 'white',
+              borderRadius: '9999px',
+              padding: '0.18rem 0.6rem',
+              fontSize: '0.68rem',
+              fontWeight: 800,
+              display: 'flex',
+              alignItems: 'center',
+              gap: '0.25rem',
+              boxShadow: '0 2px 8px rgba(255,107,53,0.4)',
+              letterSpacing: '0.02em',
+            }}>
+              <span aria-hidden="true">🔥</span>
+              <span>Trending</span>
+            </div>
+          )}
           <div style={{
             position: 'absolute',
             bottom: '12px',

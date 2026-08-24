@@ -8,6 +8,7 @@ import BackToTop from "@/components/BackToTop";
 import ThemeProvider from "@/components/ThemeProvider";
 import { FavoritesProvider } from "@/context/FavoritesContext";
 import { safeJsonLd } from "@/lib/api";
+import PageTransition from "@/components/PageTransition";
 
 const plusJakarta = Plus_Jakarta_Sans({ 
   subsets: ['latin'], 
@@ -106,7 +107,7 @@ export default async function RootLayout({
           <FavoritesProvider>
             <div className="layout-container">
               <Navbar lang={lang} />
-              <main id="main-content">{children}</main>
+              <main id="main-content"><PageTransition>{children}</PageTransition></main>
               <Footer lang={lang} />
               <CookieBanner lang={lang} />
               <BackToTop />

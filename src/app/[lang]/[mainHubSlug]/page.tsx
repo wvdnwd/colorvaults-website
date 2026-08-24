@@ -53,7 +53,7 @@ export default async function MainHubPage({ params }: { params: Promise<{ lang: 
 
   return (
     <>
-      <div className="page-hero">
+      <div className="page-hero" data-hub={mainHubSlug}>
         <div className="container">
           <Breadcrumbs items={[{ label: hub.title }]} lang={lang} />
           <h1 className="title-h1" style={{ marginTop: '1rem' }}>{hub.title}</h1>
