@@ -1,6 +1,6 @@
 .footer {
-  background: linear-gradient(180deg, var(--background) 0%, var(--surface-2) 100%);
-  border-top: 1px solid var(--gray-200);
+  background: linear-gradient(180deg, var(--color-primary-mid) 0%, var(--color-primary) 100%);
+  border-top: 1px solid rgba(253, 246, 233, 0.08);
   padding: 4.5rem 0 0;
   margin-top: auto;
   position: relative;
@@ -34,10 +34,11 @@
   align-items: center;
   gap: 0.65rem;
   font-size: 1.5rem;
-  font-weight: 900;
-  color: var(--foreground);
+  font-weight: 700;
+  color: var(--color-text-light);
   text-decoration: none;
-  letter-spacing: -0.03em;
+  letter-spacing: -0.01em;
+  font-family: var(--font-display), 'Fredoka', sans-serif;
 }
 
 .logoBadge {
@@ -49,11 +50,11 @@
   align-items: center;
   justify-content: center;
   font-size: 1.15rem;
-  box-shadow: var(--shadow-purple);
+  box-shadow: 0 6px 18px var(--color-accent-glow);
 }
 
 .logoText {
-  font-family: 'Outfit', sans-serif;
+  font-family: var(--font-display), 'Fredoka', sans-serif;
 }
 
 .logoAccent {
@@ -63,7 +64,7 @@
 }
 
 .brandDesc {
-  color: var(--gray-500);
+  color: var(--color-text-muted);
   font-size: 0.925rem;
   line-height: 1.65;
 }
@@ -73,12 +74,12 @@
   align-items: center;
   font-size: 0.78rem;
   font-weight: 700;
-  color: var(--primary);
-  background: var(--primary-light);
+  color: var(--color-accent);
+  background: rgba(255, 107, 74, 0.12);
   padding: 0.35rem 0.85rem;
   border-radius: var(--radius-full);
   align-self: flex-start;
-  border: 1px solid rgba(108, 92, 231, 0.15);
+  border: 1px solid rgba(255, 107, 74, 0.25);
 }
 
 .links {
@@ -94,17 +95,17 @@
 }
 
 .linkColumnTitle {
-  font-family: 'Outfit', sans-serif;
-  font-weight: 800;
-  font-size: 0.825rem;
-  color: var(--foreground);
+  font-family: var(--font-display), 'Fredoka', sans-serif;
+  font-weight: 600;
+  font-size: 0.85rem;
+  color: var(--color-text-light);
   text-transform: uppercase;
   letter-spacing: 0.08em;
   margin-bottom: 0.4rem;
 }
 
 .link {
-  color: var(--gray-500);
+  color: var(--color-text-muted);
   text-decoration: none;
   font-size: 0.9rem;
   font-weight: 600;
@@ -113,18 +114,18 @@
 }
 
 .link:hover {
-  color: var(--primary);
+  color: var(--color-accent);
   transform: translateX(3px);
 }
 
 .footerBottom {
-  border-top: 1px solid var(--gray-200);
+  border-top: 1px solid rgba(253, 246, 233, 0.08);
   padding: 1.75rem 0;
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
   gap: 1rem;
-  color: var(--gray-400);
+  color: var(--color-text-muted);
   font-size: 0.85rem;
   font-weight: 600;
 }

@@ -5,6 +5,7 @@ import Link from 'next/link';
 import MotionCard from '@/components/MotionCard';
 import AdSlot from '@/components/AdSlot';
 import ScrollReveal from '@/components/ScrollReveal';
+import HeroCarousel from '@/components/HeroCarousel';
 import React from 'react';
 
 export async function generateMetadata({ params }: { params: Promise<{ lang: string }> }) {
@@ -110,18 +111,13 @@ export default async function HomePage({ params }: { params: Promise<{ lang: str
         <div className={`ink-blob ${styles.blobBottomRight}`} aria-hidden="true" />
         <div className={styles.blobCenter} aria-hidden="true" />
 
-        {/* Floating thumbnail mosaic */}
-        <div className={styles.heroMosaic} aria-hidden="true">
-          {topThemes.slice(0, 6).map((theme) => (
-            <div key={theme.slug} className={styles.heroThumb}>
-              {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img src={theme.image} alt="" />
-            </div>
-          ))}
-        </div>
+        {/* 3D rotating carousel of coloring page thumbnails */}
+        <HeroCarousel
+          images={topThemes.map(t => ({ src: t.image, alt: t.title }))}
+        />
 
         <div className={styles.heroInner}>
-          {/* Staggered hero reveal — each element has animation-delay via CSS class */}
+          {/* Staggered hero reveal */}
           <span className={`${styles.heroBadge} hero-anim-0`}>
             ✨ {isEn ? '100% Free — High Resolution Printables' : '100% Gratis — Hoge Resolutie Printables'}
           </span>
