@@ -127,6 +127,18 @@ const generateData = () => {
     return;
   }
 
+  // Load translations if available
+  const translationsPath = path.join(inputDir, 'translations.json');
+  let translations = {};
+  if (fs.existsSync(translationsPath)) {
+    try {
+      translations = JSON.parse(fs.readFileSync(translationsPath, 'utf8'));
+      console.log(`Loaded ${Object.keys(translations).length} translations from translations.json`);
+    } catch (e) {
+      console.error('Failed to load translations.json', e);
+    }
+  }
+
   // Define hubs
   const enHubs = hubsConfig.map(h => ({
     title: h.en.title,
@@ -256,28 +268,40 @@ const generateData = () => {
       const fileUrlParts = file.split('/').map(encodeURIComponent).join('/');
       const imageUrl = `${SPACES_BASE_URL}/${fileUrlParts}`;
       
-      // Generate a clean title based on the filename, falling back to theme and index if generic
-      const rawFilename = path.basename(file, path.extname(file));
-      // Remove 13-digit timestamp (e.g., _1786116493671)
-      let nameWithoutTimestamp = rawFilename.replace(/_\d{13}$/, "");
-      // Remove trailing number suffixes if they exist
-      nameWithoutTimestamp = nameWithoutTimestamp.replace(/_\d+$/, "");
-      // Replace underscores with spaces
-      let parsedTitle = nameWithoutTimestamp.replace(/_/g, " ").replace(/\s+/g, " ").trim();
+      // Determine custom bilingual titles
+      let niceTitleEn = '';
+      let niceTitleNl = '';
+      let isGeneric = false;
       
-      // Capitalize first letter
-      if (parsedTitle) {
-        parsedTitle = parsedTitle.charAt(0).toUpperCase() + parsedTitle.slice(1);
-      }
+      if (translations[file]) {
+        niceTitleEn = translations[file].en;
+        niceTitleNl = translations[file].nl;
+      } else {
+        // Fallback parsing logic
+        const rawFilename = path.basename(file, path.extname(file));
+        // Remove 13-digit timestamp (e.g., _1786116493671)
+        let nameWithoutTimestamp = rawFilename.replace(/_\d{13}$/, "");
+        // Remove trailing number suffixes if they exist
+        nameWithoutTimestamp = nameWithoutTimestamp.replace(/_\d+$/, "");
+        // Replace underscores with spaces
+        let parsedTitle = nameWithoutTimestamp.replace(/_/g, " ").replace(/\s+/g, " ").trim();
+        
+        // Capitalize first letter
+        if (parsedTitle) {
+          parsedTitle = parsedTitle.charAt(0).toUpperCase() + parsedTitle.slice(1);
+        }
 
-      // Check if the title is generic (e.g., ComfyUI_00015 or is empty/just numbers)
-      const isGeneric = !parsedTitle || 
-                        /^[0-9\-\s]+$/.test(parsedTitle) || 
-                        parsedTitle.toLowerCase().includes("comfyui") || 
-                        parsedTitle.toLowerCase() === "coloring page" || 
-                        parsedTitle.toLowerCase() === "coloringpage";
-                        
-      const niceTitle = isGeneric ? `${themeName} ${index + 1}` : parsedTitle;
+        // Check if the title is generic (e.g., ComfyUI_00015 or is empty/just numbers)
+        isGeneric = !parsedTitle || 
+                    /^[0-9\-\s]+$/.test(parsedTitle) || 
+                    parsedTitle.toLowerCase().includes("comfyui") || 
+                    parsedTitle.toLowerCase() === "coloring page" || 
+                    parsedTitle.toLowerCase() === "coloringpage";
+                            
+        const fallbackTitle = isGeneric ? `${themeName} ${index + 1}` : parsedTitle;
+        niceTitleEn = fallbackTitle;
+        niceTitleNl = fallbackTitle;
+      }
 
       const ageGroupKey = agesList[index % agesList.length];
       const enAge = ageGroupKey;
@@ -285,7 +309,7 @@ const generateData = () => {
 
       enPages.push({
         id: pageId,
-        title: niceTitle,
+        title: niceTitleEn,
         slug: pageSlug,
         parentHub: parentHubEn,
         parentTheme: themeSlug,
@@ -293,11 +317,11 @@ const generateData = () => {
         image: imageUrl,
         preview: imageUrl,
         downloadableFile: imageUrl,
-        metaTitle: `${niceTitle} - Free Printable Coloring Page | ColorVaults`,
-        metaDescription: `Download this free printable ${niceTitle.toLowerCase()} coloring page in high resolution. Perfect for kids and adults. Easy instant print, no registration required!`,
-        shortDescription: `Get this free printable ${niceTitle.toLowerCase()} coloring page. High-quality line art template, instantly downloadable.`,
-        longDescription: `Looking for a free printable ${niceTitle.toLowerCase()} coloring page? This high-resolution coloring page template is perfect for ${ageTranslations[ageGroupKey].en.toLowerCase()} and adults who love being creative. Download the high-quality PDF or image instantly and start coloring today!`,
-        altText: niceTitle,
+        metaTitle: `${niceTitleEn} - Free Printable Coloring Page | ColorVaults`,
+        metaDescription: `Download this free printable ${niceTitleEn.toLowerCase()} coloring page in high resolution. Perfect for kids and adults. Easy instant print, no registration required!`,
+        shortDescription: `Get this free printable ${niceTitleEn.toLowerCase()} coloring page. High-quality line art template, instantly downloadable.`,
+        longDescription: `Looking for a free printable ${niceTitleEn.toLowerCase()} coloring page? This high-resolution coloring page template is perfect for ${ageTranslations[ageGroupKey].en.toLowerCase()} and adults who love being creative. Download the high-quality PDF or image instantly and start coloring today!`,
+        altText: niceTitleEn,
         tags: [themeSlug],
         relatedPages: [],
         language: 'en'
@@ -305,7 +329,7 @@ const generateData = () => {
 
       nlPages.push({
         id: pageId,
-        title: niceTitle,
+        title: niceTitleNl,
         slug: pageSlug,
         parentHub: parentHubNl,
         parentTheme: themeSlug,
@@ -313,11 +337,11 @@ const generateData = () => {
         image: imageUrl,
         preview: imageUrl,
         downloadableFile: imageUrl,
-        metaTitle: `${niceTitle} - Gratis Printbare Kleurplaat | ColorVaults`,
-        metaDescription: `Download deze gratis printbare ${niceTitle.toLowerCase()} kleurplaat in hoge resolutie. Perfect voor kinderen en volwassenen. Direct printen zonder account!`,
-        shortDescription: `Download deze gratis printbare ${niceTitle.toLowerCase()} kleurplaat. Hoge kwaliteit lijntekening sjabloon om direct in te kleuren.`,
-        longDescription: `Op zoek naar een gratis printbare ${niceTitle.toLowerCase()} kleurplaat? Dit hoge resolutie kleurplaat sjabloon is perfect voor ${ageTranslations[ageGroupKey].nl.toLowerCase()} en volwassenen die graag creatief bezig zijn. Download de afbeelding direct en begin meteen met kleuren!`,
-        altText: niceTitle,
+        metaTitle: `${niceTitleNl} - Gratis Printbare Kleurplaat | ColorVaults`,
+        metaDescription: `Download deze gratis printbare ${niceTitleNl.toLowerCase()} kleurplaat in hoge resolutie. Perfect voor kinderen en volwassenen. Direct printen zonder account!`,
+        shortDescription: `Download deze gratis printbare ${niceTitleNl.toLowerCase()} kleurplaat. Hoge kwaliteit lijntekening sjabloon om direct in te kleuren.`,
+        longDescription: `Op zoek naar een gratis printbare ${niceTitleNl.toLowerCase()} kleurplaat? Dit hoge resolutie kleurplaat sjabloon is perfect voor ${ageTranslations[ageGroupKey].nl.toLowerCase()} en volwassenen die graag creatief bezig zijn. Download de afbeelding direct en begin meteen met kleuren!`,
+        altText: niceTitleNl,
         tags: [themeSlug],
         relatedPages: [],
         language: 'nl'
