@@ -9,9 +9,8 @@
     "lint": "eslint",
     "generate:data": "node scripts/generate-real-data.js",
     "generate:search": "node scripts/generate-search-index.js",
-    "generate:sitemap": "node scripts/generate-sitemap.js",
-    "generate:all": "npm run generate:data && npm run generate:search && npm run generate:sitemap",
-    "prebuild": "npm run generate:search && npm run generate:sitemap"
+    "generate:all": "npm run generate:data && npm run generate:search",
+    "prebuild": "npm run generate:search"
   },
   "dependencies": {
     "framer-motion": "^13.0.0",

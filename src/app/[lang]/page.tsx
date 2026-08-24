@@ -6,6 +6,28 @@ import MotionCard from '@/components/MotionCard';
 import AdSlot from '@/components/AdSlot';
 import React from 'react';
 
+export async function generateMetadata({ params }: { params: Promise<{ lang: string }> }) {
+  const { lang } = await params;
+  const isEn = lang === 'en';
+  return {
+    alternates: {
+      canonical: `/${lang}`,
+      languages: {
+        'en': '/en',
+        'nl': '/nl',
+        'x-default': '/en',
+      },
+    },
+    openGraph: {
+      title: isEn ? 'ColorVaults | Free Premium Coloring Pages' : 'ColorVaults | Gratis Premium Kleurplaten',
+      description: isEn
+        ? 'Download thousands of high-quality free printable coloring pages for kids, toddlers, teens and adults. 100% free, no account required.'
+        : 'Download duizenden gratis printbare kleurplaten van topkwaliteit voor kinderen, peuters, tieners en volwassenen. 100% gratis.',
+      url: `https://colorvaults.com/${lang}`,
+    },
+  };
+}
+
 export default async function HomePage({ params }: { params: Promise<{ lang: string }> }) {
   const { lang } = await params;
   // Hand-pick the best popular themes to show on the homepage

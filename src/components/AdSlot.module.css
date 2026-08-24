@@ -76,18 +76,18 @@
 
 /* Variant Styles */
 .adSlot.banner {
-  min-height: 110px;
+  min-height: 90px;
   max-width: 100%;
   width: 100%;
 }
 
 .adSlot.rectangle {
-  min-height: 300px;
+  min-height: 250px;
   width: 100%;
 }
 
 .adSlot.in-feed {
-  min-height: 320px;
+  min-height: 120px;
   height: 100%;
   margin: 0;
   border-style: solid;
@@ -97,10 +97,6 @@
 
 @media (max-width: 768px) {
   .adSlot.banner {
-    min-height: 80px;
     margin: 1.5rem 0;
-  }
-  .adSlot.rectangle {
-    min-height: 250px;
   }
 }

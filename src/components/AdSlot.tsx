@@ -1,6 +1,6 @@
 'use client';
 
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import styles from './AdSlot.module.css';
 
 interface AdSlotProps {
@@ -14,10 +14,19 @@ export default function AdSlot({
   text = 'Advertisement',
   slotId,
 }: AdSlotProps) {
+  const [adLoaded, setAdLoaded] = useState(false);
+
   useEffect(() => {
+    // NOTE: adLoaded will only be true if adsbygoogle is already initialized
+    // (e.g. returning visitors with a warm AdSense script).
+    // On first load, AdSense initializes asynchronously AFTER this effect runs,
+    // so adLoaded stays false and the placeholder remains visible.
+    // This is intentional — the placeholder is better than a blank/broken ad unit.
+    // The <ins> element is queued via .push({}) regardless of adLoaded state.
     try {
       if (typeof window !== 'undefined' && (window as any).adsbygoogle) {
         ((window as any).adsbygoogle = (window as any).adsbygoogle || []).push({});
+        setAdLoaded(true);
       }
     } catch (err) {
       // AdSense initialization fallback
@@ -25,7 +34,11 @@ export default function AdSlot({
   }, []);
 
   return (
-    <div className={`${styles.adSlot} ${styles[type]}`}>
+    <div 
+      className={`${styles.adSlot} ${styles[type]}`} 
+      role="complementary" 
+      aria-label={text}
+    >
       <div className={styles.adHeader}>
         <span className={styles.adTag}>{text}</span>
       </div>
@@ -34,7 +47,7 @@ export default function AdSlot({
         {/* Placeholder rendering when no real Google AdSense slotId is provided */}
         <ins
           className="adsbygoogle"
-          style={{ display: 'block', width: '100%', height: '100%' }}
+          style={{ display: adLoaded ? 'block' : 'none', width: '100%', height: '100%' }}
           data-ad-client="ca-pub-XXXXXXXXXXXXXXXX" // Replace with real AdSense Publisher ID
           data-ad-slot={slotId || "1234567890"}
           data-ad-format={type === 'rectangle' ? 'rectangle' : type === 'in-feed' ? 'fluid' : 'auto'}
@@ -42,11 +55,13 @@ export default function AdSlot({
         />
 
         {/* Visual fallback for preview / development */}
-        <div className={styles.adPlaceholder}>
-          <span className={styles.adIcon}>📢</span>
-          <span className={styles.adLabel}>{text}</span>
-          <span className={styles.adSublabel}>Google AdSense</span>
-        </div>
+        {!adLoaded && (
+          <div className={styles.adPlaceholder} aria-hidden="true">
+            <span className={styles.adIcon}>📢</span>
+            <span className={styles.adLabel}>{text}</span>
+            <span className={styles.adSublabel}>Google AdSense</span>
+          </div>
+        )}
       </div>
     </div>
   );

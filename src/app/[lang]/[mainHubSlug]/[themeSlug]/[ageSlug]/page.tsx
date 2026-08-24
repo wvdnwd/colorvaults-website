@@ -16,13 +16,30 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
   const { lang, mainHubSlug, themeSlug, ageSlug } = await params;
   const agePage = getAgePageBySlug(lang, mainHubSlug, themeSlug, ageSlug);
   if (!agePage) return {};
+  const theme = getThemes(lang).find(t => t.parentHub === mainHubSlug && t.slug === themeSlug);
+  const ogImageUrl = theme?.image
+    ? `/api/og?title=${encodeURIComponent(agePage.title)}&image=${encodeURIComponent(theme.image)}`
+    : '/images/banner.jpg';
   return {
     title: `${agePage.title} | Free Printable | ColorVaults`,
     description: agePage.seoText,
     alternates: {
       canonical: `/${lang}/${mainHubSlug}/${themeSlug}/${ageSlug}`,
-      languages: { 'en': `/en/${mainHubSlug}/${themeSlug}/${ageSlug}`, 'nl': `/nl/${mainHubSlug}/${themeSlug}/${ageSlug}` }
-    }
+      languages: { 
+        'en': `/en/${mainHubSlug}/${themeSlug}/${ageSlug}`, 
+        'nl': `/nl/${mainHubSlug}/${themeSlug}/${ageSlug}`,
+        'x-default': `/en/${mainHubSlug}/${themeSlug}/${ageSlug}`
+      }
+    },
+    openGraph: {
+      title: `${agePage.title} | Free Printable | ColorVaults`,
+      description: agePage.seoText,
+      images: [{ url: ogImageUrl, width: 1200, height: 630, alt: agePage.title }],
+    },
+    twitter: {
+      card: 'summary_large_image',
+      images: [ogImageUrl],
+    },
   };
 }
 
@@ -59,7 +76,7 @@ export default async function AgePage({
             items={[
               { label: hub.title, href: `/${lang}/${hub.slug}` },
               { label: theme.title, href: `/${lang}/${hub.slug}/${theme.slug}` },
-              { label: agePage.title, href: `/${lang}/${hub.slug}/${theme.slug}/${agePage.ageGroup}` }
+              { label: agePage.title }
             ]}
             lang={lang}
           />

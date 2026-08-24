@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import styles from './Breadcrumbs.module.css';
+import { safeJsonLd } from '@/lib/api';
 
 export interface BreadcrumbItem {
   label: string;
@@ -30,7 +31,7 @@ export default function Breadcrumbs({ items, lang }: { items: BreadcrumbItem[]; 
     <>
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        dangerouslySetInnerHTML={{ __html: safeJsonLd(jsonLd) }}
       />
       <nav aria-label="Breadcrumb" className={styles.breadcrumbs}>
         <Link href={`/${lang}`} className={styles.link}>

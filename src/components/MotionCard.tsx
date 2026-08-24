@@ -1,7 +1,7 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import Image from 'next/image';
+import SafeImage from './SafeImage';
 import Link from 'next/link';
 import FavoriteButton from './FavoriteButton';
 
@@ -25,8 +25,8 @@ export default function MotionCard({ page, lang, isEn }: MotionCardProps) {
 
   return (
     <motion.div
-      initial={{ opacity: 0, y: 20 }}
-      whileInView={{ opacity: 1, y: 0 }}
+      initial={{ opacity: 0 }}
+      whileInView={{ opacity: 1 }}
       viewport={{ once: true, margin: '-50px' }}
       whileHover={{ y: -8 }}
       transition={{ duration: 0.3, ease: [0.34, 1.56, 0.64, 1] }}
@@ -34,12 +34,13 @@ export default function MotionCard({ page, lang, isEn }: MotionCardProps) {
     >
       <Link href={url} className="card" style={{ height: '100%' }}>
         <div className="card-img-wrapper" style={{ aspectRatio: '3/4', position: 'relative', background: '#FFFFFF', padding: '1rem', borderBottom: '1px solid var(--gray-200)' }}>
-          <Image 
+          <SafeImage 
             src={page.preview} 
             alt={page.title} 
             width={400} 
             height={400} 
             className="card-img" 
+            sizes="(max-width: 640px) 50vw, (max-width: 1024px) 33vw, 260px"
             style={{ objectFit: 'contain', width: '100%', height: '100%' }}
           />
           <div style={{ position: 'absolute', top: '12px', right: '12px', zIndex: 10 }}>

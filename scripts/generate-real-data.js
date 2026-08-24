@@ -256,18 +256,8 @@ const generateData = () => {
       const fileUrlParts = file.split('/').map(encodeURIComponent).join('/');
       const imageUrl = `${SPACES_BASE_URL}/${fileUrlParts}`;
       
-      // Extract a nice title from the filename!
-      const fileName = file.split('/').pop() || '';
-      // Remove the _1784881533249.png part (timestamp and extension)
-      let niceTitle = fileName.replace(/_\d{13}\.(png|jpg|jpeg|webp)$/i, '');
-      // Replace underscores with spaces
-      niceTitle = niceTitle.replace(/_/g, ' ').trim();
-      // Clean up multiple spaces
-      niceTitle = niceTitle.replace(/\s+/g, ' ');
-      // If it ends up empty, fallback to the old way
-      if (!niceTitle || niceTitle.length < 3) {
-        niceTitle = `${themeName} ${index + 1}`;
-      }
+      // Generate a clean title based on the theme and index
+      const niceTitle = `${themeName} ${index + 1}`;
 
       const ageGroupKey = agesList[index % agesList.length];
       const enAge = ageGroupKey;

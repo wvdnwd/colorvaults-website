@@ -1,14 +1,16 @@
 'use client';
 
-import { useFavorites } from '@/hooks/useFavorites';
+import { useFavoritesContext } from '@/context/FavoritesContext';
 import Link from 'next/link';
 import Image from 'next/image';
 import { motion } from 'framer-motion';
 import FavoriteButton from '@/components/FavoriteButton';
+import * as React from 'react';
 
-export default function FavoritesPage({ params }: { params: { lang: string } }) {
-  const { favorites, isLoaded } = useFavorites();
-  const isEn = params.lang === 'en';
+export default function FavoritesPage({ params }: { params: Promise<{ lang: string }> }) {
+  const { favorites, isLoaded } = useFavoritesContext();
+  const { lang } = React.use(params);
+  const isEn = lang === 'en';
 
   if (!isLoaded) {
     return <div className="container section" style={{ minHeight: '60vh' }}></div>;
@@ -29,7 +31,7 @@ export default function FavoritesPage({ params }: { params: { lang: string } }) 
           <p style={{ color: 'var(--gray-500)', marginBottom: '2rem' }}>
             {isEn ? 'Browse our collection and click the heart icon to save pages here.' : 'Bekijk onze collectie en klik op het hartje om pagina\'s hier op te slaan.'}
           </p>
-          <Link href={`/${params.lang}`} className="btn-primary">
+          <Link href={`/${lang}`} className="btn-primary">
             {isEn ? 'Browse Pages' : 'Bekijk Kleurplaten'}
           </Link>
         </div>

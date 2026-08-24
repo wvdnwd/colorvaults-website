@@ -32,12 +32,13 @@ export default function ThemeToggle() {
         borderRadius: '50%',
         transition: 'background 0.2s',
       }}
-      aria-label="Toggle Dark Mode"
-      title="Toggle Dark Mode"
+      aria-label={theme === 'dark' ? 'Switch to Light Mode' : 'Switch to Dark Mode'}
+      title={theme === 'dark' ? 'Switch to Light Mode' : 'Switch to Dark Mode'}
+      aria-pressed={theme === 'dark'}
       onMouseOver={(e) => (e.currentTarget.style.background = 'var(--gray-100)')}
       onMouseOut={(e) => (e.currentTarget.style.background = 'transparent')}
     >
-      {theme === 'dark' ? '🌙' : '☀️'}
+      <span aria-hidden="true">{theme === 'dark' ? '🌙' : '☀️'}</span>
     </button>
   );
 }

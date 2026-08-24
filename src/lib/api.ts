@@ -49,6 +49,7 @@ export interface ColoringPage {
   tags: string[];
   relatedPages: string[];
   language: string;
+  faq?: { question: string; answer: string }[];
 }
 
 const dataDir = path.join(process.cwd(), 'src/data');
@@ -70,18 +71,27 @@ function readJson<T>(lang: string, filename: string): T[] {
   const filePath = path.join(dataDir, lang, filename);
   if (!fs.existsSync(filePath)) return [];
   const fileContents = fs.readFileSync(filePath, 'utf8');
-  return JSON.parse(fileContents);
+  try {
+    return JSON.parse(fileContents) as T[];
+  } catch (e) {
+    console.error(`[ColorVaults] Failed to parse JSON at ${filePath}:`, e);
+    return [];
+  }
 }
 
 // Cached memory so we don't read JSONs thousands of times during build
-let cache: Record<string, any> = {};
+let cache: Record<string, unknown[]> = {};
 
 function getCached<T>(lang: string, key: string, filename: string): T[] {
   const cacheKey = `${lang}_${key}`;
   if (!cache[cacheKey]) {
     cache[cacheKey] = readJson<T>(lang, filename);
   }
-  return cache[cacheKey];
+  return cache[cacheKey] as T[];
+}
+
+export function safeJsonLd(data: object): string {
+  return JSON.stringify(data).replace(/<\/script>/gi, '<\\/script>');
 }
 
 export function getMainHubs(lang: string): MainHub[] {

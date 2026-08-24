@@ -1,4 +1,4 @@
-import { getThemes, getThemeBySlug, getMainHubs } from '@/lib/api';
+import { getThemes, getThemeBySlug, getMainHubs, safeJsonLd } from '@/lib/api';
 import { notFound } from 'next/navigation';
 import Link from 'next/link';
 import Breadcrumbs from '@/components/Breadcrumbs';
@@ -14,13 +14,29 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
   const { lang, mainHubSlug, themeSlug } = await params;
   const theme = getThemeBySlug(lang, mainHubSlug, themeSlug);
   if (!theme) return {};
+  const ogImageUrl = theme.image
+    ? `/api/og?title=${encodeURIComponent(theme.title + ' Coloring Pages')}&image=${encodeURIComponent(theme.image)}`
+    : '/images/banner.jpg';
   return {
     title: `${theme.title} Coloring Pages | ColorVaults`,
     description: theme.description,
     alternates: {
       canonical: `/${lang}/${mainHubSlug}/${theme.slug}`,
-      languages: { 'en': `/en/${mainHubSlug}/${theme.slug}`, 'nl': `/nl/${mainHubSlug}/${theme.slug}` }
-    }
+      languages: { 
+        'en': `/en/${mainHubSlug}/${theme.slug}`, 
+        'nl': `/nl/${mainHubSlug}/${theme.slug}`,
+        'x-default': `/en/${mainHubSlug}/${theme.slug}`
+      }
+    },
+    openGraph: {
+      title: `${theme.title} Coloring Pages | ColorVaults`,
+      description: theme.description,
+      images: [{ url: ogImageUrl, width: 1200, height: 630, alt: theme.title }],
+    },
+    twitter: {
+      card: 'summary_large_image',
+      images: [ogImageUrl],
+    },
   };
 }
 
@@ -52,7 +68,7 @@ export default async function ThemePage({ params }: { params: Promise<{ lang: st
           <Breadcrumbs
             items={[
               { label: hub.title, href: `/${lang}/${hub.slug}` },
-              { label: theme.title, href: `/${lang}/${hub.slug}/${theme.slug}` }
+              { label: theme.title }
             ]}
             lang={lang}
           />
@@ -108,6 +124,24 @@ export default async function ThemePage({ params }: { params: Promise<{ lang: st
           </p>
         </div>
       </div>
+
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: safeJsonLd({
+          "@context": "https://schema.org",
+          "@type": "CollectionPage",
+          "name": `${theme.title} Coloring Pages`,
+          "description": theme.description,
+          "url": `https://colorvaults.com/${lang}/${mainHubSlug}/${theme.slug}`,
+          "isPartOf": { "@id": "https://colorvaults.com/#website" },
+          "inLanguage": lang,
+          "hasPart": theme.availableAges.map(age => ({
+            "@type": "WebPage",
+            "name": `${theme.title} Coloring Pages for ${ageLabels[age] ? (isEn ? ageLabels[age].en : ageLabels[age].nl) : age}`,
+            "url": `https://colorvaults.com/${lang}/${mainHubSlug}/${theme.slug}/${age}`
+          }))
+        }) }}
+      />
     </>
   );
 }

@@ -21,7 +21,12 @@ export default function PrintDownloadButtons({
     setDownloading(true);
 
     try {
-      const response = await fetch(fileUrl);
+      // Use proxy to avoid CORS issues with DigitalOcean Spaces canvas tainting
+      const proxyUrl = `/api/proxy-image?url=${encodeURIComponent(fileUrl)}`;
+      const response = await fetch(proxyUrl);
+      
+      if (!response.ok) throw new Error('Proxy fetch failed');
+      
       const blob = await response.blob();
       const img = new Image();
       img.src = URL.createObjectURL(blob);
@@ -42,21 +47,33 @@ export default function PrintDownloadButtons({
       ctx.drawImage(img, 0, 0);
 
       // Draw watermark
-      ctx.fillStyle = 'rgba(0, 0, 0, 0.45)';
-      const fontSize = Math.max(16, img.width * 0.022);
+      ctx.fillStyle = 'rgba(0, 0, 0, 0.5)';
+      const fontSize = Math.max(14, img.width * 0.02); // Dynamic font size based on image width
       ctx.font = `bold ${fontSize}px sans-serif`;
       ctx.textAlign = 'right';
       ctx.textBaseline = 'bottom';
       
+      // Text shadow for readability
       ctx.shadowColor = 'white';
       ctx.shadowBlur = 4;
       ctx.shadowOffsetX = 0;
       ctx.shadowOffsetY = 0;
       
-      ctx.fillText('© ColorVaults.com', canvas.width - 24, canvas.height - 24);
+      ctx.fillText('© ColorVaults.com', canvas.width - 20, canvas.height - 20);
 
+      // Convert to blob and download
       canvas.toBlob((watermarkedBlob) => {
-        if (!watermarkedBlob) return;
+        if (!watermarkedBlob) {
+          // Blob generation failed, fall through to direct download
+          const a = document.createElement('a');
+          a.href = `/api/proxy-image?url=${encodeURIComponent(fileUrl)}`;
+          a.download = fileUrl.split('/').pop() || 'colorvaults-page.jpg';
+          document.body.appendChild(a);
+          a.click();
+          document.body.removeChild(a);
+          setDownloading(false);
+          return;
+        }
         const url = URL.createObjectURL(watermarkedBlob);
         const a = document.createElement('a');
         a.href = url;
@@ -66,15 +83,17 @@ export default function PrintDownloadButtons({
         a.click();
         document.body.removeChild(a);
         URL.revokeObjectURL(url);
+        setDownloading(false);
       }, 'image/jpeg', 0.95);
     } catch (err) {
       console.error('Failed to add watermark, falling back to direct download', err);
+      // Fallback
       const a = document.createElement('a');
-      a.href = fileUrl;
+      a.href = `/api/proxy-image?url=${encodeURIComponent(fileUrl)}`; // Try downloading via proxy anyway
       a.download = fileUrl.split('/').pop() || 'colorvaults-page.jpg';
-      a.target = '_blank';
+      document.body.appendChild(a);
       a.click();
-    } finally {
+      document.body.removeChild(a);
       setDownloading(false);
     }
   };
@@ -86,7 +105,7 @@ export default function PrintDownloadButtons({
         className="download-btn"
         style={{ width: '100%', justifyContent: 'center', cursor: 'pointer' }}
       >
-        🖨️ {isEn ? 'Print Free Coloring Page' : 'Gratis Kleurplaat Printen'}
+        <span aria-hidden="true">🖨️</span> {isEn ? 'Print Free Coloring Page' : 'Gratis Kleurplaat Printen'}
       </button>
 
       <button
@@ -95,7 +114,7 @@ export default function PrintDownloadButtons({
         className="btn-secondary"
         style={{ width: '100%', justifyContent: 'center', cursor: downloading ? 'not-allowed' : 'pointer' }}
       >
-        ⬇️ {downloading ? (isEn ? 'Preparing Image...' : 'Afbeelding Verwerken...') : (isEn ? 'Download Image File' : 'Download Afbeelding')}
+        <span aria-hidden="true">⬇️</span> {downloading ? (isEn ? 'Preparing Image...' : 'Afbeelding Verwerken...') : (isEn ? 'Download Image File' : 'Download Afbeelding')}
       </button>
     </div>
   );

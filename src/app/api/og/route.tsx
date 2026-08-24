@@ -2,17 +2,32 @@ import { ImageResponse } from 'next/og';
 
 export const runtime = 'edge';
 
+const ALLOWED_HOSTNAMES = new Set([
+  'colorvaults.ams3.cdn.digitaloceanspaces.com',
+  'colorvaults.ams3.digitaloceanspaces.com'
+]);
+
 export async function GET(request: Request) {
   try {
     const { searchParams } = new URL(request.url);
-    const title = searchParams.get('title') || 'Free Coloring Pages';
+    let title = searchParams.get('title') || 'Free Coloring Pages';
+    if (title.length > 200) {
+      title = title.substring(0, 200);
+    }
     const image = searchParams.get('image'); // e.g. URL to space
-    
+
     // Validate if 'image' is an absolute URL
     let absoluteImageUrl = null;
     if (image) {
       if (image.startsWith('http')) {
-        absoluteImageUrl = image;
+        try {
+          const parsedImage = new URL(image);
+          if (ALLOWED_HOSTNAMES.has(parsedImage.hostname)) {
+            absoluteImageUrl = image;
+          }
+        } catch (e) {
+          // Keep absoluteImageUrl = null
+        }
       } else {
         absoluteImageUrl = `https://colorvaults.com${image}`;
       }

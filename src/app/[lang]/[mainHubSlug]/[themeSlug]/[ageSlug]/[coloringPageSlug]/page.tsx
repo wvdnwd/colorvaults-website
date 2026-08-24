@@ -1,8 +1,9 @@
-import { getColoringPages, getPageBySlug, getMainHubs, getThemes, getAgePageBySlug, getPagesByAgeGroup } from '@/lib/api';
+import { getColoringPages, getPageBySlug, getMainHubs, getThemes, getAgePageBySlug, getPagesByAgeGroup, safeJsonLd } from '@/lib/api';
 import { notFound } from 'next/navigation';
 import Breadcrumbs from '@/components/Breadcrumbs';
 import Link from 'next/link';
 import Image from 'next/image';
+import SafeImage from '@/components/SafeImage';
 import PrintDownloadButtons from '@/components/PrintDownloadButtons';
 import FavoriteButton from '@/components/FavoriteButton';
 import MotionCard from '@/components/MotionCard';
@@ -29,7 +30,8 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
       canonical: `/${lang}/${mainHubSlug}/${themeSlug}/${ageSlug}/${page.slug}`,
       languages: { 
         'en': `/en/${mainHubSlug}/${themeSlug}/${ageSlug}/${page.slug}`, 
-        'nl': `/nl/${mainHubSlug}/${themeSlug}/${ageSlug}/${page.slug}` 
+        'nl': `/nl/${mainHubSlug}/${themeSlug}/${ageSlug}/${page.slug}`,
+        'x-default': `/en/${mainHubSlug}/${themeSlug}/${ageSlug}/${page.slug}` 
       }
     },
     openGraph: {
@@ -80,25 +82,16 @@ export default async function ColoringPageDetail({ params }: { params: Promise<{
           { label: hub.title, href: `/${lang}/${hub.slug}` },
           { label: theme.title, href: `/${lang}/${hub.slug}/${theme.slug}` },
           { label: agePage.title, href: `/${lang}/${hub.slug}/${theme.slug}/${agePage.ageGroup}` },
-          { label: page.title, href: `/${lang}/${hub.slug}/${theme.slug}/${agePage.ageGroup}/${page.slug}` }
+          { label: page.title }
         ]}
         lang={lang}
       />
       
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify({
+        dangerouslySetInnerHTML={{ __html: safeJsonLd({
           "@context": "https://schema.org",
           "@graph": [
-            {
-              "@type": "BreadcrumbList",
-              "itemListElement": [
-                { "@type": "ListItem", "position": 1, "name": hub.title, "item": `https://colorvaults.com/${lang}/${hub.slug}` },
-                { "@type": "ListItem", "position": 2, "name": theme.title, "item": `https://colorvaults.com/${lang}/${hub.slug}/${theme.slug}` },
-                { "@type": "ListItem", "position": 3, "name": agePage.title, "item": `https://colorvaults.com/${lang}/${hub.slug}/${theme.slug}/${agePage.ageGroup}` },
-                { "@type": "ListItem", "position": 4, "name": page.title, "item": `https://colorvaults.com/${lang}/${hub.slug}/${theme.slug}/${agePage.ageGroup}/${page.slug}` }
-              ]
-            },
             {
               "@type": "ImageObject",
               "name": page.title,
@@ -110,7 +103,18 @@ export default async function ColoringPageDetail({ params }: { params: Promise<{
               },
               "isFamilyFriendly": "true",
               "genre": "Coloring Page"
-            }
+            },
+            ...(page.faq && page.faq.length > 0 ? [{
+              "@type": "FAQPage",
+              "mainEntity": page.faq.map(item => ({
+                "@type": "Question",
+                "name": item.question,
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": item.answer
+                }
+              }))
+            }] : [])
           ]
         }) }}
       />
@@ -130,12 +134,13 @@ export default async function ColoringPageDetail({ params }: { params: Promise<{
               boxShadow: 'var(--shadow-md)'
             }}
           >
-            <Image 
+            <SafeImage 
               src={page.image} 
               alt={page.metaTitle || page.title} 
               width={800} 
               height={800} 
-              priority
+              loading="eager"
+              fetchPriority="high"
               style={{ maxWidth: '100%', height: 'auto', borderRadius: 'var(--radius)', boxShadow: 'var(--shadow-sm)' }} 
             />
             <div style={{ position: 'absolute', top: '18px', right: '18px' }}>
@@ -157,17 +162,19 @@ export default async function ColoringPageDetail({ params }: { params: Promise<{
               href={pinterestUrl}
               target="_blank"
               rel="noopener noreferrer"
+              aria-label={isEn ? 'Share on Pinterest (opens in new tab)' : 'Delen op Pinterest (opent in nieuw tabblad)'}
               style={{ display: 'inline-flex', alignItems: 'center', gap: '0.5rem', background: '#E60023', color: 'white', padding: '0.65rem 1.25rem', borderRadius: 'var(--radius-full)', fontWeight: 700, fontSize: '0.875rem', textDecoration: 'none', transition: 'transform 0.2s', boxShadow: '0 4px 12px rgba(230,0,35,0.25)' }}
             >
-              📌 {isEn ? 'Pin on Pinterest' : 'Pinen op Pinterest'}
+              <span aria-hidden="true">📌</span> {isEn ? 'Pin on Pinterest' : 'Pinen op Pinterest'}
             </a>
             <a
               href={`https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(`https://colorvaults.com/${lang}/${mainHubSlug}/${themeSlug}/${ageSlug}/${page.slug}`)}`}
               target="_blank"
               rel="noopener noreferrer"
+              aria-label={isEn ? 'Share on Facebook (opens in new tab)' : 'Delen op Facebook (opent in nieuw tabblad)'}
               style={{ display: 'inline-flex', alignItems: 'center', gap: '0.5rem', background: '#1877F2', color: 'white', padding: '0.65rem 1.25rem', borderRadius: 'var(--radius-full)', fontWeight: 700, fontSize: '0.875rem', textDecoration: 'none', boxShadow: '0 4px 12px rgba(24,119,242,0.25)' }}
             >
-              📘 {isEn ? 'Share on Facebook' : 'Delen op Facebook'}
+              <span aria-hidden="true">📘</span> {isEn ? 'Share on Facebook' : 'Delen op Facebook'}
             </a>
           </div>
 
@@ -176,6 +183,22 @@ export default async function ColoringPageDetail({ params }: { params: Promise<{
             <h2>{isEn ? 'About This Coloring Page' : 'Over Deze Kleurplaat'}</h2>
             <p>{page.longDescription}</p>
           </div>
+
+          {page.faq && page.faq.length > 0 && (
+            <div className="seo-block" style={{ marginTop: '2.5rem' }}>
+              <h2>{isEn ? 'Frequently Asked Questions' : 'Veelgestelde Vragen'}</h2>
+              {page.faq.map((item, i) => (
+                <details key={i} style={{ marginTop: '1rem', borderBottom: '1px solid var(--gray-200)', paddingBottom: '1rem' }}>
+                  <summary style={{ fontWeight: 700, cursor: 'pointer', color: 'var(--foreground)' }}>
+                    {item.question}
+                  </summary>
+                  <p style={{ marginTop: '0.75rem', color: 'var(--gray-600)', lineHeight: 1.8 }}>
+                    {item.answer}
+                  </p>
+                </details>
+              ))}
+            </div>
+          )}
         </div>
 
         {/* Sticky Sidebar */}

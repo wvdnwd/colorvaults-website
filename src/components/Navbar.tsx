@@ -77,8 +77,17 @@ export default function Navbar({ lang }: { lang: string }) {
         setMobileOpen(false);
       }
     };
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (e.key === 'Escape') {
+        setOpenDropdown(null);
+      }
+    };
     document.addEventListener('mousedown', handler);
-    return () => document.removeEventListener('mousedown', handler);
+    document.addEventListener('keydown', handleKeyDown);
+    return () => {
+      document.removeEventListener('mousedown', handler);
+      document.removeEventListener('keydown', handleKeyDown);
+    };
   }, []);
 
   // Close mobile menu on route change
@@ -86,6 +95,45 @@ export default function Navbar({ lang }: { lang: string }) {
     setMobileOpen(false);
     setOpenDropdown(null);
   }, [pathname]);
+
+  // Focus trap for mobile drawer
+  useEffect(() => {
+    if (!mobileOpen) return;
+    // Find all focusable elements inside the mobile menu
+    const drawer = document.querySelector(`.${styles.mobileMenu}`) as HTMLElement | null;
+    if (!drawer) return;
+    const focusableSelectors = 'a[href], button:not([disabled]), [tabindex]:not([tabindex="-1"])';
+    const focusableEls = Array.from(drawer.querySelectorAll<HTMLElement>(focusableSelectors));
+    if (focusableEls.length === 0) return;
+    const firstEl = focusableEls[0];
+    const lastEl = focusableEls[focusableEls.length - 1];
+    
+    // Move focus into the drawer
+    firstEl.focus();
+
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (e.key === 'Escape') {
+        setMobileOpen(false);
+        return;
+      }
+      if (e.key !== 'Tab') return;
+      if (e.shiftKey) {
+        // Shift+Tab: if on first element, wrap to last
+        if (document.activeElement === firstEl) {
+          e.preventDefault();
+          lastEl.focus();
+        }
+      } else {
+        // Tab: if on last element, wrap to first
+        if (document.activeElement === lastEl) {
+          e.preventDefault();
+          firstEl.focus();
+        }
+      }
+    };
+    document.addEventListener('keydown', handleKeyDown);
+    return () => document.removeEventListener('keydown', handleKeyDown);
+  }, [mobileOpen]);
 
   return (
     <header className={`${styles.navbar} ${scrolled ? styles.scrolled : ''}`} ref={navRef}>
@@ -110,16 +158,36 @@ export default function Navbar({ lang }: { lang: string }) {
                 <button
                   className={`${styles.link} ${styles.dropdownTrigger} ${openDropdown === item.label ? styles.active : ''}`}
                   onClick={() => setOpenDropdown(openDropdown === item.label ? null : item.label)}
+                  aria-controls={`dropdown-${item.label.replace(/\s+/g, '-').toLowerCase()}`}
                   aria-expanded={openDropdown === item.label}
+                  aria-haspopup="menu"
+                  onKeyDown={(e) => {
+                    if (e.key === 'Escape') {
+                      setOpenDropdown(null);
+                    } else if (e.key === 'Enter' || e.key === ' ') {
+                      e.preventDefault();
+                      setOpenDropdown(openDropdown === item.label ? null : item.label);
+                    }
+                  }}
                 >
                   {item.label}
                   <span className={styles.chevron}>{openDropdown === item.label ? '▴' : '▾'}</span>
                 </button>
               )}
               {item.children && openDropdown === item.label && (
-                <div className={styles.dropdown}>
+                <div 
+                  id={`dropdown-${item.label.replace(/\s+/g, '-').toLowerCase()}`}
+                  className={styles.dropdown} 
+                  role="menu"
+                >
                   {item.children.map(child => (
-                    <Link key={child.href} href={child.href} className={styles.dropdownItem} onClick={() => setOpenDropdown(null)}>
+                    <Link 
+                      key={child.href} 
+                      href={child.href} 
+                      className={styles.dropdownItem} 
+                      onClick={() => setOpenDropdown(null)}
+                      role="menuitem"
+                    >
                       {child.label}
                     </Link>
                   ))}
@@ -139,8 +207,18 @@ export default function Navbar({ lang }: { lang: string }) {
           </Link>
 
           <div className={styles.langSwitcher}>
-            <Link href={getLangLink('en')} className={`${styles.langBtn} ${isEn ? styles.langActive : ''}`}>EN</Link>
-            <Link href={getLangLink('nl')} className={`${styles.langBtn} ${isNl ? styles.langActive : ''}`}>NL</Link>
+            <Link 
+              href={getLangLink('en')} 
+              className={`${styles.langBtn} ${isEn ? styles.langActive : ''}`}
+              aria-label="Switch to English"
+              aria-current={isEn ? 'true' : undefined}
+            >EN</Link>
+            <Link 
+              href={getLangLink('nl')} 
+              className={`${styles.langBtn} ${isNl ? styles.langActive : ''}`}
+              aria-label="Overschakelen naar Nederlands"
+              aria-current={isNl ? 'true' : undefined}
+            >NL</Link>
           </div>
 
           <ThemeToggle />
@@ -148,7 +226,10 @@ export default function Navbar({ lang }: { lang: string }) {
           <button
             className={styles.hamburger}
             onClick={() => setMobileOpen(!mobileOpen)}
-            aria-label="Menu"
+            aria-label={mobileOpen 
+              ? (isEn ? 'Close navigation menu' : 'Navigatiemenu sluiten')
+              : (isEn ? 'Open navigation menu' : 'Navigatiemenu openen')
+            }
             aria-expanded={mobileOpen}
           >
             <span className={`${styles.hamburgerLine} ${mobileOpen ? styles.open : ''}`} />
@@ -160,7 +241,12 @@ export default function Navbar({ lang }: { lang: string }) {
 
       {/* Mobile Drawer */}
       {mobileOpen && (
-        <div className={styles.mobileMenu}>
+        <div 
+          className={styles.mobileMenu}
+          role="dialog"
+          aria-modal="true"
+          aria-label={isEn ? 'Navigation menu' : 'Navigatiemenu'}
+        >
           {navItems.map(item => (
             <div key={item.label} className={styles.mobileSection}>
               {item.href && !item.children ? (
@@ -182,8 +268,20 @@ export default function Navbar({ lang }: { lang: string }) {
             </div>
           ))}
           <div className={styles.mobileLangRow}>
-            <Link href={getLangLink('en')} className={`${styles.mobileLangBtn} ${isEn ? styles.langActive : ''}`} onClick={() => setMobileOpen(false)}>🇬🇧 English</Link>
-            <Link href={getLangLink('nl')} className={`${styles.mobileLangBtn} ${isNl ? styles.langActive : ''}`} onClick={() => setMobileOpen(false)}>🇳🇱 Nederlands</Link>
+            <Link 
+              href={getLangLink('en')} 
+              className={`${styles.mobileLangBtn} ${isEn ? styles.langActive : ''}`} 
+              onClick={() => setMobileOpen(false)}
+              aria-label="Switch to English"
+              aria-current={isEn ? 'true' : undefined}
+            >🇬🇧 English</Link>
+            <Link 
+              href={getLangLink('nl')} 
+              className={`${styles.mobileLangBtn} ${isNl ? styles.langActive : ''}`} 
+              onClick={() => setMobileOpen(false)}
+              aria-label="Overschakelen naar Nederlands"
+              aria-current={isNl ? 'true' : undefined}
+            >🇳🇱 Nederlands</Link>
           </div>
         </div>
       )}

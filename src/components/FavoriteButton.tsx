@@ -1,6 +1,6 @@
 'use client';
 
-import { useFavorites, FavoriteItem } from '@/hooks/useFavorites';
+import { useFavoritesContext, FavoriteItem } from '@/context/FavoritesContext';
 import { useState, useEffect } from 'react';
 
 export default function FavoriteButton({ 
@@ -10,7 +10,7 @@ export default function FavoriteButton({
   item: FavoriteItem;
   className?: string;
 }) {
-  const { isFavorite, toggleFavorite, isLoaded } = useFavorites();
+  const { isFavorite, toggleFavorite, isLoaded } = useFavoritesContext();
   const [mounted, setMounted] = useState(false);
   
   useEffect(() => {
@@ -18,7 +18,7 @@ export default function FavoriteButton({
   }, []);
 
   if (!mounted || !isLoaded) {
-    return <button className={className} style={{ opacity: 0 }} aria-hidden="true">🤍</button>;
+    return <button className={className} style={{ opacity: 0, pointerEvents: 'none' }} aria-hidden="true" tabIndex={-1}>🤍</button>;
   }
 
   const active = isFavorite(item.id);
@@ -50,7 +50,7 @@ export default function FavoriteButton({
       onMouseOver={(e) => e.currentTarget.style.transform = 'scale(1.1)'}
       onMouseOut={(e) => e.currentTarget.style.transform = 'scale(1)'}
     >
-      {active ? '❤️' : '🤍'}
+      <span aria-hidden="true">{active ? '❤️' : '🤍'}</span>
     </button>
   );
 }
