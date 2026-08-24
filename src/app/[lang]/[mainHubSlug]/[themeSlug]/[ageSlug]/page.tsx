@@ -1,4 +1,4 @@
-import { getAgePages, getAgePageBySlug, getMainHubs, getThemes, getPagesByAgeGroup } from '@/lib/api';
+import { getAgePages, getAgePageBySlug, getMainHubs, getThemes, getPagesByAgeGroup, getAgeLabel } from '@/lib/api';
 import { notFound } from 'next/navigation';
 import Link from 'next/link';
 import Breadcrumbs from '@/components/Breadcrumbs';
@@ -68,6 +68,8 @@ export default async function AgePage({
   const totalPages = Math.ceil(allColoringPages.length / PER_PAGE);
   const coloringPages = allColoringPages.slice((currentPage - 1) * PER_PAGE, currentPage * PER_PAGE);
 
+  const difficultyLabel = getAgeLabel(ageSlug, lang);
+
   return (
     <>
       <div className="page-hero">
@@ -76,11 +78,13 @@ export default async function AgePage({
             items={[
               { label: hub.title, href: `/${lang}/${hub.slug}` },
               { label: theme.title, href: `/${lang}/${hub.slug}/${theme.slug}` },
-              { label: agePage.title }
+              { label: difficultyLabel.label }
             ]}
             lang={lang}
           />
-          <h1 className="title-h1" style={{ marginTop: '1rem' }}>{agePage.title}</h1>
+          <h1 className="title-h1" style={{ marginTop: '1rem' }}>
+            {theme.title} — {difficultyLabel.emoji} {difficultyLabel.label}
+          </h1>
           <p style={{ color: 'var(--gray-600)', fontSize: '1.1rem', marginTop: '0.6rem', lineHeight: 1.7, maxWidth: '640px' }}>
             {agePage.introText}
           </p>

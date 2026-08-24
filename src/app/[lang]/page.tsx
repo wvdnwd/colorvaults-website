@@ -50,46 +50,36 @@ export default async function HomePage({ params }: { params: Promise<{ lang: str
   const featuredPages = getColoringPages(lang).filter(p => !p.title.startsWith('A ')).slice(0, 8);
   const isEn = lang === 'en';
 
-  const ageCards = [
+  const difficultyCards = [
     {
-      slug: isEn ? 'kids' : 'kinderen',
-      name: isEn ? 'Toddlers (1–3)' : 'Peuters (1–3)',
-      emoji: '👶',
-      desc: isEn ? 'Simple shapes & thick outlines' : 'Eenvoudige vormen & dikke lijnen',
-      className: styles.ageToddlers,
-      hubSlug: isEn ? 'tv-series-and-movies' : 'tv-series-en-films',
-      themeSlug: 'paw-patrol',
-      ageSlug: isEn ? 'kids' : 'kinderen'
-    },
-    {
-      slug: isEn ? 'kids' : 'kinderen',
-      name: isEn ? 'Kids (4–10)' : 'Kinderen (4–10)',
-      emoji: '🧒',
-      desc: isEn ? 'Fun characters & creative scenes' : 'Leuke karakters & creatieve scènes',
+      slug: 'kids',
+      name: isEn ? 'Easy' : 'Makkelijk',
+      emoji: '⭐',
+      desc: isEn ? 'Simple shapes & fun designs for everyone' : 'Eenvoudige vormen & leuke designs voor iedereen',
       className: styles.ageKids,
-      hubSlug: isEn ? 'disney-and-fairy-tales' : 'disney-en-sprookjes',
-      themeSlug: 'disney-princesses',
-      ageSlug: isEn ? 'kids' : 'kinderen'
+      hubSlug: isEn ? 'animals-and-nature' : 'animals-and-nature',
+      themeSlug: 'animals',
+      ageSlug: 'kids'
     },
     {
-      slug: isEn ? 'teens' : 'tieners',
-      name: isEn ? 'Teens (11–17)' : 'Tieners (11–17)',
-      emoji: '🎨',
-      desc: isEn ? 'Detailed anime, gaming & fantasy' : 'Gedetailleerde anime, games & fantasie',
+      slug: 'teens',
+      name: isEn ? 'Medium' : 'Gemiddeld',
+      emoji: '⭐⭐',
+      desc: isEn ? 'More detail & creative scenes' : 'Meer detail & creatieve scènes',
       className: styles.ageTeens,
-      hubSlug: isEn ? 'games-and-pop-culture' : 'games-en-popcultuur',
+      hubSlug: isEn ? 'games-and-pop-culture' : 'games-and-pop-culture',
       themeSlug: 'pokemon',
-      ageSlug: isEn ? 'teens' : 'tieners'
+      ageSlug: 'teens'
     },
     {
-      slug: isEn ? 'adults' : 'volwassenen',
-      name: isEn ? 'Adults (18+)' : 'Volwassenen (18+)',
-      emoji: '✨',
-      desc: isEn ? 'Intricate mandalas & cozy hygge' : 'Ingewikkelde mandala\'s & cozy hygge',
+      slug: 'adults',
+      name: isEn ? 'Hard' : 'Moeilijk',
+      emoji: '⭐⭐⭐',
+      desc: isEn ? 'Intricate patterns & fine details' : 'Ingewikkelde patronen & fijne details',
       className: styles.ageAdults,
       hubSlug: 'mandalas',
       themeSlug: 'mandalas',
-      ageSlug: isEn ? 'adults' : 'volwassenen'
+      ageSlug: 'adults'
     }
   ];
 
@@ -216,20 +206,20 @@ export default async function HomePage({ params }: { params: Promise<{ lang: str
         </div>
       </section>
 
-      {/* ── Section 2: Browse by Age — light cream ── */}
+      {/* ── Section 2: Browse by Difficulty — light cream ── */}
       <section className="section-light">
         <div className="container">
           <ScrollReveal className="section-header">
             <div>
-              <span className="badge">👶 {isEn ? 'All Ages' : 'Alle Leeftijden'}</span>
+              <span className="badge">⭐ {isEn ? 'Choose Difficulty' : 'Kies Moeilijkheidsgraad'}</span>
               <h2 className="title-h2" style={{ marginTop: '0.65rem' }}>
-                {isEn ? 'Browse by Age Group' : 'Blader op Leeftijdsgroep'}
+                {isEn ? 'Browse by Difficulty Level' : 'Blader op Moeilijkheidsgraad'}
               </h2>
             </div>
           </ScrollReveal>
 
           <div className={styles.ageGrid}>
-            {ageCards.map((age, i) => (
+            {difficultyCards.map((age, i) => (
               <ScrollReveal key={age.name} delay={(i % 4) as 0 | 1 | 2 | 3 | 4}>
                 <Link
                   href={`/${lang}/${age.hubSlug}/${age.themeSlug}/${age.ageSlug}`}
