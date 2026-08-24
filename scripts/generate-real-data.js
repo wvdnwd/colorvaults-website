@@ -293,14 +293,10 @@ const generateData = () => {
         image: imageUrl,
         preview: imageUrl,
         downloadableFile: imageUrl,
-        metaTitle: `${niceTitle} - Coloring Page`,
-        metaDescription: isGeneric
-          ? `Printable ${themeName} coloring page: ${niceTitle}`
-          : `Printable coloring page: ${niceTitle}`,
-        shortDescription: isGeneric
-          ? `Beautiful ${themeName} coloring page.`
-          : `Beautiful coloring page of ${niceTitle.toLowerCase()}.`,
-        longDescription: `This is a beautiful coloring page featuring ${niceTitle}. Perfect for ${ageTranslations[ageGroupKey].en} who love being creative.`,
+        metaTitle: `${niceTitle} - Free Printable Coloring Page | ColorVaults`,
+        metaDescription: `Download this free printable ${niceTitle.toLowerCase()} coloring page in high resolution. Perfect for kids and adults. Easy instant print, no registration required!`,
+        shortDescription: `Get this free printable ${niceTitle.toLowerCase()} coloring page. High-quality line art template, instantly downloadable.`,
+        longDescription: `Looking for a free printable ${niceTitle.toLowerCase()} coloring page? This high-resolution coloring page template is perfect for ${ageTranslations[ageGroupKey].en.toLowerCase()} and adults who love being creative. Download the high-quality PDF or image instantly and start coloring today!`,
         altText: niceTitle,
         tags: [themeSlug],
         relatedPages: [],
@@ -317,14 +313,10 @@ const generateData = () => {
         image: imageUrl,
         preview: imageUrl,
         downloadableFile: imageUrl,
-        metaTitle: `${niceTitle} - Kleurplaat`,
-        metaDescription: isGeneric
-          ? `Printbare ${themeName} kleurplaat: ${niceTitle}`
-          : `Printbare kleurplaat: ${niceTitle}`,
-        shortDescription: isGeneric
-          ? `Prachtige ${themeName} kleurplaat.`
-          : `Prachtige kleurplaat van ${niceTitle.toLowerCase()}.`,
-        longDescription: `Dit is een prachtige kleurplaat van ${niceTitle}. Perfect voor ${ageTranslations[ageGroupKey].nl.toLowerCase()} die graag creatief bezig zijn.`,
+        metaTitle: `${niceTitle} - Gratis Printbare Kleurplaat | ColorVaults`,
+        metaDescription: `Download deze gratis printbare ${niceTitle.toLowerCase()} kleurplaat in hoge resolutie. Perfect voor kinderen en volwassenen. Direct printen zonder account!`,
+        shortDescription: `Download deze gratis printbare ${niceTitle.toLowerCase()} kleurplaat. Hoge kwaliteit lijntekening sjabloon om direct in te kleuren.`,
+        longDescription: `Op zoek naar een gratis printbare ${niceTitle.toLowerCase()} kleurplaat? Dit hoge resolutie kleurplaat sjabloon is perfect voor ${ageTranslations[ageGroupKey].nl.toLowerCase()} en volwassenen die graag creatief bezig zijn. Download de afbeelding direct en begin meteen met kleuren!`,
         altText: niceTitle,
         tags: [themeSlug],
         relatedPages: [],
