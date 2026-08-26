@@ -16,17 +16,24 @@ const securityHeaders = [
 
 const nextConfig: NextConfig = {
   images: {
+    unoptimized: true,
     remotePatterns: [
       {
         protocol: 'https',
         hostname: 'colorvaults.ams3.cdn.digitaloceanspaces.com',
         pathname: '/**',
-        search: '',
+      },
+      {
+        protocol: 'https',
+        hostname: 'colorvaults.ams3.digitaloceanspaces.com',
+        pathname: '/**',
+      },
+      {
+        protocol: 'https',
+        hostname: '*.digitaloceanspaces.com',
+        pathname: '/**',
       },
     ],
-    minimumCacheTTL: 2678400, // 31 days
-    formats: ['image/avif', 'image/webp'],
-    qualities: [60, 75, 90],
   },
   async headers() {
     return [

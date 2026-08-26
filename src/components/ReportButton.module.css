@@ -1,0 +1,160 @@
+.reportWrap {
+  margin-top: 1rem;
+  padding-top: 1rem;
+  border-top: 1px solid var(--gray-200);
+}
+
+.reportTrigger {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  background: none;
+  border: none;
+  color: var(--gray-400);
+  font-size: 0.75rem;
+  cursor: pointer;
+  padding: 0.25rem 0;
+  transition: color 0.15s;
+  font-family: inherit;
+}
+
+.reportTrigger:hover {
+  color: var(--color-accent);
+}
+
+.reportIcon {
+  font-size: 0.85rem;
+}
+
+/* ── Modal overlay ───────────────────────────────────────────────────────── */
+.overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(4px);
+  z-index: 9000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+}
+
+.modal {
+  background: var(--surface);
+  border: 1.5px solid var(--gray-200);
+  border-radius: var(--radius-lg);
+  padding: 2rem 1.75rem 1.75rem;
+  width: 100%;
+  max-width: 420px;
+  box-shadow: var(--shadow-lg);
+  position: relative;
+  animation: slideUp 0.2s ease;
+}
+
+@keyframes slideUp {
+  from { transform: translateY(12px); opacity: 0; }
+  to   { transform: translateY(0);    opacity: 1; }
+}
+
+.modalClose {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  background: none;
+  border: none;
+  color: var(--gray-400);
+  font-size: 1.2rem;
+  cursor: pointer;
+  line-height: 1;
+  padding: 0.2rem;
+  border-radius: var(--radius-sm);
+  transition: color 0.15s, background 0.15s;
+}
+.modalClose:hover { color: var(--foreground); background: var(--gray-100); }
+
+.modalTitle {
+  font-size: 1rem;
+  font-weight: 800;
+  color: var(--foreground);
+  margin: 0 0 0.3rem;
+}
+
+.modalSub {
+  font-size: 0.78rem;
+  color: var(--gray-500);
+  margin: 0 0 1.5rem;
+}
+
+.label {
+  display: block;
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: var(--gray-600);
+  margin-bottom: 0.35rem;
+}
+
+.select,
+.textarea {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 0.65rem 0.9rem;
+  border-radius: var(--radius);
+  border: 1.5px solid var(--gray-200);
+  background: var(--gray-50);
+  color: var(--foreground);
+  font-size: 0.85rem;
+  font-family: inherit;
+  outline: none;
+  transition: border-color 0.2s;
+  margin-bottom: 1rem;
+}
+
+.select:focus,
+.textarea:focus {
+  border-color: var(--color-accent);
+}
+
+.textarea {
+  resize: vertical;
+  min-height: 80px;
+}
+
+.submitBtn {
+  width: 100%;
+  padding: 0.7rem;
+  background: var(--color-accent);
+  color: white;
+  border: none;
+  border-radius: var(--radius);
+  font-size: 0.875rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background 0.15s;
+  font-family: inherit;
+}
+.submitBtn:hover  { background: var(--color-accent-hover); }
+.submitBtn:disabled { opacity: 0.6; cursor: not-allowed; }
+
+/* ── Success state ───────────────────────────────────────────────────────── */
+.successBox {
+  text-align: center;
+  padding: 1.5rem 0 0.5rem;
+}
+
+.successIcon {
+  font-size: 2.5rem;
+  margin-bottom: 0.75rem;
+}
+
+.successTitle {
+  font-size: 1rem;
+  font-weight: 800;
+  color: var(--foreground);
+  margin: 0 0 0.4rem;
+}
+
+.successSub {
+  font-size: 0.8rem;
+  color: var(--gray-500);
+  margin: 0;
+}

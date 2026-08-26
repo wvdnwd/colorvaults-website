@@ -2,7 +2,10 @@ const fs = require('fs');
 const path = require('path');
 
 const SPACES_BASE_URL = process.env.NEXT_PUBLIC_IMAGE_HOST || 'https://colorvaults.ams3.cdn.digitaloceanspaces.com';
-const inputDir = 'c:\\Users\\Gebruiker\\Desktop\\colorvaults\\Gecontroleerd';
+const inputDirs = [
+  'c:\\Users\\Gebruiker\\Desktop\\colorvaults\\Gecontroleerd',
+  'c:\\Users\\Gebruiker\\Desktop\\colorvaults\\Geupload'
+];
 const dataDir = path.join(__dirname, '..', 'src', 'data');
 
 if (!fs.existsSync(dataDir)) fs.mkdirSync(dataDir, { recursive: true });
@@ -42,48 +45,48 @@ const ageTranslations = {
 
 const hubsConfig = [
   {
-    en: { title: 'Collections', slug: 'collections', description: 'Explore all our coloring page collections.', image: `${SPACES_BASE_URL}/banner/default.jpg` },
-    nl: { title: 'Collecties', slug: 'collecties', description: 'Ontdek al onze kleurplaat collecties.', image: `${SPACES_BASE_URL}/banner/default.jpg` }
+    en: { title: 'Collections', slug: 'collections', description: 'Explore our complete library of free printable coloring pages organized by theme, difficulty, and age group. High quality line art ready for instant download and printing.', image: `${SPACES_BASE_URL}/banner/default.jpg` },
+    nl: { title: 'Collecties', slug: 'collecties', description: 'Ontdek onze volledige bibliotheek met gratis printbare kleurplaten opgesplitst per thema, moeilijkheidsgraad en leeftijd. Hoge resolutie lijntekeningen klaar om direct te downloaden en af te drukken.', image: `${SPACES_BASE_URL}/banner/default.jpg` }
   },
   {
-    en: { title: 'TV Series and Movies', slug: 'tv-series-and-movies', description: 'Explore all TV series and movie coloring pages.', image: `${SPACES_BASE_URL}/banner/default.jpg` },
-    nl: { title: 'TV Series en Films', slug: 'tv-series-en-films', description: 'Ontdek alle TV-series en film kleurplaten.', image: `${SPACES_BASE_URL}/banner/default.jpg` }
+    en: { title: 'TV Series and Movies', slug: 'tv-series-and-movies', description: 'Discover free coloring pages featuring your favorite TV series and movie characters including Paw Patrol, Bluey, SpongeBob, Anime, and more!', image: `${SPACES_BASE_URL}/banner/default.jpg` },
+    nl: { title: 'TV Series en Films', slug: 'tv-series-en-films', description: 'Ontdek gratis kleurplaten van al je favoriete tv-series en filmhelden zoals Paw Patrol, Bluey, SpongeBob, Anime en nog veel meer!', image: `${SPACES_BASE_URL}/banner/default.jpg` }
   },
   {
-    en: { title: 'Disney and Fairy Tales', slug: 'disney-and-fairy-tales', description: 'Explore Disney and fairy tale coloring pages.', image: `${SPACES_BASE_URL}/banner/default.jpg` },
-    nl: { title: 'Disney en Sprookjes', slug: 'disney-en-sprookjes', description: 'Ontdek alle Disney en sprookjes kleurplaten.', image: `${SPACES_BASE_URL}/banner/default.jpg` }
+    en: { title: 'Disney and Fairy Tales', slug: 'disney-and-fairy-tales', description: 'Step into a magical world with free Disney princess coloring pages, fairytale castles, dragons, unicorns, and timeless stories.', image: `${SPACES_BASE_URL}/banner/default.jpg` },
+    nl: { title: 'Disney en Sprookjes', slug: 'disney-en-sprookjes', description: 'Stap binnen in een magische wereld vol gratis Disney prinsessen kleurplaten, sprookjeskasteeltjes, draken, eenhoorns en tijdloze verhalen.', image: `${SPACES_BASE_URL}/banner/default.jpg` }
   },
   {
-    en: { title: 'Games and Pop Culture', slug: 'games-and-pop-culture', description: 'Explore games and pop culture coloring pages.', image: `${SPACES_BASE_URL}/banner/default.jpg` },
-    nl: { title: 'Games en Popcultuur', slug: 'games-en-popcultuur', description: 'Ontdek alle games en popcultuur kleurplaten.', image: `${SPACES_BASE_URL}/banner/default.jpg` }
+    en: { title: 'Games and Pop Culture', slug: 'games-and-pop-culture', description: 'High-octane game coloring pages featuring Super Mario, Pokémon, Sonic, Fortnite, Roblox, and epic gaming icons.', image: `${SPACES_BASE_URL}/banner/default.jpg` },
+    nl: { title: 'Games en Popcultuur', slug: 'games-en-popcultuur', description: 'Stoere game kleurplaten van Super Mario, Pokémon, Sonic, Fortnite, Roblox en legendarische game-iconen.', image: `${SPACES_BASE_URL}/banner/default.jpg` }
   },
   {
-    en: { title: 'Animals and Nature', slug: 'animals-and-nature', description: 'Explore animals and nature coloring pages.', image: `${SPACES_BASE_URL}/banner/default.jpg` },
-    nl: { title: 'Dieren en Natuur', slug: 'dieren-en-natuur', description: 'Ontdek alle dieren en natuur kleurplaten.', image: `${SPACES_BASE_URL}/banner/default.jpg` }
+    en: { title: 'Animals and Nature', slug: 'animals-and-nature', description: 'Bring nature to life with thousands of free animal coloring pages — from cute pets and farm animals to safari wildlife, sea creatures, and birds.', image: `${SPACES_BASE_URL}/banner/default.jpg` },
+    nl: { title: 'Dieren en Natuur', slug: 'dieren-en-natuur', description: 'Breng de natuur tot leven met duizenden gratis dierenkleurplaten — van schattige huisdieren en boerderijdieren tot safari wildernis, zeedieren en vogels.', image: `${SPACES_BASE_URL}/banner/default.jpg` }
   },
   {
-    en: { title: 'Toddler Specific', slug: 'toddler-specific', description: 'Explore toddler specific coloring pages.', image: `${SPACES_BASE_URL}/banner/default.jpg` },
-    nl: { title: 'Speciaal voor Peuters', slug: 'speciaal-voor-peuters', description: 'Ontdek alle kleurplaten speciaal voor peuters.', image: `${SPACES_BASE_URL}/banner/default.jpg` }
+    en: { title: 'Toddler Specific', slug: 'toddler-specific', description: 'Simple, easy coloring pages designed specifically for toddlers and young children with thick bold outlines and large coloring areas.', image: `${SPACES_BASE_URL}/banner/default.jpg` },
+    nl: { title: 'Speciaal voor Peuters', slug: 'speciaal-voor-peuters', description: 'Eenvoudige en makkelijke kleurplaten speciaal ontworpen voor peuters en jonge kinderen met extra dikke zwarte contouren en grote kleurvlakken.', image: `${SPACES_BASE_URL}/banner/default.jpg` }
   },
   {
-    en: { title: 'Girls Themes', slug: 'girls-themes', description: 'Explore girls themes coloring pages.', image: `${SPACES_BASE_URL}/banner/default.jpg` },
-    nl: { title: 'Meisjes Thema\'s', slug: 'meisjes-themas', description: 'Ontdek alle meisjes thema\'s.', image: `${SPACES_BASE_URL}/banner/default.jpg` }
+    en: { title: 'Girls Themes', slug: 'girls-themes', description: 'Wonderful collection of cute fashion, sweet desserts, adorable pets, and colorful creative themes for girls.', image: `${SPACES_BASE_URL}/banner/default.jpg` },
+    nl: { title: 'Meisjes Thema\'s', slug: 'meisjes-themas', description: 'Prachtige verzameling van schattige mode, zoete lekkernijen, lieve huisdieren en creatieve kleurthema\'s.', image: `${SPACES_BASE_URL}/banner/default.jpg` }
   },
   {
-    en: { title: 'Adults', slug: 'adults', description: 'Explore adult coloring pages.', image: `${SPACES_BASE_URL}/banner/default.jpg` },
-    nl: { title: 'Volwassenen', slug: 'volwassenen', description: 'Ontdek alle kleurplaten voor volwassenen.', image: `${SPACES_BASE_URL}/banner/default.jpg` }
+    en: { title: 'Adults', slug: 'adults', description: 'Relaxing, detailed coloring pages for adults including cozy hygge scenes, intricate mandalas, botanical art, and soothing anti-stress designs.', image: `${SPACES_BASE_URL}/banner/default.jpg` },
+    nl: { title: 'Volwassenen', slug: 'volwassenen', description: 'Ontspannende en gedetailleerde kleurplaten voor volwassenen waaronder gezellige hygge scènes, ingewikkelde mandala\'s, botanische kunst en anti-stress sjablonen.', image: `${SPACES_BASE_URL}/banner/default.jpg` }
   },
   {
-    en: { title: 'Mandalas', slug: 'mandalas', description: 'Explore mandala coloring pages.', image: `${SPACES_BASE_URL}/banner/default.jpg` },
-    nl: { title: 'Mandala\'s', slug: 'mandalas', description: 'Ontdek alle mandala kleurplaten.', image: `${SPACES_BASE_URL}/banner/default.jpg` }
+    en: { title: 'Mandalas', slug: 'mandalas', description: 'Beautiful mandala coloring pages for mindfulness, stress relief, and artistic relaxation. Free high-resolution printable templates.', image: `${SPACES_BASE_URL}/banner/default.jpg` },
+    nl: { title: 'Mandala\'s', slug: 'mandalas', description: 'Prachtige mandala kleurplaten voor ontspanning, mindfulness en creatieve rust. Gratis hoge resolutie sjablonen om uit te printen.', image: `${SPACES_BASE_URL}/banner/default.jpg` }
   },
   {
-    en: { title: 'Calendars', slug: 'calendars', description: 'Explore calendar coloring pages.', image: `${SPACES_BASE_URL}/banner/default.jpg` },
-    nl: { title: 'Kalenders', slug: 'calendars', description: 'Ontdek alle kalender kleurplaten.', image: `${SPACES_BASE_URL}/banner/default.jpg` }
+    en: { title: 'Calendars', slug: 'calendars', description: 'Printable blank, monthly, and yearly calendars ready to color, personalize, and organize your year.', image: `${SPACES_BASE_URL}/banner/default.jpg` },
+    nl: { title: 'Kalenders', slug: 'calendars', description: 'Printbare blanco-, maand- en jaarkalenders om zelf in te kleuren, te personaliseren en je jaar georganiseerd te plannen.', image: `${SPACES_BASE_URL}/banner/default.jpg` }
   },
   {
-    en: { title: 'Printables', slug: 'school-education-templates', description: 'Explore school and education templates.', image: `${SPACES_BASE_URL}/banner/default.jpg` },
-    nl: { title: 'Printables', slug: 'school-en-educatie-sjablonen', description: 'Ontdek alle school- en educatiesjablonen.', image: `${SPACES_BASE_URL}/banner/default.jpg` }
+    en: { title: 'Printables', slug: 'school-education-templates', description: 'Educational templates, school activity sheets, and creative printable tools for home and classroom learning.', image: `${SPACES_BASE_URL}/banner/default.jpg` },
+    nl: { title: 'Printables', slug: 'school-en-educatie-sjablonen', description: 'Educatieve sjablonen, schoolwerkbladen en creatieve printables voor thuis en in de klas.', image: `${SPACES_BASE_URL}/banner/default.jpg` }
   }
 ];
 
@@ -120,22 +123,20 @@ function getParentHubSlug(folderName, lang) {
 }
 
 const generateData = () => {
-  console.log('Scanning directory:', inputDir);
+  console.log('Scanning directories:', inputDirs.join(', '));
   
-  if (!fs.existsSync(inputDir)) {
-    console.error(`Error: Directory ${inputDir} does not exist!`);
-    return;
-  }
-
-  // Load translations if available
-  const translationsPath = path.join(inputDir, 'translations.json');
   let translations = {};
-  if (fs.existsSync(translationsPath)) {
-    try {
-      translations = JSON.parse(fs.readFileSync(translationsPath, 'utf8'));
-      console.log(`Loaded ${Object.keys(translations).length} translations from translations.json`);
-    } catch (e) {
-      console.error('Failed to load translations.json', e);
+  for (const inputDir of inputDirs) {
+    if (!fs.existsSync(inputDir)) continue;
+    const translationsPath = path.join(inputDir, 'translations.json');
+    if (fs.existsSync(translationsPath)) {
+      try {
+        const loaded = JSON.parse(fs.readFileSync(translationsPath, 'utf8'));
+        translations = { ...translations, ...loaded };
+        console.log(`Loaded ${Object.keys(loaded).length} translations from ${translationsPath}`);
+      } catch (e) {
+        console.error('Failed to load translations.json', e);
+      }
     }
   }
 
@@ -163,35 +164,38 @@ const generateData = () => {
   const enPages = [];
   const nlPages = [];
 
-  const folders = fs.readdirSync(inputDir, { withFileTypes: true })
-    .filter(dirent => dirent.isDirectory())
-    .map(dirent => dirent.name)
-    .filter(name => !['Afgekeurd', 'Twijfel_Score_6', 'Afgekeurd_of_Twijfel', 'Dubbele_Fotos', 'Te_Herstellen'].includes(name));
-
   let globalIdCounter = 1;
   const groupedThemes = {};
 
-  for (const folder of folders) {
-    let cleanFolderName = folder.replace(/_?\d+\s*extra\s*needed_?/gi, '').replace(/_?\d+_ex_?/gi, '');
-    cleanFolderName = cleanFolderName.replace(/_/g, ' ').replace(/\s+/g, ' ').trim();
-    const themeSlug = slugify(cleanFolderName);
-    const themePath = path.join(inputDir, folder);
-    const absoluteFiles = getAllImages(themePath);
-    
-    if (absoluteFiles.length === 0) continue;
+  for (const inputDir of inputDirs) {
+    if (!fs.existsSync(inputDir)) continue;
 
-    // Convert absolute paths back to relative paths for URL generation
-    const files = absoluteFiles.map(abs => path.relative(inputDir, abs).replace(/\\/g, '/'));
+    const folders = fs.readdirSync(inputDir, { withFileTypes: true })
+      .filter(dirent => dirent.isDirectory())
+      .map(dirent => dirent.name)
+      .filter(name => !['Afgekeurd', 'Twijfel_Score_6', 'Afgekeurd_of_Twijfel', 'Dubbele_Fotos', 'Te_Herstellen', 'Geupload'].includes(name));
 
-    if (!groupedThemes[themeSlug]) {
-      groupedThemes[themeSlug] = {
-        themeName: capitalize(cleanFolderName), // use cleaned folder name
-        originalFolderName: folder,
-        files: []
-      };
+    for (const folder of folders) {
+      let cleanFolderName = folder.replace(/_?\d+\s*extra\s*needed_?/gi, '').replace(/_?\d+_ex_?/gi, '');
+      cleanFolderName = cleanFolderName.replace(/_/g, ' ').replace(/\s+/g, ' ').trim();
+      const themeSlug = slugify(cleanFolderName);
+      const themePath = path.join(inputDir, folder);
+      const absoluteFiles = getAllImages(themePath);
+      
+      if (absoluteFiles.length === 0) continue;
+
+      const files = absoluteFiles.map(abs => path.relative(inputDir, abs).replace(/\\/g, '/'));
+
+      if (!groupedThemes[themeSlug]) {
+        groupedThemes[themeSlug] = {
+          themeName: capitalize(cleanFolderName),
+          originalFolderName: folder,
+          files: []
+        };
+      }
+      
+      groupedThemes[themeSlug].files.push(...files);
     }
-    
-    groupedThemes[themeSlug].files.push(...files);
   }
 
   for (const [themeSlug, data] of Object.entries(groupedThemes)) {
@@ -212,7 +216,7 @@ const generateData = () => {
       title: themeName,
       slug: themeSlug,
       parentHub: parentHubEn,
-      description: `Best ${themeName} coloring pages.`,
+      description: `Explore our collection of free printable ${themeName} coloring pages. Featuring high-resolution templates perfect for kids, toddlers, teens, and adults. Download or print instantly for free!`,
       image: themeImage,
       availableAges: Object.keys(ageTranslations),
       language: 'en'
@@ -222,7 +226,7 @@ const generateData = () => {
       title: themeName,
       slug: themeSlug,
       parentHub: parentHubNl,
-      description: `Beste ${themeName} kleurplaten.`,
+      description: `Ontdek onze uitgebreide verzameling van gratis printbare ${themeName} kleurplaten. Hoge resolutie sjablonen perfect voor kinderen, peuters, tieners en volwassenen. Direct gratis te downloaden en af te drukken!`,
       image: themeImage,
       availableAges: Object.keys(ageTranslations).map(a => ageTranslations[a].nl.toLowerCase()),
       language: 'nl'
@@ -242,9 +246,22 @@ const generateData = () => {
         parentHub: parentHubEn,
         parentTheme: themeSlug,
         ageGroup: enAge,
-        introText: `Great ${themeName} coloring pages for ${enAgeTitle}.`,
-        seoText: `Download the best ${themeName} coloring pages for ${enAgeTitle}`,
-        faq: [],
+        introText: `Welcome to our selection of ${themeName} coloring pages specially curated for ${enAgeTitle}. Choose your favorite designs below, print them out for free, and enjoy hours of creative fun!`,
+        seoText: `Looking for high-quality ${themeName} coloring pages tailored for ${enAgeTitle}? ColorVaults offers a rich selection of clean, printable templates. Whether using crayons, colored pencils, or digital tablets, these designs provide relaxing and engaging artistic activities for all skill levels.`,
+        faq: [
+          {
+            question: `How do I print these ${themeName} coloring pages for free?`,
+            answer: `Select any coloring page card to open the preview modal, then click the 'Print Free Coloring Page' button to automatically render a full-page A4/Letter print.`
+          },
+          {
+            question: `Are these ${themeName} sheets suitable for ${enAgeTitle}?`,
+            answer: `Yes! All coloring sheets in this category feature line weight and detail density optimized specifically for ${enAgeTitle}.`
+          },
+          {
+            question: `Can I download these templates for digital coloring?`,
+            answer: `Absolutely. Click 'Download Image File' to save the high-resolution file to your iPad, tablet, or computer for use in drawing apps.`
+          }
+        ],
         language: 'en'
       });
 
@@ -254,9 +271,22 @@ const generateData = () => {
         parentHub: parentHubNl,
         parentTheme: themeSlug,
         ageGroup: nlAge,
-        introText: `Geweldige ${themeName} kleurplaten voor ${nlAgeTitle}.`,
-        seoText: `Download de beste ${themeName} kleurplaten voor ${nlAgeTitle}`,
-        faq: [],
+        introText: `Welkom bij onze verzameling van ${themeName} kleurplaten speciaal geselecteerd voor ${nlAgeTitle}. Kies hieronder je favoriete afbeeldingen, print ze gratis uit en beleef urenlang kleurplezier!`,
+        seoText: `Op zoek naar hoge kwaliteit ${themeName} kleurplaten speciaal afgestemd op ${nlAgeTitle}? ColorVaults biedt een ruime keuze aan duidelijke, printbare sjablonen. Of je nu kleurt met viltstiften, potloden of digitaal op een tablet, deze ontwerpen zorgen voor ontspannende en creatieve activiteiten.`,
+        faq: [
+          {
+            question: `Hoe kan ik deze ${themeName} kleurplaat gratis afdrukken?`,
+            answer: `Klik op een kleurplaat om het afdrukvoorbeeld te openen en gebruik de grote 'Gratis Kleurplaat Printen' knop om direct op volledig A4-formaat af te drukken.`
+          },
+          {
+            question: `Zijn deze ${themeName} kleurplaten geschikt voor ${nlAgeTitle}?`,
+            answer: `Ja! Alle kleurplaten in deze categorie zijn wat betreft lijndikte en detailniveau zorgvuldig geselecteerd voor ${nlAgeTitle}.`
+          },
+          {
+            question: `Kan ik de ${themeName} sjablonen ook digitaal inkleuren op een tablet?`,
+            answer: `Zeker weten. Klik op 'Download Afbeelding' om het bestand op te slaan op je iPad, Android tablet of computer om het in je favoriete tekenapp te openen.`
+          }
+        ],
         language: 'nl'
       });
     }
@@ -318,11 +348,11 @@ const generateData = () => {
         preview: imageUrl,
         downloadableFile: imageUrl,
         metaTitle: `${niceTitleEn} - Free Printable Coloring Page | ColorVaults`,
-        metaDescription: `Download this free printable ${niceTitleEn.toLowerCase()} coloring page in high resolution. Perfect for kids and adults. Easy instant print, no registration required!`,
-        shortDescription: `Get this free printable ${niceTitleEn.toLowerCase()} coloring page. High-quality line art template, instantly downloadable.`,
-        longDescription: `Looking for a free printable ${niceTitleEn.toLowerCase()} coloring page? This high-resolution coloring page template is perfect for ${ageTranslations[ageGroupKey].en.toLowerCase()} and adults who love being creative. Download the high-quality PDF or image instantly and start coloring today!`,
-        altText: niceTitleEn,
-        tags: [themeSlug],
+        metaDescription: `Download and print this free high-resolution ${niceTitleEn} coloring page from the ${themeName} collection. Perfect for ${ageTranslations[ageGroupKey].en.toLowerCase()} and adults!`,
+        shortDescription: `High-resolution printable ${niceTitleEn} coloring template from our ${themeName} collection. Download or print instantly for free.`,
+        longDescription: `Enjoy this high-quality printable ${niceTitleEn} coloring page template from the ${themeName} category. Designed with crisp black outlines, this sheet is perfect for ${ageTranslations[ageGroupKey].en.toLowerCase()} and adults seeking a fun, creative, and relaxing activity. Download the high-res file or print directly in A4/Letter size for free!`,
+        altText: `${niceTitleEn} coloring page`,
+        tags: [themeSlug, enAge],
         relatedPages: [],
         language: 'en'
       });
@@ -338,11 +368,11 @@ const generateData = () => {
         preview: imageUrl,
         downloadableFile: imageUrl,
         metaTitle: `${niceTitleNl} - Gratis Printbare Kleurplaat | ColorVaults`,
-        metaDescription: `Download deze gratis printbare ${niceTitleNl.toLowerCase()} kleurplaat in hoge resolutie. Perfect voor kinderen en volwassenen. Direct printen zonder account!`,
-        shortDescription: `Download deze gratis printbare ${niceTitleNl.toLowerCase()} kleurplaat. Hoge kwaliteit lijntekening sjabloon om direct in te kleuren.`,
-        longDescription: `Op zoek naar een gratis printbare ${niceTitleNl.toLowerCase()} kleurplaat? Dit hoge resolutie kleurplaat sjabloon is perfect voor ${ageTranslations[ageGroupKey].nl.toLowerCase()} en volwassenen die graag creatief bezig zijn. Download de afbeelding direct en begin meteen met kleuren!`,
-        altText: niceTitleNl,
-        tags: [themeSlug],
+        metaDescription: `Download en print deze gratis hoge resolutie ${niceTitleNl} kleurplaat uit de ${themeName} collectie. Ideaal voor ${ageTranslations[ageGroupKey].nl.toLowerCase()} en volwassenen!`,
+        shortDescription: `Hoge kwaliteit printbare ${niceTitleNl} kleurplaat uit onze ${themeName} verzameling. Direct gratis te downloaden of te printen.`,
+        longDescription: `Geniet van dit mooie printbare ${niceTitleNl} kleurplaat sjabloon uit de categorie ${themeName}. Ontworpen met scherpe zwarte contouren, uitermate geschikt voor ${ageTranslations[ageGroupKey].nl.toLowerCase()} en volwassenen die houden van creatief en ontspannend kleuren. Download het bestand gratis in hoge resolutie of print direct op A4 formaat!`,
+        altText: `${niceTitleNl} kleurplaat`,
+        tags: [themeSlug, nlAge],
         relatedPages: [],
         language: 'nl'
       });

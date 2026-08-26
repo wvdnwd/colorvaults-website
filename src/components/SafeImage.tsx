@@ -1,14 +1,31 @@
 'use client';
-import Image, { ImageProps } from 'next/image';
-import { useState } from 'react';
 
-interface SafeImageProps extends ImageProps {
+import { useState, useEffect } from 'react';
+
+interface SafeImageProps extends React.ImgHTMLAttributes<HTMLImageElement> {
   fallbackSrc?: string;
+  width?: number | string;
+  height?: number | string;
 }
 
-export default function SafeImage({ fallbackSrc, onError, ...props }: SafeImageProps) {
+export default function SafeImage({
+  fallbackSrc,
+  onError,
+  src: propSrc,
+  alt,
+  className,
+  style,
+  width,
+  height,
+  ...props
+}: SafeImageProps) {
   const [errored, setErrored] = useState(false);
-  const [src, setSrc] = useState(props.src);
+  const [src, setSrc] = useState(propSrc);
+
+  useEffect(() => {
+    setSrc(propSrc);
+    setErrored(false);
+  }, [propSrc]);
 
   const handleError = (e: React.SyntheticEvent<HTMLImageElement>) => {
     if (!errored) {
@@ -22,20 +39,41 @@ export default function SafeImage({ fallbackSrc, onError, ...props }: SafeImageP
 
   if (errored && !fallbackSrc) {
     return (
-      <div style={{
-        width: '100%',
-        height: '100%',
-        display: 'flex',
-        alignItems: 'center',
-        justifyContent: 'center',
-        background: 'var(--gray-100)',
-        color: 'var(--gray-400)',
-        fontSize: '2rem',
-      }}>
+      <div
+        style={{
+          width: '100%',
+          height: '100%',
+          minHeight: '200px',
+          display: 'flex',
+          alignItems: 'center',
+          justifyContent: 'center',
+          background: 'var(--gray-100)',
+          color: 'var(--gray-400)',
+          fontSize: '2.5rem',
+          borderRadius: 'inherit',
+        }}
+      >
         🎨
       </div>
     );
   }
 
-  return <Image {...props} src={src} onError={handleError} />;
+  return (
+    // eslint-disable-next-line @next/next/no-img-element
+    <img
+      {...props}
+      src={typeof src === 'string' ? src : undefined}
+      alt={alt || ''}
+      className={className}
+      style={{
+        maxWidth: '100%',
+        height: 'auto',
+        display: 'block',
+        ...style,
+      }}
+      onError={handleError}
+      loading="lazy"
+      decoding="async"
+    />
+  );
 }

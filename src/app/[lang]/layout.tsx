@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Fredoka, Nunito } from "next/font/google";
+import Script from "next/script";
 import "../globals.css";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
@@ -22,6 +23,9 @@ const nunito = Nunito({
   variable: '--font-body',
   display: 'swap',
 });
+
+const gaId = process.env.NEXT_PUBLIC_GA_ID;
+const adsenseClientId = process.env.NEXT_PUBLIC_ADSENSE_CLIENT_ID;
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://colorvaults.com"),
@@ -63,7 +67,35 @@ export default async function RootLayout({
 
   return (
     <html lang={lang} className={`${fredoka.variable} ${nunito.variable}`} data-theme="dark">
+      <head>
+        {adsenseClientId && (
+          <Script
+            async
+            src={`https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=${adsenseClientId}`}
+            crossOrigin="anonymous"
+            strategy="afterInteractive"
+          />
+        )}
+        {gaId && (
+          <>
+            <Script
+              async
+              src={`https://www.googletagmanager.com/gtag/js?id=${gaId}`}
+              strategy="afterInteractive"
+            />
+            <Script id="google-analytics" strategy="afterInteractive">
+              {`
+                window.dataLayer = window.dataLayer || [];
+                function gtag(){dataLayer.push(arguments);}
+                gtag('js', new Date());
+                gtag('config', '${gaId}');
+              `}
+            </Script>
+          </>
+        )}
+      </head>
       <body>
+
         <a href="#main-content" className="skip-link">
           {lang === 'en' ? 'Skip to main content' : 'Naar hoofdinhoud springen'}
         </a>

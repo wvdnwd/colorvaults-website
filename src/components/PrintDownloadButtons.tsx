@@ -2,13 +2,16 @@
 
 import { useState } from 'react';
 import PrintPreviewModal from './PrintPreviewModal';
+import ReportButton from './ReportButton';
 
 export default function PrintDownloadButtons({
   isEn,
   fileUrl,
+  category = 'Unknown',
 }: {
   isEn: boolean;
   fileUrl: string;
+  category?: string;
 }) {
   const [downloading, setDownloading] = useState(false);
   const [showPreview, setShowPreview] = useState(false);
@@ -131,6 +134,8 @@ export default function PrintDownloadButtons({
         onConfirmPrint={doActualPrint}
         isEn={isEn}
       />
+
+      <ReportButton imageUrl={fileUrl} category={category} isEn={isEn} />
     </>
   );
 }

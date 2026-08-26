@@ -149,7 +149,7 @@ export default async function HomePage({ params }: { params: Promise<{ lang: str
                   🎨 {isEn ? 'Explore All Collections' : 'Alle Collecties Bekijken'}
                 </Link>
                 <Link href={`/${lang}/mandalas`} className="btn-secondary">
-                  🧘 {isEn ? 'Adult Mandalas' : 'Volwassenen Mandala\'s'}
+                  🧘 {isEn ? 'Mandalas' : 'Mandala\'s'}
                 </Link>
               </div>
             </div>
@@ -157,7 +157,14 @@ export default async function HomePage({ params }: { params: Promise<{ lang: str
             {/* RIGHT: 3D rotating carousel */}
             <div className={`${styles.heroVisual} hero-anim-1`}>
               <HeroCarousel
-                images={topThemes.map(t => ({ src: t.image, alt: t.title }))}
+                items={getColoringPages(lang)
+                  .filter(p => p.image && !p.image.includes('default.jpg'))
+                  .slice(0, 100)
+                  .map(p => ({
+                    src: p.image,
+                    alt: p.title,
+                    href: `/${lang}/${p.parentHub}/${p.parentTheme}/${p.ageGroup}`,
+                  }))}
               />
             </div>
 

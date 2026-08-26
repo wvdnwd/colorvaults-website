@@ -17,10 +17,23 @@ export default function ContactForm({ lang, isEn }: { lang: string; isEn: boolea
     if (status === 'submitting') return;
     setStatus('submitting');
 
-    // Simulate form submission to backend / email API
-    await new Promise(resolve => setTimeout(resolve, 1200));
-    setStatus('success');
+    try {
+      const res = await fetch('/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(formData),
+      });
+
+      if (res.ok) {
+        setStatus('success');
+      } else {
+        setStatus('error');
+      }
+    } catch {
+      setStatus('error');
+    }
   };
+
 
   const inputStyle: React.CSSProperties = {
     width: '100%',
