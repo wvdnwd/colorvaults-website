@@ -10,9 +10,13 @@ import MotionCard from '@/components/MotionCard';
 import AdSlot from '@/components/AdSlot';
 import React from 'react';
 
+export const dynamicParams = true;
+
 export async function generateStaticParams() {
-  const pagesEn = getColoringPages('en').map(p => ({ lang: 'en', mainHubSlug: p.parentHub, themeSlug: p.parentTheme, ageSlug: p.ageGroup, coloringPageSlug: p.slug }));
-  const pagesNl = getColoringPages('nl').map(p => ({ lang: 'nl', mainHubSlug: p.parentHub, themeSlug: p.parentTheme, ageSlug: p.ageGroup, coloringPageSlug: p.slug }));
+  // Pre-render top 30 sample pages at build time to keep build memory low (<120MB).
+  // All other pages render dynamically on-demand (ISR) and cache permanently!
+  const pagesEn = getColoringPages('en').slice(0, 30).map(p => ({ lang: 'en', mainHubSlug: p.parentHub, themeSlug: p.parentTheme, ageSlug: p.ageGroup, coloringPageSlug: p.slug }));
+  const pagesNl = getColoringPages('nl').slice(0, 30).map(p => ({ lang: 'nl', mainHubSlug: p.parentHub, themeSlug: p.parentTheme, ageSlug: p.ageGroup, coloringPageSlug: p.slug }));
   return [...pagesEn, ...pagesNl];
 }
 
