@@ -91,7 +91,6 @@ export default async function MainHubPage({ params }: { params: Promise<{ lang: 
                   themeSlug={theme.slug}
                   title={theme.title}
                   description={theme.description}
-                  availableAges={theme.availableAges}
                   images={sampleImages}
                 />
               </motion.div>

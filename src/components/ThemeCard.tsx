@@ -10,7 +10,6 @@ interface ThemeCardProps {
   themeSlug: string;
   title: string;
   description: string;
-  availableAges: string[];
   images: string[];
 }
 
@@ -20,7 +19,6 @@ export default function ThemeCard({
   themeSlug,
   title,
   description,
-  availableAges,
   images
 }: ThemeCardProps) {
   const [currentIdx, setCurrentIdx] = useState(0);
@@ -100,23 +98,19 @@ export default function ThemeCard({
         <p className="card-desc" style={{ fontSize: '0.85rem', color: 'var(--gray-600)', lineHeight: 1.5, marginBottom: '1rem', flex: 1 }}>
           {description}
         </p>
-        <div style={{ display: 'flex', gap: '0.4rem', flexWrap: 'wrap', marginTop: 'auto' }}>
-          {availableAges.map(age => (
-            <span
-              key={age}
-              style={{
-                background: 'var(--primary-light)',
-                color: 'var(--primary)',
-                borderRadius: 'var(--radius-full)',
-                padding: '0.2rem 0.65rem',
-                fontSize: '0.72rem',
-                fontWeight: 800,
-                textTransform: 'capitalize',
-              }}
-            >
-              {age}
-            </span>
-          ))}
+        <div style={{ display: 'flex', alignItems: 'center', gap: '0.4rem', marginTop: 'auto' }}>
+          <span
+            style={{
+              background: 'var(--primary-light)',
+              color: 'var(--primary)',
+              borderRadius: 'var(--radius-full)',
+              padding: '0.25rem 0.75rem',
+              fontSize: '0.75rem',
+              fontWeight: 800,
+            }}
+          >
+            🎨 {lang === 'en' ? 'Full Album' : 'Volledig Album'}
+          </span>
         </div>
       </div>
     </Link>
