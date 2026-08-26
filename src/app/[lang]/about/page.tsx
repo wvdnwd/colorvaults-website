@@ -65,6 +65,32 @@ export default async function AboutPage({ params }: { params: Promise<{ lang: st
           </div>
         </div>
 
+        {/* AI Transparency Section */}
+        <div style={{
+          marginBottom: '5rem',
+          background: 'var(--surface-2)',
+          borderRadius: 'var(--radius-xl)',
+          padding: '3rem',
+          border: '1px solid var(--gray-200)'
+        }}>
+          <span className="badge">🤖 {isEn ? 'AI & Technology Disclosure' : 'AI & Technologie Transparantie'}</span>
+          <h2 className="title-h2" style={{ marginTop: '0.75rem', marginBottom: '1rem' }}>
+            {isEn ? 'Created with AI, Curated for Quality' : 'Gemaakt met AI, Zorgvuldig Geselecteerd'}
+          </h2>
+          <p style={{ color: 'var(--gray-600)', lineHeight: 1.8, marginBottom: '1rem' }}>
+            {isEn
+              ? 'At ColorVaults, all coloring page templates and artwork are generated using state-of-the-art Artificial Intelligence (AI) models. By leveraging AI technology, we can continuously generate thousands of diverse, creative, and unique line-art designs across dozens of themes.'
+              : 'Bij ColorVaults worden alle kleurplaatsjablonen en illustraties gegenereerd met behulp van geavanceerde Kunstmatige Intelligentie (AI) modellen. Door AI-technologie in te zetten, kunnen we continu duizenden gevarieerde, creatieve en unieke lijntekeningen genereren binnen tientallen thema\'s.'
+            }
+          </p>
+          <p style={{ color: 'var(--gray-600)', lineHeight: 1.8 }}>
+            {isEn
+              ? 'Every AI-generated image undergoes quality evaluation, contrast enhancement, and formatting to ensure clean black outlines that are easy and satisfying to color — whether printed on A4 paper or colored digitally.'
+              : 'Elke door AI gegenereerde afbeelding ondergaat een kwaliteitsbeoordeling, contrastverbetering en formattering om te zorgen voor scherpe zwarte contouren die makkelijk en fijn zijn om in te kleuren — of ze nu op A4-papier worden afgedrukt of digitaal worden ingekleurd.'
+            }
+          </p>
+        </div>
+
         {/* Values */}
         <div>
           <div className="section-header" style={{ marginBottom: '2rem' }}>

@@ -52,6 +52,24 @@ export default function Footer({ lang }: { lang: string }) {
           </div>
         </div>
 
+        {/* Clear AI Attribution & Disclosure Notice */}
+        <div style={{
+          marginTop: '2rem',
+          padding: '1rem 1.25rem',
+          background: 'rgba(255, 255, 255, 0.05)',
+          borderRadius: 'var(--radius)',
+          fontSize: '0.825rem',
+          color: 'rgba(253, 246, 233, 0.75)',
+          lineHeight: '1.6',
+          border: '1px solid rgba(255, 255, 255, 0.1)',
+        }}>
+          🤖 <strong>{isEn ? 'AI Content Disclosure:' : 'AI Content Transparantie:'}</strong>{' '}
+          {isEn
+            ? 'All coloring pages and artwork on ColorVaults are created with the assistance of artificial intelligence (AI) technology and curated for high-quality printing and digital coloring. In accordance with our Terms of Service, all artwork is provided free for personal and educational use.'
+            : 'Alle kleurplaten en illustraties op ColorVaults zijn gemaakt met behulp van kunstmatige intelligentie (AI) technologie en zorgvuldig geselecteerd voor hoge kwaliteit printen en digitaal inkleuren. In overeenstemming met onze Algemene Voorwaarden worden alle tekeningen gratis aangeboden voor persoonlijk en educatief gebruik.'
+          }
+        </div>
+
         <div className={styles.footerBottom}>
           <p>© {new Date().getFullYear()} ColorVaults.com. {isEn ? 'All rights reserved.' : 'Alle rechten voorbehouden.'}</p>
           <p>{isEn ? 'Made with ❤️ for creative minds everywhere.' : 'Gemaakt met ❤️ voor creatievelingen overal.'}</p>
