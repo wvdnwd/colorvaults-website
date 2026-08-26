@@ -77,7 +77,7 @@ export default async function ColoringPageDetail({ params }: { params: Promise<{
     .filter(p => p.slug !== page.slug)
     .slice(0, 4);
 
-  const pinterestUrl = `https://pinterest.com/pin/create/button/?url=${encodeURIComponent(`https://colorvaults.com/${lang}/${mainHubSlug}/${themeSlug}/${ageSlug}/${page.slug}`)}&media=${encodeURIComponent(page.image)}&description=${encodeURIComponent(page.metaTitle)}`;
+  const pinterestUrl = `https://pinterest.com/pin/create/button/?url=${encodeURIComponent(`https://colorvaults.com/${lang}/${mainHubSlug}/${themeSlug}/${ageSlug}/${page.slug}`)}&media=${encodeURIComponent(page.image)}&description=${encodeURIComponent(page.metaTitle || page.title)}`;
 
   return (
     <div className="container section">
@@ -150,10 +150,10 @@ export default async function ColoringPageDetail({ params }: { params: Promise<{
             <div style={{ position: 'absolute', top: '18px', right: '18px' }}>
               <FavoriteButton 
                 item={{ 
-                  id: page.id, 
+                  id: page.slug, 
                   slug: page.slug, 
                   title: page.title, 
-                  preview: page.preview, 
+                  preview: page.image, 
                   url: `/${lang}/${mainHubSlug}/${themeSlug}/${ageSlug}/${page.slug}` 
                 }} 
               />
@@ -185,7 +185,7 @@ export default async function ColoringPageDetail({ params }: { params: Promise<{
           {/* Long SEO text */}
           <div className="seo-block" style={{ marginTop: '2.5rem' }}>
             <h2>{isEn ? 'About This Coloring Page' : 'Over Deze Kleurplaat'}</h2>
-            <p>{page.longDescription}</p>
+            <p>{page.shortDescription || page.metaDescription}</p>
           </div>
 
           {page.faq && page.faq.length > 0 && (
@@ -222,7 +222,7 @@ export default async function ColoringPageDetail({ params }: { params: Promise<{
           </div>
 
           {/* Action CTAs */}
-          <PrintDownloadButtons isEn={isEn} fileUrl={page.downloadableFile} />
+          <PrintDownloadButtons isEn={isEn} fileUrl={page.image} />
 
           {/* Metadata Chips */}
           <div style={{ marginTop: '1.5rem', display: 'flex', flexDirection: 'column', gap: '0.6rem' }}>

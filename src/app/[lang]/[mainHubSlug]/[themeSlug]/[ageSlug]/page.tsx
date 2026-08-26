@@ -86,7 +86,7 @@ export default async function AgePage({
             {theme.title} — {difficultyLabel.emoji} {difficultyLabel.label}
           </h1>
           <p style={{ color: 'var(--gray-600)', fontSize: '1.1rem', marginTop: '0.6rem', lineHeight: 1.7, maxWidth: '640px' }}>
-            {agePage.introText}
+            {agePage.seoText}
           </p>
           <span className="badge" style={{ marginTop: '1.25rem' }}>
             ✨ {allColoringPages.length} {isEn ? 'pages available — 100% free' : 'pagina\'s beschikbaar — 100% gratis'}

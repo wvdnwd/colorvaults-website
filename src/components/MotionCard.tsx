@@ -14,11 +14,12 @@ const TRENDING_SLUGS = new Set([
 
 interface MotionCardProps {
   page: {
-    id: string;
+    id?: string;
     slug: string;
     title: string;
-    preview: string;
-    shortDescription: string;
+    preview?: string;
+    image?: string;
+    shortDescription?: string;
     parentHub: string;
     parentTheme: string;
     ageGroup: string;
@@ -30,6 +31,8 @@ interface MotionCardProps {
 export default function MotionCard({ page, lang, isEn }: MotionCardProps) {
   const url = `/${lang}/${page.parentHub}/${page.parentTheme}/${page.ageGroup}/${page.slug}`;
   const isTrending = TRENDING_SLUGS.has(page.slug);
+  const imageSrc = page.preview || page.image || '';
+  const favItem = { id: page.id || page.slug, slug: page.slug, title: page.title, preview: imageSrc, url };
 
   return (
     <motion.div
@@ -43,7 +46,7 @@ export default function MotionCard({ page, lang, isEn }: MotionCardProps) {
       <Link href={url} className="card" style={{ height: '100%' }}>
         <div className="card-img-wrapper" style={{ aspectRatio: '3/4', position: 'relative', background: '#FFFFFF', padding: '1rem', borderBottom: '1px solid var(--gray-200)' }}>
           <SafeImage 
-            src={page.preview} 
+            src={imageSrc} 
             alt={page.title} 
             width={400} 
             height={400} 
@@ -52,15 +55,7 @@ export default function MotionCard({ page, lang, isEn }: MotionCardProps) {
             style={{ objectFit: 'contain', width: '100%', height: '100%' }}
           />
           <div style={{ position: 'absolute', top: '12px', right: '12px', zIndex: 10 }}>
-            <FavoriteButton 
-              item={{ 
-                id: page.id, 
-                slug: page.slug, 
-                title: page.title, 
-                preview: page.preview, 
-                url 
-              }} 
-            />
+            <FavoriteButton item={favItem} />
           </div>
           {isTrending && (
             <div style={{

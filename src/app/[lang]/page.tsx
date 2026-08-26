@@ -270,7 +270,7 @@ export default async function HomePage({ params }: { params: Promise<{ lang: str
                 );
               }
               return (
-                <ScrollReveal key={page.id} delay={(index % 4) as 0 | 1 | 2 | 3 | 4}>
+                <ScrollReveal key={page.slug} delay={(index % 4) as 0 | 1 | 2 | 3 | 4}>
                   <MotionCard page={page} lang={lang} isEn={isEn} />
                 </ScrollReveal>
               );
