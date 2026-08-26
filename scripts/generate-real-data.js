@@ -3,8 +3,8 @@ const path = require('path');
 
 const SPACES_BASE_URL = process.env.NEXT_PUBLIC_IMAGE_HOST || 'https://colorvaults.ams3.cdn.digitaloceanspaces.com';
 const inputDirs = [
-  'c:\\Users\\Gebruiker\\Desktop\\colorvaults\\Gecontroleerd',
-  'c:\\Users\\Gebruiker\\Desktop\\colorvaults\\Geupload'
+  'c:\\Users\\Gebruiker\\Desktop\\colorvaults\\Geupload',
+  'c:\\Users\\Gebruiker\\Desktop\\colorvaults\\Gecontroleerd'
 ];
 const dataDir = path.join(__dirname, '..', 'src', 'data');
 
