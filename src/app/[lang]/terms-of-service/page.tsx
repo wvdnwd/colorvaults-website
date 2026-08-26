@@ -92,8 +92,8 @@ export default async function TermsOfServicePage({ params }: { params: Promise<{
           </h2>
           <p>
             {isEn
-              ? 'ColorVaults utilizes generative artificial intelligence models to design clean line-art templates. We respect intellectual property rights. If you believe any AI output on our website inadvertently infringes upon a valid copyright or trademark, please consult our IP & Takedown Policy or contact us at legal@colorvaults.com for prompt evaluation and removal.'
-              : 'ColorVaults maakt gebruik van generatieve kunstmatige intelligentie modellen om schone lijntekening-sjablonen te ontwerpen. Wij respecteren intellectuele eigendomsrechten. Als u van mening bent dat een AI-output op onze website onbedoeld inbreuk maakt op een geldig auteursrecht of handelsmerk, raadpleeg dan ons Beleid inzake IE-inbreuk of neem contact op via legal@colorvaults.com voor snelle evaluatie en verwijdering.'
+              ? 'ColorVaults utilizes generative artificial intelligence models to design clean line-art templates. We respect intellectual property rights. If you believe any AI output on our website inadvertently infringes upon a valid copyright or trademark, please consult our IP & Takedown Policy or contact us at colorvaults@hotmail.com for prompt evaluation and removal.'
+              : 'ColorVaults maakt gebruik van generatieve kunstmatige intelligentie modellen om schone lijntekening-sjablonen te ontwerpen. Wij respecteren intellectuele eigendomsrechten. Als u van mening bent dat een AI-output op onze website onbedoeld inbreuk maakt op een geldig auteursrecht of handelsmerk, raadpleeg dan ons Beleid inzake IE-inbreuk of neem contact op via colorvaults@hotmail.com voor snelle evaluatie en verwijdering.'
             }
           </p>
 
@@ -117,7 +117,7 @@ export default async function TermsOfServicePage({ params }: { params: Promise<{
             }
           </p>
           <div style={{ background: 'var(--gray-100)', padding: '1.25rem 1.5rem', borderRadius: 'var(--radius)' }}>
-            <strong>Email:</strong> <a href="mailto:legal@colorvaults.com" style={{ color: 'var(--primary)' }}>legal@colorvaults.com</a>
+            <strong>Email:</strong> <a href="mailto:colorvaults@hotmail.com" style={{ color: 'var(--primary)' }}>colorvaults@hotmail.com</a>
           </div>
 
         </div>

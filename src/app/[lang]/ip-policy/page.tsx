@@ -43,7 +43,7 @@ export default async function IPPolicyPage({ params }: { params: Promise<{ lang:
 
           <h2 className="title-h2" style={{ fontSize: '1.5rem', marginTop: '1rem' }}>3. Notification Procedure</h2>
           <p>If you detect any material protected by Intellectual Property Rights belonging to you in any content disseminated by the Corporation, you should instantly communicate with the Corporation using the following method:</p>
-          <p>Dispatch a message to the Corporation at <strong>legal@colorvaults.com</strong> comprising the ensuing details:</p>
+          <p>Dispatch a message to the Corporation at <strong>colorvaults@hotmail.com</strong> comprising the ensuing details:</p>
           <ul style={{ paddingLeft: '2rem', display: 'flex', flexDirection: 'column', gap: '0.5rem' }}>
             <li>Your identification and communication details;</li>
             <li>Comprehensive details of the content you believe to be violating. This may incorporate URLs, highlighted copies of content containing violation material, screenshots, and/or any other evidence you deem appropriate;</li>
@@ -77,7 +77,7 @@ export default async function IPPolicyPage({ params }: { params: Promise<{ lang:
           <div style={{ marginTop: '2rem', padding: '2rem', background: 'var(--gray-100)', borderRadius: 'var(--radius)' }}>
             <h3 style={{ fontSize: '1.25rem', marginBottom: '1rem' }}>IP Violation Form</h3>
             <p style={{ marginBottom: '1rem' }}>Please refer to the Notification Procedure section of the policy above for the information to provide. Send your details and the required evidence to:</p>
-            <a href="mailto:legal@colorvaults.com" style={{ display: 'inline-block', background: 'var(--primary)', color: 'white', padding: '0.75rem 1.5rem', borderRadius: 'var(--radius)', textDecoration: 'none', fontWeight: 'bold' }}>Email legal@colorvaults.com</a>
+            <a href="mailto:colorvaults@hotmail.com" style={{ display: 'inline-block', background: 'var(--primary)', color: 'white', padding: '0.75rem 1.5rem', borderRadius: 'var(--radius)', textDecoration: 'none', fontWeight: 'bold' }}>Email colorvaults@hotmail.com</a>
           </div>
         </div>
       </div>

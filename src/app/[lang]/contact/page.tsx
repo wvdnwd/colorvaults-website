@@ -64,7 +64,7 @@ export default async function ContactPage({ params }: { params: Promise<{ lang: 
 
             <div style={{ background: 'var(--primary-light)', borderRadius: 'var(--radius-lg)', padding: '1.5rem', border: '1px solid rgba(124,58,237,0.15)' }}>
               <p style={{ fontWeight: 800, color: 'var(--primary)', marginBottom: '0.4rem' }}>
-                ✉️ colorvaults@email.com
+                ✉️ <a href="mailto:colorvaults@hotmail.com" style={{ color: 'inherit', textDecoration: 'underline' }}>colorvaults@hotmail.com</a>
               </p>
               <p style={{ fontSize: '0.85rem', color: 'var(--gray-600)' }}>
                 {isEn ? 'We typically reply within 2 business days.' : 'We reageren doorgaans binnen 2 werkdagen.'}
