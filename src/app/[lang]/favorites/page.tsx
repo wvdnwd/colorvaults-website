@@ -2,7 +2,7 @@
 
 import { useFavoritesContext } from '@/context/FavoritesContext';
 import Link from 'next/link';
-import Image from 'next/image';
+import SafeImage from '@/components/SafeImage';
 import { motion } from 'framer-motion';
 import FavoriteButton from '@/components/FavoriteButton';
 import * as React from 'react';
@@ -48,7 +48,7 @@ export default function FavoritesPage({ params }: { params: Promise<{ lang: stri
             >
               <Link href={fav.url} className="card" style={{ height: '100%' }}>
                 <div style={{ position: 'relative' }}>
-                  <Image src={fav.preview} alt={fav.title} width={400} height={400} className="card-img" />
+                  <SafeImage src={fav.preview} alt={fav.title} className="card-img" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
                   <div style={{ position: 'absolute', top: '10px', right: '10px', zIndex: 10 }}>
                     <FavoriteButton item={fav} />
                   </div>

@@ -1,9 +1,9 @@
-import { getMainHubs, getThemes, validateDataModel, safeJsonLd } from '@/lib/api';
+import { getMainHubs, getThemes, validateDataModel, safeJsonLd, getSampleImagesForTheme } from '@/lib/api';
 import { notFound } from 'next/navigation';
 import Link from 'next/link';
-import Image from 'next/image';
 import Breadcrumbs from '@/components/Breadcrumbs';
 import AdSlot from '@/components/AdSlot';
+import ThemeCard from '@/components/ThemeCard';
 import * as motion from 'framer-motion/client';
 
 export async function generateStaticParams() {
@@ -74,39 +74,29 @@ export default async function MainHubPage({ params }: { params: Promise<{ lang: 
         </div>
         
         <div className="grid-4">
-          {allThemes.map((theme, i) => (
-            <motion.div 
-              key={theme.slug}
-              initial={{ opacity: 0 }}
-              whileInView={{ opacity: 1 }}
-              viewport={{ once: true, margin: '-50px' }}
-              transition={{ duration: 0.3, delay: Math.min(i * 0.05, 0.3) }}
-              whileHover={{ y: -6 }}
-            >
-              <Link href={`/${lang}/${hub.slug}/${theme.slug}`} className="card" style={{ height: '100%' }}>
-                <div className="card-img-wrapper" style={{ aspectRatio: '4/3' }}>
-                  <Image src={theme.image} alt={theme.title} width={400} height={300} className="card-img" sizes="(max-width: 768px) 50vw, 25vw" />
-                </div>
-                <div className="card-body">
-                  <h3 className="card-title">{theme.title}</h3>
-                  <p className="card-desc">{theme.description}</p>
-                  <div style={{ display: 'flex', gap: '0.4rem', flexWrap: 'wrap', marginTop: 'auto', paddingTop: '0.75rem' }}>
-                    {theme.availableAges.map(age => (
-                      <span key={age} style={{
-                        background: 'var(--primary-light)',
-                        color: 'var(--primary)',
-                        borderRadius: 'var(--radius-full)',
-                        padding: '0.2rem 0.65rem',
-                        fontSize: '0.72rem',
-                        fontWeight: 800,
-                        textTransform: 'capitalize'
-                      }}>{age}</span>
-                    ))}
-                  </div>
-                </div>
-              </Link>
-            </motion.div>
-          ))}
+          {allThemes.map((theme, i) => {
+            const sampleImages = getSampleImagesForTheme(lang, hub.slug, theme.slug, theme.image, 3);
+            return (
+              <motion.div 
+                key={theme.slug}
+                initial={{ opacity: 0 }}
+                whileInView={{ opacity: 1 }}
+                viewport={{ once: true, margin: '-50px' }}
+                transition={{ duration: 0.3, delay: Math.min(i * 0.05, 0.3) }}
+                whileHover={{ y: -6 }}
+              >
+                <ThemeCard
+                  lang={lang}
+                  hubSlug={hub.slug}
+                  themeSlug={theme.slug}
+                  title={theme.title}
+                  description={theme.description}
+                  availableAges={theme.availableAges}
+                  images={sampleImages}
+                />
+              </motion.div>
+            );
+          })}
         </div>
 
         <AdSlot type="banner" text={isEn ? "Sponsored Content" : "Gesponsord"} />
@@ -123,17 +113,16 @@ export default async function MainHubPage({ params }: { params: Promise<{ lang: 
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: safeJsonLd({
-          "@context": "https://schema.org",
-          "@type": "CollectionPage",
-          "name": `${hub.title} Coloring Pages`,
-          "description": hub.description,
-          "url": `https://colorvaults.com/${lang}/${hub.slug}`,
-          "isPartOf": { "@id": "https://colorvaults.com/#website" },
-          "inLanguage": lang,
-          "hasPart": allThemes.slice(0, 10).map(t => ({
-            "@type": "WebPage",
-            "name": `${t.title} Coloring Pages`,
-            "url": `https://colorvaults.com/${lang}/${hub.slug}/${t.slug}`
+          '@context': 'https://schema.org',
+          '@type': 'CollectionPage',
+          'name': hub.title,
+          'description': hub.description,
+          'url': `https://colorvaults.com/${lang}/${hub.slug}`,
+          'isPartOf': { '@id': 'https://colorvaults.com/#website' },
+          'hasPart': allThemes.map(t => ({
+            '@type': 'WebPage',
+            'name': t.title,
+            'url': `https://colorvaults.com/${lang}/${hub.slug}/${t.slug}`
           }))
         }) }}
       />
