@@ -4,7 +4,20 @@
     "slug": "ancient-mythology",
     "parentHub": "collections",
     "description": "Explore our collection of free printable Ancient Mythology coloring pages. Featuring high-resolution templates perfect for kids, toddlers, teens, and adults. Download or print instantly for free!",
-    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Ancient%20Mythology/Fantasy_Warrior_Holding_Axe_1787728899009.webp",
+    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Ancient%20Mythology/Ancient_Warrior_Holding_Spear_1786118698826.webp",
+    "availableAges": [
+      "kids",
+      "teens",
+      "adults"
+    ],
+    "language": "en"
+  },
+  {
+    "title": "Animals",
+    "slug": "animals",
+    "parentHub": "animals-and-nature",
+    "description": "Explore our collection of free printable Animals coloring pages. Featuring high-resolution templates perfect for kids, toddlers, teens, and adults. Download or print instantly for free!",
+    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Animals/Animal_Friends_Celebrate_Birthday.webp",
     "availableAges": [
       "kids",
       "teens",
@@ -17,7 +30,7 @@
     "slug": "anime",
     "parentHub": "tv-series-and-movies",
     "description": "Explore our collection of free printable Anime coloring pages. Featuring high-resolution templates perfect for kids, toddlers, teens, and adults. Download or print instantly for free!",
-    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Anime/Anime_Female_Character_Making_Peace_Sign_1787730876786.webp",
+    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Anime/Anime_Bear-Eared_Girl_1787610039658.webp",
     "availableAges": [
       "kids",
       "teens",
@@ -69,7 +82,7 @@
     "slug": "anime-one-piece",
     "parentHub": "tv-series-and-movies",
     "description": "Explore our collection of free printable Anime - One Piece coloring pages. Featuring high-resolution templates perfect for kids, toddlers, teens, and adults. Download or print instantly for free!",
-    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Anime%20-%20One%20Piece/A_pirate-themed_coloring_page_featuring_an_anime-style_character_1787730225077.webp",
+    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Anime%20-%20One%20Piece/Action_Swordsmanship_1787611665915.webp",
     "availableAges": [
       "kids",
       "teens",
@@ -82,7 +95,7 @@
     "slug": "anime-sailor-moon",
     "parentHub": "tv-series-and-movies",
     "description": "Explore our collection of free printable Anime - Sailor Moon coloring pages. Featuring high-resolution templates perfect for kids, toddlers, teens, and adults. Download or print instantly for free!",
-    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Anime%20-%20Sailor%20Moon/A_Sailor_Moon_character_waves_1787730506605.webp",
+    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Anime%20-%20Sailor%20Moon/A_cheerful_Sailor_Moon_in_her_sailor_suit_1786137543359.webp",
     "availableAges": [
       "kids",
       "teens",
@@ -95,7 +108,7 @@
     "slug": "architecture",
     "parentHub": "collections",
     "description": "Explore our collection of free printable Architecture coloring pages. Featuring high-resolution templates perfect for kids, toddlers, teens, and adults. Download or print instantly for free!",
-    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Architecture/Chinese_Pagoda_1787731397725.webp",
+    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Architecture/Ancient_Greek_Temple_Scene.webp",
     "availableAges": [
       "kids",
       "teens",
@@ -121,7 +134,7 @@
     "slug": "autumn",
     "parentHub": "adults",
     "description": "Explore our collection of free printable Autumn coloring pages. Featuring high-resolution templates perfect for kids, toddlers, teens, and adults. Download or print instantly for free!",
-    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Autumn/A_squirrel_with_a_nut_1787733825346.webp",
+    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Autumn/Autumn_Child_in_Winter_Clothing_1786140026243.webp",
     "availableAges": [
       "kids",
       "teens",
@@ -134,7 +147,7 @@
     "slug": "birds",
     "parentHub": "animals-and-nature",
     "description": "Explore our collection of free printable Birds coloring pages. Featuring high-resolution templates perfect for kids, toddlers, teens, and adults. Download or print instantly for free!",
-    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Birds/Bear_Squirrel_and_Birdhouse_1787728822210.webp",
+    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Birds/A_colorful_fish_in_an_aquarium.webp",
     "availableAges": [
       "kids",
       "teens",
@@ -147,7 +160,20 @@
     "slug": "blippi",
     "parentHub": "tv-series-and-movies",
     "description": "Explore our collection of free printable Blippi coloring pages. Featuring high-resolution templates perfect for kids, toddlers, teens, and adults. Download or print instantly for free!",
-    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Blippi/Character_on_tracked_vehicle_with_balloon_1787734389201.webp",
+    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Blippi/Blippis_Smiling_Train_at_Station.webp",
+    "availableAges": [
+      "kids",
+      "teens",
+      "adults"
+    ],
+    "language": "en"
+  },
+  {
+    "title": "Bluey",
+    "slug": "bluey",
+    "parentHub": "tv-series-and-movies",
+    "description": "Explore our collection of free printable Bluey coloring pages. Featuring high-resolution templates perfect for kids, toddlers, teens, and adults. Download or print instantly for free!",
+    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Bluey/Baby_with_Teddy_Bear_1786132091969.webp",
     "availableAges": [
       "kids",
       "teens",
@@ -173,7 +199,7 @@
     "slug": "botanical-gardens",
     "parentHub": "animals-and-nature",
     "description": "Explore our collection of free printable Botanical Gardens coloring pages. Featuring high-resolution templates perfect for kids, toddlers, teens, and adults. Download or print instantly for free!",
-    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Botanical%20Gardens/Gardening_Delights_1787736614292.webp",
+    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Botanical%20Gardens/Clover_Hearts_1784879571068.webp",
     "availableAges": [
       "kids",
       "teens",
@@ -199,7 +225,7 @@
     "slug": "butterflies-insects",
     "parentHub": "collections",
     "description": "Explore our collection of free printable Butterflies Insects coloring pages. Featuring high-resolution templates perfect for kids, toddlers, teens, and adults. Download or print instantly for free!",
-    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Butterflies%20Insects/Bee_with_Toy_Truck_1787739606273.webp",
+    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Butterflies%20Insects/A_Young_Pony_Observes_Nature.webp",
     "availableAges": [
       "kids",
       "teens",
@@ -212,7 +238,7 @@
     "slug": "cars-trucks",
     "parentHub": "collections",
     "description": "Explore our collection of free printable Cars Trucks coloring pages. Featuring high-resolution templates perfect for kids, toddlers, teens, and adults. Download or print instantly for free!",
-    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Cars%20Trucks/Astronaut_exploring_the_lunar_surface_1787733148117.webp",
+    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Cars%20Trucks/Airship_Adventure_1785060845180.webp",
     "availableAges": [
       "kids",
       "teens",
@@ -238,7 +264,7 @@
     "slug": "christmas",
     "parentHub": "adults",
     "description": "Explore our collection of free printable Christmas coloring pages. Featuring high-resolution templates perfect for kids, toddlers, teens, and adults. Download or print instantly for free!",
-    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Christmas/Cabin_at_Winters_Eve_1787742167539.webp",
+    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Christmas/A_decorated_bell_1785055629284.webp",
     "availableAges": [
       "kids",
       "teens",
@@ -277,7 +303,7 @@
     "slug": "construction-vehicles",
     "parentHub": "toddler-specific",
     "description": "Explore our collection of free printable Construction Vehicles coloring pages. Featuring high-resolution templates perfect for kids, toddlers, teens, and adults. Download or print instantly for free!",
-    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Construction%20Vehicles/Backhoe_Loader_at_Work_1787740564294.webp",
+    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Construction%20Vehicles/A_Large_Ball_Loader_1785055986516.webp",
     "availableAges": [
       "kids",
       "teens",
@@ -290,7 +316,7 @@
     "slug": "cottagecore",
     "parentHub": "adults",
     "description": "Explore our collection of free printable Cottagecore coloring pages. Featuring high-resolution templates perfect for kids, toddlers, teens, and adults. Download or print instantly for free!",
-    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Cottagecore/Cottage_in_the_Countryside_1787740633228.webp",
+    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Cottagecore/A_cozy_cottage_in_the_woods.webp",
     "availableAges": [
       "kids",
       "teens",
@@ -303,7 +329,7 @@
     "slug": "cozy-life",
     "parentHub": "adults",
     "description": "Explore our collection of free printable Cozy Life coloring pages. Featuring high-resolution templates perfect for kids, toddlers, teens, and adults. Download or print instantly for free!",
-    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Cozy%20Life/Sugar_Cubes_in_a_Cup_1787741891767.webp",
+    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Cozy%20Life/Bear_Nap_1786118028096.webp",
     "availableAges": [
       "kids",
       "teens",
@@ -316,7 +342,7 @@
     "slug": "cozy-life-hygge",
     "parentHub": "adults",
     "description": "Explore our collection of free printable Cozy Life Hygge coloring pages. Featuring high-resolution templates perfect for kids, toddlers, teens, and adults. Download or print instantly for free!",
-    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Cozy%20Life%20Hygge/Autumnal_still_life_with_apple_basket_coffee_mug_and_tree_1787733805172.webp",
+    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Cozy%20Life%20Hygge/Ancient_Steam_Vehicle_Ride_1786118753117.webp",
     "availableAges": [
       "kids",
       "teens",
@@ -364,323 +390,24 @@
     "language": "en"
   },
   {
-    "title": "Cute Pets Animals",
-    "slug": "cute-pets-animals",
-    "parentHub": "animals-and-nature",
-    "description": "Explore our collection of free printable Cute Pets Animals coloring pages. Featuring high-resolution templates perfect for kids, toddlers, teens, and adults. Download or print instantly for free!",
-    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Cute%20Pets%20Animals/Anubis_in_Ancient_Egypt_1787729010347.webp",
-    "availableAges": [
-      "kids",
-      "teens",
-      "adults"
-    ],
-    "language": "en"
-  },
-  {
-    "title": "Dinosaur Adventures",
-    "slug": "dinosaur-adventures",
-    "parentHub": "animals-and-nature",
-    "description": "Explore our collection of free printable Dinosaur Adventures coloring pages. Featuring high-resolution templates perfect for kids, toddlers, teens, and adults. Download or print instantly for free!",
-    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Dinosaur%20Adventures/Cartoon_Dinosaur_1787743402074.webp",
-    "availableAges": [
-      "kids",
-      "teens",
-      "adults"
-    ],
-    "language": "en"
-  },
-  {
-    "title": "Dolphins Underwater",
-    "slug": "dolphins-underwater",
-    "parentHub": "animals-and-nature",
-    "description": "Explore our collection of free printable Dolphins Underwater coloring pages. Featuring high-resolution templates perfect for kids, toddlers, teens, and adults. Download or print instantly for free!",
-    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Dolphins%20Underwater/Dolphin_Jumping_1787739847307.webp",
-    "availableAges": [
-      "kids",
-      "teens",
-      "adults"
-    ],
-    "language": "en"
-  },
-  {
-    "title": "Dragons",
-    "slug": "dragons",
-    "parentHub": "disney-and-fairy-tales",
-    "description": "Explore our collection of free printable Dragons coloring pages. Featuring high-resolution templates perfect for kids, toddlers, teens, and adults. Download or print instantly for free!",
-    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Dragons/Symmetrical_Celtic_Dragon_Coloring_Page_1787739278554.webp",
-    "availableAges": [
-      "kids",
-      "teens",
-      "adults"
-    ],
-    "language": "en"
-  },
-  {
-    "title": "Farm",
-    "slug": "farm",
-    "parentHub": "animals-and-nature",
-    "description": "Explore our collection of free printable Farm coloring pages. Featuring high-resolution templates perfect for kids, toddlers, teens, and adults. Download or print instantly for free!",
-    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Farm/Cartoon_Sheep_Pirate_in_Trouble_1787730124161.webp",
-    "availableAges": [
-      "kids",
-      "teens",
-      "adults"
-    ],
-    "language": "en"
-  },
-  {
-    "title": "Fashion",
-    "slug": "fashion",
-    "parentHub": "girls-themes",
-    "description": "Explore our collection of free printable Fashion coloring pages. Featuring high-resolution templates perfect for kids, toddlers, teens, and adults. Download or print instantly for free!",
-    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Fashion/Spiky-haired_Samurai_Pirate_1787730340423.webp",
-    "availableAges": [
-      "kids",
-      "teens",
-      "adults"
-    ],
-    "language": "en"
-  },
-  {
-    "title": "Flowers Botanical",
-    "slug": "flowers-botanical",
-    "parentHub": "animals-and-nature",
-    "description": "Explore our collection of free printable Flowers Botanical coloring pages. Featuring high-resolution templates perfect for kids, toddlers, teens, and adults. Download or print instantly for free!",
-    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Flowers%20Botanical/A_peaceful_outdoor_setting_1787740764634.webp",
-    "availableAges": [
-      "kids",
-      "teens",
-      "adults"
-    ],
-    "language": "en"
-  },
-  {
-    "title": "Halloween",
-    "slug": "halloween",
-    "parentHub": "adults",
-    "description": "Explore our collection of free printable Halloween coloring pages. Featuring high-resolution templates perfect for kids, toddlers, teens, and adults. Download or print instantly for free!",
-    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Halloween/Autumn_harvest_with_pumpkins_1787733881889.webp",
-    "availableAges": [
-      "kids",
-      "teens",
-      "adults"
-    ],
-    "language": "en"
-  },
-  {
-    "title": "Landscapes",
-    "slug": "landscapes",
-    "parentHub": "animals-and-nature",
-    "description": "Explore our collection of free printable Landscapes coloring pages. Featuring high-resolution templates perfect for kids, toddlers, teens, and adults. Download or print instantly for free!",
-    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Landscapes/Astronaut_Child_Riding_an_ATV_1787733647931.webp",
-    "availableAges": [
-      "kids",
-      "teens",
-      "adults"
-    ],
-    "language": "en"
-  },
-  {
-    "title": "Mandalas",
-    "slug": "mandalas",
-    "parentHub": "mandalas",
-    "description": "Explore our collection of free printable Mandalas coloring pages. Featuring high-resolution templates perfect for kids, toddlers, teens, and adults. Download or print instantly for free!",
-    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Mandalas/Black_and_White_Mandala_Coloring_Page_1787738934248.webp",
-    "availableAges": [
-      "kids",
-      "teens",
-      "adults"
-    ],
-    "language": "en"
-  },
-  {
-    "title": "Monsters",
-    "slug": "monsters",
-    "parentHub": "games-and-pop-culture",
-    "description": "Explore our collection of free printable Monsters coloring pages. Featuring high-resolution templates perfect for kids, toddlers, teens, and adults. Download or print instantly for free!",
-    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Monsters/Friendly_Monster_Waves_1787743492932.webp",
-    "availableAges": [
-      "kids",
-      "teens",
-      "adults"
-    ],
-    "language": "en"
-  },
-  {
-    "title": "Music",
-    "slug": "music",
-    "parentHub": "collections",
-    "description": "Explore our collection of free printable Music coloring pages. Featuring high-resolution templates perfect for kids, toddlers, teens, and adults. Download or print instantly for free!",
-    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Music/Clown_with_Crown_1787737949226.webp",
-    "availableAges": [
-      "kids",
-      "teens",
-      "adults"
-    ],
-    "language": "en"
-  },
-  {
-    "title": "Ninjas Samurais",
-    "slug": "ninjas-samurais",
-    "parentHub": "games-and-pop-culture",
-    "description": "Explore our collection of free printable Ninjas Samurais coloring pages. Featuring high-resolution templates perfect for kids, toddlers, teens, and adults. Download or print instantly for free!",
-    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Ninjas%20Samurais/Samurai_Surfer_1787730214986.webp",
-    "availableAges": [
-      "kids",
-      "teens",
-      "adults"
-    ],
-    "language": "en"
-  },
-  {
-    "title": "Ocean Life",
-    "slug": "ocean-life",
-    "parentHub": "animals-and-nature",
-    "description": "Explore our collection of free printable Ocean Life coloring pages. Featuring high-resolution templates perfect for kids, toddlers, teens, and adults. Download or print instantly for free!",
-    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Ocean%20Life/Beach_Fishing_Adventure_1787730322241.webp",
-    "availableAges": [
-      "kids",
-      "teens",
-      "adults"
-    ],
-    "language": "en"
-  },
-  {
-    "title": "Patterns",
-    "slug": "patterns",
-    "parentHub": "collections",
-    "description": "Explore our collection of free printable Patterns coloring pages. Featuring high-resolution templates perfect for kids, toddlers, teens, and adults. Download or print instantly for free!",
-    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Patterns/Coloring_Page_of_an_Anime_Character_1787730271749.webp",
-    "availableAges": [
-      "kids",
-      "teens",
-      "adults"
-    ],
-    "language": "en"
-  },
-  {
-    "title": "Paw Patrol",
-    "slug": "paw-patrol",
-    "parentHub": "tv-series-and-movies",
-    "description": "Explore our collection of free printable Paw Patrol coloring pages. Featuring high-resolution templates perfect for kids, toddlers, teens, and adults. Download or print instantly for free!",
-    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Paw%20Patrol/Astronaut_exploring_an_alien_landscape_1787733595480.webp",
-    "availableAges": [
-      "kids",
-      "teens",
-      "adults"
-    ],
-    "language": "en"
-  },
-  {
-    "title": "Pirates",
-    "slug": "pirates",
-    "parentHub": "collections",
-    "description": "Explore our collection of free printable Pirates coloring pages. Featuring high-resolution templates perfect for kids, toddlers, teens, and adults. Download or print instantly for free!",
-    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Pirates/Bearded_Sailor_on_Ship_1787730245256.webp",
-    "availableAges": [
-      "kids",
-      "teens",
-      "adults"
-    ],
-    "language": "en"
-  },
-  {
-    "title": "Princesses Castles",
-    "slug": "princesses-castles",
-    "parentHub": "disney-and-fairy-tales",
-    "description": "Explore our collection of free printable Princesses Castles coloring pages. Featuring high-resolution templates perfect for kids, toddlers, teens, and adults. Download or print instantly for free!",
-    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Princesses%20Castles/A_Gothic_Castle_1787731312853.webp",
-    "availableAges": [
-      "kids",
-      "teens",
-      "adults"
-    ],
-    "language": "en"
-  },
-  {
-    "title": "Robots",
-    "slug": "robots",
-    "parentHub": "games-and-pop-culture",
-    "description": "Explore our collection of free printable Robots coloring pages. Featuring high-resolution templates perfect for kids, toddlers, teens, and adults. Download or print instantly for free!",
-    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Robots/Friendly_Robot_Character_in_Vehicle_1787734443614.webp",
-    "availableAges": [
-      "kids",
-      "teens",
-      "adults"
-    ],
-    "language": "en"
-  },
-  {
-    "title": "Safari Wildlife",
-    "slug": "safari-wildlife",
-    "parentHub": "collections",
-    "description": "Explore our collection of free printable Safari Wildlife coloring pages. Featuring high-resolution templates perfect for kids, toddlers, teens, and adults. Download or print instantly for free!",
-    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Safari%20Wildlife/Colorful_Elephants_with_Flower_1787742397953.webp",
-    "availableAges": [
-      "kids",
-      "teens",
-      "adults"
-    ],
-    "language": "en"
-  },
-  {
-    "title": "Space",
-    "slug": "space",
-    "parentHub": "collections",
-    "description": "Explore our collection of free printable Space coloring pages. Featuring high-resolution templates perfect for kids, toddlers, teens, and adults. Download or print instantly for free!",
-    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Space/Astronaut_and_Planet_1787733281657.webp",
-    "availableAges": [
-      "kids",
-      "teens",
-      "adults"
-    ],
-    "language": "en"
-  },
-  {
-    "title": "Sweet Treats Desserts",
-    "slug": "sweet-treats-desserts",
-    "parentHub": "girls-themes",
-    "description": "Explore our collection of free printable Sweet Treats Desserts coloring pages. Featuring high-resolution templates perfect for kids, toddlers, teens, and adults. Download or print instantly for free!",
-    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Sweet%20Treats%20Desserts/A_simple_black-and-white_outline_of_a_decorated_doughnut_1787742979861.webp",
-    "availableAges": [
-      "kids",
-      "teens",
-      "adults"
-    ],
-    "language": "en"
-  },
-  {
-    "title": "Animals",
-    "slug": "animals",
-    "parentHub": "animals-and-nature",
-    "description": "Explore our collection of free printable Animals coloring pages. Featuring high-resolution templates perfect for kids, toddlers, teens, and adults. Download or print instantly for free!",
-    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Animals/Animal_Friends_Celebrate_Birthday.webp",
-    "availableAges": [
-      "kids",
-      "teens",
-      "adults"
-    ],
-    "language": "en"
-  },
-  {
-    "title": "Bluey",
-    "slug": "bluey",
-    "parentHub": "tv-series-and-movies",
-    "description": "Explore our collection of free printable Bluey coloring pages. Featuring high-resolution templates perfect for kids, toddlers, teens, and adults. Download or print instantly for free!",
-    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Bluey/Baby_with_Teddy_Bear_1786132091969.webp",
-    "availableAges": [
-      "kids",
-      "teens",
-      "adults"
-    ],
-    "language": "en"
-  },
-  {
     "title": "Creepy Kawaii",
     "slug": "creepy-kawaii",
     "parentHub": "adults",
     "description": "Explore our collection of free printable Creepy Kawaii coloring pages. Featuring high-resolution templates perfect for kids, toddlers, teens, and adults. Download or print instantly for free!",
     "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Creepy%20Kawaii/Fantasy_Girl_with_Wand_1785058654801.webp",
+    "availableAges": [
+      "kids",
+      "teens",
+      "adults"
+    ],
+    "language": "en"
+  },
+  {
+    "title": "Cute Pets Animals",
+    "slug": "cute-pets-animals",
+    "parentHub": "animals-and-nature",
+    "description": "Explore our collection of free printable Cute Pets Animals coloring pages. Featuring high-resolution templates perfect for kids, toddlers, teens, and adults. Download or print instantly for free!",
+    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Cute%20Pets%20Animals/Aerial_Voyage_Over_the_City.webp",
     "availableAges": [
       "kids",
       "teens",
@@ -707,6 +434,19 @@
     "parentHub": "collections",
     "description": "Explore our collection of free printable Default coloring pages. Featuring high-resolution templates perfect for kids, toddlers, teens, and adults. Download or print instantly for free!",
     "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Default/Church_in_the_Garden_1786111796657.webp",
+    "availableAges": [
+      "kids",
+      "teens",
+      "adults"
+    ],
+    "language": "en"
+  },
+  {
+    "title": "Dinosaur Adventures",
+    "slug": "dinosaur-adventures",
+    "parentHub": "animals-and-nature",
+    "description": "Explore our collection of free printable Dinosaur Adventures coloring pages. Featuring high-resolution templates perfect for kids, toddlers, teens, and adults. Download or print instantly for free!",
+    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Dinosaur%20Adventures/A_cheerful_cartoon_dinosaur_1786133579205.webp",
     "availableAges": [
       "kids",
       "teens",
@@ -793,6 +533,32 @@
     "language": "en"
   },
   {
+    "title": "Dolphins Underwater",
+    "slug": "dolphins-underwater",
+    "parentHub": "animals-and-nature",
+    "description": "Explore our collection of free printable Dolphins Underwater coloring pages. Featuring high-resolution templates perfect for kids, toddlers, teens, and adults. Download or print instantly for free!",
+    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Dolphins%20Underwater/Decorative_dolphins_among_flowers_1786142090368.webp",
+    "availableAges": [
+      "kids",
+      "teens",
+      "adults"
+    ],
+    "language": "en"
+  },
+  {
+    "title": "Dragons",
+    "slug": "dragons",
+    "parentHub": "disney-and-fairy-tales",
+    "description": "Explore our collection of free printable Dragons coloring pages. Featuring high-resolution templates perfect for kids, toddlers, teens, and adults. Download or print instantly for free!",
+    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Dragons/A_smiling_cartoon_dragon_with_wings_and_tail.webp",
+    "availableAges": [
+      "kids",
+      "teens",
+      "adults"
+    ],
+    "language": "en"
+  },
+  {
     "title": "Easter Spring",
     "slug": "easter-spring",
     "parentHub": "adults",
@@ -863,6 +629,45 @@
     "parentHub": "disney-and-fairy-tales",
     "description": "Explore our collection of free printable Fantasy Kingdom coloring pages. Featuring high-resolution templates perfect for kids, toddlers, teens, and adults. Download or print instantly for free!",
     "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Fantasy%20Kingdom/Retro_Television_Night.webp",
+    "availableAges": [
+      "kids",
+      "teens",
+      "adults"
+    ],
+    "language": "en"
+  },
+  {
+    "title": "Farm",
+    "slug": "farm",
+    "parentHub": "animals-and-nature",
+    "description": "Explore our collection of free printable Farm coloring pages. Featuring high-resolution templates perfect for kids, toddlers, teens, and adults. Download or print instantly for free!",
+    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Farm/Autumn_apple_harvest.webp",
+    "availableAges": [
+      "kids",
+      "teens",
+      "adults"
+    ],
+    "language": "en"
+  },
+  {
+    "title": "Fashion",
+    "slug": "fashion",
+    "parentHub": "girls-themes",
+    "description": "Explore our collection of free printable Fashion coloring pages. Featuring high-resolution templates perfect for kids, toddlers, teens, and adults. Download or print instantly for free!",
+    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Fashion/Angelic_Woman_in_Parisian_Street.webp",
+    "availableAges": [
+      "kids",
+      "teens",
+      "adults"
+    ],
+    "language": "en"
+  },
+  {
+    "title": "Flowers Botanical",
+    "slug": "flowers-botanical",
+    "parentHub": "animals-and-nature",
+    "description": "Explore our collection of free printable Flowers Botanical coloring pages. Featuring high-resolution templates perfect for kids, toddlers, teens, and adults. Download or print instantly for free!",
+    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Flowers%20Botanical/Astronauts_Tranquil_Space_Adventure_1786119127725.webp",
     "availableAges": [
       "kids",
       "teens",
@@ -949,6 +754,19 @@
     "language": "en"
   },
   {
+    "title": "Halloween",
+    "slug": "halloween",
+    "parentHub": "adults",
+    "description": "Explore our collection of free printable Halloween coloring pages. Featuring high-resolution templates perfect for kids, toddlers, teens, and adults. Download or print instantly for free!",
+    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Halloween/Autumn_Child_with_Pumpkins_1786140018243.webp",
+    "availableAges": [
+      "kids",
+      "teens",
+      "adults"
+    ],
+    "language": "en"
+  },
+  {
     "title": "Halloween Spooky Creatures",
     "slug": "halloween-spooky-creatures",
     "parentHub": "adults",
@@ -967,6 +785,19 @@
     "parentHub": "collections",
     "description": "Explore our collection of free printable Kawaii coloring pages. Featuring high-resolution templates perfect for kids, toddlers, teens, and adults. Download or print instantly for free!",
     "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Kawaii/Cloudy_Face.webp",
+    "availableAges": [
+      "kids",
+      "teens",
+      "adults"
+    ],
+    "language": "en"
+  },
+  {
+    "title": "Landscapes",
+    "slug": "landscapes",
+    "parentHub": "animals-and-nature",
+    "description": "Explore our collection of free printable Landscapes coloring pages. Featuring high-resolution templates perfect for kids, toddlers, teens, and adults. Download or print instantly for free!",
+    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Landscapes/Astronauts_exploring_the_mountains.webp",
     "availableAges": [
       "kids",
       "teens",
@@ -1040,6 +871,19 @@
     "language": "en"
   },
   {
+    "title": "Mandalas",
+    "slug": "mandalas",
+    "parentHub": "mandalas",
+    "description": "Explore our collection of free printable Mandalas coloring pages. Featuring high-resolution templates perfect for kids, toddlers, teens, and adults. Download or print instantly for free!",
+    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Mandalas/Astronaut_with_Mandala_Surroundings_1786128783297.webp",
+    "availableAges": [
+      "kids",
+      "teens",
+      "adults"
+    ],
+    "language": "en"
+  },
+  {
     "title": "Mermaids",
     "slug": "mermaids",
     "parentHub": "collections",
@@ -1079,6 +923,84 @@
     "language": "en"
   },
   {
+    "title": "Monsters",
+    "slug": "monsters",
+    "parentHub": "games-and-pop-culture",
+    "description": "Explore our collection of free printable Monsters coloring pages. Featuring high-resolution templates perfect for kids, toddlers, teens, and adults. Download or print instantly for free!",
+    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Monsters/Armored_Pok%C3%A9mon_in_Nature_1786002375603.webp",
+    "availableAges": [
+      "kids",
+      "teens",
+      "adults"
+    ],
+    "language": "en"
+  },
+  {
+    "title": "Music",
+    "slug": "music",
+    "parentHub": "collections",
+    "description": "Explore our collection of free printable Music coloring pages. Featuring high-resolution templates perfect for kids, toddlers, teens, and adults. Download or print instantly for free!",
+    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Music/A_Cello_in_the_Living_Room.webp",
+    "availableAges": [
+      "kids",
+      "teens",
+      "adults"
+    ],
+    "language": "en"
+  },
+  {
+    "title": "Ninjas Samurais",
+    "slug": "ninjas-samurais",
+    "parentHub": "games-and-pop-culture",
+    "description": "Explore our collection of free printable Ninjas Samurais coloring pages. Featuring high-resolution templates perfect for kids, toddlers, teens, and adults. Download or print instantly for free!",
+    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Ninjas%20Samurais/Bamboo_Forest_Girl.webp",
+    "availableAges": [
+      "kids",
+      "teens",
+      "adults"
+    ],
+    "language": "en"
+  },
+  {
+    "title": "Ocean Life",
+    "slug": "ocean-life",
+    "parentHub": "animals-and-nature",
+    "description": "Explore our collection of free printable Ocean Life coloring pages. Featuring high-resolution templates perfect for kids, toddlers, teens, and adults. Download or print instantly for free!",
+    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Ocean%20Life/Angry_Octopus_1786128910043.webp",
+    "availableAges": [
+      "kids",
+      "teens",
+      "adults"
+    ],
+    "language": "en"
+  },
+  {
+    "title": "Patterns",
+    "slug": "patterns",
+    "parentHub": "collections",
+    "description": "Explore our collection of free printable Patterns coloring pages. Featuring high-resolution templates perfect for kids, toddlers, teens, and adults. Download or print instantly for free!",
+    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Patterns/Baby_surrounded_by_flowers_1786140071257.webp",
+    "availableAges": [
+      "kids",
+      "teens",
+      "adults"
+    ],
+    "language": "en"
+  },
+  {
+    "title": "Paw Patrol",
+    "slug": "paw-patrol",
+    "parentHub": "tv-series-and-movies",
+    "description": "Explore our collection of free printable Paw Patrol coloring pages. Featuring high-resolution templates perfect for kids, toddlers, teens, and adults. Download or print instantly for free!",
+    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Paw%20Patrol/Astronauts_Journey_on_an_Alien_Planet_1786128891916.webp",
+    "availableAges": [
+      "kids",
+      "teens",
+      "adults"
+    ],
+    "language": "en"
+  },
+  {
     "title": "Peppa Pig",
     "slug": "peppa-pig",
     "parentHub": "tv-series-and-movies",
@@ -1092,11 +1014,63 @@
     "language": "en"
   },
   {
+    "title": "Pirates",
+    "slug": "pirates",
+    "parentHub": "collections",
+    "description": "Explore our collection of free printable Pirates coloring pages. Featuring high-resolution templates perfect for kids, toddlers, teens, and adults. Download or print instantly for free!",
+    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Pirates/Autumn_Skull_Resting_Amongst_Pumpkins_and_Flowers_1786114059144.webp",
+    "availableAges": [
+      "kids",
+      "teens",
+      "adults"
+    ],
+    "language": "en"
+  },
+  {
+    "title": "Princesses Castles",
+    "slug": "princesses-castles",
+    "parentHub": "disney-and-fairy-tales",
+    "description": "Explore our collection of free printable Princesses Castles coloring pages. Featuring high-resolution templates perfect for kids, toddlers, teens, and adults. Download or print instantly for free!",
+    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Princesses%20Castles/A_Gothic_Castle_1787731312853.webp",
+    "availableAges": [
+      "kids",
+      "teens",
+      "adults"
+    ],
+    "language": "en"
+  },
+  {
     "title": "Rainbows",
     "slug": "rainbows",
     "parentHub": "collections",
     "description": "Explore our collection of free printable Rainbows coloring pages. Featuring high-resolution templates perfect for kids, toddlers, teens, and adults. Download or print instantly for free!",
     "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Rainbows/Flying_Pony_Rainbow_Mane.webp",
+    "availableAges": [
+      "kids",
+      "teens",
+      "adults"
+    ],
+    "language": "en"
+  },
+  {
+    "title": "Robots",
+    "slug": "robots",
+    "parentHub": "games-and-pop-culture",
+    "description": "Explore our collection of free printable Robots coloring pages. Featuring high-resolution templates perfect for kids, toddlers, teens, and adults. Download or print instantly for free!",
+    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Robots/Alien_Gathering_1784881201189.webp",
+    "availableAges": [
+      "kids",
+      "teens",
+      "adults"
+    ],
+    "language": "en"
+  },
+  {
+    "title": "Safari Wildlife",
+    "slug": "safari-wildlife",
+    "parentHub": "collections",
+    "description": "Explore our collection of free printable Safari Wildlife coloring pages. Featuring high-resolution templates perfect for kids, toddlers, teens, and adults. Download or print instantly for free!",
+    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Safari%20Wildlife/African_Watering_Hole_1784878598920.webp",
     "availableAges": [
       "kids",
       "teens",
@@ -1123,6 +1097,19 @@
     "parentHub": "games-and-pop-culture",
     "description": "Explore our collection of free printable Sonic coloring pages. Featuring high-resolution templates perfect for kids, toddlers, teens, and adults. Download or print instantly for free!",
     "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Sonic/Castle_of_Dreams_1786127724151.webp",
+    "availableAges": [
+      "kids",
+      "teens",
+      "adults"
+    ],
+    "language": "en"
+  },
+  {
+    "title": "Space",
+    "slug": "space",
+    "parentHub": "collections",
+    "description": "Explore our collection of free printable Space coloring pages. Featuring high-resolution templates perfect for kids, toddlers, teens, and adults. Download or print instantly for free!",
+    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Space/Alien_Picnic.webp",
     "availableAges": [
       "kids",
       "teens",
@@ -1188,6 +1175,19 @@
     "parentHub": "games-and-pop-culture",
     "description": "Explore our collection of free printable Superheroes coloring pages. Featuring high-resolution templates perfect for kids, toddlers, teens, and adults. Download or print instantly for free!",
     "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Superheroes/Batman_ready_to_fight.webp",
+    "availableAges": [
+      "kids",
+      "teens",
+      "adults"
+    ],
+    "language": "en"
+  },
+  {
+    "title": "Sweet Treats Desserts",
+    "slug": "sweet-treats-desserts",
+    "parentHub": "girls-themes",
+    "description": "Explore our collection of free printable Sweet Treats Desserts coloring pages. Featuring high-resolution templates perfect for kids, toddlers, teens, and adults. Download or print instantly for free!",
+    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Sweet%20Treats%20Desserts/A_Box_of_Donuts.webp",
     "availableAges": [
       "kids",
       "teens",

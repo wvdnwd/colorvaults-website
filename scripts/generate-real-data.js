@@ -190,11 +190,18 @@ const generateData = () => {
         groupedThemes[themeSlug] = {
           themeName: capitalize(cleanFolderName),
           originalFolderName: folder,
-          files: []
+          files: [],
+          seenFiles: new Set()
         };
       }
-      
-      groupedThemes[themeSlug].files.push(...files);
+
+      for (const file of files) {
+        const basename = path.basename(file).toLowerCase();
+        if (!groupedThemes[themeSlug].seenFiles.has(basename)) {
+          groupedThemes[themeSlug].seenFiles.add(basename);
+          groupedThemes[themeSlug].files.push(file);
+        }
+      }
     }
   }
 
