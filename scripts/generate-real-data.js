@@ -343,25 +343,9 @@ const generateData = () => {
         niceTitleNl = fallbackTitle;
       }
 
-      // Ensure 100% unique page title globally across the entire website
-      const titleKeyEn = niceTitleEn.toLowerCase().replace(/[\s\-_]+/g, ' ').trim();
-      const titleKeyNl = niceTitleNl.toLowerCase().replace(/[\s\-_]+/g, ' ').trim();
-
-      if (seenTitlesGlobalEn[titleKeyEn]) {
-        seenTitlesGlobalEn[titleKeyEn]++;
-        const num = seenTitlesGlobalEn[titleKeyEn];
-        niceTitleEn = `${niceTitleEn} #${num}`;
-      } else {
-        seenTitlesGlobalEn[titleKeyEn] = 1;
-      }
-
-      if (seenTitlesGlobalNl[titleKeyNl]) {
-        seenTitlesGlobalNl[titleKeyNl]++;
-        const num = seenTitlesGlobalNl[titleKeyNl];
-        niceTitleNl = `${niceTitleNl} #${num}`;
-      } else {
-        seenTitlesGlobalNl[titleKeyNl] = 1;
-      }
+      // Clean up any trailing hashtag numbers (#1, #2, #3, etc.) for clean titles
+      niceTitleEn = niceTitleEn.replace(/\s*#\d+$/gi, '').trim();
+      niceTitleNl = niceTitleNl.replace(/\s*#\d+$/gi, '').trim();
 
       const ageGroupKey = agesList[index % agesList.length];
       const enAge = ageGroupKey;
