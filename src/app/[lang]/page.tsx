@@ -254,22 +254,27 @@ export default async function HomePage({ params }: { params: Promise<{ lang: str
             </div>
           </ScrollReveal>
 
-          <div className="grid-4">
-            {featuredPages.map((page, index) => {
-              if (index === 4) {
-                return (
-                  <React.Fragment key="ad-in-grid">
-                    <AdSlot type="in-feed" text={isEn ? 'Sponsored' : 'Gesponsord'} />
-                    <ScrollReveal delay={0}>
-                      <MotionCard page={page} lang={lang} isEn={isEn} />
-                    </ScrollReveal>
-                  </React.Fragment>
-                );
-              }
+          <div>
+            {Array.from({ length: Math.ceil(featuredPages.length / 4) }).map((_, rowIndex) => {
+              const chunk = featuredPages.slice(rowIndex * 4, rowIndex * 4 + 4);
+              const showAdBar = rowIndex === 0 && featuredPages.length > 4;
+
               return (
-                <ScrollReveal key={page.slug} delay={(index % 4) as 0 | 1 | 2 | 3 | 4}>
-                  <MotionCard page={page} lang={lang} isEn={isEn} />
-                </ScrollReveal>
+                <React.Fragment key={rowIndex}>
+                  <div className="grid-4" style={{ marginBottom: showAdBar ? '2.5rem' : 0 }}>
+                    {chunk.map((page, idx) => (
+                      <ScrollReveal key={page.slug} delay={(idx % 4) as 0 | 1 | 2 | 3 | 4}>
+                        <MotionCard page={page} lang={lang} isEn={isEn} />
+                      </ScrollReveal>
+                    ))}
+                  </div>
+
+                  {showAdBar && (
+                    <div style={{ margin: '2.5rem 0' }}>
+                      <AdSlot type="banner" text={isEn ? 'Sponsored Content' : 'Gesponsord'} />
+                    </div>
+                  )}
+                </React.Fragment>
               );
             })}
           </div>

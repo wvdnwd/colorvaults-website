@@ -112,15 +112,23 @@ export default async function AgePage({
             </p>
           </div>
         ) : (
-          <div className="grid-4">
-            {coloringPages.map((page, index) => {
-              const shouldShowAd = (index + 1) % 8 === 0;
-              
+          <div>
+            {Array.from({ length: Math.ceil(coloringPages.length / 8) }).map((_, chunkIndex) => {
+              const chunk = coloringPages.slice(chunkIndex * 8, chunkIndex * 8 + 8);
+              const showAdBar = chunkIndex < Math.ceil(coloringPages.length / 8) - 1;
+
               return (
-                <React.Fragment key={page.slug}>
-                  <MotionCard page={page} lang={lang} isEn={isEn} />
-                  {shouldShowAd && (
-                    <AdSlot type="in-feed" text={isEn ? "Sponsored" : "Gesponsord"} />
+                <React.Fragment key={chunkIndex}>
+                  <div className="grid-4" style={{ marginBottom: showAdBar ? '2.5rem' : 0 }}>
+                    {chunk.map(page => (
+                      <MotionCard key={page.slug} page={page} lang={lang} isEn={isEn} />
+                    ))}
+                  </div>
+
+                  {showAdBar && (
+                    <div style={{ margin: '2.5rem 0' }}>
+                      <AdSlot type="banner" text={isEn ? 'Sponsored Content' : 'Gesponsord'} />
+                    </div>
                   )}
                 </React.Fragment>
               );
