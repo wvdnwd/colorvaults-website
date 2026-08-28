@@ -70,6 +70,7 @@ export default async function RootLayout({
   return (
     <html lang={lang} className={`${fredoka.variable} ${nunito.variable}`} data-theme="dark">
       <head>
+        <meta name="google-adsense-account" content="ca-pub-1184801748776428" />
         <Script
           async
           src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1184801748776428"
