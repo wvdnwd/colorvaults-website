@@ -67,18 +67,15 @@ export default async function RootLayout({
   params: Promise<{ lang: string }>;
 }>) {
   const { lang } = await params;
-
   return (
     <html lang={lang} className={`${fredoka.variable} ${nunito.variable}`} data-theme="dark">
       <head>
-        {adsenseClientId && (
-          <Script
-            async
-            src={`https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=${adsenseClientId}`}
-            crossOrigin="anonymous"
-            strategy="afterInteractive"
-          />
-        )}
+        <Script
+          async
+          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1184801748776428"
+          crossOrigin="anonymous"
+          strategy="afterInteractive"
+        />
         {gaId && (
           <>
             <Script

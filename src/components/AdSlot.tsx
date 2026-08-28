@@ -48,7 +48,7 @@ export default function AdSlot({
         <ins
           className="adsbygoogle"
           style={{ display: adLoaded ? 'block' : 'none', width: '100%', height: '100%' }}
-          data-ad-client="ca-pub-XXXXXXXXXXXXXXXX" // Replace with real AdSense Publisher ID
+          data-ad-client="ca-pub-1184801748776428"
           data-ad-slot={slotId || "1234567890"}
           data-ad-format={type === 'rectangle' ? 'rectangle' : type === 'in-feed' ? 'fluid' : 'auto'}
           data-full-width-responsive="true"
