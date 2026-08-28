@@ -205,6 +205,8 @@ const generateData = () => {
     }
   }
 
+  const seenTitlesInTheme = {};
+
   for (const [themeSlug, data] of Object.entries(groupedThemes)) {
     const themeName = data.themeName;
     const folder = data.originalFolderName;
@@ -338,6 +340,20 @@ const generateData = () => {
         const fallbackTitle = isGeneric ? `${themeName} ${index + 1}` : parsedTitle;
         niceTitleEn = fallbackTitle;
         niceTitleNl = fallbackTitle;
+      }
+
+      // Ensure 100% unique page title per theme
+      const titleKeyEn = niceTitleEn.toLowerCase().trim();
+      if (!seenTitlesInTheme[themeSlug]) {
+        seenTitlesInTheme[themeSlug] = {};
+      }
+      if (seenTitlesInTheme[themeSlug][titleKeyEn]) {
+        seenTitlesInTheme[themeSlug][titleKeyEn]++;
+        const num = seenTitlesInTheme[themeSlug][titleKeyEn];
+        niceTitleEn = `${niceTitleEn} #${num}`;
+        niceTitleNl = `${niceTitleNl} #${num}`;
+      } else {
+        seenTitlesInTheme[themeSlug][titleKeyEn] = 1;
       }
 
       const ageGroupKey = agesList[index % agesList.length];
