@@ -204,9 +204,6 @@ export default function Navbar({ lang }: { lang: string }) {
 
         {/* Right Actions */}
         <div className={styles.navRight}>
-          <Link href={`/${lang}/search`} className={styles.iconBtn} aria-label={isEn ? 'Search' : 'Zoeken'} title={isEn ? 'Search' : 'Zoeken'}>
-            🔍
-          </Link>
           <Link href={`/${lang}/favorites`} className={styles.iconBtn} aria-label={isEn ? 'Favorites' : 'Favorieten'} title={isEn ? 'Favorites' : 'Favorieten'}>
             ❤️
           </Link>
