@@ -27,6 +27,7 @@ for (const lang of ['en', 'nl']) {
       type: 'hub',
       title: hub.title,
       description: hub.description,
+      image: hub.image || '',
       url: `/${lang}/${hub.slug}`,
     });
   }
@@ -37,6 +38,7 @@ for (const lang of ['en', 'nl']) {
       type: 'theme',
       title: theme.title,
       description: theme.description,
+      image: theme.image || '',
       url: `/${lang}/${theme.parentHub}/${theme.slug}`,
     });
   }
@@ -47,6 +49,9 @@ for (const lang of ['en', 'nl']) {
       type: 'page',
       title: page.title,
       description: page.shortDescription,
+      image: page.image || '',
+      parentTheme: page.parentTheme,
+      ageGroup: page.ageGroup,
       url: `/${lang}/${page.parentHub}/${page.parentTheme}/${page.ageGroup}/${page.slug}`,
       tags: page.tags || [],
     });

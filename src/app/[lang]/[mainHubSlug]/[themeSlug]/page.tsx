@@ -1,4 +1,6 @@
 import { getThemes, getThemeBySlug, getMainHubs, getColoringPages, safeJsonLd } from '@/lib/api';
+import { getCategorySeoData } from '@/lib/categorySeo';
+import CategorySeoBlock from '@/components/CategorySeoBlock';
 import { notFound } from 'next/navigation';
 import Link from 'next/link';
 import Breadcrumbs from '@/components/Breadcrumbs';
@@ -67,6 +69,12 @@ export default async function ThemePage({
 
   const isEn = lang === 'en';
 
+  const allThemesInHub = getThemes(lang)
+    .filter(t => t.parentHub === mainHubSlug)
+    .map(t => ({ slug: t.slug, title: t.title }));
+
+  const seoData = getCategorySeoData(lang, mainHubSlug, themeSlug, theme.title, allThemesInHub);
+
   // Get ALL coloring pages for this theme (combining all age groups into 1 single folder/page)
   const allColoringPages = getColoringPages(lang).filter(
     p => p.parentHub === mainHubSlug && p.parentTheme === themeSlug
@@ -99,7 +107,7 @@ export default async function ThemePage({
               maxWidth: '640px',
             }}
           >
-            {theme.seoIntro || theme.description}
+            {theme.seoIntro || seoData.shortIntro}
           </p>
           <span className="badge" style={{ marginTop: '1.25rem' }}>
             ✨ {allColoringPages.length}{' '}
@@ -250,15 +258,11 @@ export default async function ThemePage({
 
         <AdSlot type="banner" text={isEn ? 'Sponsored Content' : 'Gesponsord'} />
 
-        <div className="seo-block" style={{ marginTop: '3.5rem' }}>
-          <h2>{isEn ? `About ${theme.title} Coloring Pages` : `Over ${theme.title} Kleurplaten`}</h2>
-          <p>
-            {theme.seoContent || theme.description}{' '}
-            {isEn
-              ? `Browse and download our complete collection of free printable ${theme.title} coloring pages for all ages.`
-              : `Blader door en download onze volledige collectie gratis printbare ${theme.title} kleurplaten voor alle leeftijden.`}
-          </p>
-        </div>
+        <CategorySeoBlock
+          title={seoData.bottomTitle}
+          contentHtml={theme.seoContent || seoData.bottomContentHtml}
+          lang={lang}
+        />
       </div>
 
       <script
@@ -266,12 +270,33 @@ export default async function ThemePage({
         dangerouslySetInnerHTML={{
           __html: safeJsonLd({
             '@context': 'https://schema.org',
-            '@type': 'CollectionPage',
-            name: `${theme.title} Coloring Pages`,
-            description: theme.description,
-            url: `https://colorvaults.com/${lang}/${mainHubSlug}/${theme.slug}`,
-            isPartOf: { '@id': 'https://colorvaults.com/#website' },
-            inLanguage: lang,
+            '@graph': [
+              {
+                '@type': 'CollectionPage',
+                name: `${theme.title} Coloring Pages`,
+                description: theme.description,
+                url: `https://colorvaults.com/${lang}/${mainHubSlug}/${theme.slug}`,
+                isPartOf: { '@id': 'https://colorvaults.com/#website' },
+                inLanguage: lang,
+              },
+              {
+                '@type': 'BreadcrumbList',
+                itemListElement: [
+                  {
+                    '@type': 'ListItem',
+                    position: 1,
+                    name: hub.title,
+                    item: `https://colorvaults.com/${lang}/${hub.slug}`,
+                  },
+                  {
+                    '@type': 'ListItem',
+                    position: 2,
+                    name: theme.title,
+                    item: `https://colorvaults.com/${lang}/${hub.slug}/${theme.slug}`,
+                  },
+                ],
+              },
+            ],
           }),
         }}
       />

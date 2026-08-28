@@ -1,5 +1,5 @@
 import type { MetadataRoute } from 'next';
-import { getMainHubs, getThemes, getAgePages } from '@/lib/api';
+import { getMainHubs, getThemes, getAgePages, getColoringPages } from '@/lib/api';
 
 export const dynamic = 'force-static';
 
@@ -25,6 +25,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     const hubs = getMainHubs(lang);
     const themes = getThemes(lang);
     const agePages = getAgePages(lang);
+    const coloringPages = getColoringPages(lang);
 
     // Hub pages
     for (const hub of hubs) {
@@ -53,6 +54,16 @@ export default function sitemap(): MetadataRoute.Sitemap {
         lastModified: new Date(),
         changeFrequency: 'weekly',
         priority: 0.7,
+      });
+    }
+
+    // Individual coloring pages
+    for (const page of coloringPages) {
+      entries.push({
+        url: `https://colorvaults.com/${lang}/${page.parentHub}/${page.parentTheme}/${page.ageGroup}/${page.slug}`,
+        lastModified: new Date(),
+        changeFrequency: 'monthly',
+        priority: 0.6,
       });
     }
   }

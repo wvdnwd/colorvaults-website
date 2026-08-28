@@ -1,3 +1,5 @@
+import Link from 'next/link';
+
 export async function generateStaticParams() {
   return [{ lang: 'en' }, { lang: 'nl' }];
 }
@@ -118,9 +120,9 @@ export default async function AboutPage({ params }: { params: Promise<{ lang: st
           <p style={{ color: 'rgba(255,255,255,0.7)', marginBottom: '2rem', fontSize: '1.1rem' }}>
             {isEn ? 'Browse thousands of free coloring pages — no account needed.' : 'Blader door duizenden gratis kleurplaten — geen account nodig.'}
           </p>
-          <a href={`/${lang}/tv-series-and-movies`} className="btn-primary" style={{ display: 'inline-flex' }}>
+          <Link href={`/${lang}/${isEn ? 'collections' : 'collecties'}`} className="btn-primary" style={{ display: 'inline-flex' }}>
             {isEn ? '🎨 Explore Collections' : '🎨 Ontdek Collecties'}
-          </a>
+          </Link>
         </div>
       </div>
     </>

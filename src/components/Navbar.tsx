@@ -3,6 +3,7 @@
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { useState, useRef, useEffect } from 'react';
+import HeaderSearchBar from './HeaderSearchBar';
 import styles from './Navbar.module.css';
 
 
@@ -45,17 +46,17 @@ export default function Navbar({ lang }: { lang: string }) {
     {
       label: isEn ? 'Coloring Pages' : 'Kleurplaten',
       children: [
-        { label: isEn ? '🎬 TV Series & Movies' : '🎬 TV Series & Films', href: `/${lang}/tv-series-and-movies` },
-        { label: isEn ? '👑 Disney & Fairy Tales' : '👑 Disney & Sprookjes', href: `/${lang}/disney-and-fairy-tales` },
-        { label: isEn ? '🎮 Games & Pop Culture' : '🎮 Games & Popcultuur', href: `/${lang}/games-and-pop-culture` },
-        { label: isEn ? '🦁 Animals & Nature' : '🦁 Dieren & Natuur', href: `/${lang}/animals-and-nature` },
-        { label: isEn ? '💖 Girls Themes' : "💖 Meisjes Thema's", href: `/${lang}/girls-themes` },
-        { label: isEn ? '👶 Toddler Specific' : '👶 Speciaal voor Peuters', href: `/${lang}/toddler-specific` },
-        { label: isEn ? '✨ Adults & Mandalas' : '✨ Volwassenen & Mandala\'s', href: `/${lang}/adults` },
+        { label: isEn ? '🎬 TV Series & Movies' : '🎬 TV Series & Films', href: `/${lang}/${isEn ? 'tv-series-and-movies' : 'tv-series-en-films'}` },
+        { label: isEn ? '👑 Disney & Fairy Tales' : '👑 Disney & Sprookjes', href: `/${lang}/${isEn ? 'disney-and-fairy-tales' : 'disney-en-sprookjes'}` },
+        { label: isEn ? '🎮 Games & Pop Culture' : '🎮 Games & Popcultuur', href: `/${lang}/${isEn ? 'games-and-pop-culture' : 'games-en-popcultuur'}` },
+        { label: isEn ? '🦁 Animals & Nature' : '🦁 Dieren & Natuur', href: `/${lang}/${isEn ? 'animals-and-nature' : 'dieren-en-natuur'}` },
+        { label: isEn ? '💖 Girls Themes' : "💖 Meisjes Thema's", href: `/${lang}/${isEn ? 'girls-themes' : 'meisjes-themas'}` },
+        { label: isEn ? '👶 Toddler Specific' : '👶 Speciaal voor Peuters', href: `/${lang}/${isEn ? 'toddler-specific' : 'speciaal-voor-peuters'}` },
+        { label: isEn ? '✨ Adults & Mandalas' : '✨ Volwassenen & Mandala\'s', href: `/${lang}/${isEn ? 'adults' : 'volwassenen'}` },
       ],
     },
     { label: isEn ? '📅 Calendars' : '📅 Kalenders', href: `/${lang}/calendars` },
-    { label: isEn ? '✏️ Printables' : '✏️ Printables', href: `/${lang}/school-education-templates` },
+    { label: isEn ? '✏️ Printables' : '✏️ Printables', href: `/${lang}/${isEn ? 'school-education-templates' : 'school-en-educatie-sjablonen'}` },
     { label: isEn ? '🧘 Mandalas' : "🧘 Mandala's", href: `/${lang}/mandalas` },
     {
       label: isEn ? 'About' : 'Over',
@@ -145,6 +146,9 @@ export default function Navbar({ lang }: { lang: string }) {
             Color<span className={styles.logoAccent}>Vaults</span>
           </span>
         </Link>
+
+        {/* Prominent Header Search Bar */}
+        <HeaderSearchBar lang={lang} />
 
         {/* Desktop Nav Items */}
         <nav className={styles.navLinks}>

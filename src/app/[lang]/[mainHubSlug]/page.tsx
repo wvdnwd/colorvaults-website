@@ -1,4 +1,5 @@
 import { getMainHubs, getThemes, validateDataModel, safeJsonLd, getSampleImagesForTheme } from '@/lib/api';
+import CategorySeoBlock from '@/components/CategorySeoBlock';
 import { notFound } from 'next/navigation';
 import Link from 'next/link';
 import Breadcrumbs from '@/components/Breadcrumbs';
@@ -92,6 +93,7 @@ export default async function MainHubPage({ params }: { params: Promise<{ lang: 
                   title={theme.title}
                   description={theme.description}
                   images={sampleImages}
+                  pageCount={theme.pageCount}
                 />
               </motion.div>
             );
@@ -100,29 +102,60 @@ export default async function MainHubPage({ params }: { params: Promise<{ lang: 
 
         <AdSlot type="banner" text={isEn ? "Sponsored Content" : "Gesponsord"} />
 
-        <div className="seo-block" style={{ marginTop: '3.5rem' }}>
-          <h2>{isEn ? `About ${hub.title} Coloring Pages` : `Over ${hub.title} Kleurplaten`}</h2>
-          <p>{hub.description} {isEn
-            ? `Explore our full collection of ${hub.title} themed coloring pages, carefully organized by theme and age group to help you find exactly what you need.`
-            : `Ontdek onze volledige collectie ${hub.title} kleurplaten, zorgvuldig georganiseerd op thema en leeftijdsgroep.`}
-          </p>
-        </div>
+        <CategorySeoBlock
+          title={isEn ? `About ${hub.title} Coloring Pages` : `Over ${hub.title} Kleurplaten`}
+          contentHtml={isEn ? `
+            <h2>Free Printable ${hub.title} Coloring Collection</h2>
+            <p>${hub.description} Explore our complete library of high-resolution printable coloring pages, carefully categorized by sub-theme and difficulty level.</p>
+            <h3>Featured Themes in ${hub.title}</h3>
+            <ul>
+              ${allThemes.slice(0, 6).map(t => `<li><a href="/${lang}/${hub.slug}/${t.slug}"><strong>${t.title}</strong></a> — ${t.description}</li>`).join('')}
+            </ul>
+            <h3>Easy Printing & High Quality Downloads</h3>
+            <p>Download your favorite ${hub.title} coloring pages instantly in clean line vector PDF format. Ideal for toddlers, children, teens, and adults.</p>
+          ` : `
+            <h2>Gratis Printbare ${hub.title} Kleurplaten Collectie</h2>
+            <p>${hub.description} Ontdek onze volledige verzameling van hoge resolutie printbare kleurplaten, zorgvuldig ingedeeld per subthema en moeilijkheidsgraad.</p>
+            <h3>Populaire Thema's in ${hub.title}</h3>
+            <ul>
+              ${allThemes.slice(0, 6).map(t => `<li><a href="/${lang}/${hub.slug}/${t.slug}"><strong>${t.title}</strong></a> — ${t.description}</li>`).join('')}
+            </ul>
+            <h3>Eenvoudig Printen & Hoge Kwaliteit Downloads</h3>
+            <p>Download je favoriete ${hub.title} kleurplaten direct in strak PDF-formaat. Ideaal voor peuters, kinderen, tieners en volwassenen.</p>
+          `}
+          lang={lang}
+        />
       </div>
 
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: safeJsonLd({
           '@context': 'https://schema.org',
-          '@type': 'CollectionPage',
-          'name': hub.title,
-          'description': hub.description,
-          'url': `https://colorvaults.com/${lang}/${hub.slug}`,
-          'isPartOf': { '@id': 'https://colorvaults.com/#website' },
-          'hasPart': allThemes.map(t => ({
-            '@type': 'WebPage',
-            'name': t.title,
-            'url': `https://colorvaults.com/${lang}/${hub.slug}/${t.slug}`
-          }))
+          '@graph': [
+            {
+              '@type': 'CollectionPage',
+              'name': hub.title,
+              'description': hub.description,
+              'url': `https://colorvaults.com/${lang}/${hub.slug}`,
+              'isPartOf': { '@id': 'https://colorvaults.com/#website' },
+              'hasPart': allThemes.map(t => ({
+                '@type': 'WebPage',
+                'name': t.title,
+                'url': `https://colorvaults.com/${lang}/${hub.slug}/${t.slug}`
+              }))
+            },
+            {
+              '@type': 'BreadcrumbList',
+              'itemListElement': [
+                {
+                  '@type': 'ListItem',
+                  'position': 1,
+                  'name': hub.title,
+                  'item': `https://colorvaults.com/${lang}/${hub.slug}`
+                }
+              ]
+            }
+          ]
         }) }}
       />
     </>

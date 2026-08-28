@@ -84,12 +84,12 @@ export default async function HomePage({ params }: { params: Promise<{ lang: str
   ];
 
   const quickSearchPills = [
-    { name: isEn ? 'Dinosaurs' : 'Dinosaurussen', query: 'dinosaur' },
-    { name: isEn ? 'Unicorns' : 'Eenhoorns', query: 'unicorn' },
-    { name: 'Pokemon', query: 'pokemon' },
-    { name: 'Disney', query: 'disney' },
-    { name: 'SpongeBob', query: 'spongebob' },
-    { name: 'Mandalas', query: 'mandala' }
+    { name: isEn ? 'Dinosaurs' : 'Dinosaurussen', href: `/${lang}/${isEn ? 'animals-and-nature/dinosaur-adventures' : 'dieren-en-natuur/dinosaur-adventures'}` },
+    { name: isEn ? 'Unicorns' : 'Eenhoorns', href: `/${lang}/${isEn ? 'disney-and-fairy-tales/unicorns' : 'disney-en-sprookjes/unicorns'}` },
+    { name: 'Pokemon', href: `/${lang}/search?q=pokemon` },
+    { name: 'Disney', href: `/${lang}/${isEn ? 'disney-and-fairy-tales' : 'disney-en-sprookjes'}` },
+    { name: 'SpongeBob', href: `/${lang}/${isEn ? 'tv-series-and-movies/spongebob' : 'tv-series-en-films/spongebob'}` },
+    { name: isEn ? 'Mandalas' : 'Mandala\'s', href: `/${lang}/mandalas` }
   ];
 
   return (
@@ -138,14 +138,14 @@ export default async function HomePage({ params }: { params: Promise<{ lang: str
               <div className={`${styles.quickPills} hero-anim-3`}>
                 <span className={styles.pillLabel}>{isEn ? 'Trending:' : 'Populair:'}</span>
                 {quickSearchPills.map((pill) => (
-                  <Link key={pill.name} href={`/${lang}/search?q=${pill.query}`} className={styles.quickPill}>
+                  <Link key={pill.name} href={pill.href} className={styles.quickPill}>
                     {pill.name}
                   </Link>
                 ))}
               </div>
 
               <div className={`${styles.heroCtas} hero-anim-4`}>
-                <Link href={`/${lang}/collections`} className="btn-primary">
+                <Link href={`/${lang}/${isEn ? 'collections' : 'collecties'}`} className="btn-primary">
                   🎨 {isEn ? 'Explore All Collections' : 'Alle Collecties Bekijken'}
                 </Link>
                 <Link href={`/${lang}/mandalas`} className="btn-secondary">
@@ -159,7 +159,7 @@ export default async function HomePage({ params }: { params: Promise<{ lang: str
               <HeroCarousel
                 items={getColoringPages(lang)
                   .filter(p => p.image && !p.image.includes('default.jpg'))
-                  .slice(0, 100)
+                  .slice(0, 16)
                   .map(p => ({
                     src: p.image,
                     alt: p.title,
@@ -191,7 +191,7 @@ export default async function HomePage({ params }: { params: Promise<{ lang: str
             {topThemes.map((theme, i) => (
               <ScrollReveal key={theme.slug} delay={(i % 4) as 0 | 1 | 2 | 3 | 4}>
                 <Link href={`/${lang}/${theme.parentHub}/${theme.slug}`} className="card">
-                  <div className="card-img-wrapper" style={{ aspectRatio: '4/3' }}>
+                  <div className="card-img-wrapper" style={{ aspectRatio: '4/3', position: 'relative' }}>
                     <Image
                       src={theme.image}
                       alt={theme.title}
@@ -199,12 +199,53 @@ export default async function HomePage({ params }: { params: Promise<{ lang: str
                       className="card-img"
                       sizes="(max-width: 768px) 50vw, 25vw"
                     />
+                    {theme.pageCount !== undefined && theme.pageCount > 0 && (
+                      <div
+                        style={{
+                          position: 'absolute',
+                          top: '10px',
+                          left: '10px',
+                          background: 'rgba(108, 92, 231, 0.85)',
+                          backdropFilter: 'blur(6px)',
+                          color: '#ffffff',
+                          borderRadius: '9999px',
+                          padding: '0.25rem 0.65rem',
+                          fontSize: '0.7rem',
+                          fontWeight: 800,
+                          zIndex: 10,
+                          letterSpacing: '0.03em',
+                          display: 'flex',
+                          alignItems: 'center',
+                          gap: '0.25rem',
+                          boxShadow: '0 2px 8px rgba(0, 0, 0, 0.25)',
+                          border: '1px solid rgba(255, 255, 255, 0.2)',
+                        }}
+                      >
+                        <span>📁</span>
+                        <span>{theme.pageCount} {isEn ? 'pages' : 'platen'}</span>
+                      </div>
+                    )}
                   </div>
                   <div className="card-body">
                     <h3 className="card-title">{theme.title}</h3>
-                    <p className="card-desc" style={{ marginBottom: 0 }}>
+                    <p className="card-desc" style={{ marginBottom: '0.75rem' }}>
                       {isEn ? 'Browse Collection →' : 'Bekijk Collectie →'}
                     </p>
+                    {theme.pageCount !== undefined && (
+                      <span
+                        style={{
+                          background: 'var(--primary-light)',
+                          color: 'var(--primary)',
+                          borderRadius: 'var(--radius-full)',
+                          padding: '0.2rem 0.6rem',
+                          fontSize: '0.72rem',
+                          fontWeight: 800,
+                          display: 'inline-block',
+                        }}
+                      >
+                        🎨 {theme.pageCount} {isEn ? 'Coloring Pages' : 'Kleurplaten'}
+                      </span>
+                    )}
                   </div>
                 </Link>
               </ScrollReveal>

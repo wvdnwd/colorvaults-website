@@ -34,6 +34,9 @@ export const metadata: Metadata = {
     default: "ColorVaults | Free Premium Coloring Pages",
   },
   description: "Download thousands of high-quality free printable coloring pages for kids, toddlers, teens and adults. 100% free, no account required.",
+  verification: {
+    google: "r57LIyNltfhaHeN4Lean5iNHEkbWBJbD-z-s6uF9t0s",
+  },
   openGraph: {
     siteName: "ColorVaults",
     type: "website",

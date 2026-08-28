@@ -23,7 +23,7 @@ const nextConfig: NextConfig = {
     cpus: 1,
   },
   images: {
-    unoptimized: true,
+    formats: ['image/avif', 'image/webp'],
     remotePatterns: [
       {
         protocol: 'https',

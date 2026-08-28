@@ -78,11 +78,34 @@ export function safeJsonLd(data: object): string {
 }
 
 export function getMainHubs(lang: string): MainHub[] {
-  return getCached<MainHub>(lang, 'hubs', 'main-hubs.json');
+  const hubs = getCached<MainHub>(lang, 'hubs', 'main-hubs.json');
+  const pages = getColoringPages(lang);
+
+  const countByHub: Record<string, number> = {};
+  for (const p of pages) {
+    countByHub[p.parentHub] = (countByHub[p.parentHub] || 0) + 1;
+  }
+
+  return hubs.map(h => ({
+    ...h,
+    pageCount: countByHub[h.slug] || h.themeCount || 0,
+  }));
 }
 
 export function getThemes(lang: string): Theme[] {
-  return getCached<Theme>(lang, 'themes', 'themes.json');
+  const themes = getCached<Theme>(lang, 'themes', 'themes.json');
+  const pages = getColoringPages(lang);
+
+  const countByTheme: Record<string, number> = {};
+  for (const p of pages) {
+    const key = `${p.parentHub}/${p.parentTheme}`;
+    countByTheme[key] = (countByTheme[key] || 0) + 1;
+  }
+
+  return themes.map(t => ({
+    ...t,
+    pageCount: countByTheme[`${t.parentHub}/${t.slug}`] || 0,
+  }));
 }
 
 export function getThemeBySlug(lang: string, parentHubSlug: string, themeSlug: string): Theme | undefined {

@@ -1,4 +1,5 @@
-import { getAgePages, getAgePageBySlug, getMainHubs, getThemes, getPagesByAgeGroup, getAgeLabel } from '@/lib/api';
+import { getAgePages, getAgePageBySlug, getMainHubs, getThemes, getPagesByAgeGroup, getAgeLabel, safeJsonLd } from '@/lib/api';
+import CategorySeoBlock from '@/components/CategorySeoBlock';
 import { notFound } from 'next/navigation';
 import Link from 'next/link';
 import Breadcrumbs from '@/components/Breadcrumbs';
@@ -182,11 +183,74 @@ export default async function AgePage({
 
         <AdSlot type="banner" text={isEn ? "Sponsored Content" : "Gesponsord"} />
 
-        <div className="seo-block" style={{ marginTop: '3.5rem' }}>
-          <h2>{isEn ? `About These Pages` : `Over Deze Kleurplaten`}</h2>
-          <p>{agePage.seoText}</p>
-        </div>
+        <CategorySeoBlock
+          title={isEn ? `About ${theme.title} (${difficultyLabel.label})` : `Over ${theme.title} (${difficultyLabel.label})`}
+          contentHtml={isEn ? `
+            <h2>${theme.title} Coloring Pages — Level: ${difficultyLabel.label} ${difficultyLabel.emoji}</h2>
+            <p>${agePage.seoText}</p>
+            <h3>Difficulty & Age Group Filters</h3>
+            <p>Explore other difficulty levels for ${theme.title}:</p>
+            <ul>
+              <li><a href="/${lang}/${mainHubSlug}/${themeSlug}/kids"><strong>Easy / Kids (⭐)</strong></a> — Simple shapes & cute designs</li>
+              <li><a href="/${lang}/${mainHubSlug}/${themeSlug}/teens"><strong>Medium / Teens (⭐⭐)</strong></a> — Creative scenes & extra detail</li>
+              <li><a href="/${lang}/${mainHubSlug}/${themeSlug}/adults"><strong>Hard / Adults (⭐⭐⭐)</strong></a> — Fine details & intricate line art</li>
+            </ul>
+            <p>Or return to the full <a href="/${lang}/${mainHubSlug}/${themeSlug}"><strong>${theme.title} main category page</strong></a> to see all available printable sheets.</p>
+          ` : `
+            <h2>${theme.title} Kleurplaten — Niveau: ${difficultyLabel.label} ${difficultyLabel.emoji}</h2>
+            <p>${agePage.seoText}</p>
+            <h3>Moeilijkheidsgraden & Filters</h3>
+            <p>Ontdek ook andere niveaus van ${theme.title}:</p>
+            <ul>
+              <li><a href="/${lang}/${mainHubSlug}/${themeSlug}/kids"><strong>Makkelijk / Kinderen (⭐)</strong></a> — Eenvoudige vormen & leuke designs</li>
+              <li><a href="/${lang}/${mainHubSlug}/${themeSlug}/teens"><strong>Gemiddeld / Tieners (⭐⭐)</strong></a> — Creatieve scènes & meer detail</li>
+              <li><a href="/${lang}/${mainHubSlug}/${themeSlug}/adults"><strong>Moeilijk / Volwassenen (⭐⭐⭐)</strong></a> — Ingewikkelde patronen & fijne details</li>
+            </ul>
+            <p>Of ga terug naar het <a href="/${lang}/${mainHubSlug}/${themeSlug}"><strong>${theme.title} hoofdcategorie overzicht</strong></a> om alle beschikbare kleurplaten te bekijken.</p>
+          `}
+          lang={lang}
+        />
       </div>
+
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: safeJsonLd({
+          '@context': 'https://schema.org',
+          '@graph': [
+            {
+              '@type': 'CollectionPage',
+              'name': `${theme.title} — ${difficultyLabel.label}`,
+              'description': agePage.seoText,
+              'url': `https://colorvaults.com/${lang}/${mainHubSlug}/${themeSlug}/${ageSlug}`,
+              'isPartOf': { '@id': 'https://colorvaults.com/#website' },
+              'inLanguage': lang,
+            },
+            {
+              '@type': 'BreadcrumbList',
+              'itemListElement': [
+                {
+                  '@type': 'ListItem',
+                  'position': 1,
+                  'name': hub.title,
+                  'item': `https://colorvaults.com/${lang}/${hub.slug}`,
+                },
+                {
+                  '@type': 'ListItem',
+                  'position': 2,
+                  'name': theme.title,
+                  'item': `https://colorvaults.com/${lang}/${hub.slug}/${theme.slug}`,
+                },
+                {
+                  '@type': 'ListItem',
+                  'position': 3,
+                  'name': difficultyLabel.label,
+                  'item': `https://colorvaults.com/${lang}/${hub.slug}/${theme.slug}/${ageSlug}`,
+                },
+              ],
+            },
+          ],
+        }) }}
+      />
     </>
   );
 }

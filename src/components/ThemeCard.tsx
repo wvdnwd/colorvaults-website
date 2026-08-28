@@ -11,6 +11,7 @@ interface ThemeCardProps {
   title: string;
   description: string;
   images: string[];
+  pageCount?: number;
 }
 
 export default function ThemeCard({
@@ -19,7 +20,8 @@ export default function ThemeCard({
   themeSlug,
   title,
   description,
-  images
+  images,
+  pageCount,
 }: ThemeCardProps) {
   const [currentIdx, setCurrentIdx] = useState(0);
 
@@ -65,6 +67,34 @@ export default function ThemeCard({
           </div>
         ))}
 
+        {/* Dynamic Album Page Counter Badge (Top Left) */}
+        {pageCount !== undefined && pageCount > 0 && (
+          <div
+            style={{
+              position: 'absolute',
+              top: '10px',
+              left: '10px',
+              background: 'rgba(108, 92, 231, 0.85)',
+              backdropFilter: 'blur(6px)',
+              color: '#ffffff',
+              borderRadius: '9999px',
+              padding: '0.25rem 0.65rem',
+              fontSize: '0.7rem',
+              fontWeight: 800,
+              zIndex: 10,
+              letterSpacing: '0.03em',
+              display: 'flex',
+              alignItems: 'center',
+              gap: '0.25rem',
+              boxShadow: '0 2px 8px rgba(0, 0, 0, 0.25)',
+              border: '1px solid rgba(255, 255, 255, 0.2)',
+            }}
+          >
+            <span>📁</span>
+            <span>{pageCount} {lang === 'en' ? 'pages' : 'platen'}</span>
+          </div>
+        )}
+
         {images.length > 1 && (
           <div
             style={{
@@ -109,7 +139,7 @@ export default function ThemeCard({
               fontWeight: 800,
             }}
           >
-            🎨 {lang === 'en' ? 'Full Album' : 'Volledig Album'}
+            🎨 {pageCount ? `${pageCount} ${lang === 'en' ? 'Coloring Pages' : 'Kleurplaten'}` : (lang === 'en' ? 'Full Album' : 'Volledig Album')}
           </span>
         </div>
       </div>

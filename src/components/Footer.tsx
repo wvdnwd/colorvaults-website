@@ -28,11 +28,11 @@ export default function Footer({ lang }: { lang: string }) {
           <div className={styles.links}>
             <div className={styles.linkColumn}>
               <span className={styles.linkColumnTitle}>{isEn ? 'Popular Categories' : 'Populaire Categorieën'}</span>
-              <Link href={`/${lang}/tv-series-and-movies`} className={styles.link}>{isEn ? 'TV & Movies' : 'TV & Films'}</Link>
-              <Link href={`/${lang}/animals-and-nature`} className={styles.link}>{isEn ? 'Animals & Nature' : 'Dieren & Natuur'}</Link>
+              <Link href={`/${lang}/${isEn ? 'tv-series-and-movies' : 'tv-series-en-films'}`} className={styles.link}>{isEn ? 'TV & Movies' : 'TV & Films'}</Link>
+              <Link href={`/${lang}/${isEn ? 'animals-and-nature' : 'dieren-en-natuur'}`} className={styles.link}>{isEn ? 'Animals & Nature' : 'Dieren & Natuur'}</Link>
               <Link href={`/${lang}/mandalas`} className={styles.link}>Mandalas</Link>
-              <Link href={`/${lang}/disney-and-fairy-tales`} className={styles.link}>{isEn ? 'Disney & Fairy Tales' : 'Disney & Sprookjes'}</Link>
-              <Link href={`/${lang}/adults`} className={styles.link}>{isEn ? 'Adults' : 'Volwassenen'}</Link>
+              <Link href={`/${lang}/${isEn ? 'disney-and-fairy-tales' : 'disney-en-sprookjes'}`} className={styles.link}>{isEn ? 'Disney & Fairy Tales' : 'Disney & Sprookjes'}</Link>
+              <Link href={`/${lang}/${isEn ? 'adults' : 'volwassenen'}`} className={styles.link}>{isEn ? 'Adults' : 'Volwassenen'}</Link>
             </div>
             <div className={styles.linkColumn}>
               <span className={styles.linkColumnTitle}>{isEn ? 'Quick Links' : 'Snelle Links'}</span>
