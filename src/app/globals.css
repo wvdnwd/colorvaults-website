@@ -735,13 +735,33 @@ main {
   }
 }
 
+.coloring-page-detail-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 380px;
+  gap: 3.5rem;
+  margin-top: 2rem;
+  align-items: start;
+}
+
 /* ── Responsive ───────────────────────────────────────────────────────────── */
+@media (max-width: 960px) {
+  .container { padding: 0 1.25rem; }
+  .coloring-page-detail-grid { grid-template-columns: 1fr; gap: 2rem; }
+}
+
 @media (max-width: 768px) {
   .section { padding: 3rem 0; }
   .section-dark, .section-light { padding: 3rem 0; }
-  .grid-4 { grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); gap: 1.1rem; }
-  .grid-3 { grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 1.1rem; }
+  .grid-4 { grid-template-columns: repeat(2, 1fr); gap: 0.85rem; }
+  .grid-3 { grid-template-columns: repeat(2, 1fr); gap: 0.85rem; }
   .seo-block { padding: 2rem 1.35rem; }
+  .container { padding: 0 1rem; }
+}
+
+@media (max-width: 480px) {
+  .grid-4 { grid-template-columns: repeat(2, 1fr); gap: 0.65rem; }
+  .grid-3 { grid-template-columns: 1fr; gap: 0.85rem; }
+  .container { padding: 0 0.85rem; }
 }
 
 /* ── Skip Link ────────────────────────────────────────────────────────────── */

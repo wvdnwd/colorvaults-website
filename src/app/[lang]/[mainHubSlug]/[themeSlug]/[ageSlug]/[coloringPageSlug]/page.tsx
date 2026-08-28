@@ -124,7 +124,7 @@ export default async function ColoringPageDetail({ params }: { params: Promise<{
         }) }}
       />
 
-      <div style={{ display: 'grid', gridTemplateColumns: 'minmax(0, 1fr) 380px', gap: '3.5rem', marginTop: '2rem', alignItems: 'start' }}>
+      <div className="coloring-page-detail-grid">
         {/* Main Stage Image */}
         <div>
           <div 

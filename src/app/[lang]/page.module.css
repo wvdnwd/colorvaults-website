@@ -412,11 +412,36 @@
 
 /* ── Responsive ───────────────────────────────────────────────────────────── */
 @media (max-width: 960px) {
-  .ageGrid    { grid-template-columns: repeat(2, 1fr); }
-  .whyInner   { grid-template-columns: 1fr; gap: 3rem; }
+  .heroLayout   { grid-template-columns: 1fr; gap: 2.5rem; }
+  .heroVisual   { display: none; }
+  .heroSubtitle { max-width: 100%; }
+  .ageGrid      { grid-template-columns: repeat(2, 1fr); }
+  .whyInner     { grid-template-columns: 1fr; gap: 3rem; }
 }
 
-@media (max-width: 540px) {
-  .ageGrid  { grid-template-columns: 1fr; }
-  .hero     { padding: 4rem 1.25rem 3.5rem; }
+@media (max-width: 640px) {
+  .ageGrid { grid-template-columns: 1fr; }
+  .hero { padding: 3rem 1rem 2.5rem; }
+  .heroTitle { font-size: 2.1rem; }
+  .searchWrapper {
+    flex-direction: column;
+    border-radius: var(--radius-lg);
+  }
+  .searchInput {
+    padding: 0.85rem 1.1rem;
+    font-size: 0.9rem;
+  }
+  .searchBtn {
+    padding: 0.85rem 1.1rem;
+    border-radius: 0 0 var(--radius-lg) var(--radius-lg);
+    width: 100%;
+  }
+  .heroCtas {
+    flex-direction: column;
+    width: 100%;
+  }
+  .heroCtas a, .heroCtas button {
+    width: 100%;
+    justify-content: center;
+  }
 }
