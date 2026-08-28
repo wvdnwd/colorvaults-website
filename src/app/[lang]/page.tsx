@@ -1,5 +1,6 @@
 import SafeImage from '@/components/SafeImage';
-import { getThemes, getColoringPages } from '@/lib/api';
+import { getThemes, getColoringPages, getSampleImagesForTheme } from '@/lib/api';
+import ThemeCard from '@/components/ThemeCard';
 import styles from './page.module.css';
 import Link from 'next/link';
 import MotionCard from '@/components/MotionCard';
@@ -180,75 +181,30 @@ export default async function HomePage({ params }: { params: Promise<{ lang: str
 
           <ScrollReveal className="section-header">
             <div>
-              <span className="badge">✨ {isEn ? 'Popular Categories' : 'Populaire Categorieën'}</span>
+              <span className="badge">✨ {allThemes.length} {isEn ? 'Categories & Themes' : 'Categorieën & Thema\'s'}</span>
               <h2 className="title-h2" style={{ marginTop: '0.65rem', color: 'var(--color-text-light)' }}>
-                {isEn ? 'Explore Our Top Themes' : 'Ontdek Onze Top Thema\'s'}
+                {isEn ? 'Explore All Themes' : 'Ontdek Alle Categorieën'}
               </h2>
             </div>
           </ScrollReveal>
 
           <div className="grid-4">
-            {topThemes.map((theme, i) => (
-              <ScrollReveal key={theme.slug} delay={(i % 4) as 0 | 1 | 2 | 3 | 4}>
-                <Link href={`/${lang}/${theme.parentHub}/${theme.slug}`} className="card">
-                  <div className="card-img-wrapper" style={{ aspectRatio: '4/3', position: 'relative' }}>
-                    <SafeImage
-                      src={theme.image}
-                      alt={theme.title}
-                      className="card-img"
-                      style={{ width: '100%', height: '100%', objectFit: 'cover' }}
-                    />
-                    {theme.pageCount !== undefined && theme.pageCount > 0 && (
-                      <div
-                        style={{
-                          position: 'absolute',
-                          top: '10px',
-                          left: '10px',
-                          background: 'rgba(108, 92, 231, 0.85)',
-                          backdropFilter: 'blur(6px)',
-                          color: '#ffffff',
-                          borderRadius: '9999px',
-                          padding: '0.25rem 0.65rem',
-                          fontSize: '0.7rem',
-                          fontWeight: 800,
-                          zIndex: 10,
-                          letterSpacing: '0.03em',
-                          display: 'flex',
-                          alignItems: 'center',
-                          gap: '0.25rem',
-                          boxShadow: '0 2px 8px rgba(0, 0, 0, 0.25)',
-                          border: '1px solid rgba(255, 255, 255, 0.2)',
-                        }}
-                      >
-                        <span>📁</span>
-                        <span>{theme.pageCount} {isEn ? 'pages' : 'platen'}</span>
-                      </div>
-                    )}
-                  </div>
-                  <div className="card-body">
-                    <h3 className="card-title">{theme.title}</h3>
-                    <p className="card-desc" style={{ marginBottom: '0.75rem' }}>
-                      {isEn ? 'Browse Collection →' : 'Bekijk Collectie →'}
-                    </p>
-                    {theme.pageCount !== undefined && (
-                      <span
-                        style={{
-                          background: 'var(--primary-light)',
-                          color: 'var(--primary)',
-                          borderRadius: 'var(--radius-full)',
-                          padding: '0.2rem 0.6rem',
-                          fontSize: '0.72rem',
-                          fontWeight: 800,
-                          display: 'inline-block',
-                        }}
-                      >
-                        🎨 {theme.pageCount} {isEn ? 'Coloring Pages' : 'Kleurplaten'}
-                      </span>
-                    )}
-                  </div>
-                </Link>
-              </ScrollReveal>
-            ))}
+            {allThemes.map((theme, i) => {
+              const sampleImages = getSampleImagesForTheme(lang, theme.parentHub, theme.slug, theme.image, 3);
+              return (
+                <ScrollReveal key={theme.slug} delay={(i % 4) as 0 | 1 | 2 | 3 | 4}>
+                  <ThemeCard
+                    lang={lang}
+                    hubSlug={theme.parentHub}
+                    themeSlug={theme.slug}
+                    title={theme.title}
+                    description={theme.description}
+                    images={sampleImages}
+                    pageCount={theme.pageCount}
+                  />
+                </ScrollReveal>
+              );
+            })}
           </div>
         </div>
       </section>
