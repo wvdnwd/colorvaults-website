@@ -1,4 +1,4 @@
-import Image from 'next/image';
+import SafeImage from '@/components/SafeImage';
 import { getThemes, getColoringPages } from '@/lib/api';
 import styles from './page.module.css';
 import Link from 'next/link';
@@ -192,12 +192,11 @@ export default async function HomePage({ params }: { params: Promise<{ lang: str
               <ScrollReveal key={theme.slug} delay={(i % 4) as 0 | 1 | 2 | 3 | 4}>
                 <Link href={`/${lang}/${theme.parentHub}/${theme.slug}`} className="card">
                   <div className="card-img-wrapper" style={{ aspectRatio: '4/3', position: 'relative' }}>
-                    <Image
+                    <SafeImage
                       src={theme.image}
                       alt={theme.title}
-                      fill
                       className="card-img"
-                      sizes="(max-width: 768px) 50vw, 25vw"
+                      style={{ width: '100%', height: '100%', objectFit: 'cover' }}
                     />
                     {theme.pageCount !== undefined && theme.pageCount > 0 && (
                       <div
