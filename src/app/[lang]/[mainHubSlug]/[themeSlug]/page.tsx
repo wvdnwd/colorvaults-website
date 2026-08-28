@@ -1,6 +1,7 @@
 import { getThemes, getThemeBySlug, getMainHubs, getColoringPages, safeJsonLd } from '@/lib/api';
 import { getCategorySeoData } from '@/lib/categorySeo';
 import CategorySeoBlock from '@/components/CategorySeoBlock';
+import DifficultyFilterBar from '@/components/DifficultyFilterBar';
 import { notFound } from 'next/navigation';
 import Link from 'next/link';
 import Breadcrumbs from '@/components/Breadcrumbs';
@@ -55,11 +56,12 @@ export default async function ThemePage({
   searchParams,
 }: {
   params: Promise<{ lang: string; mainHubSlug: string; themeSlug: string }>;
-  searchParams: Promise<{ page?: string }>;
+  searchParams: Promise<{ page?: string; difficulty?: string }>;
 }) {
   const { lang, mainHubSlug, themeSlug } = await params;
-  const { page: pageParam } = await searchParams;
+  const { page: pageParam, difficulty: diffParam } = await searchParams;
   const currentPage = Math.max(1, parseInt(pageParam || '1', 10));
+  const rawDiff = (diffParam || '').toLowerCase();
 
   const theme = getThemeBySlug(lang, mainHubSlug, themeSlug);
   if (!theme) return notFound();
@@ -75,14 +77,32 @@ export default async function ThemePage({
 
   const seoData = getCategorySeoData(lang, mainHubSlug, themeSlug, theme.title, allThemesInHub);
 
-  // Get ALL coloring pages for this theme (combining all age groups into 1 single folder/page)
+  // Get ALL coloring pages for this theme
   const allColoringPages = getColoringPages(lang).filter(
     p => p.parentHub === mainHubSlug && p.parentTheme === themeSlug
   );
 
-  const totalPages = Math.ceil(allColoringPages.length / PER_PAGE);
+  const counts = {
+    all: allColoringPages.length,
+    easy: allColoringPages.filter(p => p.ageGroup === 'kids' || p.ageGroup === 'kinderen').length,
+    medium: allColoringPages.filter(p => p.ageGroup === 'teens' || p.ageGroup === 'tieners').length,
+    hard: allColoringPages.filter(p => p.ageGroup === 'adults' || p.ageGroup === 'volwassenen').length,
+  };
+
+  let filteredPages = allColoringPages;
+  if (rawDiff === 'easy' || rawDiff === 'kids') {
+    filteredPages = allColoringPages.filter(p => p.ageGroup === 'kids' || p.ageGroup === 'kinderen');
+  } else if (rawDiff === 'medium' || rawDiff === 'teens') {
+    filteredPages = allColoringPages.filter(p => p.ageGroup === 'teens' || p.ageGroup === 'tieners');
+  } else if (rawDiff === 'hard' || rawDiff === 'adults') {
+    filteredPages = allColoringPages.filter(p => p.ageGroup === 'adults' || p.ageGroup === 'volwassenen');
+  }
+
+  const totalPages = Math.ceil(filteredPages.length / PER_PAGE);
   const offset = (currentPage - 1) * PER_PAGE;
-  const coloringPages = allColoringPages.slice(offset, offset + PER_PAGE);
+  const coloringPages = filteredPages.slice(offset, offset + PER_PAGE);
+
+  const difficultyQueryString = rawDiff ? `&difficulty=${encodeURIComponent(rawDiff)}` : '';
 
   return (
     <>
@@ -119,11 +139,13 @@ export default async function ThemePage({
       <div className="container section">
         <AdSlot type="banner" text={isEn ? 'Sponsored Content' : 'Gesponsord'} />
 
+        <DifficultyFilterBar isEn={isEn} counts={counts} />
+
         <div className="section-header">
-          <h2 className="title-h2">{isEn ? 'All Coloring Pages' : 'Alle Kleurplaten'}</h2>
+          <h2 className="title-h2">{isEn ? 'Coloring Pages' : 'Kleurplaten'}</h2>
         </div>
 
-        {allColoringPages.length === 0 ? (
+        {filteredPages.length === 0 ? (
           <div
             style={{
               textAlign: 'center',
@@ -136,7 +158,7 @@ export default async function ThemePage({
           >
             <p style={{ fontSize: '3.5rem', marginBottom: '1rem' }}>🎨</p>
             <p style={{ fontSize: '1.2rem', fontWeight: 700, color: 'var(--foreground)' }}>
-              {isEn ? 'Pages coming soon! Check back later.' : 'Kleurplaten binnenkort beschikbaar!'}
+              {isEn ? 'No coloring pages found for this difficulty level.' : 'Geen kleurplaten gevonden voor deze moeilijkheidsgraad.'}
             </p>
           </div>
         ) : (
@@ -171,12 +193,12 @@ export default async function ThemePage({
                 {isEn
                   ? `Page ${currentPage} of ${totalPages} — ${Math.min(
                       currentPage * PER_PAGE,
-                      allColoringPages.length
-                    )} of ${allColoringPages.length} coloring pages`
+                      filteredPages.length
+                    )} of ${filteredPages.length} coloring pages`
                   : `Pagina ${currentPage} van ${totalPages} — ${Math.min(
                       currentPage * PER_PAGE,
-                      allColoringPages.length
-                    )} van ${allColoringPages.length} kleurplaten`}
+                      filteredPages.length
+                    )} van ${filteredPages.length} kleurplaten`}
               </p>
               <div
                 style={{
@@ -211,7 +233,7 @@ export default async function ThemePage({
             >
               {currentPage > 1 ? (
                 <Link
-                  href={`/${lang}/${hub.slug}/${theme.slug}?page=${currentPage - 1}`}
+                  href={`/${lang}/${hub.slug}/${theme.slug}?page=${currentPage - 1}${difficultyQueryString}`}
                   className="btn-secondary"
                 >
                   ← {isEn ? 'Previous' : 'Vorige'}
@@ -239,7 +261,7 @@ export default async function ThemePage({
 
               {currentPage < totalPages ? (
                 <Link
-                  href={`/${lang}/${hub.slug}/${theme.slug}?page=${currentPage + 1}`}
+                  href={`/${lang}/${hub.slug}/${theme.slug}?page=${currentPage + 1}${difficultyQueryString}`}
                   className="btn-primary"
                 >
                   {isEn ? 'Next' : 'Volgende'} →
