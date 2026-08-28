@@ -189,21 +189,38 @@ export default async function HomePage({ params }: { params: Promise<{ lang: str
             </div>
           </ScrollReveal>
 
-          <div className="grid-4">
-            {allThemes.map((theme, i) => {
-              const sampleImages = getSampleImagesForTheme(lang, theme.parentHub, theme.slug, theme.image, 3);
+          <div>
+            {Array.from({ length: Math.ceil(allThemes.length / 4) }).map((_, chunkIndex) => {
+              const chunk = allThemes.slice(chunkIndex * 4, chunkIndex * 4 + 4);
+              const showAdBar = chunkIndex < Math.ceil(allThemes.length / 4) - 1;
+
               return (
-                <ScrollReveal key={theme.slug} delay={(i % 4) as 0 | 1 | 2 | 3 | 4}>
-                  <ThemeCard
-                    lang={lang}
-                    hubSlug={theme.parentHub}
-                    themeSlug={theme.slug}
-                    title={theme.title}
-                    description={theme.description}
-                    images={sampleImages}
-                    pageCount={theme.pageCount}
-                  />
-                </ScrollReveal>
+                <React.Fragment key={chunkIndex}>
+                  <div className="grid-4" style={{ marginBottom: showAdBar ? '2.5rem' : 0 }}>
+                    {chunk.map((theme, i) => {
+                      const sampleImages = getSampleImagesForTheme(lang, theme.parentHub, theme.slug, theme.image, 3);
+                      return (
+                        <ScrollReveal key={theme.slug} delay={(i % 4) as 0 | 1 | 2 | 3 | 4}>
+                          <ThemeCard
+                            lang={lang}
+                            hubSlug={theme.parentHub}
+                            themeSlug={theme.slug}
+                            title={theme.title}
+                            description={theme.description}
+                            images={sampleImages}
+                            pageCount={theme.pageCount}
+                          />
+                        </ScrollReveal>
+                      );
+                    })}
+                  </div>
+
+                  {showAdBar && (
+                    <div style={{ margin: '2.5rem 0' }}>
+                      <AdSlot type="banner" text={isEn ? 'Sponsored Content' : 'Gesponsord'} />
+                    </div>
+                  )}
+                </React.Fragment>
               );
             })}
           </div>
