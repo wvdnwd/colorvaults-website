@@ -205,7 +205,8 @@ const generateData = () => {
     }
   }
 
-  const seenTitlesInTheme = {};
+  const seenTitlesGlobalEn = {};
+  const seenTitlesGlobalNl = {};
 
   for (const [themeSlug, data] of Object.entries(groupedThemes)) {
     const themeName = data.themeName;
@@ -342,18 +343,24 @@ const generateData = () => {
         niceTitleNl = fallbackTitle;
       }
 
-      // Ensure 100% unique page title per theme
-      const titleKeyEn = niceTitleEn.toLowerCase().trim();
-      if (!seenTitlesInTheme[themeSlug]) {
-        seenTitlesInTheme[themeSlug] = {};
-      }
-      if (seenTitlesInTheme[themeSlug][titleKeyEn]) {
-        seenTitlesInTheme[themeSlug][titleKeyEn]++;
-        const num = seenTitlesInTheme[themeSlug][titleKeyEn];
+      // Ensure 100% unique page title globally across the entire website
+      const titleKeyEn = niceTitleEn.toLowerCase().replace(/[\s\-_]+/g, ' ').trim();
+      const titleKeyNl = niceTitleNl.toLowerCase().replace(/[\s\-_]+/g, ' ').trim();
+
+      if (seenTitlesGlobalEn[titleKeyEn]) {
+        seenTitlesGlobalEn[titleKeyEn]++;
+        const num = seenTitlesGlobalEn[titleKeyEn];
         niceTitleEn = `${niceTitleEn} #${num}`;
+      } else {
+        seenTitlesGlobalEn[titleKeyEn] = 1;
+      }
+
+      if (seenTitlesGlobalNl[titleKeyNl]) {
+        seenTitlesGlobalNl[titleKeyNl]++;
+        const num = seenTitlesGlobalNl[titleKeyNl];
         niceTitleNl = `${niceTitleNl} #${num}`;
       } else {
-        seenTitlesInTheme[themeSlug][titleKeyEn] = 1;
+        seenTitlesGlobalNl[titleKeyNl] = 1;
       }
 
       const ageGroupKey = agesList[index % agesList.length];
