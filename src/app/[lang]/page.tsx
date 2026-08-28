@@ -1,6 +1,7 @@
 import SafeImage from '@/components/SafeImage';
 import { getThemes, getColoringPages, getSampleImagesForTheme } from '@/lib/api';
 import ThemeCard from '@/components/ThemeCard';
+import { blogPosts } from '@/data/blogs';
 import styles from './page.module.css';
 import Link from 'next/link';
 import MotionCard from '@/components/MotionCard';
@@ -271,6 +272,51 @@ export default async function HomePage({ params }: { params: Promise<{ lang: str
                 </ScrollReveal>
               );
             })}
+          </div>
+        </div>
+      </section>
+
+      {/* ── Section: Guides & Articles ── */}
+      <section className="section">
+        <div className="container">
+          <ScrollReveal className="section-header">
+            <div>
+              <span className="badge">📚 {isEn ? 'Educational Guides' : 'Tips & Lesideën'}</span>
+              <h2 className="title-h2" style={{ marginTop: '0.65rem' }}>
+                {isEn ? 'Latest Guides & Parenting Tips' : 'Laatste Tips voor Ouders & Onderwijs'}
+              </h2>
+            </div>
+            <Link href={`/${lang}/blog`} className="btn-secondary">
+              {isEn ? 'View All Guides →' : 'Bekijk Alle Tips →'}
+            </Link>
+          </ScrollReveal>
+
+          <div className="grid-3">
+            {(blogPosts[lang === 'nl' ? 'nl' : 'en'] || blogPosts.en).map(post => (
+              <ScrollReveal key={post.slug}>
+                <Link href={`/${lang}/blog/${post.slug}`} className="card">
+                  <div className="card-img-wrapper" style={{ aspectRatio: '16/9', position: 'relative' }}>
+                    <SafeImage
+                      src={post.image}
+                      alt={post.title}
+                      className="card-img"
+                      style={{ width: '100%', height: '100%', objectFit: 'cover' }}
+                    />
+                  </div>
+                  <div className="card-body">
+                    <span style={{ fontSize: '0.72rem', fontWeight: 800, color: 'var(--primary)', textTransform: 'uppercase', display: 'block', marginBottom: '0.4rem' }}>
+                      {post.category}
+                    </span>
+                    <h3 className="card-title" style={{ fontSize: '1.1rem', lineHeight: 1.4, marginBottom: '0.5rem' }}>
+                      {post.title}
+                    </h3>
+                    <p className="card-desc" style={{ display: '-webkit-box', WebkitLineClamp: 2, WebkitBoxOrient: 'vertical', overflow: 'hidden' }}>
+                      {post.excerpt}
+                    </p>
+                  </div>
+                </Link>
+              </ScrollReveal>
+            ))}
           </div>
         </div>
       </section>

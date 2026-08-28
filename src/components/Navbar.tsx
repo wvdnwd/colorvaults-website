@@ -58,6 +58,7 @@ export default function Navbar({ lang }: { lang: string }) {
     { label: isEn ? '📅 Calendars' : '📅 Kalenders', href: `/${lang}/calendars` },
     { label: isEn ? '✏️ Printables' : '✏️ Printables', href: `/${lang}/${isEn ? 'school-education-templates' : 'school-en-educatie-sjablonen'}` },
     { label: isEn ? '🧘 Mandalas' : "🧘 Mandala's", href: `/${lang}/mandalas` },
+    { label: isEn ? '📚 Blog & Guides' : '📚 Tips & Blog', href: `/${lang}/blog` },
     {
       label: isEn ? 'About' : 'Over',
       children: [

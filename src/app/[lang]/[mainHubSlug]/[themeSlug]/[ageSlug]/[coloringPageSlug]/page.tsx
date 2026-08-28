@@ -5,6 +5,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 import SafeImage from '@/components/SafeImage';
 import PrintDownloadButtons from '@/components/PrintDownloadButtons';
+import SocialShareButtons from '@/components/SocialShareButtons';
 import FavoriteButton from '@/components/FavoriteButton';
 import MotionCard from '@/components/MotionCard';
 import AdSlot from '@/components/AdSlot';
@@ -161,26 +162,12 @@ export default async function ColoringPageDetail({ params }: { params: Promise<{
           </div>
 
           {/* Social Share bar */}
-          <div style={{ display: 'flex', gap: '0.85rem', marginTop: '1.25rem', flexWrap: 'wrap' }}>
-            <a
-              href={pinterestUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label={isEn ? 'Share on Pinterest (opens in new tab)' : 'Delen op Pinterest (opent in nieuw tabblad)'}
-              style={{ display: 'inline-flex', alignItems: 'center', gap: '0.5rem', background: '#E60023', color: 'white', padding: '0.65rem 1.25rem', borderRadius: 'var(--radius-full)', fontWeight: 700, fontSize: '0.875rem', textDecoration: 'none', transition: 'transform 0.2s', boxShadow: '0 4px 12px rgba(230,0,35,0.25)' }}
-            >
-              <span aria-hidden="true">📌</span> {isEn ? 'Pin on Pinterest' : 'Pinen op Pinterest'}
-            </a>
-            <a
-              href={`https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(`https://colorvaults.com/${lang}/${mainHubSlug}/${themeSlug}/${ageSlug}/${page.slug}`)}`}
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label={isEn ? 'Share on Facebook (opens in new tab)' : 'Delen op Facebook (opent in nieuw tabblad)'}
-              style={{ display: 'inline-flex', alignItems: 'center', gap: '0.5rem', background: '#1877F2', color: 'white', padding: '0.65rem 1.25rem', borderRadius: 'var(--radius-full)', fontWeight: 700, fontSize: '0.875rem', textDecoration: 'none', boxShadow: '0 4px 12px rgba(24,119,242,0.25)' }}
-            >
-              <span aria-hidden="true">📘</span> {isEn ? 'Share on Facebook' : 'Delen op Facebook'}
-            </a>
-          </div>
+          <SocialShareButtons
+            isEn={isEn}
+            title={page.title}
+            url={`https://colorvaults.com/${lang}/${mainHubSlug}/${themeSlug}/${ageSlug}/${page.slug}`}
+            imageUrl={page.image}
+          />
 
           {/* Long SEO text */}
           <div className="seo-block" style={{ marginTop: '2.5rem' }}>
