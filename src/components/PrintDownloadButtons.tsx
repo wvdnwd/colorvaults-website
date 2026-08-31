@@ -64,11 +64,12 @@ export default function PrintDownloadButtons({
       ctx.shadowBlur = 4;
       ctx.fillText('© ColorVaults.com — Free Printable', canvas.width - 20, canvas.height - 20);
 
+      // Convert to PNG blob and download
       canvas.toBlob((watermarkedBlob) => {
         if (!watermarkedBlob) {
           const a = document.createElement('a');
           a.href = previewUrl;
-          a.download = fileUrl.split('/').pop() || 'colorvaults-page.jpg';
+          a.download = `colorvaults-${pageTitle.toLowerCase().replace(/[^a-z0-9]+/g, '-')}.png`;
           document.body.appendChild(a);
           a.click();
           document.body.removeChild(a);
@@ -78,19 +79,19 @@ export default function PrintDownloadButtons({
         const url = URL.createObjectURL(watermarkedBlob);
         const a = document.createElement('a');
         a.href = url;
-        const filename = fileUrl.split('/').pop() || 'colorvaults-page.jpg';
-        a.download = `colorvaults-${filename}`;
+        const cleanSlug = pageTitle.toLowerCase().replace(/[^a-z0-9]+/g, '-');
+        a.download = `colorvaults-${cleanSlug}.png`;
         document.body.appendChild(a);
         a.click();
         document.body.removeChild(a);
         URL.revokeObjectURL(url);
         setDownloading(false);
-      }, 'image/jpeg', 0.95);
+      }, 'image/png');
     } catch (err) {
       console.error('Failed to add watermark, falling back to direct download', err);
       const a = document.createElement('a');
       a.href = previewUrl;
-      a.download = fileUrl.split('/').pop() || 'colorvaults-page.jpg';
+      a.download = `colorvaults-${pageTitle.toLowerCase().replace(/[^a-z0-9]+/g, '-')}.png`;
       document.body.appendChild(a);
       a.click();
       document.body.removeChild(a);
@@ -238,7 +239,7 @@ export default function PrintDownloadButtons({
             : (isEn ? 'Download A4 Printable PDF' : 'Download Printklare PDF (A4)')}
         </button>
 
-        {/* Download JPG/WebP Image Button */}
+        {/* Download PNG Image Button */}
         <button
           onClick={handleDownload}
           disabled={downloading}
@@ -246,10 +247,10 @@ export default function PrintDownloadButtons({
           style={{ width: '100%', justifyContent: 'center', cursor: downloading ? 'not-allowed' : 'pointer' }}
           type="button"
         >
-          <span aria-hidden="true">⬇️</span>{' '}
+          <span aria-hidden="true">🖼️</span>{' '}
           {downloading
-            ? (isEn ? 'Preparing Image...' : 'Afbeelding Verwerken...')
-            : (isEn ? 'Download High-Res Image' : 'Download Hoge Resolutie Afbeelding')}
+            ? (isEn ? 'Preparing PNG...' : 'PNG Verwerken...')
+            : (isEn ? 'Download PNG Image' : 'Download PNG Afbeelding')}
         </button>
       </div>
 

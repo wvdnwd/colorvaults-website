@@ -109,11 +109,11 @@ export default function MotionCard({ page, lang, isEn }: MotionCardProps) {
             marginTop: 'auto',
             paddingTop: '0.75rem',
             color: 'var(--primary)',
-            fontSize: '0.825rem',
+            fontSize: '0.8rem',
             fontWeight: 800
           }}>
-            <span>✨</span>
-            <span>{isEn ? 'Print & Download' : 'Printen & Downloaden'}</span>
+            <span>🎨</span>
+            <span>{isEn ? 'Color Online • PDF • PNG' : 'Online Inkleuren • PDF • PNG'}</span>
           </div>
         </div>
       </Link>
