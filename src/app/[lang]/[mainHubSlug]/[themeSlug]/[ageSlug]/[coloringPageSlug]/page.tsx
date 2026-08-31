@@ -73,10 +73,35 @@ export default async function ColoringPageDetail({ params }: { params: Promise<{
 
   const isEn = lang === 'en';
 
-  // Related pages: same theme & age, excluding self
-  const relatedPages = getPagesByAgeGroup(lang, mainHubSlug, themeSlug, ageSlug)
-    .filter(p => p.slug !== page.slug)
-    .slice(0, 4);
+  // Related pages: get all pages from the same theme (excluding current page)
+  const allThemePages = getColoringPages(lang).filter(
+    p => p.parentTheme === themeSlug && p.slug !== page.slug
+  );
+  
+  // Prioritize same age group first, then other age groups in same theme
+  allThemePages.sort((a, b) => {
+    if (a.ageGroup === ageSlug && b.ageGroup !== ageSlug) return -1;
+    if (b.ageGroup === ageSlug && a.ageGroup !== ageSlug) return 1;
+    return 0;
+  });
+
+  // If theme has fewer than 16 pages, also grab pages from same main hub
+  let relatedPool = allThemePages;
+  if (relatedPool.length < 16) {
+    const hubPages = getColoringPages(lang).filter(
+      p => p.parentHub === mainHubSlug && p.parentTheme !== themeSlug && p.slug !== page.slug
+    );
+    relatedPool = [...relatedPool, ...hubPages];
+  }
+  
+  // Show up to 24 related pages
+  const displayPages = relatedPool.slice(0, 24);
+
+  // Split into chunks of 8 to insert AdSlot in between rows
+  const pageChunks = [];
+  for (let i = 0; i < displayPages.length; i += 8) {
+    pageChunks.push(displayPages.slice(i, i + 8));
+  }
 
   const pinterestUrl = `https://pinterest.com/pin/create/button/?url=${encodeURIComponent(`https://colorvaults.com/${lang}/${mainHubSlug}/${themeSlug}/${ageSlug}/${page.slug}`)}&media=${encodeURIComponent(page.image)}&description=${encodeURIComponent(page.metaTitle || page.title)}`;
 
@@ -343,21 +368,50 @@ export default async function ColoringPageDetail({ params }: { params: Promise<{
         </div>
       </div>
 
-      {/* Related Pages Section */}
-      {relatedPages.length > 0 && (
-        <section style={{ marginTop: '4.5rem' }}>
-          <div className="section-header">
+      {/* Related Pages Section with Ads in between */}
+      {displayPages.length > 0 && (
+        <section style={{ marginTop: '5rem' }}>
+          <div className="section-header" style={{ marginBottom: '2rem' }}>
             <div>
-              <span className="badge">🔗 {isEn ? 'Related' : 'Gerelateerd'}</span>
+              <span className="badge">🔗 {isEn ? 'Related Collection' : 'Gerelateerde Collectie'}</span>
               <h2 className="title-h2" style={{ marginTop: '0.65rem' }}>
                 {isEn ? `More ${theme.title} Coloring Pages` : `Meer ${theme.title} Kleurplaten`}
               </h2>
             </div>
+            <Link
+              href={`/${lang}/${hub.slug}/${theme.slug}`}
+              className="btn-secondary"
+              style={{ fontSize: '0.875rem', padding: '0.6rem 1.25rem' }}
+            >
+              {isEn ? `View All ${theme.title} (${allThemePages.length + 1}) →` : `Bekijk Alle ${theme.title} (${allThemePages.length + 1}) →`}
+            </Link>
           </div>
-          <div className="grid-4">
-            {relatedPages.map(related => (
-              <MotionCard key={related.slug} page={related} lang={lang} isEn={isEn} />
-            ))}
+
+          {pageChunks.map((chunk, chunkIdx) => (
+            <React.Fragment key={chunkIdx}>
+              <div className="grid-4" style={{ marginBottom: '2.5rem' }}>
+                {chunk.map(related => (
+                  <MotionCard key={related.slug} page={related} lang={lang} isEn={isEn} />
+                ))}
+              </div>
+
+              {/* Advertisement between rows of coloring pages */}
+              {chunkIdx < pageChunks.length - 1 && (
+                <div style={{ margin: '3.5rem 0', background: 'var(--surface-2)', padding: '1.5rem', borderRadius: 'var(--radius-lg)', border: '1px solid var(--gray-200)' }}>
+                  <AdSlot type="banner" text={isEn ? "Sponsored Content" : "Gesponsord"} />
+                </div>
+              )}
+            </React.Fragment>
+          ))}
+
+          <div style={{ textAlign: 'center', marginTop: '3.5rem' }}>
+            <Link
+              href={`/${lang}/${hub.slug}/${theme.slug}`}
+              className="download-btn"
+              style={{ display: 'inline-flex', padding: '1rem 2.5rem', fontSize: '1rem', justifyContent: 'center' }}
+            >
+              {isEn ? `Explore All ${theme.title} Coloring Pages (${allThemePages.length + 1})` : `Ontdek Alle ${theme.title} Kleurplaten (${allThemePages.length + 1})`}
+            </Link>
           </div>
         </section>
       )}
