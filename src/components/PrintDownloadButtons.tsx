@@ -1,7 +1,6 @@
 'use client';
 
 import { useState } from 'react';
-import jsPDF from 'jspdf';
 import PrintPreviewModal from './PrintPreviewModal';
 import OnlineColoringTool from './OnlineColoringTool';
 import ReportButton from './ReportButton';
@@ -119,6 +118,7 @@ export default function PrintDownloadButtons({
       });
 
       // A4 dimensions: 210mm x 297mm
+      const { default: jsPDF } = await import('jspdf');
       const pdf = new jsPDF({
         orientation: 'portrait',
         unit: 'mm',
