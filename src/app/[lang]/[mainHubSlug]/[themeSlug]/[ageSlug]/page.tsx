@@ -113,9 +113,9 @@ export default async function AgePage({
           </div>
         ) : (
           <div>
-            {Array.from({ length: Math.ceil(coloringPages.length / 4) }).map((_, chunkIndex) => {
-              const chunk = coloringPages.slice(chunkIndex * 4, chunkIndex * 4 + 4);
-              const showAdBar = chunkIndex < Math.ceil(coloringPages.length / 4) - 1;
+            {Array.from({ length: Math.ceil(coloringPages.length / 6) }).map((_, chunkIndex) => {
+              const chunk = coloringPages.slice(chunkIndex * 6, chunkIndex * 6 + 6);
+              const showAdBar = chunkIndex < Math.ceil(coloringPages.length / 6) - 1;
 
               return (
                 <React.Fragment key={chunkIndex}>

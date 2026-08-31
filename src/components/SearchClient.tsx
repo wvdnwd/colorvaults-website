@@ -177,7 +177,7 @@ export default function SearchClient({
         <>
           <div className="grid-4">
             {displayedPages.map((page, index) => {
-              const shouldShowAd = (index + 1) % 12 === 0;
+              const shouldShowAd = (index + 1) % 6 === 0;
 
               return (
                 <React.Fragment key={page.slug + page.parentTheme}>

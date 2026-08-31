@@ -190,9 +190,9 @@ export default async function HomePage({ params }: { params: Promise<{ lang: str
           </ScrollReveal>
 
           <div>
-            {Array.from({ length: Math.ceil(allThemes.length / 4) }).map((_, chunkIndex) => {
-              const chunk = allThemes.slice(chunkIndex * 4, chunkIndex * 4 + 4);
-              const showAdBar = chunkIndex < Math.ceil(allThemes.length / 4) - 1;
+            {Array.from({ length: Math.ceil(allThemes.length / 6) }).map((_, chunkIndex) => {
+              const chunk = allThemes.slice(chunkIndex * 6, chunkIndex * 6 + 6);
+              const showAdBar = chunkIndex < Math.ceil(allThemes.length / 6) - 1;
 
               return (
                 <React.Fragment key={chunkIndex}>
@@ -272,9 +272,9 @@ export default async function HomePage({ params }: { params: Promise<{ lang: str
           </ScrollReveal>
 
           <div>
-            {Array.from({ length: Math.ceil(featuredPages.length / 4) }).map((_, rowIndex) => {
-              const chunk = featuredPages.slice(rowIndex * 4, rowIndex * 4 + 4);
-              const showAdBar = rowIndex === 0 && featuredPages.length > 4;
+            {Array.from({ length: Math.ceil(featuredPages.length / 6) }).map((_, rowIndex) => {
+              const chunk = featuredPages.slice(rowIndex * 6, rowIndex * 6 + 6);
+              const showAdBar = rowIndex < Math.ceil(featuredPages.length / 6) - 1;
 
               return (
                 <React.Fragment key={rowIndex}>

@@ -12,6 +12,61 @@ if (!fs.existsSync(dataDir)) fs.mkdirSync(dataDir, { recursive: true });
 if (!fs.existsSync(path.join(dataDir, 'en'))) fs.mkdirSync(path.join(dataDir, 'en'), { recursive: true });
 if (!fs.existsSync(path.join(dataDir, 'nl'))) fs.mkdirSync(path.join(dataDir, 'nl'), { recursive: true });
 
+// Difficulty cache from pixel analysis (optional, used if available)
+let difficultyCache = {};
+const difficultyCachePath = path.join(__dirname, 'difficulty_cache.json');
+if (fs.existsSync(difficultyCachePath)) {
+  try {
+    difficultyCache = JSON.parse(fs.readFileSync(difficultyCachePath, 'utf8'));
+    console.log(`Loaded ${Object.keys(difficultyCache).length} difficulty entries from cache.`);
+  } catch (e) {
+    console.warn('Could not load difficulty_cache.json, using theme-based difficulty.');
+  }
+}
+
+/**
+ * Returns difficulty level based on theme/folder name.
+ * Easy themes: toddler-friendly, simple shapes, bold outlines
+ * Hard themes: mandalas, intricate patterns, adult coloring
+ * Medium: everything else
+ */
+function getDifficultyFromTheme(themeSlug) {
+  const s = themeSlug.toLowerCase();
+
+  // EASY — toddler/young kids, very simple shapes
+  if (
+    s.includes('bold') || s.includes('easy') || s.includes('toddler') ||
+    s.includes('bumba') || s.includes('cocomelon') || s.includes('blippi') ||
+    s.includes('peppa') || s.includes('thomas') || s.includes('large-shape') ||
+    s.includes('large-print') || s.includes('smiley') || s.includes('rainbow') ||
+    s.includes('craft-sketch') || s.includes('peuter') || s.includes('kleurplaat-peuter')
+  ) {
+    return 'easy';
+  }
+
+  // HARD — intricate, detailed, adult-level
+  if (
+    s.includes('mandala') || s.includes('pattern') || s.includes('art-nouveau') ||
+    s.includes('architecture') || s.includes('steampunk') || s.includes('cyberpunk') ||
+    s.includes('botanical') || s.includes('underwater-lost') || s.includes('enchanted') ||
+    s.includes('cottagecore') || s.includes('cozy') || s.includes('hygge') ||
+    s.includes('creepy-kawaii') || s.includes('zentangle') || s.includes('celtic') ||
+    s.includes('dark-academia') || s.includes('art-nouveau') || s.includes('ancient-mythology') ||
+    s.includes('landscapes') || s.includes('art-nouveau') || s.includes('flowers-botanical')
+  ) {
+    return 'hard';
+  }
+
+  // MEDIUM — everything else
+  return 'medium';
+}
+
+const difficultyToAgeGroup = {
+  'easy': 'kids',
+  'medium': 'teens',
+  'hard': 'adults'
+};
+
 function slugify(text) {
   return text.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)+/g, '');
 }
@@ -211,9 +266,17 @@ const generateData = () => {
   for (const [themeSlug, data] of Object.entries(groupedThemes)) {
     const themeName = data.themeName;
     const folder = data.originalFolderName;
-    const files = data.files;
+    // Sort files alphabetically for consistent, predictable ordering
+    const files = data.files.sort((a, b) => {
+      const ba = path.basename(a).toLowerCase();
+      const bb = path.basename(b).toLowerCase();
+      return ba.localeCompare(bb);
+    });
 
     console.log(`Processing theme: ${themeName} (${files.length} images)`);
+
+    // Determine the base difficulty for this theme from its name
+    const themeDifficulty = getDifficultyFromTheme(themeSlug);
 
     // Use the first file to construct the banner image URL correctly
     const firstFileUrlParts = files[0].split('/').map(encodeURIComponent).join('/');
@@ -347,9 +410,31 @@ const generateData = () => {
       niceTitleEn = niceTitleEn.replace(/\s*#\d+$/gi, '').trim();
       niceTitleNl = niceTitleNl.replace(/\s*#\d+$/gi, '').trim();
 
-      const ageGroupKey = agesList[index % agesList.length];
+      // Assign ageGroup based on theme difficulty:
+      // Easy themes → always kids | Hard themes → always adults
+      // Medium themes → distribute across all 3 for filter variety
+      let ageGroupKey;
+      if (themeDifficulty === 'easy') {
+        ageGroupKey = 'kids';
+      } else if (themeDifficulty === 'hard') {
+        ageGroupKey = 'adults';
+      } else {
+        // Medium theme: distribute 40% kids / 35% teens / 25% adults
+        // so each theme has a mix but leans toward kids (most coloring is for kids)
+        const pos = index % 20; // cycle of 20
+        if (pos < 8) ageGroupKey = 'kids';
+        else if (pos < 15) ageGroupKey = 'teens';
+        else ageGroupKey = 'adults';
+      }
       const enAge = ageGroupKey;
       const nlAge = ageTranslations[ageGroupKey].nl.toLowerCase();
+
+      // Also try per-file difficulty from pixel cache if available
+      const fileKey = file.replace(/\\/g, '/');
+      const cachedDifficulty = difficultyCache[fileKey];
+      const finalAgeGroupKey = cachedDifficulty ? difficultyToAgeGroup[cachedDifficulty] : ageGroupKey;
+      const finalEnAge = finalAgeGroupKey;
+      const finalNlAge = ageTranslations[finalAgeGroupKey].nl.toLowerCase();
 
       enPages.push({
         id: pageId,
@@ -357,16 +442,17 @@ const generateData = () => {
         slug: pageSlug,
         parentHub: parentHubEn,
         parentTheme: themeSlug,
-        ageGroup: enAge,
+        ageGroup: finalEnAge,
+        difficulty: cachedDifficulty || themeDifficulty,
         image: imageUrl,
         preview: imageUrl,
         downloadableFile: imageUrl,
         metaTitle: `${niceTitleEn} - Free Printable Coloring Page | ColorVaults`,
-        metaDescription: `Download and print this free high-resolution ${niceTitleEn} coloring page from the ${themeName} collection. Perfect for ${ageTranslations[ageGroupKey].en.toLowerCase()} and adults!`,
-        shortDescription: `High-resolution printable ${niceTitleEn} coloring template from our ${themeName} collection. Download or print instantly for free.`,
-        longDescription: `Enjoy this high-quality printable ${niceTitleEn} coloring page template from the ${themeName} category. Designed with crisp black outlines, this sheet is perfect for ${ageTranslations[ageGroupKey].en.toLowerCase()} and adults seeking a fun, creative, and relaxing activity. Download the high-res file or print directly in A4/Letter size for free!`,
-        altText: `${niceTitleEn} coloring page`,
-        tags: [themeSlug, enAge],
+        metaDescription: `Download and print this free ${niceTitleEn} coloring page from the ${themeName} collection. Perfect for ${ageTranslations[finalAgeGroupKey].en.toLowerCase()}. Print instantly in A4/Letter size!`,
+        shortDescription: `Free printable ${niceTitleEn} coloring page from our ${themeName} collection. Download or print instantly for free.`,
+        longDescription: `Enjoy this high-quality ${niceTitleEn} coloring page from the ${themeName} category. Designed with crisp black outlines, this sheet is perfect for ${ageTranslations[finalAgeGroupKey].en.toLowerCase()} seeking a fun, creative activity. Download the high-res file or print directly in A4/Letter size for free!`,
+        altText: `${niceTitleEn} coloring page - free printable`,
+        tags: [themeSlug, finalEnAge],
         relatedPages: [],
         language: 'en'
       });
@@ -377,16 +463,17 @@ const generateData = () => {
         slug: pageSlug,
         parentHub: parentHubNl,
         parentTheme: themeSlug,
-        ageGroup: nlAge,
+        ageGroup: finalNlAge,
+        difficulty: cachedDifficulty || themeDifficulty,
         image: imageUrl,
         preview: imageUrl,
         downloadableFile: imageUrl,
         metaTitle: `${niceTitleNl} - Gratis Printbare Kleurplaat | ColorVaults`,
-        metaDescription: `Download en print deze gratis hoge resolutie ${niceTitleNl} kleurplaat uit de ${themeName} collectie. Ideaal voor ${ageTranslations[ageGroupKey].nl.toLowerCase()} en volwassenen!`,
-        shortDescription: `Hoge kwaliteit printbare ${niceTitleNl} kleurplaat uit onze ${themeName} verzameling. Direct gratis te downloaden of te printen.`,
-        longDescription: `Geniet van dit mooie printbare ${niceTitleNl} kleurplaat sjabloon uit de categorie ${themeName}. Ontworpen met scherpe zwarte contouren, uitermate geschikt voor ${ageTranslations[ageGroupKey].nl.toLowerCase()} en volwassenen die houden van creatief en ontspannend kleuren. Download het bestand gratis in hoge resolutie of print direct op A4 formaat!`,
-        altText: `${niceTitleNl} kleurplaat`,
-        tags: [themeSlug, nlAge],
+        metaDescription: `Download en print deze gratis ${niceTitleNl} kleurplaat uit de ${themeName} collectie. Perfect voor ${ageTranslations[finalAgeGroupKey].nl.toLowerCase()}. Direct printen op A4 formaat!`,
+        shortDescription: `Gratis printbare ${niceTitleNl} kleurplaat uit onze ${themeName} verzameling. Direct gratis te downloaden of te printen.`,
+        longDescription: `Geniet van deze mooie ${niceTitleNl} kleurplaat uit de categorie ${themeName}. Ontworpen met scherpe zwarte contouren, uitermate geschikt voor ${ageTranslations[finalAgeGroupKey].nl.toLowerCase()}. Download gratis in hoge resolutie of print direct op A4 formaat!`,
+        altText: `${niceTitleNl} kleurplaat - gratis printbaar`,
+        tags: [themeSlug, finalNlAge],
         relatedPages: [],
         language: 'nl'
       });

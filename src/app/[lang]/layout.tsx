@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Fredoka, Nunito } from "next/font/google";
 import Script from "next/script";
 import "../globals.css";
@@ -10,6 +10,12 @@ import ThemeProvider from "@/components/ThemeProvider";
 import { FavoritesProvider } from "@/context/FavoritesContext";
 import { safeJsonLd } from "@/lib/api";
 import PageTransition from "@/components/PageTransition";
+
+export const viewport: Viewport = {
+  width: "device-width",
+  initialScale: 1,
+  maximumScale: 5,
+};
 
 const fredoka = Fredoka({ 
   subsets: ['latin'], 
@@ -70,6 +76,7 @@ export default async function RootLayout({
   return (
     <html lang={lang} className={`${fredoka.variable} ${nunito.variable}`} data-theme="dark">
       <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0" />
         <meta name="google-adsense-account" content="ca-pub-1184801748776428" />
         <Script
           async

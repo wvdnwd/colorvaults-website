@@ -337,7 +337,7 @@
   color: white;
 }
 
-@media (max-width: 960px) {
+@media (max-width: 1024px) {
   .navLinks { display: none; }
   .hamburger { display: flex; }
 }
