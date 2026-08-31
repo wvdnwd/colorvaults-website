@@ -315,6 +315,20 @@ export default async function ColoringPageDetail({ params }: { params: Promise<{
             </div>
           </div>
 
+          {/* Clickable SEO Tags */}
+          <div style={{ marginTop: '1.25rem' }}>
+            <p style={{ fontSize: '0.72rem', fontWeight: 800, color: 'var(--gray-400)', textTransform: 'uppercase', letterSpacing: '0.06em', marginBottom: '0.5rem' }}>
+              🏷️ {isEn ? 'Popular Tags' : 'Populaire Tags'}
+            </p>
+            <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.35rem' }}>
+              <Link href={`/${lang}/${hub.slug}`} className="tag-chip">#{hub.title.replace(/\s+/g, '')}</Link>
+              <Link href={`/${lang}/${hub.slug}/${theme.slug}`} className="tag-chip">#{theme.title.replace(/\s+/g, '')}</Link>
+              <Link href={`/${lang}/${hub.slug}/${theme.slug}/${ageSlug}`} className="tag-chip">#{ageSlug}</Link>
+              <Link href={`/${lang}/search?q=${encodeURIComponent(theme.title)}`} className="tag-chip">#{isEn ? 'FreeColoringSheet' : 'GratisKleurplaat'}</Link>
+              <Link href={`/${lang}/search?q=${encodeURIComponent('PDF')}`} className="tag-chip">#PDF</Link>
+            </div>
+          </div>
+
           {/* Google AdSense Rectangle Sidebar Ad */}
           <div style={{ marginTop: '1.5rem' }}>
             <AdSlot type="rectangle" text={isEn ? "Sponsored Content" : "Gesponsord"} />

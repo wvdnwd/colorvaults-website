@@ -10,6 +10,7 @@ import ThemeProvider from "@/components/ThemeProvider";
 import { FavoritesProvider } from "@/context/FavoritesContext";
 import { safeJsonLd } from "@/lib/api";
 import PageTransition from "@/components/PageTransition";
+import StickyBottomAd from "@/components/StickyBottomAd";
 
 export const viewport: Viewport = {
   width: "device-width",
@@ -151,6 +152,7 @@ export default async function RootLayout({
               <Footer lang={lang} />
               <CookieBanner lang={lang} />
               <BackToTop />
+              <StickyBottomAd isEn={lang === 'en'} />
             </div>
           </FavoritesProvider>
         </ThemeProvider>
