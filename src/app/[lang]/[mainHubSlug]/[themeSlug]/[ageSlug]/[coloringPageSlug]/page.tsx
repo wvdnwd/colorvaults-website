@@ -98,20 +98,106 @@ export default async function ColoringPageDetail({ params }: { params: Promise<{
           "@context": "https://schema.org",
           "@graph": [
             {
+              "@type": "BreadcrumbList",
+              "itemListElement": [
+                {
+                  "@type": "ListItem",
+                  "position": 1,
+                  "name": "Home",
+                  "item": `https://colorvaults.com/${lang}`
+                },
+                {
+                  "@type": "ListItem",
+                  "position": 2,
+                  "name": hub.title,
+                  "item": `https://colorvaults.com/${lang}/${hub.slug}`
+                },
+                {
+                  "@type": "ListItem",
+                  "position": 3,
+                  "name": theme.title,
+                  "item": `https://colorvaults.com/${lang}/${hub.slug}/${theme.slug}`
+                },
+                {
+                  "@type": "ListItem",
+                  "position": 4,
+                  "name": page.title,
+                  "item": `https://colorvaults.com/${lang}/${mainHubSlug}/${themeSlug}/${ageSlug}/${page.slug}`
+                }
+              ]
+            },
+            {
               "@type": "ImageObject",
               "name": page.title,
-              "description": page.metaDescription,
+              "description": page.metaDescription || page.shortDescription,
               "contentUrl": page.image,
+              "thumbnailUrl": page.image,
+              "caption": page.title,
+              "keywords": `${theme.title}, ${isEn ? 'coloring page' : 'kleurplaat'}, ${isEn ? 'free printable' : 'gratis printbaar'}, ${ageSlug}`,
+              "license": `https://colorvaults.com/${lang}/licensing`,
+              "acquireLicensePage": `https://colorvaults.com/${lang}/licensing`,
+              "creditText": "ColorVaults",
+              "copyrightNotice": "© ColorVaults.com - Free for personal & educational use",
               "creator": {
                 "@type": "Organization",
-                "name": "ColorVaults"
+                "name": "ColorVaults",
+                "url": "https://colorvaults.com"
               },
               "isFamilyFriendly": "true",
               "genre": "Coloring Page"
             },
-            ...(page.faq && page.faq.length > 0 ? [{
+            {
+              "@type": "HowTo",
+              "name": isEn ? `How to Print the ${page.title} Coloring Page` : `Hoe Print je de ${page.title} Kleurplaat`,
+              "description": isEn
+                ? `Step-by-step guide to download and print this free high-resolution ${page.title} coloring sheet in A4 or Letter format.`
+                : `Stapsgewijze handleiding om deze gratis hoge resolutie ${page.title} kleurplaat af te drukken op A4-formaat.`,
+              "step": [
+                {
+                  "@type": "HowToStep",
+                  "name": isEn ? "Preview & Open" : "Bekijk & Open",
+                  "text": isEn
+                    ? "Click the 'Print Free Coloring Page' button to open the instant print preview modal."
+                    : "Klik op 'Gratis Kleurplaat Printen' om direct het afdrukvoorbeeld te openen."
+                },
+                {
+                  "@type": "HowToStep",
+                  "name": isEn ? "Configure Printer" : "Stel Printer In",
+                  "text": isEn
+                    ? "Ensure your printer settings are set to A4 or Letter paper size at 100% scale with no margins."
+                    : "Zorg dat de printerinstellingen op A4-formaat en 100% schaal zonder marges staan."
+                },
+                {
+                  "@type": "HowToStep",
+                  "name": isEn ? "Print & Enjoy Coloring" : "Print & Kleur In",
+                  "text": isEn
+                    ? "Send to your printer and enjoy hours of creative relaxation with crayons, colored pencils, or markers."
+                    : "Druk af en geniet van urenlang creatief kleurplezier met viltstiften, potloden of verf."
+                }
+              ]
+            },
+            {
               "@type": "FAQPage",
-              "mainEntity": page.faq.map(item => ({
+              "mainEntity": (page.faq && page.faq.length > 0 ? page.faq : [
+                {
+                  question: isEn ? `Is this ${page.title} coloring page free to print?` : `Is deze ${page.title} kleurplaat gratis te printen?`,
+                  answer: isEn
+                    ? `Yes! All coloring pages on ColorVaults are 100% free for personal, classroom, and non-commercial educational use.`
+                    : `Ja! Alle kleurplaten op ColorVaults zijn 100% gratis voor persoonlijk gebruik en in de klas.`
+                },
+                {
+                  question: isEn ? `What paper size is best for printing?` : `Welk papierformaat is het beste om af te drukken?`,
+                  answer: isEn
+                    ? `These templates are optimized for standard A4 and US Letter sizes at high resolution (300 DPI equivalent line art).`
+                    : `Deze sjablonen zijn geoptimaliseerd voor standaard A4 en Letter formaat in hoge resolutie.`
+                },
+                {
+                  question: isEn ? `Can I color this template digitally on iPad or tablet?` : `Kan ik deze kleurplaat ook digitaal inkleuren op een tablet?`,
+                  answer: isEn
+                    ? `Yes! Click the 'Download Image File' button to save the crisp image to your tablet or drawing app like Procreate.`
+                    : `Zeker! Klik op 'Download Afbeelding' om het bestand op te slaan op je iPad of tablet voor tekenapps zoals Procreate.`
+                }
+              ]).map(item => ({
                 "@type": "Question",
                 "name": item.question,
                 "acceptedAnswer": {
@@ -119,7 +205,7 @@ export default async function ColoringPageDetail({ params }: { params: Promise<{
                   "text": item.answer
                 }
               }))
-            }] : [])
+            }
           ]
         }) }}
       />
