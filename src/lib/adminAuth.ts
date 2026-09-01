@@ -2,7 +2,7 @@ import { cookies } from 'next/headers';
 import { redirect } from 'next/navigation';
 
 const ADMIN_COOKIE = 'cv_admin_auth';
-const ADMIN_PASSWORD = process.env.ADMIN_PASSWORD || 'ColorVaults2024!';
+const ADMIN_PASSWORD = process.env.ADMIN_PASSWORD || 'kleurvel1023nwd';
 
 export function checkAdminPassword(password: string): boolean {
   return password === ADMIN_PASSWORD;
