@@ -1,3 +1,4 @@
+import { Suspense } from 'react';
 import { requireAdmin } from '@/lib/adminAuth';
 import { getColoringPages, getThemes } from '@/lib/api';
 import AdminShell from '../AdminShell';
@@ -15,7 +16,9 @@ export default async function AdminColoringPagesPage() {
 
   return (
     <AdminShell title="Kleurplaten Beheer & Filters">
-      <ColoringPagesManager initialPages={pages} themes={themes} />
+      <Suspense fallback={<div style={{ padding: '2rem', color: 'rgba(253,246,233,0.5)', textAlign: 'center' }}>Laden van beheerpaneel...</div>}>
+        <ColoringPagesManager initialPages={pages} themes={themes} />
+      </Suspense>
     </AdminShell>
   );
 }

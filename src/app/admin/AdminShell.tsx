@@ -53,6 +53,15 @@ export default function AdminShell({ children, title, reportCount = 0 }: AdminSh
         </nav>
 
         <div className={styles.sidebarFooter}>
+          <a
+            href="https://colorvaults.com"
+            target="_blank"
+            rel="noopener noreferrer"
+            className={styles.liveSiteBtn}
+            style={{ width: '100%', boxSizing: 'border-box', justifyContent: 'center', marginBottom: '0.6rem' }}
+          >
+            🌐 Live Website ↗
+          </a>
           <button className={styles.logoutBtn} onClick={handleLogout}>
             <span>🚪</span> Log Out
           </button>
@@ -62,10 +71,22 @@ export default function AdminShell({ children, title, reportCount = 0 }: AdminSh
       {/* Main */}
       <div className={styles.main}>
         <div className={styles.topBar}>
-          <h1>{title}</h1>
-          <span className={styles.topBarMeta}>
-            {new Date().toLocaleDateString('nl-NL', { day: 'numeric', month: 'long', year: 'numeric' })}
-          </span>
+          <div>
+            <h1>{title}</h1>
+            <span className={styles.topBarMeta}>
+              {new Date().toLocaleDateString('nl-NL', { day: 'numeric', month: 'long', year: 'numeric' })}
+            </span>
+          </div>
+          <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem' }}>
+            <a
+              href="https://colorvaults.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              className={styles.liveSiteBtn}
+            >
+              🌐 Open Website ↗
+            </a>
+          </div>
         </div>
         <div className={styles.content}>{children}</div>
       </div>

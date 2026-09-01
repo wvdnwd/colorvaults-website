@@ -1,6 +1,7 @@
 'use client';
 
-import { useState, useMemo } from 'react';
+import { useState, useMemo, useEffect } from 'react';
+import { useSearchParams } from 'next/navigation';
 import Link from 'next/link';
 import SafeImage from '@/components/SafeImage';
 import styles from '@/app/admin/admin.module.css';
@@ -34,12 +35,33 @@ export default function ColoringPagesManager({
   initialPages,
   themes,
 }: ColoringPagesManagerProps) {
+  const searchParams = useSearchParams();
+  const themeParam = searchParams.get('theme');
+
   const [searchQuery, setSearchQuery] = useState('');
-  const [selectedTheme, setSelectedTheme] = useState('all');
+  const [selectedTheme, setSelectedTheme] = useState(themeParam || 'all');
   const [selectedAge, setSelectedAge] = useState('all');
   const [sortBy, setSortBy] = useState<'recent' | 'views-desc' | 'views-asc' | 'title-asc' | 'duplicates'>('recent');
   const [showDuplicatesOnly, setShowDuplicatesOnly] = useState(false);
   const [viewMode, setViewMode] = useState<'grid' | 'table'>('grid');
+  const [currentPage, setCurrentPage] = useState(1);
+  const [pageSize, setPageSize] = useState(48);
+
+  // Lightbox Modal State
+  const [activeModalPage, setActiveModalPage] = useState<AdminColoringPage | null>(null);
+
+  // Update theme when URL parameter changes
+  useEffect(() => {
+    if (themeParam) {
+      setSelectedTheme(themeParam);
+      setCurrentPage(1);
+    }
+  }, [themeParam]);
+
+  // Reset page to 1 when filters change
+  useEffect(() => {
+    setCurrentPage(1);
+  }, [searchQuery, selectedTheme, selectedAge, showDuplicatesOnly, sortBy, pageSize]);
 
   // Compute duplicate title mapping
   const titleCounts = useMemo(() => {
@@ -118,29 +140,67 @@ export default function ColoringPagesManager({
     return result;
   }, [pagesWithViews, searchQuery, selectedTheme, selectedAge, showDuplicatesOnly, sortBy]);
 
+  // Pagination calculation
+  const totalPages = Math.max(1, Math.ceil(processedPages.length / pageSize));
+  const safeCurrentPage = Math.min(currentPage, totalPages);
+  const paginatedPages = useMemo(() => {
+    const start = (safeCurrentPage - 1) * pageSize;
+    return processedPages.slice(start, start + pageSize);
+  }, [processedPages, safeCurrentPage, pageSize]);
+
   // Stat metrics
   const duplicateTotal = useMemo(() => pagesWithViews.filter(p => p.isDuplicate).length, [pagesWithViews]);
   const totalViewsSum = useMemo(() => pagesWithViews.reduce((acc, p) => acc + (p.views || 0), 0), [pagesWithViews]);
+
+  // Handle escape key to close modal
+  useEffect(() => {
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (e.key === 'Escape') setActiveModalPage(null);
+    };
+    window.addEventListener('keydown', handleKeyDown);
+    return () => window.removeEventListener('keydown', handleKeyDown);
+  }, []);
+
+  const hasActiveFilters = searchQuery !== '' || selectedTheme !== 'all' || selectedAge !== 'all' || showDuplicatesOnly || sortBy !== 'recent';
+
+  const resetAllFilters = () => {
+    setSearchQuery('');
+    setSelectedTheme('all');
+    setSelectedAge('all');
+    setShowDuplicatesOnly(false);
+    setSortBy('recent');
+    setCurrentPage(1);
+  };
 
   return (
     <div>
       {/* Metrics Bar */}
       <div className={styles.statsGrid}>
         <div className={styles.statCard}>
-          <div className={styles.statValue}>{initialPages.length}</div>
+          <div className={styles.statValue}>{initialPages.length.toLocaleString()}</div>
           <div className={styles.statLabel}>Totaal Kleurplaten</div>
         </div>
 
         <div className={styles.statCard}>
-          <div className={styles.statValue}>{processedPages.length}</div>
+          <div className={styles.statValue} style={{ color: '#34d399' }}>
+            {processedPages.length.toLocaleString()}
+          </div>
           <div className={styles.statLabel}>Gefilterde Resultaten</div>
         </div>
 
-        <div className={styles.statCard} style={{ borderColor: duplicateTotal > 0 ? 'rgba(245, 158, 11, 0.4)' : undefined }}>
+        <div
+          className={styles.statCard}
+          style={{
+            borderColor: duplicateTotal > 0 ? 'rgba(245, 158, 11, 0.4)' : undefined,
+            cursor: 'pointer',
+          }}
+          onClick={() => setShowDuplicatesOnly(!showDuplicatesOnly)}
+          title="Klik om te filteren op dubbele namen"
+        >
           <div className={styles.statValue} style={{ color: duplicateTotal > 0 ? '#fbbf24' : '#FF6B4A' }}>
             {duplicateTotal}
           </div>
-          <div className={styles.statLabel}>Dubbele Namen (Foto&apos;s)</div>
+          <div className={styles.statLabel}>Dubbele Namen (Klik om te filteren)</div>
         </div>
 
         <div className={styles.statCard}>
@@ -170,7 +230,7 @@ export default function ColoringPagesManager({
             onChange={e => setSelectedTheme(e.target.value)}
             className={styles.filterSelect}
           >
-            <option value="all">📂 Alle Categorieën</option>
+            <option value="all">📂 Alle Categorieën ({themes.length})</option>
             {themes.map(t => (
               <option key={t.slug} value={t.slug}>
                 {t.title} ({t.parentHub})
@@ -212,30 +272,56 @@ export default function ColoringPagesManager({
           >
             ⚠️ {showDuplicatesOnly ? 'Alle Tonen' : 'Alleen Dubbele Namen'}
           </button>
+
+          {/* Reset Filters Button */}
+          {hasActiveFilters && (
+            <button
+              type="button"
+              onClick={resetAllFilters}
+              className={styles.btnDismiss}
+              style={{ color: '#f87171', borderColor: 'rgba(239,68,68,0.3)' }}
+            >
+              ✕ Reset Filters
+            </button>
+          )}
         </div>
 
-        {/* View Mode Switcher (Grid vs List) */}
-        <div className={styles.modeBtnGroup}>
-          <button
-            type="button"
-            className={`${styles.modeBtn} ${viewMode === 'grid' ? styles.activeModeBtn : ''}`}
-            onClick={() => setViewMode('grid')}
-            title="Bekijk de visuele kleurplaten met afbeelding-previews"
+        {/* View Mode Switcher & Page Size */}
+        <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem' }}>
+          <select
+            value={pageSize}
+            onChange={e => setPageSize(Number(e.target.value))}
+            className={styles.filterSelect}
+            style={{ padding: '0.4rem 0.6rem', fontSize: '0.78rem' }}
           >
-            🖼️ Kleurplaten
-          </button>
-          <button
-            type="button"
-            className={`${styles.modeBtn} ${viewMode === 'table' ? styles.activeModeBtn : ''}`}
-            onClick={() => setViewMode('table')}
-            title="Bekijk een compacte lijst met alleen namen"
-          >
-            📋 Alleen Namen
-          </button>
+            <option value="24">24 / pagina</option>
+            <option value="48">48 / pagina</option>
+            <option value="96">96 / pagina</option>
+            <option value="192">192 / pagina</option>
+          </select>
+
+          <div className={styles.modeBtnGroup}>
+            <button
+              type="button"
+              className={`${styles.modeBtn} ${viewMode === 'grid' ? styles.activeModeBtn : ''}`}
+              onClick={() => setViewMode('grid')}
+              title="Bekijk de visuele kleurplaten met afbeelding-previews"
+            >
+              🖼️ Grid
+            </button>
+            <button
+              type="button"
+              className={`${styles.modeBtn} ${viewMode === 'table' ? styles.activeModeBtn : ''}`}
+              onClick={() => setViewMode('table')}
+              title="Bekijk een compacte lijst met alleen namen"
+            >
+              📋 Lijst
+            </button>
+          </div>
         </div>
       </div>
 
-      {/* Content Rendering: Visual Grid Mode vs Names Only List Mode */}
+      {/* Content Rendering: Visual Grid Mode vs Table Mode */}
       {processedPages.length === 0 ? (
         <div className={styles.emptyState}>
           <div className={styles.emptyIcon}>🔍</div>
@@ -245,13 +331,25 @@ export default function ColoringPagesManager({
           <p style={{ color: 'rgba(253, 246, 233, 0.5)' }}>
             Probeer je zoekopdracht of geselecteerde categorie aan te passen.
           </p>
+          <button
+            onClick={resetAllFilters}
+            className={styles.btnDismiss}
+            style={{ marginTop: '1rem', background: '#FF6B4A', color: 'white' }}
+          >
+            Toon alle kleurplaten
+          </button>
         </div>
       ) : viewMode === 'grid' ? (
-        /* VISUAL GRID MODE (Kleurplaten Weergave) */
+        /* VISUAL GRID MODE */
         <div className={styles.gridContainer}>
-          {processedPages.map(page => (
+          {paginatedPages.map(page => (
             <div key={`${page.parentTheme}-${page.slug}`} className={styles.adminCard}>
-              <div className={styles.cardImgWrap}>
+              <div
+                className={styles.cardImgWrap}
+                onClick={() => setActiveModalPage(page)}
+                style={{ cursor: 'pointer' }}
+                title="Klik voor grote preview & details"
+              >
                 <SafeImage
                   src={page.image}
                   alt={page.title}
@@ -263,10 +361,25 @@ export default function ColoringPagesManager({
               </div>
 
               <div className={styles.cardContent}>
-                <h3 className={styles.cardTitle}>{page.title}</h3>
+                <h3
+                  className={styles.cardTitle}
+                  onClick={() => setActiveModalPage(page)}
+                  style={{ cursor: 'pointer' }}
+                  title="Klik voor details"
+                >
+                  {page.title}
+                </h3>
 
                 <div className={styles.cardSub}>
-                  📁 <strong>{page.parentTheme}</strong> • {page.ageGroup.toUpperCase()}
+                  📁{' '}
+                  <span
+                    style={{ color: '#FF6B4A', cursor: 'pointer', fontWeight: 700 }}
+                    onClick={() => setSelectedTheme(page.parentTheme)}
+                    title={`Filter op ${page.parentTheme}`}
+                  >
+                    {page.parentTheme}
+                  </span>{' '}
+                  • {page.ageGroup.toUpperCase()}
                 </div>
 
                 <div className={styles.cardFooter}>
@@ -280,58 +393,88 @@ export default function ColoringPagesManager({
                     </span>
                   )}
 
-                  <Link
-                    href={`/en/${page.parentHub}/${page.parentTheme}/${page.ageGroup}/${page.slug}`}
-                    target="_blank"
-                    className={styles.btnDismiss}
-                  >
-                    Bekijk ↗
-                  </Link>
+                  <div style={{ display: 'flex', gap: '0.35rem' }}>
+                    <button
+                      type="button"
+                      onClick={() => setActiveModalPage(page)}
+                      className={styles.btnDismiss}
+                      title="Grote preview openen"
+                    >
+                      🔍
+                    </button>
+                    <Link
+                      href={`/en/${page.parentHub}/${page.parentTheme}/${page.ageGroup}/${page.slug}`}
+                      target="_blank"
+                      className={styles.btnDismiss}
+                      title="Bekijk live op website"
+                    >
+                      Live ↗
+                    </Link>
+                  </div>
                 </div>
               </div>
             </div>
           ))}
         </div>
       ) : (
-        /* COMPACT LIST MODE (Alleen Namen Weergave) */
+        /* COMPACT LIST MODE (TABLE) */
         <div className={styles.tableWrap}>
-          <div className={styles.tableTitle}>
-            Lijstweergave — {processedPages.length} items (Alleen Namen)
+          <div className={styles.tableTitle} style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+            <span>Lijstweergave — Pagina {safeCurrentPage} van {totalPages} ({processedPages.length} totaal)</span>
+            <span style={{ fontSize: '0.75rem', textTransform: 'none', color: 'rgba(253,246,233,0.45)' }}>
+              Klik op een thumbnail voor grote preview
+            </span>
           </div>
           <table className={styles.table}>
             <thead>
               <tr>
                 <th>#</th>
-                <th>Afbeelding / Preview</th>
+                <th>Preview</th>
                 <th>Titel (Naam)</th>
                 <th>Slug</th>
-                <th>Categorie / Hub</th>
+                <th>Categorie</th>
                 <th>Niveau</th>
-                <th>Bekeken (Views)</th>
-                <th>Status / Dubbel</th>
+                <th>Views</th>
+                <th>Status</th>
                 <th>Acties</th>
               </tr>
             </thead>
             <tbody>
-              {processedPages.map((page, i) => (
+              {paginatedPages.map((page, i) => (
                 <tr key={`${page.parentTheme}-${page.slug}`}>
-                  <td style={{ color: 'rgba(253,246,233,0.35)', fontWeight: 600 }}>{i + 1}</td>
-                  <td>
-                    <SafeImage
-                      src={page.image}
-                      alt={page.title}
-                      className={styles.thumb}
-                    />
+                  <td style={{ color: 'rgba(253,246,233,0.35)', fontWeight: 600 }}>
+                    {(safeCurrentPage - 1) * pageSize + i + 1}
                   </td>
-                  <td style={{ fontWeight: 800, color: '#FDF6E9', fontSize: '0.9rem' }}>
+                  <td>
+                    <div
+                      onClick={() => setActiveModalPage(page)}
+                      style={{ cursor: 'pointer', display: 'inline-block' }}
+                      title="Klik voor grote preview"
+                    >
+                      <SafeImage
+                        src={page.image}
+                        alt={page.title}
+                        className={styles.thumb}
+                      />
+                    </div>
+                  </td>
+                  <td
+                    style={{ fontWeight: 800, color: '#FDF6E9', fontSize: '0.9rem', cursor: 'pointer' }}
+                    onClick={() => setActiveModalPage(page)}
+                  >
                     {page.title}
                   </td>
                   <td style={{ fontFamily: 'monospace', color: 'rgba(253,246,233,0.55)', fontSize: '0.78rem' }}>
                     {page.slug}
                   </td>
                   <td>
-                    <span className={styles.badge} style={{ background: 'rgba(255, 107, 74, 0.12)', color: '#FF6B4A' }}>
-                      {page.parentTheme}
+                    <span
+                      className={styles.badge}
+                      style={{ background: 'rgba(255, 107, 74, 0.12)', color: '#FF6B4A', cursor: 'pointer' }}
+                      onClick={() => setSelectedTheme(page.parentTheme)}
+                      title={`Filter alleen op ${page.parentTheme}`}
+                    >
+                      📁 {page.parentTheme}
                     </span>
                   </td>
                   <td style={{ textTransform: 'uppercase', fontWeight: 700, fontSize: '0.75rem', color: 'rgba(253,246,233,0.6)' }}>
@@ -345,25 +488,192 @@ export default function ColoringPagesManager({
                   <td>
                     {page.isDuplicate ? (
                       <span className={styles.duplicateBadge}>
-                        ⚠️ Dubbele Naam
+                        ⚠️ Dubbel
                       </span>
                     ) : (
-                      <span className={styles.badgeDone}>✓ Uniek</span>
+                      <span className={styles.badge} style={{ background: 'rgba(16,185,129,0.1)', color: '#34d399' }}>
+                        ✓ OK
+                      </span>
                     )}
                   </td>
                   <td>
-                    <Link
-                      href={`/en/${page.parentHub}/${page.parentTheme}/${page.ageGroup}/${page.slug}`}
-                      target="_blank"
-                      className={styles.btnDismiss}
-                    >
-                      Bekijk ↗
-                    </Link>
+                    <div className={styles.actionBtns}>
+                      <button
+                        type="button"
+                        onClick={() => setActiveModalPage(page)}
+                        className={styles.btnDismiss}
+                      >
+                        🔍 Preview
+                      </button>
+                      <Link
+                        href={`/en/${page.parentHub}/${page.parentTheme}/${page.ageGroup}/${page.slug}`}
+                        target="_blank"
+                        className={styles.btnDismiss}
+                      >
+                        Live ↗
+                      </Link>
+                    </div>
                   </td>
                 </tr>
               ))}
             </tbody>
           </table>
+        </div>
+      )}
+
+      {/* Pagination Controls */}
+      {totalPages > 1 && (
+        <div className={styles.paginationWrap}>
+          <div className={styles.paginationInfo}>
+            Toont <strong>{(safeCurrentPage - 1) * pageSize + 1}</strong> -{' '}
+            <strong>{Math.min(safeCurrentPage * pageSize, processedPages.length)}</strong> van{' '}
+            <strong>{processedPages.length.toLocaleString()}</strong> kleurplaten
+          </div>
+
+          <div className={styles.paginationControls}>
+            <button
+              type="button"
+              className={styles.paginationBtn}
+              onClick={() => setCurrentPage(1)}
+              disabled={safeCurrentPage === 1}
+              title="Eerste pagina"
+            >
+              ⏮️
+            </button>
+            <button
+              type="button"
+              className={styles.paginationBtn}
+              onClick={() => setCurrentPage(p => Math.max(1, p - 1))}
+              disabled={safeCurrentPage === 1}
+              title="Vorige pagina"
+            >
+              ◀ Vorige
+            </button>
+
+            {/* Jump to page numbers */}
+            {Array.from({ length: Math.min(5, totalPages) }, (_, idx) => {
+              let pageNum = safeCurrentPage - 2 + idx;
+              if (safeCurrentPage <= 3) pageNum = idx + 1;
+              if (safeCurrentPage >= totalPages - 2) pageNum = totalPages - 4 + idx;
+              if (pageNum < 1 || pageNum > totalPages) return null;
+
+              return (
+                <button
+                  key={pageNum}
+                  type="button"
+                  className={`${styles.paginationBtn} ${safeCurrentPage === pageNum ? styles.paginationActive : ''}`}
+                  onClick={() => setCurrentPage(pageNum)}
+                >
+                  {pageNum}
+                </button>
+              );
+            })}
+
+            <button
+              type="button"
+              className={styles.paginationBtn}
+              onClick={() => setCurrentPage(p => Math.min(totalPages, p + 1))}
+              disabled={safeCurrentPage === totalPages}
+              title="Volgende pagina"
+            >
+              Volgende ▶
+            </button>
+            <button
+              type="button"
+              className={styles.paginationBtn}
+              onClick={() => setCurrentPage(totalPages)}
+              disabled={safeCurrentPage === totalPages}
+              title="Laatste pagina"
+            >
+              ⏭️
+            </button>
+          </div>
+        </div>
+      )}
+
+      {/* Image Lightbox / Modal */}
+      {activeModalPage && (
+        <div
+          className={styles.modalOverlay}
+          onClick={(e) => { if (e.target === e.currentTarget) setActiveModalPage(null); }}
+        >
+          <div className={styles.modalCard}>
+            <div className={styles.modalHeader}>
+              <h2 className={styles.modalTitle}>{activeModalPage.title}</h2>
+              <button
+                className={styles.modalClose}
+                onClick={() => setActiveModalPage(null)}
+                aria-label="Sluiten"
+              >
+                ✕
+              </button>
+            </div>
+
+            <div className={styles.modalBody}>
+              <div className={styles.modalImgWrap}>
+                <SafeImage
+                  src={activeModalPage.image}
+                  alt={activeModalPage.title}
+                  className={styles.modalImg}
+                />
+              </div>
+
+              <div className={styles.modalMetaGrid}>
+                <div className={styles.modalMetaItem}>
+                  <div className={styles.modalMetaLabel}>Thema / Categorie</div>
+                  <div className={styles.modalMetaValue}>📁 {activeModalPage.parentTheme}</div>
+                </div>
+
+                <div className={styles.modalMetaItem}>
+                  <div className={styles.modalMetaLabel}>Doelgroep / Niveau</div>
+                  <div className={styles.modalMetaValue}>🎯 {activeModalPage.ageGroup.toUpperCase()}</div>
+                </div>
+
+                <div className={styles.modalMetaItem}>
+                  <div className={styles.modalMetaLabel}>ID / Slug</div>
+                  <div className={styles.modalMetaValue} style={{ fontFamily: 'monospace', fontSize: '0.8rem' }}>
+                    {activeModalPage.slug}
+                  </div>
+                </div>
+
+                <div className={styles.modalMetaItem}>
+                  <div className={styles.modalMetaLabel}>Bekeken (Views)</div>
+                  <div className={styles.modalMetaValue} style={{ color: '#818cf8' }}>
+                    👁️ {activeModalPage.views?.toLocaleString()}
+                  </div>
+                </div>
+              </div>
+
+              {activeModalPage.shortDescription && (
+                <div style={{ width: '100%', background: '#071417', padding: '0.75rem 1rem', borderRadius: '0.5rem', border: '1px solid rgba(253,246,233,0.06)' }}>
+                  <div className={styles.modalMetaLabel}>SEO Beschrijving</div>
+                  <p style={{ margin: '0.35rem 0 0', fontSize: '0.82rem', color: 'rgba(253,246,233,0.75)', lineHeight: 1.5 }}>
+                    {activeModalPage.shortDescription}
+                  </p>
+                </div>
+              )}
+
+              <div className={styles.modalActions}>
+                <Link
+                  href={`/en/${activeModalPage.parentHub}/${activeModalPage.parentTheme}/${activeModalPage.ageGroup}/${activeModalPage.slug}`}
+                  target="_blank"
+                  className={styles.modalPrimaryBtn}
+                >
+                  🌐 Bekijk op Website ↗
+                </Link>
+
+                <a
+                  href={activeModalPage.image}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  download
+                  className={styles.modalSecondaryBtn}
+                >
+                  ⬇️ Origineel Bestand
+                </a>
+              </div>
+            </div>
+          </div>
         </div>
       )}
     </div>
