@@ -154,32 +154,21 @@ export default function ThemeCard({
       </div>
 
       <div className="card-body" style={{ display: 'flex', flexDirection: 'column', flex: 1, padding: '1.25rem' }}>
-        <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '0.45rem', gap: '0.5rem' }}>
-          <span
-            style={{
-              fontSize: '0.72rem',
-              fontWeight: 800,
-              color: hubColors.text,
-              background: hubColors.bg,
-              padding: '0.25rem 0.65rem',
-              borderRadius: '9999px',
-              textTransform: 'uppercase',
-              letterSpacing: '0.04em',
-            }}
-          >
-            {isEn ? hubColors.labelEn : hubColors.labelNl}
+        {/* Large, High-Contrast Subject Title */}
+        <h3 className="card-title" style={{ fontSize: '1.25rem', fontWeight: 800, color: '#0F172A', marginBottom: '0.35rem', lineHeight: 1.25 }}>
+          {title}
+        </h3>
+
+        <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.75rem' }}>
+          <span style={{ fontSize: '0.78rem', fontWeight: 800, color: 'var(--color-primary)', background: 'var(--primary-light)', padding: '0.2rem 0.65rem', borderRadius: '9999px' }}>
+            {pageCount ? `${pageCount} ${isEn ? 'Pages' : 'Kleurplaten'}` : (isEn ? 'Full Album' : 'Volledig Album')}
           </span>
           <span style={{ fontSize: '0.75rem', fontWeight: 700, color: 'var(--gray-500)' }}>
             100% Free
           </span>
         </div>
 
-        {/* Large, High-Contrast Subject Title */}
-        <h3 className="card-title" style={{ fontSize: '1.2rem', fontWeight: 800, color: 'var(--foreground)', marginBottom: '0.4rem', lineHeight: 1.3 }}>
-          {title}
-        </h3>
-
-        <p className="card-desc" style={{ fontSize: '0.875rem', color: 'var(--gray-600)', lineHeight: 1.55, marginBottom: '1rem', flex: 1 }}>
+        <p className="card-desc" style={{ fontSize: '0.85rem', color: 'var(--gray-600)', lineHeight: 1.5, marginBottom: '1rem', flex: 1 }}>
           {description}
         </p>
 

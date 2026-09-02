@@ -25,6 +25,12 @@ interface CategoryExplorerTabsProps {
   themes: ThemeItem[];
 }
 
+const TOP_FEATURED_SLUGS = [
+  'frozen', 'pokemon', 'spider-man', 'dinosaur-adventures',
+  'sonic-the-hedgehog', 'paw-patrol', 'unicorns', 'mandalas',
+  'super-mario', 'dogs-and-puppies', 'cats-and-kittens', 'disney-princesses'
+];
+
 export default function CategoryExplorerTabs({
   lang,
   hubs,
@@ -33,9 +39,15 @@ export default function CategoryExplorerTabs({
   const [selectedHub, setSelectedHub] = useState<string>('all');
   const isEn = lang === 'en';
 
-  const filteredThemes = selectedHub === 'all' 
-    ? themes.slice(0, 12) 
-    : themes.filter(t => t.parentHub === selectedHub);
+  let filteredThemes: ThemeItem[] = [];
+  if (selectedHub === 'all') {
+    // Pick diverse top themes across all hubs
+    const featured = themes.filter(t => TOP_FEATURED_SLUGS.some(slug => t.slug.includes(slug)));
+    const remaining = themes.filter(t => !TOP_FEATURED_SLUGS.some(slug => t.slug.includes(slug)));
+    filteredThemes = [...featured, ...remaining].slice(0, 12);
+  } else {
+    filteredThemes = themes.filter(t => t.parentHub === selectedHub);
+  }
 
   const activeHubObj = hubs.find(h => h.slug === selectedHub);
 
@@ -100,16 +112,24 @@ export default function CategoryExplorerTabs({
                 </span>
               </div>
               <div className={styles.cardContent}>
-                <span className={styles.hubTag}>
-                  {theme.parentHub.replace(/-/g, ' ')}
-                </span>
+                {/* Subject Title Only (No Disney Pixar tag) */}
                 <h3 className={styles.cardTitle}>{theme.title}</h3>
+                
+                <div style={{ display: 'flex', alignItems: 'center', gap: '0.45rem', marginBottom: '0.75rem' }}>
+                  <span style={{ fontSize: '0.75rem', fontWeight: 800, color: 'var(--color-primary)', background: 'var(--primary-light)', padding: '0.15rem 0.6rem', borderRadius: '9999px' }}>
+                    {theme.pageCount || 90} {isEn ? 'Pages' : 'Platen'}
+                  </span>
+                  <span style={{ fontSize: '0.75rem', fontWeight: 700, color: 'var(--gray-500)' }}>
+                    100% Free
+                  </span>
+                </div>
+
                 <div className={styles.cardBottomRow}>
                   <span className={styles.cardLinkText}>
                     {isEn ? 'Explore Album →' : 'Bekijk Album →'}
                   </span>
                   <span className={styles.freeBadge}>
-                    100% Free
+                    PDF / PNG
                   </span>
                 </div>
               </div>
