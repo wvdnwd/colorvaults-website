@@ -1,3 +1,4 @@
+import SafeImage from '@/components/SafeImage';
 import { getThemes, getThemeBySlug, getMainHubs, getColoringPages, safeJsonLd } from '@/lib/api';
 import { getCategorySeoData } from '@/lib/categorySeo';
 import CategorySeoBlock from '@/components/CategorySeoBlock';
@@ -107,32 +108,58 @@ export default async function ThemePage({
   return (
     <>
       <div className="page-hero" data-hub={mainHubSlug}>
-        <div className="container">
-          <Breadcrumbs
-            items={[
-              { label: hub.title, href: `/${lang}/${hub.slug}` },
-              { label: theme.title },
-            ]}
-            lang={lang}
-          />
-          <h1 className="title-h1" style={{ marginTop: '1rem' }}>
-            {isEn ? `${theme.title} Coloring Pages` : `${theme.title} Kleurplaten`}
-          </h1>
-          <p
-            style={{
-              color: 'var(--gray-600)',
-              fontSize: '1.1rem',
-              marginTop: '0.6rem',
-              lineHeight: 1.7,
-              maxWidth: '640px',
-            }}
-          >
-            {theme.seoIntro || seoData.shortIntro}
-          </p>
-          <span className="badge" style={{ marginTop: '1.25rem' }}>
-            ✨ {allColoringPages.length}{' '}
-            {isEn ? 'pages available — 100% free' : 'kleurplaten beschikbaar — 100% gratis'}
-          </span>
+        <div className="container" style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', gap: '2.5rem', flexWrap: 'wrap' }}>
+          <div style={{ flex: '1 1 500px', maxWidth: '680px' }}>
+            <Breadcrumbs
+              items={[
+                { label: hub.title, href: `/${lang}/${hub.slug}` },
+                { label: theme.title },
+              ]}
+              lang={lang}
+            />
+            <h1 className="title-h1" style={{ marginTop: '1rem' }}>
+              {isEn ? `${theme.title} Coloring Pages` : `${theme.title} Kleurplaten`}
+            </h1>
+            <p
+              style={{
+                color: 'var(--gray-600)',
+                fontSize: '1.1rem',
+                marginTop: '0.6rem',
+                lineHeight: 1.7,
+              }}
+            >
+              {theme.seoIntro || seoData.shortIntro}
+            </p>
+            <div style={{ display: 'flex', gap: '0.75rem', alignItems: 'center', flexWrap: 'wrap', marginTop: '1.25rem' }}>
+              <span className="badge">
+                ✨ {allColoringPages.length}{' '}
+                {isEn ? 'pages available — 100% free' : 'kleurplaten beschikbaar — 100% gratis'}
+              </span>
+              <span className="badge" style={{ background: 'rgba(255, 46, 147, 0.15)', color: '#FF2E93', borderColor: 'rgba(255, 46, 147, 0.3)' }}>
+                🎨 {isEn ? 'Official Album' : 'Officieel Album'}
+              </span>
+            </div>
+          </div>
+
+          {theme.image && (
+            <div style={{
+              flex: '0 0 220px',
+              maxWidth: '260px',
+              width: '100%',
+              borderRadius: '20px',
+              overflow: 'hidden',
+              boxShadow: '0 20px 45px rgba(0,0,0,0.35), 0 0 0 2px rgba(255,255,255,0.15)',
+              position: 'relative',
+              aspectRatio: '3/4',
+              background: 'var(--surface)',
+            }}>
+              <SafeImage
+                src={theme.image}
+                alt={`${theme.title} Banner`}
+                style={{ width: '100%', height: '100%', objectFit: 'cover' }}
+              />
+            </div>
+          )}
         </div>
       </div>
 

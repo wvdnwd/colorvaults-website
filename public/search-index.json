@@ -4,7 +4,7 @@
     "type": "hub",
     "title": "Disney & Pixar",
     "description": "Discover magical coloring pages from your favorite Disney and Pixar classics including Frozen, Lion King, Toy Story, Cars, Moana, Aladdin, and iconic princesses.",
-    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/banner/default.jpg",
+    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/banner/A_vibrant_Disney_animation_illustration__1788330668673.webp",
     "url": "/en/disney-pixar"
   },
   {
@@ -12,7 +12,7 @@
     "type": "hub",
     "title": "Anime & Manga",
     "description": "High-octane anime and manga coloring pages featuring Dragonball, Naruto, One Piece, Demon Slayer, Attack on Titan, Jujutsu Kaisen, Studio Ghibli, and epic samurais.",
-    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/banner/default.jpg",
+    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/banner/An_ultra-epic_8k_anime_crossover_ensembl_1788293737113.webp",
     "url": "/en/anime-manga"
   },
   {
@@ -20,7 +20,7 @@
     "type": "hub",
     "title": "Gaming & Virtual Worlds",
     "description": "Epic video game coloring pages featuring Fortnite, Minecraft, Roblox, Zelda, Pokémon, Super Mario, Sonic, Kirby, Brawl Stars, and arcade legends.",
-    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/banner/default.jpg",
+    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/banner/An_intricate_8k_steampunk_masterpiece__a_1788296198447.webp",
     "url": "/en/gaming-virtual-worlds"
   },
   {
@@ -28,7 +28,7 @@
     "type": "hub",
     "title": "Superheroes & Comic Universes",
     "description": "Action-packed superhero coloring pages featuring Spider-Man, The Avengers, Batman, Superman, and iconic comic book heroes.",
-    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/banner/default.jpg",
+    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/banner/A_spectacular_8k_superhero_multiverse_cr_1788293802204.webp",
     "url": "/en/superheroes-comic-universes"
   },
   {
@@ -36,7 +36,7 @@
     "type": "hub",
     "title": "Kids & TV Shows",
     "description": "Fun, cheerful coloring pages designed for toddlers and kids featuring Bluey, Paw Patrol, Peppa Pig, Gabby Dollhouse, Blippi, Cocomelon, and SpongeBob.",
-    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/banner/default.jpg",
+    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/banner/A_vibrant__joyful_8k_cartoon_playground__1788293867017.webp",
     "url": "/en/kids-tv-shows"
   },
   {
@@ -44,7 +44,7 @@
     "type": "hub",
     "title": "Animals & Wildlife",
     "description": "Explore the animal kingdom with printable coloring pages of dinosaurs, horses, cute puppies, kittens, safari wildlife, sea creatures, and birds.",
-    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/banner/default.jpg",
+    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/banner/A_sweeping_majestic_8k_wildlife_animal_k_1788293833649.webp",
     "url": "/en/animals-wildlife"
   },
   {
@@ -52,7 +52,7 @@
     "type": "hub",
     "title": "Fantasy & Fairytales",
     "description": "Step into fantasy worlds with magical dragons, unicorns, fairies, mermaids, wizards, fairytale castles, knights, and enchanted forests.",
-    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/banner/default.jpg",
+    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/banner/An_enchanting_8k_mystical_forest_masterp_1788295998521.webp",
     "url": "/en/fantasy-fairytales"
   },
   {
@@ -60,7 +60,7 @@
     "type": "hub",
     "title": "Vehicles & Transportation",
     "description": "Fast-paced coloring pages of monster trucks, Formula 1 racecars, emergency vehicles, construction machines, rockets, and cyberpunk hovercars.",
-    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/banner/default.jpg",
+    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/banner/A_high-octane_8k_transportation_multiver_1788293878070.webp",
     "url": "/en/vehicles-transportation"
   },
   {
@@ -68,7 +68,7 @@
     "type": "hub",
     "title": "Art & Aesthetic",
     "description": "Mindful, detailed coloring pages featuring Art Nouveau, intricate mandalas, bohemian patterns, creepy kawaii, fashion, and musical instruments.",
-    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/banner/default.jpg",
+    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/banner/A_stunning_8k_decorative_art_masterpiece_1788296254144.webp",
     "url": "/en/art-aesthetic"
   },
   {
@@ -76,7 +76,7 @@
     "type": "hub",
     "title": "Holidays & Seasons",
     "description": "Seasonal and festive coloring pages celebrating Sinterklaas, Christmas, Halloween, Easter, Autumn harvest, cozy hygge life, and cute kawaii food.",
-    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/banner/default.jpg",
+    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/banner/A_heartwarming_8k_four-seasons_holiday_e_1788293900750.webp",
     "url": "/en/holidays-seasons"
   },
   {
@@ -84,7 +84,7 @@
     "type": "theme",
     "title": "Frozen",
     "description": "Free printable Frozen coloring pages for kids, teens, and adults. Download high-resolution PDF and image templates ready to print.",
-    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/banner/frozen.webp",
+    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/banner/A_breathtaking_Disney_animation_illustra_1788330641234.webp",
     "url": "/en/disney-pixar/frozen"
   },
   {
@@ -92,7 +92,7 @@
     "type": "theme",
     "title": "The Lion King",
     "description": "Free printable The Lion King coloring pages for kids, teens, and adults. Download high-resolution PDF and image templates ready to print.",
-    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/banner/the-lion-king.webp",
+    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/banner/A_grand_8k_maritime_pirate_masterpiece___1788296220540.webp",
     "url": "/en/disney-pixar/the-lion-king"
   },
   {
@@ -100,7 +100,7 @@
     "type": "theme",
     "title": "Aladdin & Jasmine",
     "description": "Free printable Aladdin & Jasmine coloring pages for kids, teens, and adults. Download high-resolution PDF and image templates ready to print.",
-    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/banner/aladdin-jasmine.webp",
+    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/banner/A_gorgeous_8k_Disney_masterpiece_of_Prin_1788294056464.webp",
     "url": "/en/disney-pixar/aladdin-jasmine"
   },
   {
@@ -108,7 +108,7 @@
     "type": "theme",
     "title": "Tangled & Rapunzel",
     "description": "Free printable Tangled & Rapunzel coloring pages for kids, teens, and adults. Download high-resolution PDF and image templates ready to print.",
-    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/banner/tangled-rapunzel.webp",
+    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/banner/A_magical_Disney_storybook_illustration__1788330596346.webp",
     "url": "/en/disney-pixar/tangled-rapunzel"
   },
   {
@@ -116,7 +116,7 @@
     "type": "theme",
     "title": "The Little Mermaid (Ariel)",
     "description": "Free printable The Little Mermaid (Ariel) coloring pages for kids, teens, and adults. Download high-resolution PDF and image templates ready to print.",
-    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/banner/the-little-mermaid-ariel.webp",
+    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/banner/A_bright_vibrant_illustration_of_constru_1788330526004.webp",
     "url": "/en/disney-pixar/the-little-mermaid-ariel"
   },
   {
@@ -124,7 +124,7 @@
     "type": "theme",
     "title": "Beauty and the Beast (Belle)",
     "description": "Free printable Beauty and the Beast (Belle) coloring pages for kids, teens, and adults. Download high-resolution PDF and image templates ready to print.",
-    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/banner/beauty-and-the-beast-belle.webp",
+    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/banner/A_romantic_Disney_storybook_illustration_1788330587227.webp",
     "url": "/en/disney-pixar/beauty-and-the-beast-belle"
   },
   {
@@ -140,7 +140,7 @@
     "type": "theme",
     "title": "Snow White",
     "description": "Free printable Snow White coloring pages for kids, teens, and adults. Download high-resolution PDF and image templates ready to print.",
-    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/banner/snow-white.webp",
+    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/banner/A_charming_Disney_cartoon_illustration_o_1788330659558.webp",
     "url": "/en/disney-pixar/snow-white"
   },
   {
@@ -156,7 +156,7 @@
     "type": "theme",
     "title": "Moana",
     "description": "Free printable Moana coloring pages for kids, teens, and adults. Download high-resolution PDF and image templates ready to print.",
-    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/banner/moana.webp",
+    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/banner/A_radiant_8k_tropical_ocean_masterpiece__1788295942838.webp",
     "url": "/en/disney-pixar/moana"
   },
   {
@@ -172,7 +172,7 @@
     "type": "theme",
     "title": "Mulan",
     "description": "Free printable Mulan coloring pages for kids, teens, and adults. Download high-resolution PDF and image templates ready to print.",
-    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/banner/mulan.webp",
+    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/banner/An_inspiring_Disney_animation_illustrati_1788330612758.webp",
     "url": "/en/disney-pixar/mulan"
   },
   {
@@ -180,7 +180,7 @@
     "type": "theme",
     "title": "Pocahontas",
     "description": "Free printable Pocahontas coloring pages for kids, teens, and adults. Download high-resolution PDF and image templates ready to print.",
-    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/banner/pocahontas.webp",
+    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/banner/A_rustic_8k_autumn_harvest_masterpiece___1788296464182.webp",
     "url": "/en/disney-pixar/pocahontas"
   },
   {
@@ -188,7 +188,7 @@
     "type": "theme",
     "title": "Sleeping Beauty (Aurora)",
     "description": "Free printable Sleeping Beauty (Aurora) coloring pages for kids, teens, and adults. Download high-resolution PDF and image templates ready to print.",
-    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/banner/sleeping-beauty-aurora.webp",
+    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/banner/An_enchanting_8k_Disney_masterpiece_of_S_1788294187590.webp",
     "url": "/en/disney-pixar/sleeping-beauty-aurora"
   },
   {
@@ -196,7 +196,7 @@
     "type": "theme",
     "title": "Winnie the Pooh",
     "description": "Free printable Winnie the Pooh coloring pages for kids, teens, and adults. Download high-resolution PDF and image templates ready to print.",
-    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/banner/winnie-the-pooh.webp",
+    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/banner/A_heartwarming_8k_Disney_masterpiece_of__1788294232045.webp",
     "url": "/en/disney-pixar/winnie-the-pooh"
   },
   {
@@ -204,7 +204,7 @@
     "type": "theme",
     "title": "Toy Story",
     "description": "Free printable Toy Story coloring pages for kids, teens, and adults. Download high-resolution PDF and image templates ready to print.",
-    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/banner/toy-story.webp",
+    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/banner/An_ultra-detailed_8k_Pixar_masterpiece_o_1788294243133.webp",
     "url": "/en/disney-pixar/toy-story"
   },
   {
@@ -212,7 +212,7 @@
     "type": "theme",
     "title": "Cars (Lightning McQueen)",
     "description": "Free printable Cars (Lightning McQueen) coloring pages for kids, teens, and adults. Download high-resolution PDF and image templates ready to print.",
-    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/banner/cars-lightning-mcqueen.webp",
+    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/banner/A_thrilling_8k_motorsport_masterpiece__a_1788296154385.webp",
     "url": "/en/disney-pixar/cars-lightning-mcqueen"
   },
   {
@@ -220,7 +220,7 @@
     "type": "theme",
     "title": "Finding Nemo & Dory",
     "description": "Free printable Finding Nemo & Dory coloring pages for kids, teens, and adults. Download high-resolution PDF and image templates ready to print.",
-    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/banner/finding-nemo-dory.webp",
+    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/banner/A_radiant_8k_cheerful_illustration__a_br_1788295653401.webp",
     "url": "/en/disney-pixar/finding-nemo-dory"
   },
   {
@@ -228,7 +228,7 @@
     "type": "theme",
     "title": "Monsters Inc",
     "description": "Free printable Monsters Inc coloring pages for kids, teens, and adults. Download high-resolution PDF and image templates ready to print.",
-    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/banner/monsters-inc.webp",
+    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/banner/A_hilarious_8k_Pixar_masterpiece_of_Mons_1788294338852.webp",
     "url": "/en/disney-pixar/monsters-inc"
   },
   {
@@ -236,7 +236,7 @@
     "type": "theme",
     "title": "Lilo & Stitch",
     "description": "Free printable Lilo & Stitch coloring pages for kids, teens, and adults. Download high-resolution PDF and image templates ready to print.",
-    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/banner/lilo-stitch.webp",
+    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/banner/A_delightful_watercolor_art_sketch_of_de_1788330551322.webp",
     "url": "/en/disney-pixar/lilo-stitch"
   },
   {
@@ -244,7 +244,7 @@
     "type": "theme",
     "title": "Mickey Mouse & Friends",
     "description": "Free printable Mickey Mouse & Friends coloring pages for kids, teens, and adults. Download high-resolution PDF and image templates ready to print.",
-    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/banner/mickey-mouse-friends.webp",
+    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/banner/A_joyful_classic_Disney_illustration_of__1788330677792.webp",
     "url": "/en/disney-pixar/mickey-mouse-friends"
   },
   {
@@ -260,7 +260,7 @@
     "type": "theme",
     "title": "Dragonball",
     "description": "Free printable Dragonball coloring pages for kids, teens, and adults. Download high-resolution PDF and image templates ready to print.",
-    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/banner/dragonball.webp",
+    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/banner/An_authentic_Studio_Ghibli_anime_illustr_1788333852521.webp",
     "url": "/en/anime-manga/dragonball"
   },
   {
@@ -276,7 +276,7 @@
     "type": "theme",
     "title": "One Piece",
     "description": "Free printable One Piece coloring pages for kids, teens, and adults. Download high-resolution PDF and image templates ready to print.",
-    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/banner/one-piece.webp",
+    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/banner/An_authentic_8k_anime_masterpiece_of_One_1788294427679.webp",
     "url": "/en/anime-manga/one-piece"
   },
   {
@@ -324,7 +324,7 @@
     "type": "theme",
     "title": "My Hero Academia",
     "description": "Free printable My Hero Academia coloring pages for kids, teens, and adults. Download high-resolution PDF and image templates ready to print.",
-    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/banner/my-hero-academia.webp",
+    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/banner/An_authentic_8k_anime_masterpiece_of_My__1788294596088.webp",
     "url": "/en/anime-manga/my-hero-academia"
   },
   {
@@ -340,7 +340,7 @@
     "type": "theme",
     "title": "Spy x Family",
     "description": "Free printable Spy x Family coloring pages for kids, teens, and adults. Download high-resolution PDF and image templates ready to print.",
-    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/banner/spy-x-family.webp",
+    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/banner/An_authentic_8k_anime_masterpiece_of_Spy_1788294640331.webp",
     "url": "/en/anime-manga/spy-x-family"
   },
   {
@@ -356,7 +356,7 @@
     "type": "theme",
     "title": "Studio Ghibli - Totoro",
     "description": "Free printable Studio Ghibli - Totoro coloring pages for kids, teens, and adults. Download high-resolution PDF and image templates ready to print.",
-    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/banner/studio-ghibli-totoro.webp",
+    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/banner/A_magical_8k_Studio_Ghibli_masterpiece___1788295180891.webp",
     "url": "/en/anime-manga/studio-ghibli-totoro"
   },
   {
@@ -396,7 +396,7 @@
     "type": "theme",
     "title": "Ninjas & Samurais",
     "description": "Free printable Ninjas & Samurais coloring pages for kids, teens, and adults. Download high-resolution PDF and image templates ready to print.",
-    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/banner/ninjas-samurais.webp",
+    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/banner/An_epic_8k_Japanese_warriors_masterpiece_1788294896034.webp",
     "url": "/en/anime-manga/ninjas-samurais"
   },
   {
@@ -404,7 +404,7 @@
     "type": "theme",
     "title": "Fortnite",
     "description": "Free printable Fortnite coloring pages for kids, teens, and adults. Download high-resolution PDF and image templates ready to print.",
-    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/banner/fortnite.webp",
+    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/banner/A_high-energy_8k_Fortnite_masterpiece__y_1788294907147.webp",
     "url": "/en/gaming-virtual-worlds/fortnite"
   },
   {
@@ -412,7 +412,7 @@
     "type": "theme",
     "title": "Minecraft & Voxel Worlds",
     "description": "Free printable Minecraft & Voxel Worlds coloring pages for kids, teens, and adults. Download high-resolution PDF and image templates ready to print.",
-    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/banner/minecraft-voxel-worlds.webp",
+    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/banner/A_creative_8k_Minecraft_masterpiece__Ste_1788294927313.webp",
     "url": "/en/gaming-virtual-worlds/minecraft-voxel-worlds"
   },
   {
@@ -420,7 +420,7 @@
     "type": "theme",
     "title": "Roblox",
     "description": "Free printable Roblox coloring pages for kids, teens, and adults. Download high-resolution PDF and image templates ready to print.",
-    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/banner/roblox.webp",
+    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/banner/A_fun_8k_Roblox_gaming_masterpiece__icon_1788294938487.webp",
     "url": "/en/gaming-virtual-worlds/roblox"
   },
   {
@@ -428,7 +428,7 @@
     "type": "theme",
     "title": "The Legend of Zelda",
     "description": "Free printable The Legend of Zelda coloring pages for kids, teens, and adults. Download high-resolution PDF and image templates ready to print.",
-    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/banner/the-legend-of-zelda.webp",
+    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/banner/An_epic_8k_Nintendo_masterpiece_of_Zelda_1788294949536.webp",
     "url": "/en/gaming-virtual-worlds/the-legend-of-zelda"
   },
   {
@@ -436,7 +436,7 @@
     "type": "theme",
     "title": "Pokemon",
     "description": "Free printable Pokemon coloring pages for kids, teens, and adults. Download high-resolution PDF and image templates ready to print.",
-    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/banner/pokemon.webp",
+    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/banner/A_spectacular_8k_Pokemon_masterpiece__cu_1788295071741.webp",
     "url": "/en/gaming-virtual-worlds/pokemon"
   },
   {
@@ -444,7 +444,7 @@
     "type": "theme",
     "title": "Pokemon - Eevee Evolutions",
     "description": "Free printable Pokemon - Eevee Evolutions coloring pages for kids, teens, and adults. Download high-resolution PDF and image templates ready to print.",
-    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/banner/pokemon-eevee-evolutions.webp",
+    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/banner/A_gorgeous_8k_Pokemon_masterpiece__cute__1788294971635.webp",
     "url": "/en/gaming-virtual-worlds/pokemon-eevee-evolutions"
   },
   {
@@ -452,7 +452,7 @@
     "type": "theme",
     "title": "Super Mario",
     "description": "Free printable Super Mario coloring pages for kids, teens, and adults. Download high-resolution PDF and image templates ready to print.",
-    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/banner/super-mario.webp",
+    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/banner/A_vibrant_8k_Nintendo_masterpiece_of_Sup_1788295082908.webp",
     "url": "/en/gaming-virtual-worlds/super-mario"
   },
   {
@@ -460,7 +460,7 @@
     "type": "theme",
     "title": "Sonic the Hedgehog",
     "description": "Free printable Sonic the Hedgehog coloring pages for kids, teens, and adults. Download high-resolution PDF and image templates ready to print.",
-    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/banner/sonic-the-hedgehog.webp",
+    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/banner/A_dynamic_action_sports_digital_art_illu_1788333874799.webp",
     "url": "/en/gaming-virtual-worlds/sonic-the-hedgehog"
   },
   {
@@ -468,7 +468,7 @@
     "type": "theme",
     "title": "Kirby",
     "description": "Free printable Kirby coloring pages for kids, teens, and adults. Download high-resolution PDF and image templates ready to print.",
-    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/banner/kirby.webp",
+    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/banner/An_adorable_8k_puppy_masterpiece__a_fluf_1788295720253.webp",
     "url": "/en/gaming-virtual-worlds/kirby"
   },
   {
@@ -476,7 +476,7 @@
     "type": "theme",
     "title": "Brawl Stars",
     "description": "Free printable Brawl Stars coloring pages for kids, teens, and adults. Download high-resolution PDF and image templates ready to print.",
-    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/banner/brawl-stars.webp",
+    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/banner/An_action-packed_8k_Brawl_Stars_masterpi_1788295125225.webp",
     "url": "/en/gaming-virtual-worlds/brawl-stars"
   },
   {
@@ -484,7 +484,7 @@
     "type": "theme",
     "title": "Animal Crossing",
     "description": "Free printable Animal Crossing coloring pages for kids, teens, and adults. Download high-resolution PDF and image templates ready to print.",
-    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/banner/animal-crossing.webp",
+    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/banner/A_cozy_8k_Nintendo_masterpiece_of_Animal_1788295147495.webp",
     "url": "/en/gaming-virtual-worlds/animal-crossing"
   },
   {
@@ -492,7 +492,7 @@
     "type": "theme",
     "title": "Five Nights at Freddys",
     "description": "Free printable Five Nights at Freddys coloring pages for kids, teens, and adults. Download high-resolution PDF and image templates ready to print.",
-    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/banner/five-nights-at-freddys.webp",
+    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/banner/A_cool_8k_FNAF_gaming_masterpiece__anima_1788295169669.webp",
     "url": "/en/gaming-virtual-worlds/five-nights-at-freddys"
   },
   {
@@ -500,7 +500,7 @@
     "type": "theme",
     "title": "Among Us",
     "description": "Free printable Among Us coloring pages for kids, teens, and adults. Download high-resolution PDF and image templates ready to print.",
-    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/banner/among-us.webp",
+    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/banner/A_futuristic_8k_cyberpunk_masterpiece__a_1788296209469.webp",
     "url": "/en/gaming-virtual-worlds/among-us"
   },
   {
@@ -508,7 +508,7 @@
     "type": "theme",
     "title": "Lego Ninjago",
     "description": "Free printable Lego Ninjago coloring pages for kids, teens, and adults. Download high-resolution PDF and image templates ready to print.",
-    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/banner/lego-ninjago.webp",
+    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/banner/An_epic_8k_Lego_Ninjago_masterpiece__gre_1788295203035.webp",
     "url": "/en/gaming-virtual-worlds/lego-ninjago"
   },
   {
@@ -524,7 +524,7 @@
     "type": "theme",
     "title": "Marvel - Spider-Man",
     "description": "Free printable Marvel - Spider-Man coloring pages for kids, teens, and adults. Download high-resolution PDF and image templates ready to print.",
-    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/banner/marvel-spider-man.webp",
+    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/banner/An_ultra-dynamic_8k_Marvel_masterpiece_o_1788295257585.webp",
     "url": "/en/superheroes-comic-universes/marvel-spider-man"
   },
   {
@@ -532,7 +532,7 @@
     "type": "theme",
     "title": "Marvel - Avengers",
     "description": "Free printable Marvel - Avengers coloring pages for kids, teens, and adults. Download high-resolution PDF and image templates ready to print.",
-    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/banner/marvel-avengers.webp",
+    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/banner/A_colossal_8k_Marvel_masterpiece_of_The__1788295313214.webp",
     "url": "/en/superheroes-comic-universes/marvel-avengers"
   },
   {
@@ -540,7 +540,7 @@
     "type": "theme",
     "title": "DC - Batman",
     "description": "Free printable DC - Batman coloring pages for kids, teens, and adults. Download high-resolution PDF and image templates ready to print.",
-    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/banner/dc-batman.webp",
+    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/banner/An_epic_8k_DC_Comics_masterpiece_of_Batm_1788295290992.webp",
     "url": "/en/superheroes-comic-universes/dc-batman"
   },
   {
@@ -548,7 +548,7 @@
     "type": "theme",
     "title": "DC - Superman",
     "description": "Free printable DC - Superman coloring pages for kids, teens, and adults. Download high-resolution PDF and image templates ready to print.",
-    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/banner/dc-superman.webp",
+    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/banner/An_inspiring_8k_DC_Comics_masterpiece_of_1788295302186.webp",
     "url": "/en/superheroes-comic-universes/dc-superman"
   },
   {
@@ -556,7 +556,7 @@
     "type": "theme",
     "title": "Bluey",
     "description": "Free printable Bluey coloring pages for kids, teens, and adults. Download high-resolution PDF and image templates ready to print.",
-    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/banner/bluey.webp",
+    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/banner/An_adorable_8k_cartoon_masterpiece_of_Bl_1788295324411.webp",
     "url": "/en/kids-tv-shows/bluey"
   },
   {
@@ -564,7 +564,7 @@
     "type": "theme",
     "title": "Paw Patrol",
     "description": "Free printable Paw Patrol coloring pages for kids, teens, and adults. Download high-resolution PDF and image templates ready to print.",
-    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/banner/paw-patrol.webp",
+    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/banner/An_action-ready_8k_cartoon_masterpiece_o_1788295339479.webp",
     "url": "/en/kids-tv-shows/paw-patrol"
   },
   {
@@ -572,7 +572,7 @@
     "type": "theme",
     "title": "Peppa Pig",
     "description": "Free printable Peppa Pig coloring pages for kids, teens, and adults. Download high-resolution PDF and image templates ready to print.",
-    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/banner/peppa-pig.webp",
+    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/banner/A_cheerful_8k_cartoon_masterpiece_of_Pep_1788295350730.webp",
     "url": "/en/kids-tv-shows/peppa-pig"
   },
   {
@@ -580,7 +580,7 @@
     "type": "theme",
     "title": "Gabby Dollhouse",
     "description": "Free printable Gabby Dollhouse coloring pages for kids, teens, and adults. Download high-resolution PDF and image templates ready to print.",
-    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/banner/gabby-dollhouse.webp",
+    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/banner/A_magical_8k_cartoon_masterpiece_of_Gabb_1788295439604.webp",
     "url": "/en/kids-tv-shows/gabby-dollhouse"
   },
   {
@@ -612,7 +612,7 @@
     "type": "theme",
     "title": "Thomas the Tank Engine",
     "description": "Free printable Thomas the Tank Engine coloring pages for kids, teens, and adults. Download high-resolution PDF and image templates ready to print.",
-    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/banner/thomas-the-tank-engine.webp",
+    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/banner/A_classic_8k_masterpiece_of_Thomas_the_T_1788295547400.webp",
     "url": "/en/kids-tv-shows/thomas-the-tank-engine"
   },
   {
@@ -620,7 +620,7 @@
     "type": "theme",
     "title": "SpongeBob SquarePants",
     "description": "Free printable SpongeBob SquarePants coloring pages for kids, teens, and adults. Download high-resolution PDF and image templates ready to print.",
-    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/banner/spongebob-squarepants.webp",
+    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/banner/A_hilarious_classic_cartoon_illustration_1788333830252.webp",
     "url": "/en/kids-tv-shows/spongebob-squarepants"
   },
   {
@@ -628,7 +628,7 @@
     "type": "theme",
     "title": "Minions & Despicable Me",
     "description": "Free printable Minions & Despicable Me coloring pages for kids, teens, and adults. Download high-resolution PDF and image templates ready to print.",
-    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/banner/minions-despicable-me.webp",
+    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/banner/A_funny_8k_Illumination_masterpiece_of_M_1788295597340.webp",
     "url": "/en/kids-tv-shows/minions-despicable-me"
   },
   {
@@ -788,7 +788,7 @@
     "type": "theme",
     "title": "Botanical Gardens & Greenhouses",
     "description": "Free printable Botanical Gardens & Greenhouses coloring pages for kids, teens, and adults. Download high-resolution PDF and image templates ready to print.",
-    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/banner/botanical-gardens-greenhouses.webp",
+    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/banner/An_exquisite_8k_botanical_nature_masterp_1788295853930.webp",
     "url": "/en/animals-wildlife/botanical-gardens-greenhouses"
   },
   {
@@ -932,7 +932,7 @@
     "type": "theme",
     "title": "Emergency Vehicles (Fire & Police)",
     "description": "Free printable Emergency Vehicles (Fire & Police) coloring pages for kids, teens, and adults. Download high-resolution PDF and image templates ready to print.",
-    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/banner/emergency-vehicles-fire-police.webp",
+    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/banner/A_heroic_8k_emergency_vehicles_masterpie_1788296143359.webp",
     "url": "/en/vehicles-transportation/emergency-vehicles-fire-police"
   },
   {
@@ -980,7 +980,7 @@
     "type": "theme",
     "title": "Mandalas & Sacred Geometry",
     "description": "Free printable Mandalas & Sacred Geometry coloring pages for kids, teens, and adults. Download high-resolution PDF and image templates ready to print.",
-    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/banner/mandalas-sacred-geometry.webp",
+    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/banner/An_exquisite_8k_sacred_geometry_mandala__1788296243116.webp",
     "url": "/en/art-aesthetic/mandalas-sacred-geometry"
   },
   {
@@ -1060,7 +1060,7 @@
     "type": "theme",
     "title": "Halloween & Spooky Nights",
     "description": "Free printable Halloween & Spooky Nights coloring pages for kids, teens, and adults. Download high-resolution PDF and image templates ready to print.",
-    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/banner/halloween-spooky-nights.webp",
+    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/banner/A_spooky_8k_Halloween_masterpiece__glowi_1788296419213.webp",
     "url": "/en/holidays-seasons/halloween-spooky-nights"
   },
   {
@@ -1092,7 +1092,7 @@
     "type": "theme",
     "title": "Cozy Life & Hygge",
     "description": "Free printable Cozy Life & Hygge coloring pages for kids, teens, and adults. Download high-resolution PDF and image templates ready to print.",
-    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/banner/cozy-life-hygge.webp",
+    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/banner/An_ultra-cozy_8k_hygge_lifestyle_masterp_1788296475233.webp",
     "url": "/en/holidays-seasons/cozy-life-hygge"
   },
   {
@@ -1108,7 +1108,7 @@
     "type": "theme",
     "title": "Cozy Winter Wonderland",
     "description": "Free printable Cozy Winter Wonderland coloring pages for kids, teens, and adults. Download high-resolution PDF and image templates ready to print.",
-    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/banner/cozy-winter-wonderland.webp",
+    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/banner/A_magical_8k_winter_wonderland_masterpie_1788296497277.webp",
     "url": "/en/holidays-seasons/cozy-winter-wonderland"
   },
   {
@@ -1124,7 +1124,7 @@
     "type": "theme",
     "title": "Sweet Treats & Bakery Desserts",
     "description": "Free printable Sweet Treats & Bakery Desserts coloring pages for kids, teens, and adults. Download high-resolution PDF and image templates ready to print.",
-    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/banner/sweet-treats-bakery-desserts.webp",
+    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/banner/A_mouthwatering_8k_artisan_bakery_master_1788296519442.webp",
     "url": "/en/holidays-seasons/sweet-treats-bakery-desserts"
   },
   {
@@ -130956,7 +130956,7 @@
     "type": "hub",
     "title": "Disney & Pixar",
     "description": "Ontdek magische kleurplaten van je favoriete Disney en Pixar klassiekers zoals Frozen, Lion King, Toy Story, Cars, Moana, Aladdin en iconische prinsessen.",
-    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/banner/default.jpg",
+    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/banner/A_vibrant_Disney_animation_illustration__1788330668673.webp",
     "url": "/nl/disney-pixar"
   },
   {
@@ -130964,7 +130964,7 @@
     "type": "hub",
     "title": "Anime & Manga",
     "description": "Spectaculaire anime en manga kleurplaten met Dragonball, Naruto, One Piece, Demon Slayer, Attack on Titan, Jujutsu Kaisen, Studio Ghibli en dappere samurai.",
-    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/banner/default.jpg",
+    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/banner/An_ultra-epic_8k_anime_crossover_ensembl_1788293737113.webp",
     "url": "/nl/anime-manga"
   },
   {
@@ -130972,7 +130972,7 @@
     "type": "hub",
     "title": "Games & Virtuele Werelden",
     "description": "Epische videogame kleurplaten van Fortnite, Minecraft, Roblox, Zelda, Pokémon, Super Mario, Sonic, Kirby, Brawl Stars en arcade legendes.",
-    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/banner/default.jpg",
+    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/banner/An_intricate_8k_steampunk_masterpiece__a_1788296198447.webp",
     "url": "/nl/gaming-virtual-worlds"
   },
   {
@@ -130980,7 +130980,7 @@
     "type": "hub",
     "title": "Superhelden & Comics",
     "description": "Actievolle superhelden kleurplaten met Spider-Man, The Avengers, Batman, Superman en iconische striphelden.",
-    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/banner/default.jpg",
+    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/banner/A_spectacular_8k_superhero_multiverse_cr_1788293802204.webp",
     "url": "/nl/superheroes-comic-universes"
   },
   {
@@ -130988,7 +130988,7 @@
     "type": "hub",
     "title": "Kinderen & TV Series",
     "description": "Vrolijke kleurplaten speciaal voor peuters en jonge kinderen met Bluey, Paw Patrol, Peppa Pig, Gabby Poppenhuis, Blippi, Cocomelon en SpongeBob.",
-    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/banner/default.jpg",
+    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/banner/A_vibrant__joyful_8k_cartoon_playground__1788293867017.webp",
     "url": "/nl/kids-tv-shows"
   },
   {
@@ -130996,7 +130996,7 @@
     "type": "hub",
     "title": "Dieren & Natuur",
     "description": "Ontdek het dierenrijk met printbare kleurplaten van dinosaurussen, paarden, schattige puppy’s, kittens, safari wilde dieren, zeedieren en vogels.",
-    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/banner/default.jpg",
+    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/banner/A_sweeping_majestic_8k_wildlife_animal_k_1788293833649.webp",
     "url": "/nl/animals-wildlife"
   },
   {
@@ -131004,7 +131004,7 @@
     "type": "hub",
     "title": "Fantasie & Sprookjes",
     "description": "Betreed fantasiewerelden vol magische draken, eenhoorns, elfjes, zeemeerminnen, tovenaars, sprookjeskastelen, ridders en betoverde bossen.",
-    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/banner/default.jpg",
+    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/banner/An_enchanting_8k_mystical_forest_masterp_1788295998521.webp",
     "url": "/nl/fantasy-fairytales"
   },
   {
@@ -131012,7 +131012,7 @@
     "type": "hub",
     "title": "Voertuigen & Vervoer",
     "description": "Snelle en stoere voertuigen kleurplaten met monstertrucks, Formule 1 racewagens, brandweerwagens, graafmachines, raketten en cyberpunk auto’s.",
-    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/banner/default.jpg",
+    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/banner/A_high-octane_8k_transportation_multiver_1788293878070.webp",
     "url": "/nl/vehicles-transportation"
   },
   {
@@ -131020,7 +131020,7 @@
     "type": "hub",
     "title": "Kunst & Patronen",
     "description": "Rustgevende, gedetailleerde kleurplaten met Art Nouveau, ingewikkelde mandala’s, bohemian patronen, creepy kawaii, mode en muziekinstrumenten.",
-    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/banner/default.jpg",
+    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/banner/A_stunning_8k_decorative_art_masterpiece_1788296254144.webp",
     "url": "/nl/art-aesthetic"
   },
   {
@@ -131028,7 +131028,7 @@
     "type": "hub",
     "title": "Feestdagen & Seizoenen",
     "description": "Gezellige seizoens- en feestdagen kleurplaten voor Sinterklaas, Kerstmis, Halloween, Pasen, herfstoogst, knus hygge leven en schattig kawaii eten.",
-    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/banner/default.jpg",
+    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/banner/A_heartwarming_8k_four-seasons_holiday_e_1788293900750.webp",
     "url": "/nl/holidays-seasons"
   },
   {
@@ -131036,7 +131036,7 @@
     "type": "theme",
     "title": "Frozen",
     "description": "Gratis printbare Frozen kleurplaten voor peuters, kinderen, tieners en volwassenen. Download direct gratis in hoge resolutie A4.",
-    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/banner/frozen.webp",
+    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/banner/A_breathtaking_Disney_animation_illustra_1788330641234.webp",
     "url": "/nl/disney-pixar/frozen"
   },
   {
@@ -131044,7 +131044,7 @@
     "type": "theme",
     "title": "The Lion King",
     "description": "Gratis printbare The Lion King kleurplaten voor peuters, kinderen, tieners en volwassenen. Download direct gratis in hoge resolutie A4.",
-    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/banner/the-lion-king.webp",
+    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/banner/A_grand_8k_maritime_pirate_masterpiece___1788296220540.webp",
     "url": "/nl/disney-pixar/the-lion-king"
   },
   {
@@ -131052,7 +131052,7 @@
     "type": "theme",
     "title": "Aladdin & Jasmine",
     "description": "Gratis printbare Aladdin & Jasmine kleurplaten voor peuters, kinderen, tieners en volwassenen. Download direct gratis in hoge resolutie A4.",
-    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/banner/aladdin-jasmine.webp",
+    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/banner/A_gorgeous_8k_Disney_masterpiece_of_Prin_1788294056464.webp",
     "url": "/nl/disney-pixar/aladdin-jasmine"
   },
   {
@@ -131060,7 +131060,7 @@
     "type": "theme",
     "title": "Tangled & Rapunzel",
     "description": "Gratis printbare Tangled & Rapunzel kleurplaten voor peuters, kinderen, tieners en volwassenen. Download direct gratis in hoge resolutie A4.",
-    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/banner/tangled-rapunzel.webp",
+    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/banner/A_magical_Disney_storybook_illustration__1788330596346.webp",
     "url": "/nl/disney-pixar/tangled-rapunzel"
   },
   {
@@ -131068,7 +131068,7 @@
     "type": "theme",
     "title": "The Little Mermaid (Ariel)",
     "description": "Gratis printbare The Little Mermaid (Ariel) kleurplaten voor peuters, kinderen, tieners en volwassenen. Download direct gratis in hoge resolutie A4.",
-    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/banner/the-little-mermaid-ariel.webp",
+    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/banner/A_bright_vibrant_illustration_of_constru_1788330526004.webp",
     "url": "/nl/disney-pixar/the-little-mermaid-ariel"
   },
   {
@@ -131076,7 +131076,7 @@
     "type": "theme",
     "title": "Beauty and the Beast (Belle)",
     "description": "Gratis printbare Beauty and the Beast (Belle) kleurplaten voor peuters, kinderen, tieners en volwassenen. Download direct gratis in hoge resolutie A4.",
-    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/banner/beauty-and-the-beast-belle.webp",
+    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/banner/A_romantic_Disney_storybook_illustration_1788330587227.webp",
     "url": "/nl/disney-pixar/beauty-and-the-beast-belle"
   },
   {
@@ -131092,7 +131092,7 @@
     "type": "theme",
     "title": "Snow White",
     "description": "Gratis printbare Snow White kleurplaten voor peuters, kinderen, tieners en volwassenen. Download direct gratis in hoge resolutie A4.",
-    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/banner/snow-white.webp",
+    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/banner/A_charming_Disney_cartoon_illustration_o_1788330659558.webp",
     "url": "/nl/disney-pixar/snow-white"
   },
   {
@@ -131108,7 +131108,7 @@
     "type": "theme",
     "title": "Moana",
     "description": "Gratis printbare Moana kleurplaten voor peuters, kinderen, tieners en volwassenen. Download direct gratis in hoge resolutie A4.",
-    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/banner/moana.webp",
+    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/banner/A_radiant_8k_tropical_ocean_masterpiece__1788295942838.webp",
     "url": "/nl/disney-pixar/moana"
   },
   {
@@ -131124,7 +131124,7 @@
     "type": "theme",
     "title": "Mulan",
     "description": "Gratis printbare Mulan kleurplaten voor peuters, kinderen, tieners en volwassenen. Download direct gratis in hoge resolutie A4.",
-    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/banner/mulan.webp",
+    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/banner/An_inspiring_Disney_animation_illustrati_1788330612758.webp",
     "url": "/nl/disney-pixar/mulan"
   },
   {
@@ -131132,7 +131132,7 @@
     "type": "theme",
     "title": "Pocahontas",
     "description": "Gratis printbare Pocahontas kleurplaten voor peuters, kinderen, tieners en volwassenen. Download direct gratis in hoge resolutie A4.",
-    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/banner/pocahontas.webp",
+    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/banner/A_rustic_8k_autumn_harvest_masterpiece___1788296464182.webp",
     "url": "/nl/disney-pixar/pocahontas"
   },
   {
@@ -131140,7 +131140,7 @@
     "type": "theme",
     "title": "Sleeping Beauty (Aurora)",
     "description": "Gratis printbare Sleeping Beauty (Aurora) kleurplaten voor peuters, kinderen, tieners en volwassenen. Download direct gratis in hoge resolutie A4.",
-    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/banner/sleeping-beauty-aurora.webp",
+    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/banner/An_enchanting_8k_Disney_masterpiece_of_S_1788294187590.webp",
     "url": "/nl/disney-pixar/sleeping-beauty-aurora"
   },
   {
@@ -131148,7 +131148,7 @@
     "type": "theme",
     "title": "Winnie the Pooh",
     "description": "Gratis printbare Winnie the Pooh kleurplaten voor peuters, kinderen, tieners en volwassenen. Download direct gratis in hoge resolutie A4.",
-    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/banner/winnie-the-pooh.webp",
+    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/banner/A_heartwarming_8k_Disney_masterpiece_of__1788294232045.webp",
     "url": "/nl/disney-pixar/winnie-the-pooh"
   },
   {
@@ -131156,7 +131156,7 @@
     "type": "theme",
     "title": "Toy Story",
     "description": "Gratis printbare Toy Story kleurplaten voor peuters, kinderen, tieners en volwassenen. Download direct gratis in hoge resolutie A4.",
-    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/banner/toy-story.webp",
+    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/banner/An_ultra-detailed_8k_Pixar_masterpiece_o_1788294243133.webp",
     "url": "/nl/disney-pixar/toy-story"
   },
   {
@@ -131164,7 +131164,7 @@
     "type": "theme",
     "title": "Cars (Lightning McQueen)",
     "description": "Gratis printbare Cars (Lightning McQueen) kleurplaten voor peuters, kinderen, tieners en volwassenen. Download direct gratis in hoge resolutie A4.",
-    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/banner/cars-lightning-mcqueen.webp",
+    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/banner/A_thrilling_8k_motorsport_masterpiece__a_1788296154385.webp",
     "url": "/nl/disney-pixar/cars-lightning-mcqueen"
   },
   {
@@ -131172,7 +131172,7 @@
     "type": "theme",
     "title": "Finding Nemo & Dory",
     "description": "Gratis printbare Finding Nemo & Dory kleurplaten voor peuters, kinderen, tieners en volwassenen. Download direct gratis in hoge resolutie A4.",
-    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/banner/finding-nemo-dory.webp",
+    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/banner/A_radiant_8k_cheerful_illustration__a_br_1788295653401.webp",
     "url": "/nl/disney-pixar/finding-nemo-dory"
   },
   {
@@ -131180,7 +131180,7 @@
     "type": "theme",
     "title": "Monsters Inc",
     "description": "Gratis printbare Monsters Inc kleurplaten voor peuters, kinderen, tieners en volwassenen. Download direct gratis in hoge resolutie A4.",
-    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/banner/monsters-inc.webp",
+    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/banner/A_hilarious_8k_Pixar_masterpiece_of_Mons_1788294338852.webp",
     "url": "/nl/disney-pixar/monsters-inc"
   },
   {
@@ -131188,7 +131188,7 @@
     "type": "theme",
     "title": "Lilo & Stitch",
     "description": "Gratis printbare Lilo & Stitch kleurplaten voor peuters, kinderen, tieners en volwassenen. Download direct gratis in hoge resolutie A4.",
-    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/banner/lilo-stitch.webp",
+    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/banner/A_delightful_watercolor_art_sketch_of_de_1788330551322.webp",
     "url": "/nl/disney-pixar/lilo-stitch"
   },
   {
@@ -131196,7 +131196,7 @@
     "type": "theme",
     "title": "Mickey Mouse & Friends",
     "description": "Gratis printbare Mickey Mouse & Friends kleurplaten voor peuters, kinderen, tieners en volwassenen. Download direct gratis in hoge resolutie A4.",
-    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/banner/mickey-mouse-friends.webp",
+    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/banner/A_joyful_classic_Disney_illustration_of__1788330677792.webp",
     "url": "/nl/disney-pixar/mickey-mouse-friends"
   },
   {
@@ -131212,7 +131212,7 @@
     "type": "theme",
     "title": "Dragonball",
     "description": "Gratis printbare Dragonball kleurplaten voor peuters, kinderen, tieners en volwassenen. Download direct gratis in hoge resolutie A4.",
-    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/banner/dragonball.webp",
+    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/banner/An_authentic_Studio_Ghibli_anime_illustr_1788333852521.webp",
     "url": "/nl/anime-manga/dragonball"
   },
   {
@@ -131228,7 +131228,7 @@
     "type": "theme",
     "title": "One Piece",
     "description": "Gratis printbare One Piece kleurplaten voor peuters, kinderen, tieners en volwassenen. Download direct gratis in hoge resolutie A4.",
-    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/banner/one-piece.webp",
+    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/banner/An_authentic_8k_anime_masterpiece_of_One_1788294427679.webp",
     "url": "/nl/anime-manga/one-piece"
   },
   {
@@ -131276,7 +131276,7 @@
     "type": "theme",
     "title": "My Hero Academia",
     "description": "Gratis printbare My Hero Academia kleurplaten voor peuters, kinderen, tieners en volwassenen. Download direct gratis in hoge resolutie A4.",
-    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/banner/my-hero-academia.webp",
+    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/banner/An_authentic_8k_anime_masterpiece_of_My__1788294596088.webp",
     "url": "/nl/anime-manga/my-hero-academia"
   },
   {
@@ -131292,7 +131292,7 @@
     "type": "theme",
     "title": "Spy x Family",
     "description": "Gratis printbare Spy x Family kleurplaten voor peuters, kinderen, tieners en volwassenen. Download direct gratis in hoge resolutie A4.",
-    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/banner/spy-x-family.webp",
+    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/banner/An_authentic_8k_anime_masterpiece_of_Spy_1788294640331.webp",
     "url": "/nl/anime-manga/spy-x-family"
   },
   {
@@ -131308,7 +131308,7 @@
     "type": "theme",
     "title": "Studio Ghibli - Totoro",
     "description": "Gratis printbare Studio Ghibli - Totoro kleurplaten voor peuters, kinderen, tieners en volwassenen. Download direct gratis in hoge resolutie A4.",
-    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/banner/studio-ghibli-totoro.webp",
+    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/banner/A_magical_8k_Studio_Ghibli_masterpiece___1788295180891.webp",
     "url": "/nl/anime-manga/studio-ghibli-totoro"
   },
   {
@@ -131348,7 +131348,7 @@
     "type": "theme",
     "title": "Ninjas & Samurais",
     "description": "Gratis printbare Ninjas & Samurais kleurplaten voor peuters, kinderen, tieners en volwassenen. Download direct gratis in hoge resolutie A4.",
-    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/banner/ninjas-samurais.webp",
+    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/banner/An_epic_8k_Japanese_warriors_masterpiece_1788294896034.webp",
     "url": "/nl/anime-manga/ninjas-samurais"
   },
   {
@@ -131356,7 +131356,7 @@
     "type": "theme",
     "title": "Fortnite",
     "description": "Gratis printbare Fortnite kleurplaten voor peuters, kinderen, tieners en volwassenen. Download direct gratis in hoge resolutie A4.",
-    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/banner/fortnite.webp",
+    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/banner/A_high-energy_8k_Fortnite_masterpiece__y_1788294907147.webp",
     "url": "/nl/gaming-virtual-worlds/fortnite"
   },
   {
@@ -131364,7 +131364,7 @@
     "type": "theme",
     "title": "Minecraft & Voxel Worlds",
     "description": "Gratis printbare Minecraft & Voxel Worlds kleurplaten voor peuters, kinderen, tieners en volwassenen. Download direct gratis in hoge resolutie A4.",
-    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/banner/minecraft-voxel-worlds.webp",
+    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/banner/A_creative_8k_Minecraft_masterpiece__Ste_1788294927313.webp",
     "url": "/nl/gaming-virtual-worlds/minecraft-voxel-worlds"
   },
   {
@@ -131372,7 +131372,7 @@
     "type": "theme",
     "title": "Roblox",
     "description": "Gratis printbare Roblox kleurplaten voor peuters, kinderen, tieners en volwassenen. Download direct gratis in hoge resolutie A4.",
-    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/banner/roblox.webp",
+    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/banner/A_fun_8k_Roblox_gaming_masterpiece__icon_1788294938487.webp",
     "url": "/nl/gaming-virtual-worlds/roblox"
   },
   {
@@ -131380,7 +131380,7 @@
     "type": "theme",
     "title": "The Legend of Zelda",
     "description": "Gratis printbare The Legend of Zelda kleurplaten voor peuters, kinderen, tieners en volwassenen. Download direct gratis in hoge resolutie A4.",
-    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/banner/the-legend-of-zelda.webp",
+    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/banner/An_epic_8k_Nintendo_masterpiece_of_Zelda_1788294949536.webp",
     "url": "/nl/gaming-virtual-worlds/the-legend-of-zelda"
   },
   {
@@ -131388,7 +131388,7 @@
     "type": "theme",
     "title": "Pokemon",
     "description": "Gratis printbare Pokemon kleurplaten voor peuters, kinderen, tieners en volwassenen. Download direct gratis in hoge resolutie A4.",
-    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/banner/pokemon.webp",
+    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/banner/A_spectacular_8k_Pokemon_masterpiece__cu_1788295071741.webp",
     "url": "/nl/gaming-virtual-worlds/pokemon"
   },
   {
@@ -131396,7 +131396,7 @@
     "type": "theme",
     "title": "Pokemon - Eevee Evolutions",
     "description": "Gratis printbare Pokemon - Eevee Evolutions kleurplaten voor peuters, kinderen, tieners en volwassenen. Download direct gratis in hoge resolutie A4.",
-    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/banner/pokemon-eevee-evolutions.webp",
+    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/banner/A_gorgeous_8k_Pokemon_masterpiece__cute__1788294971635.webp",
     "url": "/nl/gaming-virtual-worlds/pokemon-eevee-evolutions"
   },
   {
@@ -131404,7 +131404,7 @@
     "type": "theme",
     "title": "Super Mario",
     "description": "Gratis printbare Super Mario kleurplaten voor peuters, kinderen, tieners en volwassenen. Download direct gratis in hoge resolutie A4.",
-    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/banner/super-mario.webp",
+    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/banner/A_vibrant_8k_Nintendo_masterpiece_of_Sup_1788295082908.webp",
     "url": "/nl/gaming-virtual-worlds/super-mario"
   },
   {
@@ -131412,7 +131412,7 @@
     "type": "theme",
     "title": "Sonic the Hedgehog",
     "description": "Gratis printbare Sonic the Hedgehog kleurplaten voor peuters, kinderen, tieners en volwassenen. Download direct gratis in hoge resolutie A4.",
-    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/banner/sonic-the-hedgehog.webp",
+    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/banner/A_dynamic_action_sports_digital_art_illu_1788333874799.webp",
     "url": "/nl/gaming-virtual-worlds/sonic-the-hedgehog"
   },
   {
@@ -131420,7 +131420,7 @@
     "type": "theme",
     "title": "Kirby",
     "description": "Gratis printbare Kirby kleurplaten voor peuters, kinderen, tieners en volwassenen. Download direct gratis in hoge resolutie A4.",
-    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/banner/kirby.webp",
+    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/banner/An_adorable_8k_puppy_masterpiece__a_fluf_1788295720253.webp",
     "url": "/nl/gaming-virtual-worlds/kirby"
   },
   {
@@ -131428,7 +131428,7 @@
     "type": "theme",
     "title": "Brawl Stars",
     "description": "Gratis printbare Brawl Stars kleurplaten voor peuters, kinderen, tieners en volwassenen. Download direct gratis in hoge resolutie A4.",
-    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/banner/brawl-stars.webp",
+    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/banner/An_action-packed_8k_Brawl_Stars_masterpi_1788295125225.webp",
     "url": "/nl/gaming-virtual-worlds/brawl-stars"
   },
   {
@@ -131436,7 +131436,7 @@
     "type": "theme",
     "title": "Animal Crossing",
     "description": "Gratis printbare Animal Crossing kleurplaten voor peuters, kinderen, tieners en volwassenen. Download direct gratis in hoge resolutie A4.",
-    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/banner/animal-crossing.webp",
+    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/banner/A_cozy_8k_Nintendo_masterpiece_of_Animal_1788295147495.webp",
     "url": "/nl/gaming-virtual-worlds/animal-crossing"
   },
   {
@@ -131444,7 +131444,7 @@
     "type": "theme",
     "title": "Five Nights at Freddys",
     "description": "Gratis printbare Five Nights at Freddys kleurplaten voor peuters, kinderen, tieners en volwassenen. Download direct gratis in hoge resolutie A4.",
-    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/banner/five-nights-at-freddys.webp",
+    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/banner/A_cool_8k_FNAF_gaming_masterpiece__anima_1788295169669.webp",
     "url": "/nl/gaming-virtual-worlds/five-nights-at-freddys"
   },
   {
@@ -131452,7 +131452,7 @@
     "type": "theme",
     "title": "Among Us",
     "description": "Gratis printbare Among Us kleurplaten voor peuters, kinderen, tieners en volwassenen. Download direct gratis in hoge resolutie A4.",
-    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/banner/among-us.webp",
+    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/banner/A_futuristic_8k_cyberpunk_masterpiece__a_1788296209469.webp",
     "url": "/nl/gaming-virtual-worlds/among-us"
   },
   {
@@ -131460,7 +131460,7 @@
     "type": "theme",
     "title": "Lego Ninjago",
     "description": "Gratis printbare Lego Ninjago kleurplaten voor peuters, kinderen, tieners en volwassenen. Download direct gratis in hoge resolutie A4.",
-    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/banner/lego-ninjago.webp",
+    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/banner/An_epic_8k_Lego_Ninjago_masterpiece__gre_1788295203035.webp",
     "url": "/nl/gaming-virtual-worlds/lego-ninjago"
   },
   {
@@ -131476,7 +131476,7 @@
     "type": "theme",
     "title": "Marvel - Spider-Man",
     "description": "Gratis printbare Marvel - Spider-Man kleurplaten voor peuters, kinderen, tieners en volwassenen. Download direct gratis in hoge resolutie A4.",
-    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/banner/marvel-spider-man.webp",
+    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/banner/An_ultra-dynamic_8k_Marvel_masterpiece_o_1788295257585.webp",
     "url": "/nl/superheroes-comic-universes/marvel-spider-man"
   },
   {
@@ -131484,7 +131484,7 @@
     "type": "theme",
     "title": "Marvel - Avengers",
     "description": "Gratis printbare Marvel - Avengers kleurplaten voor peuters, kinderen, tieners en volwassenen. Download direct gratis in hoge resolutie A4.",
-    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/banner/marvel-avengers.webp",
+    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/banner/A_colossal_8k_Marvel_masterpiece_of_The__1788295313214.webp",
     "url": "/nl/superheroes-comic-universes/marvel-avengers"
   },
   {
@@ -131492,7 +131492,7 @@
     "type": "theme",
     "title": "DC - Batman",
     "description": "Gratis printbare DC - Batman kleurplaten voor peuters, kinderen, tieners en volwassenen. Download direct gratis in hoge resolutie A4.",
-    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/banner/dc-batman.webp",
+    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/banner/An_epic_8k_DC_Comics_masterpiece_of_Batm_1788295290992.webp",
     "url": "/nl/superheroes-comic-universes/dc-batman"
   },
   {
@@ -131500,7 +131500,7 @@
     "type": "theme",
     "title": "DC - Superman",
     "description": "Gratis printbare DC - Superman kleurplaten voor peuters, kinderen, tieners en volwassenen. Download direct gratis in hoge resolutie A4.",
-    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/banner/dc-superman.webp",
+    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/banner/An_inspiring_8k_DC_Comics_masterpiece_of_1788295302186.webp",
     "url": "/nl/superheroes-comic-universes/dc-superman"
   },
   {
@@ -131508,7 +131508,7 @@
     "type": "theme",
     "title": "Bluey",
     "description": "Gratis printbare Bluey kleurplaten voor peuters, kinderen, tieners en volwassenen. Download direct gratis in hoge resolutie A4.",
-    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/banner/bluey.webp",
+    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/banner/An_adorable_8k_cartoon_masterpiece_of_Bl_1788295324411.webp",
     "url": "/nl/kids-tv-shows/bluey"
   },
   {
@@ -131516,7 +131516,7 @@
     "type": "theme",
     "title": "Paw Patrol",
     "description": "Gratis printbare Paw Patrol kleurplaten voor peuters, kinderen, tieners en volwassenen. Download direct gratis in hoge resolutie A4.",
-    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/banner/paw-patrol.webp",
+    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/banner/An_action-ready_8k_cartoon_masterpiece_o_1788295339479.webp",
     "url": "/nl/kids-tv-shows/paw-patrol"
   },
   {
@@ -131524,7 +131524,7 @@
     "type": "theme",
     "title": "Peppa Pig",
     "description": "Gratis printbare Peppa Pig kleurplaten voor peuters, kinderen, tieners en volwassenen. Download direct gratis in hoge resolutie A4.",
-    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/banner/peppa-pig.webp",
+    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/banner/A_cheerful_8k_cartoon_masterpiece_of_Pep_1788295350730.webp",
     "url": "/nl/kids-tv-shows/peppa-pig"
   },
   {
@@ -131532,7 +131532,7 @@
     "type": "theme",
     "title": "Gabby Dollhouse",
     "description": "Gratis printbare Gabby Dollhouse kleurplaten voor peuters, kinderen, tieners en volwassenen. Download direct gratis in hoge resolutie A4.",
-    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/banner/gabby-dollhouse.webp",
+    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/banner/A_magical_8k_cartoon_masterpiece_of_Gabb_1788295439604.webp",
     "url": "/nl/kids-tv-shows/gabby-dollhouse"
   },
   {
@@ -131564,7 +131564,7 @@
     "type": "theme",
     "title": "Thomas the Tank Engine",
     "description": "Gratis printbare Thomas the Tank Engine kleurplaten voor peuters, kinderen, tieners en volwassenen. Download direct gratis in hoge resolutie A4.",
-    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/banner/thomas-the-tank-engine.webp",
+    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/banner/A_classic_8k_masterpiece_of_Thomas_the_T_1788295547400.webp",
     "url": "/nl/kids-tv-shows/thomas-the-tank-engine"
   },
   {
@@ -131572,7 +131572,7 @@
     "type": "theme",
     "title": "SpongeBob SquarePants",
     "description": "Gratis printbare SpongeBob SquarePants kleurplaten voor peuters, kinderen, tieners en volwassenen. Download direct gratis in hoge resolutie A4.",
-    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/banner/spongebob-squarepants.webp",
+    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/banner/A_hilarious_classic_cartoon_illustration_1788333830252.webp",
     "url": "/nl/kids-tv-shows/spongebob-squarepants"
   },
   {
@@ -131580,7 +131580,7 @@
     "type": "theme",
     "title": "Minions & Despicable Me",
     "description": "Gratis printbare Minions & Despicable Me kleurplaten voor peuters, kinderen, tieners en volwassenen. Download direct gratis in hoge resolutie A4.",
-    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/banner/minions-despicable-me.webp",
+    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/banner/A_funny_8k_Illumination_masterpiece_of_M_1788295597340.webp",
     "url": "/nl/kids-tv-shows/minions-despicable-me"
   },
   {
@@ -131740,7 +131740,7 @@
     "type": "theme",
     "title": "Botanical Gardens & Greenhouses",
     "description": "Gratis printbare Botanical Gardens & Greenhouses kleurplaten voor peuters, kinderen, tieners en volwassenen. Download direct gratis in hoge resolutie A4.",
-    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/banner/botanical-gardens-greenhouses.webp",
+    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/banner/An_exquisite_8k_botanical_nature_masterp_1788295853930.webp",
     "url": "/nl/animals-wildlife/botanical-gardens-greenhouses"
   },
   {
@@ -131884,7 +131884,7 @@
     "type": "theme",
     "title": "Emergency Vehicles (Fire & Police)",
     "description": "Gratis printbare Emergency Vehicles (Fire & Police) kleurplaten voor peuters, kinderen, tieners en volwassenen. Download direct gratis in hoge resolutie A4.",
-    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/banner/emergency-vehicles-fire-police.webp",
+    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/banner/A_heroic_8k_emergency_vehicles_masterpie_1788296143359.webp",
     "url": "/nl/vehicles-transportation/emergency-vehicles-fire-police"
   },
   {
@@ -131932,7 +131932,7 @@
     "type": "theme",
     "title": "Mandalas & Sacred Geometry",
     "description": "Gratis printbare Mandalas & Sacred Geometry kleurplaten voor peuters, kinderen, tieners en volwassenen. Download direct gratis in hoge resolutie A4.",
-    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/banner/mandalas-sacred-geometry.webp",
+    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/banner/An_exquisite_8k_sacred_geometry_mandala__1788296243116.webp",
     "url": "/nl/art-aesthetic/mandalas-sacred-geometry"
   },
   {
@@ -132012,7 +132012,7 @@
     "type": "theme",
     "title": "Halloween & Spooky Nights",
     "description": "Gratis printbare Halloween & Spooky Nights kleurplaten voor peuters, kinderen, tieners en volwassenen. Download direct gratis in hoge resolutie A4.",
-    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/banner/halloween-spooky-nights.webp",
+    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/banner/A_spooky_8k_Halloween_masterpiece__glowi_1788296419213.webp",
     "url": "/nl/holidays-seasons/halloween-spooky-nights"
   },
   {
@@ -132044,7 +132044,7 @@
     "type": "theme",
     "title": "Cozy Life & Hygge",
     "description": "Gratis printbare Cozy Life & Hygge kleurplaten voor peuters, kinderen, tieners en volwassenen. Download direct gratis in hoge resolutie A4.",
-    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/banner/cozy-life-hygge.webp",
+    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/banner/An_ultra-cozy_8k_hygge_lifestyle_masterp_1788296475233.webp",
     "url": "/nl/holidays-seasons/cozy-life-hygge"
   },
   {
@@ -132060,7 +132060,7 @@
     "type": "theme",
     "title": "Cozy Winter Wonderland",
     "description": "Gratis printbare Cozy Winter Wonderland kleurplaten voor peuters, kinderen, tieners en volwassenen. Download direct gratis in hoge resolutie A4.",
-    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/banner/cozy-winter-wonderland.webp",
+    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/banner/A_magical_8k_winter_wonderland_masterpie_1788296497277.webp",
     "url": "/nl/holidays-seasons/cozy-winter-wonderland"
   },
   {
@@ -132076,7 +132076,7 @@
     "type": "theme",
     "title": "Sweet Treats & Bakery Desserts",
     "description": "Gratis printbare Sweet Treats & Bakery Desserts kleurplaten voor peuters, kinderen, tieners en volwassenen. Download direct gratis in hoge resolutie A4.",
-    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/banner/sweet-treats-bakery-desserts.webp",
+    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/banner/A_mouthwatering_8k_artisan_bakery_master_1788296519442.webp",
     "url": "/nl/holidays-seasons/sweet-treats-bakery-desserts"
   },
   {
