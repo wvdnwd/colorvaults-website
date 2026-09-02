@@ -1,6 +1,6 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useRef } from 'react';
 import Link from 'next/link';
 import SafeImage from './SafeImage';
 import styles from './CategoryExplorerTabs.module.css';
@@ -26,9 +26,10 @@ interface CategoryExplorerTabsProps {
 }
 
 const TOP_FEATURED_SLUGS = [
-  'frozen', 'pokemon', 'spider-man', 'dinosaur-adventures',
-  'sonic-the-hedgehog', 'paw-patrol', 'unicorns', 'mandalas',
-  'super-mario', 'dogs-and-puppies', 'cats-and-kittens', 'disney-princesses'
+  'frozen', 'pokemon', 'marvel-spider-man', 'dinosaur-adventures',
+  'sonic-the-hedgehog', 'paw-patrol', 'unicorns-pegasus', 'mandalas-sacred-geometry',
+  'super-mario', 'cute-puppies-dogs', 'cute-kittens-cats', 'princesses-castles',
+  'the-lion-king', 'beauty-and-the-beast-belle', 'the-little-mermaid-ariel', 'aladdin-jasmine'
 ];
 
 export default function CategoryExplorerTabs({
@@ -37,19 +38,38 @@ export default function CategoryExplorerTabs({
   themes,
 }: CategoryExplorerTabsProps) {
   const [selectedHub, setSelectedHub] = useState<string>('all');
+  const [showAll, setShowAll] = useState<boolean>(false);
+  const gridRef = useRef<HTMLDivElement>(null);
   const isEn = lang === 'en';
 
-  let filteredThemes: ThemeItem[] = [];
+  let allCategoryThemes: ThemeItem[] = [];
   if (selectedHub === 'all') {
-    // Pick diverse top themes across all hubs
     const featured = themes.filter(t => TOP_FEATURED_SLUGS.some(slug => t.slug.includes(slug)));
     const remaining = themes.filter(t => !TOP_FEATURED_SLUGS.some(slug => t.slug.includes(slug)));
-    filteredThemes = [...featured, ...remaining].slice(0, 12);
+    allCategoryThemes = [...featured, ...remaining];
   } else {
-    filteredThemes = themes.filter(t => t.parentHub === selectedHub);
+    allCategoryThemes = themes.filter(t => t.parentHub === selectedHub);
   }
 
+  const visibleThemes = showAll ? allCategoryThemes : allCategoryThemes.slice(0, 12);
+  const hasMore = allCategoryThemes.length > 12;
   const activeHubObj = hubs.find(h => h.slug === selectedHub);
+
+  const handleTabChange = (hubSlug: string) => {
+    setSelectedHub(hubSlug);
+    setShowAll(false);
+  };
+
+  const handleToggleShowAll = () => {
+    if (showAll) {
+      setShowAll(false);
+      if (gridRef.current) {
+        gridRef.current.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+    } else {
+      setShowAll(true);
+    }
+  };
 
   return (
     <div className={styles.explorerWrapper}>
@@ -59,7 +79,7 @@ export default function CategoryExplorerTabs({
           type="button"
           role="tab"
           aria-selected={selectedHub === 'all'}
-          onClick={() => setSelectedHub('all')}
+          onClick={() => handleTabChange('all')}
           className={`${styles.tabBtn} ${selectedHub === 'all' ? styles.activeTab : ''}`}
         >
           <span>{isEn ? 'Featured Albums' : 'Uitgelichte Albums'}</span>
@@ -77,7 +97,7 @@ export default function CategoryExplorerTabs({
               type="button"
               role="tab"
               aria-selected={isActive}
-              onClick={() => setSelectedHub(hub.slug)}
+              onClick={() => handleTabChange(hub.slug)}
               className={`${styles.tabBtn} ${isActive ? styles.activeTab : ''}`}
             >
               <span>{hub.title}</span>
@@ -88,8 +108,8 @@ export default function CategoryExplorerTabs({
       </div>
 
       {/* Grid of Theme Cards in Portrait 3:4 Format */}
-      <div className={styles.grid}>
-        {filteredThemes.slice(0, 12).map((theme) => {
+      <div className={styles.grid} ref={gridRef}>
+        {visibleThemes.map((theme) => {
           const cardUrl = `/${lang}/${theme.parentHub}/${theme.slug}`;
 
           return (
@@ -138,23 +158,38 @@ export default function CategoryExplorerTabs({
         })}
       </div>
 
-      {/* Bottom CTA to view entire Hub */}
-      <div className={styles.bottomCtaRow}>
-        {selectedHub !== 'all' && activeHubObj ? (
+      {/* Bottom CTA & Expansion Controls */}
+      <div className={styles.bottomCtaRow} style={{ display: 'flex', justifyContent: 'center', gap: '1rem', flexWrap: 'wrap', marginTop: '2.5rem' }}>
+        {hasMore && (
+          <button
+            type="button"
+            onClick={handleToggleShowAll}
+            className="btn-primary"
+            style={{ fontWeight: 800, cursor: 'pointer', padding: '0.85rem 1.75rem' }}
+          >
+            {showAll
+              ? (isEn ? '↑ Show Less' : '↑ Minder Weergeven')
+              : (isEn ? `↓ View All ${allCategoryThemes.length} Collections` : `↓ Bekijk Alle ${allCategoryThemes.length} Collecties`)}
+          </button>
+        )}
+
+        {selectedHub !== 'all' && activeHubObj && (
           <Link
             href={`/${lang}/${selectedHub}`}
             className="btn-secondary"
-            style={{ fontWeight: 800 }}
+            style={{ fontWeight: 800, padding: '0.85rem 1.75rem' }}
           >
             {isEn 
-              ? `View All ${filteredThemes.length} ${activeHubObj.title} Collections →`
-              : `Bekijk Alle ${filteredThemes.length} ${activeHubObj.title} Albums →`}
+              ? `Open ${activeHubObj.title} Hub →`
+              : `Open ${activeHubObj.title} Overzicht →`}
           </Link>
-        ) : (
+        )}
+
+        {selectedHub === 'all' && (
           <Link
             href={`/${lang}/search`}
             className="btn-secondary"
-            style={{ fontWeight: 800 }}
+            style={{ fontWeight: 800, padding: '0.85rem 1.75rem' }}
           >
             {isEn ? 'Search All 133+ Theme Collections →' : 'Zoek in Alle 133+ Thema Albums →'}
           </Link>
