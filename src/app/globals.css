@@ -1,63 +1,65 @@
 
 :root {
-  /* ── ColorVaults Brand Palette ──────────────────────────────────────────── */
-  /* 60% Primary — deep teal backgrounds & navbar */
-  --color-primary: #0F3D3E;
-  --color-primary-mid: #164E50;
-  --color-primary-light: #1E6466;
+  /* ── ColorVaults Modern Vibrant Creative Palette ───────────────────────── */
+  /* Primary & Accents */
+  --color-primary: #4F46E5;
+  --color-primary-mid: #6366F1;
+  --color-primary-light: #EEF2FF;
 
-  /* 30% Secondary — warm cream surfaces & cards */
-  --color-secondary: #FDF6E9;
-  --color-secondary-dim: #F5EAD5;
+  /* Surfaces & Backgrounds */
+  --background: #F8FAFD;
+  --surface: #FFFFFF;
+  --surface-2: #F1F5F9;
+  --surface-teal: #0F172A;
+  --surface-glass: rgba(255, 255, 255, 0.85);
 
-  /* 10% Accent — coral CTA buttons & downloads */
-  --color-accent: #FF6B4A;
-  --color-accent-hover: #F0501F;
-  --color-accent-glow: rgba(255, 107, 74, 0.35);
+  /* Text Colors */
+  --foreground: #0F172A;
+  --color-text-dark: #0F172A;
+  --color-text-light: #F8FAFC;
+  --color-text-muted: #64748B;
 
-  /* Sporadic Highlight — lila badges & hover accents */
-  --color-highlight: #C9A3D8;
-  --color-highlight-soft: rgba(201, 163, 216, 0.25);
+  /* Brand Accents */
+  --color-accent: #FF4B72;
+  --color-accent-hover: #E11D48;
+  --color-accent-glow: rgba(255, 75, 114, 0.35);
 
-  /* Text */
-  --color-text-dark: #1A2E2E;
-  --color-text-light: #FDF6E9;
-  --color-text-muted: rgba(253, 246, 233, 0.65);
+  --color-highlight: #8B5CF6;
+  --color-highlight-soft: rgba(139, 92, 246, 0.15);
 
-  /* ── Surfaces ────────────────────────────────────────────────────────────── */
-  --background: var(--color-primary);
-  --surface: var(--color-secondary);
-  --surface-2: var(--color-secondary-dim);
-  --surface-teal: var(--color-primary-mid);
-  --surface-glass: rgba(15, 61, 62, 0.72);
-  --foreground: var(--color-text-dark);
+  /* Legacy aliases (kept for existing components) */
+  --primary: #FF4B72;
+  --primary-hover: #E11D48;
+  --primary-light: rgba(255, 75, 114, 0.1);
+  --primary-glow: rgba(255, 75, 114, 0.35);
 
-  /* ── Legacy aliases (kept so existing components don't break) ───────────── */
-  --primary: var(--color-accent);
-  --primary-hover: var(--color-accent-hover);
-  --primary-light: rgba(255, 107, 74, 0.12);
-  --primary-glow: var(--color-accent-glow);
+  --accent: #8B5CF6;
+  --accent-hover: #7C3AED;
+  --accent-light: rgba(139, 92, 246, 0.12);
+  --accent-glow: rgba(139, 92, 246, 0.25);
 
-  --accent: var(--color-highlight);
-  --accent-hover: #B07FC5;
-  --accent-light: rgba(201, 163, 216, 0.15);
-  --accent-glow: rgba(201, 163, 216, 0.3);
+  /* Modern Neutral Grays */
+  --gray-50: #F8FAFC;
+  --gray-100: #F1F5F9;
+  --gray-200: #E2E8F0;
+  --gray-300: #CBD5E1;
+  --gray-400: #94A3B8;
+  --gray-500: #64748B;
+  --gray-600: #475569;
+  --gray-700: #334155;
+  --gray-800: #1E293B;
+  --gray-900: #0F172A;
 
-  /* ── Teal grays (replacing blue-grays) ───────────────────────────────────── */
-  --gray-50: #F0F7F7;
-  --gray-100: #D6EDED;
-  --gray-200: #B3D4D5;
-  --gray-300: #85B5B6;
-  --gray-400: #5A8E8F;
-  --gray-500: #3E6B6C;
-  --gray-600: #2D5253;
-  --gray-700: #1E3D3E;
-  --gray-800: #142B2C;
-  --gray-900: #0A1B1C;
-
-  /* ── Gradients ───────────────────────────────────────────────────────────── */
+  /* Gradients */
   --gradient-primary: linear-gradient(135deg, #FF4B72 0%, #FF8A00 100%);
-  --gradient-accent:  linear-gradient(135deg, #C9A3D8 0%, #A880C0 100%);
+  --gradient-accent:  linear-gradient(135deg, #8B5CF6 0%, #6366F1 100%);
+  --gradient-rainbow: linear-gradient(135deg, #FF2E93 0%, #FF8A00 25%, #FFD600 50%, #00D2D3 75%, #7C3AED 100%);
+  --gradient-magic:   linear-gradient(135deg, #7C3AED 0%, #FF2E93 100%);
+  --gradient-cyan:    linear-gradient(135deg, #00D2D3 0%, #54A0FF 100%);
+  --gradient-amber:   linear-gradient(135deg, #FF9F43 0%, #FECA57 100%);
+  --gradient-hero:    linear-gradient(160deg, #0F172A 0%, #1E293B 50%, #0F172A 100%);
+  --gradient-teal:    linear-gradient(160deg, #0F172A 0%, #1E293B 100%);
+  --gradient-cream:   linear-gradient(180deg, #FFFFFF 0%, #F8FAFD 100%);
   --gradient-rainbow: linear-gradient(135deg, #FF2E93 0%, #FF8A00 25%, #FFD600 50%, #00D2D3 75%, #7C3AED 100%);
   --gradient-magic:   linear-gradient(135deg, #7C3AED 0%, #FF2E93 100%);
   --gradient-cyan:    linear-gradient(135deg, #00D2D3 0%, #54A0FF 100%);
@@ -144,12 +146,12 @@ html, body {
 body {
   background-color: var(--background);
   background-image:
-    radial-gradient(ellipse at 8% 12%, rgba(255, 46, 147, 0.08) 0%, transparent 45%),
-    radial-gradient(ellipse at 92% 28%, rgba(124, 58, 237, 0.09) 0%, transparent 45%),
-    radial-gradient(ellipse at 25% 65%, rgba(0, 210, 211, 0.07) 0%, transparent 45%),
-    radial-gradient(ellipse at 85% 85%, rgba(255, 179, 0, 0.08) 0%, transparent 40%);
+    radial-gradient(ellipse at 8% 12%, rgba(255, 75, 114, 0.05) 0%, transparent 45%),
+    radial-gradient(ellipse at 92% 28%, rgba(139, 92, 246, 0.06) 0%, transparent 45%),
+    radial-gradient(ellipse at 25% 65%, rgba(0, 210, 211, 0.05) 0%, transparent 45%),
+    radial-gradient(ellipse at 85% 85%, rgba(255, 179, 0, 0.05) 0%, transparent 40%);
   background-attachment: fixed;
-  color: var(--color-text-light);
+  color: var(--foreground);
   font-family: var(--font-body), 'Nunito', sans-serif;
   line-height: 1.6;
   -webkit-font-smoothing: antialiased;
@@ -163,7 +165,7 @@ body::before {
   position: fixed;
   inset: 0;
   background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='1'/%3E%3C/svg%3E");
-  opacity: 0.028;
+  opacity: 0.015;
   pointer-events: none;
   z-index: 1000;
   mix-blend-mode: overlay;
@@ -171,8 +173,8 @@ body::before {
 
 h1, h2, h3, h4, h5, h6 {
   font-family: var(--font-display), 'Fredoka', sans-serif;
-  color: var(--color-text-light);
-  font-weight: 600;
+  color: var(--foreground);
+  font-weight: 700;
 }
 
 a {
@@ -215,7 +217,7 @@ main {
 /* Alternating section backgrounds for scroll rhythm */
 .section-dark {
   background: var(--gradient-teal);
-  color: var(--color-text-light);
+  color: #F8FAFC;
   padding: 5rem 0;
 }
 
@@ -224,19 +226,21 @@ main {
 .section-dark h3,
 .section-dark h4,
 .section-dark .card-title {
-  color: var(--color-text-light);
+  color: #FFFFFF;
 }
 
 .section-dark .badge {
-  background: rgba(255, 107, 74, 0.15);
-  color: var(--color-accent);
-  border-color: rgba(255, 107, 74, 0.3);
+  background: rgba(255, 75, 114, 0.15);
+  color: #FF4B72;
+  border-color: rgba(255, 75, 114, 0.3);
 }
 
 .section-light {
-  background: var(--gradient-cream);
-  color: var(--color-text-dark);
+  background: #FFFFFF;
+  color: var(--foreground);
   padding: 5rem 0;
+  border-top: 1px solid var(--gray-200);
+  border-bottom: 1px solid var(--gray-200);
 }
 
 .section-light h1,
@@ -244,13 +248,13 @@ main {
 .section-light h3,
 .section-light h4,
 .section-light .card-title {
-  color: var(--color-text-dark);
+  color: var(--foreground);
 }
 
 .section-light .badge {
-  background: rgba(15, 61, 62, 0.08);
+  background: rgba(79, 70, 229, 0.08);
   color: var(--color-primary);
-  border-color: rgba(15, 61, 62, 0.18);
+  border-color: rgba(79, 70, 229, 0.2);
 }
 
 /* ── Scroll Reveal ────────────────────────────────────────────────────────── */
@@ -341,23 +345,25 @@ main {
   align-items: center;
   justify-content: center;
   gap: 0.6rem;
-  background: transparent;
-  color: var(--color-text-light);
-  padding: 0.9rem 2rem;
+  background: var(--surface);
+  color: var(--foreground);
+  padding: 0.85rem 1.75rem;
   border-radius: var(--radius-full);
   font-family: var(--font-body), sans-serif;
   font-weight: 700;
-  font-size: 1rem;
-  border: 2px solid rgba(253, 246, 233, 0.3);
+  font-size: 0.95rem;
+  border: 1.5px solid var(--gray-300);
   cursor: pointer;
   transition: all 0.25s ease;
   text-decoration: none;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.04);
 }
 
 .btn-secondary:hover {
-  background: rgba(253, 246, 233, 0.1);
-  border-color: rgba(253, 246, 233, 0.6);
+  background: var(--gray-100);
+  border-color: var(--gray-400);
   transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
 }
 
 .download-btn {
@@ -382,50 +388,50 @@ main {
 
 .download-btn:hover {
   transform: translateY(-3px) scale(1.02);
-  box-shadow: 0 18px 40px rgba(255, 107, 74, 0.5);
+  box-shadow: 0 18px 40px rgba(255, 75, 114, 0.5);
 }
 
-/* ── Glassmorphism Panel (teal glass) ─────────────────────────────────────── */
+/* ── Glassmorphism Panel ──────────────────────────────────────────────────── */
 .glass-panel {
-  background: var(--glass-bg);
+  background: rgba(255, 255, 255, 0.85);
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
-  border: 1px solid var(--glass-border);
-  box-shadow: var(--glass-shadow);
+  border: 1px solid var(--gray-200);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.06);
   border-radius: var(--radius-lg);
 }
 
 /* ── Card System ──────────────────────────────────────────────────────────── */
 .card {
-  background: var(--color-secondary);
+  background: #FFFFFF;
   border-radius: var(--radius-lg);
   overflow: hidden;
-  border: 1px solid rgba(15, 61, 62, 0.1);
+  border: 1px solid var(--gray-200);
   transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
   text-decoration: none;
-  color: var(--color-text-dark);
+  color: var(--foreground);
   display: flex;
   flex-direction: column;
-  box-shadow: var(--shadow-sm);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.04);
 }
 
 .card:hover {
   transform: translateY(-6px) scale(1.01);
-  box-shadow: 0 0 0 3px rgba(255, 107, 74, 0.3), var(--shadow-md);
-  border-color: rgba(255, 107, 74, 0.25);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08), 0 0 0 2px rgba(99, 102, 241, 0.25);
+  border-color: rgba(99, 102, 241, 0.3);
 }
 
 .card-img-wrapper {
   position: relative;
   overflow: hidden;
-  background: var(--color-secondary-dim);
+  background: #F8FAFC;
 }
 
 .card-img-wrapper::after {
   content: '';
   position: absolute;
   inset: 0;
-  background: linear-gradient(135deg, transparent 0%, rgba(255, 107, 74, 0.12) 100%);
+  background: linear-gradient(135deg, transparent 0%, rgba(99, 102, 241, 0.08) 100%);
   opacity: 0;
   transition: opacity 0.35s ease;
   pointer-events: none;
@@ -458,8 +464,8 @@ main {
 
 .card-title {
   font-size: 1.05rem;
-  font-weight: 600;
-  color: var(--color-text-dark);
+  font-weight: 700;
+  color: var(--foreground);
   margin-bottom: 0.35rem;
   line-height: 1.3;
   font-family: var(--font-display), sans-serif;
@@ -467,7 +473,7 @@ main {
 
 .card-desc {
   font-size: 0.875rem;
-  color: var(--gray-500);
+  color: var(--gray-600);
   line-height: 1.5;
   margin-bottom: 0.5rem;
 }
@@ -500,8 +506,8 @@ main {
   display: inline-flex;
   align-items: center;
   gap: 0.4rem;
-  background: rgba(255, 107, 74, 0.12);
-  color: var(--color-accent);
+  background: rgba(79, 70, 229, 0.08);
+  color: #4F46E5;
   padding: 0.35rem 0.85rem;
   border-radius: var(--radius-full);
   font-size: 0.78rem;
@@ -509,17 +515,17 @@ main {
   font-family: var(--font-body), sans-serif;
   text-transform: uppercase;
   letter-spacing: 0.06em;
-  border: 1px solid rgba(255, 107, 74, 0.22);
+  border: 1px solid rgba(79, 70, 229, 0.2);
 }
 
 /* ── Page Hero Banner ─────────────────────────────────────────────────────── */
 .page-hero {
-  background: var(--gradient-teal);
-  border-bottom: 1px solid rgba(253, 246, 233, 0.1);
+  background: linear-gradient(135deg, #0F172A 0%, #1E293B 100%);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
   padding: 3.5rem 0 3rem;
   position: relative;
   overflow: hidden;
-  color: var(--color-text-light);
+  color: #F8FAFC;
 }
 
 .page-hero::before {
@@ -529,7 +535,7 @@ main {
   right: -10%;
   width: 500px;
   height: 500px;
-  background: radial-gradient(circle, rgba(255, 107, 74, 0.1) 0%, transparent 65%);
+  background: radial-gradient(circle, rgba(255, 75, 114, 0.15) 0%, transparent 65%);
   border-radius: 50%;
   pointer-events: none;
 }
@@ -539,13 +545,13 @@ main {
 .page-hero p,
 .page-hero .title-h1,
 .page-hero .title-h2 {
-  color: var(--color-text-light);
+  color: #F8FAFC;
 }
 
 .page-hero .badge {
-  background: rgba(255, 107, 74, 0.15);
-  color: var(--color-accent);
-  border-color: rgba(255, 107, 74, 0.3);
+  background: rgba(255, 75, 114, 0.18);
+  color: #FF7597;
+  border-color: rgba(255, 75, 114, 0.35);
 }
 
 /* Hub-themed hero accents */

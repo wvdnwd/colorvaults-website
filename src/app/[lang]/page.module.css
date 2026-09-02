@@ -305,53 +305,59 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  border: 1px solid rgba(15, 61, 62, 0.12);
-  box-shadow: var(--shadow-sm);
-  background: var(--color-secondary);
-  color: var(--color-text-dark);
+  border: 1px solid var(--gray-200);
+  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.04);
+  background: #FFFFFF;
+  color: var(--foreground);
   position: relative;
   overflow: hidden;
 }
 
 .ageCard:hover {
   transform: translateY(-8px);
-  box-shadow: 0 0 0 2px rgba(255, 107, 74, 0.3), var(--shadow-lg);
+  box-shadow: 0 16px 36px rgba(0, 0, 0, 0.09), 0 0 0 2px rgba(255, 75, 114, 0.25);
+  border-color: rgba(255, 75, 114, 0.3);
 }
 
 .ageToddlers { background: #FFFFFF; border-top: 5px solid #F97316; }
-.ageToddlers:hover { box-shadow: 0 16px 36px rgba(249, 115, 22, 0.25); border-color: #F97316; }
+.ageToddlers:hover { box-shadow: 0 16px 36px rgba(249, 115, 22, 0.2); border-color: #F97316; }
 
 .ageKids     { background: #FFFFFF; border-top: 5px solid #10B981; }
-.ageKids:hover { box-shadow: 0 16px 36px rgba(16, 185, 129, 0.25); border-color: #10B981; }
+.ageKids:hover { box-shadow: 0 16px 36px rgba(16, 185, 129, 0.2); border-color: #10B981; }
 
 .ageTeens    { background: #FFFFFF; border-top: 5px solid #8B5CF6; }
-.ageTeens:hover { box-shadow: 0 16px 36px rgba(139, 92, 246, 0.25); border-color: #8B5CF6; }
+.ageTeens:hover { box-shadow: 0 16px 36px rgba(139, 92, 246, 0.2); border-color: #8B5CF6; }
 
 .ageAdults   { background: #FFFFFF; border-top: 5px solid #EC4899; }
-.ageAdults:hover { box-shadow: 0 16px 36px rgba(236, 72, 153, 0.25); border-color: #EC4899; }
+.ageAdults:hover { box-shadow: 0 16px 36px rgba(236, 72, 153, 0.2); border-color: #EC4899; }
 
 .ageEmoji {
-  font-size: 3rem;
+  font-size: 1.1rem;
+  font-weight: 800;
   margin-bottom: 0.75rem;
-  filter: drop-shadow(0 4px 8px rgba(0,0,0,0.15));
+  color: var(--color-primary);
+  background: rgba(79, 70, 229, 0.08);
+  padding: 0.25rem 0.75rem;
+  border-radius: 9999px;
+  letter-spacing: 0.04em;
   transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
 }
 
 .ageCard:hover .ageEmoji {
-  transform: scale(1.15) rotate(6deg);
+  transform: scale(1.08);
 }
 
 .ageName {
-  font-size: 1.25rem;
+  font-size: 1.35rem;
   font-weight: 800;
-  color: var(--color-text-dark);
-  margin-bottom: 0.25rem;
+  color: var(--foreground);
+  margin-bottom: 0.35rem;
   font-family: var(--font-display), sans-serif;
 }
 
 .ageDesc {
-  font-size: 0.85rem;
-  color: var(--gray-500);
+  font-size: 0.875rem;
+  color: var(--gray-600);
   margin-bottom: 1.25rem;
   font-weight: 600;
   line-height: 1.5;
@@ -379,16 +385,15 @@
 
 /* ── Why Section ──────────────────────────────────────────────────────────── */
 .whySection {
-  background: var(--gradient-teal);
+  background: #FFFFFF;
   padding: 5.5rem 0;
-  border-top: 1px solid rgba(253, 246, 233, 0.06);
-  border-bottom: 1px solid rgba(253, 246, 233, 0.06);
-  color: var(--color-text-light);
+  border-top: 1px solid var(--gray-200);
+  border-bottom: 1px solid var(--gray-200);
+  color: var(--foreground);
 }
 
-.whySection h2,
-.whySection p {
-  color: inherit;
+.whySection h2 {
+  color: var(--foreground) !important;
 }
 
 .whyInner {
@@ -399,10 +404,10 @@
 }
 
 .whyLead {
-  color: var(--color-text-muted);
+  color: var(--gray-600);
   line-height: 1.8;
-  font-size: 1.025rem;
-  margin-bottom: 1rem;
+  font-size: 1.05rem;
+  margin-bottom: 1.25rem;
 }
 
 .featureCard {
@@ -410,27 +415,30 @@
   gap: 1.25rem;
   align-items: flex-start;
   padding: 1.4rem;
-  background: rgba(253, 246, 233, 0.05);
+  background: #F8FAFC;
   border-radius: var(--radius-lg);
-  border: 1px solid rgba(253, 246, 233, 0.08);
+  border: 1px solid var(--gray-200);
   margin-bottom: 1rem;
-  box-shadow: var(--shadow-sm);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.03);
   transition: all 0.25s ease;
 }
 
 .featureCard:hover {
   transform: translateX(6px);
-  border-color: rgba(255, 107, 74, 0.3);
-  background: rgba(255, 107, 74, 0.05);
+  border-color: rgba(79, 70, 229, 0.3);
+  background: #FFFFFF;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.06);
 }
 
 .featureIcon {
-  font-size: 1.75rem;
+  font-size: 1.1rem;
+  font-weight: 800;
   flex-shrink: 0;
-  width: 48px;
-  height: 48px;
+  width: 44px;
+  height: 44px;
   border-radius: 12px;
-  background: rgba(255, 107, 74, 0.12);
+  background: rgba(79, 70, 229, 0.1);
+  color: var(--color-primary);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -438,15 +446,15 @@
 
 .featureTitle {
   font-size: 1.1rem;
-  font-weight: 600;
-  color: var(--color-text-light);
+  font-weight: 700;
+  color: var(--foreground);
   margin-bottom: 0.25rem;
   font-family: var(--font-display), sans-serif;
 }
 
 .featureDesc {
   font-size: 0.9rem;
-  color: var(--color-text-muted);
+  color: var(--gray-600);
   line-height: 1.5;
 }
 

@@ -1,5 +1,5 @@
 import SafeImage from '@/components/SafeImage';
-import { getThemes, getColoringPages, getSampleImagesForTheme } from '@/lib/api';
+import { getThemes, getColoringPages, getMainHubs, getSampleImagesForTheme } from '@/lib/api';
 import ThemeCard from '@/components/ThemeCard';
 import { blogPosts } from '@/data/blogs';
 import styles from './page.module.css';
@@ -8,6 +8,7 @@ import MotionCard from '@/components/MotionCard';
 import AdSlot from '@/components/AdSlot';
 import ScrollReveal from '@/components/ScrollReveal';
 import HeroCarousel from '@/components/HeroCarousel';
+import CategoryExplorerTabs from '@/components/CategoryExplorerTabs';
 import React from 'react';
 
 export async function generateMetadata({ params }: { params: Promise<{ lang: string }> }) {
@@ -34,30 +35,40 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
 
 export default async function HomePage({ params }: { params: Promise<{ lang: string }> }) {
   const { lang } = await params;
-  const popularSlugs = [
-    'dinosaurs', 'unicorns', 'space-exploration', 'fairies',
-    'mandalas', 'princesses-castles', 'animals', 'vehicles',
-    'disney-princesses', 'paw-patrol', 'superheroes', 'ocean-life'
-  ];
+  const isEn = lang === 'en';
 
   const allThemes = getThemes(lang);
+  const mainHubs = getMainHubs(lang);
 
-  let topThemes = allThemes.filter(t => popularSlugs.includes(t.slug));
-  if (topThemes.length < 8) {
-    const others = allThemes.filter(t => !popularSlugs.includes(t.slug) && !t.title.startsWith('A '));
-    topThemes = [...topThemes, ...others];
-  }
-  topThemes = topThemes.slice(0, 8);
+  // Popular character theme slugs
+  const characterSlugs = [
+    'frozen', 'pokemon', 'sonic-the-hedgehog', 'spider-man', 
+    'paw-patrol', 'disney-princesses', 'bluey', 'spongebob',
+    'super-mario', 'anime-heroes', 'dragon-ball', 'minecraft'
+  ];
+
+  // Animal & nature slugs
+  const animalSlugs = [
+    'dinosaur-adventures', 'unicorns', 'dogs-and-puppies', 'cats-and-kittens',
+    'safari-and-jungle', 'ocean-and-sea-creatures', 'horses-and-ponies', 'birds'
+  ];
+
+  const popularCharacters = allThemes
+    .filter(t => characterSlugs.some(s => t.slug.includes(s)))
+    .slice(0, 8);
+
+  const popularAnimals = allThemes
+    .filter(t => animalSlugs.some(s => t.slug.includes(s)))
+    .slice(0, 4);
 
   const featuredPages = getColoringPages(lang).filter(p => !p.title.startsWith('A ')).slice(0, 8);
-  const isEn = lang === 'en';
 
   const difficultyCards = [
     {
       slug: 'kids',
       name: isEn ? 'Easy' : 'Makkelijk',
       badge: isEn ? 'Level 1' : 'Niveau 1',
-      desc: isEn ? 'Simple shapes & fun designs for everyone' : 'Eenvoudige vormen & leuke designs voor iedereen',
+      desc: isEn ? 'Simple shapes & fun designs for preschoolers and toddlers' : 'Eenvoudige vormen & leuke designs voor peuters en kleuters',
       className: styles.ageKids,
       hubSlug: isEn ? 'animals-and-nature' : 'animals-and-nature',
       themeSlug: 'animals',
@@ -67,7 +78,7 @@ export default async function HomePage({ params }: { params: Promise<{ lang: str
       slug: 'teens',
       name: isEn ? 'Medium' : 'Gemiddeld',
       badge: isEn ? 'Level 2' : 'Niveau 2',
-      desc: isEn ? 'More detail & creative scenes' : 'Meer detail & creatieve scènes',
+      desc: isEn ? 'Creative scenes with rich details and vibrant characters' : 'Creatieve scènes met leuke details en populaire karakters',
       className: styles.ageTeens,
       hubSlug: isEn ? 'games-and-pop-culture' : 'games-and-pop-culture',
       themeSlug: 'pokemon',
@@ -77,7 +88,7 @@ export default async function HomePage({ params }: { params: Promise<{ lang: str
       slug: 'adults',
       name: isEn ? 'Hard' : 'Moeilijk',
       badge: isEn ? 'Level 3' : 'Niveau 3',
-      desc: isEn ? 'Intricate patterns & fine details' : 'Ingewikkelde patronen & fijne details',
+      desc: isEn ? 'Intricate floral mandalas and relaxing complex line art' : 'Ingewikkelde bloemenmandala\'s en ontspannende lijntekeningen',
       className: styles.ageAdults,
       hubSlug: 'mandalas',
       themeSlug: 'mandalas',
@@ -98,14 +109,12 @@ export default async function HomePage({ params }: { params: Promise<{ lang: str
     <>
       {/* ── Hero Section ── */}
       <section className={styles.hero}>
-        {/* Decorative ink blobs — pointer-events: none in CSS */}
         <div className={`ink-blob ${styles.blobTopLeft}`} aria-hidden="true" />
         <div className={`ink-blob ${styles.blobBottomRight}`} aria-hidden="true" />
         <div className={styles.blobCenter} aria-hidden="true" />
 
         <div className="container">
           <div className={styles.heroLayout}>
-
             {/* LEFT: text content */}
             <div className={styles.heroContent}>
               <span className={`${styles.heroBadge} hero-anim-0`}>
@@ -147,7 +156,7 @@ export default async function HomePage({ params }: { params: Promise<{ lang: str
               </div>
 
               <div className={`${styles.heroCtas} hero-anim-4`}>
-                <Link href={`/${lang}/${isEn ? 'collections' : 'collecties'}`} className="btn-primary">
+                <Link href={`/${lang}/search`} className="btn-primary">
                   {isEn ? 'Explore All Collections' : 'Alle Collecties Bekijken'}
                 </Link>
                 <Link href={`/${lang}/mandalas`} className="btn-secondary">
@@ -169,66 +178,75 @@ export default async function HomePage({ params }: { params: Promise<{ lang: str
                   }))}
               />
             </div>
-
           </div>
         </div>
       </section>
 
+      {/* ── Section 1: Trending Characters & Shows ── */}
+      {popularCharacters.length > 0 && (
+        <section className="section">
+          <div className="container">
+            <AdSlot type="banner" text={isEn ? 'Sponsored Content' : 'Gesponsord'} />
 
-      {/* ── Section 1: Popular Categories — dark teal ── */}
-      <section className="section-dark">
+            <ScrollReveal className="section-header">
+              <div>
+                <span className="badge">{isEn ? 'Trending Characters' : 'Populaire Karakters'}</span>
+                <h2 className="title-h2" style={{ marginTop: '0.65rem' }}>
+                  {isEn ? 'Popular Series & Movies' : 'Populaire Series & Films'}
+                </h2>
+              </div>
+              <Link href={`/${lang}/${isEn ? 'tv-series-and-movies' : 'tv-series-en-films'}`} className="btn-secondary">
+                {isEn ? 'View All Series →' : 'Bekijk Alle Series →'}
+              </Link>
+            </ScrollReveal>
+
+            <div className="grid-4">
+              {popularCharacters.map((theme, i) => {
+                const sampleImages = getSampleImagesForTheme(lang, theme.parentHub, theme.slug, theme.image, 3);
+                return (
+                  <ScrollReveal key={theme.slug} delay={(i % 4) as 0 | 1 | 2 | 3 | 4}>
+                    <ThemeCard
+                      lang={lang}
+                      hubSlug={theme.parentHub}
+                      themeSlug={theme.slug}
+                      title={theme.title}
+                      description={theme.description}
+                      images={sampleImages}
+                      pageCount={theme.pageCount}
+                    />
+                  </ScrollReveal>
+                );
+              })}
+            </div>
+          </div>
+        </section>
+      )}
+
+      {/* ── Section 2: Interactive Category Explorer (Tabbed) ── */}
+      <section className="section-light">
         <div className="container">
-          <AdSlot type="banner" text={isEn ? 'Sponsored Content' : 'Gesponsord'} />
-
           <ScrollReveal className="section-header">
             <div>
-              <span className="badge">{allThemes.length} {isEn ? 'Categories & Themes' : 'Categorieën & Thema\'s'}</span>
-              <h2 className="title-h2" style={{ marginTop: '0.65rem', color: 'var(--color-text-light)' }}>
-                {isEn ? 'Explore All Themes' : 'Ontdek Alle Categorieën'}
+              <span className="badge">{allThemes.length} {isEn ? 'Albums Available' : 'Albums Beschikbaar'}</span>
+              <h2 className="title-h2" style={{ marginTop: '0.65rem' }}>
+                {isEn ? 'Explore by Category' : 'Blader op Categorie'}
               </h2>
             </div>
+            <Link href={`/${lang}/search`} className="btn-secondary">
+              {isEn ? 'Full Search & Filters →' : 'Uitgebreid Zoeken & Filteren →'}
+            </Link>
           </ScrollReveal>
 
-          <div>
-            {Array.from({ length: Math.ceil(allThemes.length / 6) }).map((_, chunkIndex) => {
-              const chunk = allThemes.slice(chunkIndex * 6, chunkIndex * 6 + 6);
-              const showAdBar = chunkIndex < Math.ceil(allThemes.length / 6) - 1;
-
-              return (
-                <React.Fragment key={chunkIndex}>
-                  <div className="grid-4" style={{ marginBottom: showAdBar ? '2.5rem' : 0 }}>
-                    {chunk.map((theme, i) => {
-                      const sampleImages = getSampleImagesForTheme(lang, theme.parentHub, theme.slug, theme.image, 3);
-                      return (
-                        <ScrollReveal key={theme.slug} delay={(i % 4) as 0 | 1 | 2 | 3 | 4}>
-                          <ThemeCard
-                            lang={lang}
-                            hubSlug={theme.parentHub}
-                            themeSlug={theme.slug}
-                            title={theme.title}
-                            description={theme.description}
-                            images={sampleImages}
-                            pageCount={theme.pageCount}
-                          />
-                        </ScrollReveal>
-                      );
-                    })}
-                  </div>
-
-                  {showAdBar && (
-                    <div style={{ margin: '2.5rem 0' }}>
-                      <AdSlot type="banner" text={isEn ? 'Sponsored Content' : 'Gesponsord'} />
-                    </div>
-                  )}
-                </React.Fragment>
-              );
-            })}
-          </div>
+          <CategoryExplorerTabs
+            lang={lang}
+            hubs={mainHubs}
+            themes={allThemes}
+          />
         </div>
       </section>
 
-      {/* ── Section 2: Browse by Difficulty — light cream ── */}
-      <section className="section-light">
+      {/* ── Section 3: Browse by Difficulty ── */}
+      <section className="section">
         <div className="container">
           <ScrollReveal className="section-header">
             <div>
@@ -246,7 +264,7 @@ export default async function HomePage({ params }: { params: Promise<{ lang: str
                   href={`/${lang}/${age.hubSlug}/${age.themeSlug}/${age.ageSlug}`}
                   className={`${styles.ageCard} ${age.className}`}
                 >
-                  <div className={styles.ageEmoji} style={{ fontSize: '0.9rem', fontWeight: 800, letterSpacing: '0.05em' }}>{age.badge}</div>
+                  <div className={styles.ageEmoji}>{age.badge}</div>
                   <h3 className={styles.ageName}>{age.name}</h3>
                   <p className={styles.ageDesc}>{age.desc}</p>
                   <div className={styles.ageCta}>{isEn ? 'Explore →' : 'Ontdek →'}</div>
@@ -257,49 +275,70 @@ export default async function HomePage({ params }: { params: Promise<{ lang: str
         </div>
       </section>
 
-      {/* ── Section 3: Recently Added — dark teal ── */}
-      <section className="section-dark">
+      {/* ── Section 4: Cute Animals & Nature Showcase ── */}
+      {popularAnimals.length > 0 && (
+        <section className="section-light">
+          <div className="container">
+            <ScrollReveal className="section-header">
+              <div>
+                <span className="badge">{isEn ? 'Fauna & Nature' : 'Dierenrijk'}</span>
+                <h2 className="title-h2" style={{ marginTop: '0.65rem' }}>
+                  {isEn ? 'Animals & Wildlife' : 'Dieren & Natuur'}
+                </h2>
+              </div>
+              <Link href={`/${lang}/${isEn ? 'animals-and-nature' : 'dieren-en-natuur'}`} className="btn-secondary">
+                {isEn ? 'All Animal Pages →' : 'Alle Dierenplaten →'}
+              </Link>
+            </ScrollReveal>
+
+            <div className="grid-4">
+              {popularAnimals.map((theme, i) => {
+                const sampleImages = getSampleImagesForTheme(lang, theme.parentHub, theme.slug, theme.image, 3);
+                return (
+                  <ScrollReveal key={theme.slug} delay={(i % 4) as 0 | 1 | 2 | 3 | 4}>
+                    <ThemeCard
+                      lang={lang}
+                      hubSlug={theme.parentHub}
+                      themeSlug={theme.slug}
+                      title={theme.title}
+                      description={theme.description}
+                      images={sampleImages}
+                      pageCount={theme.pageCount}
+                    />
+                  </ScrollReveal>
+                );
+              })}
+            </div>
+          </div>
+        </section>
+      )}
+
+      {/* ── Section 5: Recently Added Coloring Pages ── */}
+      <section className="section">
         <div className="container">
           <AdSlot type="banner" text={isEn ? 'Sponsored Content' : 'Gesponsord'} />
 
           <ScrollReveal className="section-header">
             <div>
               <span className="badge">{isEn ? 'Fresh Additions' : 'Nieuwste Kleurplaten'}</span>
-              <h2 className="title-h2" style={{ marginTop: '0.65rem', color: 'var(--color-text-light)' }}>
-                {isEn ? 'Recently Added Coloring Pages' : 'Recente Kleurplaten'}
+              <h2 className="title-h2" style={{ marginTop: '0.65rem' }}>
+                {isEn ? 'Recently Added Line Art' : 'Recente Kleurplaten'}
               </h2>
             </div>
           </ScrollReveal>
 
-          <div>
-            {Array.from({ length: Math.ceil(featuredPages.length / 6) }).map((_, rowIndex) => {
-              const chunk = featuredPages.slice(rowIndex * 6, rowIndex * 6 + 6);
-              const showAdBar = rowIndex < Math.ceil(featuredPages.length / 6) - 1;
-
-              return (
-                <React.Fragment key={rowIndex}>
-                  <div className="grid-4" style={{ marginBottom: showAdBar ? '2.5rem' : 0 }}>
-                    {chunk.map((page, idx) => (
-                      <ScrollReveal key={page.slug} delay={(idx % 4) as 0 | 1 | 2 | 3 | 4}>
-                        <MotionCard page={page} lang={lang} isEn={isEn} />
-                      </ScrollReveal>
-                    ))}
-                  </div>
-
-                  {showAdBar && (
-                    <div style={{ margin: '2.5rem 0' }}>
-                      <AdSlot type="banner" text={isEn ? 'Sponsored Content' : 'Gesponsord'} />
-                    </div>
-                  )}
-                </React.Fragment>
-              );
-            })}
+          <div className="grid-4">
+            {featuredPages.map((page, idx) => (
+              <ScrollReveal key={page.slug} delay={(idx % 4) as 0 | 1 | 2 | 3 | 4}>
+                <MotionCard page={page} lang={lang} isEn={isEn} />
+              </ScrollReveal>
+            ))}
           </div>
         </div>
       </section>
 
-      {/* ── Section: Guides & Articles ── */}
-      <section className="section">
+      {/* ── Section 6: Guides & Articles ── */}
+      <section className="section-light">
         <div className="container">
           <ScrollReveal className="section-header">
             <div>
@@ -343,15 +382,15 @@ export default async function HomePage({ params }: { params: Promise<{ lang: str
         </div>
       </section>
 
-      {/* ── Section 4: Why ColorVaults — light cream ── */}
+      {/* ── Section 7: Why ColorVaults ── */}
       <section className={styles.whySection}>
         <div className="container">
           <div className={styles.whyInner}>
             <ScrollReveal>
-              <span className="badge" style={{ background: 'rgba(15,61,62,0.08)', color: 'var(--color-primary)', borderColor: 'rgba(15,61,62,0.18)' }}>
+              <span className="badge" style={{ background: 'rgba(79, 70, 229, 0.08)', color: 'var(--color-primary)', borderColor: 'rgba(79, 70, 229, 0.2)' }}>
                 {isEn ? 'Why ColorVaults?' : 'Waarom ColorVaults?'}
               </span>
-              <h2 className="title-h2" style={{ marginTop: '0.75rem', marginBottom: '1.25rem', color: 'var(--color-text-dark)' }}>
+              <h2 className="title-h2" style={{ marginTop: '0.75rem', marginBottom: '1.25rem' }}>
                 {isEn ? 'The Best Free Printable Coloring Pages' : 'De Beste Gratis Printbare Kleurplaten'}
               </h2>
               <p className={styles.whyLead}>
@@ -375,7 +414,7 @@ export default async function HomePage({ params }: { params: Promise<{ lang: str
               ].map((f, i) => (
                 <ScrollReveal key={f.title} delay={(i % 4) as 0 | 1 | 2 | 3 | 4}>
                   <div className={styles.featureCard}>
-                    <div className={styles.featureIcon} style={{ fontSize: '1rem', fontWeight: 800, fontFamily: 'monospace', color: 'var(--primary)' }}>{f.number}</div>
+                    <div className={styles.featureIcon}>{f.number}</div>
                     <div>
                       <h3 className={styles.featureTitle}>{f.title}</h3>
                       <p className={styles.featureDesc}>{f.desc}</p>
@@ -388,7 +427,7 @@ export default async function HomePage({ params }: { params: Promise<{ lang: str
         </div>
       </section>
 
-      <div className="container">
+      <div className="container" style={{ padding: '2rem 0' }}>
         <AdSlot type="banner" text={isEn ? 'Sponsored Content' : 'Gesponsord'} />
       </div>
     </>
