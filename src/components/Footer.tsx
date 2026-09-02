@@ -50,6 +50,7 @@ export default function Footer({ lang }: { lang: string }) {
               <Link href={`/${lang}/search`} className={styles.link}>{isEn ? 'Search All Pages' : 'Alle Kleurplaten Zoeken'}</Link>
               <Link href={`/${lang}/favorites`} className={styles.link}>{isEn ? 'My Favorites' : 'Mijn Favorieten'}</Link>
               <Link href={`/${lang}/how-to-draw`} className={styles.link}>{isEn ? 'How to Draw (Tutorials)' : 'Leren Tekenen (Stappenplan)'}</Link>
+              <Link href={`/${lang}/calendars`} className={styles.link}>{isEn ? '2026 Coloring Calendars' : '2026 Kleurkalenders'}</Link>
               <Link href={`/${lang}/blog`} className={styles.link}>{isEn ? 'Coloring Guides' : 'Kleurplaten Tips & Blog'}</Link>
               <Link href={`/${lang}/about`} className={styles.link}>{isEn ? 'About Us' : 'Over Ons'}</Link>
               <Link href={`/${lang}/contact`} className={styles.link}>Contact</Link>
