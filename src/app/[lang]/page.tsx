@@ -183,6 +183,94 @@ export default async function HomePage({ params }: { params: Promise<{ lang: str
         </div>
       </section>
 
+      {/* ── Section 0: Explore All 10 Master Hubs Showcase ── */}
+      <section className="section" style={{ paddingTop: '2.5rem', paddingBottom: '1.5rem' }}>
+        <div className="container">
+          <ScrollReveal className="section-header">
+            <div>
+              <span className="badge">10 {isEn ? 'Master Hubs' : 'Hoofdcategorieën'}</span>
+              <h2 className="title-h2" style={{ marginTop: '0.65rem' }}>
+                {isEn ? 'Explore All 10 Hubs' : 'Ontdek Alle 10 Hoofdcategorieën'}
+              </h2>
+            </div>
+            <Link href={`/${lang}/search`} className="btn-secondary">
+              {isEn ? 'Explore All 10,000+ Pages →' : 'Alle 10.000+ Kleurplaten →'}
+            </Link>
+          </ScrollReveal>
+
+          <div style={{
+            display: 'grid',
+            gridTemplateColumns: 'repeat(auto-fill, minmax(230px, 1fr))',
+            gap: '1.25rem',
+          }}>
+            {mainHubs.map((hub, i) => {
+              const hubThemeCount = allThemes.filter(t => t.parentHub === hub.slug).length;
+              return (
+                <ScrollReveal key={hub.slug} delay={(i % 4) as 0 | 1 | 2 | 3 | 4}>
+                  <Link
+                    href={`/${lang}/${hub.slug}`}
+                    style={{
+                      position: 'relative',
+                      borderRadius: 'var(--radius-lg, 16px)',
+                      overflow: 'hidden',
+                      aspectRatio: '16/10',
+                      display: 'flex',
+                      flexDirection: 'column',
+                      justifyContent: 'flex-end',
+                      padding: '1.25rem',
+                      textDecoration: 'none',
+                      border: '1px solid var(--gray-200)',
+                      boxShadow: '0 4px 14px rgba(0,0,0,0.06)',
+                      transition: 'all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1)',
+                    }}
+                  >
+                    <SafeImage
+                      src={hub.image}
+                      alt={hub.title}
+                      width={480}
+                      height={300}
+                      style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'cover' }}
+                    />
+                    <div style={{
+                      position: 'absolute',
+                      inset: 0,
+                      background: 'linear-gradient(180deg, rgba(15,23,42,0.1) 0%, rgba(15,23,42,0.85) 100%)',
+                      zIndex: 1,
+                    }} />
+                    <div style={{ position: 'relative', zIndex: 2 }}>
+                      <span style={{
+                        display: 'inline-block',
+                        background: 'rgba(255,255,255,0.2)',
+                        backdropFilter: 'blur(8px)',
+                        color: '#FFFFFF',
+                        fontSize: '0.72rem',
+                        fontWeight: 800,
+                        padding: '0.2rem 0.6rem',
+                        borderRadius: '9999px',
+                        marginBottom: '0.4rem',
+                        border: '1px solid rgba(255,255,255,0.3)',
+                      }}>
+                        {hubThemeCount} {isEn ? 'Themes' : 'Thema’s'}
+                      </span>
+                      <h3 style={{
+                        color: '#FFFFFF',
+                        fontSize: '1.15rem',
+                        fontWeight: 800,
+                        margin: 0,
+                        lineHeight: 1.25,
+                        textShadow: '0 2px 8px rgba(0,0,0,0.5)',
+                      }}>
+                        {hub.title}
+                      </h3>
+                    </div>
+                  </Link>
+                </ScrollReveal>
+              );
+            })}
+          </div>
+        </div>
+      </section>
+
       {/* ── Section 1: Trending Characters & Shows ── */}
       {popularCharacters.length > 0 && (
         <section className="section">
