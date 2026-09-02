@@ -85,6 +85,7 @@ export default function Navbar({ lang }: { lang: string }) {
     },
     { label: isEn ? 'Search' : 'Zoeken', href: `/${lang}/search` },
     { label: isEn ? 'Favorites' : 'Favorieten', href: `/${lang}/favorites` },
+    { label: isEn ? 'How to Draw' : 'Leren Tekenen', href: `/${lang}/how-to-draw` },
     { label: isEn ? 'Blog & Tips' : 'Tips & Blog', href: `/${lang}/blog` },
     {
       label: isEn ? 'About' : 'Over',
