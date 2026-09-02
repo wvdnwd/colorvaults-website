@@ -68,7 +68,7 @@
 .grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
-  gap: 1.5rem;
+  gap: 1.75rem;
   margin-top: 1.75rem;
 }
 
@@ -85,14 +85,15 @@
 }
 
 .themeCard:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.09), 0 0 0 2px rgba(79, 70, 229, 0.2);
+  transform: translateY(-6px);
+  box-shadow: 0 14px 32px rgba(0, 0, 0, 0.09), 0 0 0 2px rgba(79, 70, 229, 0.2);
   border-color: rgba(79, 70, 229, 0.3);
 }
 
+/* Portrait 3:4 aspect ratio for full uncropped banner display */
 .imgWrapper {
   position: relative;
-  aspect-ratio: 4/3;
+  aspect-ratio: 3/4;
   overflow: hidden;
   background: #F1F5F9;
 }
@@ -110,38 +111,57 @@
 
 .countBadge {
   position: absolute;
-  top: 10px;
-  right: 10px;
-  background: rgba(15, 23, 42, 0.8);
-  backdrop-filter: blur(6px);
+  top: 12px;
+  left: 12px;
+  background: rgba(15, 23, 42, 0.82);
+  backdrop-filter: blur(8px);
   color: #FFFFFF;
-  font-size: 0.72rem;
+  font-size: 0.78rem;
   font-weight: 800;
-  padding: 0.25rem 0.65rem;
+  padding: 0.35rem 0.85rem;
   border-radius: 9999px;
   letter-spacing: 0.02em;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+  border: 1px solid rgba(255, 255, 255, 0.25);
 }
 
 .cardContent {
-  padding: 1rem 1.15rem 1.15rem;
+  padding: 1.15rem 1.25rem 1.25rem;
   display: flex;
   flex-direction: column;
   flex: 1;
 }
 
-.cardTitle {
-  font-size: 1.05rem;
-  font-weight: 700;
-  color: var(--foreground);
+.hubTag {
+  font-size: 0.72rem;
+  font-weight: 800;
+  color: var(--color-primary);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
   margin-bottom: 0.35rem;
+}
+
+.cardTitle {
+  font-size: 1.2rem;
+  font-weight: 800;
+  color: var(--foreground);
+  margin-bottom: 0.75rem;
   line-height: 1.3;
 }
 
+.cardBottomRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: auto;
+  padding-top: 0.65rem;
+  border-top: 1px solid var(--gray-200);
+}
+
 .cardLinkText {
-  font-size: 0.825rem;
+  font-size: 0.85rem;
   font-weight: 800;
   color: var(--color-primary);
-  margin-top: auto;
   transition: transform 0.2s ease;
 }
 
@@ -149,8 +169,14 @@
   transform: translateX(3px);
 }
 
+.freeBadge {
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: var(--gray-500);
+}
+
 .bottomCtaRow {
   display: flex;
   justify-content: center;
-  margin-top: 2.25rem;
+  margin-top: 2.5rem;
 }

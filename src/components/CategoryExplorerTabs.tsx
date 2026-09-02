@@ -75,7 +75,7 @@ export default function CategoryExplorerTabs({
         })}
       </div>
 
-      {/* Grid of Theme Cards */}
+      {/* Grid of Theme Cards in Portrait 3:4 Format */}
       <div className={styles.grid}>
         {filteredThemes.slice(0, 12).map((theme) => {
           const cardUrl = `/${lang}/${theme.parentHub}/${theme.slug}`;
@@ -91,8 +91,8 @@ export default function CategoryExplorerTabs({
                   src={theme.image || '/images/banner.jpg'}
                   alt={theme.title}
                   className={styles.themeImg}
-                  width={320}
-                  height={240}
+                  width={380}
+                  height={500}
                   loading="lazy"
                 />
                 <span className={styles.countBadge}>
@@ -100,10 +100,18 @@ export default function CategoryExplorerTabs({
                 </span>
               </div>
               <div className={styles.cardContent}>
-                <h3 className={styles.cardTitle}>{theme.title}</h3>
-                <span className={styles.cardLinkText}>
-                  {isEn ? 'Explore Album →' : 'Bekijk Album →'}
+                <span className={styles.hubTag}>
+                  {theme.parentHub.replace(/-/g, ' ')}
                 </span>
+                <h3 className={styles.cardTitle}>{theme.title}</h3>
+                <div className={styles.cardBottomRow}>
+                  <span className={styles.cardLinkText}>
+                    {isEn ? 'Explore Album →' : 'Bekijk Album →'}
+                  </span>
+                  <span className={styles.freeBadge}>
+                    100% Free
+                  </span>
+                </div>
               </div>
             </Link>
           );
