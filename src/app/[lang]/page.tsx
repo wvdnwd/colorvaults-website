@@ -42,15 +42,15 @@ export default async function HomePage({ params }: { params: Promise<{ lang: str
 
   // Popular character theme slugs
   const characterSlugs = [
-    'frozen', 'pokemon', 'sonic-the-hedgehog', 'spider-man', 
-    'paw-patrol', 'disney-princesses', 'bluey', 'spongebob',
-    'super-mario', 'anime-heroes', 'dragon-ball', 'minecraft'
+    'frozen', 'pokemon', 'sonic-the-hedgehog', 'marvel-spider-man', 
+    'paw-patrol', 'beauty-and-the-beast-belle', 'bluey', 'spongebob-squarepants',
+    'super-mario', 'dragonball', 'minecraft-voxel-worlds', 'the-lion-king'
   ];
 
   // Animal & nature slugs
   const animalSlugs = [
-    'dinosaur-adventures', 'unicorns', 'dogs-and-puppies', 'cats-and-kittens',
-    'safari-and-jungle', 'ocean-and-sea-creatures', 'horses-and-ponies', 'birds'
+    'dinosaur-adventures', 'unicorns-pegasus', 'cute-puppies-dogs', 'cute-kittens-cats',
+    'safari-lions-big-cats', 'ocean-life-whales', 'horses-ponies', 'birds-of-the-world'
   ];
 
   const popularCharacters = allThemes
@@ -70,8 +70,8 @@ export default async function HomePage({ params }: { params: Promise<{ lang: str
       badge: isEn ? 'Level 1' : 'Niveau 1',
       desc: isEn ? 'Simple shapes & fun designs for preschoolers and toddlers' : 'Eenvoudige vormen & leuke designs voor peuters en kleuters',
       className: styles.ageKids,
-      hubSlug: isEn ? 'animals-and-nature' : 'animals-and-nature',
-      themeSlug: 'animals',
+      hubSlug: 'kids-tv-shows',
+      themeSlug: 'paw-patrol',
       ageSlug: 'kids'
     },
     {
@@ -80,7 +80,7 @@ export default async function HomePage({ params }: { params: Promise<{ lang: str
       badge: isEn ? 'Level 2' : 'Niveau 2',
       desc: isEn ? 'Creative scenes with rich details and vibrant characters' : 'Creatieve scènes met leuke details en populaire karakters',
       className: styles.ageTeens,
-      hubSlug: isEn ? 'games-and-pop-culture' : 'games-and-pop-culture',
+      hubSlug: 'gaming-virtual-worlds',
       themeSlug: 'pokemon',
       ageSlug: 'teens'
     },
@@ -90,19 +90,19 @@ export default async function HomePage({ params }: { params: Promise<{ lang: str
       badge: isEn ? 'Level 3' : 'Niveau 3',
       desc: isEn ? 'Intricate floral mandalas and relaxing complex line art' : 'Ingewikkelde bloemenmandala\'s en ontspannende lijntekeningen',
       className: styles.ageAdults,
-      hubSlug: 'mandalas',
-      themeSlug: 'mandalas',
+      hubSlug: 'art-aesthetic',
+      themeSlug: 'mandalas-sacred-geometry',
       ageSlug: 'adults'
     }
   ];
 
   const quickSearchPills = [
-    { name: isEn ? 'Dinosaurs' : 'Dinosaurussen', href: `/${lang}/${isEn ? 'animals-and-nature/dinosaur-adventures' : 'dieren-en-natuur/dinosaur-adventures'}` },
-    { name: isEn ? 'Unicorns' : 'Eenhoorns', href: `/${lang}/${isEn ? 'disney-and-fairy-tales/unicorns' : 'disney-en-sprookjes/unicorns'}` },
-    { name: 'Pokemon', href: `/${lang}/search?q=pokemon` },
-    { name: 'Disney', href: `/${lang}/${isEn ? 'disney-and-fairy-tales' : 'disney-en-sprookjes'}` },
-    { name: 'SpongeBob', href: `/${lang}/${isEn ? 'tv-series-and-movies/spongebob' : 'tv-series-en-films/spongebob'}` },
-    { name: isEn ? 'Mandalas' : 'Mandala\'s', href: `/${lang}/mandalas` }
+    { name: isEn ? 'Dinosaurs' : 'Dinosaurussen', href: `/${lang}/animals-wildlife/dinosaur-adventures` },
+    { name: isEn ? 'Unicorns' : 'Eenhoorns', href: `/${lang}/fantasy-fairytales/unicorns-pegasus` },
+    { name: 'Pokemon', href: `/${lang}/gaming-virtual-worlds/pokemon` },
+    { name: 'Disney', href: `/${lang}/disney-pixar` },
+    { name: 'SpongeBob', href: `/${lang}/kids-tv-shows/spongebob-squarepants` },
+    { name: isEn ? 'Mandalas' : 'Mandala\'s', href: `/${lang}/art-aesthetic/mandalas-sacred-geometry` }
   ];
 
   return (
@@ -159,7 +159,7 @@ export default async function HomePage({ params }: { params: Promise<{ lang: str
                 <Link href={`/${lang}/search`} className="btn-primary">
                   {isEn ? 'Explore All Collections' : 'Alle Collecties Bekijken'}
                 </Link>
-                <Link href={`/${lang}/mandalas`} className="btn-secondary">
+                <Link href={`/${lang}/art-aesthetic/mandalas-sacred-geometry`} className="btn-secondary">
                   {isEn ? 'Mandalas' : 'Mandala\'s'}
                 </Link>
               </div>
@@ -195,7 +195,7 @@ export default async function HomePage({ params }: { params: Promise<{ lang: str
                   {isEn ? 'Popular Series & Movies' : 'Populaire Series & Films'}
                 </h2>
               </div>
-              <Link href={`/${lang}/${isEn ? 'tv-series-and-movies' : 'tv-series-en-films'}`} className="btn-secondary">
+              <Link href={`/${lang}/disney-pixar`} className="btn-secondary">
                 {isEn ? 'View All Series →' : 'Bekijk Alle Series →'}
               </Link>
             </ScrollReveal>
@@ -286,7 +286,7 @@ export default async function HomePage({ params }: { params: Promise<{ lang: str
                   {isEn ? 'Animals & Wildlife' : 'Dieren & Natuur'}
                 </h2>
               </div>
-              <Link href={`/${lang}/${isEn ? 'animals-and-nature' : 'dieren-en-natuur'}`} className="btn-secondary">
+              <Link href={`/${lang}/animals-wildlife`} className="btn-secondary">
                 {isEn ? 'All Animal Pages →' : 'Alle Dierenplaten →'}
               </Link>
             </ScrollReveal>
