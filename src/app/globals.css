@@ -581,35 +581,35 @@ main {
 
 /* ── SEO Block ────────────────────────────────────────────────────────────── */
 .seo-block {
-  background: var(--color-primary-mid);
-  border-radius: var(--radius-xl);
+  background: #FFFFFF;
+  border-radius: var(--radius-xl, 20px);
   padding: 2.75rem 3rem;
-  border: 1px solid rgba(253, 246, 233, 0.08);
-  box-shadow: var(--shadow-md);
-  color: var(--color-text-light);
+  border: 1.5px solid var(--gray-200, #E2E8F0);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
+  color: #0F172A;
 }
 
 .seo-block h2 {
   font-size: 1.6rem;
-  font-weight: 700;
+  font-weight: 800;
   margin-top: 0.5rem;
   margin-bottom: 1.1rem;
-  color: var(--color-text-light);
+  color: #0F172A;
 }
 
 .seo-block h3 {
   font-size: 1.25rem;
-  font-weight: 600;
+  font-weight: 700;
   margin-top: 1.5rem;
   margin-bottom: 0.75rem;
-  color: var(--color-text-light);
+  color: #1E293B;
 }
 
 .seo-block p {
-  color: var(--color-text-muted);
+  color: #334155;
   line-height: 1.8;
   margin-bottom: 1rem;
-  font-size: 1.025rem;
+  font-size: 1.05rem;
 }
 
 .seo-block ul {
@@ -619,14 +619,15 @@ main {
 }
 
 .seo-block li {
-  color: var(--color-text-muted);
+  color: #334155;
   line-height: 1.7;
   margin-bottom: 0.5rem;
 }
 
 .seo-block a {
-  color: #FFEAA7;
+  color: var(--color-primary, #4F46E5);
   text-decoration: underline;
+  font-weight: 700;
   transition: opacity 0.2s;
 }
 
@@ -654,7 +655,7 @@ main {
     left: 0;
     right: 0;
     height: 90px;
-    background: linear-gradient(to bottom, rgba(30, 39, 46, 0), var(--color-primary-mid));
+    background: linear-gradient(to bottom, rgba(255, 255, 255, 0), #FFFFFF);
     pointer-events: none;
   }
   .seo-toggle-wrapper {
