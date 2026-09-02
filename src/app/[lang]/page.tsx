@@ -1,4 +1,7 @@
 import SafeImage from '@/components/SafeImage';
+import DailyColoringChallenge from '@/components/DailyColoringChallenge';
+import SeasonalEventBanner from '@/components/SeasonalEventBanner';
+import NewsletterBox from '@/components/NewsletterBox';
 import { getThemes, getColoringPages, getMainHubs, getSampleImagesForTheme } from '@/lib/api';
 import ThemeCard from '@/components/ThemeCard';
 import { blogPosts } from '@/data/blogs';
@@ -268,6 +271,7 @@ export default async function HomePage({ params }: { params: Promise<{ lang: str
               );
             })}
           </div>
+          <SeasonalEventBanner isEn={isEn} lang={lang} />
         </div>
       </section>
 
@@ -310,6 +314,10 @@ export default async function HomePage({ params }: { params: Promise<{ lang: str
           </div>
         </section>
       )}
+
+      <div className="container" style={{ marginBottom: '2.5rem' }}>
+        <DailyColoringChallenge isEn={isEn} lang={lang} />
+      </div>
 
       {/* ── Section 2: Interactive Category Explorer (Tabbed) ── */}
       <section className="section-light">

@@ -4,6 +4,7 @@ import { getCategorySeoData } from '@/lib/categorySeo';
 import CategorySeoBlock from '@/components/CategorySeoBlock';
 import RelatedThemes from '@/components/RelatedThemes';
 import CraftIdeasSection from '@/components/CraftIdeasSection';
+import PdfBookBundleModal from '@/components/PdfBookBundleModal';
 import NewsletterBox from '@/components/NewsletterBox';
 import DifficultyFilterBar from '@/components/DifficultyFilterBar';
 import { notFound } from 'next/navigation';
@@ -173,6 +174,14 @@ export default async function ThemePage({
               />
             </div>
           )}
+
+          {/* 📚 Complete PDF Coloring Book Download Modal */}
+          <PdfBookBundleModal
+            themeTitle={theme.title}
+            count={allColoringPages.length}
+            isEn={isEn}
+            lang={lang}
+          />
 
           {/* Paper Size & How to Use Notice */}
           <div style={{
