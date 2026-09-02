@@ -368,7 +368,7 @@
     "slug": "attack-on-titan",
     "parentHub": "anime-manga",
     "description": "Free printable Attack on Titan coloring pages for kids, teens, and adults. Download high-resolution PDF and image templates ready to print.",
-    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/banner/An_authentic_8k_anime_crossover_ensembl_1788293737113.webp",
+    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/banner/theme_attack-on-titan.webp",
     "availableAges": [
       "kids",
       "teens",
@@ -585,7 +585,7 @@
       "adults"
     ],
     "language": "en",
-    "pageCount": 148
+    "pageCount": 0
   },
   {
     "title": "Roblox",
@@ -1307,7 +1307,7 @@
       "adults"
     ],
     "language": "en",
-    "pageCount": 114
+    "pageCount": 88
   },
   {
     "title": "Magic Wizards & Spells",
@@ -1419,7 +1419,7 @@
       "adults"
     ],
     "language": "en",
-    "pageCount": 0
+    "pageCount": 26
   },
   {
     "title": "Friendly & Cool Monsters",
@@ -1531,7 +1531,7 @@
       "adults"
     ],
     "language": "en",
-    "pageCount": 60
+    "pageCount": 208
   },
   {
     "title": "Pirate Ships & High Seas",

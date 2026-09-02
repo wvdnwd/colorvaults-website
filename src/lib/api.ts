@@ -137,21 +137,17 @@ export function getPageBySlug(lang: string, parentHubSlug: string, themeSlug: st
 }
 
 export function getSampleImagesForTheme(lang: string, parentHubSlug: string, themeSlug: string, defaultImage: string, count = 3): string[] {
-  const pages = getColoringPages(lang).filter(p => p.parentHub === parentHubSlug && p.parentTheme === themeSlug);
-  const images = pages.map(p => p.image).filter(Boolean);
-  if (images.length === 0) return [defaultImage];
-  // Select up to count unique images starting with defaultImage if available
   const result: string[] = [];
-  if (defaultImage && images.includes(defaultImage)) {
+  if (defaultImage) {
     result.push(defaultImage);
   }
-  for (const img of images) {
-    if (!result.includes(img) && result.length < count) {
-      result.push(img);
+  const pages = getColoringPages(lang).filter(p => p.parentHub === parentHubSlug && p.parentTheme === themeSlug);
+  for (const p of pages) {
+    if (p.image && !result.includes(p.image) && result.length < count) {
+      result.push(p.image);
     }
   }
-  if (result.length === 0 && defaultImage) result.push(defaultImage);
-  return result;
+  return result.length > 0 ? result : [defaultImage || '/images/banner.jpg'];
 }
 
 export function validateDataModel() {
