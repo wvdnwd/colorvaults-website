@@ -6,7 +6,6 @@ import { useState, useRef, useEffect } from 'react';
 import HeaderSearchBar from './HeaderSearchBar';
 import styles from './Navbar.module.css';
 
-
 interface NavItem {
   label: string;
   href?: string;
@@ -44,47 +43,49 @@ export default function Navbar({ lang }: { lang: string }) {
 
   const navItems: NavItem[] = [
     {
-      label: isEn ? 'Coloring Pages' : 'Kleurplaten',
+      label: isEn ? 'Categories' : 'Categorieën',
       children: [
-        // Main hubs
-        { label: isEn ? 'TV Series & Movies' : 'TV Series & Films', href: `/${lang}/${isEn ? 'tv-series-and-movies' : 'tv-series-en-films'}` },
-        { label: isEn ? 'Disney & Fairy Tales' : 'Disney & Sprookjes', href: `/${lang}/${isEn ? 'disney-and-fairy-tales' : 'disney-en-sprookjes'}` },
-        { label: isEn ? 'Games & Pop Culture' : 'Games & Popcultuur', href: `/${lang}/${isEn ? 'games-and-pop-culture' : 'games-en-popcultuur'}` },
-        { label: isEn ? 'Animals & Nature' : 'Dieren & Natuur', href: `/${lang}/${isEn ? 'animals-and-nature' : 'dieren-en-natuur'}` },
-        { label: isEn ? 'Girls Themes' : "Meisjes Thema's", href: `/${lang}/${isEn ? 'girls-themes' : 'meisjes-themas'}` },
-        { label: isEn ? 'Toddler Specific' : 'Speciaal voor Peuters', href: `/${lang}/${isEn ? 'toddler-specific' : 'speciaal-voor-peuters'}` },
-        { label: isEn ? 'Adults & Mandalas' : "Volwassenen & Mandala's", href: `/${lang}/${isEn ? 'adults' : 'volwassenen'}` },
+        { label: 'Disney & Pixar', href: `/${lang}/disney-pixar` },
+        { label: 'Anime & Manga', href: `/${lang}/anime-manga` },
+        { label: isEn ? 'Gaming & Virtual Worlds' : 'Games & Gaming', href: `/${lang}/gaming-virtual-worlds` },
+        { label: isEn ? 'Superheroes & Comics' : 'Superhelden & Comics', href: `/${lang}/superheroes-comic-universes` },
+        { label: isEn ? 'Kids TV & Cartoons' : 'Kinderseries & Tekenfilms', href: `/${lang}/kids-tv-shows` },
+        { label: isEn ? 'Animals & Wildlife' : 'Dieren & Natuur', href: `/${lang}/animals-wildlife` },
+        { label: isEn ? 'Fantasy & Fairytales' : 'Sprookjes & Fantasie', href: `/${lang}/fantasy-fairytales` },
+        { label: isEn ? 'Vehicles & Space' : 'Voertuigen & Ruimte', href: `/${lang}/vehicles-transportation` },
+        { label: isEn ? 'Art, Mandalas & Aesthetic' : 'Kunst & Mandala’s', href: `/${lang}/art-aesthetic` },
+        { label: isEn ? 'Holidays & Seasons' : 'Feestdagen & Seizoenen', href: `/${lang}/holidays-seasons` },
       ],
     },
     {
       label: isEn ? 'Popular' : 'Populair',
       children: [
-        // Anime
-        { label: 'Dragon Ball', href: `/${lang}/${isEn ? 'tv-series-and-movies' : 'tv-series-en-films'}/anime-dragonball` },
-        { label: 'Naruto', href: `/${lang}/${isEn ? 'tv-series-and-movies' : 'tv-series-en-films'}/anime-naruto` },
-        { label: 'One Piece', href: `/${lang}/${isEn ? 'tv-series-and-movies' : 'tv-series-en-films'}/anime-one-piece` },
-        { label: 'Sailor Moon', href: `/${lang}/${isEn ? 'tv-series-and-movies' : 'tv-series-en-films'}/anime-sailor-moon` },
         // Disney
-        { label: 'Frozen / Elsa', href: `/${lang}/${isEn ? 'disney-and-fairy-tales' : 'disney-en-sprookjes'}/disney-frozen` },
-        { label: isEn ? 'Ariel / Little Mermaid' : 'Ariel / Kleine Zeemeermin', href: `/${lang}/${isEn ? 'disney-and-fairy-tales' : 'disney-en-sprookjes'}/disney-ariel` },
-        { label: isEn ? 'Beauty & the Beast' : 'Belle & het Beest', href: `/${lang}/${isEn ? 'disney-and-fairy-tales' : 'disney-en-sprookjes'}/disney-belle` },
-        // TV Shows
-        { label: 'Paw Patrol', href: `/${lang}/${isEn ? 'tv-series-and-movies' : 'tv-series-en-films'}/paw-patrol` },
-        { label: 'Bluey', href: `/${lang}/${isEn ? 'tv-series-and-movies' : 'tv-series-en-films'}/bluey` },
-        { label: 'Peppa Pig', href: `/${lang}/${isEn ? 'tv-series-and-movies' : 'tv-series-en-films'}/peppa-pig` },
-        // Games
-        { label: 'Pokémon', href: `/${lang}/${isEn ? 'games-and-pop-culture' : 'games-en-popcultuur'}/pokemon` },
-        { label: 'Super Mario', href: `/${lang}/${isEn ? 'games-and-pop-culture' : 'games-en-popcultuur'}/super-mario` },
-        { label: 'Sonic', href: `/${lang}/${isEn ? 'games-and-pop-culture' : 'games-en-popcultuur'}/sonic` },
-        // Animals & Nature
-        { label: isEn ? 'Butterflies' : 'Vlinders', href: `/${lang}/${isEn ? 'animals-and-nature' : 'dieren-en-natuur'}/butterflies-insects` },
-        { label: isEn ? 'Dinosaurs' : 'Dinosaurussen', href: `/${lang}/${isEn ? 'animals-and-nature' : 'dieren-en-natuur'}/dinosaur-adventures` },
-        { label: isEn ? 'Safari Animals' : 'Safari Dieren', href: `/${lang}/${isEn ? 'animals-and-nature' : 'dieren-en-natuur'}/safari-wildlife` },
+        { label: 'Frozen (Elsa & Anna)', href: `/${lang}/disney-pixar/frozen` },
+        { label: 'The Lion King', href: `/${lang}/disney-pixar/the-lion-king` },
+        { label: isEn ? 'The Little Mermaid (Ariel)' : 'De Kleine Zeemeermin (Ariël)', href: `/${lang}/disney-pixar/the-little-mermaid-ariel` },
+        { label: isEn ? 'Beauty & the Beast' : 'Belle & het Beest', href: `/${lang}/disney-pixar/beauty-and-the-beast-belle` },
+        // Gaming
+        { label: 'Pokémon', href: `/${lang}/gaming-virtual-worlds/pokemon` },
+        { label: 'Super Mario', href: `/${lang}/gaming-virtual-worlds/super-mario` },
+        { label: 'Sonic the Hedgehog', href: `/${lang}/gaming-virtual-worlds/sonic-the-hedgehog` },
+        { label: 'Minecraft', href: `/${lang}/gaming-virtual-worlds/minecraft-voxel-worlds` },
+        // Superheroes & Anime
+        { label: 'Spider-Man', href: `/${lang}/superheroes-comic-universes/marvel-spider-man` },
+        { label: 'Batman', href: `/${lang}/superheroes-comic-universes/dc-batman` },
+        { label: 'Dragon Ball', href: `/${lang}/anime-manga/dragonball` },
+        { label: 'Naruto', href: `/${lang}/anime-manga/naruto` },
+        // Kids
+        { label: 'Paw Patrol', href: `/${lang}/kids-tv-shows/paw-patrol` },
+        { label: 'Bluey', href: `/${lang}/kids-tv-shows/bluey` },
+        // Art & Nature
+        { label: isEn ? 'Mandalas (Adults)' : 'Mandala’s (Volwassenen)', href: `/${lang}/art-aesthetic/mandalas-sacred-geometry` },
+        { label: isEn ? 'Dinosaurs' : 'Dinosauriërs', href: `/${lang}/animals-wildlife/dinosaur-adventures` },
       ],
     },
-    { label: isEn ? 'Calendars' : 'Kalenders', href: `/${lang}/calendars` },
-    { label: isEn ? 'Mandalas' : "Mandala's", href: `/${lang}/mandalas` },
-    { label: isEn ? 'Blog & Guides' : 'Tips & Blog', href: `/${lang}/blog` },
+    { label: isEn ? 'Search' : 'Zoeken', href: `/${lang}/search` },
+    { label: isEn ? 'Favorites' : 'Favorieten', href: `/${lang}/favorites` },
+    { label: isEn ? 'Blog & Tips' : 'Tips & Blog', href: `/${lang}/blog` },
     {
       label: isEn ? 'About' : 'Over',
       children: [
@@ -118,56 +119,11 @@ export default function Navbar({ lang }: { lang: string }) {
     };
   }, []);
 
-  // Close mobile menu on route change
-  useEffect(() => {
-    setMobileOpen(false);
-    setOpenDropdown(null);
-  }, [pathname]);
-
-  // Focus trap for mobile drawer
-  useEffect(() => {
-    if (!mobileOpen) return;
-    // Find all focusable elements inside the mobile menu
-    const drawer = document.querySelector(`.${styles.mobileMenu}`) as HTMLElement | null;
-    if (!drawer) return;
-    const focusableSelectors = 'a[href], button:not([disabled]), [tabindex]:not([tabindex="-1"])';
-    const focusableEls = Array.from(drawer.querySelectorAll<HTMLElement>(focusableSelectors));
-    if (focusableEls.length === 0) return;
-    const firstEl = focusableEls[0];
-    const lastEl = focusableEls[focusableEls.length - 1];
-    
-    // Move focus into the drawer
-    firstEl.focus();
-
-    const handleKeyDown = (e: KeyboardEvent) => {
-      if (e.key === 'Escape') {
-        setMobileOpen(false);
-        return;
-      }
-      if (e.key !== 'Tab') return;
-      if (e.shiftKey) {
-        // Shift+Tab: if on first element, wrap to last
-        if (document.activeElement === firstEl) {
-          e.preventDefault();
-          lastEl.focus();
-        }
-      } else {
-        // Tab: if on last element, wrap to first
-        if (document.activeElement === lastEl) {
-          e.preventDefault();
-          firstEl.focus();
-        }
-      }
-    };
-    document.addEventListener('keydown', handleKeyDown);
-    return () => document.removeEventListener('keydown', handleKeyDown);
-  }, [mobileOpen]);
-
   return (
     <header className={`${styles.navbar} ${scrolled ? styles.scrolled : ''}`} ref={navRef}>
-      <div className={styles.navContainer}>
+      <div className={styles.container}>
         {/* Brand Logo */}
-        <Link href={`/${lang}`} className={styles.logo}>
+        <Link href={`/${lang}`} className={styles.logo} aria-label="ColorVaults Home">
           <div className={styles.logoBadge} aria-hidden="true">
             <svg width="22" height="22" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
               <path d="M12 2C6.48 2 2 6.48 2 12C2 17.52 6.48 22 12 22C13.66 22 15 20.66 15 19C15 18.23 14.7 17.53 14.21 17.01C13.73 16.5 13.43 15.82 13.43 15.07C13.43 13.41 14.77 12.07 16.43 12.07H18.93C20.59 12.07 21.93 10.73 21.93 9.07C21.93 5.16 17.48 2 12 2Z" fill="white" fillOpacity="0.95"/>
@@ -182,143 +138,131 @@ export default function Navbar({ lang }: { lang: string }) {
           </span>
         </Link>
 
-        {/* Prominent Header Search Bar */}
-        <HeaderSearchBar lang={lang} />
+        {/* Search Bar in Header */}
+        <div className={styles.searchWrapper}>
+          <HeaderSearchBar lang={lang} />
+        </div>
 
-        {/* Desktop Nav Items */}
-        <nav className={styles.navLinks}>
-          {navItems.map(item => (
-            <div key={item.label} className={styles.navItem}>
-              {item.href && !item.children ? (
-                <Link href={item.href} className={`${styles.link} ${pathname === item.href ? styles.active : ''}`}>
-                  {item.label}
-                </Link>
-              ) : (
-                <button
-                  className={`${styles.link} ${styles.dropdownTrigger} ${openDropdown === item.label ? styles.active : ''}`}
-                  onClick={() => setOpenDropdown(openDropdown === item.label ? null : item.label)}
-                  aria-controls={`dropdown-${item.label.replace(/\s+/g, '-').toLowerCase()}`}
-                  aria-expanded={openDropdown === item.label}
-                  aria-haspopup="menu"
-                  onKeyDown={(e) => {
-                    if (e.key === 'Escape') {
-                      setOpenDropdown(null);
-                    } else if (e.key === 'Enter' || e.key === ' ') {
-                      e.preventDefault();
-                      setOpenDropdown(openDropdown === item.label ? null : item.label);
-                    }
-                  }}
-                >
-                  {item.label}
-                  <span className={styles.chevron}>{openDropdown === item.label ? '▴' : '▾'}</span>
-                </button>
-              )}
-              {item.children && openDropdown === item.label && (
-                <div 
-                  id={`dropdown-${item.label.replace(/\s+/g, '-').toLowerCase()}`}
-                  className={styles.dropdown} 
-                  role="menu"
-                >
-                  {item.children.map(child => (
-                    <Link 
-                      key={child.href} 
-                      href={child.href} 
-                      className={styles.dropdownItem} 
-                      onClick={() => setOpenDropdown(null)}
-                      role="menuitem"
-                    >
-                      {child.label}
-                    </Link>
-                  ))}
+        {/* Desktop Navigation Links */}
+        <nav className={styles.navMenu} aria-label="Main Navigation">
+          {navItems.map((item) => {
+            const hasChildren = Boolean(item.children?.length);
+            const isOpen = openDropdown === item.label;
+
+            if (hasChildren) {
+              return (
+                <div key={item.label} className={styles.dropdownWrapper}>
+                  <button
+                    type="button"
+                    className={`${styles.navLink} ${styles.dropdownTrigger} ${isOpen ? styles.active : ''}`}
+                    onClick={() => setOpenDropdown(isOpen ? null : item.label)}
+                    aria-expanded={isOpen}
+                  >
+                    <span>{item.label}</span>
+                    <span className={styles.arrow} aria-hidden="true">▾</span>
+                  </button>
+                  {isOpen && (
+                    <div className={styles.dropdownMenu}>
+                      {item.children?.map((child) => (
+                        <Link
+                          key={child.href}
+                          href={child.href}
+                          className={styles.dropdownItem}
+                          onClick={() => setOpenDropdown(null)}
+                        >
+                          {child.label}
+                        </Link>
+                      ))}
+                    </div>
+                  )}
                 </div>
-              )}
-            </div>
-          ))}
+              );
+            }
+
+            return (
+              <Link
+                key={item.label}
+                href={item.href || `/${lang}`}
+                className={styles.navLink}
+              >
+                {item.label}
+              </Link>
+            );
+          })}
         </nav>
 
-        {/* Right Actions */}
-        <div className={styles.navRight}>
-          <Link href={`/${lang}/favorites`} className={styles.iconBtn} aria-label={isEn ? 'Favorites' : 'Favorieten'} title={isEn ? 'Favorites' : 'Favorieten'}>
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
-              <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
-            </svg>
-          </Link>
-
+        {/* Language Switcher & Mobile Hamburger */}
+        <div className={styles.headerRight}>
           <div className={styles.langSwitcher}>
-            <Link 
-              href={getLangLink('en')} 
+            <Link
+              href={getLangLink('en')}
               className={`${styles.langBtn} ${isEn ? styles.langActive : ''}`}
               aria-label="Switch to English"
-              aria-current={isEn ? 'true' : undefined}
-            >EN</Link>
-            <Link 
-              href={getLangLink('nl')} 
+            >
+              EN
+            </Link>
+            <span className={styles.langDivider}>/</span>
+            <Link
+              href={getLangLink('nl')}
               className={`${styles.langBtn} ${isNl ? styles.langActive : ''}`}
-              aria-label="Overschakelen naar Nederlands"
-              aria-current={isNl ? 'true' : undefined}
-            >NL</Link>
+              aria-label="Schakel naar Nederlands"
+            >
+              NL
+            </Link>
           </div>
 
           <button
-            className={styles.hamburger}
+            type="button"
+            className={styles.hamburgerBtn}
             onClick={() => setMobileOpen(!mobileOpen)}
-            aria-label={mobileOpen 
-              ? (isEn ? 'Close navigation menu' : 'Navigatiemenu sluiten')
-              : (isEn ? 'Open navigation menu' : 'Navigatiemenu openen')
-            }
+            aria-label="Toggle navigation menu"
             aria-expanded={mobileOpen}
           >
-            <span className={`${styles.hamburgerLine} ${mobileOpen ? styles.open : ''}`} />
-            <span className={`${styles.hamburgerLine} ${mobileOpen ? styles.open : ''}`} />
-            <span className={`${styles.hamburgerLine} ${mobileOpen ? styles.open : ''}`} />
+            <span className={styles.hamburgerLine}></span>
+            <span className={styles.hamburgerLine}></span>
+            <span className={styles.hamburgerLine}></span>
           </button>
         </div>
       </div>
 
-      {/* Mobile Drawer */}
+      {/* Mobile Menu Drawer */}
       {mobileOpen && (
-        <div 
-          className={styles.mobileMenu}
-          role="dialog"
-          aria-modal="true"
-          aria-label={isEn ? 'Navigation menu' : 'Navigatiemenu'}
-        >
-          {navItems.map(item => (
-            <div key={item.label} className={styles.mobileSection}>
-              {item.href && !item.children ? (
-                <Link href={item.href} className={styles.mobileLink} onClick={() => setMobileOpen(false)}>
-                  {item.label}
-                </Link>
-              ) : (
-                <>
-                  <span className={styles.mobileSectionTitle}>{item.label}</span>
-                  <div className={styles.mobileGrid}>
-                    {item.children?.map(child => (
-                      <Link key={child.href} href={child.href} className={styles.mobileLinkSub} onClick={() => setMobileOpen(false)}>
-                        {child.label}
-                      </Link>
-                    ))}
-                  </div>
-                </>
-              )}
-            </div>
-          ))}
-          <div className={styles.mobileLangRow}>
-            <Link 
-              href={getLangLink('en')} 
-              className={`${styles.mobileLangBtn} ${isEn ? styles.langActive : ''}`} 
-              onClick={() => setMobileOpen(false)}
-              aria-label="Switch to English"
-              aria-current={isEn ? 'true' : undefined}
-            >English</Link>
-            <Link 
-              href={getLangLink('nl')} 
-              className={`${styles.mobileLangBtn} ${isNl ? styles.langActive : ''}`} 
-              onClick={() => setMobileOpen(false)}
-              aria-label="Overschakelen naar Nederlands"
-              aria-current={isNl ? 'true' : undefined}
-            >Nederlands</Link>
+        <div className={styles.mobileDrawer}>
+          <div className={styles.mobileSearchWrapper}>
+            <HeaderSearchBar lang={lang} />
           </div>
+
+          <nav className={styles.mobileNav}>
+            {navItems.map((item) => (
+              <div key={item.label} className={styles.mobileGroup}>
+                {item.children ? (
+                  <>
+                    <div className={styles.mobileGroupTitle}>{item.label}</div>
+                    <div className={styles.mobileSubList}>
+                      {item.children.map((child) => (
+                        <Link
+                          key={child.href}
+                          href={child.href}
+                          className={styles.mobileSubLink}
+                          onClick={() => setMobileOpen(false)}
+                        >
+                          {child.label}
+                        </Link>
+                      ))}
+                    </div>
+                  </>
+                ) : (
+                  <Link
+                    href={item.href || `/${lang}`}
+                    className={styles.mobileMainLink}
+                    onClick={() => setMobileOpen(false)}
+                  >
+                    {item.label}
+                  </Link>
+                )}
+              </div>
+            ))}
+          </nav>
         </div>
       )}
     </header>

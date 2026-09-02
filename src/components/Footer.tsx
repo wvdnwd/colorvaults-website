@@ -35,27 +35,32 @@ export default function Footer({ lang }: { lang: string }) {
 
           <div className={styles.links}>
             <div className={styles.linkColumn}>
-              <span className={styles.linkColumnTitle}>{isEn ? 'Popular Categories' : 'Populaire Categorieën'}</span>
-              <Link href={`/${lang}/${isEn ? 'tv-series-and-movies' : 'tv-series-en-films'}`} className={styles.link}>{isEn ? 'TV & Movies' : 'TV & Films'}</Link>
-              <Link href={`/${lang}/${isEn ? 'animals-and-nature' : 'dieren-en-natuur'}`} className={styles.link}>{isEn ? 'Animals & Nature' : 'Dieren & Natuur'}</Link>
-              <Link href={`/${lang}/mandalas`} className={styles.link}>Mandalas</Link>
-              <Link href={`/${lang}/${isEn ? 'disney-and-fairy-tales' : 'disney-en-sprookjes'}`} className={styles.link}>{isEn ? 'Disney & Fairy Tales' : 'Disney & Sprookjes'}</Link>
-              <Link href={`/${lang}/${isEn ? 'adults' : 'volwassenen'}`} className={styles.link}>{isEn ? 'Adults' : 'Volwassenen'}</Link>
+              <span className={styles.linkColumnTitle}>{isEn ? 'Popular Hubs' : 'Populaire Categorieën'}</span>
+              <Link href={`/${lang}/disney-pixar`} className={styles.link}>Disney & Pixar</Link>
+              <Link href={`/${lang}/anime-manga`} className={styles.link}>Anime & Manga</Link>
+              <Link href={`/${lang}/gaming-virtual-worlds`} className={styles.link}>{isEn ? 'Gaming & Minecraft' : 'Games & Minecraft'}</Link>
+              <Link href={`/${lang}/superheroes-comic-universes`} className={styles.link}>{isEn ? 'Superheroes & Marvel' : 'Superhelden & Marvel'}</Link>
+              <Link href={`/${lang}/kids-tv-shows`} className={styles.link}>{isEn ? 'Kids TV & Cartoons' : 'Paw Patrol & Peppa Pig'}</Link>
+              <Link href={`/${lang}/animals-wildlife`} className={styles.link}>{isEn ? 'Animals & Nature' : 'Dieren & Dinosauriërs'}</Link>
+              <Link href={`/${lang}/art-aesthetic`} className={styles.link}>{isEn ? 'Mandalas & Adult Coloring' : 'Mandala’s & Volwassenen'}</Link>
             </div>
             <div className={styles.linkColumn}>
               <span className={styles.linkColumnTitle}>{isEn ? 'Quick Links' : 'Snelle Links'}</span>
               <Link href={`/${lang}`} className={styles.link}>{isEn ? 'Home' : 'Home'}</Link>
+              <Link href={`/${lang}/search`} className={styles.link}>{isEn ? 'Search All Pages' : 'Alle Kleurplaten Zoeken'}</Link>
+              <Link href={`/${lang}/favorites`} className={styles.link}>{isEn ? 'My Favorites' : 'Mijn Favorieten'}</Link>
+              <Link href={`/${lang}/blog`} className={styles.link}>{isEn ? 'Coloring Guides' : 'Kleurplaten Tips & Blog'}</Link>
               <Link href={`/${lang}/about`} className={styles.link}>{isEn ? 'About Us' : 'Over Ons'}</Link>
               <Link href={`/${lang}/contact`} className={styles.link}>Contact</Link>
-              <Link href={`/${lang}/contest`} className={styles.link}>{isEn ? 'Contest' : 'Wedstrijd'}</Link>
-              <Link href={`/${lang}/request`} className={styles.link}>{isEn ? 'Request a Page' : 'Pagina Aanvragen'}</Link>
-              <Link href={`/${lang}/licensing`} className={styles.link}>{isEn ? 'Licensing' : 'Licentie'}</Link>
+              <Link href={`/${lang}/contest`} className={styles.link}>{isEn ? 'Monthly Contest' : 'Maandelijkse Wedstrijd'}</Link>
+              <Link href={`/${lang}/request`} className={styles.link}>{isEn ? 'Request a Page' : 'Kleurplaat Aanvragen'}</Link>
             </div>
             <div className={styles.linkColumn}>
               <span className={styles.linkColumnTitle}>{isEn ? 'Legal & Info' : 'Legaal & Info'}</span>
               <Link href={`/${lang}/privacy-policy`} className={styles.link}>Privacy Policy</Link>
               <Link href={`/${lang}/terms-of-service`} className={styles.link}>Terms of Service</Link>
               <Link href={`/${lang}/ip-policy`} className={styles.link}>IP & Takedown Policy</Link>
+              <Link href={`/${lang}/licensing`} className={styles.link}>{isEn ? 'Licensing' : 'Licentie'}</Link>
             </div>
           </div>
         </div>
