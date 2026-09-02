@@ -9,6 +9,7 @@ import AdSlot from '@/components/AdSlot';
 import ScrollReveal from '@/components/ScrollReveal';
 import HeroCarousel from '@/components/HeroCarousel';
 import CategoryExplorerTabs from '@/components/CategoryExplorerTabs';
+import FaqSection from '@/components/FaqSection';
 import React from 'react';
 
 export async function generateMetadata({ params }: { params: Promise<{ lang: string }> }) {
@@ -426,6 +427,9 @@ export default async function HomePage({ params }: { params: Promise<{ lang: str
           </div>
         </div>
       </section>
+
+      {/* ── Section 8: FAQ & SEO Knowledge Base ── */}
+      <FaqSection isEn={isEn} />
 
       <div className="container" style={{ padding: '2rem 0' }}>
         <AdSlot type="banner" text={isEn ? 'Sponsored Content' : 'Gesponsord'} />
