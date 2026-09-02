@@ -35,6 +35,78 @@ export default function InteractiveColoringStudio({
   const [historyIndex, setHistoryIndex] = useState<number>(-1);
   const [isDrawing, setIsDrawing] = useState<boolean>(false);
   const [loading, setLoading] = useState<boolean>(true);
+  const [showCelebration, setShowCelebration] = useState<boolean>(false);
+  const [coloredPreviewUrl, setColoredPreviewUrl] = useState<string | null>(null);
+
+  const launchConfetti = () => {
+    if (typeof window === 'undefined') return;
+    const canvas = document.createElement('canvas');
+    canvas.style.position = 'fixed';
+    canvas.style.top = '0';
+    canvas.style.left = '0';
+    canvas.style.width = '100vw';
+    canvas.style.height = '100vh';
+    canvas.style.pointerEvents = 'none';
+    canvas.style.zIndex = '99999';
+    document.body.appendChild(canvas);
+
+    const ctx = canvas.getContext('2d');
+    if (!ctx) return;
+
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+
+    const particles: Array<{ x: number; y: number; vx: number; vy: number; color: string; size: number; rotation: number; rotSpeed: number }> = [];
+    const colors = ['#FF3B30', '#FF9500', '#FFCC00', '#34C759', '#007AFF', '#5856D6', '#AF52DE', '#FF2D55'];
+
+    for (let i = 0; i < 120; i++) {
+      particles.push({
+        x: canvas.width / 2,
+        y: canvas.height / 3,
+        vx: (Math.random() - 0.5) * 16,
+        vy: Math.random() * -12 - 4,
+        color: colors[Math.floor(Math.random() * colors.length)],
+        size: Math.random() * 8 + 4,
+        rotation: Math.random() * 360,
+        rotSpeed: (Math.random() - 0.5) * 10,
+      });
+    }
+
+    let frame = 0;
+    const animate = () => {
+      frame++;
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+      particles.forEach(p => {
+        p.x += p.vx;
+        p.y += p.vy;
+        p.vy += 0.35; // gravity
+        p.rotation += p.rotSpeed;
+
+        ctx.save();
+        ctx.translate(p.x, p.y);
+        ctx.rotate((p.rotation * Math.PI) / 180);
+        ctx.fillStyle = p.color;
+        ctx.fillRect(-p.size / 2, -p.size / 2, p.size, p.size * 0.6);
+        ctx.restore();
+      });
+
+      if (frame < 180) {
+        requestAnimationFrame(animate);
+      } else {
+        canvas.remove();
+      }
+    };
+    requestAnimationFrame(animate);
+  };
+
+  const handleFinishMasterpiece = () => {
+    const canvas = canvasRef.current;
+    if (!canvas) return;
+    setColoredPreviewUrl(canvas.toDataURL('image/png'));
+    setShowCelebration(true);
+    launchConfetti();
+  };
+
   const lastPos = useRef<{ x: number; y: number } | null>(null);
 
   // Load image onto canvas
@@ -519,7 +591,14 @@ export default function InteractiveColoringStudio({
               </button>
             </div>
 
-            <div style={{ marginTop: '1rem', display: 'flex', flexDirection: 'column', gap: '0.6rem' }}>
+            <div style={{ marginTop: '1rem', display: 'flex', flexDirection: 'column', gap: '0.65rem' }}>
+              <button
+                type="button"
+                className={styles.finishBtn}
+                onClick={handleFinishMasterpiece}
+              >
+                🎉 {isEn ? 'Finish & Celebrate!' : 'Klaar met Inkleuren! 🎉'}
+              </button>
               <button
                 type="button"
                 className={styles.downloadArtBtn}
@@ -541,6 +620,58 @@ export default function InteractiveColoringStudio({
           <AdSlot type="rectangle" text={isEn ? "Sponsored Content" : "Gesponsord"} />
         </div>
       </div>
+
+      
+      {/* Celebration Masterpiece Modal */}
+      {showCelebration && (
+        <div className={styles.celebrationOverlay} onClick={() => setShowCelebration(false)}>
+          <div className={styles.celebrationModal} onClick={(e) => e.stopPropagation()}>
+            <div className={styles.celebrationBadge}>🏆 {isEn ? 'Masterpiece Award' : 'Kunstwerk Diploma'}</div>
+            <h2 className={styles.celebrationTitle}>
+              {isEn ? '🎉 What a Wonderful Masterpiece!' : '🎉 Wat een Prachtig Kunstwerk!'}
+            </h2>
+            <p className={styles.celebrationSubtitle}>
+              {isEn ? `You have colored "${title}" with amazing creativity!` : `Je hebt "${title}" fantastisch mooi ingekleurd!`}
+            </p>
+
+            {coloredPreviewUrl && (
+              <div className={styles.previewContainer}>
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img
+                  src={coloredPreviewUrl}
+                  alt="Completed Masterpiece"
+                  className={styles.completedArtImg}
+                />
+              </div>
+            )}
+
+            <div className={styles.modalActionButtons}>
+              <button
+                type="button"
+                className={styles.modalDownloadBtn}
+                onClick={handleDownloadColored}
+              >
+                📥 {isEn ? 'Save My Masterpiece (PNG)' : 'Mijn Kunstwerk Opslaan (PNG)'}
+              </button>
+              <button
+                type="button"
+                className={styles.modalPrintBtn}
+                onClick={handlePrintColored}
+              >
+                🖨️ {isEn ? 'Print Artwork' : 'Kunstwerk Printen'}
+              </button>
+              <button
+                type="button"
+                className={styles.modalCloseBtn}
+                onClick={() => setShowCelebration(false)}
+              >
+                🎨 {isEn ? 'Keep Coloring' : 'Verder Kleuren'}
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
+
 
       {/* Bottom Leaderboard Advertisement */}
       <div style={{ marginTop: '2rem' }}>

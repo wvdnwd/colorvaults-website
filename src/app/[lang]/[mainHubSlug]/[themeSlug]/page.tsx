@@ -2,6 +2,7 @@ import SafeImage from '@/components/SafeImage';
 import { getThemes, getThemeBySlug, getMainHubs, getColoringPages, safeJsonLd } from '@/lib/api';
 import { getCategorySeoData } from '@/lib/categorySeo';
 import CategorySeoBlock from '@/components/CategorySeoBlock';
+import RelatedThemes from '@/components/RelatedThemes';
 import DifficultyFilterBar from '@/components/DifficultyFilterBar';
 import { notFound } from 'next/navigation';
 import Link from 'next/link';
@@ -314,6 +315,8 @@ export default async function ThemePage({
         )}
 
         <AdSlot type="banner" text={isEn ? 'Sponsored Content' : 'Gesponsord'} />
+
+        <RelatedThemes lang={lang} isEn={isEn} currentThemeSlug={theme.slug} allThemes={getThemes(lang)} />
 
         <CategorySeoBlock
           title={seoData.bottomTitle}

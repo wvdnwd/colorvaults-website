@@ -305,3 +305,158 @@
   color: var(--foreground);
   z-index: 10;
 }
+.finishBtn {
+  width: 100%;
+  padding: 0.95rem;
+  background: linear-gradient(135deg, #FF6B35 0%, #F7C59F 50%, #FF3B30 100%);
+  color: #FFFFFF;
+  border: none;
+  border-radius: var(--radius-full, 9999px);
+  font-size: 1rem;
+  font-weight: 800;
+  cursor: pointer;
+  box-shadow: 0 4px 16px rgba(255, 107, 53, 0.35);
+  transition: all 0.25s cubic-bezier(0.34, 1.56, 0.64, 1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+.finishBtn:hover {
+  transform: translateY(-2px) scale(1.02);
+  box-shadow: 0 8px 24px rgba(255, 107, 53, 0.5);
+}
+
+.celebrationOverlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(15, 23, 42, 0.7);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  z-index: 10000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem;
+  animation: fadeIn 0.2s ease;
+}
+
+.celebrationModal {
+  background: #FFFFFF;
+  border-radius: var(--radius-xl, 24px);
+  max-width: 520px;
+  width: 100%;
+  padding: 2.25rem 2rem;
+  text-align: center;
+  box-shadow: 0 32px 80px rgba(0, 0, 0, 0.35);
+  animation: scaleUp 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+  border: 2px solid rgba(255, 215, 0, 0.4);
+}
+
+@keyframes scaleUp {
+  from { transform: scale(0.9) translateY(20px); opacity: 0; }
+  to { transform: scale(1) translateY(0); opacity: 1; }
+}
+
+.celebrationBadge {
+  display: inline-block;
+  background: linear-gradient(135deg, #FFFBEB 0%, #FEF3C7 100%);
+  color: #D97706;
+  border: 1px solid #FCD34D;
+  border-radius: 9999px;
+  padding: 0.3rem 0.85rem;
+  font-size: 0.85rem;
+  font-weight: 800;
+  margin-bottom: 0.85rem;
+}
+
+.celebrationTitle {
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: #0F172A;
+  margin-bottom: 0.5rem;
+}
+
+.celebrationSubtitle {
+  font-size: 0.95rem;
+  color: #64748B;
+  margin-bottom: 1.5rem;
+  line-height: 1.5;
+}
+
+.previewContainer {
+  background: #F8FAFC;
+  padding: 1rem;
+  border-radius: var(--radius-lg, 16px);
+  border: 3px solid #FCD34D;
+  box-shadow: 0 8px 24px rgba(217, 119, 6, 0.15);
+  margin-bottom: 1.75rem;
+  display: flex;
+  justify-content: center;
+  max-height: 280px;
+  overflow: hidden;
+}
+
+.completedArtImg {
+  max-height: 250px;
+  max-width: 100%;
+  object-fit: contain;
+  border-radius: 8px;
+}
+
+.modalActionButtons {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.modalDownloadBtn {
+  width: 100%;
+  padding: 0.9rem;
+  background: var(--gradient-primary, linear-gradient(135deg, #4F46E5, #7C3AED));
+  color: #FFFFFF;
+  border: none;
+  border-radius: var(--radius-full, 9999px);
+  font-size: 1rem;
+  font-weight: 800;
+  cursor: pointer;
+  box-shadow: 0 6px 18px rgba(79, 70, 229, 0.3);
+  transition: all 0.2s;
+}
+
+.modalDownloadBtn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 26px rgba(79, 70, 229, 0.45);
+}
+
+.modalPrintBtn {
+  width: 100%;
+  padding: 0.85rem;
+  background: #F8FAFC;
+  color: #0F172A;
+  border: 1.5px solid #CBD5E1;
+  border-radius: var(--radius-full, 9999px);
+  font-size: 0.95rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.modalPrintBtn:hover {
+  background: #E2E8F0;
+}
+
+.modalCloseBtn {
+  background: transparent;
+  border: none;
+  color: #64748B;
+  font-weight: 700;
+  font-size: 0.9rem;
+  cursor: pointer;
+  padding: 0.5rem;
+}
+
+.modalCloseBtn:hover {
+  color: #0F172A;
+}

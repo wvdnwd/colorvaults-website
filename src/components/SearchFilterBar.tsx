@@ -82,7 +82,48 @@ export default function SearchFilterBar({
  )}
  </div>
 
- {/* Mobile Toggle Button */}
+ 
+      {/* Quick Search Trending Pills */}
+      <div style={{ display: 'flex', alignItems: 'center', gap: '0.45rem', overflowX: 'auto', padding: '0.35rem 0 0.85rem', scrollbarWidth: 'none' }}>
+        <span style={{ fontSize: '0.75rem', fontWeight: 800, color: 'var(--gray-500)', whiteSpace: 'nowrap', textTransform: 'uppercase', letterSpacing: '0.05em' }}>
+          {isEn ? 'Trending:' : 'Populair:'}
+        </span>
+        {[
+          { label: 'Frozen', q: 'Frozen' },
+          { label: 'Pokemon', q: 'Pokemon' },
+          { label: 'Spider-Man', q: 'Spider-Man' },
+          { label: 'Paw Patrol', q: 'Paw Patrol' },
+          { label: isEn ? 'Dinosaurs' : 'Dino', q: 'Dinosaur' },
+          { label: 'Mandalas', q: 'Mandala' },
+          { label: 'Super Mario', q: 'Mario' },
+          { label: isEn ? 'Princesses' : 'Prinsessen', q: 'Princess' },
+          { label: isEn ? 'Unicorns' : 'Eenhoorns', q: 'Unicorn' },
+          { label: 'Lion King', q: 'Lion' },
+        ].map((pill) => (
+          <button
+            key={pill.q}
+            type="button"
+            onClick={() => onFilterChange({ query: pill.q })}
+            style={{
+              padding: '0.3rem 0.75rem',
+              borderRadius: '9999px',
+              fontSize: '0.8rem',
+              fontWeight: 700,
+              background: query.toLowerCase() === pill.q.toLowerCase() ? 'var(--primary)' : 'var(--surface-2, #F1F5F9)',
+              color: query.toLowerCase() === pill.q.toLowerCase() ? '#FFFFFF' : 'var(--gray-600)',
+              border: '1px solid var(--gray-200)',
+              cursor: 'pointer',
+              whiteSpace: 'nowrap',
+              transition: 'all 0.2s',
+            }}
+          >
+            {pill.label}
+          </button>
+        ))}
+      </div>
+
+
+      {/* Mobile Toggle Button */}
  <div className={styles.mobileToggleRow}>
  <button
  type="button"

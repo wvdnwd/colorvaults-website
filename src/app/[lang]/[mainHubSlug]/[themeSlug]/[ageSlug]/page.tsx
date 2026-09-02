@@ -1,5 +1,6 @@
 import { getAgePages, getAgePageBySlug, getMainHubs, getThemes, getPagesByAgeGroup, getAgeLabel, safeJsonLd } from '@/lib/api';
 import CategorySeoBlock from '@/components/CategorySeoBlock';
+import RelatedThemes from '@/components/RelatedThemes';
 import { notFound } from 'next/navigation';
 import Link from 'next/link';
 import Breadcrumbs from '@/components/Breadcrumbs';
@@ -189,6 +190,8 @@ export default async function AgePage({
         )}
 
         <AdSlot type="banner" text={isEn ? "Sponsored Content" : "Gesponsord"} />
+
+        <RelatedThemes lang={lang} isEn={isEn} currentThemeSlug={theme.slug} allThemes={getThemes(lang)} />
 
         <CategorySeoBlock
           title={isEn ? `About ${theme.title} (${difficultyLabel.label})` : `Over ${theme.title} (${difficultyLabel.label})`}
