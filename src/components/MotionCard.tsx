@@ -34,88 +34,141 @@ export default function MotionCard({ page, lang, isEn }: MotionCardProps) {
   const imageSrc = page.preview || page.image || '';
   const favItem = { id: page.id || page.slug, slug: page.slug, title: page.title, preview: imageSrc, url };
 
+  // Pinterest Share URL
+  const pinterestShareUrl = `https://www.pinterest.com/pin/create/button/?url=${encodeURIComponent(`https://colorvaults.com${url}`)}&media=${encodeURIComponent(imageSrc)}&description=${encodeURIComponent(`${page.title} - Free Printable Coloring Page on ColorVaults.com`)}`;
+
   return (
     <motion.div
       initial={{ opacity: 0 }}
       whileInView={{ opacity: 1 }}
       viewport={{ once: true, margin: '-50px' }}
-      whileHover={{ y: -8 }}
-      transition={{ duration: 0.3, ease: [0.34, 1.56, 0.64, 1] }}
+      whileHover={{ y: -6 }}
+      transition={{ duration: 0.25, ease: [0.34, 1.56, 0.64, 1] }}
       style={{ position: 'relative' }}
     >
-      <Link href={url} className="card" style={{ height: '100%' }}>
-        <div className="card-img-wrapper" style={{ aspectRatio: '3/4', position: 'relative', background: '#FFFFFF', padding: '1rem', borderBottom: '1px solid var(--gray-200)' }}>
-          <SafeImage 
-            src={imageSrc} 
-            alt={page.title} 
-            width={400} 
-            height={400} 
-            className="card-img" 
-            sizes="(max-width: 640px) 50vw, (max-width: 1024px) 33vw, 260px"
-            style={{ objectFit: 'contain', width: '100%', height: '100%' }}
-          />
-          <div style={{ position: 'absolute', top: '12px', right: '12px', zIndex: 10 }}>
-            <FavoriteButton item={favItem} />
-          </div>
-          {isTrending && (
-            <div style={{
+      <div className="card" style={{ height: '100%', display: 'flex', flexDirection: 'column' }}>
+        <div className="card-img-wrapper" style={{ aspectRatio: '3/4', position: 'relative', background: '#FFFFFF', padding: '0.85rem', borderBottom: '1px solid var(--gray-200)' }}>
+          <Link href={url} style={{ display: 'block', width: '100%', height: '100%' }}>
+            <SafeImage 
+              src={imageSrc} 
+              alt={page.title} 
+              width={400} 
+              height={400} 
+              className="card-img" 
+              sizes="(max-width: 640px) 50vw, (max-width: 1024px) 33vw, 260px"
+              style={{ objectFit: 'contain', width: '100%', height: '100%' }}
+            />
+          </Link>
+
+          {/* Pinterest Save Button (Top Left) */}
+          <a
+            href={pinterestShareUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            title="Save to Pinterest"
+            style={{
               position: 'absolute',
-              top: '12px',
-              left: '12px',
+              top: '10px',
+              left: '10px',
               zIndex: 10,
-              background: 'linear-gradient(135deg, #ff6b35, #f7c59f)',
-              color: 'white',
+              background: '#E60023',
+              color: '#FFFFFF',
               borderRadius: '9999px',
-              padding: '0.2rem 0.65rem',
-              fontSize: '0.68rem',
+              padding: '0.25rem 0.65rem',
+              fontSize: '0.72rem',
               fontWeight: 800,
               display: 'flex',
               alignItems: 'center',
-              boxShadow: '0 2px 8px rgba(255,107,53,0.4)',
-              letterSpacing: '0.04em',
-              textTransform: 'uppercase',
-            }}>
-              <span>Trending</span>
-            </div>
-          )}
+              gap: '0.25rem',
+              textDecoration: 'none',
+              boxShadow: '0 2px 8px rgba(230, 0, 35, 0.4)',
+              transition: 'transform 0.2s',
+            }}
+            onClick={(e) => e.stopPropagation()}
+          >
+            <span>📌</span>
+            <span>Pin</span>
+          </a>
+
+          {/* Favorite Button (Top Right) */}
+          <div style={{ position: 'absolute', top: '10px', right: '10px', zIndex: 10 }}>
+            <FavoriteButton item={favItem} />
+          </div>
+
+          {/* Age / Level Tag */}
           <div style={{
             position: 'absolute',
-            bottom: '12px',
-            left: '12px',
-            background: 'rgba(255, 255, 255, 0.9)',
+            bottom: '10px',
+            left: '10px',
+            background: 'rgba(255, 255, 255, 0.92)',
             backdropFilter: 'blur(8px)',
-            borderRadius: 'var(--radius-full)',
-            padding: '0.2rem 0.65rem',
-            fontSize: '0.72rem',
+            borderRadius: '9999px',
+            padding: '0.18rem 0.6rem',
+            fontSize: '0.7rem',
             fontWeight: 800,
             color: 'var(--primary)',
             textTransform: 'capitalize',
-            border: '1px solid rgba(108, 92, 231, 0.15)'
+            border: '1px solid rgba(108, 92, 231, 0.2)'
           }}>
             {page.ageGroup}
           </div>
         </div>
         
-        <div className="card-body">
-          <h3 className="card-title">{page.title}</h3>
-          <p className="card-desc" style={{ display: '-webkit-box', WebkitLineClamp: 2, WebkitBoxOrient: 'vertical', overflow: 'hidden' }}>
-            {page.shortDescription}
-          </p>
+        <div className="card-body" style={{ padding: '1rem', display: 'flex', flexDirection: 'column', flex: 1 }}>
+          <Link href={url} style={{ textDecoration: 'none', color: 'inherit' }}>
+            <h3 className="card-title" style={{ fontSize: '1rem', marginBottom: '0.4rem', fontWeight: 800 }}>
+              {page.title}
+            </h3>
+          </Link>
+          
           <div style={{
-            display: 'inline-flex',
+            display: 'flex',
             alignItems: 'center',
-            gap: '0.4rem',
+            justifyContent: 'space-between',
+            gap: '0.5rem',
             marginTop: 'auto',
             paddingTop: '0.75rem',
-            color: 'var(--primary)',
-            fontSize: '0.8rem',
-            fontWeight: 800
+            borderTop: '1px solid var(--gray-100)',
           }}>
-            <span>🎨</span>
-            <span>{isEn ? 'Color Online • PDF • PNG' : 'Online Inkleuren • PDF • PNG'}</span>
+            <Link
+              href={url}
+              style={{
+                flex: 1,
+                textAlign: 'center',
+                padding: '0.4rem 0.5rem',
+                borderRadius: '8px',
+                background: 'var(--surface-2, #F1F5F9)',
+                color: 'var(--foreground)',
+                fontSize: '0.78rem',
+                fontWeight: 700,
+                textDecoration: 'none',
+                border: '1px solid var(--gray-200)',
+                transition: 'all 0.15s',
+              }}
+            >
+              🖨️ {isEn ? 'Print / PDF' : 'Print / PDF'}
+            </Link>
+            <Link
+              href={`${url}/color`}
+              style={{
+                flex: 1,
+                textAlign: 'center',
+                padding: '0.4rem 0.5rem',
+                borderRadius: '8px',
+                background: 'linear-gradient(135deg, #FF6B35, #FF3B30)',
+                color: '#FFFFFF',
+                fontSize: '0.78rem',
+                fontWeight: 800,
+                textDecoration: 'none',
+                boxShadow: '0 2px 8px rgba(255, 107, 53, 0.3)',
+                transition: 'all 0.15s',
+              }}
+            >
+              🎨 {isEn ? 'Color Online' : 'Inkleuren'}
+            </Link>
           </div>
         </div>
-      </Link>
+      </div>
     </motion.div>
   );
 }

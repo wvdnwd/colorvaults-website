@@ -1,11 +1,14 @@
 import { getAgePages, getAgePageBySlug, getMainHubs, getThemes, getPagesByAgeGroup, getAgeLabel, safeJsonLd } from '@/lib/api';
 import CategorySeoBlock from '@/components/CategorySeoBlock';
 import RelatedThemes from '@/components/RelatedThemes';
+import CraftIdeasSection from '@/components/CraftIdeasSection';
+import NewsletterBox from '@/components/NewsletterBox';
 import { notFound } from 'next/navigation';
 import Link from 'next/link';
 import Breadcrumbs from '@/components/Breadcrumbs';
 import MotionCard from '@/components/MotionCard';
 import AdSlot from '@/components/AdSlot';
+import SafeImage from '@/components/SafeImage';
 import React from 'react';
 
 export async function generateStaticParams() {
@@ -23,7 +26,7 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
     ? `/api/og?title=${encodeURIComponent(agePage.title)}&image=${encodeURIComponent(theme.image)}`
     : '/images/banner.jpg';
   return {
-    title: `${agePage.title} | Free Printable | ColorVaults`,
+    title: `${agePage.title} (Free PDF Printables) | ColorVaults`,
     description: agePage.seoText,
     alternates: {
       canonical: `/${lang}/${mainHubSlug}/${themeSlug}/${ageSlug}`,
@@ -34,7 +37,7 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
       }
     },
     openGraph: {
-      title: `${agePage.title} | Free Printable | ColorVaults`,
+      title: `${agePage.title} (Free PDF Printables) | ColorVaults`,
       description: agePage.seoText,
       images: [{ url: ogImageUrl, width: 1200, height: 630, alt: agePage.title }],
     },
@@ -65,44 +68,143 @@ export default async function AgePage({
   const allColoringPages = getPagesByAgeGroup(lang, mainHubSlug, themeSlug, ageSlug);
   const isEn = lang === 'en';
 
-  const PER_PAGE = 40;
+  const PER_PAGE = 24;
   const currentPage = Number(page) || 1;
   const totalPages = Math.ceil(allColoringPages.length / PER_PAGE);
   const coloringPages = allColoringPages.slice((currentPage - 1) * PER_PAGE, currentPage * PER_PAGE);
 
   const difficultyLabel = getAgeLabel(ageSlug, lang);
 
+  // 4 Related themes in this hub for quick pill navigation
+  const relatedPills = getThemes(lang)
+    .filter(t => t.parentHub === mainHubSlug && t.slug !== themeSlug)
+    .slice(0, 5);
+
   return (
     <>
-      <div className="page-hero">
-        <div className="container">
-          <Breadcrumbs
-            items={[
-              { label: hub.title, href: `/${lang}/${hub.slug}` },
-              { label: theme.title, href: `/${lang}/${hub.slug}/${theme.slug}` },
-              { label: difficultyLabel.label }
-            ]}
-            lang={lang}
-          />
-          <h1 className="title-h1" style={{ marginTop: '1rem' }}>
-            {theme.title} — {difficultyLabel.label}
+      {/* ── MondayMandala Style Top Article & Hero Header ── */}
+      <div className="page-hero" data-hub={mainHubSlug} style={{ padding: '3.5rem 0 2.5rem' }}>
+        <div className="container" style={{ maxWidth: '880px', margin: '0 auto', textAlign: 'center' }}>
+          <div style={{ display: 'flex', justifyContent: 'center', marginBottom: '1rem' }}>
+            <Breadcrumbs
+              items={[
+                { label: hub.title, href: `/${lang}/${hub.slug}` },
+                { label: theme.title, href: `/${lang}/${hub.slug}/${theme.slug}` },
+                { label: difficultyLabel.label }
+              ]}
+              lang={lang}
+            />
+          </div>
+
+          <h1 className="title-h1" style={{ fontSize: '2.5rem', fontWeight: 800, lineHeight: 1.25, color: '#0F172A' }}>
+            {theme.title} — {difficultyLabel.label} {isEn ? '(Free PDF Printables)' : '(Gratis PDF Printables)'}
           </h1>
-          <p style={{ color: 'var(--gray-600)', fontSize: '1.1rem', marginTop: '0.6rem', lineHeight: 1.7, maxWidth: '640px' }}>
-            {agePage.seoText}
-          </p>
-          <span className="badge" style={{ marginTop: '1.25rem' }}>
-            {allColoringPages.length} {isEn ? 'pages available — 100% free' : 'pagina\'s beschikbaar — 100% gratis'}
-          </span>
+
+          <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '0.75rem', marginTop: '0.75rem', fontSize: '0.875rem', color: 'var(--gray-500)', fontWeight: 600, flexWrap: 'wrap' }}>
+            <span>✍️ {isEn ? 'By ColorVaults Studio Team' : 'Door ColorVaults Redactie'}</span>
+            <span>•</span>
+            <span>📅 {isEn ? 'Updated March 2026' : 'Bijgewerkt Maart 2026'}</span>
+            <span>•</span>
+            <span className="badge" style={{ background: 'rgba(34, 197, 94, 0.15)', color: '#16A34A', borderColor: 'rgba(34, 197, 94, 0.3)' }}>
+              ✓ {allColoringPages.length} {isEn ? 'Free Printables' : 'Gratis Kleurplaten'}
+            </span>
+          </div>
+
+          {/* Intro Paragraphs */}
+          <div style={{ marginTop: '1.5rem', textAlign: 'left', background: '#FFFFFF', padding: '1.75rem 2rem', borderRadius: '20px', border: '1.5px solid var(--gray-200)', boxShadow: '0 4px 20px rgba(0,0,0,0.03)' }}>
+            <p style={{ color: '#334155', fontSize: '1.05rem', lineHeight: 1.75, margin: 0 }}>
+              {agePage.seoText}
+            </p>
+          </div>
+
+          {/* Centered 8K Banner Artwork Photo */}
+          {theme.image && (
+            <div style={{
+              margin: '2rem auto 1.5rem',
+              maxWidth: '560px',
+              borderRadius: '24px',
+              overflow: 'hidden',
+              boxShadow: '0 20px 50px rgba(15, 23, 42, 0.18)',
+              border: '3px solid #FFFFFF',
+            }}>
+              <SafeImage
+                src={theme.image}
+                alt={`${theme.title} Master Poster`}
+                width={560}
+                height={380}
+                style={{ width: '100%', height: 'auto', display: 'block' }}
+              />
+            </div>
+          )}
+
+          {/* Paper Size & How to Use Notice */}
+          <div style={{
+            background: 'linear-gradient(135deg, #F8FAFC, #F1F5F9)',
+            border: '1.5px dashed var(--gray-300)',
+            borderRadius: '16px',
+            padding: '1rem 1.5rem',
+            fontSize: '0.9rem',
+            color: '#475569',
+            lineHeight: 1.6,
+            textAlign: 'center',
+          }}>
+            📄 <strong>{isEn ? 'Easy Print Instructions:' : 'Eenvoudig Printen:'}</strong>{' '}
+            {isEn
+              ? 'Click any coloring sheet below to open full size, print directly on standard A4 or US Letter paper, or color online in our digital studio!'
+              : 'Klik op een willekeurige kleurplaat om hem op ware grootte te openen, print direct op standaard A4 papier of kleur hem online in via onze digitale studio!'}
+          </div>
+
+          {/* Quick Related Topic Pills */}
+          {relatedPills.length > 0 && (
+            <div style={{
+              marginTop: '1.75rem',
+              background: '#FFFFFF',
+              border: '1.5px solid var(--gray-200)',
+              borderRadius: '16px',
+              padding: '1rem 1.25rem',
+              textAlign: 'center',
+            }}>
+              <span style={{ fontSize: '0.85rem', fontWeight: 800, color: '#64748B', textTransform: 'uppercase', letterSpacing: '0.04em', display: 'block', marginBottom: '0.6rem' }}>
+                {isEn ? 'While you are here, grab these related coloring pages:' : 'Bekijk ook deze gerelateerde thema’s:'}
+              </span>
+              <div style={{ display: 'flex', gap: '0.5rem', justifyContent: 'center', flexWrap: 'wrap' }}>
+                {relatedPills.map(rp => (
+                  <Link
+                    key={rp.slug}
+                    href={`/${lang}/${mainHubSlug}/${rp.slug}`}
+                    style={{
+                      padding: '0.35rem 0.85rem',
+                      borderRadius: '9999px',
+                      background: 'var(--surface-2, #F1F5F9)',
+                      color: 'var(--foreground)',
+                      border: '1px solid var(--gray-200)',
+                      fontSize: '0.85rem',
+                      fontWeight: 700,
+                      textDecoration: 'none',
+                      transition: 'all 0.2s',
+                    }}
+                  >
+                    {rp.title}
+                  </Link>
+                ))}
+              </div>
+            </div>
+          )}
         </div>
       </div>
 
       <div className="container section">
         <AdSlot type="banner" text={isEn ? "Sponsored Content" : "Gesponsord"} />
 
-        <div className="section-header">
-          <h2 className="title-h2">
-            {isEn ? 'All Coloring Pages' : 'Alle Kleurplaten'}
-          </h2>
+        <div className="section-header" style={{ marginTop: '2rem' }}>
+          <div>
+            <span className="badge">
+              {allColoringPages.length} {isEn ? 'Printables in this Collection' : 'Kleurplaten'}
+            </span>
+            <h2 className="title-h2" style={{ marginTop: '0.4rem' }}>
+              {isEn ? `All ${theme.title} (${difficultyLabel.label}) Sheets` : `Alle ${theme.title} (${difficultyLabel.label}) Kleurplaten`}
+            </h2>
+          </div>
         </div>
 
         {coloringPages.length === 0 ? (
@@ -113,13 +215,21 @@ export default async function AgePage({
           </div>
         ) : (
           <div>
+            {/* 2x3 Grid -> In-feed Ad -> 2x3 Grid -> In-feed Ad pattern */}
             {Array.from({ length: Math.ceil(coloringPages.length / 6) }).map((_, chunkIndex) => {
               const chunk = coloringPages.slice(chunkIndex * 6, chunkIndex * 6 + 6);
               const showAdBar = chunkIndex < Math.ceil(coloringPages.length / 6) - 1;
 
               return (
                 <React.Fragment key={chunkIndex}>
-                  <div className="grid-4" style={{ marginBottom: showAdBar ? '2.5rem' : 0 }}>
+                  <div
+                    style={{
+                      display: 'grid',
+                      gridTemplateColumns: 'repeat(auto-fill, minmax(240px, 1fr))',
+                      gap: '1.5rem',
+                      marginBottom: showAdBar ? '2.5rem' : 0,
+                    }}
+                  >
                     {chunk.map(page => (
                       <MotionCard key={page.slug} page={page} lang={lang} isEn={isEn} />
                     ))}
@@ -136,13 +246,13 @@ export default async function AgePage({
           </div>
         )}
 
+        {/* Pagination Progress */}
         {totalPages > 1 && (
           <div style={{ marginTop: '3.5rem' }}>
-            {/* Progress indicator */}
             <div style={{ marginBottom: '1.5rem', textAlign: 'center' }}>
               <p style={{ fontSize: '0.85rem', color: 'var(--gray-500)', fontWeight: 600, marginBottom: '0.6rem' }}>
                 {isEn
-                  ? `Page ${currentPage} of ${totalPages} — ${Math.min(currentPage * PER_PAGE, allColoringPages.length)} of ${allColoringPages.length} coloring pages`
+                  ? `Page ${currentPage} of ${totalPages} — ${Math.min(currentPage * PER_PAGE, allColoringPages.length)} of ${allColoringPages.length} pages`
                   : `Pagina ${currentPage} van ${totalPages} — ${Math.min(currentPage * PER_PAGE, allColoringPages.length)} van ${allColoringPages.length} kleurplaten`
                 }
               </p>
@@ -164,103 +274,61 @@ export default async function AgePage({
               </div>
             </div>
 
-            {/* Prev / Next buttons */}
-            <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', gap: '1rem' }}>
-              {currentPage > 1 ? (
-                <Link href={`/${lang}/${hub.slug}/${theme.slug}/${agePage.ageGroup}?page=${currentPage - 1}`} className="btn-secondary">
+            <div style={{ display: 'flex', justifyContent: 'center', gap: '0.5rem', flexWrap: 'wrap' }}>
+              {currentPage > 1 && (
+                <Link
+                  href={`/${lang}/${mainHubSlug}/${themeSlug}/${ageSlug}?page=${currentPage - 1}`}
+                  className="btn-secondary"
+                >
                   ← {isEn ? 'Previous' : 'Vorige'}
                 </Link>
-              ) : (
-                <span className="btn-secondary" style={{ opacity: 0.4, pointerEvents: 'none' }}>← {isEn ? 'Previous' : 'Vorige'}</span>
               )}
-              
-              <span style={{ fontWeight: 800, color: 'var(--foreground)', padding: '0.5rem 1rem', background: 'var(--surface-2)', borderRadius: 'var(--radius-full)' }}>
-                {currentPage} / {totalPages}
-              </span>
-
-              {currentPage < totalPages ? (
-                <Link href={`/${lang}/${hub.slug}/${theme.slug}/${agePage.ageGroup}?page=${currentPage + 1}`} className="btn-secondary">
+              {Array.from({ length: totalPages }).map((_, i) => {
+                const pageNum = i + 1;
+                const isActive = pageNum === currentPage;
+                return (
+                  <Link
+                    key={pageNum}
+                    href={`/${lang}/${mainHubSlug}/${themeSlug}/${ageSlug}?page=${pageNum}`}
+                    style={{
+                      width: '40px',
+                      height: '40px',
+                      display: 'flex',
+                      alignItems: 'center',
+                      justifyContent: 'center',
+                      borderRadius: 'var(--radius)',
+                      fontWeight: 700,
+                      background: isActive ? 'var(--primary)' : 'var(--surface)',
+                      color: isActive ? '#FFFFFF' : 'var(--foreground)',
+                      border: '1px solid var(--gray-200)',
+                      textDecoration: 'none',
+                    }}
+                  >
+                    {pageNum}
+                  </Link>
+                );
+              })}
+              {currentPage < totalPages && (
+                <Link
+                  href={`/${lang}/${mainHubSlug}/${themeSlug}/${ageSlug}?page=${currentPage + 1}`}
+                  className="btn-secondary"
+                >
                   {isEn ? 'Next' : 'Volgende'} →
                 </Link>
-              ) : (
-                <span className="btn-secondary" style={{ opacity: 0.4, pointerEvents: 'none' }}>{isEn ? 'Next' : 'Volgende'} →</span>
               )}
             </div>
           </div>
         )}
 
-        <AdSlot type="banner" text={isEn ? "Sponsored Content" : "Gesponsord"} />
+        {/* ✂️ 5 Fun Craft Ideas & Activities (SEO Supercharger) */}
+        <CraftIdeasSection themeTitle={theme.title} isEn={isEn} />
 
+        {/* 💌 Newsletter & Coloring Club */}
+        <NewsletterBox isEn={isEn} lang={lang} />
+
+        {/* 🔗 Related Themes */}
         <RelatedThemes lang={lang} isEn={isEn} currentThemeSlug={theme.slug} allThemes={getThemes(lang)} />
-
-        <CategorySeoBlock
-          title={isEn ? `About ${theme.title} (${difficultyLabel.label})` : `Over ${theme.title} (${difficultyLabel.label})`}
-          contentHtml={isEn ? `
-            <h2>${theme.title} Coloring Pages — Level: ${difficultyLabel.label} ${difficultyLabel.emoji}</h2>
-            <p>${agePage.seoText}</p>
-            <h3>Difficulty & Age Group Filters</h3>
-            <p>Explore other difficulty levels for ${theme.title}:</p>
-            <ul>
-              <li><a href="/${lang}/${mainHubSlug}/${themeSlug}/kids"><strong>Easy / Kids ()</strong></a> — Simple shapes & cute designs</li>
-              <li><a href="/${lang}/${mainHubSlug}/${themeSlug}/teens"><strong>Medium / Teens ()</strong></a> — Creative scenes & extra detail</li>
-              <li><a href="/${lang}/${mainHubSlug}/${themeSlug}/adults"><strong>Hard / Adults ()</strong></a> — Fine details & intricate line art</li>
-            </ul>
-            <p>Or return to the full <a href="/${lang}/${mainHubSlug}/${themeSlug}"><strong>${theme.title} main category page</strong></a> to see all available printable sheets.</p>
-          ` : `
-            <h2>${theme.title} Kleurplaten — Niveau: ${difficultyLabel.label} ${difficultyLabel.emoji}</h2>
-            <p>${agePage.seoText}</p>
-            <h3>Moeilijkheidsgraden & Filters</h3>
-            <p>Ontdek ook andere niveaus van ${theme.title}:</p>
-            <ul>
-              <li><a href="/${lang}/${mainHubSlug}/${themeSlug}/kids"><strong>Makkelijk / Kinderen ()</strong></a> — Eenvoudige vormen & leuke designs</li>
-              <li><a href="/${lang}/${mainHubSlug}/${themeSlug}/teens"><strong>Gemiddeld / Tieners ()</strong></a> — Creatieve scènes & meer detail</li>
-              <li><a href="/${lang}/${mainHubSlug}/${themeSlug}/adults"><strong>Moeilijk / Volwassenen ()</strong></a> — Ingewikkelde patronen & fijne details</li>
-            </ul>
-            <p>Of ga terug naar het <a href="/${lang}/${mainHubSlug}/${themeSlug}"><strong>${theme.title} hoofdcategorie overzicht</strong></a> om alle beschikbare kleurplaten te bekijken.</p>
-          `}
-          lang={lang}
-        />
       </div>
-
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: safeJsonLd({
-          '@context': 'https://schema.org',
-          '@graph': [
-            {
-              '@type': 'CollectionPage',
-              'name': `${theme.title} — ${difficultyLabel.label}`,
-              'description': agePage.seoText,
-              'url': `https://colorvaults.com/${lang}/${mainHubSlug}/${themeSlug}/${ageSlug}`,
-              'isPartOf': { '@id': 'https://colorvaults.com/#website' },
-              'inLanguage': lang,
-            },
-            {
-              '@type': 'BreadcrumbList',
-              'itemListElement': [
-                {
-                  '@type': 'ListItem',
-                  'position': 1,
-                  'name': hub.title,
-                  'item': `https://colorvaults.com/${lang}/${hub.slug}`,
-                },
-                {
-                  '@type': 'ListItem',
-                  'position': 2,
-                  'name': theme.title,
-                  'item': `https://colorvaults.com/${lang}/${hub.slug}/${theme.slug}`,
-                },
-                {
-                  '@type': 'ListItem',
-                  'position': 3,
-                  'name': difficultyLabel.label,
-                  'item': `https://colorvaults.com/${lang}/${hub.slug}/${theme.slug}/${ageSlug}`,
-                },
-              ],
-            },
-          ],
-        }) }}
-      />
     </>
   );
 }
