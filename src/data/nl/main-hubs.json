@@ -1,78 +1,71 @@
 [
   {
-    "title": "Collecties",
-    "slug": "collecties",
-    "description": "Ontdek onze volledige bibliotheek met gratis printbare kleurplaten opgesplitst per thema, moeilijkheidsgraad en leeftijd. Hoge resolutie lijntekeningen klaar om direct te downloaden en af te drukken.",
+    "title": "Disney & Pixar",
+    "slug": "disney-pixar",
+    "description": "Ontdek magische kleurplaten van je favoriete Disney en Pixar klassiekers zoals Frozen, Lion King, Toy Story, Cars, Moana, Aladdin en iconische prinsessen.",
     "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/banner/default.jpg",
     "language": "nl"
   },
   {
-    "title": "TV Series en Films",
-    "slug": "tv-series-en-films",
-    "description": "Ontdek gratis kleurplaten van al je favoriete tv-series en filmhelden zoals Paw Patrol, Bluey, SpongeBob, Anime en nog veel meer!",
+    "title": "Anime & Manga",
+    "slug": "anime-manga",
+    "description": "Spectaculaire anime en manga kleurplaten met Dragonball, Naruto, One Piece, Demon Slayer, Attack on Titan, Jujutsu Kaisen, Studio Ghibli en dappere samurai.",
     "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/banner/default.jpg",
     "language": "nl"
   },
   {
-    "title": "Disney en Sprookjes",
-    "slug": "disney-en-sprookjes",
-    "description": "Stap binnen in een magische wereld vol gratis Disney prinsessen kleurplaten, sprookjeskasteeltjes, draken, eenhoorns en tijdloze verhalen.",
+    "title": "Games & Virtuele Werelden",
+    "slug": "gaming-virtual-worlds",
+    "description": "Epische videogame kleurplaten van Fortnite, Minecraft, Roblox, Zelda, Pokémon, Super Mario, Sonic, Kirby, Brawl Stars en arcade legendes.",
     "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/banner/default.jpg",
     "language": "nl"
   },
   {
-    "title": "Games en Popcultuur",
-    "slug": "games-en-popcultuur",
-    "description": "Stoere game kleurplaten van Super Mario, Pokémon, Sonic, Fortnite, Roblox en legendarische game-iconen.",
+    "title": "Superhelden & Comics",
+    "slug": "superheroes-comic-universes",
+    "description": "Actievolle superhelden kleurplaten met Spider-Man, The Avengers, Batman, Superman en iconische striphelden.",
     "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/banner/default.jpg",
     "language": "nl"
   },
   {
-    "title": "Dieren en Natuur",
-    "slug": "dieren-en-natuur",
-    "description": "Breng de natuur tot leven met duizenden gratis dierenkleurplaten — van schattige huisdieren en boerderijdieren tot safari wildernis, zeedieren en vogels.",
+    "title": "Kinderen & TV Series",
+    "slug": "kids-tv-shows",
+    "description": "Vrolijke kleurplaten speciaal voor peuters en jonge kinderen met Bluey, Paw Patrol, Peppa Pig, Gabby Poppenhuis, Blippi, Cocomelon en SpongeBob.",
     "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/banner/default.jpg",
     "language": "nl"
   },
   {
-    "title": "Speciaal voor Peuters",
-    "slug": "speciaal-voor-peuters",
-    "description": "Eenvoudige en makkelijke kleurplaten speciaal ontworpen voor peuters en jonge kinderen met extra dikke zwarte contouren en grote kleurvlakken.",
+    "title": "Dieren & Natuur",
+    "slug": "animals-wildlife",
+    "description": "Ontdek het dierenrijk met printbare kleurplaten van dinosaurussen, paarden, schattige puppy’s, kittens, safari wilde dieren, zeedieren en vogels.",
     "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/banner/default.jpg",
     "language": "nl"
   },
   {
-    "title": "Meisjes Thema's",
-    "slug": "meisjes-themas",
-    "description": "Prachtige verzameling van schattige mode, zoete lekkernijen, lieve huisdieren en creatieve kleurthema's.",
+    "title": "Fantasie & Sprookjes",
+    "slug": "fantasy-fairytales",
+    "description": "Betreed fantasiewerelden vol magische draken, eenhoorns, elfjes, zeemeerminnen, tovenaars, sprookjeskastelen, ridders en betoverde bossen.",
     "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/banner/default.jpg",
     "language": "nl"
   },
   {
-    "title": "Volwassenen",
-    "slug": "volwassenen",
-    "description": "Ontspannende en gedetailleerde kleurplaten voor volwassenen waaronder gezellige hygge scènes, ingewikkelde mandala's, botanische kunst en anti-stress sjablonen.",
+    "title": "Voertuigen & Vervoer",
+    "slug": "vehicles-transportation",
+    "description": "Snelle en stoere voertuigen kleurplaten met monstertrucks, Formule 1 racewagens, brandweerwagens, graafmachines, raketten en cyberpunk auto’s.",
     "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/banner/default.jpg",
     "language": "nl"
   },
   {
-    "title": "Mandala's",
-    "slug": "mandalas",
-    "description": "Prachtige mandala kleurplaten voor ontspanning, mindfulness en creatieve rust. Gratis hoge resolutie sjablonen om uit te printen.",
+    "title": "Kunst & Patronen",
+    "slug": "art-aesthetic",
+    "description": "Rustgevende, gedetailleerde kleurplaten met Art Nouveau, ingewikkelde mandala’s, bohemian patronen, creepy kawaii, mode en muziekinstrumenten.",
     "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/banner/default.jpg",
     "language": "nl"
   },
   {
-    "title": "Kalenders",
-    "slug": "calendars",
-    "description": "Printbare blanco-, maand- en jaarkalenders om zelf in te kleuren, te personaliseren en je jaar georganiseerd te plannen.",
-    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/banner/default.jpg",
-    "language": "nl"
-  },
-  {
-    "title": "Printables",
-    "slug": "school-en-educatie-sjablonen",
-    "description": "Educatieve sjablonen, schoolwerkbladen en creatieve printables voor thuis en in de klas.",
+    "title": "Feestdagen & Seizoenen",
+    "slug": "holidays-seasons",
+    "description": "Gezellige seizoens- en feestdagen kleurplaten voor Sinterklaas, Kerstmis, Halloween, Pasen, herfstoogst, knus hygge leven en schattig kawaii eten.",
     "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/banner/default.jpg",
     "language": "nl"
   }

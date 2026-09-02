@@ -1,14 +1,16 @@
 'use client';
 
 import React, { useRef, useState, useEffect, useCallback } from 'react';
-import styles from './OnlineColoringTool.module.css';
+import styles from './InteractiveColoringStudio.module.css';
+import AdSlot from './AdSlot';
+import Link from 'next/link';
 
-interface OnlineColoringToolProps {
+interface InteractiveColoringStudioProps {
   imageUrl: string;
   title: string;
-  isOpen: boolean;
-  onClose: () => void;
   isEn: boolean;
+  backUrl: string;
+  themeTitle: string;
 }
 
 const PRESET_COLORS = [
@@ -18,13 +20,13 @@ const PRESET_COLORS = [
   '#FFFFBA', '#FFDFBA', '#E8DFF5', '#FCE1E4', '#FCF4DD', '#DDF6F5'
 ];
 
-export default function OnlineColoringTool({
+export default function InteractiveColoringStudio({
   imageUrl,
   title,
-  isOpen,
-  onClose,
   isEn,
-}: OnlineColoringToolProps) {
+  backUrl,
+  themeTitle,
+}: InteractiveColoringStudioProps) {
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const [activeTool, setActiveTool] = useState<'bucket' | 'brush' | 'eraser'>('bucket');
   const [activeColor, setActiveColor] = useState<string>('#FF3B30');
@@ -35,23 +37,8 @@ export default function OnlineColoringTool({
   const [loading, setLoading] = useState<boolean>(true);
   const lastPos = useRef<{ x: number; y: number } | null>(null);
 
-  // Close modal on Escape
-  useEffect(() => {
-    if (!isOpen) return;
-    const handleKeyDown = (e: KeyboardEvent) => {
-      if (e.key === 'Escape') onClose();
-    };
-    window.addEventListener('keydown', handleKeyDown);
-    document.body.style.overflow = 'hidden';
-    return () => {
-      window.removeEventListener('keydown', handleKeyDown);
-      document.body.style.overflow = '';
-    };
-  }, [isOpen, onClose]);
-
   // Load image onto canvas
   useEffect(() => {
-    if (!isOpen) return;
     setLoading(true);
     const canvas = canvasRef.current;
     if (!canvas) return;
@@ -105,7 +92,7 @@ export default function OnlineColoringTool({
       ctx.fillText(isEn ? 'Failed to load coloring sheet' : 'Afbeelding kon niet worden geladen', 20, 50);
       setLoading(false);
     };
-  }, [isOpen, imageUrl, isEn]);
+  }, [imageUrl, isEn]);
 
   // Push state to undo history
   const pushState = useCallback(() => {
@@ -370,168 +357,198 @@ export default function OnlineColoringTool({
     printWindow.document.close();
   };
 
-  if (!isOpen) return null;
-
   return (
-    <div className={styles.modalOverlay} onClick={(e) => { if (e.target === e.currentTarget) onClose(); }}>
-      <div className={styles.modalContent} role="dialog" aria-modal="true" aria-label={isEn ? 'Color online' : 'Online inkleuren'}>
-        {/* Header */}
-        <div className={styles.header}>
-          <div className={styles.titleGroup}>
-            <span style={{ fontSize: '1.4rem' }}>🎨</span>
-            <h2 className={styles.title}>{title}</h2>
-            <span className={styles.badge}>{isEn ? 'Interactive Canvas' : 'Interactieve Kleur-tool'}</span>
+    <div className={styles.studioContainer}>
+      {/* Studio Top Header */}
+      <div className={styles.studioHeader}>
+        <div>
+          <h1 className={styles.studioTitle}>
+            <span>🎨</span> {title}
+          </h1>
+          <p className={styles.studioSubtitle}>
+            {isEn 
+              ? 'Interactive digital coloring studio — Click on any area to fill with color, or use brushes to paint freely!'
+              : 'Interactieve digitale kleurstudio — Klik op een vlak om in te vullen met verf, of gebruik het penseel om vrij te schilderen!'}
+          </p>
+        </div>
+        <div className={styles.headerActions}>
+          <Link href={backUrl} className="btn-secondary" style={{ textDecoration: 'none', padding: '0.65rem 1.15rem' }}>
+            ← {isEn ? 'Back to Page' : 'Terug naar Kleurplaat'}
+          </Link>
+        </div>
+      </div>
+
+      {/* Top Banner Advertisement */}
+      <AdSlot type="banner" text={isEn ? "Sponsored Content" : "Gesponsord"} />
+
+      {/* Studio Workspace Grid */}
+      <div className={styles.studioGrid}>
+        {/* Canvas Stage */}
+        <div className={styles.canvasStage}>
+          {loading && (
+            <div className={styles.loadingOverlay}>
+              <div style={{ fontSize: '2rem' }}>🎨</div>
+              <span>{isEn ? 'Loading Interactive Canvas...' : 'Interactief Canvas Laden...'}</span>
+            </div>
+          )}
+          <div className={styles.canvasWrapper}>
+            <canvas
+              ref={canvasRef}
+              className={styles.paintCanvas}
+              onMouseDown={handlePointerDown}
+              onMouseMove={handlePointerMove}
+              onMouseUp={handlePointerUp}
+              onMouseLeave={handlePointerUp}
+              onTouchStart={handlePointerDown}
+              onTouchMove={handlePointerMove}
+              onTouchEnd={handlePointerUp}
+            />
           </div>
-          <button className={styles.closeBtn} onClick={onClose} aria-label={isEn ? 'Close' : 'Sluiten'}>
-            ✕
-          </button>
         </div>
 
-        {/* Main Workspace */}
-        <div className={styles.workspace}>
-          {/* Toolbar Sidebar */}
-          <div className={styles.toolbar}>
-            {/* Tools */}
-            <div>
-              <p className={styles.sectionLabel}>{isEn ? 'Tools' : 'Gereedschap'}</p>
-              <div className={styles.toolGrid}>
-                <button
-                  className={`${styles.toolBtn} ${activeTool === 'bucket' ? styles.active : ''}`}
-                  onClick={() => setActiveTool('bucket')}
-                  type="button"
-                >
-                  <span>🪣</span> {isEn ? 'Fill Bucket' : 'Verfemmer'}
-                </button>
-                <button
-                  className={`${styles.toolBtn} ${activeTool === 'brush' ? styles.active : ''}`}
-                  onClick={() => setActiveTool('brush')}
-                  type="button"
-                >
-                  <span>🖌️</span> {isEn ? 'Brush' : 'Kwast'}
-                </button>
-                <button
-                  className={`${styles.toolBtn} ${activeTool === 'eraser' ? styles.active : ''}`}
-                  onClick={() => setActiveTool('eraser')}
-                  type="button"
-                >
-                  <span>🧹</span> {isEn ? 'Eraser' : 'Gum'}
-                </button>
-                <button
-                  className={styles.toolBtn}
-                  onClick={handleReset}
-                  type="button"
-                >
-                  <span>🔄</span> {isEn ? 'Clear All' : 'Wissen'}
-                </button>
-              </div>
+        {/* Sidebar Controls */}
+        <div className={styles.sidebarControls}>
+          {/* Tool Selector */}
+          <div className={styles.controlCard}>
+            <div className={styles.cardTitle}>
+              <span>🛠️</span> {isEn ? 'Coloring Tools' : 'Kleurhulpmiddelen'}
+            </div>
+            <div className={styles.toolButtons}>
+              <button
+                type="button"
+                className={`${styles.toolBtn} ${activeTool === 'bucket' ? styles.active : ''}`}
+                onClick={() => setActiveTool('bucket')}
+              >
+                <span style={{ fontSize: '1.3rem' }}>🪄</span>
+                <span>{isEn ? 'Fill Bucket' : 'Verfemmer'}</span>
+              </button>
+              <button
+                type="button"
+                className={`${styles.toolBtn} ${activeTool === 'brush' ? styles.active : ''}`}
+                onClick={() => setActiveTool('brush')}
+              >
+                <span style={{ fontSize: '1.3rem' }}>🖌️</span>
+                <span>{isEn ? 'Brush' : 'Penseel'}</span>
+              </button>
+              <button
+                type="button"
+                className={`${styles.toolBtn} ${activeTool === 'eraser' ? styles.active : ''}`}
+                onClick={() => setActiveTool('eraser')}
+              >
+                <span style={{ fontSize: '1.3rem' }}>🧽</span>
+                <span>{isEn ? 'Eraser' : 'Gum'}</span>
+              </button>
             </div>
 
-            {/* Brush Size Slider */}
             {activeTool !== 'bucket' && (
-              <div className={styles.sliderGroup}>
-                <p className={styles.sectionLabel}>
-                  {isEn ? `Size: ${brushSize}px` : `Grootte: ${brushSize}px`}
-                </p>
+              <div className={styles.brushSizeSlider}>
+                <div className={styles.brushSizeLabel}>
+                  <span>{isEn ? 'Size' : 'Dikte'}:</span>
+                  <span>{brushSize}px</span>
+                </div>
                 <input
                   type="range"
                   min="4"
                   max="40"
                   value={brushSize}
-                  onChange={(e) => setBrushSize(parseInt(e.target.value, 10))}
-                  className={styles.slider}
-                />
-              </div>
-            )}
-
-            {/* Palette */}
-            <div>
-              <p className={styles.sectionLabel}>{isEn ? 'Color Palette' : 'Kleurenpalet'}</p>
-              <div className={styles.paletteGrid}>
-                {PRESET_COLORS.map((c) => (
-                  <button
-                    key={c}
-                    className={`${styles.colorSwatch} ${activeColor.toLowerCase() === c.toLowerCase() ? styles.activeSwatch : ''}`}
-                    style={{ background: c }}
-                    onClick={() => setActiveColor(c)}
-                    type="button"
-                    aria-label={`Color ${c}`}
-                  />
-                ))}
-              </div>
-
-              <div className={styles.customColorRow}>
-                <input
-                  type="color"
-                  value={activeColor}
-                  onChange={(e) => setActiveColor(e.target.value)}
-                  className={styles.customColorPicker}
-                  aria-label="Custom color picker"
-                />
-                <span style={{ fontSize: '0.8rem', fontWeight: 600, color: 'var(--gray-600)' }}>
-                  {isEn ? 'Custom Color Picker' : 'Eigen Kleur Kiezen'}
-                </span>
-              </div>
-            </div>
-
-            {/* History Actions */}
-            <div>
-              <p className={styles.sectionLabel}>{isEn ? 'History' : 'Geschiedenis'}</p>
-              <div className={styles.actionRow}>
-                <button
-                  className={styles.actionBtn}
-                  onClick={handleUndo}
-                  disabled={historyIndex <= 0}
-                  type="button"
-                >
-                  ↩️ {isEn ? 'Undo' : 'Ongedaan'}
-                </button>
-                <button
-                  className={styles.actionBtn}
-                  onClick={handleRedo}
-                  disabled={historyIndex >= history.length - 1}
-                  type="button"
-                >
-                  ↪️ {isEn ? 'Redo' : 'Opnieuw'}
-                </button>
-              </div>
-            </div>
-          </div>
-
-          {/* Canvas Area */}
-          <div className={styles.canvasStage}>
-            {loading ? (
-              <p style={{ color: 'var(--gray-500)', fontWeight: 700 }}>
-                🎨 {isEn ? 'Loading canvas...' : 'Kleurplaat inladen...'}
-              </p>
-            ) : (
-              <div className={styles.canvasWrapper}>
-                <canvas
-                  ref={canvasRef}
-                  className={styles.paintCanvas}
-                  onMouseDown={handlePointerDown}
-                  onMouseMove={handlePointerMove}
-                  onMouseUp={handlePointerUp}
-                  onMouseLeave={handlePointerUp}
-                  onTouchStart={handlePointerDown}
-                  onTouchMove={handlePointerMove}
-                  onTouchEnd={handlePointerUp}
+                  onChange={(e) => setBrushSize(Number(e.target.value))}
+                  style={{ width: '100%', accentColor: 'var(--primary)' }}
                 />
               </div>
             )}
           </div>
-        </div>
 
-        {/* Footer */}
-        <div className={styles.footer}>
-          <div style={{ display: 'flex', gap: '0.6rem' }}>
-            <button className={styles.btnPrint} onClick={handlePrintColored} type="button">
-              <span>🖨️</span> {isEn ? 'Print Artwork' : 'Kunstwerk Printen'}
-            </button>
+          {/* Color Palette */}
+          <div className={styles.controlCard}>
+            <div className={styles.cardTitle}>
+              <span>🎨</span> {isEn ? 'Color Palette' : 'Kleurenpalet'}
+            </div>
+            <div className={styles.paletteGrid}>
+              {PRESET_COLORS.map((c) => (
+                <button
+                  key={c}
+                  type="button"
+                  className={`${styles.colorSwatch} ${activeColor.toUpperCase() === c.toUpperCase() ? styles.selected : ''}`}
+                  style={{ backgroundColor: c }}
+                  onClick={() => setActiveColor(c)}
+                  aria-label={`Color ${c}`}
+                />
+              ))}
+            </div>
+            <div className={styles.customPickerRow}>
+              <input
+                type="color"
+                value={activeColor}
+                onChange={(e) => setActiveColor(e.target.value)}
+                className={styles.colorPickerInput}
+                title={isEn ? 'Custom Color Picker' : 'Eigen Kleur Kiezen'}
+              />
+              <span style={{ fontSize: '0.85rem', fontWeight: 700, color: 'var(--foreground)' }}>
+                {isEn ? 'Custom Color' : 'Eigen Kleur'} ({activeColor.toUpperCase()})
+              </span>
+            </div>
           </div>
-          <button className={styles.btnExport} onClick={handleDownloadColored} type="button">
-            <span>💾</span> {isEn ? 'Save Colored Image' : 'Gekleurde Kleurplaat Opslaan'}
-          </button>
+
+          {/* History / Actions */}
+          <div className={styles.controlCard}>
+            <div className={styles.cardTitle}>
+              <span>⚙️</span> {isEn ? 'History & Actions' : 'Bewerkingen'}
+            </div>
+            <div className={styles.actionRow}>
+              <button
+                type="button"
+                className={styles.actionBtn}
+                onClick={handleUndo}
+                disabled={historyIndex <= 0}
+                title="Undo"
+              >
+                ↩️ {isEn ? 'Undo' : 'Herstel'}
+              </button>
+              <button
+                type="button"
+                className={styles.actionBtn}
+                onClick={handleRedo}
+                disabled={historyIndex >= history.length - 1}
+                title="Redo"
+              >
+                ↪️ {isEn ? 'Redo' : 'Opnieuw'}
+              </button>
+              <button
+                type="button"
+                className={styles.actionBtn}
+                onClick={handleReset}
+                title="Reset"
+              >
+                🔄 {isEn ? 'Clear' : 'Wissen'}
+              </button>
+            </div>
+
+            <div style={{ marginTop: '1rem', display: 'flex', flexDirection: 'column', gap: '0.6rem' }}>
+              <button
+                type="button"
+                className={styles.downloadArtBtn}
+                onClick={handleDownloadColored}
+              >
+                <span>📥</span> {isEn ? 'Download Masterpiece (PNG)' : 'Kunstwerk Opslaan (PNG)'}
+              </button>
+              <button
+                type="button"
+                className={styles.printArtBtn}
+                onClick={handlePrintColored}
+              >
+                <span>🖨️</span> {isEn ? 'Print Colored Page' : 'Ingekleurde Pagina Printen'}
+              </button>
+            </div>
+          </div>
+
+          {/* Sticky Sidebar Rectangle Advertisement */}
+          <AdSlot type="rectangle" text={isEn ? "Sponsored Content" : "Gesponsord"} />
         </div>
+      </div>
+
+      {/* Bottom Leaderboard Advertisement */}
+      <div style={{ marginTop: '2rem' }}>
+        <AdSlot type="banner" text={isEn ? "Sponsored Content" : "Gesponsord"} />
       </div>
     </div>
   );

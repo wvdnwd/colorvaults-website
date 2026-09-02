@@ -1,78 +1,71 @@
 [
   {
-    "title": "Collections",
-    "slug": "collections",
-    "description": "Explore our complete library of free printable coloring pages organized by theme, difficulty, and age group. High quality line art ready for instant download and printing.",
+    "title": "Disney & Pixar",
+    "slug": "disney-pixar",
+    "description": "Discover magical coloring pages from your favorite Disney and Pixar classics including Frozen, Lion King, Toy Story, Cars, Moana, Aladdin, and iconic princesses.",
     "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/banner/default.jpg",
     "language": "en"
   },
   {
-    "title": "TV Series and Movies",
-    "slug": "tv-series-and-movies",
-    "description": "Discover free coloring pages featuring your favorite TV series and movie characters including Paw Patrol, Bluey, SpongeBob, Anime, and more!",
+    "title": "Anime & Manga",
+    "slug": "anime-manga",
+    "description": "High-octane anime and manga coloring pages featuring Dragonball, Naruto, One Piece, Demon Slayer, Attack on Titan, Jujutsu Kaisen, Studio Ghibli, and epic samurais.",
     "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/banner/default.jpg",
     "language": "en"
   },
   {
-    "title": "Disney and Fairy Tales",
-    "slug": "disney-and-fairy-tales",
-    "description": "Step into a magical world with free Disney princess coloring pages, fairytale castles, dragons, unicorns, and timeless stories.",
+    "title": "Gaming & Virtual Worlds",
+    "slug": "gaming-virtual-worlds",
+    "description": "Epic video game coloring pages featuring Fortnite, Minecraft, Roblox, Zelda, Pokémon, Super Mario, Sonic, Kirby, Brawl Stars, and arcade legends.",
     "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/banner/default.jpg",
     "language": "en"
   },
   {
-    "title": "Games and Pop Culture",
-    "slug": "games-and-pop-culture",
-    "description": "High-octane game coloring pages featuring Super Mario, Pokémon, Sonic, Fortnite, Roblox, and epic gaming icons.",
+    "title": "Superheroes & Comic Universes",
+    "slug": "superheroes-comic-universes",
+    "description": "Action-packed superhero coloring pages featuring Spider-Man, The Avengers, Batman, Superman, and iconic comic book heroes.",
     "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/banner/default.jpg",
     "language": "en"
   },
   {
-    "title": "Animals and Nature",
-    "slug": "animals-and-nature",
-    "description": "Bring nature to life with thousands of free animal coloring pages — from cute pets and farm animals to safari wildlife, sea creatures, and birds.",
+    "title": "Kids & TV Shows",
+    "slug": "kids-tv-shows",
+    "description": "Fun, cheerful coloring pages designed for toddlers and kids featuring Bluey, Paw Patrol, Peppa Pig, Gabby Dollhouse, Blippi, Cocomelon, and SpongeBob.",
     "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/banner/default.jpg",
     "language": "en"
   },
   {
-    "title": "Toddler Specific",
-    "slug": "toddler-specific",
-    "description": "Simple, easy coloring pages designed specifically for toddlers and young children with thick bold outlines and large coloring areas.",
+    "title": "Animals & Wildlife",
+    "slug": "animals-wildlife",
+    "description": "Explore the animal kingdom with printable coloring pages of dinosaurs, horses, cute puppies, kittens, safari wildlife, sea creatures, and birds.",
     "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/banner/default.jpg",
     "language": "en"
   },
   {
-    "title": "Girls Themes",
-    "slug": "girls-themes",
-    "description": "Wonderful collection of cute fashion, sweet desserts, adorable pets, and colorful creative themes for girls.",
+    "title": "Fantasy & Fairytales",
+    "slug": "fantasy-fairytales",
+    "description": "Step into fantasy worlds with magical dragons, unicorns, fairies, mermaids, wizards, fairytale castles, knights, and enchanted forests.",
     "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/banner/default.jpg",
     "language": "en"
   },
   {
-    "title": "Adults",
-    "slug": "adults",
-    "description": "Relaxing, detailed coloring pages for adults including cozy hygge scenes, intricate mandalas, botanical art, and soothing anti-stress designs.",
+    "title": "Vehicles & Transportation",
+    "slug": "vehicles-transportation",
+    "description": "Fast-paced coloring pages of monster trucks, Formula 1 racecars, emergency vehicles, construction machines, rockets, and cyberpunk hovercars.",
     "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/banner/default.jpg",
     "language": "en"
   },
   {
-    "title": "Mandalas",
-    "slug": "mandalas",
-    "description": "Beautiful mandala coloring pages for mindfulness, stress relief, and artistic relaxation. Free high-resolution printable templates.",
+    "title": "Art & Aesthetic",
+    "slug": "art-aesthetic",
+    "description": "Mindful, detailed coloring pages featuring Art Nouveau, intricate mandalas, bohemian patterns, creepy kawaii, fashion, and musical instruments.",
     "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/banner/default.jpg",
     "language": "en"
   },
   {
-    "title": "Calendars",
-    "slug": "calendars",
-    "description": "Printable blank, monthly, and yearly calendars ready to color, personalize, and organize your year.",
-    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/banner/default.jpg",
-    "language": "en"
-  },
-  {
-    "title": "Printables",
-    "slug": "school-education-templates",
-    "description": "Educational templates, school activity sheets, and creative printable tools for home and classroom learning.",
+    "title": "Holidays & Seasons",
+    "slug": "holidays-seasons",
+    "description": "Seasonal and festive coloring pages celebrating Sinterklaas, Christmas, Halloween, Easter, Autumn harvest, cozy hygge life, and cute kawaii food.",
     "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/banner/default.jpg",
     "language": "en"
   }

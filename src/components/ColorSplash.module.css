@@ -1,0 +1,74 @@
+/* ── Watercolor Color Splash Container ────────────────────────────────────── */
+.splashContainer {
+  position: absolute;
+  inset: -15%;
+  width: 130%;
+  height: 130%;
+  pointer-events: none;
+  z-index: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: visible;
+}
+
+/* Base vibrant color wash */
+.splashBackdrop {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: 
+    radial-gradient(circle at 50% 45%, rgba(255, 46, 147, 0.45) 0%, transparent 45%),
+    radial-gradient(circle at 35% 35%, rgba(124, 58, 237, 0.5) 0%, transparent 40%),
+    radial-gradient(circle at 65% 35%, rgba(0, 210, 211, 0.45) 0%, transparent 40%),
+    radial-gradient(circle at 40% 65%, rgba(16, 185, 129, 0.4) 0%, transparent 42%),
+    radial-gradient(circle at 60% 65%, rgba(255, 179, 0, 0.45) 0%, transparent 42%),
+    radial-gradient(circle at 50% 50%, rgba(255, 82, 82, 0.4) 0%, transparent 50%);
+  filter: blur(48px);
+  opacity: 0.95;
+  mix-blend-mode: screen;
+  animation: pulseSplash 8s ease-in-out infinite alternate;
+}
+
+@keyframes pulseSplash {
+  0% { transform: scale(0.96) rotate(-2deg); opacity: 0.85; filter: blur(48px); }
+  50% { transform: scale(1.05) rotate(1.5deg); opacity: 1; filter: blur(42px); }
+  100% { transform: scale(0.98) rotate(-1deg); opacity: 0.9; filter: blur(50px); }
+}
+
+/* SVG Watercolor Fluid Splatter Mesh */
+.splashSvg {
+  position: absolute;
+  width: 110%;
+  height: 110%;
+  filter: drop-shadow(0 0 35px rgba(255, 46, 147, 0.4));
+  opacity: 0.92;
+  mix-blend-mode: hard-light;
+  animation: floatSplash 12s ease-in-out infinite alternate;
+}
+
+@keyframes floatSplash {
+  0% { transform: scale(1) translateY(0px); }
+  100% { transform: scale(1.04) translateY(-8px); }
+}
+
+/* Paint Droplets & Splatter Dots */
+.splatters {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+
+.droplet {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(1px);
+  animation: floatDroplet 6s ease-in-out infinite alternate;
+}
+
+@keyframes floatDroplet {
+  0% { transform: translateY(0) scale(1); }
+  100% { transform: translateY(-12px) scale(1.15); }
+}

@@ -320,7 +320,11 @@ export default async function ColoringPageDetail({ params }: { params: Promise<{
           </div>
 
           {/* Action CTAs */}
-          <PrintDownloadButtons isEn={isEn} fileUrl={page.image} />
+          <PrintDownloadButtons 
+            isEn={isEn} 
+            fileUrl={page.image} 
+            colorPageUrl={`/${lang}/${mainHubSlug}/${themeSlug}/${ageSlug}/${page.slug}/color`}
+          />
 
           {/* Metadata Chips */}
           <div style={{ marginTop: '1.5rem', display: 'flex', flexDirection: 'column', gap: '0.6rem' }}>

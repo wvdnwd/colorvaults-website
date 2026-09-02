@@ -32,9 +32,9 @@ SKIP_FOLDERS = {'Afgekeurd', 'Twijfel_Score_6', 'Afgekeurd_of_Twijfel', 'Dubbele
 OUTPUT_CSV = os.path.join(os.path.dirname(__file__), 'bad_images_report.csv')
 
 # Thresholds
-MIN_FILE_SIZE_KB = 40         # Files smaller than this are suspicious
+MIN_FILE_SIZE_KB = 15         # WebP images can be 20-35KB and still be great quality
 MAX_DARK_RATIO = 0.80         # >80% dark pixels = problematic
-MAX_WHITE_RATIO = 0.97        # >97% white pixels = nearly blank
+MAX_WHITE_RATIO = 0.985       # >98.5% white pixels = completely blank
 
 
 def analyze_image_quality(filepath):

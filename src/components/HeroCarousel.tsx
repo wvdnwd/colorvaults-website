@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
+import ColorSplash from './ColorSplash';
 import styles from './HeroCarousel.module.css';
 
 export interface CarouselItem {
@@ -34,22 +35,27 @@ export default function HeroCarousel({ items }: HeroCarouselProps) {
   if (count === 0) return null;
 
   return (
-    <div className={styles.scene}>
-      <div className={styles.ring} style={{ '--count': count } as React.CSSProperties}>
-        {displayItems.map((img, i) => (
-          <Link
-            key={`${img.href}-${i}`}
-            href={img.href}
-            className={styles.card}
-            style={{ '--i': i, '--count': count } as React.CSSProperties}
-            title={img.alt}
-          >
-            {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img src={img.src} alt={img.alt} className={styles.img} />
-            <div className={styles.shine} />
-            <div className={styles.cardLabel}>{img.alt}</div>
-          </Link>
-        ))}
+    <div className={styles.sceneWrapper}>
+      {/* Radiant Watercolor Paint Splash Backdrop */}
+      <ColorSplash />
+
+      <div className={styles.scene}>
+        <div className={styles.ring} style={{ '--count': count } as React.CSSProperties}>
+          {displayItems.map((img, i) => (
+            <Link
+              key={`${img.href}-${i}`}
+              href={img.href}
+              className={styles.card}
+              style={{ '--i': i, '--count': count } as React.CSSProperties}
+              title={img.alt}
+            >
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img src={img.src} alt={img.alt} className={styles.img} />
+              <div className={styles.shine} />
+              <div className={styles.cardLabel}>{img.alt}</div>
+            </Link>
+          ))}
+        </div>
       </div>
     </div>
   );

@@ -15,16 +15,19 @@ export async function GET(request: Request) {
 
   let parsedUrl: URL;
   try {
-    parsedUrl = new URL(url);
+    parsedUrl = new URL(url, request.url);
   } catch (e) {
     return new NextResponse('Invalid URL', { status: 400 });
   }
 
-  if (!ALLOWED_HOSTNAMES.has(parsedUrl.hostname)) {
-    return new NextResponse('URL not allowed', { status: 403 });
-  }
+  const requestHost = new URL(request.url).hostname;
+  const isAllowedHost = 
+    ALLOWED_HOSTNAMES.has(parsedUrl.hostname) ||
+    parsedUrl.hostname === requestHost ||
+    parsedUrl.hostname === 'localhost' ||
+    parsedUrl.hostname === '127.0.0.1';
 
-  if (parsedUrl.protocol !== 'https:') {
+  if (!isAllowedHost) {
     return new NextResponse('URL not allowed', { status: 403 });
   }
 

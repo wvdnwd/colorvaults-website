@@ -1,6 +1,6 @@
 'use client';
 
-import { useEffect } from 'react';
+import { useEffect, useRef } from 'react';
 import styles from './AdSlot.module.css';
 
 interface AdSlotProps {
@@ -14,16 +14,37 @@ export default function AdSlot({
   text = 'Advertisement',
   slotId,
 }: AdSlotProps) {
+  const adRef = useRef<HTMLModElement>(null);
+  const pushedRef = useRef(false);
 
   useEffect(() => {
+    if (pushedRef.current) return;
+
     try {
       if (typeof window !== 'undefined') {
-        ((window as any).adsbygoogle = (window as any).adsbygoogle || []).push({});
+        const insElement = adRef.current;
+        // Check if the ad unit is already loaded or initialized
+        if (insElement && !insElement.getAttribute('data-adsbygoogle-status')) {
+          ((window as any).adsbygoogle = (window as any).adsbygoogle || []).push({});
+          pushedRef.current = true;
+        }
       }
-    } catch {
-      // AdSense initialization fallback — safe to ignore
+    } catch (e) {
+      console.warn('AdSense push notice:', e);
     }
   }, []);
+
+  // Prepare valid AdSense data attributes (NEVER pass data-ad-slot="auto" as Google rejects it)
+  const adDataProps: Record<string, string> = {
+    'data-ad-client': 'ca-pub-1184801748776428',
+    'data-ad-format': type === 'rectangle' ? 'rectangle' : type === 'in-feed' ? 'fluid' : 'auto',
+    'data-full-width-responsive': 'true',
+  };
+
+  // Only attach data-ad-slot if a real numeric slotId was passed
+  if (slotId && /^\d+$/.test(slotId.trim())) {
+    adDataProps['data-ad-slot'] = slotId.trim();
+  }
 
   return (
     <div
@@ -36,14 +57,12 @@ export default function AdSlot({
       </div>
 
       <div className={styles.adContainer}>
-        {/* Google AdSense ad unit — always rendered, Google fills it automatically */}
+        {/* Google AdSense ad unit */}
         <ins
+          ref={adRef}
           className="adsbygoogle"
           style={{ display: 'block', width: '100%' }}
-          data-ad-client="ca-pub-1184801748776428"
-          data-ad-slot={slotId || 'auto'}
-          data-ad-format={type === 'rectangle' ? 'rectangle' : type === 'in-feed' ? 'fluid' : 'auto'}
-          data-full-width-responsive="true"
+          {...adDataProps}
         />
       </div>
     </div>

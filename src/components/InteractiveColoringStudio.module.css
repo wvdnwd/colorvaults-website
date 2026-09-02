@@ -1,0 +1,307 @@
+.studioContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  width: 100%;
+}
+
+.studioHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 1rem;
+  background: var(--surface);
+  padding: 1.25rem 1.75rem;
+  border-radius: var(--radius-xl);
+  border: 1px solid var(--gray-200);
+  box-shadow: var(--shadow-sm);
+}
+
+.studioTitle {
+  font-size: 1.75rem;
+  font-weight: 900;
+  color: var(--foreground);
+  margin: 0;
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+.studioSubtitle {
+  color: var(--gray-500);
+  font-size: 0.95rem;
+  margin-top: 0.35rem;
+  font-weight: 600;
+}
+
+.headerActions {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.studioGrid {
+  display: grid;
+  grid-template-columns: 1fr 340px;
+  gap: 2rem;
+  align-items: start;
+}
+
+@media (max-width: 1080px) {
+  .studioGrid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.canvasStage {
+  background: #ffffff;
+  border-radius: var(--radius-xl);
+  border: 1px solid var(--gray-200);
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 580px;
+  box-shadow: var(--shadow-md);
+  position: relative;
+  overflow: hidden;
+}
+
+.canvasWrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  max-width: 100%;
+  border-radius: var(--radius);
+  overflow: hidden;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+}
+
+.paintCanvas {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  cursor: crosshair;
+  touch-action: none;
+}
+
+.sidebarControls {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  position: sticky;
+  top: 5.5rem;
+}
+
+.controlCard {
+  background: var(--surface);
+  border-radius: var(--radius-xl);
+  border: 1px solid var(--gray-200);
+  padding: 1.25rem;
+  box-shadow: var(--shadow-sm);
+}
+
+.cardTitle {
+  font-size: 0.85rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--gray-500);
+  margin-bottom: 0.85rem;
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+/* Tool Buttons */
+.toolButtons {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 0.5rem;
+}
+
+.toolBtn {
+  padding: 0.75rem 0.5rem;
+  border-radius: var(--radius-lg);
+  border: 2px solid var(--gray-200);
+  background: var(--surface-2);
+  color: var(--foreground);
+  font-weight: 800;
+  font-size: 0.825rem;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.35rem;
+  transition: all 0.2s ease;
+}
+
+.toolBtn:hover {
+  border-color: var(--primary);
+  background: var(--primary-light);
+}
+
+.toolBtn.active {
+  border-color: var(--primary);
+  background: var(--primary);
+  color: #ffffff;
+  box-shadow: 0 4px 12px rgba(108, 92, 231, 0.3);
+}
+
+.brushSizeSlider {
+  margin-top: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.brushSizeLabel {
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: var(--gray-600);
+  display: flex;
+  justify-content: space-between;
+}
+
+/* Palette Swatches */
+.paletteGrid {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 0.5rem;
+}
+
+.colorSwatch {
+  aspect-ratio: 1;
+  border-radius: var(--radius-md);
+  border: 2px solid rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+  position: relative;
+}
+
+.colorSwatch:hover {
+  transform: scale(1.15);
+  z-index: 2;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.colorSwatch.selected {
+  transform: scale(1.18);
+  border: 3px solid var(--foreground);
+  box-shadow: 0 0 0 2px var(--surface), 0 4px 12px rgba(0, 0, 0, 0.3);
+  z-index: 3;
+}
+
+.customPickerRow {
+  margin-top: 0.85rem;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.colorPickerInput {
+  width: 44px;
+  height: 44px;
+  border: none;
+  border-radius: var(--radius-md);
+  cursor: pointer;
+  background: transparent;
+  padding: 0;
+}
+
+/* Action Buttons */
+.actionRow {
+  display: flex;
+  gap: 0.5rem;
+  margin-top: 0.5rem;
+}
+
+.actionBtn {
+  flex: 1;
+  padding: 0.65rem;
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--gray-200);
+  background: var(--surface-2);
+  color: var(--foreground);
+  font-weight: 700;
+  font-size: 0.8rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.35rem;
+  transition: all 0.2s ease;
+}
+
+.actionBtn:hover:not(:disabled) {
+  background: var(--gray-100);
+  border-color: var(--gray-400);
+}
+
+.actionBtn:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+}
+
+.downloadArtBtn {
+  width: 100%;
+  padding: 0.95rem;
+  border-radius: var(--radius-full);
+  border: none;
+  background: var(--gradient-primary, linear-gradient(135deg, #6C5CE7, #A29BFE));
+  color: white;
+  font-weight: 800;
+  font-size: 1rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  box-shadow: 0 6px 18px rgba(108, 92, 231, 0.35);
+  transition: all 0.2s ease;
+}
+
+.downloadArtBtn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 24px rgba(108, 92, 231, 0.45);
+}
+
+.printArtBtn {
+  width: 100%;
+  padding: 0.8rem;
+  border-radius: var(--radius-full);
+  border: 1.5px solid var(--gray-300);
+  background: var(--surface);
+  color: var(--foreground);
+  font-weight: 700;
+  font-size: 0.88rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  transition: all 0.2s ease;
+}
+
+.printArtBtn:hover {
+  background: var(--gray-100);
+  border-color: var(--gray-400);
+}
+
+.loadingOverlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(4px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  font-weight: 700;
+  color: var(--foreground);
+  z-index: 10;
+}

@@ -2,8 +2,12 @@
 .hero {
   position: relative;
   padding: 5.5rem 0 5rem;
-  background: var(--gradient-hero);
-  border-bottom: 1px solid rgba(253, 246, 233, 0.08);
+  background: 
+    radial-gradient(ellipse at 80% 30%, rgba(255, 46, 147, 0.25) 0%, transparent 50%),
+    radial-gradient(ellipse at 20% 75%, rgba(0, 210, 211, 0.22) 0%, transparent 50%),
+    radial-gradient(ellipse at 50% 50%, rgba(124, 58, 237, 0.2) 0%, transparent 60%),
+    linear-gradient(160deg, #0B2B2C 0%, #124345 45%, #183C49 100%);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.12);
   overflow: hidden;
 }
 
@@ -164,25 +168,44 @@
 
 .quickPill {
   font-size: 0.78rem;
-  font-weight: 700;
-  color: var(--color-text-light);
-  background: rgba(253, 246, 233, 0.1);
-  border: 1px solid rgba(253, 246, 233, 0.2);
-  padding: 0.3rem 0.75rem;
+  font-weight: 800;
+  color: #FFFFFF;
+  background: rgba(255, 255, 255, 0.12);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  padding: 0.35rem 0.85rem;
   border-radius: var(--radius-full);
-  transition: all 0.2s ease;
+  transition: all 0.25s cubic-bezier(0.34, 1.56, 0.64, 1);
   text-decoration: none;
   cursor: pointer;
-  display: inline-block;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
   position: relative;
   z-index: 5;
+  backdrop-filter: blur(8px);
 }
 
 .quickPill:hover {
-  border-color: var(--color-accent);
-  color: var(--color-accent);
-  background: rgba(255, 107, 74, 0.12);
+  transform: translateY(-2px) scale(1.06);
 }
+
+.quickPill[href*="dinosaur"] { background: rgba(16, 185, 129, 0.2); border-color: #10B981; color: #6EE7B7; }
+.quickPill[href*="dinosaur"]:hover { background: #10B981; color: #FFFFFF; box-shadow: 0 4px 16px rgba(16, 185, 129, 0.45); }
+
+.quickPill[href*="unicorn"] { background: rgba(236, 72, 153, 0.2); border-color: #EC4899; color: #F472B6; }
+.quickPill[href*="unicorn"]:hover { background: #EC4899; color: #FFFFFF; box-shadow: 0 4px 16px rgba(236, 72, 153, 0.45); }
+
+.quickPill[href*="pokemon"] { background: rgba(245, 158, 11, 0.2); border-color: #F59E0B; color: #FCD34D; }
+.quickPill[href*="pokemon"]:hover { background: #F59E0B; color: #1E293B; box-shadow: 0 4px 16px rgba(245, 158, 11, 0.45); }
+
+.quickPill[href*="disney"] { background: rgba(124, 58, 237, 0.2); border-color: #7C3AED; color: #C4B5FD; }
+.quickPill[href*="disney"]:hover { background: #7C3AED; color: #FFFFFF; box-shadow: 0 4px 16px rgba(124, 58, 237, 0.45); }
+
+.quickPill[href*="spongebob"] { background: rgba(14, 165, 233, 0.2); border-color: #0EA5E9; color: #7DD3FC; }
+.quickPill[href*="spongebob"]:hover { background: #0EA5E9; color: #FFFFFF; box-shadow: 0 4px 16px rgba(14, 165, 233, 0.45); }
+
+.quickPill[href*="mandala"] { background: rgba(168, 85, 247, 0.2); border-color: #A855F7; color: #D8B4FE; }
+.quickPill[href*="mandala"]:hover { background: #A855F7; color: #FFFFFF; box-shadow: 0 4px 16px rgba(168, 85, 247, 0.45); }
 
 .heroCtas {
   display: flex;
@@ -295,20 +318,32 @@
   box-shadow: 0 0 0 2px rgba(255, 107, 74, 0.3), var(--shadow-lg);
 }
 
-.ageToddlers { background: linear-gradient(160deg, #FDF6E9 0%, #FDECD0 100%); border-color: rgba(249, 115, 22, 0.2); }
-.ageKids     { background: linear-gradient(160deg, #FDF6E9 0%, #EAF6F0 100%); border-color: rgba(16, 185, 129, 0.2); }
-.ageTeens    { background: linear-gradient(160deg, #FDF6E9 0%, #F0EAF6 100%); border-color: rgba(139, 92, 246, 0.2); }
-.ageAdults   { background: linear-gradient(160deg, #FDF6E9 0%, #F6EAF0 100%); border-color: rgba(236, 72, 153, 0.2); }
+.ageToddlers { background: #FFFFFF; border-top: 5px solid #F97316; }
+.ageToddlers:hover { box-shadow: 0 16px 36px rgba(249, 115, 22, 0.25); border-color: #F97316; }
+
+.ageKids     { background: #FFFFFF; border-top: 5px solid #10B981; }
+.ageKids:hover { box-shadow: 0 16px 36px rgba(16, 185, 129, 0.25); border-color: #10B981; }
+
+.ageTeens    { background: #FFFFFF; border-top: 5px solid #8B5CF6; }
+.ageTeens:hover { box-shadow: 0 16px 36px rgba(139, 92, 246, 0.25); border-color: #8B5CF6; }
+
+.ageAdults   { background: #FFFFFF; border-top: 5px solid #EC4899; }
+.ageAdults:hover { box-shadow: 0 16px 36px rgba(236, 72, 153, 0.25); border-color: #EC4899; }
 
 .ageEmoji {
   font-size: 3rem;
   margin-bottom: 0.75rem;
   filter: drop-shadow(0 4px 8px rgba(0,0,0,0.15));
+  transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.ageCard:hover .ageEmoji {
+  transform: scale(1.15) rotate(6deg);
 }
 
 .ageName {
-  font-size: 1.2rem;
-  font-weight: 600;
+  font-size: 1.25rem;
+  font-weight: 800;
   color: var(--color-text-dark);
   margin-bottom: 0.25rem;
   font-family: var(--font-display), sans-serif;
@@ -319,22 +354,27 @@
   color: var(--gray-500);
   margin-bottom: 1.25rem;
   font-weight: 600;
+  line-height: 1.5;
 }
 
 .ageCta {
   font-size: 0.85rem;
   font-weight: 800;
-  color: var(--color-accent);
-  background: rgba(255, 107, 74, 0.1);
-  padding: 0.4rem 1rem;
+  color: #FFFFFF;
+  background: var(--gradient-primary);
+  padding: 0.45rem 1.15rem;
   border-radius: var(--radius-full);
-  transition: all 0.2s ease;
+  transition: all 0.25s ease;
+  box-shadow: 0 4px 12px rgba(255, 75, 114, 0.3);
   font-family: var(--font-body), sans-serif;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
 }
 
 .ageCard:hover .ageCta {
-  background: var(--gradient-primary);
-  color: white;
+  transform: scale(1.06);
+  box-shadow: 0 6px 18px rgba(255, 75, 114, 0.45);
 }
 
 /* ── Why Section ──────────────────────────────────────────────────────────── */
@@ -412,9 +452,13 @@
 
 /* ── Responsive ───────────────────────────────────────────────────────────── */
 @media (max-width: 960px) {
-  .heroLayout   { grid-template-columns: 1fr; gap: 2.5rem; }
-  .heroVisual   { display: none; }
-  .heroSubtitle { max-width: 100%; }
+  .heroLayout   { grid-template-columns: 1fr; gap: 2rem; text-align: center; }
+  .heroContent  { display: flex; flex-direction: column; align-items: center; text-align: center; }
+  .heroVisual   { display: flex; width: 100%; height: 380px; margin-top: 1rem; }
+  .heroSubtitle { max-width: 100%; margin-left: auto; margin-right: auto; }
+  .heroCtas     { justify-content: center; }
+  .quickPills   { justify-content: center; }
+  .searchWrapper { width: 100%; max-width: 520px; }
   .ageGrid      { grid-template-columns: repeat(2, 1fr); }
   .whyInner     { grid-template-columns: 1fr; gap: 3rem; }
 }

@@ -1,6 +1,7 @@
 'use client';
 
 import { useState } from 'react';
+import Link from 'next/link';
 import PrintPreviewModal from './PrintPreviewModal';
 import OnlineColoringTool from './OnlineColoringTool';
 import ReportButton from './ReportButton';
@@ -9,10 +10,12 @@ export default function PrintDownloadButtons({
   isEn,
   fileUrl,
   category = 'Unknown',
+  colorPageUrl,
 }: {
   isEn: boolean;
   fileUrl: string;
   category?: string;
+  colorPageUrl?: string;
 }) {
   const [downloading, setDownloading] = useState(false);
   const [downloadingPdf, setDownloadingPdf] = useState(false);
@@ -186,30 +189,56 @@ export default function PrintDownloadButtons({
           <span aria-hidden="true">🖨️</span> {isEn ? 'Print Free Coloring Page' : 'Gratis Kleurplaat Printen'}
         </button>
 
-        {/* Color Online Button */}
-        <button
-          onClick={() => setShowColorOnline(true)}
-          type="button"
-          style={{
-            width: '100%',
-            padding: '0.85rem',
-            background: 'linear-gradient(135deg, #10b981 0%, #059669 100%)',
-            color: 'white',
-            border: 'none',
-            borderRadius: 'var(--radius-full)',
-            fontWeight: 800,
-            fontSize: '0.925rem',
-            cursor: 'pointer',
-            display: 'flex',
-            alignItems: 'center',
-            justifyContent: 'center',
-            gap: '0.5rem',
-            boxShadow: '0 4px 14px rgba(16, 185, 129, 0.25)',
-            transition: 'all 0.2s ease',
-          }}
-        >
-          <span aria-hidden="true">🎨</span> {isEn ? 'Color Online (Interactive Canvas)' : 'Online Inkleuren (In Browser)'}
-        </button>
+        {/* Color Online Button -> Opens Dedicated Studio Page */}
+        {colorPageUrl ? (
+          <Link
+            href={colorPageUrl}
+            style={{
+              width: '100%',
+              padding: '0.85rem',
+              background: 'linear-gradient(135deg, #10b981 0%, #059669 100%)',
+              color: 'white',
+              border: 'none',
+              borderRadius: 'var(--radius-full)',
+              fontWeight: 800,
+              fontSize: '0.925rem',
+              cursor: 'pointer',
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center',
+              gap: '0.5rem',
+              boxShadow: '0 4px 14px rgba(16, 185, 129, 0.25)',
+              transition: 'all 0.2s ease',
+              textDecoration: 'none',
+            }}
+          >
+            <span aria-hidden="true">🎨</span> {isEn ? 'Color Online (Dedicated Studio)' : 'Online Inkleuren (Eigen Pagina)'}
+          </Link>
+        ) : (
+          <button
+            onClick={() => setShowColorOnline(true)}
+            type="button"
+            style={{
+              width: '100%',
+              padding: '0.85rem',
+              background: 'linear-gradient(135deg, #10b981 0%, #059669 100%)',
+              color: 'white',
+              border: 'none',
+              borderRadius: 'var(--radius-full)',
+              fontWeight: 800,
+              fontSize: '0.925rem',
+              cursor: 'pointer',
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center',
+              gap: '0.5rem',
+              boxShadow: '0 4px 14px rgba(16, 185, 129, 0.25)',
+              transition: 'all 0.2s ease',
+            }}
+          >
+            <span aria-hidden="true">🎨</span> {isEn ? 'Color Online (Interactive Canvas)' : 'Online Inkleuren (In Browser)'}
+          </button>
+        )}
 
         {/* Download A4 PDF Button */}
         <button
