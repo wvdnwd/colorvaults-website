@@ -363,7 +363,7 @@ export default function InteractiveColoringStudio({
       <div className={styles.studioHeader}>
         <div>
           <h1 className={styles.studioTitle}>
-            <span>🎨</span> {title}
+            {title}
           </h1>
           <p className={styles.studioSubtitle}>
             {isEn 
@@ -387,7 +387,6 @@ export default function InteractiveColoringStudio({
         <div className={styles.canvasStage}>
           {loading && (
             <div className={styles.loadingOverlay}>
-              <div style={{ fontSize: '2rem' }}>🎨</div>
               <span>{isEn ? 'Loading Interactive Canvas...' : 'Interactief Canvas Laden...'}</span>
             </div>
           )}
@@ -411,7 +410,7 @@ export default function InteractiveColoringStudio({
           {/* Tool Selector */}
           <div className={styles.controlCard}>
             <div className={styles.cardTitle}>
-              <span>🛠️</span> {isEn ? 'Coloring Tools' : 'Kleurhulpmiddelen'}
+              {isEn ? 'Coloring Tools' : 'Kleurhulpmiddelen'}
             </div>
             <div className={styles.toolButtons}>
               <button
@@ -419,7 +418,6 @@ export default function InteractiveColoringStudio({
                 className={`${styles.toolBtn} ${activeTool === 'bucket' ? styles.active : ''}`}
                 onClick={() => setActiveTool('bucket')}
               >
-                <span style={{ fontSize: '1.3rem' }}>🪄</span>
                 <span>{isEn ? 'Fill Bucket' : 'Verfemmer'}</span>
               </button>
               <button
@@ -427,7 +425,6 @@ export default function InteractiveColoringStudio({
                 className={`${styles.toolBtn} ${activeTool === 'brush' ? styles.active : ''}`}
                 onClick={() => setActiveTool('brush')}
               >
-                <span style={{ fontSize: '1.3rem' }}>🖌️</span>
                 <span>{isEn ? 'Brush' : 'Penseel'}</span>
               </button>
               <button
@@ -435,7 +432,6 @@ export default function InteractiveColoringStudio({
                 className={`${styles.toolBtn} ${activeTool === 'eraser' ? styles.active : ''}`}
                 onClick={() => setActiveTool('eraser')}
               >
-                <span style={{ fontSize: '1.3rem' }}>🧽</span>
                 <span>{isEn ? 'Eraser' : 'Gum'}</span>
               </button>
             </div>
@@ -461,7 +457,7 @@ export default function InteractiveColoringStudio({
           {/* Color Palette */}
           <div className={styles.controlCard}>
             <div className={styles.cardTitle}>
-              <span>🎨</span> {isEn ? 'Color Palette' : 'Kleurenpalet'}
+              {isEn ? 'Color Palette' : 'Kleurenpalet'}
             </div>
             <div className={styles.paletteGrid}>
               {PRESET_COLORS.map((c) => (
@@ -492,7 +488,7 @@ export default function InteractiveColoringStudio({
           {/* History / Actions */}
           <div className={styles.controlCard}>
             <div className={styles.cardTitle}>
-              <span>⚙️</span> {isEn ? 'History & Actions' : 'Bewerkingen'}
+              {isEn ? 'History & Actions' : 'Bewerkingen'}
             </div>
             <div className={styles.actionRow}>
               <button
@@ -502,7 +498,7 @@ export default function InteractiveColoringStudio({
                 disabled={historyIndex <= 0}
                 title="Undo"
               >
-                ↩️ {isEn ? 'Undo' : 'Herstel'}
+                {isEn ? 'Undo' : 'Herstel'}
               </button>
               <button
                 type="button"
@@ -511,7 +507,7 @@ export default function InteractiveColoringStudio({
                 disabled={historyIndex >= history.length - 1}
                 title="Redo"
               >
-                ↪️ {isEn ? 'Redo' : 'Opnieuw'}
+                {isEn ? 'Redo' : 'Opnieuw'}
               </button>
               <button
                 type="button"
@@ -519,7 +515,7 @@ export default function InteractiveColoringStudio({
                 onClick={handleReset}
                 title="Reset"
               >
-                🔄 {isEn ? 'Clear' : 'Wissen'}
+                {isEn ? 'Clear' : 'Wissen'}
               </button>
             </div>
 
@@ -529,14 +525,14 @@ export default function InteractiveColoringStudio({
                 className={styles.downloadArtBtn}
                 onClick={handleDownloadColored}
               >
-                <span>📥</span> {isEn ? 'Download Masterpiece (PNG)' : 'Kunstwerk Opslaan (PNG)'}
+                {isEn ? 'Download Image (PNG)' : 'Afbeelding Opslaan (PNG)'}
               </button>
               <button
                 type="button"
                 className={styles.printArtBtn}
                 onClick={handlePrintColored}
               >
-                <span>🖨️</span> {isEn ? 'Print Colored Page' : 'Ingekleurde Pagina Printen'}
+                {isEn ? 'Print Colored Page' : 'Ingekleurde Pagina Printen'}
               </button>
             </div>
           </div>

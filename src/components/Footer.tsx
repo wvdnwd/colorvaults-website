@@ -10,7 +10,15 @@ export default function Footer({ lang }: { lang: string }) {
         <div className={styles.footerTop}>
           <div className={styles.footerBrand}>
             <Link href={`/${lang}`} className={styles.logo}>
-              <div className={styles.logoBadge}>🎨</div>
+              <div className={styles.logoBadge} aria-hidden="true">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M12 2C6.48 2 2 6.48 2 12C2 17.52 6.48 22 12 22C13.66 22 15 20.66 15 19C15 18.23 14.7 17.53 14.21 17.01C13.73 16.5 13.43 15.82 13.43 15.07C13.43 13.41 14.77 12.07 16.43 12.07H18.93C20.59 12.07 21.93 10.73 21.93 9.07C21.93 5.16 17.48 2 12 2Z" fill="white" fillOpacity="0.95"/>
+                  <circle cx="6.5" cy="11.5" r="1.5" fill="#FF4B72"/>
+                  <circle cx="9.5" cy="7.5" r="1.5" fill="#FF8A00"/>
+                  <circle cx="14.5" cy="7.5" r="1.5" fill="#FFD600"/>
+                  <circle cx="17.5" cy="11.5" r="1.5" fill="#00D2D3"/>
+                </svg>
+              </div>
               <span className={styles.logoText}>
                 Color<span className={styles.logoAccent}>Vaults</span>
               </span>
@@ -21,7 +29,7 @@ export default function Footer({ lang }: { lang: string }) {
                 : 'Jouw bestemming voor gratis printbare kleurplaten van topkwaliteit. Stimuleer creativiteit vandaag!'}
             </p>
             <div className={styles.langPill}>
-              {isEn ? '🌍 Available in English & Dutch' : '🌍 Beschikbaar in Engels & Nederlands'}
+              {isEn ? 'Available in English & Dutch' : 'Beschikbaar in Engels & Nederlands'}
             </div>
           </div>
 
@@ -63,7 +71,7 @@ export default function Footer({ lang }: { lang: string }) {
           lineHeight: '1.6',
           border: '1px solid rgba(255, 255, 255, 0.1)',
         }}>
-          🤖 <strong>{isEn ? 'AI Content Disclosure:' : 'AI Content Transparantie:'}</strong>{' '}
+          <strong>{isEn ? 'AI Content Disclosure:' : 'AI Content Transparantie:'}</strong>{' '}
           {isEn
             ? 'All coloring pages and artwork on ColorVaults are created with the assistance of artificial intelligence (AI) technology and curated for high-quality printing and digital coloring. In accordance with our Terms of Service, all artwork is provided free for personal and educational use.'
             : 'Alle kleurplaten en illustraties op ColorVaults zijn gemaakt met behulp van kunstmatige intelligentie (AI) technologie en zorgvuldig geselecteerd voor hoge kwaliteit printen en digitaal inkleuren. In overeenstemming met onze Algemene Voorwaarden worden alle tekeningen gratis aangeboden voor persoonlijk en educatief gebruik.'
@@ -72,7 +80,7 @@ export default function Footer({ lang }: { lang: string }) {
 
         <div className={styles.footerBottom}>
           <p>© {new Date().getFullYear()} ColorVaults.com. {isEn ? 'All rights reserved.' : 'Alle rechten voorbehouden.'}</p>
-          <p>{isEn ? 'Made with ❤️ for creative minds everywhere.' : 'Gemaakt met ❤️ voor creatievelingen overal.'}</p>
+          <p>{isEn ? 'Made for creative minds everywhere.' : 'Gemaakt voor creatievelingen overal.'}</p>
         </div>
       </div>
     </footer>

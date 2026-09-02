@@ -186,7 +186,10 @@ export default function PrintDownloadButtons({
           style={{ width: '100%', justifyContent: 'center', cursor: 'pointer', fontSize: '1rem', padding: '0.95rem' }}
           type="button"
         >
-          <span aria-hidden="true">🖨️</span> {isEn ? 'Print Free Coloring Page' : 'Gratis Kleurplaat Printen'}
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+            <path d="M19 8H5c-1.66 0-3 1.34-3 3v6h4v4h12v-4h4v-6c0-1.66-1.34-3-3-3zm-3 11H8v-5h8v5zm3-7c-.55 0-1-.45-1-1s.45-1 1-1 1 .45 1 1-.45 1-1 1zm-1-9H6v4h12V3z"/>
+          </svg>
+          {isEn ? 'Print Free Coloring Page' : 'Gratis Kleurplaat Printen'}
         </button>
 
         {/* Color Online Button -> Opens Dedicated Studio Page */}
@@ -212,7 +215,10 @@ export default function PrintDownloadButtons({
               textDecoration: 'none',
             }}
           >
-            <span aria-hidden="true">🎨</span> {isEn ? 'Color Online (Dedicated Studio)' : 'Online Inkleuren (Eigen Pagina)'}
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+              <path d="M12 3c-4.97 0-9 4.03-9 9 0 2.12.74 4.07 1.97 5.61L4.35 19.4c-.39.39-.39 1.02 0 1.41.39.39 1.02.39 1.41 0l1.9-1.9C9.28 19.58 10.59 20 12 20c4.97 0 9-4.03 9-9s-4.03-9-9-9zm-3 8c-.55 0-1-.45-1-1s.45-1 1-1 1 .45 1 1-.45 1-1 1zm3-3c-.55 0-1-.45-1-1s.45-1 1-1 1 .45 1 1-.45 1-1 1zm3 3c-.55 0-1-.45-1-1s.45-1 1-1 1 .45 1 1-.45 1-1 1z"/>
+            </svg>
+            {isEn ? 'Color Online Studio' : 'Online Inkleuren Studio'}
           </Link>
         ) : (
           <button
@@ -236,7 +242,10 @@ export default function PrintDownloadButtons({
               transition: 'all 0.2s ease',
             }}
           >
-            <span aria-hidden="true">🎨</span> {isEn ? 'Color Online (Interactive Canvas)' : 'Online Inkleuren (In Browser)'}
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+              <path d="M12 3c-4.97 0-9 4.03-9 9 0 2.12.74 4.07 1.97 5.61L4.35 19.4c-.39.39-.39 1.02 0 1.41.39.39 1.02.39 1.41 0l1.9-1.9C9.28 19.58 10.59 20 12 20c4.97 0 9-4.03 9-9s-4.03-9-9-9zm-3 8c-.55 0-1-.45-1-1s.45-1 1-1 1 .45 1 1-.45 1-1 1zm3-3c-.55 0-1-.45-1-1s.45-1 1-1 1 .45 1 1-.45 1-1 1zm3 3c-.55 0-1-.45-1-1s.45-1 1-1 1 .45 1 1-.45 1-1 1z"/>
+            </svg>
+            {isEn ? 'Color Online Studio' : 'Online Inkleuren Studio'}
           </button>
         )}
 
@@ -262,7 +271,9 @@ export default function PrintDownloadButtons({
             transition: 'all 0.2s ease',
           }}
         >
-          <span aria-hidden="true">📄</span>{' '}
+          <svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+            <path d="M14 2H6c-1.1 0-1.99.9-1.99 2L4 20c0 1.1.89 2 1.99 2H18c1.1 0 2-.9 2-2V8l-6-6zm2 16H8v-2h8v2zm0-4H8v-2h8v2zm-3-5V3.5L18.5 9H13z"/>
+          </svg>
           {downloadingPdf
             ? (isEn ? 'Creating A4 PDF...' : 'A4 PDF Genereren...')
             : (isEn ? 'Download A4 Printable PDF' : 'Download Printklare PDF (A4)')}
@@ -273,10 +284,12 @@ export default function PrintDownloadButtons({
           onClick={handleDownload}
           disabled={downloading}
           className="btn-secondary"
-          style={{ width: '100%', justifyContent: 'center', cursor: downloading ? 'not-allowed' : 'pointer' }}
+          style={{ width: '100%', justifyContent: 'center', cursor: downloading ? 'not-allowed' : 'pointer', display: 'flex', alignItems: 'center', gap: '0.5rem' }}
           type="button"
         >
-          <span aria-hidden="true">🖼️</span>{' '}
+          <svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+            <path d="M19 9h-4V3H9v6H5l7 7 7-7zM5 18v2h14v-2H5z"/>
+          </svg>
           {downloading
             ? (isEn ? 'Preparing PNG...' : 'PNG Verwerken...')
             : (isEn ? 'Download PNG Image' : 'Download PNG Afbeelding')}

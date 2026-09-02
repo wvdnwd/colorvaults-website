@@ -312,7 +312,7 @@ export default async function ColoringPageDetail({ params }: { params: Promise<{
 
           <div style={{ background: 'var(--primary-light)', borderRadius: 'var(--radius-lg)', padding: '1.25rem 1.5rem', marginTop: '1.5rem', border: '1px solid rgba(108,92,231,0.18)' }}>
             <p style={{ fontSize: '0.8rem', fontWeight: 800, color: 'var(--primary)', marginBottom: '0.35rem', textTransform: 'uppercase', letterSpacing: '0.06em' }}>
-              ✅ {isEn ? '100% Free — No Signup Required' : '100% Gratis — Geen Account Nodig'}
+              {isEn ? '100% Free — No Signup Required' : '100% Gratis — Geen Account Nodig'}
             </p>
             <p style={{ fontSize: '0.875rem', color: 'var(--gray-600)' }}>
               {isEn ? 'Print directly or download instantly as a high-resolution image file.' : 'Print direct of download direct als hoge resolutie afbeelding.'}
@@ -329,14 +329,12 @@ export default async function ColoringPageDetail({ params }: { params: Promise<{
           {/* Metadata Chips */}
           <div style={{ marginTop: '1.5rem', display: 'flex', flexDirection: 'column', gap: '0.6rem' }}>
             <div style={{ display: 'flex', alignItems: 'center', gap: '0.85rem', padding: '0.85rem 1rem', background: 'var(--surface)', borderRadius: 'var(--radius-lg)', border: '1px solid var(--gray-200)' }}>
-              <span style={{ fontSize: '1.2rem' }}>🎯</span>
               <div>
                 <p style={{ fontSize: '0.7rem', fontWeight: 800, color: 'var(--gray-400)', textTransform: 'uppercase', letterSpacing: '0.06em' }}>{isEn ? 'Age Group' : 'Leeftijdsgroep'}</p>
                 <p style={{ fontSize: '0.925rem', fontWeight: 800, color: 'var(--foreground)', textTransform: 'capitalize' }}>{ageSlug}</p>
               </div>
             </div>
             <div style={{ display: 'flex', alignItems: 'center', gap: '0.85rem', padding: '0.85rem 1rem', background: 'var(--surface)', borderRadius: 'var(--radius-lg)', border: '1px solid var(--gray-200)' }}>
-              <span style={{ fontSize: '1.2rem' }}>🏷️</span>
               <div>
                 <p style={{ fontSize: '0.7rem', fontWeight: 800, color: 'var(--gray-400)', textTransform: 'uppercase', letterSpacing: '0.06em' }}>{isEn ? 'Theme' : 'Thema'}</p>
                 <p style={{ fontSize: '0.925rem', fontWeight: 800, color: 'var(--foreground)' }}>{theme.title}</p>
@@ -347,7 +345,7 @@ export default async function ColoringPageDetail({ params }: { params: Promise<{
           {/* Clickable SEO Tags */}
           <div style={{ marginTop: '1.25rem' }}>
             <p style={{ fontSize: '0.72rem', fontWeight: 800, color: 'var(--gray-400)', textTransform: 'uppercase', letterSpacing: '0.06em', marginBottom: '0.5rem' }}>
-              🏷️ {isEn ? 'Popular Tags' : 'Populaire Tags'}
+              {isEn ? 'Popular Tags' : 'Populaire Tags'}
             </p>
             <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.35rem' }}>
               <Link href={`/${lang}/${hub.slug}`} className="tag-chip">#{hub.title.replace(/\s+/g, '')}</Link>
@@ -377,7 +375,7 @@ export default async function ColoringPageDetail({ params }: { params: Promise<{
         <section style={{ marginTop: '5rem' }}>
           <div className="section-header" style={{ marginBottom: '2rem' }}>
             <div>
-              <span className="badge">🔗 {isEn ? 'Related Collection' : 'Gerelateerde Collectie'}</span>
+              <span className="badge">{isEn ? 'Related Collection' : 'Gerelateerde Collectie'}</span>
               <h2 className="title-h2" style={{ marginTop: '0.65rem' }}>
                 {isEn ? `More ${theme.title} Coloring Pages` : `Meer ${theme.title} Kleurplaten`}
               </h2>

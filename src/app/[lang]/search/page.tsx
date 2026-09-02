@@ -93,7 +93,7 @@ export default async function SearchPage({
             lang={lang}
           />
           <h1 className="title-h1" style={{ marginTop: '1rem' }}>
-            {isEn ? '🔍 Search & Filter Coloring Pages' : '🔍 Kleurplaten Zoeken & Filteren'}
+            {isEn ? ' Search & Filter Coloring Pages' : ' Kleurplaten Zoeken & Filteren'}
           </h1>
           <p style={{ color: 'var(--gray-600)', fontSize: '1.1rem', marginTop: '0.5rem', maxWidth: '640px' }}>
             {isEn

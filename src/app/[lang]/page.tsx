@@ -56,7 +56,7 @@ export default async function HomePage({ params }: { params: Promise<{ lang: str
     {
       slug: 'kids',
       name: isEn ? 'Easy' : 'Makkelijk',
-      emoji: '⭐',
+      badge: isEn ? 'Level 1' : 'Niveau 1',
       desc: isEn ? 'Simple shapes & fun designs for everyone' : 'Eenvoudige vormen & leuke designs voor iedereen',
       className: styles.ageKids,
       hubSlug: isEn ? 'animals-and-nature' : 'animals-and-nature',
@@ -66,7 +66,7 @@ export default async function HomePage({ params }: { params: Promise<{ lang: str
     {
       slug: 'teens',
       name: isEn ? 'Medium' : 'Gemiddeld',
-      emoji: '⭐⭐',
+      badge: isEn ? 'Level 2' : 'Niveau 2',
       desc: isEn ? 'More detail & creative scenes' : 'Meer detail & creatieve scènes',
       className: styles.ageTeens,
       hubSlug: isEn ? 'games-and-pop-culture' : 'games-and-pop-culture',
@@ -76,7 +76,7 @@ export default async function HomePage({ params }: { params: Promise<{ lang: str
     {
       slug: 'adults',
       name: isEn ? 'Hard' : 'Moeilijk',
-      emoji: '⭐⭐⭐',
+      badge: isEn ? 'Level 3' : 'Niveau 3',
       desc: isEn ? 'Intricate patterns & fine details' : 'Ingewikkelde patronen & fijne details',
       className: styles.ageAdults,
       hubSlug: 'mandalas',
@@ -109,7 +109,7 @@ export default async function HomePage({ params }: { params: Promise<{ lang: str
             {/* LEFT: text content */}
             <div className={styles.heroContent}>
               <span className={`${styles.heroBadge} hero-anim-0`}>
-                ✨ {isEn ? '100% Free — High Resolution Printables' : '100% Gratis — Hoge Resolutie Printables'}
+                {isEn ? '100% Free — High Resolution Printables' : '100% Gratis — Hoge Resolutie Printables'}
               </span>
               <h1 className={`${styles.heroTitle} hero-anim-1`}>
                 {isEn ? (
@@ -148,10 +148,10 @@ export default async function HomePage({ params }: { params: Promise<{ lang: str
 
               <div className={`${styles.heroCtas} hero-anim-4`}>
                 <Link href={`/${lang}/${isEn ? 'collections' : 'collecties'}`} className="btn-primary">
-                  🎨 {isEn ? 'Explore All Collections' : 'Alle Collecties Bekijken'}
+                  {isEn ? 'Explore All Collections' : 'Alle Collecties Bekijken'}
                 </Link>
                 <Link href={`/${lang}/mandalas`} className="btn-secondary">
-                  🧘 {isEn ? 'Mandalas' : 'Mandala\'s'}
+                  {isEn ? 'Mandalas' : 'Mandala\'s'}
                 </Link>
               </div>
             </div>
@@ -182,7 +182,7 @@ export default async function HomePage({ params }: { params: Promise<{ lang: str
 
           <ScrollReveal className="section-header">
             <div>
-              <span className="badge">✨ {allThemes.length} {isEn ? 'Categories & Themes' : 'Categorieën & Thema\'s'}</span>
+              <span className="badge">{allThemes.length} {isEn ? 'Categories & Themes' : 'Categorieën & Thema\'s'}</span>
               <h2 className="title-h2" style={{ marginTop: '0.65rem', color: 'var(--color-text-light)' }}>
                 {isEn ? 'Explore All Themes' : 'Ontdek Alle Categorieën'}
               </h2>
@@ -232,7 +232,7 @@ export default async function HomePage({ params }: { params: Promise<{ lang: str
         <div className="container">
           <ScrollReveal className="section-header">
             <div>
-              <span className="badge">⭐ {isEn ? 'Choose Difficulty' : 'Kies Moeilijkheidsgraad'}</span>
+              <span className="badge">{isEn ? 'Choose Difficulty' : 'Kies Moeilijkheidsgraad'}</span>
               <h2 className="title-h2" style={{ marginTop: '0.65rem' }}>
                 {isEn ? 'Browse by Difficulty Level' : 'Blader op Moeilijkheidsgraad'}
               </h2>
@@ -246,7 +246,7 @@ export default async function HomePage({ params }: { params: Promise<{ lang: str
                   href={`/${lang}/${age.hubSlug}/${age.themeSlug}/${age.ageSlug}`}
                   className={`${styles.ageCard} ${age.className}`}
                 >
-                  <div className={styles.ageEmoji}>{age.emoji}</div>
+                  <div className={styles.ageEmoji} style={{ fontSize: '0.9rem', fontWeight: 800, letterSpacing: '0.05em' }}>{age.badge}</div>
                   <h3 className={styles.ageName}>{age.name}</h3>
                   <p className={styles.ageDesc}>{age.desc}</p>
                   <div className={styles.ageCta}>{isEn ? 'Explore →' : 'Ontdek →'}</div>
@@ -264,7 +264,7 @@ export default async function HomePage({ params }: { params: Promise<{ lang: str
 
           <ScrollReveal className="section-header">
             <div>
-              <span className="badge">🆕 {isEn ? 'Fresh Additions' : 'Nieuwste Kleurplaten'}</span>
+              <span className="badge">{isEn ? 'Fresh Additions' : 'Nieuwste Kleurplaten'}</span>
               <h2 className="title-h2" style={{ marginTop: '0.65rem', color: 'var(--color-text-light)' }}>
                 {isEn ? 'Recently Added Coloring Pages' : 'Recente Kleurplaten'}
               </h2>
@@ -303,7 +303,7 @@ export default async function HomePage({ params }: { params: Promise<{ lang: str
         <div className="container">
           <ScrollReveal className="section-header">
             <div>
-              <span className="badge">📚 {isEn ? 'Educational Guides' : 'Tips & Lesideën'}</span>
+              <span className="badge">{isEn ? 'Educational Guides' : 'Tips & Lesideën'}</span>
               <h2 className="title-h2" style={{ marginTop: '0.65rem' }}>
                 {isEn ? 'Latest Guides & Parenting Tips' : 'Laatste Tips voor Ouders & Onderwijs'}
               </h2>
@@ -349,7 +349,7 @@ export default async function HomePage({ params }: { params: Promise<{ lang: str
           <div className={styles.whyInner}>
             <ScrollReveal>
               <span className="badge" style={{ background: 'rgba(15,61,62,0.08)', color: 'var(--color-primary)', borderColor: 'rgba(15,61,62,0.18)' }}>
-                🎨 {isEn ? 'Why ColorVaults?' : 'Waarom ColorVaults?'}
+                {isEn ? 'Why ColorVaults?' : 'Waarom ColorVaults?'}
               </span>
               <h2 className="title-h2" style={{ marginTop: '0.75rem', marginBottom: '1.25rem', color: 'var(--color-text-dark)' }}>
                 {isEn ? 'The Best Free Printable Coloring Pages' : 'De Beste Gratis Printbare Kleurplaten'}
@@ -368,14 +368,14 @@ export default async function HomePage({ params }: { params: Promise<{ lang: str
 
             <div>
               {[
-                { icon: '🆓', title: isEn ? '100% Free Forever' : '100% Gratis Voor Altijd', desc: isEn ? 'No paywalls, no subscriptions, no accounts. Download & print instantly.' : 'Geen abonnementskosten, geen account nodig. Direct printen.' },
-                { icon: '🖨️', title: isEn ? 'Print-Optimized' : 'Optimaal Af te Drukken', desc: isEn ? 'Clean crisp line art formatted for standard A4 and Letter paper.' : 'Scherpe lijnen geformatteerd voor A4 en Letter papier.' },
-                { icon: '👶', title: isEn ? 'Curated by Age' : 'Gesorteerd op Leeftijd', desc: isEn ? 'Tailored difficulty levels for toddlers, kids, teens & adults.' : 'Aangepaste moeilijkheidsgraden voor peuters, kinderen & volwassenen.' },
-                { icon: '🌍', title: isEn ? 'Bilingual Support' : 'Tweetalig', desc: isEn ? 'Fully bilingual experience in English and Dutch.' : 'Volledig beschikbaar in Engels en Nederlands.' },
+                { number: '01', title: isEn ? '100% Free Forever' : '100% Gratis Voor Altijd', desc: isEn ? 'No paywalls, no subscriptions, no accounts. Download & print instantly.' : 'Geen abonnementskosten, geen account nodig. Direct printen.' },
+                { number: '02', title: isEn ? 'Print-Optimized' : 'Optimaal Af te Drukken', desc: isEn ? 'Clean crisp line art formatted for standard A4 and Letter paper.' : 'Scherpe lijnen geformatteerd voor A4 en Letter papier.' },
+                { number: '03', title: isEn ? 'Curated by Age' : 'Gesorteerd op Leeftijd', desc: isEn ? 'Tailored difficulty levels for toddlers, kids, teens & adults.' : 'Aangepaste moeilijkheidsgraden voor peuters, kinderen & volwassenen.' },
+                { number: '04', title: isEn ? 'Bilingual Support' : 'Tweetalig', desc: isEn ? 'Fully bilingual experience in English and Dutch.' : 'Volledig beschikbaar in Engels en Nederlands.' },
               ].map((f, i) => (
                 <ScrollReveal key={f.title} delay={(i % 4) as 0 | 1 | 2 | 3 | 4}>
                   <div className={styles.featureCard}>
-                    <div className={styles.featureIcon}>{f.icon}</div>
+                    <div className={styles.featureIcon} style={{ fontSize: '1rem', fontWeight: 800, fontFamily: 'monospace', color: 'var(--primary)' }}>{f.number}</div>
                     <div>
                       <h3 className={styles.featureTitle}>{f.title}</h3>
                       <p className={styles.featureDesc}>{f.desc}</p>

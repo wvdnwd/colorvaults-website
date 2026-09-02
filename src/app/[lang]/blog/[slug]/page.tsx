@@ -93,7 +93,7 @@ export default async function BlogDetailPage({
             ← {isEn ? 'Back to All Guides' : 'Terug naar Alle Tips'}
           </Link>
           <Link href={`/${lang}`} className="btn-primary">
-            🎨 {isEn ? 'Explore All Coloring Pages' : 'Ontdek Alle Kleurplaten'}
+             {isEn ? 'Explore All Coloring Pages' : 'Ontdek Alle Kleurplaten'}
           </Link>
         </div>
       </div>

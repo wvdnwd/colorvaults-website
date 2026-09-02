@@ -47,7 +47,7 @@ export default function PrintPreviewModal({
       <div className={styles.modal}>
         <div className={styles.header}>
           <h2 className={styles.title}>
-            {isEn ? '🖨️ Print Preview' : '🖨️ Afdrukvoorbeeld'}
+            {isEn ? 'Print Preview' : 'Afdrukvoorbeeld'}
           </h2>
           <button
             className={styles.closeBtn}
@@ -70,8 +70,8 @@ export default function PrintPreviewModal({
         <div className={styles.info}>
           <p className={styles.infoText}>
             {isEn
-              ? '📄 This page will be printed full-page in A4 / Letter format. Set your browser to 100% scale with no margins for the best result.'
-              : '📄 Deze pagina wordt afgedrukt in volledig A4/Letter formaat. Zet de browser op 100% schaal zonder marges voor het beste resultaat.'}
+              ? 'This page will be printed full-page in A4 / Letter format. Set your browser to 100% scale with no margins for the best result.'
+              : 'Deze pagina wordt afgedrukt in volledig A4/Letter formaat. Zet de browser op 100% schaal zonder marges voor het beste resultaat.'}
           </p>
         </div>
 
@@ -86,7 +86,9 @@ export default function PrintPreviewModal({
               onClose();
             }}
           >
-            <span aria-hidden="true">🖨️</span>{' '}
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+              <path d="M19 8H5c-1.66 0-3 1.34-3 3v6h4v4h12v-4h4v-6c0-1.66-1.34-3-3-3zm-3 11H8v-5h8v5zm3-7c-.55 0-1-.45-1-1s.45-1 1-1 1 .45 1 1-.45 1-1 1zm-1-9H6v4h12V3z"/>
+            </svg>
             {isEn ? 'Print Now' : 'Nu Afdrukken'}
           </button>
         </div>

@@ -14,7 +14,7 @@ export default function NotFound() {
       color: 'var(--color-text-light)',
     }}>
       <div style={{ fontSize: '5rem', marginBottom: '1rem', animation: 'bounce 2s infinite' }}>
-        🎨
+        
       </div>
       <h1 style={{
         fontSize: '2.5rem',
@@ -39,10 +39,10 @@ export default function NotFound() {
 
       <div style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap', justifyContent: 'center' }}>
         <Link href="/en" className="btn-primary">
-          🏠 English Home
+           English Home
         </Link>
         <Link href="/nl" className="btn-primary" style={{ background: 'var(--color-primary-light)', border: '1px solid var(--color-accent)' }}>
-          🇳🇱 Nederlandse Home
+           Nederlandse Home
         </Link>
       </div>
     </div>

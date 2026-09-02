@@ -214,17 +214,17 @@ function validateSlug(slug: string, typeName: string) {
 export function getAgeLabel(ageSlug: string, lang: string): { label: string; emoji: string; desc: string } {
   const isEn = lang === 'en';
   const map: Record<string, { en: string; nl: string; emoji: string; descEn: string; descNl: string }> = {
-    kids:        { en: 'Easy',   nl: 'Makkelijk', emoji: '⭐',     descEn: 'Simple shapes & fun designs',         descNl: 'Eenvoudige vormen & leuke designs' },
-    kinderen:    { en: 'Easy',   nl: 'Makkelijk', emoji: '⭐',     descEn: 'Simple shapes & fun designs',         descNl: 'Eenvoudige vormen & leuke designs' },
-    toddlers:    { en: 'Easy',   nl: 'Makkelijk', emoji: '⭐',     descEn: 'Simple shapes & fun designs',         descNl: 'Eenvoudige vormen & leuke designs' },
-    peuters:     { en: 'Easy',   nl: 'Makkelijk', emoji: '⭐',     descEn: 'Simple shapes & fun designs',         descNl: 'Eenvoudige vormen & leuke designs' },
-    teens:       { en: 'Medium', nl: 'Gemiddeld', emoji: '⭐⭐',   descEn: 'More detail & creative scenes',       descNl: 'Meer detail & creatieve scènes' },
-    tieners:     { en: 'Medium', nl: 'Gemiddeld', emoji: '⭐⭐',   descEn: 'More detail & creative scenes',       descNl: 'Meer detail & creatieve scènes' },
-    adults:      { en: 'Hard',   nl: 'Moeilijk',  emoji: '⭐⭐⭐', descEn: 'Intricate patterns & fine details',   descNl: 'Ingewikkelde patronen & fijne details' },
-    volwassenen: { en: 'Hard',   nl: 'Moeilijk',  emoji: '⭐⭐⭐', descEn: 'Intricate patterns & fine details',   descNl: 'Ingewikkelde patronen & fijne details' },
+    kids:        { en: 'Easy',   nl: 'Makkelijk', emoji: '', descEn: 'Simple shapes & fun designs',       descNl: 'Eenvoudige vormen & leuke designs' },
+    kinderen:    { en: 'Easy',   nl: 'Makkelijk', emoji: '', descEn: 'Simple shapes & fun designs',       descNl: 'Eenvoudige vormen & leuke designs' },
+    toddlers:    { en: 'Easy',   nl: 'Makkelijk', emoji: '', descEn: 'Simple shapes & fun designs',       descNl: 'Eenvoudige vormen & leuke designs' },
+    peuters:     { en: 'Easy',   nl: 'Makkelijk', emoji: '', descEn: 'Simple shapes & fun designs',       descNl: 'Eenvoudige vormen & leuke designs' },
+    teens:       { en: 'Medium', nl: 'Gemiddeld', emoji: '', descEn: 'More detail & creative scenes',     descNl: 'Meer detail & creatieve scènes' },
+    tieners:     { en: 'Medium', nl: 'Gemiddeld', emoji: '', descEn: 'More detail & creative scenes',     descNl: 'Meer detail & creatieve scènes' },
+    adults:      { en: 'Hard',   nl: 'Moeilijk',  emoji: '', descEn: 'Intricate patterns & fine details', descNl: 'Ingewikkelde patronen & fijne details' },
+    volwassenen: { en: 'Hard',   nl: 'Moeilijk',  emoji: '', descEn: 'Intricate patterns & fine details', descNl: 'Ingewikkelde patronen & fijne details' },
   };
   const entry = map[ageSlug];
-  if (!entry) return { label: ageSlug, emoji: '🎨', desc: '' };
+  if (!entry) return { label: ageSlug, emoji: '', desc: '' };
   return {
     label: isEn ? entry.en : entry.nl,
     emoji: entry.emoji,

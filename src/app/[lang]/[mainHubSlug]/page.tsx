@@ -62,7 +62,7 @@ export default async function MainHubPage({ params }: { params: Promise<{ lang: 
             {hub.description}
           </p>
           <span className="badge" style={{ marginTop: '1.25rem' }}>
-            ✨ {allThemes.length} {isEn ? 'themes available' : 'thema\'s beschikbaar'}
+            {allThemes.length} {isEn ? 'themes available' : 'thema\'s beschikbaar'}
           </span>
         </div>
       </div>

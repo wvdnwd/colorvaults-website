@@ -47,52 +47,52 @@ export default function Navbar({ lang }: { lang: string }) {
       label: isEn ? 'Coloring Pages' : 'Kleurplaten',
       children: [
         // Main hubs
-        { label: isEn ? '🎬 TV Series & Movies' : '🎬 TV Series & Films', href: `/${lang}/${isEn ? 'tv-series-and-movies' : 'tv-series-en-films'}` },
-        { label: isEn ? '👑 Disney & Fairy Tales' : '👑 Disney & Sprookjes', href: `/${lang}/${isEn ? 'disney-and-fairy-tales' : 'disney-en-sprookjes'}` },
-        { label: isEn ? '🎮 Games & Pop Culture' : '🎮 Games & Popcultuur', href: `/${lang}/${isEn ? 'games-and-pop-culture' : 'games-en-popcultuur'}` },
-        { label: isEn ? '🦁 Animals & Nature' : '🦁 Dieren & Natuur', href: `/${lang}/${isEn ? 'animals-and-nature' : 'dieren-en-natuur'}` },
-        { label: isEn ? '💖 Girls Themes' : "💖 Meisjes Thema's", href: `/${lang}/${isEn ? 'girls-themes' : 'meisjes-themas'}` },
-        { label: isEn ? '👶 Toddler Specific' : '👶 Speciaal voor Peuters', href: `/${lang}/${isEn ? 'toddler-specific' : 'speciaal-voor-peuters'}` },
-        { label: isEn ? '✨ Adults & Mandalas' : "✨ Volwassenen & Mandala's", href: `/${lang}/${isEn ? 'adults' : 'volwassenen'}` },
+        { label: isEn ? 'TV Series & Movies' : 'TV Series & Films', href: `/${lang}/${isEn ? 'tv-series-and-movies' : 'tv-series-en-films'}` },
+        { label: isEn ? 'Disney & Fairy Tales' : 'Disney & Sprookjes', href: `/${lang}/${isEn ? 'disney-and-fairy-tales' : 'disney-en-sprookjes'}` },
+        { label: isEn ? 'Games & Pop Culture' : 'Games & Popcultuur', href: `/${lang}/${isEn ? 'games-and-pop-culture' : 'games-en-popcultuur'}` },
+        { label: isEn ? 'Animals & Nature' : 'Dieren & Natuur', href: `/${lang}/${isEn ? 'animals-and-nature' : 'dieren-en-natuur'}` },
+        { label: isEn ? 'Girls Themes' : "Meisjes Thema's", href: `/${lang}/${isEn ? 'girls-themes' : 'meisjes-themas'}` },
+        { label: isEn ? 'Toddler Specific' : 'Speciaal voor Peuters', href: `/${lang}/${isEn ? 'toddler-specific' : 'speciaal-voor-peuters'}` },
+        { label: isEn ? 'Adults & Mandalas' : "Volwassenen & Mandala's", href: `/${lang}/${isEn ? 'adults' : 'volwassenen'}` },
       ],
     },
     {
-      label: isEn ? '🔥 Popular' : '🔥 Populair',
+      label: isEn ? 'Popular' : 'Populair',
       children: [
         // Anime
-        { label: isEn ? '⚡ Dragonball' : '⚡ Dragonball', href: `/${lang}/${isEn ? 'tv-series-and-movies' : 'tv-series-en-films'}/anime-dragonball` },
-        { label: isEn ? '🍜 Naruto' : '🍜 Naruto', href: `/${lang}/${isEn ? 'tv-series-and-movies' : 'tv-series-en-films'}/anime-naruto` },
-        { label: isEn ? '🏴‍☠️ One Piece' : '🏴‍☠️ One Piece', href: `/${lang}/${isEn ? 'tv-series-and-movies' : 'tv-series-en-films'}/anime-one-piece` },
-        { label: isEn ? '🌙 Sailor Moon' : '🌙 Sailor Moon', href: `/${lang}/${isEn ? 'tv-series-and-movies' : 'tv-series-en-films'}/anime-sailor-moon` },
+        { label: 'Dragon Ball', href: `/${lang}/${isEn ? 'tv-series-and-movies' : 'tv-series-en-films'}/anime-dragonball` },
+        { label: 'Naruto', href: `/${lang}/${isEn ? 'tv-series-and-movies' : 'tv-series-en-films'}/anime-naruto` },
+        { label: 'One Piece', href: `/${lang}/${isEn ? 'tv-series-and-movies' : 'tv-series-en-films'}/anime-one-piece` },
+        { label: 'Sailor Moon', href: `/${lang}/${isEn ? 'tv-series-and-movies' : 'tv-series-en-films'}/anime-sailor-moon` },
         // Disney
-        { label: isEn ? '❄️ Frozen / Elsa' : '❄️ Frozen / Elsa', href: `/${lang}/${isEn ? 'disney-and-fairy-tales' : 'disney-en-sprookjes'}/disney-frozen` },
-        { label: isEn ? '🧜 Ariel / Little Mermaid' : '🧜 Ariel / Kleine Zeemeermin', href: `/${lang}/${isEn ? 'disney-and-fairy-tales' : 'disney-en-sprookjes'}/disney-ariel` },
-        { label: isEn ? '🌹 Beauty & the Beast' : '🌹 Belle & het Beest', href: `/${lang}/${isEn ? 'disney-and-fairy-tales' : 'disney-en-sprookjes'}/disney-belle` },
+        { label: 'Frozen / Elsa', href: `/${lang}/${isEn ? 'disney-and-fairy-tales' : 'disney-en-sprookjes'}/disney-frozen` },
+        { label: isEn ? 'Ariel / Little Mermaid' : 'Ariel / Kleine Zeemeermin', href: `/${lang}/${isEn ? 'disney-and-fairy-tales' : 'disney-en-sprookjes'}/disney-ariel` },
+        { label: isEn ? 'Beauty & the Beast' : 'Belle & het Beest', href: `/${lang}/${isEn ? 'disney-and-fairy-tales' : 'disney-en-sprookjes'}/disney-belle` },
         // TV Shows
-        { label: isEn ? '🐾 Paw Patrol' : '🐾 Paw Patrol', href: `/${lang}/${isEn ? 'tv-series-and-movies' : 'tv-series-en-films'}/paw-patrol` },
-        { label: isEn ? '🐕 Bluey' : '🐕 Bluey', href: `/${lang}/${isEn ? 'tv-series-and-movies' : 'tv-series-en-films'}/bluey` },
-        { label: isEn ? '🐷 Peppa Pig' : '🐷 Peppa Pig', href: `/${lang}/${isEn ? 'tv-series-and-movies' : 'tv-series-en-films'}/peppa-pig` },
+        { label: 'Paw Patrol', href: `/${lang}/${isEn ? 'tv-series-and-movies' : 'tv-series-en-films'}/paw-patrol` },
+        { label: 'Bluey', href: `/${lang}/${isEn ? 'tv-series-and-movies' : 'tv-series-en-films'}/bluey` },
+        { label: 'Peppa Pig', href: `/${lang}/${isEn ? 'tv-series-and-movies' : 'tv-series-en-films'}/peppa-pig` },
         // Games
-        { label: isEn ? '🎮 Pokémon' : '🎮 Pokémon', href: `/${lang}/${isEn ? 'games-and-pop-culture' : 'games-en-popcultuur'}/pokemon` },
-        { label: isEn ? '🍄 Super Mario' : '🍄 Super Mario', href: `/${lang}/${isEn ? 'games-and-pop-culture' : 'games-en-popcultuur'}/super-mario` },
-        { label: isEn ? '💨 Sonic' : '💨 Sonic', href: `/${lang}/${isEn ? 'games-and-pop-culture' : 'games-en-popcultuur'}/sonic` },
+        { label: 'Pokémon', href: `/${lang}/${isEn ? 'games-and-pop-culture' : 'games-en-popcultuur'}/pokemon` },
+        { label: 'Super Mario', href: `/${lang}/${isEn ? 'games-and-pop-culture' : 'games-en-popcultuur'}/super-mario` },
+        { label: 'Sonic', href: `/${lang}/${isEn ? 'games-and-pop-culture' : 'games-en-popcultuur'}/sonic` },
         // Animals & Nature
-        { label: isEn ? '🦋 Butterflies' : '🦋 Vlinders', href: `/${lang}/${isEn ? 'animals-and-nature' : 'dieren-en-natuur'}/butterflies-insects` },
-        { label: isEn ? '🦕 Dinosaurs' : '🦕 Dinosaurussen', href: `/${lang}/${isEn ? 'animals-and-nature' : 'dieren-en-natuur'}/dinosaur-adventures` },
-        { label: isEn ? '🦁 Safari Animals' : '🦁 Safari Dieren', href: `/${lang}/${isEn ? 'animals-and-nature' : 'dieren-en-natuur'}/safari-wildlife` },
+        { label: isEn ? 'Butterflies' : 'Vlinders', href: `/${lang}/${isEn ? 'animals-and-nature' : 'dieren-en-natuur'}/butterflies-insects` },
+        { label: isEn ? 'Dinosaurs' : 'Dinosaurussen', href: `/${lang}/${isEn ? 'animals-and-nature' : 'dieren-en-natuur'}/dinosaur-adventures` },
+        { label: isEn ? 'Safari Animals' : 'Safari Dieren', href: `/${lang}/${isEn ? 'animals-and-nature' : 'dieren-en-natuur'}/safari-wildlife` },
       ],
     },
-    { label: isEn ? '📅 Calendars' : '📅 Kalenders', href: `/${lang}/calendars` },
-    { label: isEn ? '🧘 Mandalas' : "🧘 Mandala's", href: `/${lang}/mandalas` },
-    { label: isEn ? '📚 Blog & Guides' : '📚 Tips & Blog', href: `/${lang}/blog` },
+    { label: isEn ? 'Calendars' : 'Kalenders', href: `/${lang}/calendars` },
+    { label: isEn ? 'Mandalas' : "Mandala's", href: `/${lang}/mandalas` },
+    { label: isEn ? 'Blog & Guides' : 'Tips & Blog', href: `/${lang}/blog` },
     {
       label: isEn ? 'About' : 'Over',
       children: [
-        { label: isEn ? 'ℹ️ About Us' : 'ℹ️ Over Ons', href: `/${lang}/about` },
-        { label: '📧 Contact', href: `/${lang}/contact` },
-        { label: isEn ? '🏆 Contest' : '🏆 Wedstrijd', href: `/${lang}/contest` },
-        { label: isEn ? '💡 Request a Page' : '💡 Pagina Aanvragen', href: `/${lang}/request` },
-        { label: isEn ? '📜 Licensing' : '📜 Licentie', href: `/${lang}/licensing` },
+        { label: isEn ? 'About Us' : 'Over Ons', href: `/${lang}/about` },
+        { label: 'Contact', href: `/${lang}/contact` },
+        { label: isEn ? 'Contest' : 'Wedstrijd', href: `/${lang}/contest` },
+        { label: isEn ? 'Request a Page' : 'Pagina Aanvragen', href: `/${lang}/request` },
+        { label: isEn ? 'Licensing' : 'Licentie', href: `/${lang}/licensing` },
       ],
     },
   ];
@@ -168,7 +168,15 @@ export default function Navbar({ lang }: { lang: string }) {
       <div className={styles.navContainer}>
         {/* Brand Logo */}
         <Link href={`/${lang}`} className={styles.logo}>
-          <div className={styles.logoBadge}>🎨</div>
+          <div className={styles.logoBadge} aria-hidden="true">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M12 2C6.48 2 2 6.48 2 12C2 17.52 6.48 22 12 22C13.66 22 15 20.66 15 19C15 18.23 14.7 17.53 14.21 17.01C13.73 16.5 13.43 15.82 13.43 15.07C13.43 13.41 14.77 12.07 16.43 12.07H18.93C20.59 12.07 21.93 10.73 21.93 9.07C21.93 5.16 17.48 2 12 2Z" fill="white" fillOpacity="0.95"/>
+              <circle cx="6.5" cy="11.5" r="1.5" fill="#FF4B72"/>
+              <circle cx="9.5" cy="7.5" r="1.5" fill="#FF8A00"/>
+              <circle cx="14.5" cy="7.5" r="1.5" fill="#FFD600"/>
+              <circle cx="17.5" cy="11.5" r="1.5" fill="#00D2D3"/>
+            </svg>
+          </div>
           <span className={styles.logoText}>
             Color<span className={styles.logoAccent}>Vaults</span>
           </span>
@@ -231,7 +239,9 @@ export default function Navbar({ lang }: { lang: string }) {
         {/* Right Actions */}
         <div className={styles.navRight}>
           <Link href={`/${lang}/favorites`} className={styles.iconBtn} aria-label={isEn ? 'Favorites' : 'Favorieten'} title={isEn ? 'Favorites' : 'Favorieten'}>
-            ❤️
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
+            </svg>
           </Link>
 
           <div className={styles.langSwitcher}>
@@ -300,14 +310,14 @@ export default function Navbar({ lang }: { lang: string }) {
               onClick={() => setMobileOpen(false)}
               aria-label="Switch to English"
               aria-current={isEn ? 'true' : undefined}
-            >🇬🇧 English</Link>
+            >English</Link>
             <Link 
               href={getLangLink('nl')} 
               className={`${styles.mobileLangBtn} ${isNl ? styles.langActive : ''}`} 
               onClick={() => setMobileOpen(false)}
               aria-label="Overschakelen naar Nederlands"
               aria-current={isNl ? 'true' : undefined}
-            >🇳🇱 Nederlands</Link>
+            >Nederlands</Link>
           </div>
         </div>
       )}

@@ -35,36 +35,29 @@ export default function DifficultyFilterBar({ isEn, counts }: DifficultyFilterBa
     {
       id: 'all',
       label: isEn ? 'All Pages' : 'Alle Kleurplaten',
-      emoji: '🎨',
       count: counts.all,
     },
     {
       id: 'easy',
       label: isEn ? 'Easy' : 'Makkelijk',
-      emoji: '⭐',
       count: counts.easy,
-      badge: '1 ' + (isEn ? 'Star' : 'Ster'),
     },
     {
       id: 'medium',
       label: isEn ? 'Medium' : 'Gemiddeld',
-      emoji: '⭐⭐',
       count: counts.medium,
-      badge: '2 ' + (isEn ? 'Stars' : 'Sterren'),
     },
     {
       id: 'hard',
       label: isEn ? 'Hard' : 'Moeilijk',
-      emoji: '⭐⭐⭐',
       count: counts.hard,
-      badge: '3 ' + (isEn ? 'Stars' : 'Sterren'),
     },
   ];
 
   return (
     <div className={styles.container}>
       <div className={styles.labelGroup}>
-        <span className={styles.title}>🎯 {isEn ? 'Filter by Difficulty:' : 'Filter op Moeilijkheidsgraad:'}</span>
+        <span className={styles.title}>{isEn ? 'Filter by Difficulty:' : 'Filter op Moeilijkheidsgraad:'}</span>
       </div>
 
       <div className={styles.filterGrid}>
@@ -78,7 +71,6 @@ export default function DifficultyFilterBar({ isEn, counts }: DifficultyFilterBa
               className={`${styles.filterBtn} ${isActive ? styles.active : ''}`}
               type="button"
             >
-              <span className={styles.emoji}>{item.emoji}</span>
               <span className={styles.btnLabel}>{item.label}</span>
               {item.count !== undefined && (
                 <span className={styles.countBadge}>{item.count}</span>

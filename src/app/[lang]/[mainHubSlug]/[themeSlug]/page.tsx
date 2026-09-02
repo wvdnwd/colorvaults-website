@@ -132,11 +132,11 @@ export default async function ThemePage({
             </p>
             <div style={{ display: 'flex', gap: '0.75rem', alignItems: 'center', flexWrap: 'wrap', marginTop: '1.25rem' }}>
               <span className="badge">
-                ✨ {allColoringPages.length}{' '}
+                {allColoringPages.length}{' '}
                 {isEn ? 'pages available — 100% free' : 'kleurplaten beschikbaar — 100% gratis'}
               </span>
               <span className="badge" style={{ background: 'rgba(255, 46, 147, 0.15)', color: '#FF2E93', borderColor: 'rgba(255, 46, 147, 0.3)' }}>
-                🎨 {isEn ? 'Official Album' : 'Officieel Album'}
+                {isEn ? 'Official Album' : 'Officieel Album'}
               </span>
             </div>
           </div>
@@ -183,7 +183,7 @@ export default async function ThemePage({
               border: '1px solid var(--gray-200)',
             }}
           >
-            <p style={{ fontSize: '3.5rem', marginBottom: '1rem' }}>🎨</p>
+            <p style={{ fontSize: '3.5rem', marginBottom: '1rem' }}></p>
             <p style={{ fontSize: '1.2rem', fontWeight: 700, color: 'var(--foreground)' }}>
               {isEn ? 'No coloring pages found for this difficulty level.' : 'Geen kleurplaten gevonden voor deze moeilijkheidsgraad.'}
             </p>

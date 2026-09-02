@@ -66,16 +66,15 @@ export default function MotionCard({ page, lang, isEn }: MotionCardProps) {
               background: 'linear-gradient(135deg, #ff6b35, #f7c59f)',
               color: 'white',
               borderRadius: '9999px',
-              padding: '0.18rem 0.6rem',
+              padding: '0.2rem 0.65rem',
               fontSize: '0.68rem',
               fontWeight: 800,
               display: 'flex',
               alignItems: 'center',
-              gap: '0.25rem',
               boxShadow: '0 2px 8px rgba(255,107,53,0.4)',
-              letterSpacing: '0.02em',
+              letterSpacing: '0.04em',
+              textTransform: 'uppercase',
             }}>
-              <span aria-hidden="true">🔥</span>
               <span>Trending</span>
             </div>
           )}

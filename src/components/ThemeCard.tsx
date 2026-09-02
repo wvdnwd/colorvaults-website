@@ -125,7 +125,6 @@ export default function ThemeCard({
               border: '1px solid rgba(255, 255, 255, 0.3)',
             }}
           >
-            <span>📁</span>
             <span>{pageCount} {lang === 'en' ? 'pages' : 'platen'}</span>
           </div>
         )}
@@ -150,7 +149,6 @@ export default function ThemeCard({
               gap: '0.25rem',
             }}
           >
-            <span>📷</span>
             <span>{currentIdx + 1}/{images.length}</span>
           </div>
         )}
@@ -177,7 +175,7 @@ export default function ThemeCard({
               gap: '0.3rem',
             }}
           >
-            ✨ {pageCount ? `${pageCount} ${lang === 'en' ? 'Coloring Pages' : 'Kleurplaten'}` : (lang === 'en' ? 'Full Album' : 'Volledig Album')}
+            {pageCount ? `${pageCount} ${lang === 'en' ? 'Coloring Pages' : 'Kleurplaten'}` : (lang === 'en' ? 'Full Album' : 'Volledig Album')}
           </span>
         </div>
       </div>

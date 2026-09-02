@@ -84,13 +84,13 @@ export default async function AgePage({
             lang={lang}
           />
           <h1 className="title-h1" style={{ marginTop: '1rem' }}>
-            {theme.title} — {difficultyLabel.emoji} {difficultyLabel.label}
+            {theme.title} — {difficultyLabel.label}
           </h1>
           <p style={{ color: 'var(--gray-600)', fontSize: '1.1rem', marginTop: '0.6rem', lineHeight: 1.7, maxWidth: '640px' }}>
             {agePage.seoText}
           </p>
           <span className="badge" style={{ marginTop: '1.25rem' }}>
-            ✨ {allColoringPages.length} {isEn ? 'pages available — 100% free' : 'pagina\'s beschikbaar — 100% gratis'}
+            {allColoringPages.length} {isEn ? 'pages available — 100% free' : 'pagina\'s beschikbaar — 100% gratis'}
           </span>
         </div>
       </div>
@@ -106,7 +106,6 @@ export default async function AgePage({
 
         {coloringPages.length === 0 ? (
           <div style={{ textAlign: 'center', padding: '5rem 2rem', color: 'var(--gray-400)', background: 'var(--surface)', borderRadius: 'var(--radius-xl)', border: '1px solid var(--gray-200)' }}>
-            <p style={{ fontSize: '3.5rem', marginBottom: '1rem' }}>🎨</p>
             <p style={{ fontSize: '1.2rem', fontWeight: 700, color: 'var(--foreground)' }}>
               {isEn ? 'Pages coming soon! Check back later.' : 'Kleurplaten binnenkort beschikbaar!'}
             </p>
@@ -199,9 +198,9 @@ export default async function AgePage({
             <h3>Difficulty & Age Group Filters</h3>
             <p>Explore other difficulty levels for ${theme.title}:</p>
             <ul>
-              <li><a href="/${lang}/${mainHubSlug}/${themeSlug}/kids"><strong>Easy / Kids (⭐)</strong></a> — Simple shapes & cute designs</li>
-              <li><a href="/${lang}/${mainHubSlug}/${themeSlug}/teens"><strong>Medium / Teens (⭐⭐)</strong></a> — Creative scenes & extra detail</li>
-              <li><a href="/${lang}/${mainHubSlug}/${themeSlug}/adults"><strong>Hard / Adults (⭐⭐⭐)</strong></a> — Fine details & intricate line art</li>
+              <li><a href="/${lang}/${mainHubSlug}/${themeSlug}/kids"><strong>Easy / Kids ()</strong></a> — Simple shapes & cute designs</li>
+              <li><a href="/${lang}/${mainHubSlug}/${themeSlug}/teens"><strong>Medium / Teens ()</strong></a> — Creative scenes & extra detail</li>
+              <li><a href="/${lang}/${mainHubSlug}/${themeSlug}/adults"><strong>Hard / Adults ()</strong></a> — Fine details & intricate line art</li>
             </ul>
             <p>Or return to the full <a href="/${lang}/${mainHubSlug}/${themeSlug}"><strong>${theme.title} main category page</strong></a> to see all available printable sheets.</p>
           ` : `
@@ -210,9 +209,9 @@ export default async function AgePage({
             <h3>Moeilijkheidsgraden & Filters</h3>
             <p>Ontdek ook andere niveaus van ${theme.title}:</p>
             <ul>
-              <li><a href="/${lang}/${mainHubSlug}/${themeSlug}/kids"><strong>Makkelijk / Kinderen (⭐)</strong></a> — Eenvoudige vormen & leuke designs</li>
-              <li><a href="/${lang}/${mainHubSlug}/${themeSlug}/teens"><strong>Gemiddeld / Tieners (⭐⭐)</strong></a> — Creatieve scènes & meer detail</li>
-              <li><a href="/${lang}/${mainHubSlug}/${themeSlug}/adults"><strong>Moeilijk / Volwassenen (⭐⭐⭐)</strong></a> — Ingewikkelde patronen & fijne details</li>
+              <li><a href="/${lang}/${mainHubSlug}/${themeSlug}/kids"><strong>Makkelijk / Kinderen ()</strong></a> — Eenvoudige vormen & leuke designs</li>
+              <li><a href="/${lang}/${mainHubSlug}/${themeSlug}/teens"><strong>Gemiddeld / Tieners ()</strong></a> — Creatieve scènes & meer detail</li>
+              <li><a href="/${lang}/${mainHubSlug}/${themeSlug}/adults"><strong>Moeilijk / Volwassenen ()</strong></a> — Ingewikkelde patronen & fijne details</li>
             </ul>
             <p>Of ga terug naar het <a href="/${lang}/${mainHubSlug}/${themeSlug}"><strong>${theme.title} hoofdcategorie overzicht</strong></a> om alle beschikbare kleurplaten te bekijken.</p>
           `}

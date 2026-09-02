@@ -107,7 +107,7 @@ export default async function ColoringPageDetail({ params }: { params: Promise<{
           { label: theme.title, href: `/${lang}/${hub.slug}/${theme.slug}` },
           { label: agePage.title, href: `/${lang}/${hub.slug}/${theme.slug}/${agePage.ageGroup}` },
           { label: page.title, href: `/${lang}/${mainHubSlug}/${themeSlug}/${ageSlug}/${page.slug}` },
-          { label: isEn ? '🎨 Color Online' : '🎨 Online Inkleuren' }
+          { label: isEn ? 'Color Online Studio' : 'Online Inkleuren Studio' }
         ]}
         lang={lang}
       />
@@ -126,7 +126,7 @@ export default async function ColoringPageDetail({ params }: { params: Promise<{
         <section style={{ marginTop: '5rem' }}>
           <div className="section-header" style={{ marginBottom: '2rem' }}>
             <div>
-              <span className="badge">🔗 {isEn ? 'Related Collection' : 'Gerelateerde Collectie'}</span>
+              <span className="badge">{isEn ? 'Related Collection' : 'Gerelateerde Collectie'}</span>
               <h2 className="title-h2" style={{ marginTop: '0.65rem' }}>
                 {isEn ? `More ${theme.title} Coloring Pages` : `Meer ${theme.title} Kleurplaten`}
               </h2>
