@@ -134,81 +134,147 @@ export default async function HomePage({ params }: { params: Promise<{ lang: str
             lang={lang}
           />
 
-          {/* 2. Unified Full-Width Master Card (Dark ColorVaults Theme with Text & Categories) */}
+                    {/* ── Unified Cinematic Master Console (Under 3D Vault Banner) ── */}
           <div className={`${styles.heroHeaderCenter} hero-anim-2`} style={{
-            background: 'linear-gradient(135deg, #0F172A 0%, #1E293B 100%)',
-            border: '2px solid rgba(255, 255, 255, 0.25)',
+            background: 'linear-gradient(180deg, #111827 0%, #0F172A 100%)',
+            border: '1.5px solid rgba(255, 255, 255, 0.22)',
             borderRadius: '28px',
-            padding: '2rem 2.25rem',
+            padding: '2.25rem 2.5rem',
             textAlign: 'center',
-            marginBottom: '1.75rem',
-            boxShadow: '0 25px 60px -15px rgba(15, 23, 42, 0.5), 0 0 40px rgba(255, 107, 74, 0.15)',
+            marginBottom: '2rem',
+            boxShadow: '0 25px 60px -15px rgba(15, 23, 42, 0.55), 0 0 35px rgba(255, 107, 74, 0.15)',
             width: '100%',
+            position: 'relative',
+            overflow: 'hidden',
           }}>
-            {/* 100% Free Badge */}
-            <div style={{ display: 'inline-flex', alignItems: 'center', gap: '0.5rem', background: 'rgba(255, 107, 74, 0.22)', border: '1.5px solid rgba(255, 107, 74, 0.55)', borderRadius: '9999px', padding: '0.25rem 0.85rem', fontSize: '0.76rem', fontWeight: 800, color: '#FF9E7D', textTransform: 'uppercase', letterSpacing: '0.04em', marginBottom: '0.45rem' }}>
+            {/* Top Subtle Ambient Glow */}
+            <div style={{
+              position: 'absolute',
+              top: '-60px',
+              left: '50%',
+              transform: 'translateX(-50%)',
+              width: '450px',
+              height: '120px',
+              background: 'radial-gradient(circle, rgba(255, 107, 74, 0.3) 0%, transparent 70%)',
+              pointerEvents: 'none',
+              filter: 'blur(25px)',
+            }} />
+
+            {/* 1. Free Badge */}
+            <div style={{
+              display: 'inline-flex',
+              alignItems: 'center',
+              gap: '0.5rem',
+              background: 'rgba(255, 107, 74, 0.18)',
+              border: '1px solid rgba(255, 107, 74, 0.5)',
+              borderRadius: '9999px',
+              padding: '0.3rem 0.95rem',
+              fontSize: '0.78rem',
+              fontWeight: 800,
+              color: '#FFA07A',
+              textTransform: 'uppercase',
+              letterSpacing: '0.05em',
+              marginBottom: '0.65rem',
+            }}>
               {isEn ? '100% Free — High Resolution Printables' : '100% Gratis — Hoge Resolutie Printables'}
             </div>
             
-            {/* Title */}
-            <h1 className="title-h1" style={{ margin: '0.2rem 0 0.35rem', fontSize: 'clamp(1.85rem, 3.2vw, 2.6rem)', fontWeight: 900, color: '#FFFFFF', textShadow: '0 2px 10px rgba(0,0,0,0.6)', lineHeight: 1.2 }}>
+            {/* 2. Radiant Title */}
+            <h1 className="title-h1" style={{
+              margin: '0.15rem 0 0.45rem',
+              fontSize: 'clamp(2rem, 3.6vw, 2.9rem)',
+              fontWeight: 900,
+              color: '#FFFFFF',
+              textShadow: '0 3px 15px rgba(0,0,0,0.7)',
+              fontFamily: 'var(--font-display), "Fredoka", sans-serif',
+              letterSpacing: '-0.02em',
+              lineHeight: 1.15,
+            }}>
               {isEn ? (
-                <>Free Premium <span style={{ background: 'linear-gradient(135deg, #FF6B35, #FFA07A)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent' }}>Coloring Pages</span></>
+                <>Free Premium <span style={{ background: 'linear-gradient(135deg, #FF6B35 0%, #FBBF24 100%)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent' }}>Coloring Pages</span></>
               ) : (
-                <>Gratis Premium <span style={{ background: 'linear-gradient(135deg, #FF6B35, #FFA07A)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent' }}>Kleurplaten</span></>
+                <>Gratis Premium <span style={{ background: 'linear-gradient(135deg, #FF6B35 0%, #FBBF24 100%)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent' }}>Kleurplaten</span></>
               )}
             </h1>
             
-            {/* Subtitle */}
-            <p style={{ maxWidth: '680px', margin: '0 auto 0.85rem', color: '#E2E8F0', fontSize: '0.95rem', lineHeight: 1.5, textShadow: '0 1px 4px rgba(0,0,0,0.5)' }}>
+            {/* 3. Subtitle */}
+            <p style={{
+              maxWidth: '660px',
+              margin: '0 auto 1.15rem',
+              color: '#E2E8F0',
+              fontSize: '0.98rem',
+              lineHeight: 1.6,
+              textShadow: '0 1px 4px rgba(0,0,0,0.5)',
+            }}>
               {isEn
                 ? 'Thousands of high-quality printable coloring pages for toddlers, kids, teens, and adults. Free instant downloads — no account needed!'
                 : 'Duizenden gratis printbare kleurplaten voor peuters, kinderen, tieners en volwassenen. Direct gratis downloaden — geen account nodig!'}
             </p>
 
-            {/* Trust Bar */}
-            <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '0.45rem', flexWrap: 'wrap', marginBottom: '1.5rem' }}>
-              <span style={{ background: 'rgba(255, 255, 255, 0.12)', backdropFilter: 'blur(8px)', WebkitBackdropFilter: 'blur(8px)', border: '1px solid rgba(255, 255, 255, 0.2)', color: '#F8FAFC', padding: '0.25rem 0.65rem', borderRadius: '9999px', fontSize: '0.75rem', fontWeight: 700 }}>
+            {/* 4. Trust Pills */}
+            <div style={{
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center',
+              gap: '0.5rem',
+              flexWrap: 'wrap',
+              marginBottom: '1.75rem',
+            }}>
+              <span style={{ background: 'rgba(255, 255, 255, 0.1)', backdropFilter: 'blur(8px)', WebkitBackdropFilter: 'blur(8px)', border: '1px solid rgba(255, 255, 255, 0.18)', color: '#F8FAFC', padding: '0.3rem 0.75rem', borderRadius: '9999px', fontSize: '0.78rem', fontWeight: 700 }}>
                 {isEn ? '100% Free' : '100% Gratis'}
               </span>
-              <span style={{ background: 'rgba(255, 255, 255, 0.12)', backdropFilter: 'blur(8px)', WebkitBackdropFilter: 'blur(8px)', border: '1px solid rgba(255, 255, 255, 0.2)', color: '#F8FAFC', padding: '0.25rem 0.65rem', borderRadius: '9999px', fontSize: '0.75rem', fontWeight: 700 }}>
+              <span style={{ background: 'rgba(255, 255, 255, 0.1)', backdropFilter: 'blur(8px)', WebkitBackdropFilter: 'blur(8px)', border: '1px solid rgba(255, 255, 255, 0.18)', color: '#F8FAFC', padding: '0.3rem 0.75rem', borderRadius: '9999px', fontSize: '0.78rem', fontWeight: 700 }}>
                 A4 / Letter PDF
               </span>
-              <span style={{ background: 'rgba(255, 255, 255, 0.12)', backdropFilter: 'blur(8px)', WebkitBackdropFilter: 'blur(8px)', border: '1px solid rgba(255, 255, 255, 0.2)', color: '#F8FAFC', padding: '0.25rem 0.65rem', borderRadius: '9999px', fontSize: '0.75rem', fontWeight: 700 }}>
+              <span style={{ background: 'rgba(255, 255, 255, 0.1)', backdropFilter: 'blur(8px)', WebkitBackdropFilter: 'blur(8px)', border: '1px solid rgba(255, 255, 255, 0.18)', color: '#F8FAFC', padding: '0.3rem 0.75rem', borderRadius: '9999px', fontSize: '0.78rem', fontWeight: 700 }}>
                 {isEn ? 'Color Online' : 'Online Inkleuren'}
               </span>
-              <span style={{ background: 'rgba(255, 255, 255, 0.12)', backdropFilter: 'blur(8px)', WebkitBackdropFilter: 'blur(8px)', border: '1px solid rgba(255, 255, 255, 0.2)', color: '#F8FAFC', padding: '0.25rem 0.65rem', borderRadius: '9999px', fontSize: '0.75rem', fontWeight: 700 }}>
+              <span style={{ background: 'rgba(255, 255, 255, 0.1)', backdropFilter: 'blur(8px)', WebkitBackdropFilter: 'blur(8px)', border: '1px solid rgba(255, 255, 255, 0.18)', color: '#F8FAFC', padding: '0.3rem 0.75rem', borderRadius: '9999px', fontSize: '0.78rem', fontWeight: 700 }}>
                 {isEn ? 'Instant Access' : 'Geen Account'}
               </span>
             </div>
 
-            {/* Sleek Divider */}
-            <div style={{ height: '1px', background: 'linear-gradient(90deg, transparent 0%, rgba(255, 255, 255, 0.2) 20%, rgba(255, 255, 255, 0.2) 80%, transparent 100%)', margin: '0 auto 1.35rem', maxWidth: '850px' }} />
+            {/* 5. Sleek Divider */}
+            <div style={{
+              height: '1px',
+              background: 'linear-gradient(90deg, transparent 0%, rgba(255, 255, 255, 0.18) 20%, rgba(255, 255, 255, 0.18) 80%, transparent 100%)',
+              margin: '0 auto 1.5rem',
+              maxWidth: '850px',
+            }} />
 
-            {/* Integrated Trending Categories Section */}
-            <div>
-              <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '0.85rem', flexWrap: 'wrap', gap: '0.5rem' }}>
-                <span style={{ fontSize: '0.9rem', fontWeight: 800, color: '#FFFFFF', letterSpacing: '-0.01em' }}>
+            {/* 6. Integrated Trending Categories */}
+            <div style={{ marginBottom: '1.75rem' }}>
+              <div style={{
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'space-between',
+                marginBottom: '1rem',
+                flexWrap: 'wrap',
+                gap: '0.5rem',
+                padding: '0 0.5rem',
+              }}>
+                <span style={{ fontSize: '0.92rem', fontWeight: 800, color: '#FFFFFF', letterSpacing: '-0.01em' }}>
                   {isEn ? 'Top Trending Albums & Categories' : 'Top Trending Albums & Categorieën'}
                 </span>
-                <span style={{ fontSize: '0.75rem', fontWeight: 800, color: '#FF9E7D', background: 'rgba(255, 107, 74, 0.2)', border: '1px solid rgba(255, 107, 74, 0.4)', padding: '0.2rem 0.65rem', borderRadius: '9999px' }}>
+                <span style={{ fontSize: '0.76rem', fontWeight: 800, color: '#FFA07A', background: 'rgba(255, 107, 74, 0.18)', border: '1px solid rgba(255, 107, 74, 0.45)', padding: '0.2rem 0.75rem', borderRadius: '9999px' }}>
                   130+ {isEn ? 'Themes' : "Thema's"}
                 </span>
               </div>
-              <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.5rem', justifyContent: 'center' }}>
+
+              <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.55rem', justifyContent: 'center' }}>
                 {quickShortcuts.map((pill) => (
                   <Link
                     key={pill.name}
                     href={pill.href}
                     style={{
-                      background: 'rgba(255, 255, 255, 0.08)',
-                      backdropFilter: 'blur(6px)',
-                      WebkitBackdropFilter: 'blur(6px)',
-                      border: '1px solid rgba(255, 255, 255, 0.18)',
+                      background: 'rgba(255, 255, 255, 0.07)',
+                      backdropFilter: 'blur(8px)',
+                      WebkitBackdropFilter: 'blur(8px)',
+                      border: '1px solid rgba(255, 255, 255, 0.16)',
                       color: '#F8FAFC',
-                      padding: '0.35rem 0.85rem',
+                      padding: '0.4rem 0.95rem',
                       borderRadius: '9999px',
-                      fontSize: '0.82rem',
+                      fontSize: '0.84rem',
                       fontWeight: 700,
                       textDecoration: 'none',
                       transition: 'all 0.2s ease',
@@ -220,16 +286,43 @@ export default async function HomePage({ params }: { params: Promise<{ lang: str
                 ))}
               </div>
             </div>
-          </div>
 
-          {/* 4. Orange Action CTAs Bar at the bottom */}
-          <div className={`${styles.heroCtasCenter} hero-anim-4`}>
-            <Link href={`/${lang}/search`} className="btn-primary" style={{ padding: '0.85rem 2.2rem', fontSize: '0.95rem' }}>
-              {isEn ? 'Explore All Collections' : 'Alle Collecties Bekijken'}
-            </Link>
-            <Link href={`/${lang}/art-aesthetic/mandalas-sacred-geometry`} className="btn-secondary" style={{ padding: '0.85rem 2.2rem', fontSize: '0.95rem' }}>
-              {isEn ? 'Mandalas' : "Mandala's"}
-            </Link>
+            {/* 7. Embedded Action CTAs at the base */}
+            <div style={{
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center',
+              gap: '1rem',
+              flexWrap: 'wrap',
+              paddingTop: '0.5rem',
+            }}>
+              <Link
+                href={`/${lang}/search`}
+                className="btn-primary"
+                style={{
+                  padding: '0.85rem 2.4rem',
+                  fontSize: '0.95rem',
+                  fontWeight: 800,
+                  boxShadow: '0 8px 24px rgba(255, 107, 74, 0.4)',
+                }}
+              >
+                {isEn ? 'Explore All Collections' : 'Alle Collecties Bekijken'}
+              </Link>
+              <Link
+                href={`/${lang}/art-aesthetic/mandalas-sacred-geometry`}
+                className="btn-secondary"
+                style={{
+                  padding: '0.85rem 2.4rem',
+                  fontSize: '0.95rem',
+                  fontWeight: 800,
+                  background: 'rgba(255, 255, 255, 0.12)',
+                  borderColor: 'rgba(255, 255, 255, 0.25)',
+                  color: '#FFFFFF',
+                }}
+              >
+                {isEn ? 'Mandalas' : "Mandala's"}
+              </Link>
+            </div>
           </div>
         </div>
       </section>
