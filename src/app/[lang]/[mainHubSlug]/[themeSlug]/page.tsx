@@ -5,6 +5,7 @@ import CategorySeoBlock from'@/components/CategorySeoBlock';
 import RelatedThemes from '@/components/RelatedThemes';
 import CraftIdeasSection from '@/components/CraftIdeasSection';
 import ThemeFaqSection from '@/components/ThemeFaqSection';
+import PinterestThemeCard from '@/components/PinterestThemeCard';
 import CharacterIpDisclaimer from '@/components/CharacterIpDisclaimer';
 import NewsletterBox from'@/components/NewsletterBox';
 import DifficultyFilterBar from'@/components/DifficultyFilterBar';
@@ -567,10 +568,19 @@ export default async function ThemePage({
         )}
 
         {/* 10 Fun Craft Ideas & Activities (SEO Supercharger) */}
-        <CraftIdeasSection themeTitle={theme.title} isEn={isEn} />
+        <CraftIdeasSection themeTitle={theme.title} isEn={isEn} hubSlug={mainHubSlug} themeSlug={themeSlug} />
 
         {/* Frequently Asked Questions (Schema.org FAQPage Rich Results) */}
-        <ThemeFaqSection themeTitle={theme.title} isEn={isEn} />
+        <ThemeFaqSection themeTitle={theme.title} isEn={isEn} hubSlug={mainHubSlug} themeSlug={themeSlug} />
+
+        {/* Pinterest Viral Share Card */}
+        <PinterestThemeCard
+          themeTitle={theme.title}
+          themeImage={theme.image}
+          url={`/${lang}/${mainHubSlug}/${themeSlug}`}
+          isEn={isEn}
+          pageCount={allColoringPages.length}
+        />
 
         {/* Newsletter & Coloring Club */}
         <NewsletterBox isEn={isEn} lang={lang} />

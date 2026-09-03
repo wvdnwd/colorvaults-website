@@ -369,6 +369,141 @@ export default async function HomePage({ params }: { params: Promise<{ lang: str
         </div>
       </section>
 
+      {/* ── Section: Custom Coloring Book Builder Showcase (ColorVaults Superpower) ── */}
+      <section className="section" style={{ paddingTop: '1.5rem', paddingBottom: '2.5rem' }}>
+        <div className="container">
+          <div style={{
+            background: 'linear-gradient(135deg, #EEF2FF 0%, #E0E7FF 40%, #FAF5FF 100%)',
+            border: '2px solid #C7D2FE',
+            borderRadius: '28px',
+            padding: '2.5rem 2.25rem',
+            boxShadow: '0 15px 40px rgba(79, 70, 229, 0.08)',
+          }}>
+            <div style={{ textAlign: 'center', maxWidth: '780px', margin: '0 auto 2.25rem' }}>
+              <span style={{
+                display: 'inline-flex',
+                alignItems: 'center',
+                gap: '0.4rem',
+                background: '#4F46E5',
+                color: '#FFFFFF',
+                padding: '0.35rem 1rem',
+                borderRadius: '9999px',
+                fontWeight: 800,
+                fontSize: '0.8rem',
+                textTransform: 'uppercase',
+                letterSpacing: '0.05em',
+                boxShadow: '0 4px 12px rgba(79, 70, 229, 0.25)',
+              }}>
+                <span>✨</span>
+                <span>{isEn ? 'Exclusive Free Tool — Better Than Single Downloads' : 'Exclusief bij ColorVaults — Geen Losse Downloads Meer'}</span>
+              </span>
+              <h2 style={{
+                fontSize: 'clamp(1.6rem, 3vw, 2.25rem)',
+                fontWeight: 900,
+                color: '#0F172A',
+                marginTop: '0.85rem',
+                letterSpacing: '-0.02em',
+                lineHeight: 1.25,
+              }}>
+                {isEn ? 'Create Your Own Custom Coloring Book in 3 Easy Steps' : 'Stel Je Eigen Printbare Kleurboek Samen in 3 Stappen'}
+              </h2>
+              <p style={{ fontSize: '1.05rem', color: '#475569', marginTop: '0.6rem', lineHeight: 1.6 }}>
+                {isEn
+                  ? 'Why download 20 separate PDF files? ColorVaults lets you bundle your child’s or classroom’s favorite characters into one organized, printable coloring booklet with a personalized front cover!'
+                  : 'Waarom zou je 20 losse PDF’s downloaden? Bij ColorVaults bundel je al je favoriete thema’s in één compleet, printklaar boekje met een gepersonaliseerd voorblad!'}
+              </p>
+            </div>
+
+            {/* 3 Step Visual Cards */}
+            <div style={{
+              display: 'grid',
+              gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))',
+              gap: '1.5rem',
+              marginBottom: '2rem',
+            }}>
+              {[
+                {
+                  step: '1',
+                  icon: '🎨',
+                  title: isEn ? '1. Pick Your Favorites' : '1. Kies Je Favoriete Platen',
+                  desc: isEn
+                    ? 'Click "+ Bundle" on any coloring sheet (mix Pokémon, Stitch, Dinosaurs, and Mandalas together!).'
+                    : 'Tik op "+ Kleurboek" bij elke gewenste plaat. Mix gerust Pokémon, Stitch, Dino’s en Mandala’s door elkaar!',
+                },
+                {
+                  step: '2',
+                  icon: '✍️',
+                  title: isEn ? '2. Personalize Your Book' : '2. Personaliseer Met Een Naam',
+                  desc: isEn
+                    ? 'Open your bundle drawer, reorder pages, and add your child’s or student group name for the cover.'
+                    : 'Open je boekje onderaan het scherm, kies de volgorde en vul een naam in voor het officiële titelblad.',
+                },
+                {
+                  step: '3',
+                  icon: '🖨️',
+                  title: isEn ? '3. Instant 1-Click PDF' : '3. Download & Print in 1 Klik',
+                  desc: isEn
+                    ? 'Generate your high-resolution A4 or Letter PDF book instantly. Print at home or school in seconds!'
+                    : 'Genereer direct je complete A4-boekje in hoge resolutie. Print alles in één keer uit zonder gedoe!',
+                },
+              ].map((card, idx) => (
+                <div
+                  key={idx}
+                  style={{
+                    background: '#FFFFFF',
+                    borderRadius: '20px',
+                    padding: '1.75rem 1.5rem',
+                    border: '1.5px solid #C7D2FE',
+                    boxShadow: '0 4px 16px rgba(79, 70, 229, 0.04)',
+                    display: 'flex',
+                    flexDirection: 'column',
+                    gap: '0.65rem',
+                    position: 'relative',
+                  }}
+                >
+                  <div style={{
+                    width: '52px',
+                    height: '52px',
+                    borderRadius: '16px',
+                    background: '#EEF2FF',
+                    border: '1.5px solid #C7D2FE',
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    fontSize: '1.75rem',
+                  }}>
+                    {card.icon}
+                  </div>
+                  <h3 style={{ fontSize: '1.15rem', fontWeight: 800, color: '#0F172A', margin: '0.3rem 0 0' }}>
+                    {card.title}
+                  </h3>
+                  <p style={{ fontSize: '0.94rem', color: '#475569', lineHeight: 1.6, margin: 0 }}>
+                    {card.desc}
+                  </p>
+                </div>
+              ))}
+            </div>
+
+            {/* Bottom Action CTA */}
+            <div style={{ textAlign: 'center' }}>
+              <Link
+                href="#collections"
+                className="btn-primary"
+                style={{
+                  padding: '0.95rem 2.5rem',
+                  fontSize: '1rem',
+                  fontWeight: 800,
+                  boxShadow: '0 8px 24px rgba(79, 70, 229, 0.35)',
+                  background: 'linear-gradient(135deg, #4F46E5 0%, #6366F1 100%)',
+                }}
+              >
+                {isEn ? '📚 Start Building Your Free Coloring Book Now' : '📚 Start Nu Met Je Eigen Gratis Kleurboek'}
+              </Link>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* ── Section 1: Trending Characters & Shows ── */}
       {popularCharacters.length > 0 && (
         <section className="section">

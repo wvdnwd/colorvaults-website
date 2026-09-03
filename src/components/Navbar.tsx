@@ -224,7 +224,7 @@ export default function Navbar({ lang }: { lang: string }) {
               <path d="M6 6h10"/>
               <path d="M6 10h10"/>
             </svg>
-            <span className={styles.bundleBtnText}>{isEn ? 'Bundle' : 'Bundel'}</span>
+            <span className={styles.bundleBtnText}>{isEn ? '📚 Book Maker' : '📚 Kleurboek Maker'}</span>
             {totalSelected > 0 && (
               <span className={styles.bundleBadge}>
                 {totalSelected}
@@ -246,6 +246,22 @@ export default function Navbar({ lang }: { lang: string }) {
               aria-label="Schakel naar Nederlands">
               NL
             </Link>
+            <span className={styles.langDivider}>/</span>
+            <span 
+              className={styles.langBtn} 
+              style={{ opacity: 0.5, cursor: 'not-allowed' }}
+              title={isEn ? 'German coming soon' : 'Duits binnenkort beschikbaar'}
+            >
+              DE
+            </span>
+            <span className={styles.langDivider}>/</span>
+            <span 
+              className={styles.langBtn} 
+              style={{ opacity: 0.5, cursor: 'not-allowed' }}
+              title={isEn ? 'French coming soon' : 'Frans binnenkort beschikbaar'}
+            >
+              FR
+            </span>
           </div>
 
           <button
