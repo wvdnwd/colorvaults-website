@@ -4,6 +4,7 @@ import { motion } from 'framer-motion';
 import SafeImage from './SafeImage';
 import Link from 'next/link';
 import FavoriteButton from './FavoriteButton';
+import { useColoringBook } from '@/context/ColoringBookContext';
 
 const TRENDING_SLUGS = new Set([
   'paw-patrol-1', 'paw-patrol-2', 'unicorn-1', 'unicorn-2',
@@ -33,6 +34,9 @@ export default function MotionCard({ page, lang, isEn }: MotionCardProps) {
   const isTrending = TRENDING_SLUGS.has(page.slug);
   const imageSrc = page.preview || page.image || '';
   const favItem = { id: page.id || page.slug, slug: page.slug, title: page.title, preview: imageSrc, url };
+
+  const { isPageSelected, toggleSelectPage } = useColoringBook();
+  const isSelected = isPageSelected(page.slug);
 
   // Pinterest Share URL
   const pinterestShareUrl = `https://www.pinterest.com/pin/create/button/?url=${encodeURIComponent(`https://colorvaults.com${url}`)}&media=${encodeURIComponent(imageSrc)}&description=${encodeURIComponent(`${page.title} - Free Printable Coloring Page on ColorVaults.com`)}`;
@@ -74,14 +78,14 @@ export default function MotionCard({ page, lang, isEn }: MotionCardProps) {
               background: '#E60023',
               color: '#FFFFFF',
               borderRadius: '9999px',
-              padding: '0.25rem 0.65rem',
-              fontSize: '0.72rem',
+              padding: '0.22rem 0.55rem',
+              fontSize: '0.68rem',
               fontWeight: 800,
               display: 'flex',
               alignItems: 'center',
-              gap: '0.25rem',
+              gap: '0.2rem',
               textDecoration: 'none',
-              boxShadow: '0 2px 8px rgba(230, 0, 35, 0.4)',
+              boxShadow: '0 2px 8px rgba(230, 0, 35, 0.3)',
               transition: 'transform 0.2s',
             }}
             onClick={(e) => e.stopPropagation()}
@@ -89,6 +93,47 @@ export default function MotionCard({ page, lang, isEn }: MotionCardProps) {
             <span>📌</span>
             <span>Pin</span>
           </a>
+
+          {/* Add to Custom Coloring Booklet Button (Top Center-Right) */}
+          <button
+            type="button"
+            onClick={(e) => {
+              e.preventDefault();
+              e.stopPropagation();
+              toggleSelectPage({
+                id: page.id || page.slug,
+                slug: page.slug,
+                title: page.title,
+                image: imageSrc,
+                parentHub: page.parentHub,
+                parentTheme: page.parentTheme,
+                ageGroup: page.ageGroup,
+              });
+            }}
+            title={isSelected ? (isEn ? 'Remove from bundle' : 'Verwijder uit bundel') : (isEn ? 'Add to custom bundle' : 'Toevoegen aan printbundel')}
+            style={{
+              position: 'absolute',
+              top: '10px',
+              right: '48px',
+              zIndex: 10,
+              background: isSelected ? '#10B981' : '#FFFFFF',
+              color: isSelected ? '#FFFFFF' : '#4F46E5',
+              borderRadius: '9999px',
+              padding: '0.22rem 0.6rem',
+              fontSize: '0.7rem',
+              fontWeight: 800,
+              display: 'flex',
+              alignItems: 'center',
+              gap: '0.25rem',
+              border: isSelected ? '1.5px solid #059669' : '1.5px solid #CBD5E1',
+              boxShadow: isSelected ? '0 3px 10px rgba(16, 185, 129, 0.4)' : '0 2px 6px rgba(0,0,0,0.08)',
+              cursor: 'pointer',
+              transition: 'all 0.15s ease',
+            }}
+          >
+            <span>{isSelected ? '✓' : '➕'}</span>
+            <span>{isSelected ? (isEn ? 'Added' : 'In Mandje') : (isEn ? 'Bundle' : 'Bundel')}</span>
+          </button>
 
           {/* Favorite Button (Top Right) */}
           <div style={{ position: 'absolute', top: '10px', right: '10px', zIndex: 10 }}>

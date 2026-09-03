@@ -175,14 +175,33 @@ export default async function ThemePage({
             </div>
           )}
 
-          {/* 📚 Complete PDF Coloring Book Download Modal */}
-          <PdfBookBundleModal
-            themeTitle={theme.title}
-            count={allColoringPages.length}
-            isEn={isEn}
-            lang={lang}
-            pages={allColoringPages.map(p => ({ title: p.title, image: p.image }))}
-          />
+          {/* Custom Coloring Book Multi-Select Guide Banner */}
+          <div style={{
+            marginTop: '1.75rem',
+            background: 'linear-gradient(135deg, #EEF2FF 0%, #E0E7FF 100%)',
+            border: '1.5px solid #C7D2FE',
+            borderRadius: '20px',
+            padding: '1.15rem 1.5rem',
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'space-between',
+            gap: '1rem',
+            flexWrap: 'wrap',
+          }}>
+            <div style={{ display: 'flex', alignItems: 'center', gap: '0.85rem' }}>
+              <div style={{ fontSize: '1.8rem' }}>🧺</div>
+              <div style={{ textAlign: 'left' }}>
+                <h3 style={{ margin: 0, fontSize: '1.05rem', fontWeight: 800, color: '#312E81' }}>
+                  {isEn ? 'Create Your Own Coloring Book' : 'Stel je Eigen Kleurboek Samen'}
+                </h3>
+                <p style={{ margin: '0.15rem 0 0', fontSize: '0.85rem', color: '#4338CA' }}>
+                  {isEn
+                    ? 'Click the ➕ button on any coloring page below to collect your favorites into a single custom PDF!'
+                    : 'Klik op het ➕ icoon bij een kleurplaat om je favorieten te verzamelen in 1 printbare PDF!'}
+                </p>
+              </div>
+            </div>
+          </div>
 
           {/* Paper Size & How to Use Notice */}
           <div style={{

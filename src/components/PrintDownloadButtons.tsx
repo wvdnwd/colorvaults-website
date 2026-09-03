@@ -5,6 +5,7 @@ import Link from 'next/link';
 import PrintPreviewModal from './PrintPreviewModal';
 import OnlineColoringTool from './OnlineColoringTool';
 import ReportButton from './ReportButton';
+import { useColoringBook } from '@/context/ColoringBookContext';
 
 export default function PrintDownloadButtons({
   isEn,
@@ -21,6 +22,10 @@ export default function PrintDownloadButtons({
   const [downloadingPdf, setDownloadingPdf] = useState(false);
   const [showPreview, setShowPreview] = useState(false);
   const [showColorOnline, setShowColorOnline] = useState(false);
+
+  const { isPageSelected, toggleSelectPage } = useColoringBook();
+  const pageSlug = fileUrl.split('/').pop()?.replace(/\.[^.]+$/, '') || 'page';
+  const isSelected = isPageSelected(pageSlug);
 
   const pageTitle = fileUrl.split('/').pop()?.replace(/_/g, ' ').replace(/\.[^.]+$/, '') || (isEn ? 'Coloring Page' : 'Kleurplaat');
   const previewUrl = `/api/proxy-image?url=${encodeURIComponent(fileUrl)}`;
@@ -190,6 +195,43 @@ export default function PrintDownloadButtons({
             <path d="M19 8H5c-1.66 0-3 1.34-3 3v6h4v4h12v-4h4v-6c0-1.66-1.34-3-3-3zm-3 11H8v-5h8v5zm3-7c-.55 0-1-.45-1-1s.45-1 1-1 1 .45 1 1-.45 1-1 1zm-1-9H6v4h12V3z"/>
           </svg>
           {isEn ? 'Print Free Coloring Page' : 'Gratis Kleurplaat Printen'}
+        </button>
+
+        {/* Add to Custom Coloring Book Bundle Button */}
+        <button
+          onClick={() => {
+            toggleSelectPage({
+              id: pageSlug,
+              slug: pageSlug,
+              title: pageTitle,
+              image: fileUrl,
+            });
+          }}
+          type="button"
+          style={{
+            width: '100%',
+            padding: '0.85rem',
+            background: isSelected ? 'linear-gradient(135deg, #10B981 0%, #059669 100%)' : 'linear-gradient(135deg, #EEF2FF 0%, #E0E7FF 100%)',
+            color: isSelected ? '#FFFFFF' : '#4F46E5',
+            border: isSelected ? '1.5px solid #059669' : '1.5px solid #C7D2FE',
+            borderRadius: 'var(--radius-full)',
+            fontWeight: 800,
+            fontSize: '0.92rem',
+            cursor: 'pointer',
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+            gap: '0.5rem',
+            boxShadow: isSelected ? '0 4px 14px rgba(16, 185, 129, 0.3)' : 'none',
+            transition: 'all 0.2s ease',
+          }}
+        >
+          <span style={{ fontSize: '1.05rem' }}>{isSelected ? '✓' : '➕'}</span>
+          <span>
+            {isSelected
+              ? (isEn ? 'Added to Custom Coloring Book' : 'Toegevoegd aan je Kleurboek')
+              : (isEn ? 'Add to My Coloring Book Bundle' : 'Voeg toe aan Kleurboek Bundel')}
+          </span>
         </button>
 
         {/* Color Online Button -> Opens Dedicated Studio Page */}

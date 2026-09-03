@@ -97,10 +97,19 @@ export function ColoringBookProvider({ children }: { children: React.ReactNode }
   );
 }
 
+const defaultContextValue: ColoringBookContextType = {
+  selectedPages: [],
+  toggleSelectPage: () => {},
+  isPageSelected: () => false,
+  clearSelection: () => {},
+  removePage: () => {},
+  totalSelected: 0,
+};
+
 export function useColoringBook() {
   const context = useContext(ColoringBookContext);
   if (!context) {
-    throw new Error('useColoringBook must be used within a ColoringBookProvider');
+    return defaultContextValue;
   }
   return context;
 }

@@ -4,6 +4,8 @@ import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { useState, useRef, useEffect } from 'react';
 import HeaderSearchBar from './HeaderSearchBar';
+import BookletDrawer from './BookletDrawer';
+import { useColoringBook } from '@/context/ColoringBookContext';
 import styles from './Navbar.module.css';
 
 interface NavItem {
@@ -16,8 +18,11 @@ export default function Navbar({ lang }: { lang: string }) {
   const pathname = usePathname();
   const [openDropdown, setOpenDropdown] = useState<string | null>(null);
   const [mobileOpen, setMobileOpen] = useState(false);
+  const [drawerOpen, setDrawerOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const navRef = useRef<HTMLDivElement>(null);
+
+  const { totalSelected } = useColoringBook();
 
   const isEn = lang === 'en';
   const isNl = lang === 'nl';
@@ -194,8 +199,45 @@ export default function Navbar({ lang }: { lang: string }) {
           })}
         </nav>
 
-        {/* Language Switcher & Mobile Hamburger */}
+        {/* Language Switcher, Bundle Basket & Mobile Hamburger */}
         <div className={styles.headerRight}>
+          {/* Bundle Basket Button */}
+          <button
+            type="button"
+            onClick={() => setDrawerOpen(true)}
+            aria-label={isEn ? 'Open coloring bundle' : 'Open kleurboek bundel'}
+            style={{
+              display: 'inline-flex',
+              alignItems: 'center',
+              gap: '0.35rem',
+              background: totalSelected > 0 ? 'linear-gradient(135deg, #6366F1, #4F46E5)' : 'rgba(255, 255, 255, 0.95)',
+              color: totalSelected > 0 ? '#FFFFFF' : '#0F172A',
+              border: totalSelected > 0 ? 'none' : '1.5px solid #CBD5E1',
+              borderRadius: '9999px',
+              padding: '0.35rem 0.8rem',
+              fontSize: '0.8rem',
+              fontWeight: 800,
+              cursor: 'pointer',
+              boxShadow: totalSelected > 0 ? '0 4px 12px rgba(99, 102, 241, 0.4)' : '0 2px 5px rgba(0,0,0,0.04)',
+              transition: 'all 0.2s ease',
+            }}
+          >
+            <span style={{ fontSize: '0.95rem' }}>🧺</span>
+            <span>{isEn ? 'Bundle' : 'Bundel'}</span>
+            {totalSelected > 0 && (
+              <span style={{
+                background: '#EF4444',
+                color: '#FFFFFF',
+                borderRadius: '9999px',
+                padding: '0.05rem 0.45rem',
+                fontSize: '0.7rem',
+                fontWeight: 900,
+              }}>
+                {totalSelected}
+              </span>
+            )}
+          </button>
+
           <div className={styles.langSwitcher}>
             <Link
               href={getLangLink('en')}
@@ -227,6 +269,13 @@ export default function Navbar({ lang }: { lang: string }) {
           </button>
         </div>
       </div>
+
+      {/* Slide-over Bundle Basket Drawer */}
+      <BookletDrawer
+        isOpen={drawerOpen}
+        onClose={() => setDrawerOpen(false)}
+        lang={lang}
+      />
 
       {/* Mobile Menu Drawer */}
       {mobileOpen && (
