@@ -11,18 +11,12 @@ export interface CarouselItem {
   badge?: string;
 }
 
-export interface QuickShortcut {
-  name: string;
-  href: string;
-}
-
 interface HeroCarouselProps {
   items: CarouselItem[];
   lang?: string;
-  shortcuts?: QuickShortcut[];
 }
 
-export default function HeroCarousel({ items, lang = 'nl', shortcuts = [] }: HeroCarouselProps) {
+export default function HeroCarousel({ items, lang = 'nl' }: HeroCarouselProps) {
   const [shuffledItems, setShuffledItems] = useState<CarouselItem[]>([]);
 
   useEffect(() => {
@@ -55,10 +49,7 @@ export default function HeroCarousel({ items, lang = 'nl', shortcuts = [] }: Her
         <div className={styles.vaultPortalAura} />
       </div>
 
-      {/* 1. TOP: Space for 3D COLORVAULTS Logo */}
-      <div className={styles.vaultTopHeaderArea} aria-hidden="true" />
-
-      {/* 2. MIDDLE: 3D Carousel Spinning Inside the Vault Portal */}
+      {/* 3D Carousel Revolving Inside the Circular Vault Portal (Centered between Logo & Table) */}
       <div className={styles.portalStage}>
         <div className={styles.scene}>
           <div className={styles.ring} style={{ '--count': count } as React.CSSProperties}>
@@ -86,87 +77,6 @@ export default function HeroCarousel({ items, lang = 'nl', shortcuts = [] }: Her
                 </div>
               </Link>
             ))}
-          </div>
-        </div>
-      </div>
-
-      {/* 3. BOTTOM: Unified Master Console Sitting on the Artist Desk */}
-      <div className={styles.stageConsoleWrapper}>
-        <div className={styles.stageFrostedCard}>
-          {/* Free Badge */}
-          <div className={styles.badgeWrapper}>
-            <span className={styles.freeBadge}>
-              {isEn ? '100% Free — High Resolution Printables' : '100% Gratis — Hoge Resolutie Printables'}
-            </span>
-          </div>
-
-          {/* Title */}
-          <h1 className={styles.heroTitle}>
-            {isEn ? (
-              <>Free Premium <span className={styles.titleGradient}>Coloring Pages</span></>
-            ) : (
-              <>Gratis Premium <span className={styles.titleGradient}>Kleurplaten</span></>
-            )}
-          </h1>
-
-          {/* Subtitle */}
-          <p className={styles.heroSubtitle}>
-            {isEn
-              ? 'Thousands of high-quality printable coloring pages for toddlers, kids, teens, and adults. Free instant downloads — no account needed!'
-              : 'Duizenden gratis printbare kleurplaten voor peuters, kinderen, tieners en volwassenen. Direct gratis downloaden — geen account nodig!'}
-          </p>
-
-          {/* Trust Pills */}
-          <div className={styles.trustBadges}>
-            <span className={styles.trustPill}>{isEn ? '100% Free' : '100% Gratis'}</span>
-            <span className={styles.trustPill}>A4 / Letter PDF</span>
-            <span className={styles.trustPill}>{isEn ? 'Color Online' : 'Online Inkleuren'}</span>
-            <span className={styles.trustPill}>{isEn ? 'Instant Access' : 'Geen Account'}</span>
-          </div>
-
-          {/* Sleek Divider */}
-          <div className={styles.consoleDivider} />
-
-          {/* Trending Categories Section */}
-          {shortcuts && shortcuts.length > 0 && (
-            <div className={styles.categoriesBlock}>
-              <div className={styles.categoriesHeader}>
-                <span className={styles.categoriesTitle}>
-                  {isEn ? 'Top Trending Albums & Categories' : 'Top Trending Albums & Categorieën'}
-                </span>
-                <span className={styles.categoriesCountBadge}>
-                  130+ {isEn ? 'Themes' : "Thema's"}
-                </span>
-              </div>
-              <div className={styles.categoriesGrid}>
-                {shortcuts.map((pill) => (
-                  <Link key={pill.name} href={pill.href} className={styles.categoryPill}>
-                    {pill.name}
-                  </Link>
-                ))}
-              </div>
-            </div>
-          )}
-
-          {/* Integrated Action CTAs */}
-          <div className={styles.ctaRow}>
-            <Link href={`/${lang}/search`} className="btn-primary" style={{ padding: '0.85rem 2.4rem', fontSize: '0.95rem', fontWeight: 800 }}>
-              {isEn ? 'Explore All Collections' : 'Alle Collecties Bekijken'}
-            </Link>
-            <Link
-              href={`/${lang}/art-aesthetic/mandalas-sacred-geometry`}
-              className="btn-secondary"
-              style={{
-                padding: '0.85rem 2.4rem',
-                fontSize: '0.95rem',
-                fontWeight: 800,
-                background: 'rgba(255, 255, 255, 0.12)',
-                borderColor: 'rgba(255, 255, 255, 0.25)',
-                color: '#FFFFFF',
-              }}
-            >
-              {isEn ? 'Mandalas' : "Mandala's"}
-            </Link>
           </div>
         </div>
       </div>
