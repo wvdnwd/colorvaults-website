@@ -89,16 +89,46 @@
   bottom: 0;
   left: 0;
   right: 0;
-  background: linear-gradient(0deg, rgba(15, 61, 62, 0.95) 0%, rgba(15, 61, 62, 0.7) 70%, transparent 100%);
-  color: #FDF6E9;
-  font-size: 0.72rem;
-  font-weight: 700;
-  padding: 1.25rem 0.6rem 0.5rem;
+  background: linear-gradient(0deg, rgba(15, 23, 42, 0.95) 0%, rgba(15, 23, 42, 0.75) 60%, transparent 100%);
+  color: #FFFFFF;
+  padding: 1.5rem 0.6rem 0.6rem;
   text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+  pointer-events: none;
+}
+
+.albumTitle {
+  font-size: 0.8rem;
+  font-weight: 800;
+  color: #FFFFFF;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
-  pointer-events: none;
+}
+
+.albumCta {
+  font-size: 0.68rem;
+  font-weight: 700;
+  color: #FBBF24;
+  letter-spacing: 0.02em;
+}
+
+.albumBadge {
+  position: absolute;
+  top: 8px;
+  left: 8px;
+  background: rgba(15, 23, 42, 0.8);
+  backdrop-filter: blur(6px);
+  color: #F8FAFC;
+  font-size: 0.65rem;
+  font-weight: 800;
+  padding: 0.18rem 0.55rem;
+  border-radius: 9999px;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  z-index: 3;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.3);
 }
 
 /* ── Glossy shine overlay ─────────────────────────────────────────────────── */

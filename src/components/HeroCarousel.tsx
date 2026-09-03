@@ -9,18 +9,19 @@ export interface CarouselItem {
   src: string;
   alt: string;
   href: string;
+  badge?: string;
 }
 
 interface HeroCarouselProps {
   items: CarouselItem[];
+  lang?: string;
 }
 
-export default function HeroCarousel({ items }: HeroCarouselProps) {
+export default function HeroCarousel({ items, lang = 'nl' }: HeroCarouselProps) {
   const [shuffledItems, setShuffledItems] = useState<CarouselItem[]>([]);
 
   useEffect(() => {
     if (!items || items.length === 0) return;
-    // Fisher-Yates shuffle to pick 8 random items on client load
     const copy = [...items];
     for (let i = copy.length - 1; i > 0; i--) {
       const j = Math.floor(Math.random() * (i + 1));
@@ -33,6 +34,8 @@ export default function HeroCarousel({ items }: HeroCarouselProps) {
   const count = displayItems.length;
 
   if (count === 0) return null;
+
+  const isEn = lang === 'en';
 
   return (
     <div className={styles.sceneWrapper}>
@@ -52,7 +55,17 @@ export default function HeroCarousel({ items }: HeroCarouselProps) {
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img src={img.src} alt={img.alt} className={styles.img} />
               <div className={styles.shine} />
-              <div className={styles.cardLabel}>{img.alt}</div>
+              
+              {/* Album Tag Top Left */}
+              <div className={styles.albumBadge}>
+                <span>⭐ {isEn ? 'Album' : 'Album'}</span>
+              </div>
+
+              {/* Album Title Bottom */}
+              <div className={styles.cardLabel}>
+                <span className={styles.albumTitle}>{img.alt}</span>
+                <span className={styles.albumCta}>{isEn ? 'View Album →' : 'Bekijk Album →'}</span>
+              </div>
             </Link>
           ))}
         </div>

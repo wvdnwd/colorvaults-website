@@ -175,17 +175,18 @@ export default async function HomePage({ params }: { params: Promise<{ lang: str
               </div>
             </div>
 
-            {/* RIGHT: 3D rotating carousel */}
+            {/* RIGHT: 3D rotating carousel of full-color 8K Theme Albums */}
             <div className={`${styles.heroVisual} hero-anim-1`}>
               <HeroCarousel
-                items={getColoringPages(lang)
-                  .filter(p => p.image && !p.image.includes('default.jpg'))
+                items={allThemes
+                  .filter(t => t.image && !t.image.includes('default.jpg'))
                   .slice(0, 16)
-                  .map(p => ({
-                    src: p.image,
-                    alt: p.title,
-                    href: `/${lang}/${p.parentHub}/${p.parentTheme}/${p.ageGroup}`,
+                  .map(t => ({
+                    src: t.image,
+                    alt: t.title,
+                    href: `/${lang}/${t.parentHub}/${t.slug}`,
                   }))}
+                lang={lang}
               />
             </div>
           </div>
