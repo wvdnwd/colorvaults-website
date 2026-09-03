@@ -134,81 +134,29 @@ export default async function HomePage({ params }: { params: Promise<{ lang: str
         <div className={`ink-blob ${styles.blobBottomRight}`} aria-hidden="true" />
         <div className={styles.blobCenter} aria-hidden="true" />
 
-        <div className="container">
-          <div className={styles.heroCenterLayout}>
-            {/* 1. TOP: Title, Subtitle & Trust Bar */}
-            <div className={styles.heroHeaderCenter}>
-              <span className={`${styles.heroBadge} hero-anim-0`}>
-                {isEn ? '100% Free — High Resolution Printables' : '100% Gratis — Hoge Resolutie Printables'}
-              </span>
-              <h1 className={`${styles.heroTitle} hero-anim-1`}>
-                {isEn ? (
-                  <>Free Premium <span>Coloring Pages</span></>
-                ) : (
-                  <>Gratis Premium <span>Kleurplaten</span></>
-                )}
-              </h1>
-              <p className={`${styles.heroSubtitle} hero-anim-2`}>
-                {isEn
-                  ? 'Thousands of high-quality printable coloring pages for toddlers, kids, teens, and adults. Free instant downloads — no account needed!'
-                  : 'Duizenden gratis printbare kleurplaten voor peuters, kinderen, tieners en volwassenen. Direct gratis downloaden — geen account nodig!'}
-              </p>
+        <div className="container" style={{ maxWidth: '1200px' }}>
+          {/* 1. Full-Width Cinematic Widescreen Hero Banner with Integrated Title, 3D Vault Carousel & Bottom Categories */}
+          <HeroCarousel
+            items={allThemes
+              .filter(t => t.image && !t.image.includes('default.jpg'))
+              .slice(0, 16)
+              .map(t => ({
+                src: t.image,
+                alt: t.title,
+                href: `/${lang}/${t.parentHub}/${t.slug}`,
+              }))}
+            lang={lang}
+            shortcuts={quickShortcuts}
+          />
 
-              {/* Trust Bar */}
-              <div className={`${styles.trustBar} hero-anim-2`}>
-                <span className={styles.trustItem}>⚡ {isEn ? '100% Free' : '100% Gratis'}</span>
-                <span className={styles.trustDot}>•</span>
-                <span className={styles.trustItem}>🖨️ {isEn ? 'A4 / Letter PDF' : 'A4 / Letter PDF'}</span>
-                <span className={styles.trustDot}>•</span>
-                <span className={styles.trustItem}>🎨 {isEn ? 'Color Online' : 'Online Inkleuren'}</span>
-                <span className={styles.trustDot}>•</span>
-                <span className={styles.trustItem}>🚀 {isEn ? 'Instant Access' : 'Geen Account'}</span>
-              </div>
-            </div>
-
-            {/* 2. CENTER: 3D Grand Bank Vault with Revolving Carousel in Opening */}
-            <div className={`${styles.heroVaultCenter} hero-anim-1`}>
-              <HeroCarousel
-                items={allThemes
-                  .filter(t => t.image && !t.image.includes('default.jpg'))
-                  .slice(0, 16)
-                  .map(t => ({
-                    src: t.image,
-                    alt: t.title,
-                    href: `/${lang}/${t.parentHub}/${t.slug}`,
-                  }))}
-                lang={lang}
-              />
-            </div>
-
-            {/* 3. BOTTOM: All Popular Categories across Full Width */}
-            <div className={`${styles.shortcutsSectionCenter} hero-anim-3`}>
-              <div className={styles.shortcutsHeader}>
-                <span className={styles.shortcutsTitle}>
-                  🔥 {isEn ? 'Top Trending Albums & Categories' : 'Top Trending Albums & Categorieën'}
-                </span>
-                <span className={styles.shortcutsBadge}>
-                  130+ {isEn ? 'Themes' : 'Thema\'s'}
-                </span>
-              </div>
-              <div className={styles.shortcutsGridCenter}>
-                {quickShortcuts.map((pill) => (
-                  <Link key={pill.name} href={pill.href} className={styles.quickPill}>
-                    {pill.name}
-                  </Link>
-                ))}
-              </div>
-            </div>
-
-            {/* 4. Action CTAs */}
-            <div className={`${styles.heroCtasCenter} hero-anim-4`}>
-              <Link href={`/${lang}/search`} className="btn-primary" style={{ padding: '0.85rem 2rem' }}>
-                {isEn ? 'Explore All Collections' : 'Alle Collecties Bekijken'}
-              </Link>
-              <Link href={`/${lang}/art-aesthetic/mandalas-sacred-geometry`} className="btn-secondary" style={{ padding: '0.85rem 2rem' }}>
-                {isEn ? 'Mandalas' : 'Mandala\'s'}
-              </Link>
-            </div>
+          {/* 2. Action CTAs */}
+          <div className={`${styles.heroCtasCenter} hero-anim-4`} style={{ marginTop: '1.5rem' }}>
+            <Link href={`/${lang}/search`} className="btn-primary" style={{ padding: '0.85rem 2.2rem', fontSize: '0.95rem' }}>
+              {isEn ? 'Explore All Collections' : 'Alle Collecties Bekijken'}
+            </Link>
+            <Link href={`/${lang}/art-aesthetic/mandalas-sacred-geometry`} className="btn-secondary" style={{ padding: '0.85rem 2.2rem', fontSize: '0.95rem' }}>
+              {isEn ? 'Mandalas' : 'Mandala\'s'}
+            </Link>
           </div>
         </div>
       </section>
