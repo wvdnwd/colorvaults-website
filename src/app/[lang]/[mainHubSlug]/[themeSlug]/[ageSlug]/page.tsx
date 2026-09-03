@@ -2,7 +2,7 @@ import { getAgePages, getAgePageBySlug, getMainHubs, getThemes, getPagesByAgeGro
 import CategorySeoBlock from '@/components/CategorySeoBlock';
 import RelatedThemes from '@/components/RelatedThemes';
 import CraftIdeasSection from '@/components/CraftIdeasSection';
-import PdfBookBundleModal from '@/components/PdfBookBundleModal';
+import CharacterIpDisclaimer from '@/components/CharacterIpDisclaimer';
 import NewsletterBox from '@/components/NewsletterBox';
 import { notFound } from 'next/navigation';
 import Link from 'next/link';
@@ -127,7 +127,25 @@ export default async function AgePage({
               overflow: 'hidden',
               boxShadow: '0 20px 50px rgba(15, 23, 42, 0.18)',
               border: '3px solid #FFFFFF',
+              position: 'relative',
             }}>
+              <div style={{
+                position: 'absolute',
+                top: '12px',
+                left: '12px',
+                zIndex: 5,
+                background: 'rgba(15, 23, 42, 0.85)',
+                backdropFilter: 'blur(8px)',
+                color: '#F8FAFC',
+                borderRadius: '9999px',
+                padding: '0.25rem 0.75rem',
+                fontSize: '0.72rem',
+                fontWeight: 800,
+                border: '1px solid rgba(255, 255, 255, 0.25)',
+                boxShadow: '0 2px 8px rgba(0,0,0,0.3)',
+              }}>
+                🎨 {isEn ? 'Fan-Art Coloring Edition' : 'Fan-Art & Kleurplaat Editie'}
+              </div>
               <SafeImage
                 src={theme.image}
                 alt={`${theme.title} Master Poster`}
@@ -357,6 +375,9 @@ export default async function AgePage({
 
         {/* 🔗 Related Themes */}
         <RelatedThemes lang={lang} isEn={isEn} currentThemeSlug={theme.slug} allThemes={getThemes(lang)} />
+
+        {/* ⚖️ Intellectual Property & Fair-Use Disclaimer */}
+        <CharacterIpDisclaimer themeTitle={theme.title} isEn={isEn} lang={lang} />
       </div>
     </>
   );

@@ -8,6 +8,7 @@ import PrintDownloadButtons from '@/components/PrintDownloadButtons';
 import SocialShareButtons from '@/components/SocialShareButtons';
 import FavoriteButton from '@/components/FavoriteButton';
 import MotionCard from '@/components/MotionCard';
+import CharacterIpDisclaimer from '@/components/CharacterIpDisclaimer';
 import AdSlot from '@/components/AdSlot';
 import React from 'react';
 
@@ -417,6 +418,9 @@ export default async function ColoringPageDetail({ params }: { params: Promise<{
           </div>
         </section>
       )}
+
+      {/* ⚖️ Intellectual Property & Fair-Use Disclaimer */}
+      <CharacterIpDisclaimer themeTitle={theme.title} isEn={isEn} lang={lang} />
     </div>
   );
 }
