@@ -14,10 +14,9 @@ export interface CarouselItem {
 interface HeroCarouselProps {
   items: CarouselItem[];
   lang?: string;
-  shortcuts?: { name: string; href: string }[];
 }
 
-export default function HeroCarousel({ items, lang = 'nl', shortcuts = [] }: HeroCarouselProps) {
+export default function HeroCarousel({ items, lang = 'nl' }: HeroCarouselProps) {
   const [shuffledItems, setShuffledItems] = useState<CarouselItem[]>([]);
 
   useEffect(() => {
@@ -47,41 +46,13 @@ export default function HeroCarousel({ items, lang = 'nl', shortcuts = [] }: Her
           alt="ColorVaults 3D Vault Stage"
           className={styles.vaultImage}
         />
-        {/* Cinematic contrast gradient overlays */}
+        {/* Subtle bottom gradient so top COLORVAULTS letters POP out with zero obstruction */}
         <div className={styles.cinematicOverlay} />
         <div className={styles.vaultPortalAura} />
       </div>
 
-      {/* 1. TOP: Title, Subtitle & Trust Bar */}
-      <div className={styles.heroTopSection}>
-        <div className={styles.badgeWrapper}>
-          <span className={styles.freeBadge}>
-            ✨ {isEn ? '100% Free — High Resolution Printables' : '100% Gratis — Hoge Resolutie Printables'}
-          </span>
-        </div>
-
-        <h1 className={styles.heroTitle}>
-          {isEn ? (
-            <>Free Premium <span className={styles.titleGradient}>Coloring Pages</span></>
-          ) : (
-            <>Gratis Premium <span className={styles.titleGradient}>Kleurplaten</span></>
-          )}
-        </h1>
-
-        <p className={styles.heroSubtitle}>
-          {isEn
-            ? 'Thousands of high-quality printable coloring pages for toddlers, kids, teens, and adults. Free instant downloads — no account needed!'
-            : 'Duizenden gratis printbare kleurplaten voor peuters, kinderen, tieners en volwassenen. Direct gratis downloaden — geen account nodig!'}
-        </p>
-
-        {/* Trust Badges */}
-        <div className={styles.trustBadges}>
-          <span className={styles.trustPill}>⚡ {isEn ? '100% Free' : '100% Gratis'}</span>
-          <span className={styles.trustPill}>🖨️ A4 / Letter PDF</span>
-          <span className={styles.trustPill}>🎨 {isEn ? 'Color Online' : 'Online Inkleuren'}</span>
-          <span className={styles.trustPill}>🚀 {isEn ? 'Instant Access' : 'Geen Account'}</span>
-        </div>
-      </div>
+      {/* 1. TOP: Clean space for glowing 3D COLORVAULTS letters to shine */}
+      <div className={styles.vaultTopHeaderArea} aria-hidden="true" />
 
       {/* 2. MIDDLE: 3D Carousel Revolving in Center of Vault Door */}
       <div className={styles.portalStage}>
@@ -115,26 +86,38 @@ export default function HeroCarousel({ items, lang = 'nl', shortcuts = [] }: Her
         </div>
       </div>
 
-      {/* 3. BOTTOM: Popular Categories Bar inside bottom of photo */}
-      {shortcuts && shortcuts.length > 0 && (
-        <div className={styles.bottomCategoriesSection}>
-          <div className={styles.shortcutsHeader}>
-            <span className={styles.shortcutsTitle}>
-              🔥 {isEn ? 'Top Trending Albums & Categories' : 'Top Trending Albums & Categorieën'}
-            </span>
-            <span className={styles.shortcutsBadge}>
-              130+ {isEn ? 'Themes' : "Thema's"}
+      {/* 3. BOTTOM: Title, Subtitle & Trust Badges at Bottom of Photo */}
+      <div className={styles.heroBottomSection}>
+        <div className={styles.bottomFrostedCard}>
+          <div className={styles.badgeWrapper}>
+            <span className={styles.freeBadge}>
+              ✨ {isEn ? '100% Free — High Resolution Printables' : '100% Gratis — Hoge Resolutie Printables'}
             </span>
           </div>
-          <div className={styles.shortcutsGrid}>
-            {shortcuts.map((pill) => (
-              <Link key={pill.name} href={pill.href} className={styles.quickPill}>
-                {pill.name}
-              </Link>
-            ))}
+
+          <h1 className={styles.heroTitle}>
+            {isEn ? (
+              <>Free Premium <span className={styles.titleGradient}>Coloring Pages</span></>
+            ) : (
+              <>Gratis Premium <span className={styles.titleGradient}>Kleurplaten</span></>
+            )}
+          </h1>
+
+          <p className={styles.heroSubtitle}>
+            {isEn
+              ? 'Thousands of high-quality printable coloring pages for toddlers, kids, teens, and adults. Free instant downloads — no account needed!'
+              : 'Duizenden gratis printbare kleurplaten voor peuters, kinderen, tieners en volwassenen. Direct gratis downloaden — geen account nodig!'}
+          </p>
+
+          {/* Trust Badges */}
+          <div className={styles.trustBadges}>
+            <span className={styles.trustPill}>⚡ {isEn ? '100% Free' : '100% Gratis'}</span>
+            <span className={styles.trustPill}>🖨️ A4 / Letter PDF</span>
+            <span className={styles.trustPill}>🎨 {isEn ? 'Color Online' : 'Online Inkleuren'}</span>
+            <span className={styles.trustPill}>🚀 {isEn ? 'Instant Access' : 'Geen Account'}</span>
           </div>
         </div>
-      )}
+      </div>
     </div>
   );
 }

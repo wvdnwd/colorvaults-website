@@ -135,7 +135,7 @@ export default async function HomePage({ params }: { params: Promise<{ lang: str
         <div className={styles.blobCenter} aria-hidden="true" />
 
         <div className="container" style={{ maxWidth: '1200px' }}>
-          {/* 1. Full-Width Cinematic Widescreen Hero Banner with Integrated Title, 3D Vault Carousel & Bottom Categories */}
+          {/* 1. Full-Width Cinematic Widescreen Hero Banner with Open Top COLORVAULTS & Bottom Typography */}
           <HeroCarousel
             items={allThemes
               .filter(t => t.image && !t.image.includes('default.jpg'))
@@ -146,16 +146,34 @@ export default async function HomePage({ params }: { params: Promise<{ lang: str
                 href: `/${lang}/${t.parentHub}/${t.slug}`,
               }))}
             lang={lang}
-            shortcuts={quickShortcuts}
           />
 
-          {/* 2. Action CTAs */}
-          <div className={`${styles.heroCtasCenter} hero-anim-4`} style={{ marginTop: '1.5rem' }}>
+          {/* 2. Full-Width Popular Categories & Shortcuts Bar directly under the photo */}
+          <div className={`${styles.shortcutsSectionCenter} hero-anim-3`} style={{ marginTop: '0.5rem', marginBottom: '1.75rem' }}>
+            <div className={styles.shortcutsHeader}>
+              <span className={styles.shortcutsTitle}>
+                🔥 {isEn ? 'Top Trending Albums & Categories' : 'Top Trending Albums & Categorieën'}
+              </span>
+              <span className={styles.shortcutsBadge}>
+                130+ {isEn ? 'Themes' : "Thema's"}
+              </span>
+            </div>
+            <div className={styles.shortcutsGridCenter}>
+              {quickShortcuts.map((pill) => (
+                <Link key={pill.name} href={pill.href} className={styles.quickPill}>
+                  {pill.name}
+                </Link>
+              ))}
+            </div>
+          </div>
+
+          {/* 3. Action CTAs */}
+          <div className={`${styles.heroCtasCenter} hero-anim-4`}>
             <Link href={`/${lang}/search`} className="btn-primary" style={{ padding: '0.85rem 2.2rem', fontSize: '0.95rem' }}>
               {isEn ? 'Explore All Collections' : 'Alle Collecties Bekijken'}
             </Link>
             <Link href={`/${lang}/art-aesthetic/mandalas-sacred-geometry`} className="btn-secondary" style={{ padding: '0.85rem 2.2rem', fontSize: '0.95rem' }}>
-              {isEn ? 'Mandalas' : 'Mandala\'s'}
+              {isEn ? 'Mandalas' : "Mandala's"}
             </Link>
           </div>
         </div>
