@@ -135,7 +135,52 @@ export default async function HomePage({ params }: { params: Promise<{ lang: str
         <div className={styles.blobCenter} aria-hidden="true" />
 
         <div className="container" style={{ maxWidth: '1200px' }}>
-          {/* 1. Full-Width Pure 3D Vault Banner (Zero text obstruction, shifted-down carousel) */}
+          {/* 1. Compact Widescreen Header Card matching the Dark ColorVaults Banner (Above the Banner) */}
+          <div className={`${styles.heroHeaderCenter} hero-anim-1`} style={{
+            background: 'linear-gradient(135deg, #0F172A 0%, #1E293B 100%)',
+            border: '2px solid rgba(255, 255, 255, 0.3)',
+            borderRadius: '24px',
+            padding: '1.25rem 2rem 1.35rem',
+            textAlign: 'center',
+            marginBottom: '1.5rem',
+            boxShadow: '0 20px 50px -10px rgba(15, 23, 42, 0.45)',
+          }}>
+            <div style={{ display: 'inline-flex', alignItems: 'center', gap: '0.5rem', background: 'rgba(255, 107, 74, 0.22)', border: '1.5px solid rgba(255, 107, 74, 0.55)', borderRadius: '9999px', padding: '0.25rem 0.85rem', fontSize: '0.76rem', fontWeight: 800, color: '#FF9E7D', textTransform: 'uppercase', letterSpacing: '0.04em', marginBottom: '0.45rem' }}>
+              ✨ {isEn ? '100% Free — High Resolution Printables' : '100% Gratis — Hoge Resolutie Printables'}
+            </div>
+            
+            <h1 className="title-h1" style={{ margin: '0.2rem 0 0.35rem', fontSize: 'clamp(1.85rem, 3.2vw, 2.6rem)', fontWeight: 900, color: '#FFFFFF', textShadow: '0 2px 10px rgba(0,0,0,0.6)', lineHeight: 1.2 }}>
+              {isEn ? (
+                <>Free Premium <span style={{ background: 'linear-gradient(135deg, #FF6B35, #FFA07A)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent' }}>Coloring Pages</span></>
+              ) : (
+                <>Gratis Premium <span style={{ background: 'linear-gradient(135deg, #FF6B35, #FFA07A)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent' }}>Kleurplaten</span></>
+              )}
+            </h1>
+            
+            <p style={{ maxWidth: '680px', margin: '0 auto 0.85rem', color: '#E2E8F0', fontSize: '0.95rem', lineHeight: 1.5, textShadow: '0 1px 4px rgba(0,0,0,0.5)' }}>
+              {isEn
+                ? 'Thousands of high-quality printable coloring pages for toddlers, kids, teens, and adults. Free instant downloads — no account needed!'
+                : 'Duizenden gratis printbare kleurplaten voor peuters, kinderen, tieners en volwassenen. Direct gratis downloaden — geen account nodig!'}
+            </p>
+
+            {/* Trust Bar */}
+            <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '0.45rem', flexWrap: 'wrap' }}>
+              <span style={{ background: 'rgba(255, 255, 255, 0.12)', backdropFilter: 'blur(8px)', WebkitBackdropFilter: 'blur(8px)', border: '1px solid rgba(255, 255, 255, 0.2)', color: '#F8FAFC', padding: '0.25rem 0.65rem', borderRadius: '9999px', fontSize: '0.75rem', fontWeight: 700 }}>
+                ⚡ {isEn ? '100% Free' : '100% Gratis'}
+              </span>
+              <span style={{ background: 'rgba(255, 255, 255, 0.12)', backdropFilter: 'blur(8px)', WebkitBackdropFilter: 'blur(8px)', border: '1px solid rgba(255, 255, 255, 0.2)', color: '#F8FAFC', padding: '0.25rem 0.65rem', borderRadius: '9999px', fontSize: '0.75rem', fontWeight: 700 }}>
+                🖨️ A4 / Letter PDF
+              </span>
+              <span style={{ background: 'rgba(255, 255, 255, 0.12)', backdropFilter: 'blur(8px)', WebkitBackdropFilter: 'blur(8px)', border: '1px solid rgba(255, 255, 255, 0.2)', color: '#F8FAFC', padding: '0.25rem 0.65rem', borderRadius: '9999px', fontSize: '0.75rem', fontWeight: 700 }}>
+                🎨 {isEn ? 'Color Online' : 'Online Inkleuren'}
+              </span>
+              <span style={{ background: 'rgba(255, 255, 255, 0.12)', backdropFilter: 'blur(8px)', WebkitBackdropFilter: 'blur(8px)', border: '1px solid rgba(255, 255, 255, 0.2)', color: '#F8FAFC', padding: '0.25rem 0.65rem', borderRadius: '9999px', fontSize: '0.75rem', fontWeight: 700 }}>
+                🚀 {isEn ? 'Instant Access' : 'Geen Account'}
+              </span>
+            </div>
+          </div>
+
+          {/* 2. Full-Width Pure 3D Vault Banner (Zero text obstruction, shifted-down carousel) */}
           <HeroCarousel
             items={allThemes
               .filter(t => t.image && !t.image.includes('default.jpg'))
@@ -148,45 +193,7 @@ export default async function HomePage({ params }: { params: Promise<{ lang: str
             lang={lang}
           />
 
-          {/* 2. Text & Title Section Directly Under Photo */}
-          <div className={`${styles.heroHeaderCenter} hero-anim-2`} style={{
-            background: 'rgba(255, 255, 255, 0.95)',
-            border: '1.5px solid rgba(226, 232, 240, 0.9)',
-            borderRadius: '24px',
-            padding: '1.75rem 2rem',
-            textAlign: 'center',
-            marginBottom: '1.5rem',
-            boxShadow: '0 10px 30px rgba(0, 0, 0, 0.06)',
-          }}>
-            <span className={`${styles.heroBadge} hero-anim-0`} style={{ marginBottom: '0.65rem' }}>
-              ✨ {isEn ? '100% Free — High Resolution Printables' : '100% Gratis — Hoge Resolutie Printables'}
-            </span>
-            <h1 className={`${styles.heroTitle} hero-anim-1`} style={{ margin: '0.25rem 0 0.5rem', fontSize: 'clamp(2rem, 3.6vw, 2.9rem)', fontWeight: 900 }}>
-              {isEn ? (
-                <>Free Premium <span>Coloring Pages</span></>
-              ) : (
-                <>Gratis Premium <span>Kleurplaten</span></>
-              )}
-            </h1>
-            <p className={`${styles.heroSubtitle} hero-anim-2`} style={{ maxWidth: '680px', margin: '0 auto 1.15rem', color: '#475569', fontSize: '1rem', lineHeight: 1.6 }}>
-              {isEn
-                ? 'Thousands of high-quality printable coloring pages for toddlers, kids, teens, and adults. Free instant downloads — no account needed!'
-                : 'Duizenden gratis printbare kleurplaten voor peuters, kinderen, tieners en volwassenen. Direct gratis downloaden — geen account nodig!'}
-            </p>
-
-            {/* Trust Bar */}
-            <div className={`${styles.trustBar} hero-anim-2`}>
-              <span className={styles.trustItem}>⚡ {isEn ? '100% Free' : '100% Gratis'}</span>
-              <span className={styles.trustDot}>•</span>
-              <span className={styles.trustItem}>🖨️ {isEn ? 'A4 / Letter PDF' : 'A4 / Letter PDF'}</span>
-              <span className={styles.trustDot}>•</span>
-              <span className={styles.trustItem}>🎨 {isEn ? 'Color Online' : 'Online Inkleuren'}</span>
-              <span className={styles.trustDot}>•</span>
-              <span className={styles.trustItem}>🚀 {isEn ? 'Instant Access' : 'Geen Account'}</span>
-            </div>
-          </div>
-
-          {/* 2. Full-Width Popular Categories & Shortcuts Bar directly under the photo */}
+          {/* 3. Full-Width Popular Categories & Shortcuts Bar directly under the photo */}
           <div className={`${styles.shortcutsSectionCenter} hero-anim-3`} style={{ marginTop: '0.5rem', marginBottom: '1.75rem' }}>
             <div className={styles.shortcutsHeader}>
               <span className={styles.shortcutsTitle}>
@@ -205,7 +212,7 @@ export default async function HomePage({ params }: { params: Promise<{ lang: str
             </div>
           </div>
 
-          {/* 3. Action CTAs */}
+          {/* 4. Orange Action CTAs Bar at the bottom */}
           <div className={`${styles.heroCtasCenter} hero-anim-4`}>
             <Link href={`/${lang}/search`} className="btn-primary" style={{ padding: '0.85rem 2.2rem', fontSize: '0.95rem' }}>
               {isEn ? 'Explore All Collections' : 'Alle Collecties Bekijken'}
