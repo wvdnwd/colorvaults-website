@@ -79,6 +79,8 @@ export default async function RootLayout({
       <head>
         <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0" />
         <meta name="google-adsense-account" content="ca-pub-1184801748776428" />
+      </head>
+      <body>
         <Script
           async
           src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1184801748776428"
@@ -102,8 +104,6 @@ export default async function RootLayout({
             </Script>
           </>
         )}
-      </head>
-      <body>
 
         <a href="#main-content" className="skip-link">
           {lang === 'en' ? 'Skip to main content' : 'Naar hoofdinhoud springen'}
