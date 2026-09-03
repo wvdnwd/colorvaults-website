@@ -101,12 +101,12 @@ export default async function HomePage({ params }: { params: Promise<{ lang: str
   ];
 
   const quickSearchPills = [
-    { name: isEn ? 'Dinosaurs' : 'Dinosaurussen', href: `/${lang}/animals-wildlife/dinosaur-adventures` },
-    { name: isEn ? 'Unicorns' : 'Eenhoorns', href: `/${lang}/fantasy-fairytales/unicorns-pegasus` },
-    { name: 'Pokemon', href: `/${lang}/gaming-virtual-worlds/pokemon` },
-    { name: 'Disney', href: `/${lang}/disney-pixar` },
-    { name: 'SpongeBob', href: `/${lang}/kids-tv-shows/spongebob-squarepants` },
-    { name: isEn ? 'Mandalas' : 'Mandala\'s', href: `/${lang}/art-aesthetic/mandalas-sacred-geometry` }
+    { name: isEn ? '🦖 Dinosaurs' : '🦖 Dinosauriërs', href: `/${lang}/animals-wildlife/dinosaur-adventures` },
+    { name: isEn ? '🦄 Unicorns' : '🦄 Eenhoorns', href: `/${lang}/fantasy-fairytales/unicorns-pegasus` },
+    { name: '⚡ Pokémon', href: `/${lang}/gaming-virtual-worlds/pokemon` },
+    { name: '🏰 Disney', href: `/${lang}/disney-pixar` },
+    { name: '🍍 SpongeBob', href: `/${lang}/kids-tv-shows/spongebob-squarepants` },
+    { name: isEn ? '🧘 Mandalas' : '🧘 Mandala\'s', href: `/${lang}/art-aesthetic/mandalas-sacred-geometry` }
   ];
 
   return (
