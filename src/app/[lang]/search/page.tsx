@@ -89,12 +89,13 @@ export default async function SearchPage({
             items={[{ label: isEn ?'Search':'Zoeken'}]}
             lang={lang}
           />
-          <h1 className="title-h1"style={{ marginTop:'1rem'}}>
-            {isEn ?'Search & Filter Coloring Pages':'Kleurplaten Zoeken & Filteren'}
+          <h1 className="title-h1" style={{ marginTop: '1rem' }}>
+            {isEn ? 'Search & Filter Coloring Pages' : 'Kleurplaten Zoeken & Filteren'}
           </h1>
-          <p style={{ color:'var(--gray-600)', fontSize:'1.1rem', marginTop:'0.5rem', maxWidth:'640px'}}>
+          <p style={{ color: '#CBD5E1', fontSize: '1.1rem', marginTop: '0.5rem', maxWidth: '640px' }}>
             {isEn
-              ?'Filter thousands of free printable coloring pages by topic, difficulty level, and age group.':'Filter door duizenden gratis printbare kleurplaten op onderwerp, moeilijkheidsgraad en leeftijd.'}
+              ? 'Filter thousands of free printable coloring pages by topic, difficulty level, and age group.'
+              : 'Filter door duizenden gratis printbare kleurplaten op onderwerp, moeilijkheidsgraad en leeftijd.'}
           </p>
         </div>
       </div>

@@ -23,18 +23,47 @@ export default function FavoritesPage({ params }: { params: Promise<{ lang: stri
  </div>
 
  {favorites.length === 0 ? (
- <div style={{ textAlign:'center', padding:'4rem', background:'var(--surface)', borderRadius:'var(--radius-lg)'}}>
- <p style={{ fontSize:'3rem', marginBottom:'1rem'}}></p>
- <h2 className="title-h2"style={{ marginBottom:'1rem'}}>
- {isEn ?'No favorites yet':'Nog geen favorieten'}
- </h2>
- <p style={{ color:'var(--gray-500)', marginBottom:'2rem'}}>
- {isEn ?'Browse our collection and click the heart icon to save pages here.':'Bekijk onze collectie en klik op het hartje om pagina\'s hier op te slaan.'}
- </p>
- <Link href={`/${lang}`} className="btn-primary">
- {isEn ?'Browse Pages':'Bekijk Kleurplaten'}
- </Link>
- </div>
+ <div style={{
+      textAlign: 'center',
+      padding: '4rem 2rem',
+      background: 'var(--surface)',
+      borderRadius: '24px',
+      border: '1.5px solid var(--gray-200)',
+      maxWidth: '600px',
+      margin: '0 auto',
+      boxShadow: '0 10px 30px rgba(0,0,0,0.04)'
+    }}>
+      <div style={{
+        width: '80px',
+        height: '80px',
+        borderRadius: '50%',
+        background: 'rgba(239, 68, 68, 0.1)',
+        color: '#EF4444',
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center',
+        margin: '0 auto 1.5rem auto',
+        fontSize: '2.5rem'
+      }}>
+        ❤️
+      </div>
+      <h2 className="title-h2" style={{ marginBottom: '0.75rem', fontSize: '1.75rem' }}>
+        {isEn ? 'No favorites saved yet' : 'Nog geen favorieten bewaard'}
+      </h2>
+      <p style={{ color: 'var(--gray-500)', marginBottom: '2rem', lineHeight: 1.6, fontSize: '1rem' }}>
+        {isEn
+          ? 'Explore our coloring pages and tap the heart icon on any page to easily find and print your favorites here.'
+          : 'Ontdek onze kleurplaten en klik op het hartje om je favorieten op te slaan en later gemakkelijk te printen.'}
+      </p>
+      <div style={{ display: 'flex', gap: '0.75rem', justifyContent: 'center', flexWrap: 'wrap' }}>
+        <Link href={`/${lang}`} className="btn-primary">
+          {isEn ? 'Browse Coloring Pages' : 'Bekijk Kleurplaten'}
+        </Link>
+        <Link href={`/${lang}/search`} className="btn-secondary" style={{ display: 'inline-flex', alignItems: 'center' }}>
+          {isEn ? 'Search Themes' : 'Zoek Thema’s'}
+        </Link>
+      </div>
+    </div>
  ) : (
  <div className="grid-4">
  {favorites.map((fav, i) => (

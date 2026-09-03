@@ -10,11 +10,12 @@ import styles from'./page.module.css';
 import Link from'next/link';
 import MotionCard from'@/components/MotionCard';
 import AdSlot from'@/components/AdSlot';
-import ScrollReveal from'@/components/ScrollReveal';
-import HeroCarousel from'@/components/HeroCarousel';
-import CategoryExplorerTabs from'@/components/CategoryExplorerTabs';
-import FaqSection from'@/components/FaqSection';
-import React from'react';
+import ScrollReveal from '@/components/ScrollReveal';
+import HeroCarousel from '@/components/HeroCarousel';
+import HeaderSearchBar from '@/components/HeaderSearchBar';
+import CategoryExplorerTabs from '@/components/CategoryExplorerTabs';
+import FaqSection from '@/components/FaqSection';
+import React from 'react';
 
 export async function generateMetadata({ params }: { params: Promise<{ lang: string }> }) {
   const { lang } = await params;
@@ -92,24 +93,24 @@ export default async function HomePage({ params }: { params: Promise<{ lang: str
   ];
 
   const quickShortcuts = [
-    { name:'Paw Patrol', href:`/${lang}/kids-tv-shows/paw-patrol`},
-    { name:'Pokémon', href:`/${lang}/gaming-virtual-worlds/pokemon`},
-    { name:'Frozen (Elsa)', href:`/${lang}/disney-pixar/frozen`},
-    { name:'Spider-Man', href:`/${lang}/superheroes-comic-universes/marvel-spider-man`},
-    { name: isEn ?'Dinosaurs':'Dinosauriërs', href:`/${lang}/animals-wildlife/dinosaur-adventures`},
-    { name: isEn ?'Unicorns':'Eenhoorns', href:`/${lang}/fantasy-fairytales/unicorns-pegasus`},
-    { name:'Bluey', href:`/${lang}/kids-tv-shows/bluey`},
-    { name:'Super Mario', href:`/${lang}/gaming-virtual-worlds/super-mario`},
-    { name:'Minecraft', href:`/${lang}/gaming-virtual-worlds/minecraft-voxel-worlds`},
-    { name:'Sonic', href:`/${lang}/gaming-virtual-worlds/sonic-the-hedgehog`},
-    { name:'Stitch', href:`/${lang}/disney-pixar/lilo-stitch`},
-    { name: isEn ?'Mandalas':'Mandala\'s', href:`/${lang}/art-aesthetic/mandalas-sacred-geometry`},
-    { name: isEn ?'Puppies & Dogs':'Puppy\'s & Honden', href:`/${lang}/animals-wildlife/cute-puppies-dogs`},
-    { name: isEn ?'Kittens & Cats':'Kittens & Katten', href:`/${lang}/animals-wildlife/cute-kittens-cats`},
-    { name:'Dragon Ball', href:`/${lang}/anime-manga/dragonball`},
-    { name: isEn ?'Formula 1 & Racing':'Formule 1 & Racers', href:`/${lang}/vehicles-transportation/formula-1-race-cars`},
-    { name: isEn ?'2026 Calendars':'2026 Kalenders', href:`/${lang}/calendars`},
-    { name: isEn ?'How to Draw':'Leren Tekenen', href:`/${lang}/how-to-draw`},
+    { name: 'Paw Patrol', icon: '🐶', href: `/${lang}/kids-tv-shows/paw-patrol` },
+    { name: 'Pokémon', icon: '⚡', href: `/${lang}/gaming-virtual-worlds/pokemon` },
+    { name: 'Frozen (Elsa)', icon: '❄️', href: `/${lang}/disney-pixar/frozen` },
+    { name: 'Spider-Man', icon: '🕷️', href: `/${lang}/superheroes-comic-universes/marvel-spider-man` },
+    { name: isEn ? 'Dinosaurs' : 'Dinosauriërs', icon: '🦖', href: `/${lang}/animals-wildlife/dinosaur-adventures` },
+    { name: isEn ? 'Unicorns' : 'Eenhoorns', icon: '🦄', href: `/${lang}/fantasy-fairytales/unicorns-pegasus` },
+    { name: 'Bluey', icon: '🐾', href: `/${lang}/kids-tv-shows/bluey` },
+    { name: 'Super Mario', icon: '🍄', href: `/${lang}/gaming-virtual-worlds/super-mario` },
+    { name: 'Minecraft', icon: '⛏️', href: `/${lang}/gaming-virtual-worlds/minecraft-voxel-worlds` },
+    { name: 'Sonic', icon: '🦔', href: `/${lang}/gaming-virtual-worlds/sonic-the-hedgehog` },
+    { name: 'Stitch', icon: '🌺', href: `/${lang}/disney-pixar/lilo-stitch` },
+    { name: isEn ? 'Mandalas' : "Mandala's", icon: '🧘', href: `/${lang}/art-aesthetic/mandalas-sacred-geometry` },
+    { name: isEn ? 'Puppies & Dogs' : "Puppy's & Honden", icon: '🐕', href: `/${lang}/animals-wildlife/cute-puppies-dogs` },
+    { name: isEn ? 'Kittens & Cats' : 'Kittens & Katten', icon: '🐱', href: `/${lang}/animals-wildlife/cute-kittens-cats` },
+    { name: 'Dragon Ball', icon: '🥋', href: `/${lang}/anime-manga/dragonball` },
+    { name: isEn ? 'Formula 1 & Racing' : 'Formule 1 & Racers', icon: '🏎️', href: `/${lang}/vehicles-transportation/formula-1-race-cars` },
+    { name: isEn ? '2026 Calendars' : '2026 Kalenders', icon: '📅', href: `/${lang}/calendars` },
+    { name: isEn ? 'How to Draw' : 'Leren Tekenen', icon: '✏️', href: `/${lang}/how-to-draw` },
   ];
 
   return (
@@ -121,7 +122,58 @@ export default async function HomePage({ params }: { params: Promise<{ lang: str
         <div className={styles.blobCenter} aria-hidden="true"/>
 
         <div className="container" style={{ maxWidth: '1200px' }}>
-          {/* 1. Full-Width Pure 16:9 3D Vault Banner (Zero text obstruction, centered carousel) */}
+          {/* 1. Top Hero Intro & Live Search (Above Banner, Light & Welcoming) */}
+          <div className={styles.heroHeaderWrapper}>
+            <div className={styles.heroTopBadge}>
+              <span aria-hidden="true">✨</span>
+              <span>{isEn ? '100% Free — High Resolution Printables' : '100% Gratis — Hoge Resolutie Printables'}</span>
+            </div>
+            
+            <h1 className={styles.heroMainTitle}>
+              {isEn ? (
+                <>Free Premium <span className={styles.heroTitleGradient}>Coloring Pages</span></>
+              ) : (
+                <>Gratis Premium <span className={styles.heroTitleGradient}>Kleurplaten</span></>
+              )}
+            </h1>
+            
+            <p className={styles.heroMainSubtitle}>
+              {isEn
+                ? 'Thousands of high-quality printable coloring pages for toddlers, kids, teens, and adults. Free instant downloads — no account needed!'
+                : 'Duizenden gratis printbare kleurplaten voor peuters, kinderen, tieners en volwassenen. Direct gratis downloaden — geen account nodig!'}
+            </p>
+
+            {/* Central Hero Search Bar */}
+            <div className={styles.heroSearchWrapper}>
+              <HeaderSearchBar
+                lang={lang}
+                variant="hero"
+                placeholder={isEn ? 'Search 10,000+ coloring pages (e.g. Spider-Man, Unicorn, Elsa)...' : 'Zoek uit 10.000+ kleurplaten (bijv. Pokémon, Stitch, Dinos)...'}
+              />
+            </div>
+
+            {/* Feature & Trust Highlights */}
+            <div className={styles.heroFeaturesBar}>
+              <span className={styles.heroFeatureItem}>
+                <span aria-hidden="true">⚡</span>
+                {isEn ? 'Instant PDF Download' : 'Direct PDF Downloaden'}
+              </span>
+              <span className={styles.heroFeatureItem}>
+                <span aria-hidden="true">📄</span>
+                A4 / Letter Ready
+              </span>
+              <span className={styles.heroFeatureItem}>
+                <span aria-hidden="true">🎨</span>
+                {isEn ? 'Color Online Tool' : 'Online Inkleuren'}
+              </span>
+              <span className={styles.heroFeatureItem}>
+                <span aria-hidden="true">🛡️</span>
+                {isEn ? '100% Free Forever' : '100% Gratis Zonder Account'}
+              </span>
+            </div>
+          </div>
+
+          {/* 2. Full-Width Pure 16:9 3D Vault Banner (Zero text obstruction, centered carousel) */}
           <HeroCarousel
             items={allThemes
               .filter(t => t.image && !t.image.includes('default.jpg'))
@@ -134,201 +186,91 @@ export default async function HomePage({ params }: { params: Promise<{ lang: str
             lang={lang}
           />
 
-          {/* 2. Unified Master Console (Directly Under Banner, Matching Width) */}
-          <div className={`${styles.heroHeaderCenter} hero-anim-2`} style={{
-            background: 'linear-gradient(180deg, #111827 0%, #0F172A 100%)',
-            border: '1.5px solid rgba(255, 255, 255, 0.22)',
-            borderRadius: '26px',
-            padding: '2rem 2.25rem',
-            textAlign: 'center',
-            marginBottom: '1.75rem',
-            boxShadow: '0 25px 60px -15px rgba(15, 23, 42, 0.55), 0 0 35px rgba(255, 107, 74, 0.15)',
-            width: '100%',
-            position: 'relative',
-            overflow: 'hidden',
-          }}>
-            {/* Top Warm Ambient Glow */}
-            <div style={{
-              position: 'absolute',
-              top: '-50px',
-              left: '50%',
-              transform: 'translateX(-50%)',
-              width: '400px',
-              height: '100px',
-              background: 'radial-gradient(circle, rgba(255, 107, 74, 0.3) 0%, transparent 70%)',
-              pointerEvents: 'none',
-              filter: 'blur(25px)',
-            }} />
-
-            {/* Badge */}
-            <div style={{
-              display: 'inline-flex',
-              alignItems: 'center',
-              gap: '0.5rem',
-              background: 'rgba(255, 107, 74, 0.18)',
-              border: '1px solid rgba(255, 107, 74, 0.5)',
-              borderRadius: '9999px',
-              padding: '0.28rem 0.9rem',
-              fontSize: '0.78rem',
-              fontWeight: 800,
-              color: '#FFA07A',
-              textTransform: 'uppercase',
-              letterSpacing: '0.05em',
-              marginBottom: '0.65rem',
-            }}>
-              {isEn ? '100% Free — High Resolution Printables' : '100% Gratis — Hoge Resolutie Printables'}
-            </div>
-            
-            {/* Title */}
-            <h1 className="title-h1" style={{
-              margin: '0.15rem 0 0.45rem',
-              fontSize: 'clamp(2rem, 3.6vw, 2.9rem)',
-              fontWeight: 900,
-              color: '#FFFFFF',
-              textShadow: '0 3px 15px rgba(0,0,0,0.7)',
-              fontFamily: 'var(--font-display), "Fredoka", sans-serif',
-              letterSpacing: '-0.02em',
-              lineHeight: 1.15,
-            }}>
-              {isEn ? (
-                <>Free Premium <span style={{ background: 'linear-gradient(135deg, #FF6B35 0%, #FBBF24 100%)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent' }}>Coloring Pages</span></>
-              ) : (
-                <>Gratis Premium <span style={{ background: 'linear-gradient(135deg, #FF6B35 0%, #FBBF24 100%)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent' }}>Kleurplaten</span></>
-              )}
-            </h1>
-            
-            {/* Subtitle */}
-            <p style={{
-              maxWidth: '660px',
-              margin: '0 auto 1.15rem',
-              color: '#E2E8F0',
-              fontSize: '0.98rem',
-              lineHeight: 1.6,
-              textShadow: '0 1px 4px rgba(0,0,0,0.5)',
-            }}>
-              {isEn
-                ? 'Thousands of high-quality printable coloring pages for toddlers, kids, teens, and adults. Free instant downloads — no account needed!'
-                : 'Duizenden gratis printbare kleurplaten voor peuters, kinderen, tieners en volwassenen. Direct gratis downloaden — geen account nodig!'}
-            </p>
-
-            {/* Trust Pills */}
-            <div style={{
-              display: 'flex',
-              alignItems: 'center',
-              justifyContent: 'center',
-              gap: '0.5rem',
-              flexWrap: 'wrap',
-              marginBottom: '1.5rem',
-            }}>
-              <span style={{ background: 'rgba(255, 255, 255, 0.1)', backdropFilter: 'blur(8px)', WebkitBackdropFilter: 'blur(8px)', border: '1px solid rgba(255, 255, 255, 0.18)', color: '#F8FAFC', padding: '0.28rem 0.75rem', borderRadius: '9999px', fontSize: '0.78rem', fontWeight: 700 }}>
-                {isEn ? '100% Free' : '100% Gratis'}
-              </span>
-              <span style={{ background: 'rgba(255, 255, 255, 0.1)', backdropFilter: 'blur(8px)', WebkitBackdropFilter: 'blur(8px)', border: '1px solid rgba(255, 255, 255, 0.18)', color: '#F8FAFC', padding: '0.28rem 0.75rem', borderRadius: '9999px', fontSize: '0.78rem', fontWeight: 700 }}>
-                A4 / Letter PDF
-              </span>
-              <span style={{ background: 'rgba(255, 255, 255, 0.1)', backdropFilter: 'blur(8px)', WebkitBackdropFilter: 'blur(8px)', border: '1px solid rgba(255, 255, 255, 0.18)', color: '#F8FAFC', padding: '0.28rem 0.75rem', borderRadius: '9999px', fontSize: '0.78rem', fontWeight: 700 }}>
-                {isEn ? 'Color Online' : 'Online Inkleuren'}
-              </span>
-              <span style={{ background: 'rgba(255, 255, 255, 0.1)', backdropFilter: 'blur(8px)', WebkitBackdropFilter: 'blur(8px)', border: '1px solid rgba(255, 255, 255, 0.18)', color: '#F8FAFC', padding: '0.28rem 0.75rem', borderRadius: '9999px', fontSize: '0.78rem', fontWeight: 700 }}>
-                {isEn ? 'Instant Access' : 'Geen Account'}
-              </span>
+          {/* 3. Top Trending Albums & Categories Showcase Shelf (Below Banner, Light & Elegant) */}
+          {/* 3. Top Trending Albums & Categories Showcase Shelf (With 3D Art Studio Banner Backdrop) */}
+          <div className={styles.trendingShelf}>
+            {/* 3D Creative Studio Workbench Artwork Backdrop */}
+            <div className={styles.trendingBackdropWrapper} aria-hidden="true">
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
+                src="/images/trending-banner.jpg"
+                alt="3D Creative Craft Studio Workbench"
+                className={styles.trendingBackdropImg}
+              />
+              <div className={styles.trendingBackdropOverlay} />
             </div>
 
-            {/* Sleek Divider */}
-            <div style={{
-              height: '1px',
-              background: 'linear-gradient(90deg, transparent 0%, rgba(255, 255, 255, 0.18) 20%, rgba(255, 255, 255, 0.18) 80%, transparent 100%)',
-              margin: '0 auto 1.35rem',
-              maxWidth: '850px',
-            }} />
-
-            {/* Integrated Trending Categories */}
-            <div style={{ marginBottom: '1.75rem' }}>
-              <div style={{
-                display: 'flex',
-                alignItems: 'center',
-                justifyContent: 'space-between',
-                marginBottom: '0.85rem',
-                flexWrap: 'wrap',
-                gap: '0.5rem',
-                padding: '0 0.5rem',
-              }}>
-                <span style={{ fontSize: '0.92rem', fontWeight: 800, color: '#FFFFFF', letterSpacing: '-0.01em' }}>
-                  {isEn ? 'Top Trending Albums & Categories' : 'Top Trending Albums & Categorieën'}
-                </span>
-                <span style={{ fontSize: '0.76rem', fontWeight: 800, color: '#FFA07A', background: 'rgba(255, 107, 74, 0.18)', border: '1px solid rgba(255, 107, 74, 0.45)', padding: '0.2rem 0.75rem', borderRadius: '9999px' }}>
-                  130+ {isEn ? 'Themes' : "Thema's"}
-                </span>
+            {/* Interactive Content Layer */}
+            <div className={styles.trendingContentLayer}>
+              <div className={styles.trendingHeader}>
+                <div className={styles.trendingHeaderLeft}>
+                  <span className={styles.trendingFireIcon} aria-hidden="true">🔥</span>
+                  <div>
+                    <h3 className={styles.trendingTitle}>
+                      {isEn ? 'Top Trending Albums & Categories' : 'Populaire Albums & Categorieën'}
+                    </h3>
+                    <span className={styles.trendingSubtitle}>
+                      {isEn ? 'Direct access to the most loved coloring sheets' : 'Direct naar de meest gekleurde thema’s'}
+                    </span>
+                  </div>
+                </div>
+                <Link href="#categories" className={styles.trendingBadgeBtn}>
+                  <span className={styles.trendingBadgeDot} aria-hidden="true" />
+                  <span>{isEn ? '130+ Themes' : "130+ Thema's"}</span>
+                  <span aria-hidden="true" className={styles.trendingBadgeArrow}>→</span>
+                </Link>
               </div>
 
-              <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.5rem', justifyContent: 'center' }}>
+              <div className={styles.trendingPillsContainer}>
                 {quickShortcuts.map((pill) => (
                   <Link
                     key={pill.name}
                     href={pill.href}
-                    style={{
-                      background: 'rgba(255, 255, 255, 0.08)',
-                      backdropFilter: 'blur(8px)',
-                      WebkitBackdropFilter: 'blur(8px)',
-                      border: '1px solid rgba(255, 255, 255, 0.18)',
-                      color: '#F8FAFC',
-                      padding: '0.4rem 0.95rem',
-                      borderRadius: '9999px',
-                      fontSize: '0.84rem',
-                      fontWeight: 700,
-                      textDecoration: 'none',
-                      transition: 'all 0.2s ease',
-                      boxShadow: '0 2px 8px rgba(0,0,0,0.2)',
-                    }}
+                    className={styles.trendingPill}
                   >
-                    {pill.name}
+                    <span className={styles.pillIcon} aria-hidden="true">{pill.icon}</span>
+                    <span>{pill.name}</span>
                   </Link>
                 ))}
               </div>
-            </div>
 
-            {/* Embedded Action CTAs */}
-            <div style={{
-              display: 'flex',
-              alignItems: 'center',
-              justifyContent: 'center',
-              gap: '1rem',
-              flexWrap: 'wrap',
-              paddingTop: '0.25rem',
-            }}>
-              <Link
-                href={`/${lang}/search`}
-                className="btn-primary"
-                style={{
-                  padding: '0.85rem 2.4rem',
-                  fontSize: '0.95rem',
-                  fontWeight: 800,
-                  boxShadow: '0 8px 24px rgba(255, 107, 74, 0.4)',
-                }}
-              >
-                {isEn ? 'Explore All Collections' : 'Alle Collecties Bekijken'}
-              </Link>
-              <Link
-                href={`/${lang}/art-aesthetic/mandalas-sacred-geometry`}
-                className="btn-secondary"
-                style={{
-                  padding: '0.85rem 2.4rem',
-                  fontSize: '0.95rem',
-                  fontWeight: 800,
-                  background: 'rgba(255, 255, 255, 0.12)',
-                  borderColor: 'rgba(255, 255, 255, 0.25)',
-                  color: '#FFFFFF',
-                }}
-              >
-                {isEn ? 'Mandalas' : "Mandala's"}
-              </Link>
+              {/* Action CTAs */}
+              <div className={styles.trendingCtas}>
+                <Link
+                  href="#collections"
+                  className="btn-primary"
+                  style={{
+                    padding: '0.85rem 2.2rem',
+                    fontSize: '0.96rem',
+                    fontWeight: 800,
+                    boxShadow: '0 8px 24px rgba(255, 107, 74, 0.4)',
+                  }}
+                >
+                  {isEn ? '✨ Explore All Collections' : '✨ Alle Collecties Bekijken'}
+                </Link>
+                <Link
+                  href={`/${lang}/how-to-draw`}
+                  className="btn-secondary"
+                  style={{
+                    padding: '0.85rem 2rem',
+                    fontSize: '0.96rem',
+                    fontWeight: 800,
+                    background: 'rgba(255, 255, 255, 0.94)',
+                    backdropFilter: 'blur(8px)',
+                    borderColor: '#CBD5E1',
+                    color: '#0F172A',
+                  }}
+                >
+                  {isEn ? '✏️ Learn How to Draw' : '✏️ Stap-voor-stap Leren Tekenen'}
+                </Link>
+              </div>
             </div>
           </div>
         </div>
       </section>
 
       {/* ── Section 0: Explore All 10 Master Hubs Showcase ── */}
-      <section className="section"style={{ paddingTop:'2.5rem', paddingBottom:'1.5rem'}}>
+      <section id="collections" className="section" style={{ paddingTop: '2.5rem', paddingBottom: '1.5rem', scrollMarginTop: '80px' }}>
         <div className="container">
           <ScrollReveal className="section-header">
             <div>
@@ -472,7 +414,7 @@ export default async function HomePage({ params }: { params: Promise<{ lang: str
       </div>
 
       {/* ── Section 2: Interactive Category Explorer (Tabbed) ── */}
-      <section className="section-light">
+      <section id="categories" className="section-light" style={{ scrollMarginTop: '80px' }}>
         <div className="container">
           <ScrollReveal className="section-header">
             <div>

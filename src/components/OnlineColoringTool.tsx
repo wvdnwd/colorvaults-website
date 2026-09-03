@@ -395,25 +395,25 @@ export default function OnlineColoringTool({
  className={`${styles.toolBtn} ${activeTool ==='bucket'? styles.active :''}`}
  onClick={() => setActiveTool('bucket')}
  type="button">
- <span></span> {isEn ?'Fill Bucket':'Verfemmer'}
+ <span>🪣</span> {isEn ?'Fill Bucket':'Verfemmer'}
  </button>
  <button
  className={`${styles.toolBtn} ${activeTool ==='brush'? styles.active :''}`}
  onClick={() => setActiveTool('brush')}
  type="button">
- <span>️</span> {isEn ?'Brush':'Kwast'}
+ <span>🖌️</span> {isEn ?'Brush':'Kwast'}
  </button>
  <button
  className={`${styles.toolBtn} ${activeTool ==='eraser'? styles.active :''}`}
  onClick={() => setActiveTool('eraser')}
  type="button">
- <span></span> {isEn ?'Eraser':'Gum'}
+ <span>🧹</span> {isEn ?'Eraser':'Gum'}
  </button>
  <button
  className={styles.toolBtn}
  onClick={handleReset}
  type="button">
- <span></span> {isEn ?'Clear All':'Wissen'}
+ <span>🗑️</span> {isEn ?'Clear All':'Wissen'}
  </button>
  </div>
  </div>
@@ -513,7 +513,7 @@ export default function OnlineColoringTool({
  </button>
  </div>
  <button className={styles.btnExport} onClick={handleDownloadColored} type="button">
- <span></span> {isEn ?'Save Colored Image':'Gekleurde Kleurplaat Opslaan'}
+ <span>💾</span> {isEn ?'Save Colored Image':'Gekleurde Kleurplaat Opslaan'}
  </button>
  </div>
  </div>

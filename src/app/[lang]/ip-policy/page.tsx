@@ -17,9 +17,9 @@ export default async function IPPolicyPage({ params }: { params: Promise<{ lang:
  borderRadius:'var(--radius-lg)',
  padding:'1.5rem',
  }}>
- <h3 style={{ fontSize:'1.15rem', fontWeight: 800, color:'var(--primary)', marginBottom:'0.5rem'}}>
- ️ {isEn ?'Trademark & Non-Affiliation Disclaimer':'Handelsmerk & Niet-Gelieerdheid Verklaring'}
- </h3>
+  <h3 style={{ fontSize:'1.15rem', fontWeight: 800, color:'var(--primary)', marginBottom:'0.5rem'}}>
+    ⚖️ {isEn ?'Trademark & Non-Affiliation Disclaimer':'Handelsmerk & Niet-Gelieerdheid Verklaring'}
+  </h3>
  <p style={{ margin: 0, fontSize:'0.925rem'}}>
  {isEn
  ?'ColorVaults is an independent provider of free AI-assisted line art templates for personal and educational coloring. All trademarked brand names, franchise characters, and logos mentioned or referenced on this website (including but not limited to Disney, Paw Patrol, Pokémon, Bluey, Super Mario, etc.) belong to their respective copyright and trademark owners. ColorVaults is not affiliated with, sponsored by, or endorsed by any of these entities. Brand names and character references are used strictly for descriptive identification under nominative fair use.':'ColorVaults is een onafhankelijke aanbieder van gratis AI-gegenereerde lijntekening-sjablonen voor persoonlijk en educatief kleuren. Alle merknamen, franchisekarakters en logo\'s die op deze website worden genoemd of waarnaar wordt verwezen (waaronder Disney, Paw Patrol, Pokémon, Bluey, Super Mario, etc.) behoren toe aan hun respectievelijke auteursrecht- en merkhouders. ColorVaults is op geen enkele wijze gelieerd aan, gesponsord door of goedgekeurd door deze entiteiten. Merknamen en karakterreferenties worden uitsluitend gebruikt voor beschrijvende identificatie onder fair use.'}

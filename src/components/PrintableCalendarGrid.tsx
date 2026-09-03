@@ -80,7 +80,7 @@ export default function PrintableCalendarGrid({ months, year, isEn, lang }: Prin
             whiteSpace:'nowrap',
           }}
         >
-          <span></span>
+          <span>🖨️</span>
           <span>{isEn ?`Print Full ${year} Calendar (12 Pages)`:`Print Complete ${year} Kalender (12 Pagina's)`}</span>
         </button>
       </div>
@@ -217,7 +217,7 @@ export default function PrintableCalendarGrid({ months, year, isEn, lang }: Prin
                   transition:'background 0.2s',
                 }}
               >
-                <span></span>
+                <span>🖨️</span>
                 <span>{isEn ?`Print ${m.nameEn} Page`:`Print ${m.nameNl} Maandblad`}</span>
               </button>
             </div>

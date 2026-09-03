@@ -21,7 +21,7 @@ export default async function ContestPage({ params }: { params: Promise<{ lang: 
  <div className="page-hero">
  <div className="container">
  <h1 className="title-h1">{isEn ?'Coloring Contest':'Kleurwedstrijd'}</h1>
- <p style={{ color:'var(--gray-600)', fontSize:'1.1rem', marginTop:'0.5rem', maxWidth:'600px', lineHeight: 1.7 }}>
+ <p style={{ color: '#CBD5E1', fontSize:'1.1rem', marginTop:'0.5rem', maxWidth:'600px', lineHeight: 1.7 }}>
  {isEn
  ?'Show us your best coloring work and win amazing prizes!':'Laat ons je beste kleurwerk zien en win fantastische prijzen!'}
  </p>
@@ -39,10 +39,10 @@ export default async function ContestPage({ params }: { params: Promise<{ lang: 
 
  <div style={{ display:'grid', gridTemplateColumns:'repeat(auto-fit, minmax(280px, 1fr))', gap:'1.5rem', marginTop:'3rem'}}>
  {[
- { step:'1', icon:'', title: isEn ?'Download a Page':'Download een Kleurplaat', desc: isEn ?'Choose any free coloring page from our collection.':'Kies een gratis kleurplaat uit onze collectie.'},
- { step:'2', icon:'', title: isEn ?'Color It In':'Kleur Het In', desc: isEn ?'Use pencils, markers, or digital tools — get creative!':'Gebruik potloden, stiften of digitale tools — wees creatief!'},
- { step:'3', icon:'', title: isEn ?'Submit Your Entry':'Stuur Je Inzending', desc: isEn ?'Send us a photo via our contact page with"Contest"in the subject.':'Stuur ons een foto via onze contactpagina met"Wedstrijd"in het onderwerp.'},
- { step:'4', icon:'', title: isEn ?'Win Prizes!':'Win Prijzen!', desc: isEn ?'Our community votes and winners are announced monthly.':'Onze community stemt en winnaars worden maandelijks bekendgemaakt.'},
+ { step:'1', icon:'📥', title: isEn ?'Download a Page':'Download een Kleurplaat', desc: isEn ?'Choose any free coloring page from our collection.':'Kies een gratis kleurplaat uit onze collectie.'},
+ { step:'2', icon:'🎨', title: isEn ?'Color It In':'Kleur Het In', desc: isEn ?'Use pencils, markers, or digital tools — get creative!':'Gebruik potloden, stiften of digitale tools — wees creatief!'},
+ { step:'3', icon:'📸', title: isEn ?'Submit Your Entry':'Stuur Je Inzending', desc: isEn ?'Send us a photo via our contact page with"Contest"in the subject.':'Stuur ons een foto via onze contactpagina met"Wedstrijd"in het onderwerp.'},
+ { step:'4', icon:'🏆', title: isEn ?'Win Prizes!':'Win Prijzen!', desc: isEn ?'Our community votes and winners are announced monthly.':'Onze community stemt en winnaars worden maandelijks bekendgemaakt.'},
  ].map(item => (
  <div key={item.step} style={{ background:'white', borderRadius:'var(--radius-lg)', border:'1px solid var(--gray-200)', padding:'2rem', boxShadow:'var(--shadow-sm)'}}>
  <div style={{ fontSize:'2.5rem', marginBottom:'1rem'}}>{item.icon}</div>

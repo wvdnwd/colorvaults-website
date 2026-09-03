@@ -54,13 +54,14 @@ export default async function CalendarsPage({ params }: { params: Promise<{ lang
             {isEn ?'2026 & 2027 Annual Printables':'2026 & 2027 Jaaruitgaven'}
           </span>
 
-          <h1 className="title-h1"style={{ fontSize:'2.5rem', fontWeight: 900, lineHeight: 1.25, color:'#FFFFFF', textShadow:'0 2px 10px rgba(0,0,0,0.35)'}}>
-            {isEn ?'Free Printable Coloring Calendars':'Gratis Printbare Kleurkalenders'}
+          <h1 className="title-h1" style={{ fontSize: '2.5rem', fontWeight: 900, lineHeight: 1.25, color: '#0F172A' }}>
+            {isEn ? 'Free Printable Coloring Calendars' : 'Gratis Printbare Kleurkalenders'}
           </h1>
 
-          <p style={{ color:'#E2E8F0', fontSize:'1.1rem', marginTop:'0.8rem', lineHeight: 1.7, maxWidth:'680px', margin:'0.8rem auto 0'}}>
+          <p style={{ color: '#475569', fontSize: '1.1rem', marginTop: '0.8rem', lineHeight: 1.7, maxWidth: '680px', margin: '0.8rem auto 0' }}>
             {isEn
-              ?'Stay organized all year round with our full 12-month printable coloring calendar! Print the entire year in 1 click or download individual monthly planning sheets.':'Blijf het hele jaar door georganiseerd met onze complete 12-maanden kleurkalender! Print het hele jaar in 1 klik uit of print losse maandbladen voor thuis of in de klas.'}
+              ? 'Stay organized all year round with our full 12-month printable coloring calendar! Print the entire year in 1 click or download individual monthly planning sheets.'
+              : 'Blijf het hele jaar door georganiseerd met onze complete 12-maanden kleurkalender! Print het hele jaar in 1 klik uit of print losse maandbladen voor thuis of in de klas.'}
           </p>
         </div>
       </div>

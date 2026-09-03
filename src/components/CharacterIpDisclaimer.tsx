@@ -27,7 +27,9 @@ export default function CharacterIpDisclaimer({
       }}
     >
       <div style={{ display:'flex', alignItems:'center', gap:'0.45rem', marginBottom:'0.4rem', fontWeight: 800, color:'var(--gray-700, #334155)', textTransform:'uppercase', letterSpacing:'0.04em', fontSize:'0.75rem'}}>
-        <span></span>
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" style={{ color: 'var(--primary, #6366F1)', flexShrink: 0 }}>
+          <path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm-1 6h2v2h-2V7zm0 4h2v6h-2v-6z"/>
+        </svg>
         <span>{isEn ?'Intellectual Property & Fair-Use Disclaimer':'Auteursrecht & Fair-Use Disclaimer'}</span>
       </div>
       <p style={{ margin: 0 }}>

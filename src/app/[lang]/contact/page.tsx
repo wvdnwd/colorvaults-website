@@ -17,11 +17,11 @@ export default async function ContactPage({ params }: { params: Promise<{ lang: 
  const isEn = lang ==='en';
 
  const reasons = [
- { icon:'', label: isEn ?'Request a coloring page':'Kleurplaat aanvragen'},
- { icon:'', label: isEn ?'Report a broken link':'Kapotte link melden'},
- { icon:'', label: isEn ?'Business or licensing':'Zakelijk of licentie'},
- { icon:'️', label: isEn ?'Copyright / IP issue':'Auteursrecht / IP probleem'},
- { icon:'', label: isEn ?'General feedback':'Algemene feedback'},
+ { icon: '🎨', label: isEn ? 'Request a coloring page' : 'Kleurplaat aanvragen' },
+ { icon: '🔗', label: isEn ? 'Report a broken link' : 'Kapotte link melden' },
+ { icon: '💼', label: isEn ? 'Business or licensing' : 'Zakelijk of licentie' },
+ { icon: '⚖️', label: isEn ? 'Copyright / IP issue' : 'Auteursrecht / IP probleem' },
+ { icon: '💬', label: isEn ? 'General feedback' : 'Algemene feedback' },
  ];
 
  return (
@@ -29,7 +29,7 @@ export default async function ContactPage({ params }: { params: Promise<{ lang: 
  <div className="page-hero">
  <div className="container">
  <h1 className="title-h1">Contact</h1>
- <p style={{ color:'var(--gray-600)', fontSize:'1.1rem', marginTop:'0.5rem', maxWidth:'560px', lineHeight: 1.7 }}>
+ <p style={{ color: '#CBD5E1', fontSize:'1.1rem', marginTop:'0.5rem', maxWidth:'560px', lineHeight: 1.7 }}>
  {isEn
  ?"Have a question, suggestion, or just want to say hi? We'd love to hear from you!":'Heb je een vraag, suggestie, of wil je gewoon even hallo zeggen? We horen graag van je!'}
  </p>

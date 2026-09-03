@@ -171,3 +171,116 @@
     margin: 0.4rem 0;
   }
 }
+
+/* ── Hero Variant Styles ── */
+.heroContainer {
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  max-width: 680px;
+  margin: 0 auto;
+}
+
+.heroInputWrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  background: #FFFFFF;
+  border: 2px solid #E2E8F0;
+  border-radius: 9999px;
+  padding: 0.45rem 0.45rem 0.45rem 1.25rem;
+  box-shadow: 
+    0 12px 32px rgba(15, 23, 42, 0.08),
+    0 2px 6px rgba(15, 23, 42, 0.04);
+  transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.heroInputWrapper:hover {
+  border-color: #CBD5E1;
+  box-shadow: 
+    0 16px 36px rgba(15, 23, 42, 0.12),
+    0 4px 10px rgba(15, 23, 42, 0.06);
+}
+
+.heroInputWrapperFocused {
+  border-color: #FF6B35 !important;
+  background: #FFFFFF !important;
+  box-shadow: 0 0 0 4px rgba(255, 107, 74, 0.18), 0 20px 45px rgba(15, 23, 42, 0.12) !important;
+}
+
+.heroSearchIcon {
+  display: flex;
+  align-items: center;
+  margin-right: 0.75rem;
+  color: #FF6B35;
+  flex-shrink: 0;
+}
+
+.heroInput {
+  background: transparent;
+  border: none;
+  outline: none;
+  color: #0F172A;
+  font-size: 1rem;
+  font-weight: 600;
+  width: 100%;
+  padding: 0.35rem 0;
+}
+
+.heroInput::placeholder {
+  color: #94A3B8;
+  font-size: 0.92rem;
+  font-weight: 500;
+}
+
+.heroSubmitBtn {
+  display: flex;
+  align-items: center;
+  gap: 0.45rem;
+  background: linear-gradient(135deg, #FF6B35 0%, #FF8A00 100%);
+  color: #FFFFFF;
+  border: none;
+  border-radius: 9999px;
+  padding: 0.65rem 1.35rem;
+  font-size: 0.92rem;
+  font-weight: 800;
+  cursor: pointer;
+  box-shadow: 0 4px 14px rgba(255, 107, 74, 0.45);
+  transition: all 0.2s ease;
+  flex-shrink: 0;
+}
+
+.heroSubmitBtn:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 6px 20px rgba(255, 107, 74, 0.65);
+  filter: brightness(1.08);
+}
+
+.heroSubmitText {
+  display: inline;
+}
+
+@media (max-width: 640px) {
+  .heroInputWrapper {
+    padding: 0.35rem 0.35rem 0.35rem 0.95rem;
+  }
+  .heroSearchIcon {
+    margin-right: 0.5rem;
+  }
+  .heroInput {
+    font-size: 0.88rem;
+  }
+  .heroInput::placeholder {
+    font-size: 0.82rem;
+  }
+  .heroSubmitBtn {
+    padding: 0.55rem 0.85rem;
+    font-size: 0.82rem;
+  }
+  .heroSubmitText {
+    display: none;
+  }
+}
+

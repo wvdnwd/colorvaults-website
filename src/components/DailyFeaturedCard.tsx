@@ -42,7 +42,7 @@ export default function DailyFeaturedCard({ page, isEn, lang, themeTitle }: Dail
         {/* Left: Highlight Image */}
         <div className={styles.imageWrapper}>
           <div className={styles.dailyBadge}>
-            <span className={styles.star}></span>
+            <span className={styles.star}>⭐</span>
             <span>{isEn ?'Coloring Page of the Day':'Kleurplaat van de Dag'}</span>
           </div>
           <Link href={pageUrl} className={styles.imgLink}>
@@ -81,14 +81,14 @@ export default function DailyFeaturedCard({ page, isEn, lang, themeTitle }: Dail
               className={styles.btnColorOnline}
               onClick={() => setShowColorOnline(true)}
               type="button">
-              <span></span> {isEn ?'Color Online Studio':'Online Inkleuren'}
+              <span>🎨</span> {isEn ?'Color Online Studio':'Online Inkleuren'}
             </button>
 
             <button
               className={styles.btnPrint}
               onClick={() => setShowPreview(true)}
               type="button">
-              <span></span> {isEn ?'Print / Preview':'Afdrukken'}
+              <span>🖨️</span> {isEn ?'Print / Preview':'Afdrukken'}
             </button>
 
             <Link href={themeUrl} className={styles.btnTheme}>

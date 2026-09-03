@@ -16,7 +16,19 @@ interface SearchResult {
  tags?: string[];
 }
 
-export default function HeaderSearchBar({ lang }: { lang: string }) {
+export interface HeaderSearchBarProps {
+  lang: string;
+  variant?: 'header' | 'hero';
+  placeholder?: string;
+  className?: string;
+}
+
+export default function HeaderSearchBar({
+  lang,
+  variant = 'header',
+  placeholder,
+  className = '',
+}: HeaderSearchBarProps) {
  const router = useRouter();
  const [query, setQuery] = useState('');
  const [suggestions, setSuggestions] = useState<SearchResult[]>([]);
@@ -121,44 +133,67 @@ export default function HeaderSearchBar({ lang }: { lang: string }) {
  return'#34D399';
  };
 
- return (
- <div className={styles.container} ref={containerRef}>
- <form onSubmit={handleSubmit} style={{ width:'100%'}}>
-        <div className={`${styles.inputWrapper} ${isFocused ? styles.inputWrapperFocused :''}`}>
-          <span className={styles.searchIcon}>
-            <svg width="16"height="16"viewBox="0 0 24 24"fill="none"stroke="currentColor"strokeWidth="2.5"strokeLinecap="round"strokeLinejoin="round"aria-hidden="true">
-              <circle cx="11"cy="11"r="8"/>
-              <line x1="21"y1="21"x2="16.65"y2="16.65"/>
+  const isHero = variant === 'hero';
+  const defaultPlaceholder = isHero
+    ? (isEn ? 'Search 10,000+ free coloring pages (e.g. Spider-Man, Unicorn, Elsa)...' : 'Zoek uit 10.000+ kleurplaten (bijv. Pokémon, Stitch, Dinosauriërs)...')
+    : (isEn ? 'Search 10,000+ free coloring pages...' : 'Zoek 10.000+ gratis kleurplaten...');
+
+  return (
+    <div className={`${isHero ? styles.heroContainer : styles.container} ${className}`} ref={containerRef}>
+      <form onSubmit={handleSubmit} style={{ width: '100%' }}>
+        <div className={`
+          ${isHero ? styles.heroInputWrapper : styles.inputWrapper}
+          ${isFocused ? (isHero ? styles.heroInputWrapperFocused : styles.inputWrapperFocused) : ''}
+        `}>
+          <span className={isHero ? styles.heroSearchIcon : styles.searchIcon}>
+            <svg width={isHero ? "20" : "16"} height={isHero ? "20" : "16"} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+              <circle cx="11" cy="11" r="8" />
+              <line x1="21" y1="21" x2="16.65" y2="16.65" />
             </svg>
           </span>
           <input
-            type="search"value={query}
+            type="search"
+            value={query}
             onChange={e => setQuery(e.target.value)}
             onFocus={() => {
               setIsFocused(true);
               if (suggestions.length > 0) setIsOpen(true);
             }}
             onKeyDown={handleKeyDown}
-            placeholder={isEn ?'Search 9,000+ free coloring pages...':'Zoek 9.000+ gratis kleurplaten...'}
-            className={styles.input}
-            aria-label={isEn ?'Search coloring pages':'Zoek kleurplaten'}
+            placeholder={placeholder || defaultPlaceholder}
+            className={isHero ? styles.heroInput : styles.input}
+            aria-label={isEn ? 'Search coloring pages' : 'Zoek kleurplaten'}
           />
           {loading && <span className={styles.spinner} />}
           {query && !loading && (
             <button
-              type="button"className={styles.clearBtn}
+              type="button"
+              className={styles.clearBtn}
               onClick={() => {
                 setQuery('');
                 setSuggestions([]);
                 setIsOpen(false);
               }}
-              aria-label={isEn ?'Clear search':'Zoekopdracht wis'}
+              aria-label={isEn ? 'Clear search' : 'Zoekopdracht wissen'}
             >
               ✕
             </button>
           )}
+          {isHero && (
+            <button
+              type="submit"
+              className={styles.heroSubmitBtn}
+              aria-label={isEn ? 'Search' : 'Zoeken'}
+            >
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+                <circle cx="11" cy="11" r="8" />
+                <line x1="21" y1="21" x2="16.65" y2="16.65" />
+              </svg>
+              <span className={styles.heroSubmitText}>{isEn ? 'Search' : 'Zoeken'}</span>
+            </button>
+          )}
         </div>
- </form>
+      </form>
 
  {isOpen && suggestions.length > 0 && (
  <div className={styles.dropdown} role="listbox">

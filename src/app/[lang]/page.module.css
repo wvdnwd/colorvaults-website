@@ -622,3 +622,326 @@
   position: relative;
   z-index: 5;
 }
+
+/* ── Hero Top Header & Search (Above Banner) ────────────────────────────── */
+.heroHeaderWrapper {
+  text-align: center;
+  max-width: 960px;
+  margin: 0 auto 2.25rem;
+  position: relative;
+  z-index: 5;
+}
+
+@media (max-width: 768px) {
+  .heroHeaderWrapper {
+    margin-bottom: 1.5rem;
+    padding: 0 0.5rem;
+  }
+}
+
+.heroTopBadge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: rgba(255, 107, 74, 0.1);
+  border: 1.5px solid rgba(255, 107, 74, 0.35);
+  border-radius: 9999px;
+  padding: 0.35rem 1.05rem;
+  font-size: 0.82rem;
+  font-weight: 800;
+  color: #EA580C;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 0.85rem;
+  box-shadow: 0 4px 14px rgba(255, 107, 74, 0.12);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.heroTopBadge:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 6px 18px rgba(255, 107, 74, 0.2);
+}
+
+.heroMainTitle {
+  font-size: clamp(2.1rem, 4.5vw, 3.6rem);
+  font-weight: 900;
+  color: #0F172A;
+  font-family: var(--font-display), 'Fredoka', sans-serif;
+  letter-spacing: -0.03em;
+  line-height: 1.15;
+  margin: 0.1rem 0 0.65rem;
+}
+
+.heroTitleGradient {
+  background: linear-gradient(135deg, #FF6B35 0%, #FF8A00 50%, #F59E0B 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  display: inline-block;
+}
+
+.heroMainSubtitle {
+  max-width: 680px;
+  margin: 0 auto 1.5rem;
+  color: #475569;
+  font-size: clamp(0.98rem, 1.8vw, 1.15rem);
+  line-height: 1.65;
+  font-weight: 500;
+}
+
+.heroSearchWrapper {
+  width: 100%;
+  max-width: 680px;
+  margin: 0 auto 1.25rem;
+  position: relative;
+  z-index: 10;
+}
+
+.heroFeaturesBar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem 0.85rem;
+  flex-wrap: wrap;
+  position: relative;
+  z-index: 2;
+}
+
+.heroFeatureItem {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  color: #334155;
+  font-size: 0.82rem;
+  font-weight: 700;
+  background: rgba(255, 255, 255, 0.88);
+  border: 1px solid #E2E8F0;
+  padding: 0.3rem 0.75rem;
+  border-radius: 9999px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.03);
+  backdrop-filter: blur(8px);
+}
+
+/* ── Light & Airy Trending Showcase Shelf (With 3D Art Studio Banner Backdrop) ── */
+.trendingShelf {
+  position: relative;
+  width: 100%;
+  max-width: 1200px;
+  margin: 2rem auto 2.5rem;
+  border-radius: 28px;
+  overflow: hidden;
+  box-shadow: 
+    0 25px 50px -12px rgba(15, 23, 42, 0.16),
+    0 0 0 2px rgba(255, 255, 255, 0.8),
+    0 0 35px rgba(255, 107, 74, 0.12);
+  z-index: 5;
+}
+
+@media (max-width: 768px) {
+  .trendingShelf {
+    border-radius: 22px;
+    margin: 1.5rem auto 2rem;
+  }
+}
+
+.trendingBackdropWrapper {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  overflow: hidden;
+  background: #FEF3C7;
+}
+
+.trendingBackdropImg {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center bottom;
+  display: block;
+  transform: scale(1.02);
+  filter: contrast(1.04) brightness(0.98);
+}
+
+.trendingBackdropOverlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    180deg, 
+    rgba(255, 255, 255, 0.86) 0%, 
+    rgba(255, 255, 255, 0.74) 30%, 
+    rgba(255, 255, 255, 0.76) 70%, 
+    rgba(255, 255, 255, 0.92) 100%
+  );
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+}
+
+.trendingContentLayer {
+  position: relative;
+  z-index: 2;
+  padding: 2.25rem 2.25rem 2rem;
+  text-align: center;
+}
+
+@media (max-width: 768px) {
+  .trendingContentLayer {
+    padding: 1.4rem 1.1rem 1.35rem;
+  }
+}
+
+.trendingHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1.25rem;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+}
+
+.trendingHeaderLeft {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  text-align: left;
+}
+
+.trendingFireIcon {
+  font-size: 1.6rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  border-radius: 14px;
+  background: #FFF7ED;
+  border: 1px solid #FFEDD5;
+  box-shadow: 0 4px 12px rgba(249, 115, 22, 0.12);
+  flex-shrink: 0;
+}
+
+.trendingTitle {
+  font-size: 1.12rem;
+  font-weight: 800;
+  color: #0F172A;
+  font-family: var(--font-display), 'Fredoka', sans-serif;
+  letter-spacing: -0.01em;
+  margin: 0;
+  line-height: 1.25;
+}
+
+.trendingSubtitle {
+  font-size: 0.82rem;
+  color: #64748B;
+  font-weight: 500;
+  display: block;
+  margin-top: 0.15rem;
+}
+
+.trendingBadgeBtn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  font-size: 0.84rem;
+  font-weight: 800;
+  color: #EA580C;
+  text-decoration: none;
+  background: #FFF7ED;
+  border: 1.5px solid #FFEDD5;
+  padding: 0.4rem 0.95rem;
+  border-radius: 9999px;
+  box-shadow: 0 2px 8px rgba(249, 115, 22, 0.08);
+  transition: all 0.2s ease;
+  white-space: nowrap;
+}
+
+.trendingBadgeBtn:hover {
+  color: #C2410C;
+  background: #FFEDD5;
+  border-color: #FDBA74;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 14px rgba(249, 115, 22, 0.16);
+}
+
+.trendingBadgeDot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #F97316;
+  box-shadow: 0 0 6px #F97316;
+}
+
+.trendingBadgeArrow {
+  font-size: 0.95rem;
+  transition: transform 0.2s ease;
+}
+
+.trendingBadgeBtn:hover .trendingBadgeArrow {
+  transform: translateX(2px);
+}
+
+.trendingPillsContainer {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.55rem;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 1.75rem;
+}
+
+@media (max-width: 768px) {
+  .trendingPillsContainer {
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    justify-content: flex-start;
+    padding: 0.25rem 0.25rem 0.75rem;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    margin: 0 -0.5rem 1.25rem;
+  }
+  .trendingPillsContainer::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+.trendingPill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  background: rgba(255, 255, 255, 0.92);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border: 1.5px solid rgba(226, 232, 240, 0.95);
+  color: #0F172A;
+  padding: 0.45rem 0.95rem;
+  border-radius: 9999px;
+  font-size: 0.86rem;
+  font-weight: 700;
+  text-decoration: none;
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.trendingPill:hover {
+  background: #FFF7ED;
+  border-color: #F97316;
+  color: #EA580C;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 18px rgba(249, 115, 22, 0.22);
+}
+
+.pillIcon {
+  font-size: 1rem;
+  display: inline-block;
+  transform: translateY(-0.5px);
+}
+
+.trendingCtas {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+  padding-top: 1rem;
+  border-top: 1px solid rgba(0, 0, 0, 0.06);
+}

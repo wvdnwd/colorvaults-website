@@ -22,10 +22,10 @@ export default async function AboutPage({ params }: { params: Promise<{ lang: st
  const isEn = lang ==='en';
 
  const values = [
- { icon:'', title: isEn ?'Always Free':'Altijd Gratis', desc: isEn ?'We believe creativity should never come with a price tag. Every single page on ColorVaults is and will always be free to download.':'Wij geloven dat creativiteit nooit een prijskaartje mag hebben. Elke pagina op ColorVaults is en blijft gratis te downloaden.'},
- { icon:'', title: isEn ?'Premium Quality':'Premium Kwaliteit', desc: isEn ?'All our coloring pages are carefully crafted and optimized for home printing — sharp, clean lines and perfect proportions.':'Al onze kleurplaten zijn zorgvuldig gemaakt en geoptimaliseerd voor thuis afdrukken — scherpe, schone lijnen en perfecte verhoudingen.'},
- { icon:'', title: isEn ?'For Everyone':'Voor Iedereen', desc: isEn ?'From toddlers taking their first creative steps, to adults seeking relaxation — we have something for every age and interest.':'Van peuters die hun eerste creatieve stappen zetten, tot volwassenen die ontspanning zoeken — we hebben iets voor elke leeftijd en interesse.'},
- { icon:'', title: isEn ?'Dutch Roots':'Nederlandse Roots', desc: isEn ?'ColorVaults was born in the Netherlands and serves both Dutch and international audiences with a fully bilingual experience.':'ColorVaults is geboren in Nederland en bedient zowel het Nederlandse als het internationale publiek met een volledig tweetalige ervaring.'},
+ { icon: '🎁', title: isEn ? 'Always Free' : 'Altijd Gratis', desc: isEn ? 'We believe creativity should never come with a price tag. Every single page on ColorVaults is and will always be free to download.' : 'Wij geloven dat creativiteit nooit een prijskaartje mag hebben. Elke pagina op ColorVaults is en blijft gratis te downloaden.' },
+ { icon: '⭐', title: isEn ? 'Premium Quality' : 'Premium Kwaliteit', desc: isEn ? 'All our coloring pages are carefully crafted and optimized for home printing — sharp, clean lines and perfect proportions.' : 'Al onze kleurplaten zijn zorgvuldig gemaakt en geoptimaliseerd voor thuis afdrukken — scherpe, schone lijnen en perfecte verhoudingen.' },
+ { icon: '👨‍👩‍👧‍👦', title: isEn ? 'For Everyone' : 'Voor Iedereen', desc: isEn ? 'From toddlers taking their first creative steps, to adults seeking relaxation — we have something for every age and interest.' : 'Van peuters die hun eerste creatieve stappen zetten, tot volwassenen die ontspanning zoeken — we hebben iets voor elke leeftijd en interesse.' },
+ { icon: '🇳🇱', title: isEn ? 'Dutch Roots' : 'Nederlandse Roots', desc: isEn ? 'ColorVaults was born in the Netherlands and serves both Dutch and international audiences with a fully bilingual experience.' : 'ColorVaults is geboren in Nederland en bedient zowel het Nederlandse als het internationale publiek met een volledig tweetalige ervaring.' },
  ];
 
  return (
@@ -33,7 +33,7 @@ export default async function AboutPage({ params }: { params: Promise<{ lang: st
  <div className="page-hero">
  <div className="container">
  <h1 className="title-h1">{isEn ?'About ColorVaults':'Over ColorVaults'}</h1>
- <p style={{ color:'var(--gray-600)', fontSize:'1.15rem', marginTop:'0.75rem', maxWidth:'640px', lineHeight: 1.7 }}>
+ <p style={{ color: '#CBD5E1', fontSize:'1.15rem', marginTop:'0.75rem', maxWidth:'640px', lineHeight: 1.7 }}>
  {isEn
  ?'We are on a mission to make high-quality coloring pages free and accessible to everyone — in any language, for any age.':'Wij zijn op een missie om hoogwaardige kleurplaten gratis en toegankelijk te maken voor iedereen — in elke taal, voor elke leeftijd.'}
  </p>
@@ -44,7 +44,7 @@ export default async function AboutPage({ params }: { params: Promise<{ lang: st
  {/* Story */}
  <div style={{ display:'grid', gridTemplateColumns:'1fr 1fr', gap:'5rem', alignItems:'center', marginBottom:'5rem'}}>
  <div>
- <span className="badge"> {isEn ?'Our Story':'Ons Verhaal'}</span>
+ <span className="badge">📖 {isEn ?'Our Story':'Ons Verhaal'}</span>
  <h2 className="title-h2"style={{ marginTop:'0.75rem'}}>{isEn ?'Why We Started':'Waarom We Begonnen'}</h2>
  <p style={{ color:'var(--gray-600)', lineHeight: 1.8, marginBottom:'1rem'}}>
  {isEn
@@ -56,7 +56,7 @@ export default async function AboutPage({ params }: { params: Promise<{ lang: st
  </p>
  </div>
  <div style={{ background:'linear-gradient(135deg, var(--primary-light), #fce7f3)', borderRadius:'var(--radius-xl)', padding:'3rem', textAlign:'center'}}>
- <div style={{ fontSize:'5rem', marginBottom:'1rem'}}></div>
+ <div style={{ fontSize:'5rem', marginBottom:'1rem'}}>🎨</div>
  <p style={{ fontSize:'3rem', fontWeight: 900, color:'var(--primary)', letterSpacing:'-0.03em'}}>10,000+</p>
  <p style={{ color:'var(--gray-600)', fontWeight: 600 }}>{isEn ?'Free coloring pages and counting':'Gratis kleurplaten en groeiend'}</p>
  </div>

@@ -52,13 +52,14 @@ export default async function HowToDrawHubPage({ params }: { params: Promise<{ l
             {isEn ?'Drawing Academy':'Tekenacademie voor Kinderen'}
           </span>
 
-          <h1 className="title-h1"style={{ fontSize:'2.5rem', fontWeight: 900, lineHeight: 1.25, color:'#FFFFFF', textShadow:'0 2px 10px rgba(0,0,0,0.35)'}}>
-            {isEn ?'Step-by-Step Drawing Tutorials':'Stap-voor-Stap Leren Tekenen'}
+          <h1 className="title-h1" style={{ fontSize: '2.5rem', fontWeight: 900, lineHeight: 1.25, color: '#0F172A' }}>
+            {isEn ? 'Step-by-Step Drawing Tutorials' : 'Stap-voor-Stap Leren Tekenen'}
           </h1>
 
-          <p style={{ color:'#E2E8F0', fontSize:'1.1rem', marginTop:'0.8rem', lineHeight: 1.7, maxWidth:'680px', margin:'0.8rem auto 0'}}>
+          <p style={{ color: '#475569', fontSize: '1.1rem', marginTop: '0.8rem', lineHeight: 1.7, maxWidth: '680px', margin: '0.8rem auto 0' }}>
             {isEn
-              ?'Master the art of drawing in 6 fun and easy steps! Perfect for kids, parents, and teachers looking for printable drawing worksheets.':'Word een echte kunstenaar in 6 simpele stappen! Ideaal voor kinderen, ouders en scholen inclusief printbare oefenbladen.'}
+              ? 'Master the art of drawing in 6 fun and easy steps! Perfect for kids, parents, and teachers looking for printable drawing worksheets.'
+              : 'Word een echte kunstenaar in 6 simpele stappen! Ideaal voor kinderen, ouders en scholen inclusief printbare oefenbladen.'}
           </p>
         </div>
       </div>

@@ -198,39 +198,35 @@ export default function Navbar({ lang }: { lang: string }) {
           })}
         </nav>
 
-        {/* Language Switcher, Bundle Basket & Mobile Hamburger */}
+        {/* Language Switcher, Bundle Basket & Mobile Controls */}
         <div className={styles.headerRight}>
+          {/* Quick Mobile Search Button */}
+          <Link
+            href={`/${lang}/search`}
+            className={styles.mobileSearchBtn}
+            aria-label={isEn ? 'Search coloring pages' : 'Zoek kleurplaten'}
+          >
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+              <circle cx="11" cy="11" r="8" />
+              <line x1="21" y1="21" x2="16.65" y2="16.65" />
+            </svg>
+          </Link>
+
           {/* Bundle Basket Button */}
           <button
-            type="button"onClick={() => setDrawerOpen(true)}
-            aria-label={isEn ?'Open coloring bundle':'Open kleurboek bundel'}
-            style={{
-              display:'inline-flex',
-              alignItems:'center',
-              gap:'0.35rem',
-              background: totalSelected > 0 ?'linear-gradient(135deg, #6366F1, #4F46E5)':'rgba(255, 255, 255, 0.95)',
-              color: totalSelected > 0 ?'#FFFFFF':'#0F172A',
-              border: totalSelected > 0 ?'none':'1.5px solid #CBD5E1',
-              borderRadius:'9999px',
-              padding:'0.35rem 0.8rem',
-              fontSize:'0.8rem',
-              fontWeight: 800,
-              cursor:'pointer',
-              boxShadow: totalSelected > 0 ?'0 4px 12px rgba(99, 102, 241, 0.4)':'0 2px 5px rgba(0,0,0,0.04)',
-              transition:'all 0.2s ease',
-            }}
+            type="button"
+            onClick={() => setDrawerOpen(true)}
+            aria-label={isEn ? 'Open coloring bundle' : 'Open kleurboek bundel'}
+            className={`${styles.bundleBtn} ${totalSelected > 0 ? styles.bundleBtnActive : ''}`}
           >
-            <span style={{ fontSize:'0.95rem'}}></span>
-            <span>{isEn ?'Bundle':'Bundel'}</span>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+              <path d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H20v20H6.5a2.5 2.5 0 0 1-2.5-2.5Z"/>
+              <path d="M6 6h10"/>
+              <path d="M6 10h10"/>
+            </svg>
+            <span className={styles.bundleBtnText}>{isEn ? 'Bundle' : 'Bundel'}</span>
             {totalSelected > 0 && (
-              <span style={{
-                background:'#EF4444',
-                color:'#FFFFFF',
-                borderRadius:'9999px',
-                padding:'0.05rem 0.45rem',
-                fontSize:'0.7rem',
-                fontWeight: 900,
-              }}>
+              <span className={styles.bundleBadge}>
                 {totalSelected}
               </span>
             )}
@@ -239,23 +235,25 @@ export default function Navbar({ lang }: { lang: string }) {
           <div className={styles.langSwitcher}>
             <Link
               href={getLangLink('en')}
-              className={`${styles.langBtn} ${isEn ? styles.langActive :''}`}
+              className={`${styles.langBtn} ${isEn ? styles.langActive : ''}`}
               aria-label="Switch to English">
               EN
             </Link>
             <span className={styles.langDivider}>/</span>
             <Link
               href={getLangLink('nl')}
-              className={`${styles.langBtn} ${isNl ? styles.langActive :''}`}
+              className={`${styles.langBtn} ${isNl ? styles.langActive : ''}`}
               aria-label="Schakel naar Nederlands">
               NL
             </Link>
           </div>
 
           <button
-            type="button"className={styles.hamburgerBtn}
+            type="button"
+            className={styles.hamburgerBtn}
             onClick={() => setMobileOpen(!mobileOpen)}
-            aria-label="Toggle navigation menu"aria-expanded={mobileOpen}
+            aria-label="Toggle navigation menu"
+            aria-expanded={mobileOpen}
           >
             <span className={styles.hamburgerLine}></span>
             <span className={styles.hamburgerLine}></span>

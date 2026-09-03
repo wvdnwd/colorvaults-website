@@ -190,7 +190,7 @@ export default function CategoriesManager({ categories }: { categories: Category
                           className={styles.btnDismiss}
                           style={{ textDecoration:'none', display:'inline-flex', alignItems:'center', gap:'0.3rem'}}
                         >
-                          <span></span> Bekijk Platen
+                          <span>🎨</span> Bekijk Platen
                         </Link>
                         <a
                           href={`/en/${cat.parentHub}/${cat.slug}`}

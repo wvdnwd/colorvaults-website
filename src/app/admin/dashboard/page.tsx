@@ -181,7 +181,7 @@ export default async function DashboardPage() {
                         className={styles.btnDismiss}
                         style={{ textDecoration:'none', display:'inline-flex', alignItems:'center', gap:'0.3rem'}}
                       >
-                        <span></span> Beheer
+                        <span>⚙️</span> Beheer
                       </Link>
                       <a
                         href={`/en/${t.parentHub}/${t.slug}`}

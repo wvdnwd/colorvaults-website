@@ -18,7 +18,7 @@ export default async function LicensingPage({ params }: { params: Promise<{ lang
  {
  name: isEn ?'Personal Use':'Persoonlijk Gebruik',
  price: isEn ?'Free':'Gratis',
- icon:'',
+ icon:'🏠',
  features: [
  isEn ?'Unlimited personal downloads':'Onbeperkte persoonlijke downloads',
  isEn ?'Home printing':'Thuis afdrukken',
@@ -30,7 +30,7 @@ export default async function LicensingPage({ params }: { params: Promise<{ lang
  {
  name: isEn ?'Commercial License':'Commerciële Licentie',
  price: isEn ?'Contact Us':'Neem Contact Op',
- icon:'',
+ icon:'💼',
  features: [
  isEn ?'Use in products for sale':'Gebruik in producten te koop',
  isEn ?'Printing & distribution':'Drukwerk & verspreiding',
@@ -46,7 +46,7 @@ export default async function LicensingPage({ params }: { params: Promise<{ lang
  <div className="page-hero">
  <div className="container">
  <h1 className="title-h1">{isEn ?'Licensing':'Licentie'}</h1>
- <p style={{ color:'var(--gray-600)', fontSize:'1.1rem', marginTop:'0.5rem', maxWidth:'600px', lineHeight: 1.7 }}>
+ <p style={{ color:'#CBD5E1', fontSize:'1.1rem', marginTop:'0.5rem', maxWidth:'600px', lineHeight: 1.7 }}>
  {isEn
  ?'All ColorVaults pages are free for personal use. For commercial use, please read our licensing terms.':'Alle ColorVaults kleurplaten zijn gratis voor persoonlijk gebruik. Voor commercieel gebruik, lees onze licentievoorwaarden.'}
  </p>

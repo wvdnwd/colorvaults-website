@@ -6,10 +6,11 @@ import Navbar from"@/components/Navbar";
 import Footer from"@/components/Footer";
 import CookieBanner from"@/components/CookieBanner";
 import BackToTop from"@/components/BackToTop";
-import ThemeProvider from"@/components/ThemeProvider";
-import { FavoritesProvider } from"@/context/FavoritesContext";
-import { safeJsonLd } from"@/lib/api";
-import PageTransition from"@/components/PageTransition";
+import ThemeProvider from "@/components/ThemeProvider";
+import { FavoritesProvider } from "@/context/FavoritesContext";
+import { ColoringBookProvider } from "@/context/ColoringBookContext";
+import { safeJsonLd } from "@/lib/api";
+import PageTransition from "@/components/PageTransition";
 import StickyBottomAd from"@/components/StickyBottomAd";
 
 export const viewport: Viewport = {
@@ -114,14 +115,16 @@ export default async function RootLayout({
         />
         <ThemeProvider>
           <FavoritesProvider>
-            <div className="layout-container">
-              <Navbar lang={lang} />
-              <main id="main-content"><PageTransition>{children}</PageTransition></main>
-              <Footer lang={lang} />
-              <CookieBanner lang={lang} />
-              <BackToTop />
-              <StickyBottomAd isEn={lang ==='en'} />
-            </div>
+            <ColoringBookProvider>
+              <div className="layout-container">
+                <Navbar lang={lang} />
+                <main id="main-content"><PageTransition>{children}</PageTransition></main>
+                <Footer lang={lang} />
+                <CookieBanner lang={lang} />
+                <BackToTop />
+                <StickyBottomAd isEn={lang ==='en'} />
+              </div>
+            </ColoringBookProvider>
           </FavoritesProvider>
         </ThemeProvider>
       </body>

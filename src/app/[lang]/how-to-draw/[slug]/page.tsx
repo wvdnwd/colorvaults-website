@@ -60,21 +60,21 @@ export default async function HowToDrawLessonPage({
 
           <div style={{ fontSize:'3.5rem', marginBottom:'0.5rem'}}>{lesson.icon}</div>
 
-          <h1 className="title-h1"style={{ fontSize:'2.5rem', fontWeight: 900, lineHeight: 1.25, color:'#FFFFFF', textShadow:'0 2px 10px rgba(0,0,0,0.35)'}}>
+          <h1 className="title-h1" style={{ fontSize: '2.5rem', fontWeight: 900, lineHeight: 1.25, color: '#0F172A' }}>
             {isEn ? lesson.titleEn : lesson.titleNl}
           </h1>
 
-          <div style={{ display:'flex', alignItems:'center', justifyContent:'center', gap:'0.75rem', marginTop:'0.75rem', fontSize:'0.875rem', color:'#CBD5E1', fontWeight: 600, flexWrap:'wrap'}}>
-            <span>⏱️ {lesson.timeMinutes} {isEn ?'minutes':'minuten'}</span>
+          <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '0.75rem', marginTop: '0.75rem', fontSize: '0.875rem', color: '#475569', fontWeight: 600, flexWrap: 'wrap' }}>
+            <span>⏱️ {lesson.timeMinutes} {isEn ? 'minutes' : 'minuten'}</span>
             <span>•</span>
-            <span>📊 {isEn ?'Difficulty: Easy':'Niveau: Makkelijk'}</span>
+            <span>📊 {isEn ? 'Difficulty: Easy' : 'Niveau: Makkelijk'}</span>
             <span>•</span>
-            <span className="badge"style={{ background:'rgba(34, 197, 94, 0.25)', color:'#4ADE80', borderColor:'rgba(74, 222, 128, 0.4)'}}>
-              ✓ 6 {isEn ?'Steps Guide':'Stappen Gids'}
+            <span className="badge" style={{ background: 'rgba(34, 197, 94, 0.15)', color: '#15803D', borderColor: 'rgba(34, 197, 94, 0.3)' }}>
+              ✓ 6 {isEn ? 'Steps Guide' : 'Stappen Gids'}
             </span>
           </div>
 
-          <p style={{ color:'#E2E8F0', fontSize:'1.05rem', marginTop:'1rem', lineHeight: 1.7, maxWidth:'640px', margin:'1rem auto 0'}}>
+          <p style={{ color: '#475569', fontSize: '1.05rem', marginTop: '1rem', lineHeight: 1.7, maxWidth: '640px', margin: '1rem auto 0' }}>
             {isEn ? lesson.descEn : lesson.descNl}
           </p>
 
