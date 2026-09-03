@@ -135,17 +135,17 @@ export default async function HomePage({ params }: { params: Promise<{ lang: str
         <div className={styles.blobCenter} aria-hidden="true" />
 
         <div className="container">
-          <div className={styles.heroLayout}>
-            {/* LEFT: text content */}
-            <div className={styles.heroContent}>
+          <div className={styles.heroCenterLayout}>
+            {/* 1. TOP: Title, Subtitle & Trust Bar */}
+            <div className={styles.heroHeaderCenter}>
               <span className={`${styles.heroBadge} hero-anim-0`}>
                 {isEn ? '100% Free — High Resolution Printables' : '100% Gratis — Hoge Resolutie Printables'}
               </span>
               <h1 className={`${styles.heroTitle} hero-anim-1`}>
                 {isEn ? (
-                  <>Free Premium<br /><span>Coloring Pages</span></>
+                  <>Free Premium <span>Coloring Pages</span></>
                 ) : (
-                  <>Gratis Premium<br /><span>Kleurplaten</span></>
+                  <>Gratis Premium <span>Kleurplaten</span></>
                 )}
               </h1>
               <p className={`${styles.heroSubtitle} hero-anim-2`}>
@@ -164,38 +164,10 @@ export default async function HomePage({ params }: { params: Promise<{ lang: str
                 <span className={styles.trustDot}>•</span>
                 <span className={styles.trustItem}>🚀 {isEn ? 'Instant Access' : 'Geen Account'}</span>
               </div>
-
-              {/* Rich Popular Shortcuts Glassmorphism Card */}
-              <div className={`${styles.shortcutsSection} hero-anim-3`}>
-                <div className={styles.shortcutsHeader}>
-                  <span className={styles.shortcutsTitle}>
-                    🔥 {isEn ? 'Top Trending Albums & Categories' : 'Top Trending Albums & Categorieën'}
-                  </span>
-                  <span className={styles.shortcutsBadge}>
-                    130+ {isEn ? 'Themes' : 'Thema\'s'}
-                  </span>
-                </div>
-                <div className={styles.shortcutsGrid}>
-                  {quickShortcuts.map((pill) => (
-                    <Link key={pill.name} href={pill.href} className={styles.quickPill}>
-                      {pill.name}
-                    </Link>
-                  ))}
-                </div>
-              </div>
-
-              <div className={`${styles.heroCtas} hero-anim-4`}>
-                <Link href={`/${lang}/search`} className="btn-primary">
-                  {isEn ? 'Explore All Collections' : 'Alle Collecties Bekijken'}
-                </Link>
-                <Link href={`/${lang}/art-aesthetic/mandalas-sacred-geometry`} className="btn-secondary">
-                  {isEn ? 'Mandalas' : 'Mandala\'s'}
-                </Link>
-              </div>
             </div>
 
-            {/* RIGHT: 3D rotating carousel of full-color 8K Theme Albums */}
-            <div className={`${styles.heroVisual} hero-anim-1`}>
+            {/* 2. CENTER: 3D Grand Bank Vault with Revolving Carousel in Opening */}
+            <div className={`${styles.heroVaultCenter} hero-anim-1`}>
               <HeroCarousel
                 items={allThemes
                   .filter(t => t.image && !t.image.includes('default.jpg'))
@@ -207,6 +179,35 @@ export default async function HomePage({ params }: { params: Promise<{ lang: str
                   }))}
                 lang={lang}
               />
+            </div>
+
+            {/* 3. BOTTOM: All Popular Categories across Full Width */}
+            <div className={`${styles.shortcutsSectionCenter} hero-anim-3`}>
+              <div className={styles.shortcutsHeader}>
+                <span className={styles.shortcutsTitle}>
+                  🔥 {isEn ? 'Top Trending Albums & Categories' : 'Top Trending Albums & Categorieën'}
+                </span>
+                <span className={styles.shortcutsBadge}>
+                  130+ {isEn ? 'Themes' : 'Thema\'s'}
+                </span>
+              </div>
+              <div className={styles.shortcutsGridCenter}>
+                {quickShortcuts.map((pill) => (
+                  <Link key={pill.name} href={pill.href} className={styles.quickPill}>
+                    {pill.name}
+                  </Link>
+                ))}
+              </div>
+            </div>
+
+            {/* 4. Action CTAs */}
+            <div className={`${styles.heroCtasCenter} hero-anim-4`}>
+              <Link href={`/${lang}/search`} className="btn-primary" style={{ padding: '0.85rem 2rem' }}>
+                {isEn ? 'Explore All Collections' : 'Alle Collecties Bekijken'}
+              </Link>
+              <Link href={`/${lang}/art-aesthetic/mandalas-sacred-geometry`} className="btn-secondary" style={{ padding: '0.85rem 2rem' }}>
+                {isEn ? 'Mandalas' : 'Mandala\'s'}
+              </Link>
             </div>
           </div>
         </div>
