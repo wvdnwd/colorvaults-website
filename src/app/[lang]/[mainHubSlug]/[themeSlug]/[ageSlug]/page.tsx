@@ -83,137 +83,162 @@ export default async function AgePage({
 
   return (
     <>
-      {/* ── Cinematic Full-Width Hero Header ── */}
+            {/* ── Cinematic Full-Width Age Header with 100% Uncropped Artwork ── */}
       <div className="page-hero" data-hub={mainHubSlug} style={{ padding: '2rem 0 2.5rem' }}>
-        <div className="container">
+        <div className="container" style={{ maxWidth: '1200px' }}>
           {/* Full-Width Cinematic Theme Master Banner */}
           <div style={{
             position: 'relative',
             borderRadius: '28px',
             overflow: 'hidden',
-            minHeight: '420px',
-            boxShadow: '0 25px 60px -15px rgba(15, 23, 42, 0.35)',
-            border: '2px solid rgba(255, 255, 255, 0.4)',
-            display: 'flex',
-            alignItems: 'flex-end',
-            background: '#0F172A',
+            boxShadow: '0 25px 60px -15px rgba(15, 23, 42, 0.45)',
+            border: '2px solid rgba(255, 255, 255, 0.3)',
+            background: 'linear-gradient(135deg, #0F172A 0%, #1E293B 100%)',
           }}>
-            {/* Background Image (Widescreen 8K Artwork) */}
+            {/* Ambient Blurred Color Glow Backdrop */}
             {theme.image && (
               /* eslint-disable-next-line @next/next/no-img-element */
               <img
                 src={theme.image}
-                alt={`${theme.title} Artwork`}
+                alt=""
+                aria-hidden="true"
                 style={{
                   position: 'absolute',
-                  inset: 0,
-                  width: '100%',
-                  height: '100%',
+                  inset: '-30px',
+                  width: 'calc(100% + 60px)',
+                  height: 'calc(100% + 60px)',
                   objectFit: 'cover',
-                  objectPosition: 'center 25%',
-                  filter: 'contrast(1.05) brightness(0.9)',
+                  filter: 'blur(50px) brightness(0.35)',
+                  opacity: 0.65,
+                  pointerEvents: 'none',
                 }}
               />
             )}
 
-            {/* Cinematic Gradient Overlays for High Legibility */}
+            {/* Dark Vignette Overlay for High Contrast */}
             <div style={{
               position: 'absolute',
               inset: 0,
-              background: 'linear-gradient(180deg, rgba(15, 23, 42, 0.25) 0%, rgba(15, 23, 42, 0.65) 45%, rgba(15, 23, 42, 0.96) 100%), linear-gradient(90deg, rgba(15, 23, 42, 0.9) 0%, rgba(15, 23, 42, 0.5) 60%, transparent 100%)',
+              background: 'linear-gradient(135deg, rgba(15, 23, 42, 0.9) 0%, rgba(15, 23, 42, 0.6) 100%)',
               pointerEvents: 'none',
             }} />
 
-            {/* Fan-Art Badge Top Right */}
-            <div style={{
-              position: 'absolute',
-              top: '16px',
-              right: '16px',
-              zIndex: 5,
-              background: 'rgba(15, 23, 42, 0.85)',
-              backdropFilter: 'blur(8px)',
-              WebkitBackdropFilter: 'blur(8px)',
-              color: '#F8FAFC',
-              borderRadius: '9999px',
-              padding: '0.35rem 0.85rem',
-              fontSize: '0.75rem',
-              fontWeight: 800,
-              border: '1px solid rgba(255, 255, 255, 0.25)',
-              boxShadow: '0 4px 12px rgba(0,0,0,0.3)',
-            }}>
-              🎨 {isEn ? 'Fan-Art Coloring Edition' : 'Fan-Art & Kleurplaat Editie'}
-            </div>
-
-            {/* Overlayed Text Content */}
+            {/* Foreground Content */}
             <div style={{
               position: 'relative',
               zIndex: 3,
-              padding: '2.5rem 2rem 2rem',
-              maxWidth: '860px',
-              textAlign: 'left',
-              width: '100%',
+              padding: '2.5rem 2.25rem',
+              display: 'flex',
+              flexWrap: 'wrap',
+              alignItems: 'center',
+              justifyContent: 'space-between',
+              gap: '2.5rem',
             }}>
-              {/* Breadcrumbs with Frosted Glass Backdrop */}
-              <div style={{
-                display: 'inline-block',
-                background: 'rgba(15, 23, 42, 0.65)',
-                backdropFilter: 'blur(8px)',
-                WebkitBackdropFilter: 'blur(8px)',
-                padding: '0.25rem 0.75rem',
-                borderRadius: '9999px',
-                border: '1px solid rgba(255, 255, 255, 0.2)',
-                marginBottom: '0.75rem',
-              }}>
-                <Breadcrumbs
-                  items={[
-                    { label: hub.title, href: `/${lang}/${hub.slug}` },
-                    { label: theme.title, href: `/${lang}/${hub.slug}/${theme.slug}` },
-                    { label: difficultyLabel.label }
-                  ]}
-                  lang={lang}
-                />
+              {/* Left Column: Breadcrumbs, Title, Intro & Badges */}
+              <div style={{ flex: '1 1 540px', textAlign: 'left', minWidth: '280px' }}>
+                <div style={{
+                  display: 'inline-block',
+                  background: 'rgba(15, 23, 42, 0.75)',
+                  backdropFilter: 'blur(8px)',
+                  WebkitBackdropFilter: 'blur(8px)',
+                  padding: '0.25rem 0.75rem',
+                  borderRadius: '9999px',
+                  border: '1px solid rgba(255, 255, 255, 0.25)',
+                  marginBottom: '0.85rem',
+                }}>
+                  <Breadcrumbs
+                    items={[
+                      { label: hub.title, href: `/${lang}/${hub.slug}` },
+                      { label: theme.title, href: `/${lang}/${hub.slug}/${theme.slug}` },
+                      { label: difficultyLabel.label }
+                    ]}
+                    lang={lang}
+                  />
+                </div>
+
+                <h1 className="title-h1" style={{
+                  color: '#FFFFFF',
+                  fontSize: 'clamp(2rem, 3.8vw, 3.2rem)',
+                  fontWeight: 900,
+                  textShadow: '0 4px 20px rgba(0, 0, 0, 0.8)',
+                  margin: '0.25rem 0 0.6rem',
+                  fontFamily: 'var(--font-display), "Fredoka", sans-serif',
+                  letterSpacing: '-0.02em',
+                  lineHeight: 1.15,
+                }}>
+                  {theme.title} — {difficultyLabel.label}
+                </h1>
+
+                <p style={{
+                  color: '#F1F5F9',
+                  fontSize: '1.025rem',
+                  lineHeight: 1.65,
+                  textShadow: '0 2px 10px rgba(0, 0, 0, 0.8)',
+                  maxWidth: '680px',
+                  margin: '0.5rem 0 1.35rem',
+                }}>
+                  {agePage.seoText}
+                </p>
+
+                <div style={{ display: 'flex', gap: '0.5rem', alignItems: 'center', flexWrap: 'wrap' }}>
+                  <span className="badge" style={{ background: '#FF6B35', color: '#FFFFFF', borderColor: '#FF6B35', fontWeight: 800 }}>
+                    ✓ {allColoringPages.length} {isEn ? 'Printable Pages' : 'Printbare Kleurplaten'}
+                  </span>
+                  <span className="badge" style={{ background: 'rgba(255, 255, 255, 0.95)', color: '#065F46', borderColor: '#A7F3D0', fontWeight: 700 }}>
+                    ⚡ 100% {isEn ? 'Free' : 'Gratis'}
+                  </span>
+                  <span className="badge" style={{ background: 'rgba(255, 255, 255, 0.95)', color: '#1E40AF', borderColor: '#BFDBFE', fontWeight: 700 }}>
+                    🖨️ A4 / Letter PDF
+                  </span>
+                  <span className="badge" style={{ background: 'rgba(255, 255, 255, 0.95)', color: '#6B21A8', borderColor: '#E9D5FF', fontWeight: 700 }}>
+                    🎨 {isEn ? 'Color Online' : 'Online Inkleuren'}
+                  </span>
+                </div>
               </div>
 
-              {/* Radiant White Heading */}
-              <h1 className="title-h1" style={{
-                color: '#FFFFFF',
-                fontSize: 'clamp(2rem, 4vw, 3.2rem)',
-                fontWeight: 900,
-                textShadow: '0 4px 20px rgba(0, 0, 0, 0.7)',
-                margin: '0.25rem 0 0.5rem',
-                fontFamily: 'var(--font-display), "Fredoka", sans-serif',
-                letterSpacing: '-0.02em',
-              }}>
-                {theme.title} — {difficultyLabel.label}
-              </h1>
-
-              {/* Subtitle / Description */}
-              <p style={{
-                color: '#F1F5F9',
-                fontSize: '1.025rem',
-                lineHeight: 1.65,
-                textShadow: '0 2px 10px rgba(0, 0, 0, 0.7)',
-                maxWidth: '720px',
-                margin: '0.5rem 0 1.25rem',
-              }}>
-                {agePage.seoText}
-              </p>
-
-              {/* Badges */}
-              <div style={{ display: 'flex', gap: '0.5rem', alignItems: 'center', flexWrap: 'wrap' }}>
-                <span className="badge" style={{ background: '#FF6B35', color: '#FFFFFF', borderColor: '#FF6B35', fontWeight: 800 }}>
-                  ✓ {allColoringPages.length} {isEn ? 'Printable Pages' : 'Printbare Kleurplaten'}
-                </span>
-                <span className="badge" style={{ background: 'rgba(255, 255, 255, 0.95)', color: '#065F46', borderColor: '#A7F3D0', fontWeight: 700 }}>
-                  ⚡ 100% {isEn ? 'Free' : 'Gratis'}
-                </span>
-                <span className="badge" style={{ background: 'rgba(255, 255, 255, 0.95)', color: '#1E40AF', borderColor: '#BFDBFE', fontWeight: 700 }}>
-                  🖨️ A4 / Letter PDF
-                </span>
-                <span className="badge" style={{ background: 'rgba(255, 255, 255, 0.95)', color: '#6B21A8', borderColor: '#E9D5FF', fontWeight: 700 }}>
-                  🎨 {isEn ? 'Color Online' : 'Online Inkleuren'}
-                </span>
-              </div>
+              {/* Right Column: 100% Complete Uncropped Artwork Card */}
+              {theme.image && (
+                <div style={{
+                  flex: '0 0 auto',
+                  margin: '0 auto',
+                  position: 'relative',
+                }}>
+                  <div style={{
+                    position: 'absolute',
+                    top: '12px',
+                    right: '12px',
+                    zIndex: 5,
+                    background: 'rgba(15, 23, 42, 0.85)',
+                    backdropFilter: 'blur(8px)',
+                    WebkitBackdropFilter: 'blur(8px)',
+                    color: '#F8FAFC',
+                    borderRadius: '9999px',
+                    padding: '0.25rem 0.75rem',
+                    fontSize: '0.72rem',
+                    fontWeight: 800,
+                    border: '1px solid rgba(255, 255, 255, 0.3)',
+                    boxShadow: '0 2px 8px rgba(0,0,0,0.35)',
+                  }}>
+                    🎨 {isEn ? 'Fan-Art Edition' : 'Fan-Art Editie'}
+                  </div>
+                  {/* eslint-disable-next-line @next/next/no-img-element */}
+                  <img
+                    src={theme.image}
+                    alt={`${theme.title} Artwork`}
+                    style={{
+                      maxHeight: '340px',
+                      maxWidth: '100%',
+                      width: 'auto',
+                      height: 'auto',
+                      objectFit: 'contain',
+                      borderRadius: '20px',
+                      border: '3px solid rgba(255, 255, 255, 0.9)',
+                      boxShadow: '0 16px 40px rgba(0, 0, 0, 0.55), 0 0 20px rgba(255, 107, 74, 0.25)',
+                      display: 'block',
+                    }}
+                  />
+                </div>
+              )}
             </div>
           </div>
         </div>
