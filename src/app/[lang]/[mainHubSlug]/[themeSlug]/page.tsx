@@ -19,9 +19,11 @@ import React from'react';
 const PER_PAGE = 24;
 
 export async function generateStaticParams() {
-  const themesEn = getThemes('en').map(t => ({ lang:'en', mainHubSlug: t.parentHub, themeSlug: t.slug }));
-  const themesNl = getThemes('nl').map(t => ({ lang:'nl', mainHubSlug: t.parentHub, themeSlug: t.slug }));
-  return [...themesEn, ...themesNl];
+  const themesEn = getThemes('en').map(t => ({ lang: 'en', mainHubSlug: t.parentHub, themeSlug: t.slug }));
+  const themesNl = getThemes('nl').map(t => ({ lang: 'nl', mainHubSlug: t.parentHub, themeSlug: t.slug }));
+  const themesDe = getThemes('de').map(t => ({ lang: 'de', mainHubSlug: t.parentHub, themeSlug: t.slug }));
+  const themesFr = getThemes('fr').map(t => ({ lang: 'fr', mainHubSlug: t.parentHub, themeSlug: t.slug }));
+  return [...themesEn, ...themesNl, ...themesDe, ...themesFr];
 }
 
 export async function generateMetadata({
@@ -33,15 +35,19 @@ export async function generateMetadata({
   const theme = getThemeBySlug(lang, mainHubSlug, themeSlug);
   if (!theme) return {};
   const ogImageUrl = theme.image
-    ?`/api/og?title=${encodeURIComponent(theme.title +'Coloring Pages')}&image=${encodeURIComponent(theme.image)}`:'/images/banner.jpg';
+    ? `/api/og?title=${encodeURIComponent(theme.title + ' Coloring Pages')}&image=${encodeURIComponent(theme.image)}`
+    : '/images/banner.jpg';
   return {
-    title:`${theme.title} Coloring Pages (Free PDF Printables) | ColorVaults`,
+    title: `${theme.title} Coloring Pages (Free PDF Printables) | ColorVaults`,
     description: theme.description,
     alternates: {
-      canonical:`/${lang}/${mainHubSlug}/${theme.slug}`,
+      canonical: `/${lang}/${mainHubSlug}/${theme.slug}`,
       languages: {
-        en:`/en/${mainHubSlug}/${theme.slug}`,
-        nl:`/nl/${mainHubSlug}/${theme.slug}`,'x-default':`/en/${mainHubSlug}/${theme.slug}`,
+        en: `/en/${mainHubSlug}/${theme.slug}`,
+        nl: `/nl/${mainHubSlug}/${theme.slug}`,
+        de: `/de/${mainHubSlug}/${theme.slug}`,
+        fr: `/fr/${mainHubSlug}/${theme.slug}`,
+        'x-default': `/en/${mainHubSlug}/${theme.slug}`,
       },
     },
     openGraph: {

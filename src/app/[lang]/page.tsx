@@ -19,18 +19,43 @@ import React from 'react';
 
 export async function generateMetadata({ params }: { params: Promise<{ lang: string }> }) {
   const { lang } = await params;
-  const isEn = lang ==='en';
+  const isEn = lang === 'en';
+  const isDe = lang === 'de';
+  const isFr = lang === 'fr';
+
+  const title = isDe
+    ? 'ColorVaults | Kostenlose Premium Malvorlagen & Ausmalbilder'
+    : isFr
+    ? 'ColorVaults | Coloriages Gratuits à Imprimer de Haute Qualité'
+    : isEn
+    ? 'ColorVaults | Free Premium Coloring Pages'
+    : 'ColorVaults | Gratis Premium Kleurplaten';
+
+  const description = isDe
+    ? 'Tausende hochwertige kostenlose Malvorlagen und Ausmalbilder für Kinder, Kleinkinder und Erwachsene. 100% kostenlos zum Ausdrucken als PDF.'
+    : isFr
+    ? 'Téléchargez des milliers de coloriages gratuits et dessins à imprimer de haute qualité pour enfants et adultes. 100% gratuit en PDF.'
+    : isEn
+    ? 'Download thousands of high-quality free printable coloring pages for kids, toddlers, teens and adults. 100% free, no account required.'
+    : 'Download duizenden gratis printbare kleurplaten van topkwaliteit voor kinderen, peuters, tieners en volwassenen. 100% gratis.';
+
   return {
+    title,
+    description,
     alternates: {
-      canonical:`/${lang}`,
-      languages: {'en':'/en','nl':'/nl','x-default':'/en',
+      canonical: `/${lang}`,
+      languages: {
+        'en': '/en',
+        'nl': '/nl',
+        'de': '/de',
+        'fr': '/fr',
+        'x-default': '/en',
       },
     },
     openGraph: {
-      title: isEn ?'ColorVaults | Free Premium Coloring Pages':'ColorVaults | Gratis Premium Kleurplaten',
-      description: isEn
-        ?'Download thousands of high-quality free printable coloring pages for kids, toddlers, teens and adults. 100% free, no account required.':'Download duizenden gratis printbare kleurplaten van topkwaliteit voor kinderen, peuters, tieners en volwassenen. 100% gratis.',
-      url:`https://colorvaults.com/${lang}`,
+      title,
+      description,
+      url: `https://colorvaults.com/${lang}`,
     },
   };
 }

@@ -48,14 +48,14 @@ export default function Navbar({ lang }: { lang: string }) {
   }, []);
 
   const getLangLink = (targetLang: string) => {
-    if (!pathname) return`/${targetLang}`;
+    if (!pathname) return `/${targetLang}`;
     const segments = pathname.split('/').filter(Boolean);
-    if (segments[0] ==='en'|| segments[0] ==='nl') {
+    if (['en', 'nl', 'de', 'fr'].includes(segments[0])) {
       segments[0] = targetLang;
     } else {
       segments.unshift(targetLang);
     }
-    return`/${segments.join('/')}`;
+    return `/${segments.join('/')}`;
   };
 
   const navItems: NavItem[] = [
@@ -268,33 +268,31 @@ export default function Navbar({ lang }: { lang: string }) {
               NL
             </Link>
             <span className={styles.langDivider}>/</span>
-            <button
-              type="button"
+            <Link
+              href={getLangLink('de')}
               onClick={() => {
                 setGoogleTranslateLang('de');
                 setActiveLang('de');
               }}
-              className={`${styles.langBtn} ${activeLang === 'de' ? styles.langActive : ''}`}
-              style={{ background: 'none', border: 'none', cursor: 'pointer', padding: '0.2rem 0.35rem' }}
-              aria-label="Auf Deutsch übersetzen"
-              title="Auf Deutsch übersetzen"
+              className={`${styles.langBtn} ${activeLang === 'de' || lang === 'de' ? styles.langActive : ''}`}
+              aria-label="Auf Deutsch ansehen"
+              title="Auf Deutsch ansehen"
             >
               DE
-            </button>
+            </Link>
             <span className={styles.langDivider}>/</span>
-            <button
-              type="button"
+            <Link
+              href={getLangLink('fr')}
               onClick={() => {
                 setGoogleTranslateLang('fr');
                 setActiveLang('fr');
               }}
-              className={`${styles.langBtn} ${activeLang === 'fr' ? styles.langActive : ''}`}
-              style={{ background: 'none', border: 'none', cursor: 'pointer', padding: '0.2rem 0.35rem' }}
-              aria-label="Traduire en français"
-              title="Traduire en français"
+              className={`${styles.langBtn} ${activeLang === 'fr' || lang === 'fr' ? styles.langActive : ''}`}
+              aria-label="Voir en français"
+              title="Voir en français"
             >
               FR
-            </button>
+            </Link>
           </div>
 
           <button

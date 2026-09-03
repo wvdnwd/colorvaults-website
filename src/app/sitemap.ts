@@ -4,19 +4,31 @@ import { getMainHubs, getThemes, getAgePages, getColoringPages } from'@/lib/api'
 export const dynamic ='force-static';
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const langs = ['en','nl'] as const;
+  const langs = ['en', 'nl', 'de', 'fr'] as const;
   const entries: MetadataRoute.Sitemap = [
     // Homepages
     {
-      url:'https://colorvaults.com/en',
+      url: 'https://colorvaults.com/en',
       lastModified: new Date(),
-      changeFrequency:'daily',
+      changeFrequency: 'daily',
       priority: 1.0,
     },
     {
-      url:'https://colorvaults.com/nl',
+      url: 'https://colorvaults.com/nl',
       lastModified: new Date(),
-      changeFrequency:'daily',
+      changeFrequency: 'daily',
+      priority: 1.0,
+    },
+    {
+      url: 'https://colorvaults.com/de',
+      lastModified: new Date(),
+      changeFrequency: 'daily',
+      priority: 1.0,
+    },
+    {
+      url: 'https://colorvaults.com/fr',
+      lastModified: new Date(),
+      changeFrequency: 'daily',
       priority: 1.0,
     },
   ];

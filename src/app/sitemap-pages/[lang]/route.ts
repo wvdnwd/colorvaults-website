@@ -5,7 +5,7 @@ export const dynamic ='force-static';
 export const revalidate = false;
 
 export async function generateStaticParams() {
-  return [{ lang:'en'}, { lang:'nl'}];
+  return [{ lang: 'en' }, { lang: 'nl' }, { lang: 'de' }, { lang: 'fr' }];
 }
 
 export async function GET(

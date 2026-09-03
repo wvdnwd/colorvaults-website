@@ -10,9 +10,11 @@ import * as motion from'framer-motion/client';
 
 export async function generateStaticParams() {
   try { validateDataModel(); } catch(e) { console.error(e); throw e; }
-  const hubsEn = getMainHubs('en').map(h => ({ lang:'en', mainHubSlug: h.slug }));
-  const hubsNl = getMainHubs('nl').map(h => ({ lang:'nl', mainHubSlug: h.slug }));
-  return [...hubsEn, ...hubsNl];
+  const hubsEn = getMainHubs('en').map(h => ({ lang: 'en', mainHubSlug: h.slug }));
+  const hubsNl = getMainHubs('nl').map(h => ({ lang: 'nl', mainHubSlug: h.slug }));
+  const hubsDe = getMainHubs('de').map(h => ({ lang: 'de', mainHubSlug: h.slug }));
+  const hubsFr = getMainHubs('fr').map(h => ({ lang: 'fr', mainHubSlug: h.slug }));
+  return [...hubsEn, ...hubsNl, ...hubsDe, ...hubsFr];
 }
 
 export async function generateMetadata({ params }: { params: Promise<{ lang: string, mainHubSlug: string }> }) {
@@ -20,13 +22,20 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
   const hub = getMainHubs(lang).find(h => h.slug === mainHubSlug);
   if (!hub) return {};
   const ogImageUrl = hub.image
-    ?`/api/og?title=${encodeURIComponent(hub.title +'Coloring Pages')}&image=${encodeURIComponent(hub.image)}`:'/images/banner.jpg';
+    ? `/api/og?title=${encodeURIComponent(hub.title + ' Coloring Pages')}&image=${encodeURIComponent(hub.image)}`
+    : '/images/banner.jpg';
   return {
-    title:`${hub.title} Coloring Pages | ColorVaults`,
+    title: `${hub.title} Coloring Pages | ColorVaults`,
     description: hub.description,
     alternates: {
-      canonical:`/${lang}/${hub.slug}`,
-      languages: {'en':`/en/${hub.slug}`,'nl':`/nl/${hub.slug}`,'x-default':`/en/${hub.slug}`}
+      canonical: `/${lang}/${hub.slug}`,
+      languages: {
+        'en': `/en/${hub.slug}`,
+        'nl': `/nl/${hub.slug}`,
+        'de': `/de/${hub.slug}`,
+        'fr': `/fr/${hub.slug}`,
+        'x-default': `/en/${hub.slug}`,
+      },
     },
     openGraph: {
       title:`${hub.title} Coloring Pages | ColorVaults`,

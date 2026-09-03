@@ -51,9 +51,13 @@ export interface ColoringPage {
 const dataDir = path.join(process.cwd(),'src/data');
 
 function readJson<T>(lang: string, filename: string): T[] {
-  const filePath = path.join(dataDir, lang, filename);
+  let filePath = path.join(dataDir, lang, filename);
+  if (!fs.existsSync(filePath)) {
+    // Fall back to en data for de, fr, etc.
+    filePath = path.join(dataDir, 'en', filename);
+  }
   if (!fs.existsSync(filePath)) return [];
-  const fileContents = fs.readFileSync(filePath,'utf8');
+  const fileContents = fs.readFileSync(filePath, 'utf8');
   try {
     return JSON.parse(fileContents) as T[];
   } catch (e) {
@@ -77,8 +81,35 @@ export function safeJsonLd(data: object): string {
   return JSON.stringify(data).replace(/<\/script>/gi,'<\\/script>');
 }
 
+const hubTranslations: Record<string, Record<string, { title: string; description: string }>> = {
+  de: {
+    'disney-pixar': { title: 'Disney & Pixar', description: 'Entdecke magische Malvorlagen deiner Disney & Pixar Favoriten wie Frozen, Toy Story und König der Löwen.' },
+    'anime-manga': { title: 'Anime & Manga', description: 'Tolle Anime und Manga Ausmalbilder mit Dragon Ball, Naruto, One Piece und Pokémon.' },
+    'gaming-virtual-worlds': { title: 'Gaming & Videospiele', description: 'Epische Gaming-Malvorlagen mit Fortnite, Minecraft, Roblox, Super Mario und Sonic.' },
+    'superheroes-comic-universes': { title: 'Superhelden & Comics', description: 'Actiongeladene Superhelden-Malvorlagen mit Spider-Man, Batman, Avengers und Superman.' },
+    'kids-tv-shows': { title: 'Kinder & Zeichentrick', description: 'Fröhliche Ausmalbilder für Kinder mit Paw Patrol, Bluey, Peppa Wutz und SpongeBob.' },
+    'animals-wildlife': { title: 'Tiere & Natur', description: 'Entdecke das Tierreich mit Malvorlagen von Dinosauriern, Hunden, Katzen und Pferden.' },
+    'fantasy-fairytales': { title: 'Fantasy & Märchen', description: 'Tauche ein in magische Welten mit Einhörnern, Drachen, Feen und Zauberschlössern.' },
+    'vehicles-transportation': { title: 'Fahrzeuge & Autos', description: 'Schnelle Ausmalbilder von Monstertrucks, Formel 1 Rennwagen, Polizeiautos und Zügen.' },
+    'art-aesthetic': { title: 'Kunst & Ästhetik', description: 'Kreative Malvorlagen, florale Muster und ästhetische Kunst für Jugendliche und Erwachsene.' },
+    'mandala-patterns-relaxation': { title: 'Mandalas & Entspannung', description: 'Wunderschöne Mandalas und geometrische Muster für Achtsamkeit und meditative Ruhe.' },
+  },
+  fr: {
+    'disney-pixar': { title: 'Disney & Pixar', description: 'Découvrez des coloriages magiques de vos classiques Disney et Pixar comme La Reine des Neiges et Toy Story.' },
+    'anime-manga': { title: 'Anime & Manga', description: 'Superbes coloriages d\'anime et manga avec Dragon Ball, Naruto, One Piece et Pokémon.' },
+    'gaming-virtual-worlds': { title: 'Jeux Vidéo & Mondes Virtuels', description: 'Coloriages épiques de jeux vidéo avec Fortnite, Minecraft, Roblox, Super Mario et Sonic.' },
+    'superheroes-comic-universes': { title: 'Super-héros & Comics', description: 'Coloriages de super-héros pleins d\'action avec Spider-Man, Batman, Avengers et Superman.' },
+    'kids-tv-shows': { title: 'Enfants & Dessins Animés', description: 'Coloriages joyeux pour enfants avec Pat\' Patrouille, Bluey, Peppa Pig et Bob l\'éponge.' },
+    'animals-wildlife': { title: 'Animaux & Nature', description: 'Explorez le royaume animal avec des coloriages de dinosaures, chiots, chatons et faune sauvage.' },
+    'fantasy-fairytales': { title: 'Fantaisie & Contes de Fées', description: 'Entrez dans des mondes magiques avec licornes, dragons, fées, sirènes et châteaux enchantés.' },
+    'vehicles-transportation': { title: 'Véhicules & Transports', description: 'Coloriages rapides de monster trucks, voitures de course F1, camions de pompiers et trains.' },
+    'art-aesthetic': { title: 'Art & Esthétique', description: 'Coloriages créatifs et relaxants, motifs floraux et art esthétique pour ados et adultes.' },
+    'mandala-patterns-relaxation': { title: 'Mandalas & Relaxation', description: 'Magnifiques mandalas et motifs géométriques pour la pleine conscience et la détente.' },
+  }
+};
+
 export function getMainHubs(lang: string): MainHub[] {
-  const hubs = getCached<MainHub>(lang,'hubs','main-hubs.json');
+  const hubs = getCached<MainHub>(lang, 'hubs', 'main-hubs.json');
   const pages = getColoringPages(lang);
 
   const countByHub: Record<string, number> = {};
@@ -86,10 +117,16 @@ export function getMainHubs(lang: string): MainHub[] {
     countByHub[p.parentHub] = (countByHub[p.parentHub] || 0) + 1;
   }
 
-  return hubs.map(h => ({
-    ...h,
-    pageCount: countByHub[h.slug] || h.themeCount || 0,
-  }));
+  return hubs.map(h => {
+    const tr = hubTranslations[lang]?.[h.slug];
+    return {
+      ...h,
+      title: tr?.title || h.title,
+      description: tr?.description || h.description,
+      language: lang,
+      pageCount: countByHub[h.slug] || h.themeCount || 0,
+    };
+  });
 }
 
 export function getThemes(lang: string): Theme[] {
