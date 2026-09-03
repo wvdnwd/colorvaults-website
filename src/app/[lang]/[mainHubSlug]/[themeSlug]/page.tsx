@@ -117,167 +117,223 @@ export default async function ThemePage({
   return (
     <>
       {/* ── MondayMandala Style Top Article & Hero Header ── */}
-      <div className="page-hero" data-hub={mainHubSlug} style={{ padding: '3.5rem 0 2.5rem' }}>
-        <div className="container" style={{ maxWidth: '880px', margin: '0 auto', textAlign: 'center' }}>
-          <div style={{ display: 'flex', justifyContent: 'center', marginBottom: '1rem' }}>
-            <Breadcrumbs
-              items={[
-                { label: hub.title, href: `/${lang}/${hub.slug}` },
-                { label: theme.title },
-              ]}
-              lang={lang}
-            />
-          </div>
-
-          <h1 className="title-h1" style={{ fontSize: '2.5rem', fontWeight: 900, lineHeight: 1.25, color: '#FFFFFF', textShadow: '0 2px 10px rgba(0,0,0,0.35)' }}>
-            {isEn ? `${theme.title} Coloring Pages (Free PDF Printables)` : `${theme.title} Kleurplaten (Gratis Printen & PDF)`}
-          </h1>
-
-          <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '0.75rem', marginTop: '0.75rem', fontSize: '0.875rem', color: '#CBD5E1', fontWeight: 600, flexWrap: 'wrap' }}>
-            <span>✍️ {isEn ? 'By ColorVaults Studio Team' : 'Door ColorVaults Redactie'}</span>
-            <span>•</span>
-            <span>📅 {isEn ? 'Updated March 2026' : 'Bijgewerkt Maart 2026'}</span>
-            <span>•</span>
-            <span className="badge" style={{ background: 'rgba(34, 197, 94, 0.25)', color: '#4ADE80', borderColor: 'rgba(74, 222, 128, 0.4)' }}>
-              ✓ {allColoringPages.length} {isEn ? 'Free Printables' : 'Gratis Kleurplaten'}
-            </span>
-          </div>
-
-          {/* Intro Paragraphs */}
-          <div style={{ marginTop: '1.5rem', textAlign: 'left', background: 'rgba(255, 255, 255, 0.95)', padding: '1.75rem 2rem', borderRadius: '20px', border: '1.5px solid rgba(255, 255, 255, 0.8)', boxShadow: '0 8px 30px rgba(0,0,0,0.15)' }}>
-            <p style={{ color: '#0F172A', fontSize: '1.05rem', lineHeight: 1.75, marginBottom: '0.85rem', fontWeight: 500 }}>
-              {theme.seoIntro || seoData.shortIntro}
-            </p>
-            <p style={{ color: '#475569', fontSize: '0.975rem', lineHeight: 1.7 }}>
-              {isEn
-                ? `Explore this premier collection of ${allColoringPages.length}+ high-resolution printable line art drawings. Designed for kids, toddlers, and adults seeking hours of mindful creative relaxation!`
-                : `Ontdek deze prachtige collectie van ${allColoringPages.length}+ haarscherpe printbare lijntekeningen. Perfect voor peuters, kinderen en volwassenen voor urenlang ontspannen kleurplezier!`}
-            </p>
-          </div>
-
-          {/* Centered 8K Banner Artwork Photo */}
-          {theme.image && (
-            <div style={{
-              margin: '2rem auto 1.5rem',
-              maxWidth: '560px',
-              borderRadius: '24px',
-              overflow: 'hidden',
-              boxShadow: '0 20px 50px rgba(15, 23, 42, 0.18)',
-              border: '3px solid #FFFFFF',
-              position: 'relative',
-            }}>
-              <div style={{
-                position: 'absolute',
-                top: '12px',
-                left: '12px',
-                zIndex: 5,
-                background: 'rgba(15, 23, 42, 0.85)',
-                backdropFilter: 'blur(8px)',
-                color: '#F8FAFC',
-                borderRadius: '9999px',
-                padding: '0.25rem 0.75rem',
-                fontSize: '0.72rem',
-                fontWeight: 800,
-                border: '1px solid rgba(255, 255, 255, 0.25)',
-                boxShadow: '0 2px 8px rgba(0,0,0,0.3)',
-              }}>
-                🎨 {isEn ? 'Fan-Art Coloring Edition' : 'Fan-Art & Kleurplaat Editie'}
-              </div>
-              <SafeImage
-                src={theme.image}
-                alt={`${theme.title} Master Poster`}
-                width={560}
-                height={380}
-                style={{ width: '100%', height: 'auto', display: 'block' }}
-              />
-            </div>
-          )}
-
-          {/* Custom Coloring Book Multi-Select Guide Banner */}
+      <div className="page-hero" data-hub={mainHubSlug} style={{ padding: '2rem 0 2.5rem' }}>
+        <div className="container">
+          {/* Full-Width Cinematic Theme Master Banner */}
           <div style={{
-            marginTop: '1.75rem',
-            background: 'linear-gradient(135deg, #EEF2FF 0%, #E0E7FF 100%)',
-            border: '1.5px solid #C7D2FE',
-            borderRadius: '20px',
-            padding: '1.15rem 1.5rem',
+            position: 'relative',
+            borderRadius: '28px',
+            overflow: 'hidden',
+            minHeight: '420px',
+            boxShadow: '0 25px 60px -15px rgba(15, 23, 42, 0.35)',
+            border: '2px solid rgba(255, 255, 255, 0.4)',
             display: 'flex',
-            alignItems: 'center',
-            justifyContent: 'space-between',
-            gap: '1rem',
-            flexWrap: 'wrap',
+            alignItems: 'flex-end',
+            background: '#0F172A',
           }}>
-            <div style={{ display: 'flex', alignItems: 'center', gap: '0.85rem' }}>
-              <div style={{ fontSize: '1.8rem' }}>🧺</div>
-              <div style={{ textAlign: 'left' }}>
-                <h3 style={{ margin: 0, fontSize: '1.05rem', fontWeight: 800, color: '#312E81' }}>
-                  {isEn ? 'Create Your Own Coloring Book' : 'Stel je Eigen Kleurboek Samen'}
-                </h3>
-                <p style={{ margin: '0.15rem 0 0', fontSize: '0.85rem', color: '#4338CA' }}>
-                  {isEn
-                    ? 'Click the ➕ button on any coloring page below to collect your favorites into a single custom PDF!'
-                    : 'Klik op het ➕ icoon bij een kleurplaat om je favorieten te verzamelen in 1 printbare PDF!'}
-                </p>
-              </div>
-            </div>
-          </div>
+            {/* Background Image (Widescreen 8K Artwork) */}
+            {theme.image && (
+              /* eslint-disable-next-line @next/next/no-img-element */
+              <img
+                src={theme.image}
+                alt={`${theme.title} Artwork`}
+                style={{
+                  position: 'absolute',
+                  inset: 0,
+                  width: '100%',
+                  height: '100%',
+                  objectFit: 'cover',
+                  objectPosition: 'center 25%',
+                  filter: 'contrast(1.05) brightness(0.9)',
+                }}
+              />
+            )}
 
-          {/* Paper Size & How to Use Notice */}
-          <div style={{
-            background: 'linear-gradient(135deg, #F8FAFC, #F1F5F9)',
-            border: '1.5px dashed var(--gray-300)',
-            borderRadius: '16px',
-            padding: '1rem 1.5rem',
-            fontSize: '0.9rem',
-            color: '#475569',
-            lineHeight: 1.6,
-            textAlign: 'center',
-          }}>
-            📄 <strong>{isEn ? 'Easy Print Instructions:' : 'Eenvoudig Printen:'}</strong>{' '}
-            {isEn
-              ? 'Click any coloring sheet below to open full size, print directly on standard A4 or US Letter paper, or color online in our digital studio!'
-              : 'Klik op een willekeurige kleurplaat om hem op ware grootte te openen, print direct op standaard A4 papier of kleur hem online in via onze digitale studio!'}
-          </div>
-
-          {/* Quick Related Topic Pills */}
-          {relatedPills.length > 0 && (
+            {/* Cinematic Gradient Overlays for High Legibility */}
             <div style={{
-              marginTop: '1.75rem',
-              background: '#FFFFFF',
-              border: '1.5px solid var(--gray-200)',
-              borderRadius: '16px',
-              padding: '1rem 1.25rem',
-              textAlign: 'center',
+              position: 'absolute',
+              inset: 0,
+              background: 'linear-gradient(180deg, rgba(15, 23, 42, 0.25) 0%, rgba(15, 23, 42, 0.65) 45%, rgba(15, 23, 42, 0.96) 100%), linear-gradient(90deg, rgba(15, 23, 42, 0.9) 0%, rgba(15, 23, 42, 0.5) 60%, transparent 100%)',
+              pointerEvents: 'none',
+            }} />
+
+            {/* Fan-Art Badge Top Right */}
+            <div style={{
+              position: 'absolute',
+              top: '16px',
+              right: '16px',
+              zIndex: 5,
+              background: 'rgba(15, 23, 42, 0.85)',
+              backdropFilter: 'blur(8px)',
+              WebkitBackdropFilter: 'blur(8px)',
+              color: '#F8FAFC',
+              borderRadius: '9999px',
+              padding: '0.35rem 0.85rem',
+              fontSize: '0.75rem',
+              fontWeight: 800,
+              border: '1px solid rgba(255, 255, 255, 0.25)',
+              boxShadow: '0 4px 12px rgba(0,0,0,0.3)',
             }}>
-              <span style={{ fontSize: '0.85rem', fontWeight: 800, color: '#64748B', textTransform: 'uppercase', letterSpacing: '0.04em', display: 'block', marginBottom: '0.6rem' }}>
-                {isEn ? 'While you are here, grab these related coloring pages:' : 'Bekijk ook deze gerelateerde thema’s:'}
-              </span>
-              <div style={{ display: 'flex', gap: '0.5rem', justifyContent: 'center', flexWrap: 'wrap' }}>
-                {relatedPills.map(rp => (
-                  <Link
-                    key={rp.slug}
-                    href={`/${lang}/${mainHubSlug}/${rp.slug}`}
-                    style={{
-                      padding: '0.35rem 0.85rem',
-                      borderRadius: '9999px',
-                      background: 'var(--surface-2, #F1F5F9)',
-                      color: 'var(--foreground)',
-                      border: '1px solid var(--gray-200)',
-                      fontSize: '0.85rem',
-                      fontWeight: 700,
-                      textDecoration: 'none',
-                      transition: 'all 0.2s',
-                    }}
-                  >
-                    {rp.title}
-                  </Link>
-                ))}
+              🎨 {isEn ? 'Fan-Art Coloring Edition' : 'Fan-Art & Kleurplaat Editie'}
+            </div>
+
+            {/* Overlayed Text Content */}
+            <div style={{
+              position: 'relative',
+              zIndex: 3,
+              padding: '2.5rem 2rem 2rem',
+              maxWidth: '860px',
+              textAlign: 'left',
+              width: '100%',
+            }}>
+              {/* Breadcrumbs with Frosted Glass Backdrop */}
+              <div style={{
+                display: 'inline-block',
+                background: 'rgba(15, 23, 42, 0.65)',
+                backdropFilter: 'blur(8px)',
+                WebkitBackdropFilter: 'blur(8px)',
+                padding: '0.25rem 0.75rem',
+                borderRadius: '9999px',
+                border: '1px solid rgba(255, 255, 255, 0.2)',
+                marginBottom: '0.75rem',
+              }}>
+                <Breadcrumbs
+                  items={[
+                    { label: hub.title, href: `/${lang}/${hub.slug}` },
+                    { label: theme.title },
+                  ]}
+                  lang={lang}
+                />
+              </div>
+
+              {/* Radiant White Heading */}
+              <h1 className="title-h1" style={{
+                color: '#FFFFFF',
+                fontSize: 'clamp(2rem, 4vw, 3.2rem)',
+                fontWeight: 900,
+                textShadow: '0 4px 20px rgba(0, 0, 0, 0.7)',
+                margin: '0.25rem 0 0.5rem',
+                fontFamily: 'var(--font-display), "Fredoka", sans-serif',
+                letterSpacing: '-0.02em',
+              }}>
+                {isEn ? `${theme.title} Coloring Pages` : `${theme.title} Kleurplaten`}
+              </h1>
+
+              {/* Subtitle / Description */}
+              <p style={{
+                color: '#F1F5F9',
+                fontSize: '1.025rem',
+                lineHeight: 1.65,
+                textShadow: '0 2px 10px rgba(0, 0, 0, 0.7)',
+                maxWidth: '720px',
+                margin: '0.5rem 0 1.25rem',
+              }}>
+                {theme.seoIntro || seoData.shortIntro}
+              </p>
+
+              {/* Badges */}
+              <div style={{ display: 'flex', gap: '0.5rem', alignItems: 'center', flexWrap: 'wrap' }}>
+                <span className="badge" style={{ background: '#FF6B35', color: '#FFFFFF', borderColor: '#FF6B35', fontWeight: 800 }}>
+                  ✓ {allColoringPages.length} {isEn ? 'Printable Pages' : 'Printbare Kleurplaten'}
+                </span>
+                <span className="badge" style={{ background: 'rgba(255, 255, 255, 0.95)', color: '#065F46', borderColor: '#A7F3D0', fontWeight: 700 }}>
+                  ⚡ 100% {isEn ? 'Free' : 'Gratis'}
+                </span>
+                <span className="badge" style={{ background: 'rgba(255, 255, 255, 0.95)', color: '#1E40AF', borderColor: '#BFDBFE', fontWeight: 700 }}>
+                  🖨️ A4 / Letter PDF
+                </span>
+                <span className="badge" style={{ background: 'rgba(255, 255, 255, 0.95)', color: '#6B21A8', borderColor: '#E9D5FF', fontWeight: 700 }}>
+                  🎨 {isEn ? 'Color Online' : 'Online Inkleuren'}
+                </span>
               </div>
             </div>
-          )}
+          </div>
         </div>
       </div>
 
       <div className="container section">
+        {/* Custom Coloring Book Multi-Select Guide Banner */}
+        <div style={{
+          marginBottom: '1.75rem',
+          background: 'linear-gradient(135deg, #EEF2FF 0%, #E0E7FF 100%)',
+          border: '1.5px solid #C7D2FE',
+          borderRadius: '20px',
+          padding: '1.15rem 1.5rem',
+          display: 'flex',
+          alignItems: 'center',
+          justifyContent: 'space-between',
+          gap: '1rem',
+          flexWrap: 'wrap',
+        }}>
+          <div style={{ display: 'flex', alignItems: 'center', gap: '0.85rem' }}>
+            <div style={{ fontSize: '1.8rem' }}>🧺</div>
+            <div style={{ textAlign: 'left' }}>
+              <h3 style={{ margin: 0, fontSize: '1.05rem', fontWeight: 800, color: '#312E81' }}>
+                {isEn ? 'Create Your Own Coloring Book' : 'Stel je Eigen Kleurboek Samen'}
+              </h3>
+              <p style={{ margin: '0.15rem 0 0', fontSize: '0.85rem', color: '#4338CA' }}>
+                {isEn
+                  ? 'Click the ➕ button on any coloring page below to collect your favorites into a single custom PDF!'
+                  : 'Klik op het ➕ icoon bij een kleurplaat om je favorieten te verzamelen in 1 printbare PDF!'}
+              </p>
+            </div>
+          </div>
+        </div>
+
+        {/* Paper Size & How to Use Notice */}
+        <div style={{
+          background: 'linear-gradient(135deg, #F8FAFC, #F1F5F9)',
+          border: '1.5px dashed var(--gray-300)',
+          borderRadius: '16px',
+          padding: '1rem 1.5rem',
+          fontSize: '0.9rem',
+          color: '#475569',
+          lineHeight: 1.6,
+          textAlign: 'center',
+        }}>
+          📄 <strong>{isEn ? 'Easy Print Instructions:' : 'Eenvoudig Printen:'}</strong>{' '}
+          {isEn
+            ? 'Click any coloring sheet below to open full size, print directly on standard A4 or US Letter paper, or color online in our digital studio!'
+            : 'Klik op een willekeurige kleurplaat om hem op ware grootte te openen, print direct op standaard A4 papier of kleur hem online in via onze digitale studio!'}
+        </div>
+
+        {/* Quick Related Topic Pills */}
+        {relatedPills.length > 0 && (
+          <div style={{
+            marginTop: '1.75rem',
+            background: '#FFFFFF',
+            border: '1.5px solid var(--gray-200)',
+            borderRadius: '16px',
+            padding: '1rem 1.25rem',
+            textAlign: 'center',
+          }}>
+            <span style={{ fontSize: '0.85rem', fontWeight: 800, color: '#64748B', textTransform: 'uppercase', letterSpacing: '0.04em', display: 'block', marginBottom: '0.6rem' }}>
+              {isEn ? 'While you are here, grab these related coloring pages:' : 'Bekijk ook deze gerelateerde thema’s:'}
+            </span>
+            <div style={{ display: 'flex', gap: '0.5rem', justifyContent: 'center', flexWrap: 'wrap' }}>
+              {relatedPills.map(rp => (
+                <Link
+                  key={rp.slug}
+                  href={`/${lang}/${mainHubSlug}/${rp.slug}`}
+                  style={{
+                    padding: '0.35rem 0.85rem',
+                    borderRadius: '9999px',
+                    background: 'var(--surface-2, #F1F5F9)',
+                    color: 'var(--foreground)',
+                    border: '1px solid var(--gray-200)',
+                    fontSize: '0.85rem',
+                    fontWeight: 700,
+                    textDecoration: 'none',
+                    transition: 'all 0.2s',
+                  }}
+                >
+                  {rp.title}
+                </Link>
+              ))}
+            </div>
+          </div>
+        )}
+
         <AdSlot type="banner" text={isEn ? 'Sponsored Content' : 'Gesponsord'} />
 
         <DifficultyFilterBar isEn={isEn} counts={counts} />
