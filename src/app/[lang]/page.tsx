@@ -62,7 +62,8 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
 
 export default async function HomePage({ params }: { params: Promise<{ lang: string }> }) {
   const { lang } = await params;
-  const isEn = lang ==='en';
+  const isEn = lang !== 'nl';
+  const isNl = lang === 'nl';
 
   const allThemes = getThemes(lang);
   const mainHubs = getMainHubs(lang);

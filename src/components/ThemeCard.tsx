@@ -28,7 +28,7 @@ export default function ThemeCard({
 }: ThemeCardProps) {
   const [currentIdx, setCurrentIdx] = useState(0);
   const [isHovered, setIsHovered] = useState(false);
-  const isEn = lang ==='en';
+  const isEn = lang !== 'nl';
 
   const hubColors = HUB_GRADIENTS[hubSlug] || {
     gradient:'linear-gradient(135deg, #FF4B72 0%, #FF8A00 100%)',

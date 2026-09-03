@@ -19,7 +19,7 @@ export default function Footer({ lang }: { lang: string }) {
                   <circle cx="17.5"cy="11.5"r="1.5"fill="#00D2D3"/>
                 </svg>
               </div>
-              <span className={styles.logoText}>
+              <span className={`${styles.logoText} notranslate`}>
                 Color<span className={styles.logoAccent}>Vaults</span>
               </span>
             </Link>

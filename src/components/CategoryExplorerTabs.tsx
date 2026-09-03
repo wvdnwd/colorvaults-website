@@ -35,7 +35,7 @@ export default function CategoryExplorerTabs({
   const [selectedHub, setSelectedHub] = useState<string>('all');
   const [showAll, setShowAll] = useState<boolean>(false);
   const gridRef = useRef<HTMLDivElement>(null);
-  const isEn = lang ==='en';
+  const isEn = lang !== 'nl';
 
   let allCategoryThemes: ThemeItem[] = [];
   if (selectedHub ==='all') {

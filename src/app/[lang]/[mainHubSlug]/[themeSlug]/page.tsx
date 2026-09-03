@@ -80,7 +80,7 @@ export default async function ThemePage({
   const hub = getMainHubs(lang).find(h => h.slug === mainHubSlug);
   if (!hub) return notFound();
 
-  const isEn = lang ==='en';
+  const isEn = lang !== 'nl';
 
   const allThemesInHub = getThemes(lang)
     .filter(t => t.parentHub === mainHubSlug)

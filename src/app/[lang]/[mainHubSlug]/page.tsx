@@ -55,7 +55,7 @@ export default async function MainHubPage({ params }: { params: Promise<{ lang: 
   if (!hub) return notFound();
 
   const allThemes = getThemes(lang).filter(t => t.parentHub === hub.slug);
-  const isEn = lang ==='en';
+  const isEn = lang !== 'nl';
 
   return (
     <>

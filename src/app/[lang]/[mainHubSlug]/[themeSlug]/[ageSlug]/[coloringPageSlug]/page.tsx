@@ -69,7 +69,7 @@ export default async function ColoringPageDetail({ params }: { params: Promise<{
   const agePage = getAgePageBySlug(lang, mainHubSlug, themeSlug, ageSlug);
   if (!hub || !theme || !agePage) return notFound();
 
-  const isEn = lang ==='en';
+  const isEn = lang !== 'nl';
 
   // Related pages: get all pages from the same theme (excluding current page)
   const allThemePages = getColoringPages(lang).filter(

@@ -34,7 +34,7 @@ export default function HeroCarousel({ items, lang = 'nl' }: HeroCarouselProps) 
 
   if (count === 0) return null;
 
-  const isEn = lang === 'en';
+  const isEn = lang !== 'nl';
 
   return (
     <div className={styles.widescreenHeroMaster}>
