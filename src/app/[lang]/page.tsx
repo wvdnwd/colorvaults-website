@@ -135,7 +135,7 @@ export default async function HomePage({ params }: { params: Promise<{ lang: str
         <div className={styles.blobCenter} aria-hidden="true" />
 
         <div className="container" style={{ maxWidth: '1200px' }}>
-          {/* 1. Full-Width Cinematic Widescreen Hero Banner with Open Top COLORVAULTS & Bottom Typography */}
+          {/* 1. Full-Width Pure 3D Vault Banner (Zero text obstruction, shifted-down carousel) */}
           <HeroCarousel
             items={allThemes
               .filter(t => t.image && !t.image.includes('default.jpg'))
@@ -147,6 +147,44 @@ export default async function HomePage({ params }: { params: Promise<{ lang: str
               }))}
             lang={lang}
           />
+
+          {/* 2. Text & Title Section Directly Under Photo */}
+          <div className={`${styles.heroHeaderCenter} hero-anim-2`} style={{
+            background: 'rgba(255, 255, 255, 0.95)',
+            border: '1.5px solid rgba(226, 232, 240, 0.9)',
+            borderRadius: '24px',
+            padding: '1.75rem 2rem',
+            textAlign: 'center',
+            marginBottom: '1.5rem',
+            boxShadow: '0 10px 30px rgba(0, 0, 0, 0.06)',
+          }}>
+            <span className={`${styles.heroBadge} hero-anim-0`} style={{ marginBottom: '0.65rem' }}>
+              ✨ {isEn ? '100% Free — High Resolution Printables' : '100% Gratis — Hoge Resolutie Printables'}
+            </span>
+            <h1 className={`${styles.heroTitle} hero-anim-1`} style={{ margin: '0.25rem 0 0.5rem', fontSize: 'clamp(2rem, 3.6vw, 2.9rem)', fontWeight: 900 }}>
+              {isEn ? (
+                <>Free Premium <span>Coloring Pages</span></>
+              ) : (
+                <>Gratis Premium <span>Kleurplaten</span></>
+              )}
+            </h1>
+            <p className={`${styles.heroSubtitle} hero-anim-2`} style={{ maxWidth: '680px', margin: '0 auto 1.15rem', color: '#475569', fontSize: '1rem', lineHeight: 1.6 }}>
+              {isEn
+                ? 'Thousands of high-quality printable coloring pages for toddlers, kids, teens, and adults. Free instant downloads — no account needed!'
+                : 'Duizenden gratis printbare kleurplaten voor peuters, kinderen, tieners en volwassenen. Direct gratis downloaden — geen account nodig!'}
+            </p>
+
+            {/* Trust Bar */}
+            <div className={`${styles.trustBar} hero-anim-2`}>
+              <span className={styles.trustItem}>⚡ {isEn ? '100% Free' : '100% Gratis'}</span>
+              <span className={styles.trustDot}>•</span>
+              <span className={styles.trustItem}>🖨️ {isEn ? 'A4 / Letter PDF' : 'A4 / Letter PDF'}</span>
+              <span className={styles.trustDot}>•</span>
+              <span className={styles.trustItem}>🎨 {isEn ? 'Color Online' : 'Online Inkleuren'}</span>
+              <span className={styles.trustDot}>•</span>
+              <span className={styles.trustItem}>🚀 {isEn ? 'Instant Access' : 'Geen Account'}</span>
+            </div>
+          </div>
 
           {/* 2. Full-Width Popular Categories & Shortcuts Bar directly under the photo */}
           <div className={`${styles.shortcutsSectionCenter} hero-anim-3`} style={{ marginTop: '0.5rem', marginBottom: '1.75rem' }}>

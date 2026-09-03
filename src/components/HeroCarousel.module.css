@@ -1,21 +1,22 @@
 
-/* ── Grand Widescreen Hero Master ─────────────────────────────────────────── */
+/* ── Grand Widescreen 3D Vault Master Banner ──────────────────────────────── */
 .widescreenHeroMaster {
   position: relative;
   width: 100%;
   max-width: 1200px;
-  min-height: 720px;
-  margin: 0 auto 2rem;
+  min-height: 520px;
+  aspect-ratio: 16 / 9;
+  max-height: 600px;
+  margin: 0 auto 2.25rem;
   border-radius: 32px;
   overflow: hidden;
   display: flex;
-  flex-direction: column;
   align-items: center;
-  justify-content: space-between;
+  justify-content: center;
   box-shadow: 
-    0 30px 70px -15px rgba(15, 23, 42, 0.5),
+    0 30px 70px -15px rgba(15, 23, 42, 0.45),
     0 0 0 2.5px rgba(255, 255, 255, 0.65),
-    0 0 50px rgba(255, 107, 74, 0.25);
+    0 0 50px rgba(255, 107, 74, 0.22);
   background: #0F172A;
   perspective: 1100px;
 }
@@ -36,51 +37,33 @@
   object-fit: cover;
   object-position: center 30%;
   display: block;
-  filter: contrast(1.08) brightness(1.03);
-}
-
-/* Subtle gradient only at the bottom, so top COLORVAULTS letters are 100% bright and highlighted */
-.cinematicOverlay {
-  position: absolute;
-  inset: 0;
-  background: 
-    linear-gradient(180deg, transparent 0%, transparent 45%, rgba(15, 23, 42, 0.4) 65%, rgba(15, 23, 42, 0.94) 100%);
-  pointer-events: none;
+  filter: contrast(1.06) brightness(1.02);
 }
 
 .vaultPortalAura {
   position: absolute;
-  top: 52%;
+  top: 54%;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: 360px;
-  height: 360px;
+  width: 380px;
+  height: 380px;
   border-radius: 50%;
-  background: radial-gradient(circle, rgba(255, 107, 74, 0.35) 0%, rgba(99, 102, 241, 0.2) 45%, transparent 75%);
+  background: radial-gradient(circle, rgba(255, 107, 74, 0.38) 0%, rgba(99, 102, 241, 0.22) 45%, transparent 75%);
   pointer-events: none;
   filter: blur(16px);
 }
 
-/* ── Top Header Space (Allows COLORVAULTS 3D Letters to pop with zero clutter) ─ */
-.vaultTopHeaderArea {
-  height: 140px;
-  width: 100%;
-  position: relative;
-  z-index: 2;
-  pointer-events: none;
-}
-
-/* ── 2. Middle Section: 3D Portal Center Stage ────────────────────────────── */
+/* ── 3D Portal Center Stage (Shifted slightly down to align with open vault) ─ */
 .portalStage {
   position: relative;
   width: 100%;
-  height: 260px;
+  height: 250px;
   display: flex;
   align-items: center;
   justify-content: center;
   pointer-events: none;
   z-index: 10;
-  margin: 1rem 0 1.5rem;
+  margin-top: 50px;
 }
 
 .scene {
@@ -97,8 +80,8 @@
 /* ── Spinning ring ────────────────────────────────────────────────────────── */
 .ring {
   position: relative;
-  width: 150px;
-  height: 205px;
+  width: 145px;
+  height: 200px;
   transform-style: preserve-3d;
   animation: spinRing 24s linear infinite;
   pointer-events: auto;
@@ -118,8 +101,8 @@
   position: absolute;
   top: 0;
   left: 0;
-  width: 150px;
-  height: 205px;
+  width: 145px;
+  height: 200px;
   border-radius: 18px;
   overflow: hidden;
   border: 3px solid rgba(255, 255, 255, 0.95);
@@ -130,7 +113,7 @@
   backface-visibility: hidden;
   transform:
     rotateY(calc(360deg / var(--count) * var(--i)))
-    translateZ(220px);
+    translateZ(215px);
   cursor: pointer;
   pointer-events: auto;
   text-decoration: none;
@@ -212,161 +195,57 @@
   border-radius: inherit;
 }
 
-/* ── 3. Bottom Section: Typography Card at Bottom of Banner ───────────────── */
-.heroBottomSection {
-  position: relative;
-  z-index: 5;
-  width: 100%;
-  padding: 1rem 2rem 2rem;
-}
-
-.bottomFrostedCard {
-  background: rgba(15, 23, 42, 0.8);
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
-  border: 1.5px solid rgba(255, 255, 255, 0.25);
-  border-radius: 24px;
-  padding: 1.35rem 1.75rem;
-  text-align: center;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.45);
-}
-
-.badgeWrapper {
-  margin-bottom: 0.45rem;
-}
-
-.freeBadge {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.5rem;
-  background: rgba(255, 107, 74, 0.25);
-  border: 1.5px solid rgba(255, 107, 74, 0.55);
-  backdrop-filter: blur(8px);
-  -webkit-backdrop-filter: blur(8px);
-  border-radius: 9999px;
-  padding: 0.25rem 0.85rem;
-  font-size: 0.78rem;
-  font-weight: 800;
-  color: #FF9E7D;
-  text-transform: uppercase;
-  letter-spacing: 0.04em;
-}
-
-.heroTitle {
-  font-size: clamp(1.85rem, 3.4vw, 2.9rem);
-  font-weight: 900;
-  line-height: 1.15;
-  margin: 0 0 0.45rem;
-  color: #FFFFFF;
-  text-shadow: 0 3px 15px rgba(0, 0, 0, 0.8);
-  font-family: var(--font-display), 'Fredoka', sans-serif;
-  letter-spacing: -0.02em;
-}
-
-.titleGradient {
-  background: linear-gradient(135deg, #FF6B35 0%, #FFA07A 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
-
-.heroSubtitle {
-  font-size: 0.98rem;
-  color: #E2E8F0;
-  margin: 0 0 0.95rem;
-  line-height: 1.55;
-  max-width: 620px;
-  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.8);
-}
-
-.trustBadges {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 0.5rem;
-  flex-wrap: wrap;
-}
-
-.trustPill {
-  background: rgba(255, 255, 255, 0.12);
-  backdrop-filter: blur(8px);
-  -webkit-backdrop-filter: blur(8px);
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  color: #F8FAFC;
-  padding: 0.3rem 0.75rem;
-  border-radius: 9999px;
-  font-size: 0.78rem;
-  font-weight: 700;
-  text-shadow: 0 1px 4px rgba(0,0,0,0.5);
-}
-
 @media (prefers-reduced-motion: reduce) {
   .ring { animation: none; }
 }
 
 @media (max-width: 960px) {
   .widescreenHeroMaster {
-    min-height: 640px;
-    border-radius: 26px;
-  }
-  .vaultTopHeaderArea {
-    height: 110px;
-  }
-  .heroTitle {
-    font-size: 1.9rem;
+    min-height: 420px;
+    border-radius: 24px;
+    margin-bottom: 1.75rem;
   }
   .portalStage {
-    height: 220px;
+    height: 200px;
+    margin-top: 35px;
   }
   .ring {
-    width: 125px;
-    height: 175px;
+    width: 120px;
+    height: 165px;
   }
   .card {
-    width: 125px;
-    height: 175px;
+    width: 120px;
+    height: 165px;
     transform:
       rotateY(calc(360deg / var(--count) * var(--i)))
-      translateZ(180px);
+      translateZ(170px);
   }
 }
 
 @media (max-width: 480px) {
   .widescreenHeroMaster {
-    min-height: 560px;
-    border-radius: 20px;
-  }
-  .vaultTopHeaderArea {
-    height: 90px;
-  }
-  .heroBottomSection {
-    padding: 0.5rem 0.85rem 1.25rem;
-  }
-  .bottomFrostedCard {
-    padding: 1rem 0.85rem;
-  }
-  .heroTitle {
-    font-size: 1.6rem;
+    min-height: 320px;
+    border-radius: 18px;
+    margin-bottom: 1.5rem;
   }
   .portalStage {
-    height: 190px;
+    height: 160px;
+    margin-top: 25px;
   }
   .ring {
-    width: 100px;
-    height: 140px;
+    width: 90px;
+    height: 125px;
   }
   .card {
-    width: 100px;
-    height: 140px;
-    border-radius: 14px;
+    width: 90px;
+    height: 125px;
+    border-radius: 12px;
     transform:
       rotateY(calc(360deg / var(--count) * var(--i)))
-      translateZ(145px);
+      translateZ(130px);
   }
   .albumTitle {
-    font-size: 0.68rem;
+    font-size: 0.65rem;
   }
   .albumCta {
     display: none;
