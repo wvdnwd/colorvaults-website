@@ -529,6 +529,88 @@ export default async function HomePage({ params }: { params: Promise<{ lang: str
         </div>
       </section>
 
+      {/* ── World-First Innovation Highlight Banner ── */}
+      <section style={{ padding: '0 0 2rem 0' }}>
+        <div className="container">
+          <div
+            style={{
+              background: 'linear-gradient(135deg, rgba(255,107,74,0.1) 0%, rgba(255,246,233,0.8) 100%)',
+              border: '1.5px solid rgba(255,107,74,0.3)',
+              borderRadius: '24px',
+              padding: '1.75rem 2rem',
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'space-between',
+              gap: '1.5rem',
+              flexWrap: 'wrap',
+              boxShadow: '0 8px 30px rgba(255,107,74,0.08)',
+            }}
+          >
+            <div style={{ display: 'flex', alignItems: 'center', gap: '1.25rem', maxWidth: '750px' }}>
+              <div
+                style={{
+                  width: '56px',
+                  height: '56px',
+                  borderRadius: '16px',
+                  background: '#FFFFFF',
+                  border: '1.5px solid rgba(255,107,74,0.3)',
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  fontSize: '1.85rem',
+                  flexShrink: 0,
+                  boxShadow: '0 4px 12px rgba(255,107,74,0.15)',
+                }}
+              >
+                ✏️
+              </div>
+              <div>
+                <span
+                  style={{
+                    background: 'rgba(255,107,74,0.15)',
+                    color: '#FF6B4A',
+                    padding: '0.2rem 0.65rem',
+                    borderRadius: '9999px',
+                    fontSize: '0.72rem',
+                    fontWeight: 800,
+                    textTransform: 'uppercase',
+                    letterSpacing: '0.04em',
+                    display: 'inline-block',
+                    marginBottom: '0.35rem',
+                  }}
+                >
+                  {isEn ? 'World-First Innovation' : 'Unieke Wereldprimeur'}
+                </span>
+                <h3 style={{ margin: '0 0 0.25rem', fontSize: '1.15rem', fontWeight: 800, color: '#0F172A' }}>
+                  {isEn ? 'Spot a stray line? Circle it with our digital red pencil!' : 'Zie je een foutje of los lijntje? Omcirkel het met ons digitale potlood!'}
+                </h3>
+                <p style={{ margin: 0, fontSize: '0.88rem', color: '#475569', lineHeight: 1.5 }}>
+                  {isEn
+                    ? 'At ColorVaults, every visitor can help refine our artwork. Click "Circle an issue" under any coloring page to draw right on the template with your finger or mouse!'
+                    : 'Bij ColorVaults kan iedere bezoeker meehelpen aan de strakste tekeningen ter wereld. Klik onder elke kleurplaat op ons potlood en omcirkel het probleem direct op de plaat!'}
+                </p>
+              </div>
+            </div>
+
+            <Link
+              href={`/${lang}/disney-pixar`}
+              className="btn-primary"
+              style={{
+                background: 'linear-gradient(135deg, #FF6B4A 0%, #F0501F 100%)',
+                padding: '0.8rem 1.6rem',
+                fontSize: '0.9rem',
+                fontWeight: 800,
+                borderRadius: '9999px',
+                boxShadow: '0 4px 14px rgba(255,107,74,0.3)',
+                whiteSpace: 'nowrap',
+              }}
+            >
+              {isEn ? '🎨 Explore Coloring Pages →' : '🎨 Bekijk Kleurplaten →'}
+            </Link>
+          </div>
+        </div>
+      </section>
+
       {/* ── Section 1: Trending Characters & Shows ── */}
       {popularCharacters.length > 0 && (
         <section className="section">
@@ -758,7 +840,8 @@ export default async function HomePage({ params }: { params: Promise<{ lang: str
                 { number:'01', title: isEn ?'100% Free Forever':'100% Gratis Voor Altijd', desc: isEn ?'No paywalls, no subscriptions, no accounts. Download & print instantly.':'Geen abonnementskosten, geen account nodig. Direct printen.'},
                 { number:'02', title: isEn ?'Print-Optimized':'Optimaal Af te Drukken', desc: isEn ?'Clean crisp line art formatted for standard A4 and Letter paper.':'Scherpe lijnen geformatteerd voor A4 en Letter papier.'},
                 { number:'03', title: isEn ?'Curated by Age':'Gesorteerd op Leeftijd', desc: isEn ?'Tailored difficulty levels for toddlers, kids, teens & adults.':'Aangepaste moeilijkheidsgraden voor peuters, kinderen & volwassenen.'},
-                { number:'04', title: isEn ?'Bilingual Support':'Tweetalig', desc: isEn ?'Fully bilingual experience in English and Dutch.':'Volledig beschikbaar in Engels en Nederlands.'},
+                { number:'04', title: isEn ?'Interactive Pencil QA (World First!)':'Interactief Potlood (Wereldprimeur!)', desc: isEn ?'Spot an error? Circle it with our digital red pencil right on the drawing and we refine it!':'Zie je een foutje? Omcirkel het met ons digitale potlood direct op de tekening en we herstellen het!'},
+                { number:'05', title: isEn ?'Multilingual (EN, NL, DE, FR)':'4 Talen Beschikbaar', desc: isEn ?'Native localized experience in English, Dutch, German and French.':'Volledig beschikbaar in het Nederlands, Engels, Duits en Frans.'},
               ].map((f, i) => (
                 <ScrollReveal key={f.title} delay={(i % 4) as 0 | 1 | 2 | 3 | 4}>
                   <div className={styles.featureCard}>

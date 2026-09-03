@@ -7,7 +7,7 @@ interface ReportButtonProps {
   imageUrl: string;
   category?: string;
   isEn: boolean;
-  variant?: 'badge' | 'button' | 'compact';
+  variant?: 'badge' | 'button' | 'compact' | 'hero-banner';
 }
 
 export default function ReportButton({
@@ -203,6 +203,32 @@ export default function ReportButton({
         >
           ✏️
         </button>
+      )}
+
+      {variant === 'hero-banner' && (
+        <div className={styles.heroBanner}>
+          <div className={styles.heroBannerIconWrap}>
+            <span className={styles.heroBannerPencil}>✏️</span>
+          </div>
+          <div className={styles.heroBannerContent}>
+            <h4 className={styles.heroBannerTitle}>
+              {isEn ? 'Sharp eye? Spot a stray line or error?' : 'Scherp oog? Zie je een foutje of los lijntje?'}
+            </h4>
+            <p className={styles.heroBannerText}>
+              {isEn
+                ? 'Help us make the cleanest coloring sheets in the world! Grab our interactive red pencil and circle the issue right on the drawing.'
+                : 'Help ons de strakste kleurplaten ter wereld te maken! Pak ons interactieve rode potlood en omcirkel het foutje direct op de tekening.'}
+            </p>
+          </div>
+          <button
+            type="button"
+            onClick={() => setOpen(true)}
+            className={styles.heroBannerBtn}
+          >
+            <span style={{ fontSize: '1.15rem' }}>✏️</span>
+            <span>{isEn ? 'Grab Red Pencil & Circle' : 'Pak Rood Potlood & Omcirkel'}</span>
+          </button>
+        </div>
       )}
 
       {/* ── Friendly Circle Modal ──────────────────────────────────────── */}

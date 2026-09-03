@@ -147,7 +147,11 @@ export default async function ColoringPageDetail({ params }: { params: Promise<{
                 {
                   question: isEn ?`Can I color this template digitally on iPad or tablet?`:`Kan ik deze kleurplaat ook digitaal inkleuren op een tablet?`,
                   answer: isEn
-                    ?`Yes! Click the'Download Image File'button to save the crisp image to your tablet or drawing app like Procreate.`:`Zeker! Klik op'Download Afbeelding'om het bestand op te slaan op je iPad of tablet voor tekenapps zoals Procreate.`}
+                    ?`Yes! Click the'Download Image File'button to save the crisp image to your tablet or drawing app like Procreate.`:`Zeker! Klik op'Download Afbeelding'om het bestand op te slaan op je iPad of tablet voor tekenapps zoals Procreate.`},
+                {
+                  question: isEn ?`What should I do if I spot an error or stray line in this coloring page?`:`Wat moet ik doen als ik een foutje of los lijntje zie in deze kleurplaat?`,
+                  answer: isEn
+                    ?`Use our interactive red pencil tool directly below the image! Grab the pencil, draw a circle around the issue on the drawing, and click send. Our team reviews and refines the artwork right away.`:`Gebruik ons unieke interactieve rode potlood direct onder de afbeelding! Omcirkel het foutje met je vinger of muis en stuur het in. Onze tekenstudio fixt de lijnen direct.`}
               ]).map(item => ({"@type":"Question","name": item.question,"acceptedAnswer": {"@type":"Answer","text": item.answer
                 }
               }))
@@ -188,15 +192,13 @@ export default async function ColoringPageDetail({ params }: { params: Promise<{
             </div>
           </div>
 
-          {/* Friendly Pencil Error Finder Tool */}
-          <div style={{ textAlign: 'center', marginTop: '0.85rem', marginBottom: '0.5rem' }}>
-            <ReportButton
-              imageUrl={page.image}
-              category={theme.title}
-              isEn={isEn}
-              variant="badge"
-            />
-          </div>
+          {/* Prominent Friendly Pencil Error Finder Tool Banner */}
+          <ReportButton
+            imageUrl={page.image}
+            category={theme.title}
+            isEn={isEn}
+            variant="hero-banner"
+          />
 
           {/* Social Share bar */}
           <SocialShareButtons
