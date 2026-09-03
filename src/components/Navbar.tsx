@@ -141,12 +141,10 @@ export default function Navbar({ lang }: { lang: string }) {
           </span>
         </Link>
 
-        {/* Search Bar in Header - hidden on homepage top to prevent duplicate search bars */}
-        {(!isHomepage || scrolled) && (
-          <div className={styles.searchWrapper}>
-            <HeaderSearchBar lang={lang} />
-          </div>
-        )}
+        {/* Search Bar in Header - Always accessible at the top */}
+        <div className={styles.searchWrapper}>
+          <HeaderSearchBar lang={lang} />
+        </div>
 
         {/* Desktop Navigation Links */}
         <nav className={styles.navMenu} aria-label="Main Navigation">

@@ -100,13 +100,23 @@ export default async function HomePage({ params }: { params: Promise<{ lang: str
     }
   ];
 
-  const quickSearchPills = [
+  const quickShortcuts = [
     { name: isEn ? '🦖 Dinosaurs' : '🦖 Dinosauriërs', href: `/${lang}/animals-wildlife/dinosaur-adventures` },
     { name: isEn ? '🦄 Unicorns' : '🦄 Eenhoorns', href: `/${lang}/fantasy-fairytales/unicorns-pegasus` },
     { name: '⚡ Pokémon', href: `/${lang}/gaming-virtual-worlds/pokemon` },
     { name: '🏰 Disney', href: `/${lang}/disney-pixar` },
+    { name: isEn ? '🐶 Puppies & Dogs' : '🐶 Puppy\'s & Honden', href: `/${lang}/animals-wildlife/cute-puppies-dogs` },
+    { name: isEn ? '🐱 Kittens & Cats' : '🐱 Kittens & Katten', href: `/${lang}/animals-wildlife/cute-kittens-cats` },
+    { name: '🕷️ Spider-Man', href: `/${lang}/superheroes-comic-universes/marvel-spider-man` },
+    { name: '🍄 Super Mario', href: `/${lang}/gaming-virtual-worlds/super-mario` },
+    { name: '🧱 Minecraft', href: `/${lang}/gaming-virtual-worlds/minecraft-voxel-worlds` },
     { name: '🍍 SpongeBob', href: `/${lang}/kids-tv-shows/spongebob-squarepants` },
-    { name: isEn ? '🧘 Mandalas' : '🧘 Mandala\'s', href: `/${lang}/art-aesthetic/mandalas-sacred-geometry` }
+    { name: '🦔 Sonic', href: `/${lang}/gaming-virtual-worlds/sonic-the-hedgehog` },
+    { name: isEn ? '🧘 Mandalas' : '🧘 Mandala\'s', href: `/${lang}/art-aesthetic/mandalas-sacred-geometry` },
+    { name: isEn ? '🚗 Race Cars' : '🚗 Snelle Auto\'s', href: `/${lang}/vehicles-transportation/supercars-racers` },
+    { name: isEn ? '🚀 Space & Rockets' : '🚀 Ruimte & Raketten', href: `/${lang}/vehicles-transportation/spacecraft-rockets` },
+    { name: isEn ? '📅 2026 Calendars' : '📅 2026 Kalenders', href: `/${lang}/calendars` },
+    { name: isEn ? '✏️ How to Draw' : '✏️ Leren Tekenen', href: `/${lang}/how-to-draw` },
   ];
 
   return (
@@ -137,26 +147,20 @@ export default async function HomePage({ params }: { params: Promise<{ lang: str
                   : 'Duizenden gratis printbare kleurplaten voor peuters, kinderen, tieners en volwassenen. Direct gratis downloaden — geen account nodig!'}
               </p>
 
-              <form className={`${styles.searchWrapper} hero-anim-3`} action={`/${lang}/search`} method="GET">
-                <input
-                  type="text"
-                  name="q"
-                  placeholder={isEn ? 'Search 10,000+ coloring pages...' : 'Zoek 10.000+ kleurplaten...'}
-                  className={styles.searchInput}
-                  required
-                />
-                <button type="submit" className={styles.searchBtn}>
-                  {isEn ? 'Search' : 'Zoeken'}
-                </button>
-              </form>
-
-              <div className={`${styles.quickPills} hero-anim-3`}>
-                <span className={styles.pillLabel}>{isEn ? 'Trending:' : 'Populair:'}</span>
-                {quickSearchPills.map((pill) => (
-                  <Link key={pill.name} href={pill.href} className={styles.quickPill}>
-                    {pill.name}
-                  </Link>
-                ))}
+              {/* Rich Popular Shortcuts Grid */}
+              <div className={`${styles.shortcutsSection} hero-anim-3`}>
+                <div className={styles.shortcutsHeader}>
+                  <span className={styles.shortcutsTitle}>
+                    🔥 {isEn ? 'Popular Categories & Shortcuts:' : 'Populaire Categorieën & Snelkoppelingen:'}
+                  </span>
+                </div>
+                <div className={styles.shortcutsGrid}>
+                  {quickShortcuts.map((pill) => (
+                    <Link key={pill.name} href={pill.href} className={styles.quickPill}>
+                      {pill.name}
+                    </Link>
+                  ))}
+                </div>
               </div>
 
               <div className={`${styles.heroCtas} hero-anim-4`}>

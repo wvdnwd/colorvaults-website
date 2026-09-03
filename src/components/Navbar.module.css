@@ -58,16 +58,16 @@
   color: #818CF8;
 }
 
-/* ── Search Wrapper in Header ─────────────────────────────────────────────── */
 .searchWrapper {
   flex: 1;
-  max-width: 380px;
+  max-width: 360px;
   display: block;
 }
 
-@media (max-width: 991px) {
+@media (max-width: 768px) {
   .searchWrapper {
-    display: none !important;
+    max-width: 180px;
+    margin: 0 0.25rem;
   }
 }
 

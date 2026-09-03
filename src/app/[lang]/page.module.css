@@ -147,34 +147,42 @@
 .searchBtn:hover { opacity: 0.9; }
 
 /* ── Trending pills ───────────────────────────────────────────────────────── */
-.quickPills {
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-  flex-wrap: wrap;
+/* ── Shortcuts Section in Hero ───────────────────────────────────────────── */
+.shortcutsSection {
   margin-bottom: 2rem;
   position: relative;
   z-index: 5;
 }
 
-.pillLabel {
-  font-size: 0.85rem;
+.shortcutsHeader {
+  margin-bottom: 0.85rem;
+}
+
+.shortcutsTitle {
+  font-size: 0.925rem;
   font-weight: 800;
   color: #0F172A;
-  white-space: nowrap;
+  letter-spacing: -0.01em;
+}
+
+.shortcutsGrid {
+  display: flex;
+  align-items: center;
+  gap: 0.55rem;
+  flex-wrap: wrap;
 }
 
 .quickPill {
   background: #FFFFFF;
   color: #0F172A;
   border: 1.5px solid #CBD5E1;
-  padding: 0.4rem 0.95rem;
+  padding: 0.45rem 0.95rem;
   border-radius: var(--radius-full);
   font-size: 0.85rem;
   font-weight: 800;
   text-decoration: none;
   transition: all 0.2s ease;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.06);
+  box-shadow: 0 2px 6px rgba(0,0,0,0.04);
   display: inline-flex;
   align-items: center;
 }
@@ -196,11 +204,41 @@
 .quickPill[href*="disney"] { background: #F5F3FF; border-color: #A78BFA; color: #5B21B6; }
 .quickPill[href*="disney"]:hover { background: #7C3AED; color: #FFFFFF; }
 
+.quickPill[href*="puppies"] { background: #FFF7ED; border-color: #FB923C; color: #9A3412; }
+.quickPill[href*="puppies"]:hover { background: #F97316; color: #FFFFFF; }
+
+.quickPill[href*="kittens"] { background: #FDF4FF; border-color: #F0ABFC; color: #86198F; }
+.quickPill[href*="kittens"]:hover { background: #D946EF; color: #FFFFFF; }
+
+.quickPill[href*="spider-man"] { background: #FEF2F2; border-color: #F87171; color: #991B1B; }
+.quickPill[href*="spider-man"]:hover { background: #EF4444; color: #FFFFFF; }
+
+.quickPill[href*="super-mario"] { background: #FEF2F2; border-color: #EF4444; color: #B91C1C; }
+.quickPill[href*="super-mario"]:hover { background: #DC2626; color: #FFFFFF; }
+
+.quickPill[href*="minecraft"] { background: #ECFDF5; border-color: #34D399; color: #065F46; }
+.quickPill[href*="minecraft"]:hover { background: #059669; color: #FFFFFF; }
+
 .quickPill[href*="spongebob"] { background: #EFF6FF; border-color: #60A5FA; color: #1E40AF; }
 .quickPill[href*="spongebob"]:hover { background: #0EA5E9; color: #FFFFFF; }
 
+.quickPill[href*="sonic"] { background: #EFF6FF; border-color: #3B82F6; color: #1D4ED8; }
+.quickPill[href*="sonic"]:hover { background: #2563EB; color: #FFFFFF; }
+
 .quickPill[href*="mandala"] { background: #FAF5FF; border-color: #C084FC; color: #6B21A8; }
 .quickPill[href*="mandala"]:hover { background: #8B5CF6; color: #FFFFFF; }
+
+.quickPill[href*="supercars"] { background: #FFF1F2; border-color: #FB7185; color: #9F1239; }
+.quickPill[href*="supercars"]:hover { background: #F43F5E; color: #FFFFFF; }
+
+.quickPill[href*="spacecraft"] { background: #F0F9FF; border-color: #38BDF8; color: #075985; }
+.quickPill[href*="spacecraft"]:hover { background: #0284C7; color: #FFFFFF; }
+
+.quickPill[href*="calendars"] { background: #F0FDF4; border-color: #4ADE80; color: #166534; }
+.quickPill[href*="calendars"]:hover { background: #16A34A; color: #FFFFFF; }
+
+.quickPill[href*="how-to-draw"] { background: #EFF6FF; border-color: #60A5FA; color: #1E40AF; }
+.quickPill[href*="how-to-draw"]:hover { background: #2563EB; color: #FFFFFF; }
 
 .heroCtas {
   display: flex;
