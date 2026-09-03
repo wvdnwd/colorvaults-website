@@ -97,23 +97,23 @@ export default async function AgePage({
             />
           </div>
 
-          <h1 className="title-h1" style={{ fontSize: '2.5rem', fontWeight: 800, lineHeight: 1.25, color: '#0F172A' }}>
+          <h1 className="title-h1" style={{ fontSize: '2.5rem', fontWeight: 900, lineHeight: 1.25, color: '#FFFFFF', textShadow: '0 2px 10px rgba(0,0,0,0.35)' }}>
             {theme.title} — {difficultyLabel.label} {isEn ? '(Free PDF Printables)' : '(Gratis PDF Printables)'}
           </h1>
 
-          <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '0.75rem', marginTop: '0.75rem', fontSize: '0.875rem', color: 'var(--gray-500)', fontWeight: 600, flexWrap: 'wrap' }}>
+          <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '0.75rem', marginTop: '0.75rem', fontSize: '0.875rem', color: '#CBD5E1', fontWeight: 600, flexWrap: 'wrap' }}>
             <span>✍️ {isEn ? 'By ColorVaults Studio Team' : 'Door ColorVaults Redactie'}</span>
             <span>•</span>
             <span>📅 {isEn ? 'Updated March 2026' : 'Bijgewerkt Maart 2026'}</span>
             <span>•</span>
-            <span className="badge" style={{ background: 'rgba(34, 197, 94, 0.15)', color: '#16A34A', borderColor: 'rgba(34, 197, 94, 0.3)' }}>
+            <span className="badge" style={{ background: 'rgba(34, 197, 94, 0.25)', color: '#4ADE80', borderColor: 'rgba(74, 222, 128, 0.4)' }}>
               ✓ {allColoringPages.length} {isEn ? 'Free Printables' : 'Gratis Kleurplaten'}
             </span>
           </div>
 
           {/* Intro Paragraphs */}
-          <div style={{ marginTop: '1.5rem', textAlign: 'left', background: '#FFFFFF', padding: '1.75rem 2rem', borderRadius: '20px', border: '1.5px solid var(--gray-200)', boxShadow: '0 4px 20px rgba(0,0,0,0.03)' }}>
-            <p style={{ color: '#334155', fontSize: '1.05rem', lineHeight: 1.75, margin: 0 }}>
+          <div style={{ marginTop: '1.5rem', textAlign: 'left', background: 'rgba(255, 255, 255, 0.95)', padding: '1.75rem 2rem', borderRadius: '20px', border: '1.5px solid rgba(255, 255, 255, 0.8)', boxShadow: '0 8px 30px rgba(0,0,0,0.15)' }}>
+            <p style={{ color: '#0F172A', fontSize: '1.05rem', lineHeight: 1.75, margin: 0, fontWeight: 500 }}>
               {agePage.seoText}
             </p>
           </div>
