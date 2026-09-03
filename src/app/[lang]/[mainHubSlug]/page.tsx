@@ -1,5 +1,6 @@
 import { getMainHubs, getThemes, validateDataModel, safeJsonLd, getSampleImagesForTheme } from '@/lib/api';
 import CategorySeoBlock from '@/components/CategorySeoBlock';
+import CharacterIpDisclaimer from '@/components/CharacterIpDisclaimer';
 import { notFound } from 'next/navigation';
 import Link from 'next/link';
 import Breadcrumbs from '@/components/Breadcrumbs';
@@ -54,50 +55,134 @@ export default async function MainHubPage({ params }: { params: Promise<{ lang: 
 
   return (
     <>
-      <div className="page-hero" data-hub={mainHubSlug}>
-        <div className="container" style={{ display: 'grid', gridTemplateColumns: hub.image ? '1.2fr 0.8fr' : '1fr', gap: '2.5rem', alignItems: 'center' }}>
-          <div>
-            <Breadcrumbs items={[{ label: hub.title }]} lang={lang} />
-            <h1 className="title-h1" style={{ marginTop: '1rem' }}>{hub.title}</h1>
-            <p style={{ color: 'var(--gray-600)', fontSize: '1.1rem', maxWidth: '640px', marginTop: '0.6rem', lineHeight: 1.7 }}>
-              {hub.description}
-            </p>
-            <div style={{ display: 'flex', gap: '0.5rem', alignItems: 'center', marginTop: '1.25rem', flexWrap: 'wrap' }}>
-              <span className="badge">
-                {allThemes.length} {isEn ? 'Collections' : 'Collecties'}
-              </span>
-              <span className="badge" style={{ background: '#ECFDF5', color: '#065F46', borderColor: '#A7F3D0' }}>
-                🟢 {isEn ? 'Toddlers (2-4y)' : 'Peuters (2-4j)'}
-              </span>
-              <span className="badge" style={{ background: '#EFF6FF', color: '#1E40AF', borderColor: '#BFDBFE' }}>
-                🔵 {isEn ? 'Kids (5-8y)' : 'Kids (5-8j)'}
-              </span>
-              <span className="badge" style={{ background: '#FAF5FF', color: '#6B21A8', borderColor: '#E9D5FF' }}>
-                🟣 {isEn ? 'Teens (9-12y)' : 'Tieners (9-12j)'}
-              </span>
-              <span className="badge" style={{ background: '#FFF1F2', color: '#9F1239', borderColor: '#FECDD3' }}>
-                🔴 {isEn ? 'Adults (13+)' : 'Volwassenen'}
-              </span>
-            </div>
-          </div>
-
-          {/* 8K Hub Master Artwork Banner */}
-          {hub.image && (
-            <div style={{
-              borderRadius: '24px',
-              overflow: 'hidden',
-              boxShadow: '0 20px 50px rgba(0,0,0,0.15)',
-              border: '3px solid #FFFFFF',
-              aspectRatio: '16/10',
-            }}>
-              {/* eslint-disable-next-line @next/next/no-img-element */}
+      <div className="page-hero" data-hub={mainHubSlug} style={{ padding: '2rem 0 2.5rem' }}>
+        <div className="container">
+          {/* Full-Width Cinematic Hub Master Banner */}
+          <div style={{
+            position: 'relative',
+            borderRadius: '28px',
+            overflow: 'hidden',
+            minHeight: '400px',
+            boxShadow: '0 25px 60px -15px rgba(15, 23, 42, 0.35)',
+            border: '2px solid rgba(255, 255, 255, 0.4)',
+            display: 'flex',
+            alignItems: 'flex-end',
+            background: '#0F172A',
+          }}>
+            {/* Background Image (Widescreen 8K Artwork) */}
+            {hub.image && (
+              /* eslint-disable-next-line @next/next/no-img-element */
               <img
                 src={hub.image}
                 alt={hub.title}
-                style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }}
+                style={{
+                  position: 'absolute',
+                  inset: 0,
+                  width: '100%',
+                  height: '100%',
+                  objectFit: 'cover',
+                  objectPosition: 'center 35%',
+                  filter: 'contrast(1.05) brightness(0.9)',
+                }}
               />
+            )}
+
+            {/* Cinematic Gradient Overlays for High Legibility */}
+            <div style={{
+              position: 'absolute',
+              inset: 0,
+              background: 'linear-gradient(180deg, rgba(15, 23, 42, 0.25) 0%, rgba(15, 23, 42, 0.6) 45%, rgba(15, 23, 42, 0.95) 100%), linear-gradient(90deg, rgba(15, 23, 42, 0.88) 0%, rgba(15, 23, 42, 0.45) 60%, transparent 100%)',
+              pointerEvents: 'none',
+            }} />
+
+            {/* Fan-Art Badge Top Right */}
+            <div style={{
+              position: 'absolute',
+              top: '16px',
+              right: '16px',
+              zIndex: 5,
+              background: 'rgba(15, 23, 42, 0.85)',
+              backdropFilter: 'blur(8px)',
+              WebkitBackdropFilter: 'blur(8px)',
+              color: '#F8FAFC',
+              borderRadius: '9999px',
+              padding: '0.35rem 0.85rem',
+              fontSize: '0.75rem',
+              fontWeight: 800,
+              border: '1px solid rgba(255, 255, 255, 0.25)',
+              boxShadow: '0 4px 12px rgba(0,0,0,0.3)',
+            }}>
+              🎨 {isEn ? 'Fan-Art Hub Edition' : 'Fan-Art & Kleurplaat Editie'}
             </div>
-          )}
+
+            {/* Overlayed Text Content */}
+            <div style={{
+              position: 'relative',
+              zIndex: 3,
+              padding: '2.5rem 2rem 2rem',
+              maxWidth: '840px',
+              textAlign: 'left',
+              width: '100%',
+            }}>
+              {/* Breadcrumbs with Frosted Glass Backdrop */}
+              <div style={{
+                display: 'inline-block',
+                background: 'rgba(15, 23, 42, 0.65)',
+                backdropFilter: 'blur(8px)',
+                WebkitBackdropFilter: 'blur(8px)',
+                padding: '0.25rem 0.75rem',
+                borderRadius: '9999px',
+                border: '1px solid rgba(255, 255, 255, 0.2)',
+                marginBottom: '0.75rem',
+              }}>
+                <Breadcrumbs items={[{ label: hub.title }]} lang={lang} />
+              </div>
+
+              {/* Radiant White Heading */}
+              <h1 className="title-h1" style={{
+                color: '#FFFFFF',
+                fontSize: 'clamp(2rem, 4vw, 3.2rem)',
+                fontWeight: 900,
+                textShadow: '0 4px 20px rgba(0, 0, 0, 0.7)',
+                margin: '0.25rem 0 0.5rem',
+                fontFamily: 'var(--font-display), "Fredoka", sans-serif',
+                letterSpacing: '-0.02em',
+              }}>
+                {hub.title}
+              </h1>
+
+              {/* Subtitle / Description */}
+              <p style={{
+                color: '#F1F5F9',
+                fontSize: '1.05rem',
+                lineHeight: 1.6,
+                textShadow: '0 2px 10px rgba(0, 0, 0, 0.7)',
+                maxWidth: '680px',
+                margin: '0.5rem 0 1.25rem',
+              }}>
+                {hub.description}
+              </p>
+
+              {/* Badges / Quick Age Filters */}
+              <div style={{ display: 'flex', gap: '0.5rem', alignItems: 'center', flexWrap: 'wrap' }}>
+                <span className="badge" style={{ background: '#FF6B35', color: '#FFFFFF', borderColor: '#FF6B35', fontWeight: 800 }}>
+                  ⭐ {allThemes.length} {isEn ? 'Collections' : 'Collecties'}
+                </span>
+                <span className="badge" style={{ background: 'rgba(255, 255, 255, 0.95)', color: '#065F46', borderColor: '#A7F3D0', fontWeight: 700 }}>
+                  🟢 {isEn ? 'Toddlers (2-4y)' : 'Peuters (2-4j)'}
+                </span>
+                <span className="badge" style={{ background: 'rgba(255, 255, 255, 0.95)', color: '#1E40AF', borderColor: '#BFDBFE', fontWeight: 700 }}>
+                  🔵 {isEn ? 'Kids (5-8y)' : 'Kids (5-8j)'}
+                </span>
+                <span className="badge" style={{ background: 'rgba(255, 255, 255, 0.95)', color: '#6B21A8', borderColor: '#E9D5FF', fontWeight: 700 }}>
+                  🟣 {isEn ? 'Teens (9-12y)' : 'Tieners (9-12j)'}
+                </span>
+                <span className="badge" style={{ background: 'rgba(255, 255, 255, 0.95)', color: '#9F1239', borderColor: '#FECDD3', fontWeight: 700 }}>
+                  🔴 {isEn ? 'Adults (13+)' : 'Volwassenen'}
+                </span>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
 
@@ -165,6 +250,9 @@ export default async function MainHubPage({ params }: { params: Promise<{ lang: 
           `}
           lang={lang}
         />
+
+        {/* ⚖️ Intellectual Property & Fair-Use Disclaimer */}
+        <CharacterIpDisclaimer themeTitle={hub.title} isEn={isEn} lang={lang} />
       </div>
 
       <script
