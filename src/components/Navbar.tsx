@@ -6,6 +6,7 @@ import { useState, useRef, useEffect } from'react';
 import HeaderSearchBar from'./HeaderSearchBar';
 import BookletDrawer from'./BookletDrawer';
 import { useColoringBook } from'@/context/ColoringBookContext';
+import { setGoogleTranslateLang, getActiveTranslateLang } from './GoogleTranslator';
 import styles from'./Navbar.module.css';
 
 interface NavItem {
@@ -19,15 +20,24 @@ export default function Navbar({ lang }: { lang: string }) {
   const [openDropdown, setOpenDropdown] = useState<string | null>(null);
   const [mobileOpen, setMobileOpen] = useState(false);
   const [drawerOpen, setDrawerOpen] = useState(false);
-  const [langNotice, setLangNotice] = useState<'de' | 'fr' | null>(null);
+  const [activeLang, setActiveLang] = useState<string>(lang);
   const [scrolled, setScrolled] = useState(false);
   const navRef = useRef<HTMLDivElement>(null);
 
   const { totalSelected } = useColoringBook();
 
-  const isEn = lang ==='en';
-  const isNl = lang ==='nl';
-  const isHomepage = pathname ===`/${lang}`|| pathname ===`/${lang}/`|| pathname ==='/'|| !pathname;
+  const isEn = lang === 'en';
+  const isNl = lang === 'nl';
+  const isHomepage = pathname === `/${lang}` || pathname === `/${lang}/` || pathname === '/' || !pathname;
+
+  useEffect(() => {
+    const currentGoogle = getActiveTranslateLang();
+    if (currentGoogle) {
+      setActiveLang(currentGoogle);
+    } else {
+      setActiveLang(lang);
+    }
+  }, [lang]);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -236,138 +246,56 @@ export default function Navbar({ lang }: { lang: string }) {
           <div className={styles.langSwitcher}>
             <Link
               href={getLangLink('en')}
-              className={`${styles.langBtn} ${isEn ? styles.langActive : ''}`}
-              aria-label="Switch to English">
+              onClick={() => {
+                setGoogleTranslateLang('en');
+                setActiveLang('en');
+              }}
+              className={`${styles.langBtn} ${activeLang === 'en' ? styles.langActive : ''}`}
+              aria-label="Switch to English"
+            >
               EN
             </Link>
             <span className={styles.langDivider}>/</span>
             <Link
               href={getLangLink('nl')}
-              className={`${styles.langBtn} ${isNl ? styles.langActive : ''}`}
-              aria-label="Schakel naar Nederlands">
+              onClick={() => {
+                setGoogleTranslateLang('nl');
+                setActiveLang('nl');
+              }}
+              className={`${styles.langBtn} ${activeLang === 'nl' ? styles.langActive : ''}`}
+              aria-label="Schakel naar Nederlands"
+            >
               NL
             </Link>
             <span className={styles.langDivider}>/</span>
             <button
               type="button"
-              onClick={() => setLangNotice('de')}
-              className={styles.langBtn}
+              onClick={() => {
+                setGoogleTranslateLang('de');
+                setActiveLang('de');
+              }}
+              className={`${styles.langBtn} ${activeLang === 'de' ? styles.langActive : ''}`}
               style={{ background: 'none', border: 'none', cursor: 'pointer', padding: '0.2rem 0.35rem' }}
-              aria-label="Deutsch (Coming soon)"
-              title="Deutsch (Binnenkort)"
+              aria-label="Auf Deutsch übersetzen"
+              title="Auf Deutsch übersetzen"
             >
               DE
             </button>
             <span className={styles.langDivider}>/</span>
             <button
               type="button"
-              onClick={() => setLangNotice('fr')}
-              className={styles.langBtn}
+              onClick={() => {
+                setGoogleTranslateLang('fr');
+                setActiveLang('fr');
+              }}
+              className={`${styles.langBtn} ${activeLang === 'fr' ? styles.langActive : ''}`}
               style={{ background: 'none', border: 'none', cursor: 'pointer', padding: '0.2rem 0.35rem' }}
-              aria-label="Français (Coming soon)"
-              title="Français (Bientôt)"
+              aria-label="Traduire en français"
+              title="Traduire en français"
             >
               FR
             </button>
           </div>
-
-          {/* Interactive Language Notice Modal */}
-          {langNotice && (
-            <div 
-              style={{
-                position: 'fixed',
-                top: '72px',
-                right: '16px',
-                zIndex: 9999,
-                width: 'calc(100% - 32px)',
-                maxWidth: '380px',
-                background: '#FFFFFF',
-                borderRadius: '24px',
-                padding: '1.4rem 1.5rem',
-                border: '2px solid #4F46E5',
-                boxShadow: '0 20px 60px -10px rgba(15, 23, 42, 0.3)',
-              }}
-            >
-              <div style={{ display: 'flex', alignItems: 'flex-start', justifyContent: 'space-between', gap: '0.75rem' }}>
-                <div style={{ display: 'flex', alignItems: 'center', gap: '0.6rem' }}>
-                  <span style={{ fontSize: '1.75rem' }}>{langNotice === 'de' ? '🇩🇪' : '🇫🇷'}</span>
-                  <div>
-                    <h4 style={{ margin: 0, fontSize: '1.05rem', fontWeight: 900, color: '#0F172A', lineHeight: 1.2 }}>
-                      {langNotice === 'de' ? 'Deutsch in Vorbereitung!' : 'Français en préparation !'}
-                    </h4>
-                    <span style={{ fontSize: '0.74rem', color: '#4F46E5', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.04em' }}>
-                      {langNotice === 'de' ? 'Kommt in Kürze' : 'Arrive très bientôt'}
-                    </span>
-                  </div>
-                </div>
-                <button
-                  type="button"
-                  onClick={() => setLangNotice(null)}
-                  style={{
-                    background: '#F1F5F9',
-                    border: 'none',
-                    borderRadius: '50%',
-                    width: '28px',
-                    height: '28px',
-                    cursor: 'pointer',
-                    fontWeight: 800,
-                    color: '#64748B',
-                    display: 'flex',
-                    alignItems: 'center',
-                    justifyContent: 'center',
-                  }}
-                  aria-label="Close notice"
-                >
-                  ✕
-                </button>
-              </div>
-
-              <p style={{ margin: '0.75rem 0 1.1rem', fontSize: '0.88rem', color: '#475569', lineHeight: 1.6 }}>
-                {langNotice === 'de'
-                  ? 'Wir übersetzen derzeit alle 18.800+ Malvorlagen für unsere deutschen Besucher! Bitte nutze vorerst unsere englische oder niederländische Version:'
-                  : 'Nous traduisons actuellement plus de 18 800 coloriages pour nos visiteurs francophones ! Veuillez profiter de notre version anglaise ou néerlandaise pour l\'instant :'}
-              </p>
-
-              <div style={{ display: 'flex', gap: '0.6rem' }}>
-                <Link
-                  href={getLangLink('en')}
-                  onClick={() => setLangNotice(null)}
-                  style={{
-                    flex: 1,
-                    textAlign: 'center',
-                    padding: '0.55rem 0.6rem',
-                    borderRadius: '12px',
-                    background: '#4F46E5',
-                    color: '#FFFFFF',
-                    fontSize: '0.84rem',
-                    fontWeight: 800,
-                    textDecoration: 'none',
-                    boxShadow: '0 3px 10px rgba(79, 70, 229, 0.3)',
-                  }}
-                >
-                  🇬🇧 English (EN)
-                </Link>
-                <Link
-                  href={getLangLink('nl')}
-                  onClick={() => setLangNotice(null)}
-                  style={{
-                    flex: 1,
-                    textAlign: 'center',
-                    padding: '0.55rem 0.6rem',
-                    borderRadius: '12px',
-                    background: '#F8FAFC',
-                    color: '#0F172A',
-                    fontSize: '0.84rem',
-                    fontWeight: 800,
-                    textDecoration: 'none',
-                    border: '1.5px solid #E2E8F0',
-                  }}
-                >
-                  🇳🇱 Nederlands (NL)
-                </Link>
-              </div>
-            </div>
-          )}
 
           <button
             type="button"

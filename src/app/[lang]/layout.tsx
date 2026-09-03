@@ -11,7 +11,8 @@ import { FavoritesProvider } from "@/context/FavoritesContext";
 import { ColoringBookProvider } from "@/context/ColoringBookContext";
 import { safeJsonLd } from "@/lib/api";
 import PageTransition from "@/components/PageTransition";
-import StickyBottomAd from"@/components/StickyBottomAd";
+import StickyBottomAd from "@/components/StickyBottomAd";
+import GoogleTranslator from "@/components/GoogleTranslator";
 
 export const viewport: Viewport = {
   width:"device-width",
@@ -122,6 +123,7 @@ export default async function RootLayout({
                 <Footer lang={lang} />
                 <CookieBanner lang={lang} />
                 <BackToTop />
+                <GoogleTranslator />
                 <StickyBottomAd isEn={lang ==='en'} />
               </div>
             </ColoringBookProvider>
