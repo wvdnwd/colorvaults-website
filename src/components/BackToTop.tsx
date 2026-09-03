@@ -1,7 +1,7 @@
 'use client';
 
-import { useState, useEffect } from 'react';
-import styles from './BackToTop.module.css';
+import { useState, useEffect } from'react';
+import styles from'./BackToTop.module.css';
 
 export default function BackToTop() {
   const [visible, setVisible] = useState(false);
@@ -12,14 +12,13 @@ export default function BackToTop() {
     return () => window.removeEventListener('scroll', onScroll);
   }, []);
 
-  const scrollToTop = () => window.scrollTo({ top: 0, behavior: 'smooth' });
+  const scrollToTop = () => window.scrollTo({ top: 0, behavior:'smooth'});
 
   return (
     <button
       onClick={scrollToTop}
-      className={`${styles.btn} ${visible ? styles.visible : ''}`}
-      aria-label="Back to top"
-    >
+      className={`${styles.btn} ${visible ? styles.visible :''}`}
+      aria-label="Back to top">
       ↑
     </button>
   );

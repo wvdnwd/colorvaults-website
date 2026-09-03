@@ -1,10 +1,10 @@
 'use client';
 
-import React, { useState } from 'react';
-import { useColoringBook } from '@/context/ColoringBookContext';
-import { fireConfetti } from '@/lib/confetti';
-import SafeImage from './SafeImage';
-import styles from './FloatingBookletBar.module.css';
+import React, { useState } from'react';
+import { useColoringBook } from'@/context/ColoringBookContext';
+import { fireConfetti } from'@/lib/confetti';
+import SafeImage from'./SafeImage';
+import styles from'./FloatingBookletBar.module.css';
 
 export default function FloatingBookletBar({ lang }: { lang: string }) {
   const { selectedPages, clearSelection, removePage, totalSelected } = useColoringBook();
@@ -14,7 +14,7 @@ export default function FloatingBookletBar({ lang }: { lang: string }) {
 
   if (totalSelected === 0) return null;
 
-  const isEn = lang === 'en';
+  const isEn = lang ==='en';
 
   const handleDownloadCustomBooklet = async () => {
     if (downloading || selectedPages.length === 0) return;
@@ -24,9 +24,9 @@ export default function FloatingBookletBar({ lang }: { lang: string }) {
     try {
       const { default: jsPDF } = await import('jspdf');
       const pdf = new jsPDF({
-        orientation: 'portrait',
-        unit: 'mm',
-        format: 'a4',
+        orientation:'portrait',
+        unit:'mm',
+        format:'a4',
       });
 
       const pageWidth = 210;
@@ -37,7 +37,7 @@ export default function FloatingBookletBar({ lang }: { lang: string }) {
       for (let i = 0; i < selectedPages.length; i++) {
         setProgress(i + 1);
         const p = selectedPages[i];
-        const proxyUrl = `/api/proxy-image?url=${encodeURIComponent(p.image)}`;
+        const proxyUrl =`/api/proxy-image?url=${encodeURIComponent(p.image)}`;
 
         try {
           const res = await fetch(proxyUrl);
@@ -57,15 +57,15 @@ export default function FloatingBookletBar({ lang }: { lang: string }) {
             addedPagesCount++;
 
             // Page Header Title
-            pdf.setFont('helvetica', 'bold');
+            pdf.setFont('helvetica','bold');
             pdf.setFontSize(12);
             pdf.setTextColor(15, 23, 42);
             pdf.text(p.title, 14, 16);
 
-            pdf.setFont('helvetica', 'normal');
+            pdf.setFont('helvetica','normal');
             pdf.setFontSize(9);
             pdf.setTextColor(148, 163, 184);
-            pdf.text(`${i + 1} / ${selectedPages.length}`, pageWidth - 14, 16, { align: 'right' });
+            pdf.text(`${i + 1} / ${selectedPages.length}`, pageWidth - 14, 16, { align:'right'});
 
             // Draw coloring page image centered in A4
             const margin = 14;
@@ -84,12 +84,12 @@ export default function FloatingBookletBar({ lang }: { lang: string }) {
             const x = margin + (maxWidth - renderWidth) / 2;
             const y = 22 + (maxHeight - renderHeight) / 2;
 
-            pdf.addImage(img, 'JPEG', x, y, renderWidth, renderHeight);
+            pdf.addImage(img,'JPEG', x, y, renderWidth, renderHeight);
 
             // Page footer
             pdf.setFontSize(8);
             pdf.setTextColor(180, 190, 205);
-            pdf.text('© ColorVaults.com — 100% Free Printable Coloring Pages', pageWidth / 2, pageHeight - 8, { align: 'center' });
+            pdf.text('© ColorVaults.com — 100% Free Printable Coloring Pages', pageWidth / 2, pageHeight - 8, { align:'center'});
 
             URL.revokeObjectURL(img.src);
           }
@@ -116,12 +116,11 @@ export default function FloatingBookletBar({ lang }: { lang: string }) {
           <div className={styles.bookletIcon}>📕</div>
           <div>
             <div className={styles.barTitle}>
-              {isEn ? 'My Custom Coloring Book' : 'Mijn Eigen Kleurboek'}
+              {isEn ?'My Custom Coloring Book':'Mijn Eigen Kleurboek'}
             </div>
             <div className={styles.barSubtitle}>
               {isEn
-                ? `${totalSelected} page${totalSelected > 1 ? 's' : ''} selected across categories`
-                : `${totalSelected} kleurplaat${totalSelected > 1 ? 'en' : ''} geselecteerd`}
+                ?`${totalSelected} page${totalSelected > 1 ?'s':''} selected across categories`:`${totalSelected} kleurplaat${totalSelected > 1 ?'en':''} geselecteerd`}
             </div>
           </div>
         </div>
@@ -132,10 +131,9 @@ export default function FloatingBookletBar({ lang }: { lang: string }) {
             <div key={p.slug} className={styles.thumbWrapper} title={p.title}>
               <SafeImage src={p.image} alt={p.title} width={36} height={36} className={styles.thumbImg} />
               <button
-                type="button"
-                className={styles.removeThumbBtn}
+                type="button"className={styles.removeThumbBtn}
                 onClick={() => removePage(p.slug)}
-                title={isEn ? 'Remove from booklet' : 'Verwijderen'}
+                title={isEn ?'Remove from booklet':'Verwijderen'}
               >
                 ✕
               </button>
@@ -149,25 +147,23 @@ export default function FloatingBookletBar({ lang }: { lang: string }) {
         {/* Right: Actions */}
         <div className={styles.actionGroup}>
           <button
-            type="button"
-            className={styles.btnClear}
+            type="button"className={styles.btnClear}
             onClick={clearSelection}
             disabled={downloading}
           >
-            {isEn ? 'Clear' : 'Wissen'}
+            {isEn ?'Clear':'Wissen'}
           </button>
 
           <button
-            type="button"
-            className={styles.btnDownload}
+            type="button"className={styles.btnDownload}
             onClick={handleDownloadCustomBooklet}
             disabled={downloading}
           >
-            <span>📥</span>
+            <span></span>
             <span>
               {downloading
-                ? (isEn ? `Generating (${progress}/${totalSelected})...` : `Genereren (${progress}/${totalSelected})...`)
-                : (isEn ? `Download PDF Booklet (${totalSelected})` : `Download PDF Boekje (${totalSelected})`)}
+                ? (isEn ?`Generating (${progress}/${totalSelected})...`:`Genereren (${progress}/${totalSelected})...`)
+                : (isEn ?`Download PDF Booklet (${totalSelected})`:`Download PDF Boekje (${totalSelected})`)}
             </span>
           </button>
         </div>

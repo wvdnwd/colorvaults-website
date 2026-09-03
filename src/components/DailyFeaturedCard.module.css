@@ -22,7 +22,7 @@
 }
 
 .card::before {
-  content: '';
+  content:'';
   position: absolute;
   top: -50px;
   right: -50px;
@@ -125,7 +125,7 @@
   color: #0F172A;
   line-height: 1.2;
   margin: 0;
-  font-family: var(--font-display), 'Fredoka', sans-serif;
+  font-family: var(--font-display),'Fredoka', sans-serif;
 }
 
 .title a {

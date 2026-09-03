@@ -1,16 +1,16 @@
 // High-performance canvas confetti celebration effect
 
 export function fireConfetti() {
-  if (typeof window === 'undefined') return;
+  if (typeof window ==='undefined') return;
 
   const canvas = document.createElement('canvas');
-  canvas.style.position = 'fixed';
-  canvas.style.top = '0';
-  canvas.style.left = '0';
-  canvas.style.width = '100vw';
-  canvas.style.height = '100vh';
-  canvas.style.pointerEvents = 'none';
-  canvas.style.zIndex = '999999';
+  canvas.style.position ='fixed';
+  canvas.style.top ='0';
+  canvas.style.left ='0';
+  canvas.style.width ='100vw';
+  canvas.style.height ='100vh';
+  canvas.style.pointerEvents ='none';
+  canvas.style.zIndex ='999999';
   document.body.appendChild(canvas);
 
   const ctx = canvas.getContext('2d');
@@ -22,7 +22,7 @@ export function fireConfetti() {
   const width = (canvas.width = window.innerWidth);
   const height = (canvas.height = window.innerHeight);
 
-  const colors = ['#FF3B30', '#FF9500', '#FFCC00', '#34C759', '#00C7BE', '#007AFF', '#AF52DE', '#FF2D55', '#F59E0B', '#EC4899'];
+  const colors = ['#FF3B30','#FF9500','#FFCC00','#34C759','#00C7BE','#007AFF','#AF52DE','#FF2D55','#F59E0B','#EC4899'];
   const particles: Array<{
     x: number;
     y: number;

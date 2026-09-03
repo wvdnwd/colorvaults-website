@@ -1,5 +1,5 @@
-import fs from 'fs';
-import path from 'path';
+import fs from'fs';
+import path from'path';
 
 export interface MainHub {
   slug: string;
@@ -23,7 +23,7 @@ export interface Theme {
 }
 
 export interface AgePage {
-  slug: string; // 'kids' | 'teens' | 'adults'
+  slug: string;
   parentHub: string;
   parentTheme: string;
   ageGroup: string;
@@ -48,12 +48,12 @@ export interface ColoringPage {
   faq?: Array<{ question: string; answer: string }>;
 }
 
-const dataDir = path.join(process.cwd(), 'src/data');
+const dataDir = path.join(process.cwd(),'src/data');
 
 function readJson<T>(lang: string, filename: string): T[] {
   const filePath = path.join(dataDir, lang, filename);
   if (!fs.existsSync(filePath)) return [];
-  const fileContents = fs.readFileSync(filePath, 'utf8');
+  const fileContents = fs.readFileSync(filePath,'utf8');
   try {
     return JSON.parse(fileContents) as T[];
   } catch (e) {
@@ -66,7 +66,7 @@ function readJson<T>(lang: string, filename: string): T[] {
 let cache: Record<string, unknown[]> = {};
 
 function getCached<T>(lang: string, key: string, filename: string): T[] {
-  const cacheKey = `${lang}_${key}`;
+  const cacheKey =`${lang}_${key}`;
   if (!cache[cacheKey]) {
     cache[cacheKey] = readJson<T>(lang, filename);
   }
@@ -74,11 +74,11 @@ function getCached<T>(lang: string, key: string, filename: string): T[] {
 }
 
 export function safeJsonLd(data: object): string {
-  return JSON.stringify(data).replace(/<\/script>/gi, '<\\/script>');
+  return JSON.stringify(data).replace(/<\/script>/gi,'<\\/script>');
 }
 
 export function getMainHubs(lang: string): MainHub[] {
-  const hubs = getCached<MainHub>(lang, 'hubs', 'main-hubs.json');
+  const hubs = getCached<MainHub>(lang,'hubs','main-hubs.json');
   const pages = getColoringPages(lang);
 
   const countByHub: Record<string, number> = {};
@@ -93,12 +93,12 @@ export function getMainHubs(lang: string): MainHub[] {
 }
 
 export function getThemes(lang: string): Theme[] {
-  const themes = getCached<Theme>(lang, 'themes', 'themes.json');
+  const themes = getCached<Theme>(lang,'themes','themes.json');
   const pages = getColoringPages(lang);
 
   const countByTheme: Record<string, number> = {};
   for (const p of pages) {
-    const key = `${p.parentHub}/${p.parentTheme}`;
+    const key =`${p.parentHub}/${p.parentTheme}`;
     countByTheme[key] = (countByTheme[key] || 0) + 1;
   }
 
@@ -114,7 +114,7 @@ export function getThemeBySlug(lang: string, parentHubSlug: string, themeSlug: s
 }
 
 export function getAgePages(lang: string): AgePage[] {
-  return getCached<AgePage>(lang, 'agePages', 'age-pages.json');
+  return getCached<AgePage>(lang,'agePages','age-pages.json');
 }
 
 export function getAgePageBySlug(lang: string, parentHubSlug: string, themeSlug: string, ageGroupSlug: string): AgePage | undefined {
@@ -123,7 +123,7 @@ export function getAgePageBySlug(lang: string, parentHubSlug: string, themeSlug:
 }
 
 export function getColoringPages(lang: string): ColoringPage[] {
-  return getCached<ColoringPage>(lang, 'coloringPages', 'coloring-pages.json');
+  return getCached<ColoringPage>(lang,'coloringPages','coloring-pages.json');
 }
 
 export function getPagesByAgeGroup(lang: string, parentHubSlug: string, themeSlug: string, ageGroupSlug: string): ColoringPage[] {
@@ -147,11 +147,11 @@ export function getSampleImagesForTheme(lang: string, parentHubSlug: string, the
       result.push(p.image);
     }
   }
-  return result.length > 0 ? result : [defaultImage || '/images/banner.jpg'];
+  return result.length > 0 ? result : [defaultImage ||'/images/banner.jpg'];
 }
 
 export function validateDataModel() {
-  const languages = ['en', 'nl'];
+  const languages = ['en','nl'];
   
   for (const lang of languages) {
     const hubs = getMainHubs(lang);
@@ -161,36 +161,36 @@ export function validateDataModel() {
 
     const hubSlugs = new Set<string>();
     for (const h of hubs) {
-      validateSlug(h.slug, 'MainHub');
+      validateSlug(h.slug,'MainHub');
       if (hubSlugs.has(h.slug)) throw new Error(`Duplicate MainHub slug: ${h.slug} in ${lang}`);
       hubSlugs.add(h.slug);
     }
 
     const themeKeys = new Set<string>();
     for (const t of themes) {
-      validateSlug(t.slug, 'Theme');
+      validateSlug(t.slug,'Theme');
       if (!hubSlugs.has(t.parentHub)) throw new Error(`Orphan Theme: ${t.slug} points to missing hub ${t.parentHub}`);
-      const key = `${t.parentHub}/${t.slug}`;
+      const key =`${t.parentHub}/${t.slug}`;
       if (themeKeys.has(key)) throw new Error(`Duplicate Theme slug: ${key} in ${lang}`);
       themeKeys.add(key);
     }
 
     const ageKeys = new Set<string>();
     for (const a of agePages) {
-      validateSlug(a.ageGroup, 'AgePage');
-      const parentKey = `${a.parentHub}/${a.parentTheme}`;
+      validateSlug(a.ageGroup,'AgePage');
+      const parentKey =`${a.parentHub}/${a.parentTheme}`;
       if (!themeKeys.has(parentKey)) throw new Error(`Orphan AgePage: ${a.ageGroup} points to missing theme ${parentKey}`);
-      const key = `${parentKey}/${a.ageGroup}`;
+      const key =`${parentKey}/${a.ageGroup}`;
       if (ageKeys.has(key)) throw new Error(`Duplicate AgePage slug: ${key} in ${lang}`);
       ageKeys.add(key);
     }
 
     const pageKeys = new Set();
     for (const p of pages) {
-      validateSlug(p.slug, 'ColoringPage');
-      const parentKey = `${p.parentHub}/${p.parentTheme}/${p.ageGroup}`;
+      validateSlug(p.slug,'ColoringPage');
+      const parentKey =`${p.parentHub}/${p.parentTheme}/${p.ageGroup}`;
       if (!ageKeys.has(parentKey)) throw new Error(`Orphan ColoringPage: ${p.slug} points to missing age page ${parentKey}`);
-      const key = `${parentKey}/${p.slug}`;
+      const key =`${parentKey}/${p.slug}`;
       if (pageKeys.has(key)) throw new Error(`Duplicate ColoringPage slug: ${key} in ${lang}`);
       if (!p.metaTitle || !p.metaDescription) throw new Error(`Missing metadata for ColoringPage: ${p.slug}`);
       pageKeys.add(key);
@@ -199,28 +199,28 @@ export function validateDataModel() {
 }
 
 function validateSlug(slug: string, typeName: string) {
-  if (!slug || typeof slug !== 'string') {
+  if (!slug || typeof slug !=='string') {
     throw new Error(`Invalid ${typeName} slug: must be non-empty string`);
   }
   if (!/^[a-z0-9-]+$/.test(slug)) {
-    throw new Error(`Invalid ${typeName} slug "${slug}": must be lowercase alphanumeric with hyphens only`);
+    throw new Error(`Invalid ${typeName} slug"${slug}": must be lowercase alphanumeric with hyphens only`);
   }
 }
 
 export function getAgeLabel(ageSlug: string, lang: string): { label: string; emoji: string; desc: string } {
-  const isEn = lang === 'en';
+  const isEn = lang ==='en';
   const map: Record<string, { en: string; nl: string; emoji: string; descEn: string; descNl: string }> = {
-    kids:        { en: 'Easy',   nl: 'Makkelijk', emoji: '', descEn: 'Simple shapes & fun designs',       descNl: 'Eenvoudige vormen & leuke designs' },
-    kinderen:    { en: 'Easy',   nl: 'Makkelijk', emoji: '', descEn: 'Simple shapes & fun designs',       descNl: 'Eenvoudige vormen & leuke designs' },
-    toddlers:    { en: 'Easy',   nl: 'Makkelijk', emoji: '', descEn: 'Simple shapes & fun designs',       descNl: 'Eenvoudige vormen & leuke designs' },
-    peuters:     { en: 'Easy',   nl: 'Makkelijk', emoji: '', descEn: 'Simple shapes & fun designs',       descNl: 'Eenvoudige vormen & leuke designs' },
-    teens:       { en: 'Medium', nl: 'Gemiddeld', emoji: '', descEn: 'More detail & creative scenes',     descNl: 'Meer detail & creatieve scènes' },
-    tieners:     { en: 'Medium', nl: 'Gemiddeld', emoji: '', descEn: 'More detail & creative scenes',     descNl: 'Meer detail & creatieve scènes' },
-    adults:      { en: 'Hard',   nl: 'Moeilijk',  emoji: '', descEn: 'Intricate patterns & fine details', descNl: 'Ingewikkelde patronen & fijne details' },
-    volwassenen: { en: 'Hard',   nl: 'Moeilijk',  emoji: '', descEn: 'Intricate patterns & fine details', descNl: 'Ingewikkelde patronen & fijne details' },
+    kids:        { en:'Easy',   nl:'Makkelijk', emoji:'', descEn:'Simple shapes & fun designs',       descNl:'Eenvoudige vormen & leuke designs'},
+    kinderen:    { en:'Easy',   nl:'Makkelijk', emoji:'', descEn:'Simple shapes & fun designs',       descNl:'Eenvoudige vormen & leuke designs'},
+    toddlers:    { en:'Easy',   nl:'Makkelijk', emoji:'', descEn:'Simple shapes & fun designs',       descNl:'Eenvoudige vormen & leuke designs'},
+    peuters:     { en:'Easy',   nl:'Makkelijk', emoji:'', descEn:'Simple shapes & fun designs',       descNl:'Eenvoudige vormen & leuke designs'},
+    teens:       { en:'Medium', nl:'Gemiddeld', emoji:'', descEn:'More detail & creative scenes',     descNl:'Meer detail & creatieve scènes'},
+    tieners:     { en:'Medium', nl:'Gemiddeld', emoji:'', descEn:'More detail & creative scenes',     descNl:'Meer detail & creatieve scènes'},
+    adults:      { en:'Hard',   nl:'Moeilijk',  emoji:'', descEn:'Intricate patterns & fine details', descNl:'Ingewikkelde patronen & fijne details'},
+    volwassenen: { en:'Hard',   nl:'Moeilijk',  emoji:'', descEn:'Intricate patterns & fine details', descNl:'Ingewikkelde patronen & fijne details'},
   };
   const entry = map[ageSlug];
-  if (!entry) return { label: ageSlug, emoji: '', desc: '' };
+  if (!entry) return { label: ageSlug, emoji:'', desc:''};
   return {
     label: isEn ? entry.en : entry.nl,
     emoji: entry.emoji,

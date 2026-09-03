@@ -1,20 +1,20 @@
-import { getAgePages, getAgePageBySlug, getMainHubs, getThemes, getPagesByAgeGroup, getAgeLabel, safeJsonLd } from '@/lib/api';
-import CategorySeoBlock from '@/components/CategorySeoBlock';
-import RelatedThemes from '@/components/RelatedThemes';
-import CraftIdeasSection from '@/components/CraftIdeasSection';
-import CharacterIpDisclaimer from '@/components/CharacterIpDisclaimer';
-import NewsletterBox from '@/components/NewsletterBox';
-import { notFound } from 'next/navigation';
-import Link from 'next/link';
-import Breadcrumbs from '@/components/Breadcrumbs';
-import MotionCard from '@/components/MotionCard';
-import AdSlot from '@/components/AdSlot';
-import SafeImage from '@/components/SafeImage';
-import React from 'react';
+import { getAgePages, getAgePageBySlug, getMainHubs, getThemes, getPagesByAgeGroup, getAgeLabel, safeJsonLd } from'@/lib/api';
+import CategorySeoBlock from'@/components/CategorySeoBlock';
+import RelatedThemes from'@/components/RelatedThemes';
+import CraftIdeasSection from'@/components/CraftIdeasSection';
+import CharacterIpDisclaimer from'@/components/CharacterIpDisclaimer';
+import NewsletterBox from'@/components/NewsletterBox';
+import { notFound } from'next/navigation';
+import Link from'next/link';
+import Breadcrumbs from'@/components/Breadcrumbs';
+import MotionCard from'@/components/MotionCard';
+import AdSlot from'@/components/AdSlot';
+import SafeImage from'@/components/SafeImage';
+import React from'react';
 
 export async function generateStaticParams() {
-  const agesEn = getAgePages('en').map(a => ({ lang: 'en', mainHubSlug: a.parentHub, themeSlug: a.parentTheme, ageSlug: a.ageGroup }));
-  const agesNl = getAgePages('nl').map(a => ({ lang: 'nl', mainHubSlug: a.parentHub, themeSlug: a.parentTheme, ageSlug: a.ageGroup }));
+  const agesEn = getAgePages('en').map(a => ({ lang:'en', mainHubSlug: a.parentHub, themeSlug: a.parentTheme, ageSlug: a.ageGroup }));
+  const agesNl = getAgePages('nl').map(a => ({ lang:'nl', mainHubSlug: a.parentHub, themeSlug: a.parentTheme, ageSlug: a.ageGroup }));
   return [...agesEn, ...agesNl];
 }
 
@@ -24,26 +24,21 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
   if (!agePage) return {};
   const theme = getThemes(lang).find(t => t.parentHub === mainHubSlug && t.slug === themeSlug);
   const ogImageUrl = theme?.image
-    ? `/api/og?title=${encodeURIComponent(agePage.title)}&image=${encodeURIComponent(theme.image)}`
-    : '/images/banner.jpg';
+    ?`/api/og?title=${encodeURIComponent(agePage.title)}&image=${encodeURIComponent(theme.image)}`:'/images/banner.jpg';
   return {
-    title: `${agePage.title} (Free PDF Printables) | ColorVaults`,
+    title:`${agePage.title} (Free PDF Printables) | ColorVaults`,
     description: agePage.seoText,
     alternates: {
-      canonical: `/${lang}/${mainHubSlug}/${themeSlug}/${ageSlug}`,
-      languages: { 
-        'en': `/en/${mainHubSlug}/${themeSlug}/${ageSlug}`, 
-        'nl': `/nl/${mainHubSlug}/${themeSlug}/${ageSlug}`,
-        'x-default': `/en/${mainHubSlug}/${themeSlug}/${ageSlug}`
-      }
+      canonical:`/${lang}/${mainHubSlug}/${themeSlug}/${ageSlug}`,
+      languages: {'en':`/en/${mainHubSlug}/${themeSlug}/${ageSlug}`,'nl':`/nl/${mainHubSlug}/${themeSlug}/${ageSlug}`,'x-default':`/en/${mainHubSlug}/${themeSlug}/${ageSlug}`}
     },
     openGraph: {
-      title: `${agePage.title} (Free PDF Printables) | ColorVaults`,
+      title:`${agePage.title} (Free PDF Printables) | ColorVaults`,
       description: agePage.seoText,
       images: [{ url: ogImageUrl, width: 1200, height: 630, alt: agePage.title }],
     },
     twitter: {
-      card: 'summary_large_image',
+      card:'summary_large_image',
       images: [ogImageUrl],
     },
   };
@@ -67,7 +62,7 @@ export default async function AgePage({
   if (!hub || !theme) return notFound();
 
   const allColoringPages = getPagesByAgeGroup(lang, mainHubSlug, themeSlug, ageSlug);
-  const isEn = lang === 'en';
+  const isEn = lang ==='en';
 
   const PER_PAGE = 24;
   const currentPage = Number(page) || 1;
@@ -84,114 +79,112 @@ export default async function AgePage({
   return (
     <>
             {/* ── Cinematic Full-Width Age Header with 100% Uncropped Artwork ── */}
-      <div className="page-hero" data-hub={mainHubSlug} style={{ padding: '2rem 0 2.5rem' }}>
-        <div className="container" style={{ maxWidth: '1200px' }}>
+      <div className="page-hero"data-hub={mainHubSlug} style={{ padding:'2rem 0 2.5rem'}}>
+        <div className="container"style={{ maxWidth:'1200px'}}>
           {/* Full-Width Cinematic Theme Master Banner */}
           <div style={{
-            position: 'relative',
-            borderRadius: '28px',
-            overflow: 'hidden',
-            boxShadow: '0 25px 60px -15px rgba(15, 23, 42, 0.45)',
-            border: '2px solid rgba(255, 255, 255, 0.3)',
-            background: 'linear-gradient(135deg, #0F172A 0%, #1E293B 100%)',
+            position:'relative',
+            borderRadius:'28px',
+            overflow:'hidden',
+            boxShadow:'0 25px 60px -15px rgba(15, 23, 42, 0.45)',
+            border:'2px solid rgba(255, 255, 255, 0.3)',
+            background:'linear-gradient(135deg, #0F172A 0%, #1E293B 100%)',
           }}>
             {/* Ambient Blurred Color Glow Backdrop */}
             {theme.image && (
               /* eslint-disable-next-line @next/next/no-img-element */
               <img
                 src={theme.image}
-                alt=""
-                aria-hidden="true"
-                style={{
-                  position: 'absolute',
-                  inset: '-30px',
-                  width: 'calc(100% + 60px)',
-                  height: 'calc(100% + 60px)',
-                  objectFit: 'cover',
-                  filter: 'blur(50px) brightness(0.35)',
+                alt=""aria-hidden="true"style={{
+                  position:'absolute',
+                  inset:'-30px',
+                  width:'calc(100% + 60px)',
+                  height:'calc(100% + 60px)',
+                  objectFit:'cover',
+                  filter:'blur(50px) brightness(0.35)',
                   opacity: 0.65,
-                  pointerEvents: 'none',
+                  pointerEvents:'none',
                 }}
               />
             )}
 
             {/* Dark Vignette Overlay for High Contrast */}
             <div style={{
-              position: 'absolute',
+              position:'absolute',
               inset: 0,
-              background: 'linear-gradient(135deg, rgba(15, 23, 42, 0.9) 0%, rgba(15, 23, 42, 0.6) 100%)',
-              pointerEvents: 'none',
+              background:'linear-gradient(135deg, rgba(15, 23, 42, 0.9) 0%, rgba(15, 23, 42, 0.6) 100%)',
+              pointerEvents:'none',
             }} />
 
             {/* Foreground Content */}
             <div style={{
-              position: 'relative',
+              position:'relative',
               zIndex: 3,
-              padding: '2.5rem 2.25rem',
-              display: 'flex',
-              flexWrap: 'wrap',
-              alignItems: 'center',
-              justifyContent: 'space-between',
-              gap: '2.5rem',
+              padding:'2.5rem 2.25rem',
+              display:'flex',
+              flexWrap:'wrap',
+              alignItems:'center',
+              justifyContent:'space-between',
+              gap:'2.5rem',
             }}>
               {/* Left Column: Breadcrumbs, Title, Intro & Badges */}
-              <div style={{ flex: '1 1 540px', textAlign: 'left', minWidth: '280px' }}>
+              <div style={{ flex:'1 1 540px', textAlign:'left', minWidth:'280px'}}>
                 <div style={{
-                  display: 'inline-block',
-                  background: 'rgba(15, 23, 42, 0.75)',
-                  backdropFilter: 'blur(8px)',
-                  WebkitBackdropFilter: 'blur(8px)',
-                  padding: '0.25rem 0.75rem',
-                  borderRadius: '9999px',
-                  border: '1px solid rgba(255, 255, 255, 0.25)',
-                  marginBottom: '0.85rem',
+                  display:'inline-block',
+                  background:'rgba(15, 23, 42, 0.75)',
+                  backdropFilter:'blur(8px)',
+                  WebkitBackdropFilter:'blur(8px)',
+                  padding:'0.25rem 0.75rem',
+                  borderRadius:'9999px',
+                  border:'1px solid rgba(255, 255, 255, 0.25)',
+                  marginBottom:'0.85rem',
                 }}>
                   <Breadcrumbs
                     items={[
-                      { label: hub.title, href: `/${lang}/${hub.slug}` },
-                      { label: theme.title, href: `/${lang}/${hub.slug}/${theme.slug}` },
+                      { label: hub.title, href:`/${lang}/${hub.slug}`},
+                      { label: theme.title, href:`/${lang}/${hub.slug}/${theme.slug}`},
                       { label: difficultyLabel.label }
                     ]}
                     lang={lang}
                   />
                 </div>
 
-                <h1 className="title-h1" style={{
-                  color: '#FFFFFF',
-                  fontSize: 'clamp(2rem, 3.8vw, 3.2rem)',
+                <h1 className="title-h1"style={{
+                  color:'#FFFFFF',
+                  fontSize:'clamp(2rem, 3.8vw, 3.2rem)',
                   fontWeight: 900,
-                  textShadow: '0 4px 20px rgba(0, 0, 0, 0.8)',
-                  margin: '0.25rem 0 0.6rem',
-                  fontFamily: 'var(--font-display), "Fredoka", sans-serif',
-                  letterSpacing: '-0.02em',
+                  textShadow:'0 4px 20px rgba(0, 0, 0, 0.8)',
+                  margin:'0.25rem 0 0.6rem',
+                  fontFamily:'var(--font-display),"Fredoka", sans-serif',
+                  letterSpacing:'-0.02em',
                   lineHeight: 1.15,
                 }}>
                   {theme.title} — {difficultyLabel.label}
                 </h1>
 
                 <p style={{
-                  color: '#F1F5F9',
-                  fontSize: '1.025rem',
+                  color:'#F1F5F9',
+                  fontSize:'1.025rem',
                   lineHeight: 1.65,
-                  textShadow: '0 2px 10px rgba(0, 0, 0, 0.8)',
-                  maxWidth: '680px',
-                  margin: '0.5rem 0 1.35rem',
+                  textShadow:'0 2px 10px rgba(0, 0, 0, 0.8)',
+                  maxWidth:'680px',
+                  margin:'0.5rem 0 1.35rem',
                 }}>
                   {agePage.seoText}
                 </p>
 
-                <div style={{ display: 'flex', gap: '0.5rem', alignItems: 'center', flexWrap: 'wrap' }}>
-                  <span className="badge" style={{ background: '#FF6B35', color: '#FFFFFF', borderColor: '#FF6B35', fontWeight: 800 }}>
-                    ✓ {allColoringPages.length} {isEn ? 'Printable Pages' : 'Printbare Kleurplaten'}
+                <div style={{ display:'flex', gap:'0.5rem', alignItems:'center', flexWrap:'wrap'}}>
+                  <span className="badge"style={{ background:'#FF6B35', color:'#FFFFFF', borderColor:'#FF6B35', fontWeight: 800 }}>
+                    ✓ {allColoringPages.length} {isEn ?'Printable Pages':'Printbare Kleurplaten'}
                   </span>
-                  <span className="badge" style={{ background: 'rgba(255, 255, 255, 0.95)', color: '#065F46', borderColor: '#A7F3D0', fontWeight: 700 }}>
-                    ⚡ 100% {isEn ? 'Free' : 'Gratis'}
+                  <span className="badge"style={{ background:'rgba(255, 255, 255, 0.95)', color:'#065F46', borderColor:'#A7F3D0', fontWeight: 700 }}>
+                    100% {isEn ?'Free':'Gratis'}
                   </span>
-                  <span className="badge" style={{ background: 'rgba(255, 255, 255, 0.95)', color: '#1E40AF', borderColor: '#BFDBFE', fontWeight: 700 }}>
-                    🖨️ A4 / Letter PDF
+                  <span className="badge"style={{ background:'rgba(255, 255, 255, 0.95)', color:'#1E40AF', borderColor:'#BFDBFE', fontWeight: 700 }}>
+                    A4 / Letter PDF
                   </span>
-                  <span className="badge" style={{ background: 'rgba(255, 255, 255, 0.95)', color: '#6B21A8', borderColor: '#E9D5FF', fontWeight: 700 }}>
-                    🎨 {isEn ? 'Color Online' : 'Online Inkleuren'}
+                  <span className="badge"style={{ background:'rgba(255, 255, 255, 0.95)', color:'#6B21A8', borderColor:'#E9D5FF', fontWeight: 700 }}>
+                    {isEn ?'Color Online':'Online Inkleuren'}
                   </span>
                 </div>
               </div>
@@ -199,42 +192,42 @@ export default async function AgePage({
               {/* Right Column: 100% Complete Uncropped Artwork Card */}
               {theme.image && (
                 <div style={{
-                  flex: '0 0 auto',
-                  margin: '0 auto',
-                  position: 'relative',
+                  flex:'0 0 auto',
+                  margin:'0 auto',
+                  position:'relative',
                 }}>
                   <div style={{
-                    position: 'absolute',
-                    top: '12px',
-                    right: '12px',
+                    position:'absolute',
+                    top:'12px',
+                    right:'12px',
                     zIndex: 5,
-                    background: 'rgba(15, 23, 42, 0.85)',
-                    backdropFilter: 'blur(8px)',
-                    WebkitBackdropFilter: 'blur(8px)',
-                    color: '#F8FAFC',
-                    borderRadius: '9999px',
-                    padding: '0.25rem 0.75rem',
-                    fontSize: '0.72rem',
+                    background:'rgba(15, 23, 42, 0.85)',
+                    backdropFilter:'blur(8px)',
+                    WebkitBackdropFilter:'blur(8px)',
+                    color:'#F8FAFC',
+                    borderRadius:'9999px',
+                    padding:'0.25rem 0.75rem',
+                    fontSize:'0.72rem',
                     fontWeight: 800,
-                    border: '1px solid rgba(255, 255, 255, 0.3)',
-                    boxShadow: '0 2px 8px rgba(0,0,0,0.35)',
+                    border:'1px solid rgba(255, 255, 255, 0.3)',
+                    boxShadow:'0 2px 8px rgba(0,0,0,0.35)',
                   }}>
-                    🎨 {isEn ? 'Fan-Art Edition' : 'Fan-Art Editie'}
+                    {isEn ?'Fan-Art Edition':'Fan-Art Editie'}
                   </div>
                   {/* eslint-disable-next-line @next/next/no-img-element */}
                   <img
                     src={theme.image}
                     alt={`${theme.title} Artwork`}
                     style={{
-                      maxHeight: '340px',
-                      maxWidth: '100%',
-                      width: 'auto',
-                      height: 'auto',
-                      objectFit: 'contain',
-                      borderRadius: '20px',
-                      border: '3px solid rgba(255, 255, 255, 0.9)',
-                      boxShadow: '0 16px 40px rgba(0, 0, 0, 0.55), 0 0 20px rgba(255, 107, 74, 0.25)',
-                      display: 'block',
+                      maxHeight:'340px',
+                      maxWidth:'100%',
+                      width:'auto',
+                      height:'auto',
+                      objectFit:'contain',
+                      borderRadius:'20px',
+                      border:'3px solid rgba(255, 255, 255, 0.9)',
+                      boxShadow:'0 16px 40px rgba(0, 0, 0, 0.55), 0 0 20px rgba(255, 107, 74, 0.25)',
+                      display:'block',
                     }}
                   />
                 </div>
@@ -247,27 +240,26 @@ export default async function AgePage({
       <div className="container section">
         {/* Custom Coloring Book Multi-Select Guide Banner */}
         <div style={{
-          marginBottom: '1.75rem',
-          background: 'linear-gradient(135deg, #EEF2FF 0%, #E0E7FF 100%)',
-          border: '1.5px solid #C7D2FE',
-          borderRadius: '20px',
-          padding: '1.15rem 1.5rem',
-          display: 'flex',
-          alignItems: 'center',
-          justifyContent: 'space-between',
-          gap: '1rem',
-          flexWrap: 'wrap',
+          marginBottom:'1.75rem',
+          background:'linear-gradient(135deg, #EEF2FF 0%, #E0E7FF 100%)',
+          border:'1.5px solid #C7D2FE',
+          borderRadius:'20px',
+          padding:'1.15rem 1.5rem',
+          display:'flex',
+          alignItems:'center',
+          justifyContent:'space-between',
+          gap:'1rem',
+          flexWrap:'wrap',
         }}>
-          <div style={{ display: 'flex', alignItems: 'center', gap: '0.85rem' }}>
-            <div style={{ fontSize: '1.8rem' }}>🧺</div>
-            <div style={{ textAlign: 'left' }}>
-              <h3 style={{ margin: 0, fontSize: '1.05rem', fontWeight: 800, color: '#312E81' }}>
-                {isEn ? 'Create Your Own Coloring Book' : 'Stel je Eigen Kleurboek Samen'}
+          <div style={{ display:'flex', alignItems:'center', gap:'0.85rem'}}>
+            <div style={{ fontSize:'1.8rem'}}></div>
+            <div style={{ textAlign:'left'}}>
+              <h3 style={{ margin: 0, fontSize:'1.05rem', fontWeight: 800, color:'#312E81'}}>
+                {isEn ?'Create Your Own Coloring Book':'Stel je Eigen Kleurboek Samen'}
               </h3>
-              <p style={{ margin: '0.15rem 0 0', fontSize: '0.85rem', color: '#4338CA' }}>
+              <p style={{ margin:'0.15rem 0 0', fontSize:'0.85rem', color:'#4338CA'}}>
                 {isEn
-                  ? 'Click the ➕ button on any coloring page below to collect your favorites into a single custom PDF!'
-                  : 'Klik op het ➕ icoon bij een kleurplaat om je favorieten te verzamelen in 1 printbare PDF!'}
+                  ?'Click the button on any coloring page below to collect your favorites into a single custom PDF!':'Klik op het icoon bij een kleurplaat om je favorieten te verzamelen in 1 printbare PDF!'}
               </p>
             </div>
           </div>
@@ -275,49 +267,48 @@ export default async function AgePage({
 
         {/* Paper Size & How to Use Notice */}
         <div style={{
-          background: 'linear-gradient(135deg, #F8FAFC, #F1F5F9)',
-          border: '1.5px dashed var(--gray-300)',
-          borderRadius: '16px',
-          padding: '1rem 1.5rem',
-          fontSize: '0.9rem',
-          color: '#475569',
+          background:'linear-gradient(135deg, #F8FAFC, #F1F5F9)',
+          border:'1.5px dashed var(--gray-300)',
+          borderRadius:'16px',
+          padding:'1rem 1.5rem',
+          fontSize:'0.9rem',
+          color:'#475569',
           lineHeight: 1.6,
-          textAlign: 'center',
+          textAlign:'center',
         }}>
-          📄 <strong>{isEn ? 'Easy Print Instructions:' : 'Eenvoudig Printen:'}</strong>{' '}
+          📄 <strong>{isEn ?'Easy Print Instructions:':'Eenvoudig Printen:'}</strong>{''}
           {isEn
-            ? 'Click any coloring sheet below to open full size, print directly on standard A4 or US Letter paper, or color online in our digital studio!'
-            : 'Klik op een willekeurige kleurplaat om hem op ware grootte te openen, print direct op standaard A4 papier of kleur hem online in via onze digitale studio!'}
+            ?'Click any coloring sheet below to open full size, print directly on standard A4 or US Letter paper, or color online in our digital studio!':'Klik op een willekeurige kleurplaat om hem op ware grootte te openen, print direct op standaard A4 papier of kleur hem online in via onze digitale studio!'}
         </div>
 
         {/* Quick Related Topic Pills */}
         {relatedPills.length > 0 && (
           <div style={{
-            marginTop: '1.75rem',
-            background: '#FFFFFF',
-            border: '1.5px solid var(--gray-200)',
-            borderRadius: '16px',
-            padding: '1rem 1.25rem',
-            textAlign: 'center',
+            marginTop:'1.75rem',
+            background:'#FFFFFF',
+            border:'1.5px solid var(--gray-200)',
+            borderRadius:'16px',
+            padding:'1rem 1.25rem',
+            textAlign:'center',
           }}>
-            <span style={{ fontSize: '0.85rem', fontWeight: 800, color: '#64748B', textTransform: 'uppercase', letterSpacing: '0.04em', display: 'block', marginBottom: '0.6rem' }}>
-              {isEn ? 'While you are here, grab these related coloring pages:' : 'Bekijk ook deze gerelateerde thema’s:'}
+            <span style={{ fontSize:'0.85rem', fontWeight: 800, color:'#64748B', textTransform:'uppercase', letterSpacing:'0.04em', display:'block', marginBottom:'0.6rem'}}>
+              {isEn ?'While you are here, grab these related coloring pages:':'Bekijk ook deze gerelateerde thema’s:'}
             </span>
-            <div style={{ display: 'flex', gap: '0.5rem', justifyContent: 'center', flexWrap: 'wrap' }}>
+            <div style={{ display:'flex', gap:'0.5rem', justifyContent:'center', flexWrap:'wrap'}}>
               {relatedPills.map(rp => (
                 <Link
                   key={rp.slug}
                   href={`/${lang}/${mainHubSlug}/${rp.slug}`}
                   style={{
-                    padding: '0.35rem 0.85rem',
-                    borderRadius: '9999px',
-                    background: 'var(--surface-2, #F1F5F9)',
-                    color: 'var(--foreground)',
-                    border: '1px solid var(--gray-200)',
-                    fontSize: '0.85rem',
+                    padding:'0.35rem 0.85rem',
+                    borderRadius:'9999px',
+                    background:'var(--surface-2, #F1F5F9)',
+                    color:'var(--foreground)',
+                    border:'1px solid var(--gray-200)',
+                    fontSize:'0.85rem',
                     fontWeight: 700,
-                    textDecoration: 'none',
-                    transition: 'all 0.2s',
+                    textDecoration:'none',
+                    transition:'all 0.2s',
                   }}
                 >
                   {rp.title}
@@ -327,23 +318,23 @@ export default async function AgePage({
           </div>
         )}
 
-        <AdSlot type="banner" text={isEn ? "Sponsored Content" : "Gesponsord"} />
+        <AdSlot type="banner"text={isEn ?"Sponsored Content":"Gesponsord"} />
 
-        <div className="section-header" style={{ marginTop: '2rem' }}>
+        <div className="section-header"style={{ marginTop:'2rem'}}>
           <div>
             <span className="badge">
-              {allColoringPages.length} {isEn ? 'Printables in this Collection' : 'Kleurplaten'}
+              {allColoringPages.length} {isEn ?'Printables in this Collection':'Kleurplaten'}
             </span>
-            <h2 className="title-h2" style={{ marginTop: '0.4rem' }}>
-              {isEn ? `All ${theme.title} (${difficultyLabel.label}) Sheets` : `Alle ${theme.title} (${difficultyLabel.label}) Kleurplaten`}
+            <h2 className="title-h2"style={{ marginTop:'0.4rem'}}>
+              {isEn ?`All ${theme.title} (${difficultyLabel.label}) Sheets`:`Alle ${theme.title} (${difficultyLabel.label}) Kleurplaten`}
             </h2>
           </div>
         </div>
 
         {coloringPages.length === 0 ? (
-          <div style={{ textAlign: 'center', padding: '5rem 2rem', color: 'var(--gray-400)', background: 'var(--surface)', borderRadius: 'var(--radius-xl)', border: '1px solid var(--gray-200)' }}>
-            <p style={{ fontSize: '1.2rem', fontWeight: 700, color: 'var(--foreground)' }}>
-              {isEn ? 'Pages coming soon! Check back later.' : 'Kleurplaten binnenkort beschikbaar!'}
+          <div style={{ textAlign:'center', padding:'5rem 2rem', color:'var(--gray-400)', background:'var(--surface)', borderRadius:'var(--radius-xl)', border:'1px solid var(--gray-200)'}}>
+            <p style={{ fontSize:'1.2rem', fontWeight: 700, color:'var(--foreground)'}}>
+              {isEn ?'Pages coming soon! Check back later.':'Kleurplaten binnenkort beschikbaar!'}
             </p>
           </div>
         ) : (
@@ -357,10 +348,10 @@ export default async function AgePage({
                 <React.Fragment key={chunkIndex}>
                   <div
                     style={{
-                      display: 'grid',
-                      gridTemplateColumns: 'repeat(auto-fill, minmax(240px, 1fr))',
-                      gap: '1.5rem',
-                      marginBottom: showAdBar ? '2.5rem' : 0,
+                      display:'grid',
+                      gridTemplateColumns:'repeat(auto-fill, minmax(240px, 1fr))',
+                      gap:'1.5rem',
+                      marginBottom: showAdBar ?'2.5rem': 0,
                     }}
                   >
                     {chunk.map(page => (
@@ -369,8 +360,8 @@ export default async function AgePage({
                   </div>
 
                   {showAdBar && (
-                    <div style={{ margin: '2.5rem 0' }}>
-                      <AdSlot type="banner" text={isEn ? 'Sponsored Content' : 'Gesponsord'} />
+                    <div style={{ margin:'2.5rem 0'}}>
+                      <AdSlot type="banner"text={isEn ?'Sponsored Content':'Gesponsord'} />
                     </div>
                   )}
                 </React.Fragment>
@@ -381,39 +372,36 @@ export default async function AgePage({
 
         {/* Pagination Progress */}
         {totalPages > 1 && (
-          <div style={{ marginTop: '3.5rem' }}>
-            <div style={{ marginBottom: '1.5rem', textAlign: 'center' }}>
-              <p style={{ fontSize: '0.85rem', color: 'var(--gray-500)', fontWeight: 600, marginBottom: '0.6rem' }}>
+          <div style={{ marginTop:'3.5rem'}}>
+            <div style={{ marginBottom:'1.5rem', textAlign:'center'}}>
+              <p style={{ fontSize:'0.85rem', color:'var(--gray-500)', fontWeight: 600, marginBottom:'0.6rem'}}>
                 {isEn
-                  ? `Page ${currentPage} of ${totalPages} — ${Math.min(currentPage * PER_PAGE, allColoringPages.length)} of ${allColoringPages.length} pages`
-                  : `Pagina ${currentPage} van ${totalPages} — ${Math.min(currentPage * PER_PAGE, allColoringPages.length)} van ${allColoringPages.length} kleurplaten`
-                }
+                  ?`Page ${currentPage} of ${totalPages} — ${Math.min(currentPage * PER_PAGE, allColoringPages.length)} of ${allColoringPages.length} pages`:`Pagina ${currentPage} van ${totalPages} — ${Math.min(currentPage * PER_PAGE, allColoringPages.length)} van ${allColoringPages.length} kleurplaten`}
               </p>
               <div style={{
-                height: '6px',
-                background: 'var(--gray-200)',
-                borderRadius: '9999px',
-                overflow: 'hidden',
-                maxWidth: '320px',
-                margin: '0 auto',
+                height:'6px',
+                background:'var(--gray-200)',
+                borderRadius:'9999px',
+                overflow:'hidden',
+                maxWidth:'320px',
+                margin:'0 auto',
               }}>
                 <div style={{
-                  height: '100%',
-                  width: `${(currentPage / totalPages) * 100}%`,
-                  background: 'linear-gradient(90deg, var(--primary), #A29BFE)',
-                  borderRadius: '9999px',
-                  transition: 'width 0.4s ease',
+                  height:'100%',
+                  width:`${(currentPage / totalPages) * 100}%`,
+                  background:'linear-gradient(90deg, var(--primary), #A29BFE)',
+                  borderRadius:'9999px',
+                  transition:'width 0.4s ease',
                 }} />
               </div>
             </div>
 
-            <div style={{ display: 'flex', justifyContent: 'center', gap: '0.5rem', flexWrap: 'wrap' }}>
+            <div style={{ display:'flex', justifyContent:'center', gap:'0.5rem', flexWrap:'wrap'}}>
               {currentPage > 1 && (
                 <Link
                   href={`/${lang}/${mainHubSlug}/${themeSlug}/${ageSlug}?page=${currentPage - 1}`}
-                  className="btn-secondary"
-                >
-                  ← {isEn ? 'Previous' : 'Vorige'}
+                  className="btn-secondary">
+                  ← {isEn ?'Previous':'Vorige'}
                 </Link>
               )}
               {Array.from({ length: totalPages }).map((_, i) => {
@@ -424,17 +412,17 @@ export default async function AgePage({
                     key={pageNum}
                     href={`/${lang}/${mainHubSlug}/${themeSlug}/${ageSlug}?page=${pageNum}`}
                     style={{
-                      width: '40px',
-                      height: '40px',
-                      display: 'flex',
-                      alignItems: 'center',
-                      justifyContent: 'center',
-                      borderRadius: 'var(--radius)',
+                      width:'40px',
+                      height:'40px',
+                      display:'flex',
+                      alignItems:'center',
+                      justifyContent:'center',
+                      borderRadius:'var(--radius)',
                       fontWeight: 700,
-                      background: isActive ? 'var(--primary)' : 'var(--surface)',
-                      color: isActive ? '#FFFFFF' : 'var(--foreground)',
-                      border: '1px solid var(--gray-200)',
-                      textDecoration: 'none',
+                      background: isActive ?'var(--primary)':'var(--surface)',
+                      color: isActive ?'#FFFFFF':'var(--foreground)',
+                      border:'1px solid var(--gray-200)',
+                      textDecoration:'none',
                     }}
                   >
                     {pageNum}
@@ -444,25 +432,24 @@ export default async function AgePage({
               {currentPage < totalPages && (
                 <Link
                   href={`/${lang}/${mainHubSlug}/${themeSlug}/${ageSlug}?page=${currentPage + 1}`}
-                  className="btn-secondary"
-                >
-                  {isEn ? 'Next' : 'Volgende'} →
+                  className="btn-secondary">
+                  {isEn ?'Next':'Volgende'} →
                 </Link>
               )}
             </div>
           </div>
         )}
 
-        {/* ✂️ 5 Fun Craft Ideas & Activities (SEO Supercharger) */}
+        {/* 5 Fun Craft Ideas & Activities (SEO Supercharger) */}
         <CraftIdeasSection themeTitle={theme.title} isEn={isEn} />
 
-        {/* 💌 Newsletter & Coloring Club */}
+        {/* Newsletter & Coloring Club */}
         <NewsletterBox isEn={isEn} lang={lang} />
 
-        {/* 🔗 Related Themes */}
+        {/* Related Themes */}
         <RelatedThemes lang={lang} isEn={isEn} currentThemeSlug={theme.slug} allThemes={getThemes(lang)} />
 
-        {/* ⚖️ Intellectual Property & Fair-Use Disclaimer */}
+        {/* Intellectual Property & Fair-Use Disclaimer */}
         <CharacterIpDisclaimer themeTitle={theme.title} isEn={isEn} lang={lang} />
       </div>
     </>

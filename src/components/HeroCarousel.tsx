@@ -1,8 +1,8 @@
 'use client';
 
-import { useState, useEffect } from 'react';
-import Link from 'next/link';
-import styles from './HeroCarousel.module.css';
+import { useState, useEffect } from'react';
+import Link from'next/link';
+import styles from'./HeroCarousel.module.css';
 
 export interface CarouselItem {
   src: string;
@@ -16,7 +16,7 @@ interface HeroCarouselProps {
   lang?: string;
 }
 
-export default function HeroCarousel({ items, lang = 'nl' }: HeroCarouselProps) {
+export default function HeroCarousel({ items, lang ='nl'}: HeroCarouselProps) {
   const [shuffledItems, setShuffledItems] = useState<CarouselItem[]>([]);
 
   useEffect(() => {
@@ -34,7 +34,7 @@ export default function HeroCarousel({ items, lang = 'nl' }: HeroCarouselProps) 
 
   if (count === 0) return null;
 
-  const isEn = lang === 'en';
+  const isEn = lang ==='en';
 
   return (
     <div className={styles.widescreenHeroMaster}>
@@ -42,9 +42,7 @@ export default function HeroCarousel({ items, lang = 'nl' }: HeroCarouselProps) 
       <div className={styles.vaultFrame}>
         {/* eslint-disable-next-line @next/next/no-img-element */}
         <img
-          src="/images/banner.jpg"
-          alt="ColorVaults 3D Vault Stage"
-          className={styles.vaultImage}
+          src="/images/banner.jpg"alt="ColorVaults 3D Vault Stage"className={styles.vaultImage}
         />
         <div className={styles.vaultPortalAura} />
       </div>
@@ -52,13 +50,13 @@ export default function HeroCarousel({ items, lang = 'nl' }: HeroCarouselProps) 
       {/* 3D Carousel Revolving in Center of Vault Door (shifted slightly down) */}
       <div className={styles.portalStage}>
         <div className={styles.scene}>
-          <div className={styles.ring} style={{ '--count': count } as React.CSSProperties}>
+          <div className={styles.ring} style={{'--count': count } as React.CSSProperties}>
             {displayItems.map((img, i) => (
               <Link
                 key={`${img.href}-${i}`}
                 href={img.href}
                 className={styles.card}
-                style={{ '--i': i, '--count': count } as React.CSSProperties}
+                style={{'--i': i,'--count': count } as React.CSSProperties}
                 title={img.alt}
               >
                 {/* eslint-disable-next-line @next/next/no-img-element */}
@@ -67,13 +65,13 @@ export default function HeroCarousel({ items, lang = 'nl' }: HeroCarouselProps) 
                 
                 {/* Album Badge Top Left */}
                 <div className={styles.albumBadge}>
-                  <span>⭐ {isEn ? 'Album' : 'Album'}</span>
+                  <span>{isEn ?'Album':'Album'}</span>
                 </div>
 
                 {/* Album Title Bottom */}
                 <div className={styles.cardLabel}>
                   <span className={styles.albumTitle}>{img.alt}</span>
-                  <span className={styles.albumCta}>{isEn ? 'Explore →' : 'Bekijk Album →'}</span>
+                  <span className={styles.albumCta}>{isEn ?'Explore →':'Bekijk Album →'}</span>
                 </div>
               </Link>
             ))}

@@ -1,17 +1,17 @@
 'use client';
 
-import { useEffect, useRef } from 'react';
-import styles from './AdSlot.module.css';
+import { useEffect, useRef } from'react';
+import styles from'./AdSlot.module.css';
 
 interface AdSlotProps {
-  type?: 'banner' | 'rectangle' | 'in-feed';
+  type?:'banner'|'rectangle'|'in-feed';
   text?: string;
   slotId?: string;
 }
 
 export default function AdSlot({
-  type = 'banner',
-  text = 'Advertisement',
+  type ='banner',
+  text ='Advertisement',
   slotId,
 }: AdSlotProps) {
   const adRef = useRef<HTMLModElement>(null);
@@ -21,7 +21,7 @@ export default function AdSlot({
     if (pushedRef.current) return;
 
     try {
-      if (typeof window !== 'undefined') {
+      if (typeof window !=='undefined') {
         const insElement = adRef.current;
         // Check if the ad unit is already loaded or initialized
         if (insElement && !insElement.getAttribute('data-adsbygoogle-status')) {
@@ -34,11 +34,8 @@ export default function AdSlot({
     }
   }, []);
 
-  // Prepare valid AdSense data attributes (NEVER pass data-ad-slot="auto" as Google rejects it)
-  const adDataProps: Record<string, string> = {
-    'data-ad-client': 'ca-pub-1184801748776428',
-    'data-ad-format': type === 'rectangle' ? 'rectangle' : type === 'in-feed' ? 'fluid' : 'auto',
-    'data-full-width-responsive': 'true',
+  // Prepare valid AdSense data attributes (NEVER pass data-ad-slot="auto"as Google rejects it)
+  const adDataProps: Record<string, string> = {'data-ad-client':'ca-pub-1184801748776428','data-ad-format': type ==='rectangle'?'rectangle': type ==='in-feed'?'fluid':'auto','data-full-width-responsive':'true',
   };
 
   // Only attach data-ad-slot if a real numeric slotId was passed
@@ -49,8 +46,7 @@ export default function AdSlot({
   return (
     <div
       className={`${styles.adSlot} ${styles[type]}`}
-      role="complementary"
-      aria-label={text}
+      role="complementary"aria-label={text}
     >
       <div className={styles.adHeader}>
         <span className={styles.adTag}>{text}</span>
@@ -60,8 +56,7 @@ export default function AdSlot({
         {/* Google AdSense ad unit */}
         <ins
           ref={adRef}
-          className="adsbygoogle"
-          style={{ display: 'block', width: '100%' }}
+          className="adsbygoogle"style={{ display:'block', width:'100%'}}
           {...adDataProps}
         />
       </div>

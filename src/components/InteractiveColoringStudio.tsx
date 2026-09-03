@@ -1,9 +1,9 @@
 'use client';
 
-import React, { useRef, useState, useEffect, useCallback } from 'react';
-import styles from './InteractiveColoringStudio.module.css';
-import AdSlot from './AdSlot';
-import Link from 'next/link';
+import React, { useRef, useState, useEffect, useCallback } from'react';
+import styles from'./InteractiveColoringStudio.module.css';
+import AdSlot from'./AdSlot';
+import Link from'next/link';
 
 interface InteractiveColoringStudioProps {
   imageUrl: string;
@@ -13,12 +13,7 @@ interface InteractiveColoringStudioProps {
   themeTitle: string;
 }
 
-const PRESET_COLORS = [
-  '#FF3B30', '#FF9500', '#FFCC00', '#34C759', '#00C7BE', '#30B0C7',
-  '#32ADE6', '#007AFF', '#5856D6', '#AF52DE', '#FF2D55', '#A2845E',
-  '#8E8E93', '#000000', '#FFFFFF', '#FFB3BA', '#BAFFC9', '#BAE1FF',
-  '#FFFFBA', '#FFDFBA', '#E8DFF5', '#FCE1E4', '#FCF4DD', '#DDF6F5'
-];
+const PRESET_COLORS = ['#FF3B30','#FF9500','#FFCC00','#34C759','#00C7BE','#30B0C7','#32ADE6','#007AFF','#5856D6','#AF52DE','#FF2D55','#A2845E','#8E8E93','#000000','#FFFFFF','#FFB3BA','#BAFFC9','#BAE1FF','#FFFFBA','#FFDFBA','#E8DFF5','#FCE1E4','#FCF4DD','#DDF6F5'];
 
 export default function InteractiveColoringStudio({
   imageUrl,
@@ -28,7 +23,7 @@ export default function InteractiveColoringStudio({
   themeTitle,
 }: InteractiveColoringStudioProps) {
   const canvasRef = useRef<HTMLCanvasElement>(null);
-  const [activeTool, setActiveTool] = useState<'bucket' | 'brush' | 'eraser'>('bucket');
+  const [activeTool, setActiveTool] = useState<'bucket'|'brush'|'eraser'>('bucket');
   const [activeColor, setActiveColor] = useState<string>('#FF3B30');
   const [brushSize, setBrushSize] = useState<number>(14);
   const [history, setHistory] = useState<ImageData[]>([]);
@@ -39,15 +34,15 @@ export default function InteractiveColoringStudio({
   const [coloredPreviewUrl, setColoredPreviewUrl] = useState<string | null>(null);
 
   const launchConfetti = () => {
-    if (typeof window === 'undefined') return;
+    if (typeof window ==='undefined') return;
     const canvas = document.createElement('canvas');
-    canvas.style.position = 'fixed';
-    canvas.style.top = '0';
-    canvas.style.left = '0';
-    canvas.style.width = '100vw';
-    canvas.style.height = '100vh';
-    canvas.style.pointerEvents = 'none';
-    canvas.style.zIndex = '99999';
+    canvas.style.position ='fixed';
+    canvas.style.top ='0';
+    canvas.style.left ='0';
+    canvas.style.width ='100vw';
+    canvas.style.height ='100vh';
+    canvas.style.pointerEvents ='none';
+    canvas.style.zIndex ='99999';
     document.body.appendChild(canvas);
 
     const ctx = canvas.getContext('2d');
@@ -57,7 +52,7 @@ export default function InteractiveColoringStudio({
     canvas.height = window.innerHeight;
 
     const particles: Array<{ x: number; y: number; vx: number; vy: number; color: string; size: number; rotation: number; rotSpeed: number }> = [];
-    const colors = ['#FF3B30', '#FF9500', '#FFCC00', '#34C759', '#007AFF', '#5856D6', '#AF52DE', '#FF2D55'];
+    const colors = ['#FF3B30','#FF9500','#FFCC00','#34C759','#007AFF','#5856D6','#AF52DE','#FF2D55'];
 
     for (let i = 0; i < 120; i++) {
       particles.push({
@@ -117,11 +112,11 @@ export default function InteractiveColoringStudio({
     const ctx = canvas.getContext('2d', { willReadFrequently: true });
     if (!ctx) return;
 
-    const isRemote = imageUrl.startsWith('http') && (typeof window !== 'undefined' ? !imageUrl.includes(window.location.hostname) : true);
-    const targetSrc = isRemote ? `/api/proxy-image?url=${encodeURIComponent(imageUrl)}` : imageUrl;
+    const isRemote = imageUrl.startsWith('http') && (typeof window !=='undefined'? !imageUrl.includes(window.location.hostname) : true);
+    const targetSrc = isRemote ?`/api/proxy-image?url=${encodeURIComponent(imageUrl)}`: imageUrl;
 
     const img = new Image();
-    img.crossOrigin = 'anonymous';
+    img.crossOrigin ='anonymous';
     img.src = targetSrc;
 
     img.onload = () => {
@@ -138,7 +133,7 @@ export default function InteractiveColoringStudio({
       canvas.height = h;
 
       // Fill white background first
-      ctx.fillStyle = '#FFFFFF';
+      ctx.fillStyle ='#FFFFFF';
       ctx.fillRect(0, 0, w, h);
       ctx.drawImage(img, 0, 0, w, h);
 
@@ -157,11 +152,11 @@ export default function InteractiveColoringStudio({
       }
       canvas.width = 600;
       canvas.height = 800;
-      ctx.fillStyle = '#FFFFFF';
+      ctx.fillStyle ='#FFFFFF';
       ctx.fillRect(0, 0, 600, 800);
-      ctx.fillStyle = '#000000';
-      ctx.font = '16px sans-serif';
-      ctx.fillText(isEn ? 'Failed to load coloring sheet' : 'Afbeelding kon niet worden geladen', 20, 50);
+      ctx.fillStyle ='#000000';
+      ctx.font ='16px sans-serif';
+      ctx.fillText(isEn ?'Failed to load coloring sheet':'Afbeelding kon niet worden geladen', 20, 50);
       setLoading(false);
     };
   }, [imageUrl, isEn]);
@@ -223,7 +218,7 @@ export default function InteractiveColoringStudio({
 
   // Helper: Hex color to RGB
   const hexToRgb = (hex: string): [number, number, number] => {
-    let clean = hex.replace('#', '');
+    let clean = hex.replace('#','');
     if (clean.length === 3) clean = clean.split('').map(c => c + c).join('');
     const num = parseInt(clean, 16);
     return [(num >> 16) & 255, (num >> 8) & 255, num & 255];
@@ -319,8 +314,8 @@ export default function InteractiveColoringStudio({
     const canvas = canvasRef.current;
     if (!canvas) return { x: 0, y: 0 };
     const rect = canvas.getBoundingClientRect();
-    const clientX = 'touches' in e ? e.touches[0].clientX : e.clientX;
-    const clientY = 'touches' in e ? e.touches[0].clientY : e.clientY;
+    const clientX ='touches'in e ? e.touches[0].clientX : e.clientX;
+    const clientY ='touches'in e ? e.touches[0].clientY : e.clientY;
     const scaleX = canvas.width / rect.width;
     const scaleY = canvas.height / rect.height;
     return {
@@ -332,7 +327,7 @@ export default function InteractiveColoringStudio({
   // Mouse / Touch Handlers
   const handlePointerDown = (e: React.MouseEvent<HTMLCanvasElement> | React.TouchEvent<HTMLCanvasElement>) => {
     const coords = getCanvasCoords(e);
-    if (activeTool === 'bucket') {
+    if (activeTool ==='bucket') {
       floodFill(coords.x, coords.y, activeColor);
       return;
     }
@@ -343,7 +338,7 @@ export default function InteractiveColoringStudio({
   };
 
   const handlePointerMove = (e: React.MouseEvent<HTMLCanvasElement> | React.TouchEvent<HTMLCanvasElement>) => {
-    if (!isDrawing || activeTool === 'bucket') return;
+    if (!isDrawing || activeTool ==='bucket') return;
     const coords = getCanvasCoords(e);
     drawBrush(coords.x, coords.y);
   };
@@ -365,10 +360,10 @@ export default function InteractiveColoringStudio({
     ctx.beginPath();
     ctx.moveTo(lastPos.current.x, lastPos.current.y);
     ctx.lineTo(x, y);
-    ctx.strokeStyle = activeTool === 'eraser' ? '#FFFFFF' : activeColor;
+    ctx.strokeStyle = activeTool ==='eraser'?'#FFFFFF': activeColor;
     ctx.lineWidth = brushSize;
-    ctx.lineCap = 'round';
-    ctx.lineJoin = 'round';
+    ctx.lineCap ='round';
+    ctx.lineJoin ='round';
     ctx.stroke();
 
     lastPos.current = { x, y };
@@ -389,15 +384,15 @@ export default function InteractiveColoringStudio({
     ctx.drawImage(canvas, 0, 0);
 
     // Watermark
-    ctx.fillStyle = 'rgba(0, 0, 0, 0.4)';
+    ctx.fillStyle ='rgba(0, 0, 0, 0.4)';
     const fontSize = Math.max(14, canvas.width * 0.025);
-    ctx.font = `bold ${fontSize}px sans-serif`;
-    ctx.textAlign = 'right';
+    ctx.font =`bold ${fontSize}px sans-serif`;
+    ctx.textAlign ='right';
     ctx.fillText('Colored on ColorVaults.com', canvas.width - 16, canvas.height - 16);
 
     const a = document.createElement('a');
     a.href = exportCanvas.toDataURL('image/png');
-    a.download = `colorvaults-colored-${title.toLowerCase().replace(/[^a-z0-9]+/g, '-')}.png`;
+    a.download =`colorvaults-colored-${title.toLowerCase().replace(/[^a-z0-9]+/g,'-')}.png`;
     a.click();
   };
 
@@ -407,11 +402,10 @@ export default function InteractiveColoringStudio({
     if (!canvas) return;
 
     const dataUrl = canvas.toDataURL('image/png');
-    const printWindow = window.open('', '_blank');
+    const printWindow = window.open('','_blank');
     if (!printWindow) return;
 
-    printWindow.document.write(`
-      <!DOCTYPE html>
+    printWindow.document.write(`<!DOCTYPE html>
       <html>
         <head>
           <title>${title} - ColorVaults</title>
@@ -422,10 +416,9 @@ export default function InteractiveColoringStudio({
           </style>
         </head>
         <body>
-          <img src="${dataUrl}" onload="window.print();window.close();" />
+          <img src="${dataUrl}"onload="window.print();window.close();"/>
         </body>
-      </html>
-    `);
+      </html>`);
     printWindow.document.close();
   };
 
@@ -439,19 +432,18 @@ export default function InteractiveColoringStudio({
           </h1>
           <p className={styles.studioSubtitle}>
             {isEn 
-              ? 'Interactive digital coloring studio — Click on any area to fill with color, or use brushes to paint freely!'
-              : 'Interactieve digitale kleurstudio — Klik op een vlak om in te vullen met verf, of gebruik het penseel om vrij te schilderen!'}
+              ?'Interactive digital coloring studio — Click on any area to fill with color, or use brushes to paint freely!':'Interactieve digitale kleurstudio — Klik op een vlak om in te vullen met verf, of gebruik het penseel om vrij te schilderen!'}
           </p>
         </div>
         <div className={styles.headerActions}>
-          <Link href={backUrl} className="btn-secondary" style={{ textDecoration: 'none', padding: '0.65rem 1.15rem' }}>
-            ← {isEn ? 'Back to Page' : 'Terug naar Kleurplaat'}
+          <Link href={backUrl} className="btn-secondary"style={{ textDecoration:'none', padding:'0.65rem 1.15rem'}}>
+            ← {isEn ?'Back to Page':'Terug naar Kleurplaat'}
           </Link>
         </div>
       </div>
 
       {/* Top Banner Advertisement */}
-      <AdSlot type="banner" text={isEn ? "Sponsored Content" : "Gesponsord"} />
+      <AdSlot type="banner"text={isEn ?"Sponsored Content":"Gesponsord"} />
 
       {/* Studio Workspace Grid */}
       <div className={styles.studioGrid}>
@@ -459,7 +451,7 @@ export default function InteractiveColoringStudio({
         <div className={styles.canvasStage}>
           {loading && (
             <div className={styles.loadingOverlay}>
-              <span>{isEn ? 'Loading Interactive Canvas...' : 'Interactief Canvas Laden...'}</span>
+              <span>{isEn ?'Loading Interactive Canvas...':'Interactief Canvas Laden...'}</span>
             </div>
           )}
           <div className={styles.canvasWrapper}>
@@ -482,45 +474,39 @@ export default function InteractiveColoringStudio({
           {/* Tool Selector */}
           <div className={styles.controlCard}>
             <div className={styles.cardTitle}>
-              {isEn ? 'Coloring Tools' : 'Kleurhulpmiddelen'}
+              {isEn ?'Coloring Tools':'Kleurhulpmiddelen'}
             </div>
             <div className={styles.toolButtons}>
               <button
-                type="button"
-                className={`${styles.toolBtn} ${activeTool === 'bucket' ? styles.active : ''}`}
+                type="button"className={`${styles.toolBtn} ${activeTool ==='bucket'? styles.active :''}`}
                 onClick={() => setActiveTool('bucket')}
               >
-                <span>{isEn ? 'Fill Bucket' : 'Verfemmer'}</span>
+                <span>{isEn ?'Fill Bucket':'Verfemmer'}</span>
               </button>
               <button
-                type="button"
-                className={`${styles.toolBtn} ${activeTool === 'brush' ? styles.active : ''}`}
+                type="button"className={`${styles.toolBtn} ${activeTool ==='brush'? styles.active :''}`}
                 onClick={() => setActiveTool('brush')}
               >
-                <span>{isEn ? 'Brush' : 'Penseel'}</span>
+                <span>{isEn ?'Brush':'Penseel'}</span>
               </button>
               <button
-                type="button"
-                className={`${styles.toolBtn} ${activeTool === 'eraser' ? styles.active : ''}`}
+                type="button"className={`${styles.toolBtn} ${activeTool ==='eraser'? styles.active :''}`}
                 onClick={() => setActiveTool('eraser')}
               >
-                <span>{isEn ? 'Eraser' : 'Gum'}</span>
+                <span>{isEn ?'Eraser':'Gum'}</span>
               </button>
             </div>
 
-            {activeTool !== 'bucket' && (
+            {activeTool !=='bucket'&& (
               <div className={styles.brushSizeSlider}>
                 <div className={styles.brushSizeLabel}>
-                  <span>{isEn ? 'Size' : 'Dikte'}:</span>
+                  <span>{isEn ?'Size':'Dikte'}:</span>
                   <span>{brushSize}px</span>
                 </div>
                 <input
-                  type="range"
-                  min="4"
-                  max="40"
-                  value={brushSize}
+                  type="range"min="4"max="40"value={brushSize}
                   onChange={(e) => setBrushSize(Number(e.target.value))}
-                  style={{ width: '100%', accentColor: 'var(--primary)' }}
+                  style={{ width:'100%', accentColor:'var(--primary)'}}
                 />
               </div>
             )}
@@ -529,14 +515,13 @@ export default function InteractiveColoringStudio({
           {/* Color Palette */}
           <div className={styles.controlCard}>
             <div className={styles.cardTitle}>
-              {isEn ? 'Color Palette' : 'Kleurenpalet'}
+              {isEn ?'Color Palette':'Kleurenpalet'}
             </div>
             <div className={styles.paletteGrid}>
               {PRESET_COLORS.map((c) => (
                 <button
                   key={c}
-                  type="button"
-                  className={`${styles.colorSwatch} ${activeColor.toUpperCase() === c.toUpperCase() ? styles.selected : ''}`}
+                  type="button"className={`${styles.colorSwatch} ${activeColor.toUpperCase() === c.toUpperCase() ? styles.selected :''}`}
                   style={{ backgroundColor: c }}
                   onClick={() => setActiveColor(c)}
                   aria-label={`Color ${c}`}
@@ -545,14 +530,13 @@ export default function InteractiveColoringStudio({
             </div>
             <div className={styles.customPickerRow}>
               <input
-                type="color"
-                value={activeColor}
+                type="color"value={activeColor}
                 onChange={(e) => setActiveColor(e.target.value)}
                 className={styles.colorPickerInput}
-                title={isEn ? 'Custom Color Picker' : 'Eigen Kleur Kiezen'}
+                title={isEn ?'Custom Color Picker':'Eigen Kleur Kiezen'}
               />
-              <span style={{ fontSize: '0.85rem', fontWeight: 700, color: 'var(--foreground)' }}>
-                {isEn ? 'Custom Color' : 'Eigen Kleur'} ({activeColor.toUpperCase()})
+              <span style={{ fontSize:'0.85rem', fontWeight: 700, color:'var(--foreground)'}}>
+                {isEn ?'Custom Color':'Eigen Kleur'} ({activeColor.toUpperCase()})
               </span>
             </div>
           </div>
@@ -560,64 +544,55 @@ export default function InteractiveColoringStudio({
           {/* History / Actions */}
           <div className={styles.controlCard}>
             <div className={styles.cardTitle}>
-              {isEn ? 'History & Actions' : 'Bewerkingen'}
+              {isEn ?'History & Actions':'Bewerkingen'}
             </div>
             <div className={styles.actionRow}>
               <button
-                type="button"
-                className={styles.actionBtn}
+                type="button"className={styles.actionBtn}
                 onClick={handleUndo}
                 disabled={historyIndex <= 0}
-                title="Undo"
-              >
-                {isEn ? 'Undo' : 'Herstel'}
+                title="Undo">
+                {isEn ?'Undo':'Herstel'}
               </button>
               <button
-                type="button"
-                className={styles.actionBtn}
+                type="button"className={styles.actionBtn}
                 onClick={handleRedo}
                 disabled={historyIndex >= history.length - 1}
-                title="Redo"
-              >
-                {isEn ? 'Redo' : 'Opnieuw'}
+                title="Redo">
+                {isEn ?'Redo':'Opnieuw'}
               </button>
               <button
-                type="button"
-                className={styles.actionBtn}
+                type="button"className={styles.actionBtn}
                 onClick={handleReset}
-                title="Reset"
-              >
-                {isEn ? 'Clear' : 'Wissen'}
+                title="Reset">
+                {isEn ?'Clear':'Wissen'}
               </button>
             </div>
 
-            <div style={{ marginTop: '1rem', display: 'flex', flexDirection: 'column', gap: '0.65rem' }}>
+            <div style={{ marginTop:'1rem', display:'flex', flexDirection:'column', gap:'0.65rem'}}>
               <button
-                type="button"
-                className={styles.finishBtn}
+                type="button"className={styles.finishBtn}
                 onClick={handleFinishMasterpiece}
               >
-                🎉 {isEn ? 'Finish & Celebrate!' : 'Klaar met Inkleuren! 🎉'}
+                {isEn ?'Finish & Celebrate!':'Klaar met Inkleuren!'}
               </button>
               <button
-                type="button"
-                className={styles.downloadArtBtn}
+                type="button"className={styles.downloadArtBtn}
                 onClick={handleDownloadColored}
               >
-                {isEn ? 'Download Image (PNG)' : 'Afbeelding Opslaan (PNG)'}
+                {isEn ?'Download Image (PNG)':'Afbeelding Opslaan (PNG)'}
               </button>
               <button
-                type="button"
-                className={styles.printArtBtn}
+                type="button"className={styles.printArtBtn}
                 onClick={handlePrintColored}
               >
-                {isEn ? 'Print Colored Page' : 'Ingekleurde Pagina Printen'}
+                {isEn ?'Print Colored Page':'Ingekleurde Pagina Printen'}
               </button>
             </div>
           </div>
 
           {/* Sticky Sidebar Rectangle Advertisement */}
-          <AdSlot type="rectangle" text={isEn ? "Sponsored Content" : "Gesponsord"} />
+          <AdSlot type="rectangle"text={isEn ?"Sponsored Content":"Gesponsord"} />
         </div>
       </div>
 
@@ -626,12 +601,12 @@ export default function InteractiveColoringStudio({
       {showCelebration && (
         <div className={styles.celebrationOverlay} onClick={() => setShowCelebration(false)}>
           <div className={styles.celebrationModal} onClick={(e) => e.stopPropagation()}>
-            <div className={styles.celebrationBadge}>🏆 {isEn ? 'Masterpiece Award' : 'Kunstwerk Diploma'}</div>
+            <div className={styles.celebrationBadge}>🏆 {isEn ?'Masterpiece Award':'Kunstwerk Diploma'}</div>
             <h2 className={styles.celebrationTitle}>
-              {isEn ? '🎉 What a Wonderful Masterpiece!' : '🎉 Wat een Prachtig Kunstwerk!'}
+              {isEn ?'What a Wonderful Masterpiece!':'Wat een Prachtig Kunstwerk!'}
             </h2>
             <p className={styles.celebrationSubtitle}>
-              {isEn ? `You have colored "${title}" with amazing creativity!` : `Je hebt "${title}" fantastisch mooi ingekleurd!`}
+              {isEn ?`You have colored"${title}"with amazing creativity!`:`Je hebt"${title}"fantastisch mooi ingekleurd!`}
             </p>
 
             {coloredPreviewUrl && (
@@ -639,33 +614,29 @@ export default function InteractiveColoringStudio({
                 {/* eslint-disable-next-line @next/next/no-img-element */}
                 <img
                   src={coloredPreviewUrl}
-                  alt="Completed Masterpiece"
-                  className={styles.completedArtImg}
+                  alt="Completed Masterpiece"className={styles.completedArtImg}
                 />
               </div>
             )}
 
             <div className={styles.modalActionButtons}>
               <button
-                type="button"
-                className={styles.modalDownloadBtn}
+                type="button"className={styles.modalDownloadBtn}
                 onClick={handleDownloadColored}
               >
-                📥 {isEn ? 'Save My Masterpiece (PNG)' : 'Mijn Kunstwerk Opslaan (PNG)'}
+                {isEn ?'Save My Masterpiece (PNG)':'Mijn Kunstwerk Opslaan (PNG)'}
               </button>
               <button
-                type="button"
-                className={styles.modalPrintBtn}
+                type="button"className={styles.modalPrintBtn}
                 onClick={handlePrintColored}
               >
-                🖨️ {isEn ? 'Print Artwork' : 'Kunstwerk Printen'}
+                {isEn ?'Print Artwork':'Kunstwerk Printen'}
               </button>
               <button
-                type="button"
-                className={styles.modalCloseBtn}
+                type="button"className={styles.modalCloseBtn}
                 onClick={() => setShowCelebration(false)}
               >
-                🎨 {isEn ? 'Keep Coloring' : 'Verder Kleuren'}
+                {isEn ?'Keep Coloring':'Verder Kleuren'}
               </button>
             </div>
           </div>
@@ -674,8 +645,8 @@ export default function InteractiveColoringStudio({
 
 
       {/* Bottom Leaderboard Advertisement */}
-      <div style={{ marginTop: '2rem' }}>
-        <AdSlot type="banner" text={isEn ? "Sponsored Content" : "Gesponsord"} />
+      <div style={{ marginTop:'2rem'}}>
+        <AdSlot type="banner"text={isEn ?"Sponsored Content":"Gesponsord"} />
       </div>
     </div>
   );

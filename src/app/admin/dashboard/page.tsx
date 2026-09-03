@@ -1,25 +1,25 @@
-import { requireAdmin } from '@/lib/adminAuth';
-import { getThemes, getColoringPages } from '@/lib/api';
-import AdminShell from '../AdminShell';
-import Link from 'next/link';
-import fs from 'fs';
-import path from 'path';
-import styles from '../admin.module.css';
+import { requireAdmin } from'@/lib/adminAuth';
+import { getThemes, getColoringPages } from'@/lib/api';
+import AdminShell from'../AdminShell';
+import Link from'next/link';
+import fs from'fs';
+import path from'path';
+import styles from'../admin.module.css';
 
 function getReportCount() {
-  const file = path.join(process.cwd(), 'src', 'data', 'reports.json');
+  const file = path.join(process.cwd(),'src','data','reports.json');
   if (!fs.existsSync(file)) return 0;
   try {
-    const reports = JSON.parse(fs.readFileSync(file, 'utf-8'));
-    return reports.filter((r: { status: string }) => r.status === 'open').length;
+    const reports = JSON.parse(fs.readFileSync(file,'utf-8'));
+    return reports.filter((r: { status: string }) => r.status ==='open').length;
   } catch { return 0; }
 }
 
 function getMessageCount() {
-  const file = path.join(process.cwd(), 'src', 'data', 'messages.json');
+  const file = path.join(process.cwd(),'src','data','messages.json');
   if (!fs.existsSync(file)) return 0;
   try {
-    const messages = JSON.parse(fs.readFileSync(file, 'utf-8'));
+    const messages = JSON.parse(fs.readFileSync(file,'utf-8'));
     return messages.length;
   } catch { return 0; }
 }
@@ -39,14 +39,14 @@ export default async function DashboardPage() {
   }
 
   const stats = [
-    { value: themes.length,  label: 'Categories (Thema\'s)', href: '/admin/categories' },
-    { value: pages.length.toLocaleString(),   label: 'Kleurplaten (Totaal)', href: '/admin/coloring-pages' },
-    { value: reportCount,    label: 'Open Meldingen', href: '/admin/reports', highlight: reportCount > 0 },
-    { value: messageCount,   label: 'Berichten', href: '/admin/messages' },
+    { value: themes.length,  label:'Categories (Thema\'s)', href:'/admin/categories'},
+    { value: pages.length.toLocaleString(),   label:'Kleurplaten (Totaal)', href:'/admin/coloring-pages'},
+    { value: reportCount,    label:'Open Meldingen', href:'/admin/reports', highlight: reportCount > 0 },
+    { value: messageCount,   label:'Berichten', href:'/admin/messages'},
   ];
 
   return (
-    <AdminShell title="Dashboard Overzicht" reportCount={reportCount}>
+    <AdminShell title="Dashboard Overzicht"reportCount={reportCount}>
       {/* Clickable Stat Cards */}
       <div className={styles.statsGrid}>
         {stats.map((s, i) => (
@@ -54,7 +54,7 @@ export default async function DashboardPage() {
             <div className={styles.statCard}>
               <div
                 className={styles.statValue}
-                style={s.highlight ? { color: '#f87171' } : undefined}
+                style={s.highlight ? { color:'#f87171'} : undefined}
               >
                 {s.value}
               </div>
@@ -65,52 +65,50 @@ export default async function DashboardPage() {
       </div>
 
       {/* Quick Action Navigation Grid */}
-      <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '1rem', marginBottom: '2rem' }}>
+      <div style={{ display:'grid', gridTemplateColumns:'repeat(auto-fit, minmax(280px, 1fr))', gap:'1rem', marginBottom:'2rem'}}>
         <Link
-          href="/admin/coloring-pages"
-          style={{
-            background: 'linear-gradient(135deg, rgba(255,107,74,0.15), rgba(255,107,74,0.05))',
-            border: '1px solid rgba(255,107,74,0.3)',
-            borderRadius: '0.75rem',
-            padding: '1.25rem',
-            textDecoration: 'none',
-            display: 'flex',
-            alignItems: 'center',
-            gap: '1rem',
-            transition: 'transform 0.15s ease',
+          href="/admin/coloring-pages"style={{
+            background:'linear-gradient(135deg, rgba(255,107,74,0.15), rgba(255,107,74,0.05))',
+            border:'1px solid rgba(255,107,74,0.3)',
+            borderRadius:'0.75rem',
+            padding:'1.25rem',
+            textDecoration:'none',
+            display:'flex',
+            alignItems:'center',
+            gap:'1rem',
+            transition:'transform 0.15s ease',
           }}
         >
-          <div style={{ fontSize: '2rem' }}>🎨</div>
+          <div style={{ fontSize:'2rem'}}></div>
           <div>
-            <h3 style={{ margin: '0 0 0.25rem', color: '#FDF6E9', fontSize: '1rem', fontWeight: 800 }}>
+            <h3 style={{ margin:'0 0 0.25rem', color:'#FDF6E9', fontSize:'1rem', fontWeight: 800 }}>
               Kleurplaten Beheer
             </h3>
-            <p style={{ margin: 0, color: 'rgba(253,246,233,0.55)', fontSize: '0.8rem' }}>
+            <p style={{ margin: 0, color:'rgba(253,246,233,0.55)', fontSize:'0.8rem'}}>
               Zoek, filter op dubbele namen, bekijk previews en inspecteer alle {pages.length} kleurplaten.
             </p>
           </div>
         </Link>
 
         <Link
-          href="/admin/categories"
-          style={{
-            background: 'linear-gradient(135deg, rgba(99,102,241,0.15), rgba(99,102,241,0.05))',
-            border: '1px solid rgba(99,102,241,0.3)',
-            borderRadius: '0.75rem',
-            padding: '1.25rem',
-            textDecoration: 'none',
-            display: 'flex',
-            alignItems: 'center',
-            gap: '1rem',
-            transition: 'transform 0.15s ease',
+          href="/admin/categories"style={{
+            background:'linear-gradient(135deg, rgba(99,102,241,0.15), rgba(99,102,241,0.05))',
+            border:'1px solid rgba(99,102,241,0.3)',
+            borderRadius:'0.75rem',
+            padding:'1.25rem',
+            textDecoration:'none',
+            display:'flex',
+            alignItems:'center',
+            gap:'1rem',
+            transition:'transform 0.15s ease',
           }}
         >
-          <div style={{ fontSize: '2rem' }}>🗂️</div>
+          <div style={{ fontSize:'2rem'}}>🗂️</div>
           <div>
-            <h3 style={{ margin: '0 0 0.25rem', color: '#FDF6E9', fontSize: '1rem', fontWeight: 800 }}>
+            <h3 style={{ margin:'0 0 0.25rem', color:'#FDF6E9', fontSize:'1rem', fontWeight: 800 }}>
               Categorieën Overzicht
             </h3>
-            <p style={{ margin: 0, color: 'rgba(253,246,233,0.55)', fontSize: '0.8rem' }}>
+            <p style={{ margin: 0, color:'rgba(253,246,233,0.55)', fontSize:'0.8rem'}}>
               Bekijk categorieën op aantal afbeeldingen, controleer lege thema&apos;s en spring direct naar de platen.
             </p>
           </div>
@@ -119,13 +117,12 @@ export default async function DashboardPage() {
 
       {/* Categories Table */}
       <div className={styles.tableWrap}>
-        <div style={{ padding: '1rem 1.5rem', display: 'flex', justifyContent: 'space-between', alignItems: 'center', borderBottom: '1px solid rgba(253,246,233,0.08)' }}>
-          <div className={styles.tableTitle} style={{ padding: 0, border: 'none' }}>
+        <div style={{ padding:'1rem 1.5rem', display:'flex', justifyContent:'space-between', alignItems:'center', borderBottom:'1px solid rgba(253,246,233,0.08)'}}>
+          <div className={styles.tableTitle} style={{ padding: 0, border:'none'}}>
             Alle Categorieën ({themes.length})
           </div>
           <Link
-            href="/admin/categories"
-            style={{ color: '#FF6B4A', fontSize: '0.82rem', fontWeight: 700, textDecoration: 'none' }}
+            href="/admin/categories"style={{ color:'#FF6B4A', fontSize:'0.82rem', fontWeight: 700, textDecoration:'none'}}
           >
             Bekijk alle {themes.length} thema&apos;s →
           </Link>
@@ -148,29 +145,29 @@ export default async function DashboardPage() {
                   <td>
                     <Link
                       href={`/admin/coloring-pages?theme=${t.slug}`}
-                      style={{ fontWeight: 700, color: '#FDF6E9', textDecoration: 'none', display: 'inline-flex', alignItems: 'center', gap: '0.4rem' }}
+                      style={{ fontWeight: 700, color:'#FDF6E9', textDecoration:'none', display:'inline-flex', alignItems:'center', gap:'0.4rem'}}
                     >
                       <span>📁</span> {t.title}
                     </Link>
-                    <div style={{ color: 'rgba(253,246,233,0.35)', fontSize: '0.72rem', marginTop: '0.2rem' }}>
+                    <div style={{ color:'rgba(253,246,233,0.35)', fontSize:'0.72rem', marginTop:'0.2rem'}}>
                       /{t.slug}
                     </div>
                   </td>
                   <td>
-                    <span style={{ color: 'rgba(253,246,233,0.6)' }}>{t.parentHub}</span>
+                    <span style={{ color:'rgba(253,246,233,0.6)'}}>{t.parentHub}</span>
                   </td>
                   <td>
                     <Link
                       href={`/admin/coloring-pages?theme=${t.slug}`}
-                      style={{ textDecoration: 'none' }}
+                      style={{ textDecoration:'none'}}
                     >
                       <span
                         className={styles.badge}
                         style={count === 0
-                          ? { background: 'rgba(239,68,68,0.15)', color: '#f87171' }
+                          ? { background:'rgba(239,68,68,0.15)', color:'#f87171'}
                           : count < 10
-                          ? { background: 'rgba(245,158,11,0.15)', color: '#fbbf24' }
-                          : { background: 'rgba(16,185,129,0.15)', color: '#10b981' }
+                          ? { background:'rgba(245,158,11,0.15)', color:'#fbbf24'}
+                          : { background:'rgba(16,185,129,0.15)', color:'#10b981'}
                         }
                       >
                         {count} platen
@@ -182,16 +179,14 @@ export default async function DashboardPage() {
                       <Link
                         href={`/admin/coloring-pages?theme=${t.slug}`}
                         className={styles.btnDismiss}
-                        style={{ textDecoration: 'none', display: 'inline-flex', alignItems: 'center', gap: '0.3rem' }}
+                        style={{ textDecoration:'none', display:'inline-flex', alignItems:'center', gap:'0.3rem'}}
                       >
-                        <span>🎨</span> Beheer
+                        <span></span> Beheer
                       </Link>
                       <a
                         href={`/en/${t.parentHub}/${t.slug}`}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className={styles.btnDismiss}
-                        style={{ textDecoration: 'none', display: 'inline-flex', alignItems: 'center', gap: '0.3rem' }}
+                        target="_blank"rel="noopener noreferrer"className={styles.btnDismiss}
+                        style={{ textDecoration:'none', display:'inline-flex', alignItems:'center', gap:'0.3rem'}}
                       >
                         <span>👁️</span> Live ↗
                       </a>

@@ -14,11 +14,10 @@ interface SpecificSeoOverride {
 
 const SPECIFIC_SEO_DATA: Record<string, SpecificSeoOverride> = {
   animals: {
-    enIntro: `Welcome to our extensive collection of free printable animals coloring pages! Whether you are looking for cute puppies, majestic lions, ocean creatures, or farm animals, we offer high-resolution PDF and image templates ready for instant download. Perfect for toddlers, school kids, and adults looking for creative fun without registration.`,
-    nlIntro: `Welkom bij onze uitgebreide verzameling gratis dieren kleurplaten om uit te printen! Of je nu op zoek bent naar schattige honden, schattige katten, machtige leeuwen, zeedieren of boerderijdieren: wij bieden hoge resolutie PDF- en afbeeldingensjablonen die direct printbaar zijn. Ideaal voor peuters, basisschoolkinderen en volwassenen die ontspannen willen kleuren zonder te registreren.`,
-    relatedSlugs: ['birds', 'safari-wildlife', 'cute-pets-animals', 'dolphins-underwater', 'farm'],
-    enBottomHtml: `
-      <h2>Who Are Our Animals Coloring Pages Suitable For?</h2>
+    enIntro:`Welcome to our extensive collection of free printable animals coloring pages! Whether you are looking for cute puppies, majestic lions, ocean creatures, or farm animals, we offer high-resolution PDF and image templates ready for instant download. Perfect for toddlers, school kids, and adults looking for creative fun without registration.`,
+    nlIntro:`Welkom bij onze uitgebreide verzameling gratis dieren kleurplaten om uit te printen! Of je nu op zoek bent naar schattige honden, schattige katten, machtige leeuwen, zeedieren of boerderijdieren: wij bieden hoge resolutie PDF- en afbeeldingensjablonen die direct printbaar zijn. Ideaal voor peuters, basisschoolkinderen en volwassenen die ontspannen willen kleuren zonder te registreren.`,
+    relatedSlugs: ['birds','safari-wildlife','cute-pets-animals','dolphins-underwater','farm'],
+    enBottomHtml:`<h2>Who Are Our Animals Coloring Pages Suitable For?</h2>
       <p>Our printable animal coloring templates cater to colorists of all experience levels and ages. From simple thick outlines for toddlers to highly detailed wildlife portraits for adults, every nature lover will find their favorite creature ready to print.</p>
 
       <h3>Age Groups & Difficulty Levels</h3>
@@ -34,10 +33,8 @@ const SPECIFIC_SEO_DATA: Record<string, SpecificSeoOverride> = {
 
       <h3>Explore Related Categories</h3>
       <p>If you love animals and nature, check out these related categories:</p>
-      RELATED_LINKS
-    `,
-    nlBottomHtml: `
-      <h2>Voor wie zijn onze Dieren Kleurplaten geschikt?</h2>
+      RELATED_LINKS`,
+    nlBottomHtml:`<h2>Voor wie zijn onze Dieren Kleurplaten geschikt?</h2>
       <p>Onze gratis dieren kleurplaten zijn geschikt voor kleurders van elk niveau en elke leeftijd. Van eenvoudige dikke contouren voor peuters tot zeer gedetailleerde wilde dieren en natuurportretten voor volwassenen: elke dierenvriend vindt hier zijn favoriete kleurplaat.</p>
 
       <h3>Leeftijdsgroepen & Moeilijkheidsgraden</h3>
@@ -53,15 +50,13 @@ const SPECIFIC_SEO_DATA: Record<string, SpecificSeoOverride> = {
 
       <h3>Ontdek ook gerelateerde categorieën</h3>
       <p>Bekijk ook deze populaire gerelateerde categorieën:</p>
-      RELATED_LINKS
-    `,
+      RELATED_LINKS`,
   },
   mandalas: {
-    enIntro: `Explore our beautiful collection of free printable mandala coloring pages designed for mindfulness, stress relief, and artistic expression. Featuring circular geometric patterns, floral mandalas, and spiritual designs in high resolution ready to print or download instantly.`,
-    nlIntro: `Ontdek onze prachtige verzameling gratis mandala kleurplaten om uit te printen voor ontspanning, mindfulness en creatieve rust. Met geometrische patronen, bloemen mandala's en spirituele sjablonen in hoge resolutie, direct printbaar zonder kosten.`,
-    relatedSlugs: ['celtic-patterns', 'patterns', 'botanical-gardens', 'art-nouveau', 'flowers-botanical'],
-    enBottomHtml: `
-      <h2>Mindfulness & Relaxation with Mandala Coloring Pages</h2>
+    enIntro:`Explore our beautiful collection of free printable mandala coloring pages designed for mindfulness, stress relief, and artistic expression. Featuring circular geometric patterns, floral mandalas, and spiritual designs in high resolution ready to print or download instantly.`,
+    nlIntro:`Ontdek onze prachtige verzameling gratis mandala kleurplaten om uit te printen voor ontspanning, mindfulness en creatieve rust. Met geometrische patronen, bloemen mandala's en spirituele sjablonen in hoge resolutie, direct printbaar zonder kosten.`,
+    relatedSlugs: ['celtic-patterns','patterns','botanical-gardens','art-nouveau','flowers-botanical'],
+    enBottomHtml:`<h2>Mindfulness & Relaxation with Mandala Coloring Pages</h2>
       <p>Mandala coloring is proven to reduce stress, improve concentration, and stimulate artistic creativity. Our collection offers a diverse range of symmetry designs suitable for beginners and seasoned colorists alike.</p>
 
       <h3>Age Groups & Difficulty Levels</h3>
@@ -77,10 +72,8 @@ const SPECIFIC_SEO_DATA: Record<string, SpecificSeoOverride> = {
 
       <h3>Explore Related Categories</h3>
       <p>Discover more relaxing pattern collections:</p>
-      RELATED_LINKS
-    `,
-    nlBottomHtml: `
-      <h2>Ontspanning & Mindfulness met Mandala Kleurplaten</h2>
+      RELATED_LINKS`,
+    nlBottomHtml:`<h2>Ontspanning & Mindfulness met Mandala Kleurplaten</h2>
       <p>Het inkleuren van mandala's helpt bij het verminderen van stress, bevordert de concentratie en geeft rust in je hoofd. Onze collectie biedt een brede waaier aan symmetrische patronen voor zowel beginners als gevorderden.</p>
 
       <h3>Leeftijdsgroepen & Moeilijkheidsgraden</h3>
@@ -96,15 +89,12 @@ const SPECIFIC_SEO_DATA: Record<string, SpecificSeoOverride> = {
 
       <h3>Ontdek ook gerelateerde categorieën</h3>
       <p>Bekijk ook deze ontspannende patroon- en kunstcategorieën:</p>
-      RELATED_LINKS
-    `,
-  },
-  'disney-princesses': {
-    enIntro: `Immerse yourself in a magical world with free printable Disney Princesses coloring pages! Print iconic heroines like Cinderella, Belle, Ariel, Jasmine, Snow White, and Rapunzel. High-resolution templates perfect for fairytale lovers, birthday activities, and creative family fun.`,
-    nlIntro: `Stap binnen in een betoverende wereld met gratis Disney Prinsessen kleurplaten om uit te printen! Kleur je favoriete prinsessen zoals Assepoester, Belle, Ariël, Jasmine, Sneeuwwitje en Rapunzel. Hoge resolutie kleurplaten ideaal voor kindfeestjes, knutselmiddagen en sprookjesliefhebbers.`,
-    relatedSlugs: ['disney-frozen', 'disney-ariel', 'disney-belle', 'princesses-castles', 'fairies'],
-    enBottomHtml: `
-      <h2>Magical Disney Princess Coloring Pages for Every Fan</h2>
+      RELATED_LINKS`,
+  },'disney-princesses': {
+    enIntro:`Immerse yourself in a magical world with free printable Disney Princesses coloring pages! Print iconic heroines like Cinderella, Belle, Ariel, Jasmine, Snow White, and Rapunzel. High-resolution templates perfect for fairytale lovers, birthday activities, and creative family fun.`,
+    nlIntro:`Stap binnen in een betoverende wereld met gratis Disney Prinsessen kleurplaten om uit te printen! Kleur je favoriete prinsessen zoals Assepoester, Belle, Ariël, Jasmine, Sneeuwwitje en Rapunzel. Hoge resolutie kleurplaten ideaal voor kindfeestjes, knutselmiddagen en sprookjesliefhebbers.`,
+    relatedSlugs: ['disney-frozen','disney-ariel','disney-belle','princesses-castles','fairies'],
+    enBottomHtml:`<h2>Magical Disney Princess Coloring Pages for Every Fan</h2>
       <p>From classic royal ballgowns to magical kingdom adventures, our Disney Princess collection brings magical fairytales to life right on your paper.</p>
 
       <h3>Age Groups & Difficulty Levels</h3>
@@ -120,10 +110,8 @@ const SPECIFIC_SEO_DATA: Record<string, SpecificSeoOverride> = {
 
       <h3>Explore Related Categories</h3>
       <p>Check out more fairytale magic:</p>
-      RELATED_LINKS
-    `,
-    nlBottomHtml: `
-      <h2>Betoverende Disney Prinsessen Kleurplaten voor Jong en Oud</h2>
+      RELATED_LINKS`,
+    nlBottomHtml:`<h2>Betoverende Disney Prinsessen Kleurplaten voor Jong en Oud</h2>
       <p>Van klassieke baljurken tot magische kasteelavonturen: onze verzameling Disney prinsessen brengt de mooiste sprookjes tot leven op papier.</p>
 
       <h3>Leeftijdsgroepen & Moeilijkheidsgraden</h3>
@@ -139,8 +127,7 @@ const SPECIFIC_SEO_DATA: Record<string, SpecificSeoOverride> = {
 
       <h3>Ontdek ook gerelateerde categorieën</h3>
       <p>Laat je betoveren door deze gerelateerde categorieën:</p>
-      RELATED_LINKS
-    `,
+      RELATED_LINKS`,
   },
 };
 
@@ -151,14 +138,14 @@ export function getCategorySeoData(
   themeTitle: string,
   allThemesInHub: Array<{ slug: string; title: string }> = []
 ): CategorySeoData {
-  const isEn = lang === 'en';
+  const isEn = lang ==='en';
   const override = SPECIFIC_SEO_DATA[themeSlug];
 
   // Base URLs for difficulty levels
-  const baseUrl = `/${lang}/${hubSlug}/${themeSlug}`;
-  const kidsUrl = `${baseUrl}/kids`;
-  const teensUrl = `${baseUrl}/teens`;
-  const adultsUrl = `${baseUrl}/adults`;
+  const baseUrl =`/${lang}/${hubSlug}/${themeSlug}`;
+  const kidsUrl =`${baseUrl}/kids`;
+  const teensUrl =`${baseUrl}/teens`;
+  const adultsUrl =`${baseUrl}/adults`;
 
   // Related category links builder
   let relatedSlugs: string[] = override?.relatedSlugs || [];
@@ -172,18 +159,18 @@ export function getCategorySeoData(
   const relatedLinksList = relatedSlugs
     .map((slug) => {
       const found = allThemesInHub.find((t) => t.slug === slug);
-      const title = found ? found.title : slug.replace(/-/g, ' ').replace(/\b\w/g, (c) => c.toUpperCase());
-      return `<li><a href="/${lang}/${hubSlug}/${slug}"><strong>${title} ${isEn ? 'Coloring Pages' : 'Kleurplaten'}</strong></a></li>`;
+      const title = found ? found.title : slug.replace(/-/g,'').replace(/\b\w/g, (c) => c.toUpperCase());
+      return`<li><a href="/${lang}/${hubSlug}/${slug}"><strong>${title} ${isEn ?'Coloring Pages':'Kleurplaten'}</strong></a></li>`;
     })
     .join('');
 
-  const relatedLinksHtml = relatedLinksList ? `<ul>${relatedLinksList}</ul>` : '';
+  const relatedLinksHtml = relatedLinksList ?`<ul>${relatedLinksList}</ul>`:'';
 
   if (override) {
     const rawIntro = isEn ? override.enIntro : override.nlIntro;
     const rawBottom = isEn ? override.enBottomHtml : override.nlBottomHtml;
 
-    const formattedBottom = (rawBottom || '')
+    const formattedBottom = (rawBottom ||'')
       .replace(/URL_KIDS/g, kidsUrl)
       .replace(/URL_TEENS/g, teensUrl)
       .replace(/URL_ADULTS/g, adultsUrl)
@@ -191,7 +178,7 @@ export function getCategorySeoData(
 
     return {
       shortIntro: rawIntro || getDefaultShortIntro(isEn, themeTitle),
-      bottomTitle: isEn ? `About ${themeTitle} Coloring Pages` : `Over ${themeTitle} Kleurplaten`,
+      bottomTitle: isEn ?`About ${themeTitle} Coloring Pages`:`Over ${themeTitle} Kleurplaten`,
       bottomContentHtml: formattedBottom,
     };
   }
@@ -209,16 +196,16 @@ export function getCategorySeoData(
 
   return {
     shortIntro,
-    bottomTitle: isEn ? `About ${themeTitle} Coloring Pages` : `Over ${themeTitle} Kleurplaten`,
+    bottomTitle: isEn ?`About ${themeTitle} Coloring Pages`:`Over ${themeTitle} Kleurplaten`,
     bottomContentHtml,
   };
 }
 
 function getDefaultShortIntro(isEn: boolean, themeTitle: string): string {
   if (isEn) {
-    return `Discover our vast collection of free printable ${themeTitle} coloring pages! Perfect for kids, toddlers, teens, and adults. Download high-resolution PDF and image templates ready for instant printing at home or in school without any registration.`;
+    return`Discover our vast collection of free printable ${themeTitle} coloring pages! Perfect for kids, toddlers, teens, and adults. Download high-resolution PDF and image templates ready for instant printing at home or in school without any registration.`;
   }
-  return `Ontdek onze uitgebreide verzameling gratis ${themeTitle} kleurplaten om direct uit te printen! Geschikt voor peuters, kinderen, tieners en volwassenen. Download hoge resolutie PDF- en afbeeldingensjablonen gratis voor thuis of in de klas.`;
+  return`Ontdek onze uitgebreide verzameling gratis ${themeTitle} kleurplaten om direct uit te printen! Geschikt voor peuters, kinderen, tieners en volwassenen. Download hoge resolutie PDF- en afbeeldingensjablonen gratis voor thuis of in de klas.`;
 }
 
 function getDefaultBottomHtml(
@@ -230,8 +217,7 @@ function getDefaultBottomHtml(
   relatedLinksHtml: string
 ): string {
   if (isEn) {
-    return `
-      <h2>Free Printable ${themeTitle} Coloring Pages for All Ages</h2>
+    return`<h2>Free Printable ${themeTitle} Coloring Pages for All Ages</h2>
       <p>Our high-quality ${themeTitle} coloring collection offers creative inspiration for everyone. Designed in crisp line vector format, these templates are optimized for easy A4 printing and digital coloring apps.</p>
 
       <h3>Age Groups & Difficulty Levels</h3>
@@ -245,12 +231,10 @@ function getDefaultBottomHtml(
       <h3>High Resolution PDF & Image Downloads</h3>
       <p>Looking for <em>free printable ${themeTitle} coloring pages PDF</em> or <em>easy ${themeTitle} coloring sheets for toddlers</em>? ColorVaults provides clean, instant downloads for endless hours of coloring fun.</p>
 
-      ${relatedLinksHtml ? `<h3>Explore Related Categories</h3><p>Check out these popular coloring categories:</p>${relatedLinksHtml}` : ''}
-    `;
+      ${relatedLinksHtml ?`<h3>Explore Related Categories</h3><p>Check out these popular coloring categories:</p>${relatedLinksHtml}`:''}`;
   }
 
-  return `
-    <h2>Gratis Printbare ${themeTitle} Kleurplaten voor Elke Leeftijd</h2>
+  return`<h2>Gratis Printbare ${themeTitle} Kleurplaten voor Elke Leeftijd</h2>
     <p>Onze hoogwaardige verzameling ${themeTitle} kleurplaten biedt creatieve inspiratie voor jong en oud. Alle sjablonen zijn strak getekend en geoptimaliseerd voor eenvoudig A4-afdrukken en digitaal kleuren.</p>
 
     <h3>Leeftijdsgroepen & Moeilijkheidsgraden</h3>
@@ -264,6 +248,5 @@ function getDefaultBottomHtml(
     <h3>Gratis PDF & Hoge Resolutie Afbeeldingen</h3>
     <p>Zoek je naar <em>gratis ${themeTitle} kleurplaat printen pdf</em> of <em>makkelijke ${themeTitle} kleurplaten voor kinderen</em>? Bij ColorVaults download je snel en zonder account.</p>
 
-    ${relatedLinksHtml ? `<h3>Ontdek ook gerelateerde categorieën</h3><p>Bekijk ook deze populaire categorieën:</p>${relatedLinksHtml}` : ''}
-  `;
+    ${relatedLinksHtml ?`<h3>Ontdek ook gerelateerde categorieën</h3><p>Bekijk ook deze populaire categorieën:</p>${relatedLinksHtml}`:''}`;
 }

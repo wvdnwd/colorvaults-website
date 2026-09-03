@@ -1,9 +1,9 @@
 'use client';
 
-import React from 'react';
-import Link from 'next/link';
-import SafeImage from './SafeImage';
-import styles from './RelatedThemes.module.css';
+import React from'react';
+import Link from'next/link';
+import SafeImage from'./SafeImage';
+import styles from'./RelatedThemes.module.css';
 
 interface ThemeItem {
   slug: string;
@@ -42,14 +42,14 @@ export default function RelatedThemes({
   return (
     <section className={styles.section}>
       <div className={styles.header}>
-        <span className="badge" style={{ background: 'rgba(79, 70, 229, 0.08)', color: 'var(--color-primary)' }}>
-          {isEn ? 'Discover More' : 'Ontdek Meer'}
+        <span className="badge"style={{ background:'rgba(79, 70, 229, 0.08)', color:'var(--color-primary)'}}>
+          {isEn ?'Discover More':'Ontdek Meer'}
         </span>
-        <h2 className="title-h2" style={{ marginTop: '0.5rem' }}>
-          {isEn ? 'You Might Also Like' : 'Bekijk Ook Deze Thema’s'}
+        <h2 className="title-h2"style={{ marginTop:'0.5rem'}}>
+          {isEn ?'You Might Also Like':'Bekijk Ook Deze Thema’s'}
         </h2>
-        <p style={{ color: 'var(--gray-600)', fontSize: '0.95rem', marginTop: '0.4rem' }}>
-          {isEn ? 'Explore complementary collections with thousands of free printable line art pages.' : 'Ontdek bijpassende collecties met honderden gratis printbare kleurplaten.'}
+        <p style={{ color:'var(--gray-600)', fontSize:'0.95rem', marginTop:'0.4rem'}}>
+          {isEn ?'Explore complementary collections with thousands of free printable line art pages.':'Ontdek bijpassende collecties met honderden gratis printbare kleurplaten.'}
         </p>
       </div>
 
@@ -62,21 +62,20 @@ export default function RelatedThemes({
           >
             <div className={styles.imgWrapper}>
               <SafeImage
-                src={theme.image || '/images/banner.jpg'}
+                src={theme.image ||'/images/banner.jpg'}
                 alt={theme.title}
                 width={320}
                 height={420}
                 className={styles.themeImg}
-                loading="lazy"
-              />
+                loading="lazy"/>
               <span className={styles.badge}>
-                {theme.pageCount || 60}+ {isEn ? 'Pages' : 'Platen'}
+                {theme.pageCount || 60}+ {isEn ?'Pages':'Platen'}
               </span>
             </div>
             <div className={styles.cardBody}>
               <h3 className={styles.title}>{theme.title}</h3>
               <span className={styles.linkText}>
-                {isEn ? 'Explore Album →' : 'Bekijk Album →'}
+                {isEn ?'Explore Album →':'Bekijk Album →'}
               </span>
             </div>
           </Link>

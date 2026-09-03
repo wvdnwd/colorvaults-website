@@ -38,7 +38,7 @@
   color: #FFFFFF;
   text-decoration: none;
   letter-spacing: -0.01em;
-  font-family: var(--font-display), 'Fredoka', sans-serif;
+  font-family: var(--font-display),'Fredoka', sans-serif;
 }
 
 .logoBadge {
@@ -54,7 +54,7 @@
 }
 
 .logoText {
-  font-family: var(--font-display), 'Fredoka', sans-serif;
+  font-family: var(--font-display),'Fredoka', sans-serif;
 }
 
 .logoAccent {
@@ -95,7 +95,7 @@
 }
 
 .linkColumnTitle {
-  font-family: var(--font-display), 'Fredoka', sans-serif;
+  font-family: var(--font-display),'Fredoka', sans-serif;
   font-weight: 800;
   font-size: 0.85rem;
   color: #FFFFFF;

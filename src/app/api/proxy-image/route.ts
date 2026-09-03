@@ -1,9 +1,6 @@
-import { NextResponse } from 'next/server';
+import { NextResponse } from'next/server';
 
-const ALLOWED_HOSTNAMES = new Set([
-  'colorvaults.ams3.cdn.digitaloceanspaces.com',
-  'colorvaults.ams3.digitaloceanspaces.com'
-]);
+const ALLOWED_HOSTNAMES = new Set(['colorvaults.ams3.cdn.digitaloceanspaces.com','colorvaults.ams3.digitaloceanspaces.com']);
 
 export async function GET(request: Request) {
   const { searchParams } = new URL(request.url);
@@ -24,8 +21,8 @@ export async function GET(request: Request) {
   const isAllowedHost = 
     ALLOWED_HOSTNAMES.has(parsedUrl.hostname) ||
     parsedUrl.hostname === requestHost ||
-    parsedUrl.hostname === 'localhost' ||
-    parsedUrl.hostname === '127.0.0.1';
+    parsedUrl.hostname ==='localhost'||
+    parsedUrl.hostname ==='127.0.0.1';
 
   if (!isAllowedHost) {
     return new NextResponse('URL not allowed', { status: 403 });
@@ -42,24 +39,19 @@ export async function GET(request: Request) {
       return new NextResponse(`Failed to fetch image: ${response.statusText}`, { status: response.status });
     }
 
-    const contentType = response.headers.get('content-type') || 'image/jpeg';
+    const contentType = response.headers.get('content-type') ||'image/jpeg';
     const buffer = await response.arrayBuffer();
     
-    const basename = parsedUrl.pathname.split('/').pop() || '';
-    const sanitizedFilename = basename.replace(/[^a-zA-Z0-9.-]/g, '') || 'colorvaults-page.jpg';
+    const basename = parsedUrl.pathname.split('/').pop() ||'';
+    const sanitizedFilename = basename.replace(/[^a-zA-Z0-9.-]/g,'') ||'colorvaults-page.jpg';
 
     return new NextResponse(buffer, {
-      headers: {
-        'Content-Type': contentType,
-        'Content-Disposition': `attachment; filename="${sanitizedFilename}"`,
-        'Access-Control-Allow-Origin': 'https://colorvaults.com',
-        'Vary': 'Origin',
-        'Cache-Control': 'public, max-age=86400',
+      headers: {'Content-Type': contentType,'Content-Disposition':`attachment; filename="${sanitizedFilename}"`,'Access-Control-Allow-Origin':'https://colorvaults.com','Vary':'Origin','Cache-Control':'public, max-age=86400',
       },
     });
   } catch (error: any) {
     clearTimeout(timeout);
-    if (error.name === 'AbortError') {
+    if (error.name ==='AbortError') {
       return new NextResponse('Gateway Timeout', { status: 504 });
     }
     console.error('Proxy error:', error);

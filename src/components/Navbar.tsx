@@ -1,12 +1,12 @@
 'use client';
 
-import Link from 'next/link';
-import { usePathname } from 'next/navigation';
-import { useState, useRef, useEffect } from 'react';
-import HeaderSearchBar from './HeaderSearchBar';
-import BookletDrawer from './BookletDrawer';
-import { useColoringBook } from '@/context/ColoringBookContext';
-import styles from './Navbar.module.css';
+import Link from'next/link';
+import { usePathname } from'next/navigation';
+import { useState, useRef, useEffect } from'react';
+import HeaderSearchBar from'./HeaderSearchBar';
+import BookletDrawer from'./BookletDrawer';
+import { useColoringBook } from'@/context/ColoringBookContext';
+import styles from'./Navbar.module.css';
 
 interface NavItem {
   label: string;
@@ -24,9 +24,9 @@ export default function Navbar({ lang }: { lang: string }) {
 
   const { totalSelected } = useColoringBook();
 
-  const isEn = lang === 'en';
-  const isNl = lang === 'nl';
-  const isHomepage = pathname === `/${lang}` || pathname === `/${lang}/` || pathname === '/' || !pathname;
+  const isEn = lang ==='en';
+  const isNl = lang ==='nl';
+  const isHomepage = pathname ===`/${lang}`|| pathname ===`/${lang}/`|| pathname ==='/'|| !pathname;
 
   useEffect(() => {
     const handleScroll = () => {
@@ -37,71 +37,71 @@ export default function Navbar({ lang }: { lang: string }) {
   }, []);
 
   const getLangLink = (targetLang: string) => {
-    if (!pathname) return `/${targetLang}`;
+    if (!pathname) return`/${targetLang}`;
     const segments = pathname.split('/').filter(Boolean);
-    if (segments[0] === 'en' || segments[0] === 'nl') {
+    if (segments[0] ==='en'|| segments[0] ==='nl') {
       segments[0] = targetLang;
     } else {
       segments.unshift(targetLang);
     }
-    return `/${segments.join('/')}`;
+    return`/${segments.join('/')}`;
   };
 
   const navItems: NavItem[] = [
     {
-      label: isEn ? 'Categories' : 'Categorieën',
+      label: isEn ?'Categories':'Categorieën',
       children: [
-        { label: 'Disney & Pixar', href: `/${lang}/disney-pixar` },
-        { label: 'Anime & Manga', href: `/${lang}/anime-manga` },
-        { label: isEn ? 'Gaming & Virtual Worlds' : 'Games & Gaming', href: `/${lang}/gaming-virtual-worlds` },
-        { label: isEn ? 'Superheroes & Comics' : 'Superhelden & Comics', href: `/${lang}/superheroes-comic-universes` },
-        { label: isEn ? 'Kids TV & Cartoons' : 'Kinderseries & Tekenfilms', href: `/${lang}/kids-tv-shows` },
-        { label: isEn ? 'Animals & Wildlife' : 'Dieren & Natuur', href: `/${lang}/animals-wildlife` },
-        { label: isEn ? 'Fantasy & Fairytales' : 'Sprookjes & Fantasie', href: `/${lang}/fantasy-fairytales` },
-        { label: isEn ? 'Vehicles & Space' : 'Voertuigen & Ruimte', href: `/${lang}/vehicles-transportation` },
-        { label: isEn ? 'Art, Mandalas & Aesthetic' : 'Kunst & Mandala’s', href: `/${lang}/art-aesthetic` },
-        { label: isEn ? 'Holidays & Seasons' : 'Feestdagen & Seizoenen', href: `/${lang}/holidays-seasons` },
+        { label:'Disney & Pixar', href:`/${lang}/disney-pixar`},
+        { label:'Anime & Manga', href:`/${lang}/anime-manga`},
+        { label: isEn ?'Gaming & Virtual Worlds':'Games & Gaming', href:`/${lang}/gaming-virtual-worlds`},
+        { label: isEn ?'Superheroes & Comics':'Superhelden & Comics', href:`/${lang}/superheroes-comic-universes`},
+        { label: isEn ?'Kids TV & Cartoons':'Kinderseries & Tekenfilms', href:`/${lang}/kids-tv-shows`},
+        { label: isEn ?'Animals & Wildlife':'Dieren & Natuur', href:`/${lang}/animals-wildlife`},
+        { label: isEn ?'Fantasy & Fairytales':'Sprookjes & Fantasie', href:`/${lang}/fantasy-fairytales`},
+        { label: isEn ?'Vehicles & Space':'Voertuigen & Ruimte', href:`/${lang}/vehicles-transportation`},
+        { label: isEn ?'Art, Mandalas & Aesthetic':'Kunst & Mandala’s', href:`/${lang}/art-aesthetic`},
+        { label: isEn ?'Holidays & Seasons':'Feestdagen & Seizoenen', href:`/${lang}/holidays-seasons`},
       ],
     },
     {
-      label: isEn ? 'Popular' : 'Populair',
+      label: isEn ?'Popular':'Populair',
       children: [
         // Disney
-        { label: 'Frozen (Elsa & Anna)', href: `/${lang}/disney-pixar/frozen` },
-        { label: 'The Lion King', href: `/${lang}/disney-pixar/the-lion-king` },
-        { label: isEn ? 'The Little Mermaid (Ariel)' : 'De Kleine Zeemeermin (Ariël)', href: `/${lang}/disney-pixar/the-little-mermaid-ariel` },
-        { label: isEn ? 'Beauty & the Beast' : 'Belle & het Beest', href: `/${lang}/disney-pixar/beauty-and-the-beast-belle` },
+        { label:'Frozen (Elsa & Anna)', href:`/${lang}/disney-pixar/frozen`},
+        { label:'The Lion King', href:`/${lang}/disney-pixar/the-lion-king`},
+        { label: isEn ?'The Little Mermaid (Ariel)':'De Kleine Zeemeermin (Ariël)', href:`/${lang}/disney-pixar/the-little-mermaid-ariel`},
+        { label: isEn ?'Beauty & the Beast':'Belle & het Beest', href:`/${lang}/disney-pixar/beauty-and-the-beast-belle`},
         // Gaming
-        { label: 'Pokémon', href: `/${lang}/gaming-virtual-worlds/pokemon` },
-        { label: 'Super Mario', href: `/${lang}/gaming-virtual-worlds/super-mario` },
-        { label: 'Sonic the Hedgehog', href: `/${lang}/gaming-virtual-worlds/sonic-the-hedgehog` },
-        { label: 'Minecraft', href: `/${lang}/gaming-virtual-worlds/minecraft-voxel-worlds` },
+        { label:'Pokémon', href:`/${lang}/gaming-virtual-worlds/pokemon`},
+        { label:'Super Mario', href:`/${lang}/gaming-virtual-worlds/super-mario`},
+        { label:'Sonic the Hedgehog', href:`/${lang}/gaming-virtual-worlds/sonic-the-hedgehog`},
+        { label:'Minecraft', href:`/${lang}/gaming-virtual-worlds/minecraft-voxel-worlds`},
         // Superheroes & Anime
-        { label: 'Spider-Man', href: `/${lang}/superheroes-comic-universes/marvel-spider-man` },
-        { label: 'Batman', href: `/${lang}/superheroes-comic-universes/dc-batman` },
-        { label: 'Dragon Ball', href: `/${lang}/anime-manga/dragonball` },
-        { label: 'Naruto', href: `/${lang}/anime-manga/naruto` },
+        { label:'Spider-Man', href:`/${lang}/superheroes-comic-universes/marvel-spider-man`},
+        { label:'Batman', href:`/${lang}/superheroes-comic-universes/dc-batman`},
+        { label:'Dragon Ball', href:`/${lang}/anime-manga/dragonball`},
+        { label:'Naruto', href:`/${lang}/anime-manga/naruto`},
         // Kids
-        { label: 'Paw Patrol', href: `/${lang}/kids-tv-shows/paw-patrol` },
-        { label: 'Bluey', href: `/${lang}/kids-tv-shows/bluey` },
+        { label:'Paw Patrol', href:`/${lang}/kids-tv-shows/paw-patrol`},
+        { label:'Bluey', href:`/${lang}/kids-tv-shows/bluey`},
         // Art & Nature
-        { label: isEn ? 'Mandalas (Adults)' : 'Mandala’s (Volwassenen)', href: `/${lang}/art-aesthetic/mandalas-sacred-geometry` },
-        { label: isEn ? 'Dinosaurs' : 'Dinosauriërs', href: `/${lang}/animals-wildlife/dinosaur-adventures` },
+        { label: isEn ?'Mandalas (Adults)':'Mandala’s (Volwassenen)', href:`/${lang}/art-aesthetic/mandalas-sacred-geometry`},
+        { label: isEn ?'Dinosaurs':'Dinosauriërs', href:`/${lang}/animals-wildlife/dinosaur-adventures`},
       ],
     },
-    { label: isEn ? 'Search' : 'Zoeken', href: `/${lang}/search` },
-    { label: isEn ? 'Favorites' : 'Favorieten', href: `/${lang}/favorites` },
-    { label: isEn ? 'How to Draw' : 'Leren Tekenen', href: `/${lang}/how-to-draw` },
-    { label: isEn ? 'Calendars' : 'Kalenders', href: `/${lang}/calendars` },
-    { label: isEn ? 'Blog & Tips' : 'Tips & Blog', href: `/${lang}/blog` },
+    { label: isEn ?'Search':'Zoeken', href:`/${lang}/search`},
+    { label: isEn ?'Favorites':'Favorieten', href:`/${lang}/favorites`},
+    { label: isEn ?'How to Draw':'Leren Tekenen', href:`/${lang}/how-to-draw`},
+    { label: isEn ?'Calendars':'Kalenders', href:`/${lang}/calendars`},
+    { label: isEn ?'Blog & Tips':'Tips & Blog', href:`/${lang}/blog`},
     {
-      label: isEn ? 'About' : 'Over',
+      label: isEn ?'About':'Over',
       children: [
-        { label: isEn ? 'About Us' : 'Over Ons', href: `/${lang}/about` },
-        { label: 'Contact', href: `/${lang}/contact` },
-        { label: isEn ? 'Contest' : 'Wedstrijd', href: `/${lang}/contest` },
-        { label: isEn ? 'Request a Page' : 'Pagina Aanvragen', href: `/${lang}/request` },
-        { label: isEn ? 'Licensing' : 'Licentie', href: `/${lang}/licensing` },
+        { label: isEn ?'About Us':'Over Ons', href:`/${lang}/about`},
+        { label:'Contact', href:`/${lang}/contact`},
+        { label: isEn ?'Contest':'Wedstrijd', href:`/${lang}/contest`},
+        { label: isEn ?'Request a Page':'Pagina Aanvragen', href:`/${lang}/request`},
+        { label: isEn ?'Licensing':'Licentie', href:`/${lang}/licensing`},
       ],
     },
   ];
@@ -115,7 +115,7 @@ export default function Navbar({ lang }: { lang: string }) {
       }
     };
     const handleKeyDown = (e: KeyboardEvent) => {
-      if (e.key === 'Escape') {
+      if (e.key ==='Escape') {
         setOpenDropdown(null);
       }
     };
@@ -128,17 +128,17 @@ export default function Navbar({ lang }: { lang: string }) {
   }, []);
 
   return (
-    <header className={`${styles.navbar} ${scrolled ? styles.scrolled : ''}`} ref={navRef}>
+    <header className={`${styles.navbar} ${scrolled ? styles.scrolled :''}`} ref={navRef}>
       <div className={styles.container}>
         {/* Brand Logo */}
         <Link href={`/${lang}`} className={styles.logo} aria-label="ColorVaults Home">
           <div className={styles.logoBadge} aria-hidden="true">
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M12 2C6.48 2 2 6.48 2 12C2 17.52 6.48 22 12 22C13.66 22 15 20.66 15 19C15 18.23 14.7 17.53 14.21 17.01C13.73 16.5 13.43 15.82 13.43 15.07C13.43 13.41 14.77 12.07 16.43 12.07H18.93C20.59 12.07 21.93 10.73 21.93 9.07C21.93 5.16 17.48 2 12 2Z" fill="white" fillOpacity="0.95"/>
-              <circle cx="6.5" cy="11.5" r="1.5" fill="#FF4B72"/>
-              <circle cx="9.5" cy="7.5" r="1.5" fill="#FF8A00"/>
-              <circle cx="14.5" cy="7.5" r="1.5" fill="#FFD600"/>
-              <circle cx="17.5" cy="11.5" r="1.5" fill="#00D2D3"/>
+            <svg width="22"height="22"viewBox="0 0 24 24"fill="none"xmlns="http://www.w3.org/2000/svg">
+              <path d="M12 2C6.48 2 2 6.48 2 12C2 17.52 6.48 22 12 22C13.66 22 15 20.66 15 19C15 18.23 14.7 17.53 14.21 17.01C13.73 16.5 13.43 15.82 13.43 15.07C13.43 13.41 14.77 12.07 16.43 12.07H18.93C20.59 12.07 21.93 10.73 21.93 9.07C21.93 5.16 17.48 2 12 2Z"fill="white"fillOpacity="0.95"/>
+              <circle cx="6.5"cy="11.5"r="1.5"fill="#FF4B72"/>
+              <circle cx="9.5"cy="7.5"r="1.5"fill="#FF8A00"/>
+              <circle cx="14.5"cy="7.5"r="1.5"fill="#FFD600"/>
+              <circle cx="17.5"cy="11.5"r="1.5"fill="#00D2D3"/>
             </svg>
           </div>
           <span className={styles.logoText}>
@@ -161,8 +161,7 @@ export default function Navbar({ lang }: { lang: string }) {
               return (
                 <div key={item.label} className={styles.dropdownWrapper}>
                   <button
-                    type="button"
-                    className={`${styles.navLink} ${styles.dropdownTrigger} ${isOpen ? styles.active : ''}`}
+                    type="button"className={`${styles.navLink} ${styles.dropdownTrigger} ${isOpen ? styles.active :''}`}
                     onClick={() => setOpenDropdown(isOpen ? null : item.label)}
                     aria-expanded={isOpen}
                   >
@@ -190,7 +189,7 @@ export default function Navbar({ lang }: { lang: string }) {
             return (
               <Link
                 key={item.label}
-                href={item.href || `/${lang}`}
+                href={item.href ||`/${lang}`}
                 className={styles.navLink}
               >
                 {item.label}
@@ -203,34 +202,33 @@ export default function Navbar({ lang }: { lang: string }) {
         <div className={styles.headerRight}>
           {/* Bundle Basket Button */}
           <button
-            type="button"
-            onClick={() => setDrawerOpen(true)}
-            aria-label={isEn ? 'Open coloring bundle' : 'Open kleurboek bundel'}
+            type="button"onClick={() => setDrawerOpen(true)}
+            aria-label={isEn ?'Open coloring bundle':'Open kleurboek bundel'}
             style={{
-              display: 'inline-flex',
-              alignItems: 'center',
-              gap: '0.35rem',
-              background: totalSelected > 0 ? 'linear-gradient(135deg, #6366F1, #4F46E5)' : 'rgba(255, 255, 255, 0.95)',
-              color: totalSelected > 0 ? '#FFFFFF' : '#0F172A',
-              border: totalSelected > 0 ? 'none' : '1.5px solid #CBD5E1',
-              borderRadius: '9999px',
-              padding: '0.35rem 0.8rem',
-              fontSize: '0.8rem',
+              display:'inline-flex',
+              alignItems:'center',
+              gap:'0.35rem',
+              background: totalSelected > 0 ?'linear-gradient(135deg, #6366F1, #4F46E5)':'rgba(255, 255, 255, 0.95)',
+              color: totalSelected > 0 ?'#FFFFFF':'#0F172A',
+              border: totalSelected > 0 ?'none':'1.5px solid #CBD5E1',
+              borderRadius:'9999px',
+              padding:'0.35rem 0.8rem',
+              fontSize:'0.8rem',
               fontWeight: 800,
-              cursor: 'pointer',
-              boxShadow: totalSelected > 0 ? '0 4px 12px rgba(99, 102, 241, 0.4)' : '0 2px 5px rgba(0,0,0,0.04)',
-              transition: 'all 0.2s ease',
+              cursor:'pointer',
+              boxShadow: totalSelected > 0 ?'0 4px 12px rgba(99, 102, 241, 0.4)':'0 2px 5px rgba(0,0,0,0.04)',
+              transition:'all 0.2s ease',
             }}
           >
-            <span style={{ fontSize: '0.95rem' }}>🧺</span>
-            <span>{isEn ? 'Bundle' : 'Bundel'}</span>
+            <span style={{ fontSize:'0.95rem'}}></span>
+            <span>{isEn ?'Bundle':'Bundel'}</span>
             {totalSelected > 0 && (
               <span style={{
-                background: '#EF4444',
-                color: '#FFFFFF',
-                borderRadius: '9999px',
-                padding: '0.05rem 0.45rem',
-                fontSize: '0.7rem',
+                background:'#EF4444',
+                color:'#FFFFFF',
+                borderRadius:'9999px',
+                padding:'0.05rem 0.45rem',
+                fontSize:'0.7rem',
                 fontWeight: 900,
               }}>
                 {totalSelected}
@@ -241,27 +239,23 @@ export default function Navbar({ lang }: { lang: string }) {
           <div className={styles.langSwitcher}>
             <Link
               href={getLangLink('en')}
-              className={`${styles.langBtn} ${isEn ? styles.langActive : ''}`}
-              aria-label="Switch to English"
-            >
+              className={`${styles.langBtn} ${isEn ? styles.langActive :''}`}
+              aria-label="Switch to English">
               EN
             </Link>
             <span className={styles.langDivider}>/</span>
             <Link
               href={getLangLink('nl')}
-              className={`${styles.langBtn} ${isNl ? styles.langActive : ''}`}
-              aria-label="Schakel naar Nederlands"
-            >
+              className={`${styles.langBtn} ${isNl ? styles.langActive :''}`}
+              aria-label="Schakel naar Nederlands">
               NL
             </Link>
           </div>
 
           <button
-            type="button"
-            className={styles.hamburgerBtn}
+            type="button"className={styles.hamburgerBtn}
             onClick={() => setMobileOpen(!mobileOpen)}
-            aria-label="Toggle navigation menu"
-            aria-expanded={mobileOpen}
+            aria-label="Toggle navigation menu"aria-expanded={mobileOpen}
           >
             <span className={styles.hamburgerLine}></span>
             <span className={styles.hamburgerLine}></span>
@@ -305,7 +299,7 @@ export default function Navbar({ lang }: { lang: string }) {
                   </>
                 ) : (
                   <Link
-                    href={item.href || `/${lang}`}
+                    href={item.href ||`/${lang}`}
                     className={styles.mobileMainLink}
                     onClick={() => setMobileOpen(false)}
                   >

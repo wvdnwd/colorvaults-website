@@ -1,9 +1,9 @@
-import SearchClient from '@/components/SearchClient';
-import { getThemes, getColoringPages } from '@/lib/api';
-import Breadcrumbs from '@/components/Breadcrumbs';
+import SearchClient from'@/components/SearchClient';
+import { getThemes, getColoringPages } from'@/lib/api';
+import Breadcrumbs from'@/components/Breadcrumbs';
 
 export async function generateStaticParams() {
-  return [{ lang: 'en' }, { lang: 'nl' }];
+  return [{ lang:'en'}, { lang:'nl'}];
 }
 
 export async function generateMetadata({
@@ -15,24 +15,24 @@ export async function generateMetadata({
 }) {
   const { lang } = await params;
   const { q, difficulty, age, theme } = await searchParams;
-  const isEn = lang === 'en';
+  const isEn = lang ==='en';
 
   let titleParts: string[] = [];
 
   if (q) titleParts.push(`"${q}"`);
   if (difficulty) {
     const dMap: Record<string, string> = {
-      easy: isEn ? 'Easy' : 'Makkelijk',
-      medium: isEn ? 'Medium' : 'Gemiddeld',
-      hard: isEn ? 'Hard' : 'Moeilijk',
+      easy: isEn ?'Easy':'Makkelijk',
+      medium: isEn ?'Medium':'Gemiddeld',
+      hard: isEn ?'Hard':'Moeilijk',
     };
     titleParts.push(dMap[difficulty] || difficulty);
   }
   if (age) {
     const aMap: Record<string, string> = {
-      kids: isEn ? 'Kids' : 'Kinderen',
-      teens: isEn ? 'Teens' : 'Tieners',
-      adults: isEn ? 'Adults' : 'Volwassenen',
+      kids: isEn ?'Kids':'Kinderen',
+      teens: isEn ?'Teens':'Tieners',
+      adults: isEn ?'Adults':'Volwassenen',
     };
     titleParts.push(aMap[age] || age);
   }
@@ -42,8 +42,7 @@ export async function generateMetadata({
   }
 
   const mainTitle = titleParts.length > 0
-    ? `${titleParts.join(' • ')} ${isEn ? 'Coloring Pages' : 'Kleurplaten'}`
-    : (isEn ? 'Search Free Coloring Pages' : 'Zoek Gratis Kleurplaten');
+    ?`${titleParts.join('•')} ${isEn ?'Coloring Pages':'Kleurplaten'}`: (isEn ?'Search Free Coloring Pages':'Zoek Gratis Kleurplaten');
 
   // Build canonical URL query string
   const urlParams = new URLSearchParams();
@@ -52,19 +51,17 @@ export async function generateMetadata({
   if (age) urlParams.set('age', age);
   if (theme) urlParams.set('theme', theme);
   const qString = urlParams.toString();
-  const canonicalPath = qString ? `/${lang}/search?${qString}` : `/${lang}/search`;
+  const canonicalPath = qString ?`/${lang}/search?${qString}`:`/${lang}/search`;
 
   return {
-    title: `${mainTitle} | ColorVaults`,
+    title:`${mainTitle} | ColorVaults`,
     description: isEn
-      ? `Search and filter thousands of free printable coloring pages by theme, difficulty, and age group.`
-      : `Zoek en filter door duizenden gratis printbare kleurplaten op thema, moeilijkheidsgraad en leeftijd.`,
+      ?`Search and filter thousands of free printable coloring pages by theme, difficulty, and age group.`:`Zoek en filter door duizenden gratis printbare kleurplaten op thema, moeilijkheidsgraad en leeftijd.`,
     alternates: {
       canonical: canonicalPath,
       languages: {
-        en: `/en/search${qString ? `?${qString}` : ''}`,
-        nl: `/nl/search${qString ? `?${qString}` : ''}`,
-        'x-default': `/en/search${qString ? `?${qString}` : ''}`,
+        en:`/en/search${qString ?`?${qString}`:''}`,
+        nl:`/nl/search${qString ?`?${qString}`:''}`,'x-default':`/en/search${qString ?`?${qString}`:''}`,
       },
     },
   };
@@ -78,8 +75,8 @@ export default async function SearchPage({
   searchParams: Promise<{ q?: string; difficulty?: string; age?: string; theme?: string; page?: string }>;
 }) {
   const { lang } = await params;
-  const { q = '', difficulty = '', age = '', theme = '' } = await searchParams;
-  const isEn = lang === 'en';
+  const { q ='', difficulty ='', age ='', theme =''} = await searchParams;
+  const isEn = lang ==='en';
 
   const allThemes = getThemes(lang).map(t => ({ slug: t.slug, title: t.title }));
   const allPages = getColoringPages(lang);
@@ -89,16 +86,15 @@ export default async function SearchPage({
       <div className="page-hero">
         <div className="container">
           <Breadcrumbs
-            items={[{ label: isEn ? 'Search' : 'Zoeken' }]}
+            items={[{ label: isEn ?'Search':'Zoeken'}]}
             lang={lang}
           />
-          <h1 className="title-h1" style={{ marginTop: '1rem' }}>
-            {isEn ? ' Search & Filter Coloring Pages' : ' Kleurplaten Zoeken & Filteren'}
+          <h1 className="title-h1"style={{ marginTop:'1rem'}}>
+            {isEn ?'Search & Filter Coloring Pages':'Kleurplaten Zoeken & Filteren'}
           </h1>
-          <p style={{ color: 'var(--gray-600)', fontSize: '1.1rem', marginTop: '0.5rem', maxWidth: '640px' }}>
+          <p style={{ color:'var(--gray-600)', fontSize:'1.1rem', marginTop:'0.5rem', maxWidth:'640px'}}>
             {isEn
-              ? 'Filter thousands of free printable coloring pages by topic, difficulty level, and age group.'
-              : 'Filter door duizenden gratis printbare kleurplaten op onderwerp, moeilijkheidsgraad en leeftijd.'}
+              ?'Filter thousands of free printable coloring pages by topic, difficulty level, and age group.':'Filter door duizenden gratis printbare kleurplaten op onderwerp, moeilijkheidsgraad en leeftijd.'}
           </p>
         </div>
       </div>

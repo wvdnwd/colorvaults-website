@@ -139,7 +139,7 @@
   color: #0F172A !important;
   margin-bottom: 0.35rem !important;
   line-height: 1.25 !important;
-  font-family: var(--font-display), 'Fredoka', sans-serif !important;
+  font-family: var(--font-display),'Fredoka', sans-serif !important;
 }
 
 .cardBottomRow {

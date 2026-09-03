@@ -1,10 +1,10 @@
 'use client';
 
-import React, { useState } from 'react';
-import { useColoringBook } from '@/context/ColoringBookContext';
-import { fireConfetti } from '@/lib/confetti';
-import SafeImage from './SafeImage';
-import styles from './BookletDrawer.module.css';
+import React, { useState } from'react';
+import { useColoringBook } from'@/context/ColoringBookContext';
+import { fireConfetti } from'@/lib/confetti';
+import SafeImage from'./SafeImage';
+import styles from'./BookletDrawer.module.css';
 
 interface BookletDrawerProps {
   isOpen: boolean;
@@ -19,7 +19,7 @@ export default function BookletDrawer({ isOpen, onClose, lang }: BookletDrawerPr
 
   if (!isOpen) return null;
 
-  const isEn = lang === 'en';
+  const isEn = lang ==='en';
 
   const handleDownloadCustomBooklet = async () => {
     if (downloading || selectedPages.length === 0) return;
@@ -29,9 +29,9 @@ export default function BookletDrawer({ isOpen, onClose, lang }: BookletDrawerPr
     try {
       const { default: jsPDF } = await import('jspdf');
       const pdf = new jsPDF({
-        orientation: 'portrait',
-        unit: 'mm',
-        format: 'a4',
+        orientation:'portrait',
+        unit:'mm',
+        format:'a4',
       });
 
       const pageWidth = 210;
@@ -41,7 +41,7 @@ export default function BookletDrawer({ isOpen, onClose, lang }: BookletDrawerPr
       for (let i = 0; i < selectedPages.length; i++) {
         setProgress(i + 1);
         const p = selectedPages[i];
-        const proxyUrl = `/api/proxy-image?url=${encodeURIComponent(p.image)}`;
+        const proxyUrl =`/api/proxy-image?url=${encodeURIComponent(p.image)}`;
 
         try {
           const res = await fetch(proxyUrl);
@@ -61,15 +61,15 @@ export default function BookletDrawer({ isOpen, onClose, lang }: BookletDrawerPr
             addedPagesCount++;
 
             // Page Header Title
-            pdf.setFont('helvetica', 'bold');
+            pdf.setFont('helvetica','bold');
             pdf.setFontSize(12);
             pdf.setTextColor(15, 23, 42);
             pdf.text(p.title, 14, 16);
 
-            pdf.setFont('helvetica', 'normal');
+            pdf.setFont('helvetica','normal');
             pdf.setFontSize(9);
             pdf.setTextColor(148, 163, 184);
-            pdf.text(`${i + 1} / ${selectedPages.length}`, pageWidth - 14, 16, { align: 'right' });
+            pdf.text(`${i + 1} / ${selectedPages.length}`, pageWidth - 14, 16, { align:'right'});
 
             // Draw coloring page image centered in A4
             const margin = 14;
@@ -88,12 +88,12 @@ export default function BookletDrawer({ isOpen, onClose, lang }: BookletDrawerPr
             const x = margin + (maxWidth - renderWidth) / 2;
             const y = 22 + (maxHeight - renderHeight) / 2;
 
-            pdf.addImage(img, 'JPEG', x, y, renderWidth, renderHeight);
+            pdf.addImage(img,'JPEG', x, y, renderWidth, renderHeight);
 
             // Page footer
             pdf.setFontSize(8);
             pdf.setTextColor(180, 190, 205);
-            pdf.text('© ColorVaults.com — 100% Free Printable Coloring Pages', pageWidth / 2, pageHeight - 8, { align: 'center' });
+            pdf.text('© ColorVaults.com — 100% Free Printable Coloring Pages', pageWidth / 2, pageHeight - 8, { align:'center'});
 
             URL.revokeObjectURL(img.src);
           }
@@ -115,17 +115,17 @@ export default function BookletDrawer({ isOpen, onClose, lang }: BookletDrawerPr
 
   return (
     <div className={styles.overlay} onClick={(e) => { if (e.target === e.currentTarget) onClose(); }}>
-      <div className={styles.drawer} role="dialog" aria-modal="true" aria-label="Coloring bundle basket">
+      <div className={styles.drawer} role="dialog"aria-modal="true"aria-label="Coloring bundle basket">
         {/* Header */}
         <div className={styles.header}>
           <div className={styles.headerTitleGroup}>
-            <div className={styles.basketIcon}>🧺</div>
+            <div className={styles.basketIcon}></div>
             <div>
               <h2 className={styles.title}>
-                {isEn ? 'My Coloring Bundle' : 'Mijn Kleurboek Bundel'}
+                {isEn ?'My Coloring Bundle':'Mijn Kleurboek Bundel'}
               </h2>
               <p className={styles.subtitle}>
-                {totalSelected} {isEn ? `page${totalSelected === 1 ? '' : 's'} in your print basket` : `kleurplaat${totalSelected === 1 ? '' : 'en'} in je printmandje`}
+                {totalSelected} {isEn ?`page${totalSelected === 1 ?'':'s'} in your print basket`:`kleurplaat${totalSelected === 1 ?'':'en'} in je printmandje`}
               </p>
             </div>
           </div>
@@ -136,14 +136,13 @@ export default function BookletDrawer({ isOpen, onClose, lang }: BookletDrawerPr
         <div className={styles.body}>
           {totalSelected === 0 ? (
             <div className={styles.emptyState}>
-              <div style={{ fontSize: '3rem', marginBottom: '0.5rem' }}>🎨</div>
-              <p style={{ fontWeight: 800, fontSize: '1.1rem', color: 'var(--foreground)' }}>
-                {isEn ? 'Your bundle is still empty' : 'Je printmandje is nog leeg'}
+              <div style={{ fontSize:'3rem', marginBottom:'0.5rem'}}></div>
+              <p style={{ fontWeight: 800, fontSize:'1.1rem', color:'var(--foreground)'}}>
+                {isEn ?'Your bundle is still empty':'Je printmandje is nog leeg'}
               </p>
-              <p style={{ fontSize: '0.875rem', color: 'var(--gray-500)', maxWidth: '300px', margin: '0 auto', lineHeight: 1.6 }}>
+              <p style={{ fontSize:'0.875rem', color:'var(--gray-500)', maxWidth:'300px', margin:'0 auto', lineHeight: 1.6 }}>
                 {isEn
-                  ? 'Browse different categories and click the ➕ button on any coloring page to build your custom collection!'
-                  : 'Blader door de categorieën en klik op de ➕ knop bij een kleurplaat om je eigen verzameling samen te stellen!'}
+                  ?'Browse different categories and click the button on any coloring page to build your custom collection!':'Blader door de categorieën en klik op de knop bij een kleurplaat om je eigen verzameling samen te stellen!'}
               </p>
             </div>
           ) : (
@@ -155,17 +154,16 @@ export default function BookletDrawer({ isOpen, onClose, lang }: BookletDrawerPr
                   </div>
                   <div className={styles.cardDetails}>
                     <div className={styles.cardTheme}>
-                      {page.parentTheme ? page.parentTheme.replace(/-/g, ' ') : 'Coloring Page'}
+                      {page.parentTheme ? page.parentTheme.replace(/-/g,'') :'Coloring Page'}
                     </div>
                     <h4 className={styles.cardTitle}>{page.title}</h4>
                   </div>
                   <button
-                    type="button"
-                    className={styles.removeBtn}
+                    type="button"className={styles.removeBtn}
                     onClick={() => removePage(page.slug)}
-                    title={isEn ? 'Remove from bundle' : 'Verwijder uit bundel'}
+                    title={isEn ?'Remove from bundle':'Verwijder uit bundel'}
                   >
-                    🗑️
+                   
                   </button>
                 </div>
               ))}
@@ -177,24 +175,22 @@ export default function BookletDrawer({ isOpen, onClose, lang }: BookletDrawerPr
         {totalSelected > 0 && (
           <div className={styles.footer}>
             <button
-              type="button"
-              className={styles.clearBtn}
+              type="button"className={styles.clearBtn}
               onClick={clearSelection}
               disabled={downloading}
             >
-              {isEn ? 'Clear All' : 'Alles Wissen'}
+              {isEn ?'Clear All':'Alles Wissen'}
             </button>
             <button
-              type="button"
-              className={styles.downloadBtn}
+              type="button"className={styles.downloadBtn}
               onClick={handleDownloadCustomBooklet}
               disabled={downloading}
             >
-              <span>📥</span>
+              <span></span>
               <span>
                 {downloading
-                  ? (isEn ? `Generating (${progress}/${totalSelected})...` : `Genereren (${progress}/${totalSelected})...`)
-                  : (isEn ? `Download PDF Bundle (${totalSelected} Pages)` : `Download PDF Bundel (${totalSelected} Platen)`)}
+                  ? (isEn ?`Generating (${progress}/${totalSelected})...`:`Genereren (${progress}/${totalSelected})...`)
+                  : (isEn ?`Download PDF Bundle (${totalSelected} Pages)`:`Download PDF Bundel (${totalSelected} Platen)`)}
               </span>
             </button>
           </div>

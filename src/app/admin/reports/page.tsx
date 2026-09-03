@@ -1,8 +1,8 @@
 'use client';
 
-import { useEffect, useState } from 'react';
-import AdminShell from '../AdminShell';
-import styles from '../admin.module.css';
+import { useEffect, useState } from'react';
+import AdminShell from'../AdminShell';
+import styles from'../admin.module.css';
 
 interface Report {
   id: string;
@@ -11,15 +11,15 @@ interface Report {
   reason: string;
   details: string;
   date: string;
-  status: 'open' | 'done';
+  status:'open'|'done';
 }
 
 const REASON_LABELS: Record<string, string> = {
-  quality:   'Slechte kwaliteit',
-  category:  'Verkeerde categorie',
-  wrong:     'Verkeerde afbeelding',
-  offensive: 'Aanstootgevend',
-  other:     'Iets anders',
+  quality:'Slechte kwaliteit',
+  category:'Verkeerde categorie',
+  wrong:'Verkeerde afbeelding',
+  offensive:'Aanstootgevend',
+  other:'Iets anders',
 };
 
 export default function ReportsPage() {
@@ -35,17 +35,17 @@ export default function ReportsPage() {
 
   const dismiss = async (id: string) => {
     await fetch('/api/admin/reports', {
-      method: 'DELETE',
-      headers: { 'Content-Type': 'application/json' },
+      method:'DELETE',
+      headers: {'Content-Type':'application/json'},
       body: JSON.stringify({ id }),
     });
     setReports(prev => prev.filter(r => r.id !== id));
   };
 
-  const openCount = reports.filter(r => r.status === 'open').length;
+  const openCount = reports.filter(r => r.status ==='open').length;
 
   return (
-    <AdminShell title="Reports" reportCount={openCount}>
+    <AdminShell title="Reports"reportCount={openCount}>
       {loading ? (
         <div className={styles.emptyState}>
           <div className={styles.emptyIcon}>⏳</div>
@@ -77,8 +77,7 @@ export default function ReportsPage() {
                     {/* eslint-disable-next-line @next/next/no-img-element */}
                     <img
                       src={`/api/proxy-image?url=${encodeURIComponent(r.imageUrl)}`}
-                      alt=""
-                      className={styles.thumb}
+                      alt=""className={styles.thumb}
                     />
                   </td>
                   <td>{r.category}</td>
@@ -87,10 +86,10 @@ export default function ReportsPage() {
                       {REASON_LABELS[r.reason] || r.reason}
                     </span>
                   </td>
-                  <td style={{ maxWidth: 220, wordBreak: 'break-word' }}>
+                  <td style={{ maxWidth: 220, wordBreak:'break-word'}}>
                     {r.details || <span style={{ opacity: 0.3 }}>—</span>}
                   </td>
-                  <td style={{ whiteSpace: 'nowrap' }}>
+                  <td style={{ whiteSpace:'nowrap'}}>
                     {new Date(r.date).toLocaleDateString('nl-NL')}
                   </td>
                   <td>
@@ -103,10 +102,8 @@ export default function ReportsPage() {
                       </button>
                       <a
                         href={r.imageUrl}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className={styles.btnDismiss}
-                        style={{ textDecoration: 'none', display: 'inline-flex', alignItems: 'center' }}
+                        target="_blank"rel="noopener noreferrer"className={styles.btnDismiss}
+                        style={{ textDecoration:'none', display:'inline-flex', alignItems:'center'}}
                       >
                         👁 View
                       </a>

@@ -63,7 +63,7 @@
   font-weight: 800;
   margin: 0;
   color: var(--foreground, #0F172A);
-  font-family: var(--font-display), 'Fredoka', sans-serif;
+  font-family: var(--font-display),'Fredoka', sans-serif;
 }
 
 .subtitle {

@@ -1,5 +1,5 @@
 'use client';
-import { useEffect, useRef } from 'react';
+import { useEffect, useRef } from'react';
 
 interface ScrollRevealProps {
   children: React.ReactNode;
@@ -9,15 +9,15 @@ interface ScrollRevealProps {
 }
 
 /**
- * Wraps children in a div with the `.reveal` class.
- * Adds `.visible` once the element scrolls into view.
+ * Wraps children in a div with the`.reveal`class.
+ * Adds`.visible`once the element scrolls into view.
  * Uses IntersectionObserver (threshold 0.12).
  */
 export default function ScrollReveal({
   children,
-  className = '',
+  className ='',
   delay = 0,
-  as: Tag = 'div',
+  as: Tag ='div',
 }: ScrollRevealProps) {
   const ref = useRef<HTMLDivElement>(null);
 
@@ -39,7 +39,7 @@ export default function ScrollReveal({
     return () => observer.disconnect();
   }, []);
 
-  const delayClass = delay > 0 ? `reveal-delay-${delay}` : '';
+  const delayClass = delay > 0 ?`reveal-delay-${delay}`:'';
 
   // Always render a div wrapper so ref works reliably
   return (

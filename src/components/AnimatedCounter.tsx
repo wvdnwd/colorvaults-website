@@ -1,5 +1,5 @@
 'use client';
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useRef, useState } from'react';
 
 interface AnimatedCounterProps {
   target: number;
@@ -10,7 +10,7 @@ interface AnimatedCounterProps {
 export default function AnimatedCounter({
   target,
   duration = 1200,
-  suffix = '',
+  suffix ='',
 }: AnimatedCounterProps) {
   const [count, setCount] = useState(0);
   const ref = useRef<HTMLSpanElement>(null);

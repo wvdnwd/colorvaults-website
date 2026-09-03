@@ -1,6 +1,6 @@
 'use client';
 
-import React, { createContext, useContext, useState, useEffect } from 'react';
+import React, { createContext, useContext, useState, useEffect } from'react';
 
 export interface SelectedColoringPage {
   id: string;
@@ -23,7 +23,7 @@ interface ColoringBookContextType {
 
 const ColoringBookContext = createContext<ColoringBookContextType | undefined>(undefined);
 
-const STORAGE_KEY = 'colorvaults_custom_booklet_pages';
+const STORAGE_KEY ='colorvaults_custom_booklet_pages';
 
 export function ColoringBookProvider({ children }: { children: React.ReactNode }) {
   const [selectedPages, setSelectedPages] = useState<SelectedColoringPage[]>([]);

@@ -1,14 +1,14 @@
 'use client';
 
-import React, { useState, useEffect, useRef, useCallback } from 'react';
-import { useRouter } from 'next/navigation';
-import Link from 'next/link';
-import Image from 'next/image';
-import styles from './HeaderSearchBar.module.css';
+import React, { useState, useEffect, useRef, useCallback } from'react';
+import { useRouter } from'next/navigation';
+import Link from'next/link';
+import Image from'next/image';
+import styles from'./HeaderSearchBar.module.css';
 
 interface SearchResult {
  lang: string;
- type: 'hub' | 'theme' | 'page';
+ type:'hub'|'theme'|'page';
  title: string;
  description: string;
  url: string;
@@ -25,7 +25,7 @@ export default function HeaderSearchBar({ lang }: { lang: string }) {
  const [highlightIndex, setHighlightIndex] = useState(-1);
  const [isFocused, setIsFocused] = useState(false);
 
- const isEn = lang === 'en';
+ const isEn = lang ==='en';
  const containerRef = useRef<HTMLDivElement>(null);
 
  // Debounced search fetching
@@ -77,19 +77,19 @@ export default function HeaderSearchBar({ lang }: { lang: string }) {
 
  const handleKeyDown = (e: React.KeyboardEvent) => {
  if (!isOpen || suggestions.length === 0) {
- if (e.key === 'Enter') {
+ if (e.key ==='Enter') {
  handleSubmit();
  }
  return;
  }
 
- if (e.key === 'ArrowDown') {
+ if (e.key ==='ArrowDown') {
  e.preventDefault();
  setHighlightIndex(prev => (prev < suggestions.length - 1 ? prev + 1 : 0));
- } else if (e.key === 'ArrowUp') {
+ } else if (e.key ==='ArrowUp') {
  e.preventDefault();
  setHighlightIndex(prev => (prev > 0 ? prev - 1 : suggestions.length - 1));
- } else if (e.key === 'Enter') {
+ } else if (e.key ==='Enter') {
  e.preventDefault();
  if (highlightIndex >= 0 && highlightIndex < suggestions.length) {
  const selected = suggestions[highlightIndex];
@@ -98,63 +98,61 @@ export default function HeaderSearchBar({ lang }: { lang: string }) {
  } else {
  handleSubmit();
  }
- } else if (e.key === 'Escape') {
+ } else if (e.key ==='Escape') {
  setIsOpen(false);
  }
  };
 
  const typeBadgeText = (type: string) => {
- if (type === 'hub') return isEn ? 'Hub' : 'Collectie';
- if (type === 'theme') return isEn ? 'Theme' : 'Thema';
- return isEn ? 'Page' : 'Kleurplaat';
+ if (type ==='hub') return isEn ?'Hub':'Collectie';
+ if (type ==='theme') return isEn ?'Theme':'Thema';
+ return isEn ?'Page':'Kleurplaat';
  };
 
  const typeBadgeBg = (type: string) => {
- if (type === 'hub') return 'rgba(124, 58, 237, 0.2)';
- if (type === 'theme') return 'rgba(14, 165, 233, 0.2)';
- return 'rgba(16, 185, 129, 0.2)';
+ if (type ==='hub') return'rgba(124, 58, 237, 0.2)';
+ if (type ==='theme') return'rgba(14, 165, 233, 0.2)';
+ return'rgba(16, 185, 129, 0.2)';
  };
 
  const typeBadgeColor = (type: string) => {
- if (type === 'hub') return '#A78BFA';
- if (type === 'theme') return '#38BDF8';
- return '#34D399';
+ if (type ==='hub') return'#A78BFA';
+ if (type ==='theme') return'#38BDF8';
+ return'#34D399';
  };
 
  return (
  <div className={styles.container} ref={containerRef}>
- <form onSubmit={handleSubmit} style={{ width: '100%' }}>
-        <div className={`${styles.inputWrapper} ${isFocused ? styles.inputWrapperFocused : ''}`}>
+ <form onSubmit={handleSubmit} style={{ width:'100%'}}>
+        <div className={`${styles.inputWrapper} ${isFocused ? styles.inputWrapperFocused :''}`}>
           <span className={styles.searchIcon}>
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
-              <circle cx="11" cy="11" r="8"/>
-              <line x1="21" y1="21" x2="16.65" y2="16.65"/>
+            <svg width="16"height="16"viewBox="0 0 24 24"fill="none"stroke="currentColor"strokeWidth="2.5"strokeLinecap="round"strokeLinejoin="round"aria-hidden="true">
+              <circle cx="11"cy="11"r="8"/>
+              <line x1="21"y1="21"x2="16.65"y2="16.65"/>
             </svg>
           </span>
           <input
-            type="search"
-            value={query}
+            type="search"value={query}
             onChange={e => setQuery(e.target.value)}
             onFocus={() => {
               setIsFocused(true);
               if (suggestions.length > 0) setIsOpen(true);
             }}
             onKeyDown={handleKeyDown}
-            placeholder={isEn ? 'Search 9,000+ free coloring pages...' : 'Zoek 9.000+ gratis kleurplaten...'}
+            placeholder={isEn ?'Search 9,000+ free coloring pages...':'Zoek 9.000+ gratis kleurplaten...'}
             className={styles.input}
-            aria-label={isEn ? 'Search coloring pages' : 'Zoek kleurplaten'}
+            aria-label={isEn ?'Search coloring pages':'Zoek kleurplaten'}
           />
           {loading && <span className={styles.spinner} />}
           {query && !loading && (
             <button
-              type="button"
-              className={styles.clearBtn}
+              type="button"className={styles.clearBtn}
               onClick={() => {
                 setQuery('');
                 setSuggestions([]);
                 setIsOpen(false);
               }}
-              aria-label={isEn ? 'Clear search' : 'Zoekopdracht wis'}
+              aria-label={isEn ?'Clear search':'Zoekopdracht wis'}
             >
               ✕
             </button>
@@ -168,15 +166,14 @@ export default function HeaderSearchBar({ lang }: { lang: string }) {
  <Link
  key={item.url + idx}
  href={item.url}
- className={`${styles.dropdownItem} ${idx === highlightIndex ? styles.dropdownItemHighlighted : ''}`}
+ className={`${styles.dropdownItem} ${idx === highlightIndex ? styles.dropdownItemHighlighted :''}`}
  onClick={() => setIsOpen(false)}
- role="option"
- aria-selected={idx === highlightIndex}
+ role="option"aria-selected={idx === highlightIndex}
  >
  {item.image ? (
  <img src={item.image} alt={item.title} className={styles.thumb} width={38} height={38} />
  ) : (
- <div className={styles.thumb} style={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+ <div className={styles.thumb} style={{ display:'flex', alignItems:'center', justifyContent:'center'}}>
  
  </div>
  )}
@@ -197,7 +194,7 @@ export default function HeaderSearchBar({ lang }: { lang: string }) {
  className={styles.viewAllRow}
  onClick={() => setIsOpen(false)}
  >
- {isEn ? `View all results for "${query}" →` : `Bekijk alle resultaten voor "${query}" →`}
+ {isEn ?`View all results for"${query}"→`:`Bekijk alle resultaten voor"${query}"→`}
  </Link>
  </div>
  )}

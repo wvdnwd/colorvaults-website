@@ -1,10 +1,10 @@
-import { NextResponse } from 'next/server';
-import fs from 'fs';
-import path from 'path';
+import { NextResponse } from'next/server';
+import fs from'fs';
+import path from'path';
 
 interface SearchEntry {
   lang: string;
-  type: 'hub' | 'theme' | 'page';
+  type:'hub'|'theme'|'page';
   title: string;
   description: string;
   image?: string;
@@ -19,8 +19,8 @@ let cachedIndex: SearchEntry[] | null = null;
 function getSearchIndex(): SearchEntry[] {
   if (!cachedIndex) {
     try {
-      const filePath = path.join(process.cwd(), 'public', 'search-index.json');
-      const fileContents = fs.readFileSync(filePath, 'utf8');
+      const filePath = path.join(process.cwd(),'public','search-index.json');
+      const fileContents = fs.readFileSync(filePath,'utf8');
       cachedIndex = JSON.parse(fileContents);
     } catch (e) {
       console.error('Failed to load search index', e);
@@ -33,7 +33,7 @@ function getSearchIndex(): SearchEntry[] {
 export async function GET(request: Request) {
   const { searchParams } = new URL(request.url);
   const q = searchParams.get('q');
-  const lang = searchParams.get('lang') || 'en';
+  const lang = searchParams.get('lang') ||'en';
   const difficulty = searchParams.get('difficulty');
   const age = searchParams.get('age');
   const theme = searchParams.get('theme');
@@ -62,9 +62,9 @@ export async function GET(request: Request) {
   if (difficulty) {
     // Map difficulty: easy -> kids/kinderen, medium -> teens/tieners, hard -> adults/volwassenen
     const diffMap: Record<string, string[]> = {
-      easy: ['kids', 'kinderen', 'toddlers', 'peuters'],
-      medium: ['teens', 'tieners'],
-      hard: ['adults', 'volwassenen'],
+      easy: ['kids','kinderen','toddlers','peuters'],
+      medium: ['teens','tieners'],
+      hard: ['adults','volwassenen'],
     };
     const targetAges = diffMap[difficulty.toLowerCase()] || [difficulty.toLowerCase()];
     matched = matched.filter(e => e.ageGroup && targetAges.includes(e.ageGroup.toLowerCase()));

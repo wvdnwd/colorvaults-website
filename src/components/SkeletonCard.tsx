@@ -1,5 +1,5 @@
 'use client';
-import styles from './SkeletonCard.module.css';
+import styles from'./SkeletonCard.module.css';
 
 export default function SkeletonCard() {
   return (

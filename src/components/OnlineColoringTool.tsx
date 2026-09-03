@@ -1,8 +1,8 @@
 'use client';
 
-import React, { useRef, useState, useEffect, useCallback } from 'react';
-import { fireConfetti } from '@/lib/confetti';
-import styles from './OnlineColoringTool.module.css';
+import React, { useRef, useState, useEffect, useCallback } from'react';
+import { fireConfetti } from'@/lib/confetti';
+import styles from'./OnlineColoringTool.module.css';
 
 interface OnlineColoringToolProps {
  imageUrl: string;
@@ -12,12 +12,7 @@ interface OnlineColoringToolProps {
  isEn: boolean;
 }
 
-const PRESET_COLORS = [
- '#FF3B30', '#FF9500', '#FFCC00', '#34C759', '#00C7BE', '#30B0C7',
- '#32ADE6', '#007AFF', '#5856D6', '#AF52DE', '#FF2D55', '#A2845E',
- '#8E8E93', '#000000', '#FFFFFF', '#FFB3BA', '#BAFFC9', '#BAE1FF',
- '#FFFFBA', '#FFDFBA', '#E8DFF5', '#FCE1E4', '#FCF4DD', '#DDF6F5'
-];
+const PRESET_COLORS = ['#FF3B30','#FF9500','#FFCC00','#34C759','#00C7BE','#30B0C7','#32ADE6','#007AFF','#5856D6','#AF52DE','#FF2D55','#A2845E','#8E8E93','#000000','#FFFFFF','#FFB3BA','#BAFFC9','#BAE1FF','#FFFFBA','#FFDFBA','#E8DFF5','#FCE1E4','#FCF4DD','#DDF6F5'];
 
 export default function OnlineColoringTool({
  imageUrl,
@@ -27,7 +22,7 @@ export default function OnlineColoringTool({
  isEn,
 }: OnlineColoringToolProps) {
  const canvasRef = useRef<HTMLCanvasElement>(null);
- const [activeTool, setActiveTool] = useState<'bucket' | 'brush' | 'eraser'>('bucket');
+ const [activeTool, setActiveTool] = useState<'bucket'|'brush'|'eraser'>('bucket');
  const [activeColor, setActiveColor] = useState<string>('#FF3B30');
  const [brushSize, setBrushSize] = useState<number>(14);
  const [history, setHistory] = useState<ImageData[]>([]);
@@ -40,13 +35,13 @@ export default function OnlineColoringTool({
  useEffect(() => {
  if (!isOpen) return;
  const handleKeyDown = (e: KeyboardEvent) => {
- if (e.key === 'Escape') onClose();
+ if (e.key ==='Escape') onClose();
  };
  window.addEventListener('keydown', handleKeyDown);
- document.body.style.overflow = 'hidden';
+ document.body.style.overflow ='hidden';
  return () => {
  window.removeEventListener('keydown', handleKeyDown);
- document.body.style.overflow = '';
+ document.body.style.overflow ='';
  };
  }, [isOpen, onClose]);
 
@@ -59,11 +54,11 @@ export default function OnlineColoringTool({
  const ctx = canvas.getContext('2d', { willReadFrequently: true });
  if (!ctx) return;
 
- const isRemote = imageUrl.startsWith('http') && (typeof window !== 'undefined' ? !imageUrl.includes(window.location.hostname) : true);
- const targetSrc = isRemote ? `/api/proxy-image?url=${encodeURIComponent(imageUrl)}` : imageUrl;
+ const isRemote = imageUrl.startsWith('http') && (typeof window !=='undefined'? !imageUrl.includes(window.location.hostname) : true);
+ const targetSrc = isRemote ?`/api/proxy-image?url=${encodeURIComponent(imageUrl)}`: imageUrl;
 
  const img = new Image();
- img.crossOrigin = 'anonymous';
+ img.crossOrigin ='anonymous';
  img.src = targetSrc;
 
  img.onload = () => {
@@ -80,7 +75,7 @@ export default function OnlineColoringTool({
  canvas.height = h;
 
  // Fill white background first
- ctx.fillStyle = '#FFFFFF';
+ ctx.fillStyle ='#FFFFFF';
  ctx.fillRect(0, 0, w, h);
  ctx.drawImage(img, 0, 0, w, h);
 
@@ -99,11 +94,11 @@ export default function OnlineColoringTool({
  }
  canvas.width = 600;
  canvas.height = 800;
- ctx.fillStyle = '#FFFFFF';
+ ctx.fillStyle ='#FFFFFF';
  ctx.fillRect(0, 0, 600, 800);
- ctx.fillStyle = '#000000';
- ctx.font = '16px sans-serif';
- ctx.fillText(isEn ? 'Failed to load coloring sheet' : 'Afbeelding kon niet worden geladen', 20, 50);
+ ctx.fillStyle ='#000000';
+ ctx.font ='16px sans-serif';
+ ctx.fillText(isEn ?'Failed to load coloring sheet':'Afbeelding kon niet worden geladen', 20, 50);
  setLoading(false);
  };
  }, [isOpen, imageUrl, isEn]);
@@ -165,7 +160,7 @@ export default function OnlineColoringTool({
 
  // Helper: Hex color to RGB
  const hexToRgb = (hex: string): [number, number, number] => {
- let clean = hex.replace('#', '');
+ let clean = hex.replace('#','');
  if (clean.length === 3) clean = clean.split('').map(c => c + c).join('');
  const num = parseInt(clean, 16);
  return [(num >> 16) & 255, (num >> 8) & 255, num & 255];
@@ -261,8 +256,8 @@ export default function OnlineColoringTool({
  const canvas = canvasRef.current;
  if (!canvas) return { x: 0, y: 0 };
  const rect = canvas.getBoundingClientRect();
- const clientX = 'touches' in e ? e.touches[0].clientX : e.clientX;
- const clientY = 'touches' in e ? e.touches[0].clientY : e.clientY;
+ const clientX ='touches'in e ? e.touches[0].clientX : e.clientX;
+ const clientY ='touches'in e ? e.touches[0].clientY : e.clientY;
  const scaleX = canvas.width / rect.width;
  const scaleY = canvas.height / rect.height;
  return {
@@ -274,7 +269,7 @@ export default function OnlineColoringTool({
  // Mouse / Touch Handlers
  const handlePointerDown = (e: React.MouseEvent<HTMLCanvasElement> | React.TouchEvent<HTMLCanvasElement>) => {
  const coords = getCanvasCoords(e);
- if (activeTool === 'bucket') {
+ if (activeTool ==='bucket') {
  floodFill(coords.x, coords.y, activeColor);
  return;
  }
@@ -285,7 +280,7 @@ export default function OnlineColoringTool({
  };
 
  const handlePointerMove = (e: React.MouseEvent<HTMLCanvasElement> | React.TouchEvent<HTMLCanvasElement>) => {
- if (!isDrawing || activeTool === 'bucket') return;
+ if (!isDrawing || activeTool ==='bucket') return;
  const coords = getCanvasCoords(e);
  drawBrush(coords.x, coords.y);
  };
@@ -307,10 +302,10 @@ export default function OnlineColoringTool({
  ctx.beginPath();
  ctx.moveTo(lastPos.current.x, lastPos.current.y);
  ctx.lineTo(x, y);
- ctx.strokeStyle = activeTool === 'eraser' ? '#FFFFFF' : activeColor;
+ ctx.strokeStyle = activeTool ==='eraser'?'#FFFFFF': activeColor;
  ctx.lineWidth = brushSize;
- ctx.lineCap = 'round';
- ctx.lineJoin = 'round';
+ ctx.lineCap ='round';
+ ctx.lineJoin ='round';
  ctx.stroke();
 
  lastPos.current = { x, y };
@@ -331,15 +326,15 @@ export default function OnlineColoringTool({
  ctx.drawImage(canvas, 0, 0);
 
  // Watermark
- ctx.fillStyle = 'rgba(0, 0, 0, 0.4)';
+ ctx.fillStyle ='rgba(0, 0, 0, 0.4)';
  const fontSize = Math.max(14, canvas.width * 0.025);
- ctx.font = `bold ${fontSize}px sans-serif`;
- ctx.textAlign = 'right';
+ ctx.font =`bold ${fontSize}px sans-serif`;
+ ctx.textAlign ='right';
  ctx.fillText('Colored on ColorVaults.com', canvas.width - 16, canvas.height - 16);
 
  const a = document.createElement('a');
  a.href = exportCanvas.toDataURL('image/png');
- a.download = `colorvaults-colored-${title.toLowerCase().replace(/[^a-z0-9]+/g, '-')}.png`;
+ a.download =`colorvaults-colored-${title.toLowerCase().replace(/[^a-z0-9]+/g,'-')}.png`;
  a.click();
  fireConfetti();
  };
@@ -351,11 +346,10 @@ export default function OnlineColoringTool({
 
  fireConfetti();
  const dataUrl = canvas.toDataURL('image/png');
- const printWindow = window.open('', '_blank');
+ const printWindow = window.open('','_blank');
  if (!printWindow) return;
 
- printWindow.document.write(`
- <!DOCTYPE html>
+ printWindow.document.write(`<!DOCTYPE html>
  <html>
  <head>
  <title>${title} - ColorVaults</title>
@@ -366,10 +360,9 @@ export default function OnlineColoringTool({
  </style>
  </head>
  <body>
- <img src="${dataUrl}" onload="window.print();window.close();" />
+ <img src="${dataUrl}"onload="window.print();window.close();"/>
  </body>
- </html>
- `);
+ </html>`);
  printWindow.document.close();
  };
 
@@ -377,15 +370,15 @@ export default function OnlineColoringTool({
 
  return (
  <div className={styles.modalOverlay} onClick={(e) => { if (e.target === e.currentTarget) onClose(); }}>
- <div className={styles.modalContent} role="dialog" aria-modal="true" aria-label={isEn ? 'Color online' : 'Online inkleuren'}>
+ <div className={styles.modalContent} role="dialog"aria-modal="true"aria-label={isEn ?'Color online':'Online inkleuren'}>
  {/* Header */}
  <div className={styles.header}>
  <div className={styles.titleGroup}>
- <span style={{ fontSize: '1.4rem' }}></span>
+ <span style={{ fontSize:'1.4rem'}}></span>
  <h2 className={styles.title}>{title}</h2>
- <span className={styles.badge}>{isEn ? 'Interactive Canvas' : 'Interactieve Kleur-tool'}</span>
+ <span className={styles.badge}>{isEn ?'Interactive Canvas':'Interactieve Kleur-tool'}</span>
  </div>
- <button className={styles.closeBtn} onClick={onClose} aria-label={isEn ? 'Close' : 'Sluiten'}>
+ <button className={styles.closeBtn} onClick={onClose} aria-label={isEn ?'Close':'Sluiten'}>
  
  </button>
  </div>
@@ -396,50 +389,43 @@ export default function OnlineColoringTool({
  <div className={styles.toolbar}>
  {/* Tools */}
  <div>
- <p className={styles.sectionLabel}>{isEn ? 'Tools' : 'Gereedschap'}</p>
+ <p className={styles.sectionLabel}>{isEn ?'Tools':'Gereedschap'}</p>
  <div className={styles.toolGrid}>
  <button
- className={`${styles.toolBtn} ${activeTool === 'bucket' ? styles.active : ''}`}
+ className={`${styles.toolBtn} ${activeTool ==='bucket'? styles.active :''}`}
  onClick={() => setActiveTool('bucket')}
- type="button"
- >
- <span></span> {isEn ? 'Fill Bucket' : 'Verfemmer'}
+ type="button">
+ <span></span> {isEn ?'Fill Bucket':'Verfemmer'}
  </button>
  <button
- className={`${styles.toolBtn} ${activeTool === 'brush' ? styles.active : ''}`}
+ className={`${styles.toolBtn} ${activeTool ==='brush'? styles.active :''}`}
  onClick={() => setActiveTool('brush')}
- type="button"
- >
- <span>️</span> {isEn ? 'Brush' : 'Kwast'}
+ type="button">
+ <span>️</span> {isEn ?'Brush':'Kwast'}
  </button>
  <button
- className={`${styles.toolBtn} ${activeTool === 'eraser' ? styles.active : ''}`}
+ className={`${styles.toolBtn} ${activeTool ==='eraser'? styles.active :''}`}
  onClick={() => setActiveTool('eraser')}
- type="button"
- >
- <span></span> {isEn ? 'Eraser' : 'Gum'}
+ type="button">
+ <span></span> {isEn ?'Eraser':'Gum'}
  </button>
  <button
  className={styles.toolBtn}
  onClick={handleReset}
- type="button"
- >
- <span></span> {isEn ? 'Clear All' : 'Wissen'}
+ type="button">
+ <span></span> {isEn ?'Clear All':'Wissen'}
  </button>
  </div>
  </div>
 
  {/* Brush Size Slider */}
- {activeTool !== 'bucket' && (
+ {activeTool !=='bucket'&& (
  <div className={styles.sliderGroup}>
  <p className={styles.sectionLabel}>
- {isEn ? `Size: ${brushSize}px` : `Grootte: ${brushSize}px`}
+ {isEn ?`Size: ${brushSize}px`:`Grootte: ${brushSize}px`}
  </p>
  <input
- type="range"
- min="4"
- max="40"
- value={brushSize}
+ type="range"min="4"max="40"value={brushSize}
  onChange={(e) => setBrushSize(parseInt(e.target.value, 10))}
  className={styles.slider}
  />
@@ -448,53 +434,48 @@ export default function OnlineColoringTool({
 
  {/* Palette */}
  <div>
- <p className={styles.sectionLabel}>{isEn ? 'Color Palette' : 'Kleurenpalet'}</p>
+ <p className={styles.sectionLabel}>{isEn ?'Color Palette':'Kleurenpalet'}</p>
  <div className={styles.paletteGrid}>
  {PRESET_COLORS.map((c) => (
  <button
  key={c}
- className={`${styles.colorSwatch} ${activeColor.toLowerCase() === c.toLowerCase() ? styles.activeSwatch : ''}`}
+ className={`${styles.colorSwatch} ${activeColor.toLowerCase() === c.toLowerCase() ? styles.activeSwatch :''}`}
  style={{ background: c }}
  onClick={() => setActiveColor(c)}
- type="button"
- aria-label={`Color ${c}`}
+ type="button"aria-label={`Color ${c}`}
  />
  ))}
  </div>
 
  <div className={styles.customColorRow}>
  <input
- type="color"
- value={activeColor}
+ type="color"value={activeColor}
  onChange={(e) => setActiveColor(e.target.value)}
  className={styles.customColorPicker}
- aria-label="Custom color picker"
- />
- <span style={{ fontSize: '0.8rem', fontWeight: 600, color: 'var(--gray-600)' }}>
- {isEn ? 'Custom Color Picker' : 'Eigen Kleur Kiezen'}
+ aria-label="Custom color picker"/>
+ <span style={{ fontSize:'0.8rem', fontWeight: 600, color:'var(--gray-600)'}}>
+ {isEn ?'Custom Color Picker':'Eigen Kleur Kiezen'}
  </span>
  </div>
  </div>
 
  {/* History Actions */}
  <div>
- <p className={styles.sectionLabel}>{isEn ? 'History' : 'Geschiedenis'}</p>
+ <p className={styles.sectionLabel}>{isEn ?'History':'Geschiedenis'}</p>
  <div className={styles.actionRow}>
  <button
  className={styles.actionBtn}
  onClick={handleUndo}
  disabled={historyIndex <= 0}
- type="button"
- >
- ↩️ {isEn ? 'Undo' : 'Ongedaan'}
+ type="button">
+ ↩️ {isEn ?'Undo':'Ongedaan'}
  </button>
  <button
  className={styles.actionBtn}
  onClick={handleRedo}
  disabled={historyIndex >= history.length - 1}
- type="button"
- >
- ↪️ {isEn ? 'Redo' : 'Opnieuw'}
+ type="button">
+ ↪️ {isEn ?'Redo':'Opnieuw'}
  </button>
  </div>
  </div>
@@ -503,8 +484,8 @@ export default function OnlineColoringTool({
  {/* Canvas Area */}
  <div className={styles.canvasStage}>
  {loading ? (
- <p style={{ color: 'var(--gray-500)', fontWeight: 700 }}>
- {isEn ? 'Loading canvas...' : 'Kleurplaat inladen...'}
+ <p style={{ color:'var(--gray-500)', fontWeight: 700 }}>
+ {isEn ?'Loading canvas...':'Kleurplaat inladen...'}
  </p>
  ) : (
  <div className={styles.canvasWrapper}>
@@ -526,13 +507,13 @@ export default function OnlineColoringTool({
 
  {/* Footer */}
  <div className={styles.footer}>
- <div style={{ display: 'flex', gap: '0.6rem' }}>
+ <div style={{ display:'flex', gap:'0.6rem'}}>
  <button className={styles.btnPrint} onClick={handlePrintColored} type="button">
- <span>️</span> {isEn ? 'Print Artwork' : 'Kunstwerk Printen'}
+ <span>️</span> {isEn ?'Print Artwork':'Kunstwerk Printen'}
  </button>
  </div>
  <button className={styles.btnExport} onClick={handleDownloadColored} type="button">
- <span></span> {isEn ? 'Save Colored Image' : 'Gekleurde Kleurplaat Opslaan'}
+ <span></span> {isEn ?'Save Colored Image':'Gekleurde Kleurplaat Opslaan'}
  </button>
  </div>
  </div>

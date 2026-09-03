@@ -1,7 +1,7 @@
-import { requireAdmin } from '@/lib/adminAuth';
-import { getThemes, getColoringPages } from '@/lib/api';
-import AdminShell from '../AdminShell';
-import CategoriesManager from '@/components/admin/CategoriesManager';
+import { requireAdmin } from'@/lib/adminAuth';
+import { getThemes, getColoringPages } from'@/lib/api';
+import AdminShell from'../AdminShell';
+import CategoriesManager from'@/components/admin/CategoriesManager';
 
 export default async function CategoriesPage() {
   await requireAdmin();

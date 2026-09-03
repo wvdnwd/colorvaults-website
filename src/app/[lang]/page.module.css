@@ -82,7 +82,7 @@
   line-height: 1.12;
   margin-bottom: 0.75rem;
   color: #0F172A;
-  font-family: var(--font-display), 'Fredoka', sans-serif;
+  font-family: var(--font-display),'Fredoka', sans-serif;
   letter-spacing: -0.02em;
 }
 
@@ -286,7 +286,7 @@
 
 /* Glossy shine on each card */
 .heroCard::after {
-  content: '';
+  content:'';
   position: absolute;
   inset: 0;
   background: linear-gradient(

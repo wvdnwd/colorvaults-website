@@ -1,10 +1,10 @@
 'use client';
 
-import { useState, useMemo, useEffect } from 'react';
-import { useSearchParams } from 'next/navigation';
-import Link from 'next/link';
-import SafeImage from '@/components/SafeImage';
-import styles from '@/app/admin/admin.module.css';
+import { useState, useMemo, useEffect } from'react';
+import { useSearchParams } from'next/navigation';
+import Link from'next/link';
+import SafeImage from'@/components/SafeImage';
+import styles from'@/app/admin/admin.module.css';
 
 export interface AdminColoringPage {
   slug: string;
@@ -39,11 +39,11 @@ export default function ColoringPagesManager({
   const themeParam = searchParams.get('theme');
 
   const [searchQuery, setSearchQuery] = useState('');
-  const [selectedTheme, setSelectedTheme] = useState(themeParam || 'all');
+  const [selectedTheme, setSelectedTheme] = useState(themeParam ||'all');
   const [selectedAge, setSelectedAge] = useState('all');
-  const [sortBy, setSortBy] = useState<'recent' | 'views-desc' | 'views-asc' | 'title-asc' | 'duplicates'>('recent');
+  const [sortBy, setSortBy] = useState<'recent'|'views-desc'|'views-asc'|'title-asc'|'duplicates'>('recent');
   const [showDuplicatesOnly, setShowDuplicatesOnly] = useState(false);
-  const [viewMode, setViewMode] = useState<'grid' | 'table'>('grid');
+  const [viewMode, setViewMode] = useState<'grid'|'table'>('grid');
   const [currentPage, setCurrentPage] = useState(1);
   const [pageSize, setPageSize] = useState(48);
 
@@ -103,12 +103,12 @@ export default function ColoringPagesManager({
     }
 
     // Category / Theme filter
-    if (selectedTheme !== 'all') {
+    if (selectedTheme !=='all') {
       result = result.filter(p => p.parentTheme === selectedTheme || p.parentHub === selectedTheme);
     }
 
     // Age / Difficulty filter
-    if (selectedAge !== 'all') {
+    if (selectedAge !=='all') {
       result = result.filter(p => p.ageGroup.toLowerCase() === selectedAge.toLowerCase());
     }
 
@@ -119,21 +119,21 @@ export default function ColoringPagesManager({
 
     // Sorting logic
     result.sort((a, b) => {
-      if (sortBy === 'views-desc') {
+      if (sortBy ==='views-desc') {
         return (b.views || 0) - (a.views || 0);
       }
-      if (sortBy === 'views-asc') {
+      if (sortBy ==='views-asc') {
         return (a.views || 0) - (b.views || 0);
       }
-      if (sortBy === 'title-asc') {
+      if (sortBy ==='title-asc') {
         return a.title.localeCompare(b.title);
       }
-      if (sortBy === 'duplicates') {
+      if (sortBy ==='duplicates') {
         if (a.isDuplicate && !b.isDuplicate) return -1;
         if (!a.isDuplicate && b.isDuplicate) return 1;
         return a.title.localeCompare(b.title);
       }
-      // 'recent' (default order)
+      //'recent'(default order)
       return 0;
     });
 
@@ -155,13 +155,13 @@ export default function ColoringPagesManager({
   // Handle escape key to close modal
   useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
-      if (e.key === 'Escape') setActiveModalPage(null);
+      if (e.key ==='Escape') setActiveModalPage(null);
     };
     window.addEventListener('keydown', handleKeyDown);
     return () => window.removeEventListener('keydown', handleKeyDown);
   }, []);
 
-  const hasActiveFilters = searchQuery !== '' || selectedTheme !== 'all' || selectedAge !== 'all' || showDuplicatesOnly || sortBy !== 'recent';
+  const hasActiveFilters = searchQuery !==''|| selectedTheme !=='all'|| selectedAge !=='all'|| showDuplicatesOnly || sortBy !=='recent';
 
   const resetAllFilters = () => {
     setSearchQuery('');
@@ -182,7 +182,7 @@ export default function ColoringPagesManager({
         </div>
 
         <div className={styles.statCard}>
-          <div className={styles.statValue} style={{ color: '#34d399' }}>
+          <div className={styles.statValue} style={{ color:'#34d399'}}>
             {processedPages.length.toLocaleString()}
           </div>
           <div className={styles.statLabel}>Gefilterde Resultaten</div>
@@ -191,20 +191,19 @@ export default function ColoringPagesManager({
         <div
           className={styles.statCard}
           style={{
-            borderColor: duplicateTotal > 0 ? 'rgba(245, 158, 11, 0.4)' : undefined,
-            cursor: 'pointer',
+            borderColor: duplicateTotal > 0 ?'rgba(245, 158, 11, 0.4)': undefined,
+            cursor:'pointer',
           }}
           onClick={() => setShowDuplicatesOnly(!showDuplicatesOnly)}
-          title="Klik om te filteren op dubbele namen"
-        >
-          <div className={styles.statValue} style={{ color: duplicateTotal > 0 ? '#fbbf24' : '#FF6B4A' }}>
+          title="Klik om te filteren op dubbele namen">
+          <div className={styles.statValue} style={{ color: duplicateTotal > 0 ?'#fbbf24':'#FF6B4A'}}>
             {duplicateTotal}
           </div>
           <div className={styles.statLabel}>Dubbele Namen (Klik om te filteren)</div>
         </div>
 
         <div className={styles.statCard}>
-          <div className={styles.statValue} style={{ color: '#818cf8' }}>
+          <div className={styles.statValue} style={{ color:'#818cf8'}}>
             {totalViewsSum.toLocaleString()}
           </div>
           <div className={styles.statLabel}>Totaal Bekeken (Views)</div>
@@ -216,12 +215,10 @@ export default function ColoringPagesManager({
         <div className={styles.filterGroup}>
           {/* Search Input */}
           <input
-            type="search"
-            placeholder="🔍 Zoek op titel, slug, tags..."
-            value={searchQuery}
+            type="search"placeholder="🔍 Zoek op titel, slug, tags..."value={searchQuery}
             onChange={e => setSearchQuery(e.target.value)}
             className={styles.filterInput}
-            style={{ width: '220px' }}
+            style={{ width:'220px'}}
           />
 
           {/* Category Dropdown */}
@@ -245,8 +242,8 @@ export default function ColoringPagesManager({
             className={styles.filterSelect}
           >
             <option value="recent">🕐 Recente (Standaard)</option>
-            <option value="views-desc">🔥 Meest Bekeken</option>
-            <option value="views-asc">❄️ Minste Bekeken</option>
+            <option value="views-desc">Meest Bekeken</option>
+            <option value="views-asc">Minste Bekeken</option>
             <option value="title-asc">🔤 Titel (A-Z)</option>
             <option value="duplicates">⚠️ Dubbele Namen Eerst</option>
           </select>
@@ -257,29 +254,26 @@ export default function ColoringPagesManager({
             onChange={e => setSelectedAge(e.target.value)}
             className={styles.filterSelect}
           >
-            <option value="all">⭐ Alle Leeftijden</option>
-            <option value="kids">👶 Kids (⭐)</option>
-            <option value="teens">🧑 Tieners (⭐⭐)</option>
-            <option value="adults">🧘 Volwassenen (⭐⭐⭐)</option>
+            <option value="all">Alle Leeftijden</option>
+            <option value="kids">👶 Kids ()</option>
+            <option value="teens">🧑 Tieners ()</option>
+            <option value="adults">Volwassenen ()</option>
           </select>
 
           {/* Quick Toggle: Show Duplicates Only */}
           <button
-            type="button"
-            onClick={() => setShowDuplicatesOnly(!showDuplicatesOnly)}
-            className={`${styles.toggleBtn} ${showDuplicatesOnly ? styles.activeToggleBtn : ''}`}
-            title="Toon alleen foto's met dezelfde dubbele naam"
-          >
-            ⚠️ {showDuplicatesOnly ? 'Alle Tonen' : 'Alleen Dubbele Namen'}
+            type="button"onClick={() => setShowDuplicatesOnly(!showDuplicatesOnly)}
+            className={`${styles.toggleBtn} ${showDuplicatesOnly ? styles.activeToggleBtn :''}`}
+            title="Toon alleen foto's met dezelfde dubbele naam">
+            ⚠️ {showDuplicatesOnly ?'Alle Tonen':'Alleen Dubbele Namen'}
           </button>
 
           {/* Reset Filters Button */}
           {hasActiveFilters && (
             <button
-              type="button"
-              onClick={resetAllFilters}
+              type="button"onClick={resetAllFilters}
               className={styles.btnDismiss}
-              style={{ color: '#f87171', borderColor: 'rgba(239,68,68,0.3)' }}
+              style={{ color:'#f87171', borderColor:'rgba(239,68,68,0.3)'}}
             >
               ✕ Reset Filters
             </button>
@@ -287,12 +281,12 @@ export default function ColoringPagesManager({
         </div>
 
         {/* View Mode Switcher & Page Size */}
-        <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem' }}>
+        <div style={{ display:'flex', alignItems:'center', gap:'0.75rem'}}>
           <select
             value={pageSize}
             onChange={e => setPageSize(Number(e.target.value))}
             className={styles.filterSelect}
-            style={{ padding: '0.4rem 0.6rem', fontSize: '0.78rem' }}
+            style={{ padding:'0.4rem 0.6rem', fontSize:'0.78rem'}}
           >
             <option value="24">24 / pagina</option>
             <option value="48">48 / pagina</option>
@@ -302,19 +296,15 @@ export default function ColoringPagesManager({
 
           <div className={styles.modeBtnGroup}>
             <button
-              type="button"
-              className={`${styles.modeBtn} ${viewMode === 'grid' ? styles.activeModeBtn : ''}`}
+              type="button"className={`${styles.modeBtn} ${viewMode ==='grid'? styles.activeModeBtn :''}`}
               onClick={() => setViewMode('grid')}
-              title="Bekijk de visuele kleurplaten met afbeelding-previews"
-            >
+              title="Bekijk de visuele kleurplaten met afbeelding-previews">
               🖼️ Grid
             </button>
             <button
-              type="button"
-              className={`${styles.modeBtn} ${viewMode === 'table' ? styles.activeModeBtn : ''}`}
+              type="button"className={`${styles.modeBtn} ${viewMode ==='table'? styles.activeModeBtn :''}`}
               onClick={() => setViewMode('table')}
-              title="Bekijk een compacte lijst met alleen namen"
-            >
+              title="Bekijk een compacte lijst met alleen namen">
               📋 Lijst
             </button>
           </div>
@@ -325,21 +315,21 @@ export default function ColoringPagesManager({
       {processedPages.length === 0 ? (
         <div className={styles.emptyState}>
           <div className={styles.emptyIcon}>🔍</div>
-          <p style={{ fontSize: '1.1rem', fontWeight: 700, color: '#FDF6E9' }}>
+          <p style={{ fontSize:'1.1rem', fontWeight: 700, color:'#FDF6E9'}}>
             Geen kleurplaten gevonden met deze filters
           </p>
-          <p style={{ color: 'rgba(253, 246, 233, 0.5)' }}>
+          <p style={{ color:'rgba(253, 246, 233, 0.5)'}}>
             Probeer je zoekopdracht of geselecteerde categorie aan te passen.
           </p>
           <button
             onClick={resetAllFilters}
             className={styles.btnDismiss}
-            style={{ marginTop: '1rem', background: '#FF6B4A', color: 'white' }}
+            style={{ marginTop:'1rem', background:'#FF6B4A', color:'white'}}
           >
             Toon alle kleurplaten
           </button>
         </div>
-      ) : viewMode === 'grid' ? (
+      ) : viewMode ==='grid'? (
         /* VISUAL GRID MODE */
         <div className={styles.gridContainer}>
           {paginatedPages.map(page => (
@@ -347,9 +337,8 @@ export default function ColoringPagesManager({
               <div
                 className={styles.cardImgWrap}
                 onClick={() => setActiveModalPage(page)}
-                style={{ cursor: 'pointer' }}
-                title="Klik voor grote preview & details"
-              >
+                style={{ cursor:'pointer'}}
+                title="Klik voor grote preview & details">
                 <SafeImage
                   src={page.image}
                   alt={page.title}
@@ -364,21 +353,20 @@ export default function ColoringPagesManager({
                 <h3
                   className={styles.cardTitle}
                   onClick={() => setActiveModalPage(page)}
-                  style={{ cursor: 'pointer' }}
-                  title="Klik voor details"
-                >
+                  style={{ cursor:'pointer'}}
+                  title="Klik voor details">
                   {page.title}
                 </h3>
 
                 <div className={styles.cardSub}>
-                  📁{' '}
+                  📁{''}
                   <span
-                    style={{ color: '#FF6B4A', cursor: 'pointer', fontWeight: 700 }}
+                    style={{ color:'#FF6B4A', cursor:'pointer', fontWeight: 700 }}
                     onClick={() => setSelectedTheme(page.parentTheme)}
                     title={`Filter op ${page.parentTheme}`}
                   >
                     {page.parentTheme}
-                  </span>{' '}
+                  </span>{''}
                   • {page.ageGroup.toUpperCase()}
                 </div>
 
@@ -388,26 +376,22 @@ export default function ColoringPagesManager({
                       ⚠️ Dubbele Naam
                     </span>
                   ) : (
-                    <span className={styles.badge} style={{ background: 'rgba(255,255,255,0.06)', color: 'rgba(253,246,233,0.5)' }}>
+                    <span className={styles.badge} style={{ background:'rgba(255,255,255,0.06)', color:'rgba(253,246,233,0.5)'}}>
                       ID: {page.slug}
                     </span>
                   )}
 
-                  <div style={{ display: 'flex', gap: '0.35rem' }}>
+                  <div style={{ display:'flex', gap:'0.35rem'}}>
                     <button
-                      type="button"
-                      onClick={() => setActiveModalPage(page)}
+                      type="button"onClick={() => setActiveModalPage(page)}
                       className={styles.btnDismiss}
-                      title="Grote preview openen"
-                    >
+                      title="Grote preview openen">
                       🔍
                     </button>
                     <Link
                       href={`/en/${page.parentHub}/${page.parentTheme}/${page.ageGroup}/${page.slug}`}
-                      target="_blank"
-                      className={styles.btnDismiss}
-                      title="Bekijk live op website"
-                    >
+                      target="_blank"className={styles.btnDismiss}
+                      title="Bekijk live op website">
                       Live ↗
                     </Link>
                   </div>
@@ -419,9 +403,9 @@ export default function ColoringPagesManager({
       ) : (
         /* COMPACT LIST MODE (TABLE) */
         <div className={styles.tableWrap}>
-          <div className={styles.tableTitle} style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+          <div className={styles.tableTitle} style={{ display:'flex', justifyContent:'space-between', alignItems:'center'}}>
             <span>Lijstweergave — Pagina {safeCurrentPage} van {totalPages} ({processedPages.length} totaal)</span>
-            <span style={{ fontSize: '0.75rem', textTransform: 'none', color: 'rgba(253,246,233,0.45)' }}>
+            <span style={{ fontSize:'0.75rem', textTransform:'none', color:'rgba(253,246,233,0.45)'}}>
               Klik op een thumbnail voor grote preview
             </span>
           </div>
@@ -442,15 +426,14 @@ export default function ColoringPagesManager({
             <tbody>
               {paginatedPages.map((page, i) => (
                 <tr key={`${page.parentTheme}-${page.slug}`}>
-                  <td style={{ color: 'rgba(253,246,233,0.35)', fontWeight: 600 }}>
+                  <td style={{ color:'rgba(253,246,233,0.35)', fontWeight: 600 }}>
                     {(safeCurrentPage - 1) * pageSize + i + 1}
                   </td>
                   <td>
                     <div
                       onClick={() => setActiveModalPage(page)}
-                      style={{ cursor: 'pointer', display: 'inline-block' }}
-                      title="Klik voor grote preview"
-                    >
+                      style={{ cursor:'pointer', display:'inline-block'}}
+                      title="Klik voor grote preview">
                       <SafeImage
                         src={page.image}
                         alt={page.title}
@@ -459,25 +442,25 @@ export default function ColoringPagesManager({
                     </div>
                   </td>
                   <td
-                    style={{ fontWeight: 800, color: '#FDF6E9', fontSize: '0.9rem', cursor: 'pointer' }}
+                    style={{ fontWeight: 800, color:'#FDF6E9', fontSize:'0.9rem', cursor:'pointer'}}
                     onClick={() => setActiveModalPage(page)}
                   >
                     {page.title}
                   </td>
-                  <td style={{ fontFamily: 'monospace', color: 'rgba(253,246,233,0.55)', fontSize: '0.78rem' }}>
+                  <td style={{ fontFamily:'monospace', color:'rgba(253,246,233,0.55)', fontSize:'0.78rem'}}>
                     {page.slug}
                   </td>
                   <td>
                     <span
                       className={styles.badge}
-                      style={{ background: 'rgba(255, 107, 74, 0.12)', color: '#FF6B4A', cursor: 'pointer' }}
+                      style={{ background:'rgba(255, 107, 74, 0.12)', color:'#FF6B4A', cursor:'pointer'}}
                       onClick={() => setSelectedTheme(page.parentTheme)}
                       title={`Filter alleen op ${page.parentTheme}`}
                     >
                       📁 {page.parentTheme}
                     </span>
                   </td>
-                  <td style={{ textTransform: 'uppercase', fontWeight: 700, fontSize: '0.75rem', color: 'rgba(253,246,233,0.6)' }}>
+                  <td style={{ textTransform:'uppercase', fontWeight: 700, fontSize:'0.75rem', color:'rgba(253,246,233,0.6)'}}>
                     {page.ageGroup}
                   </td>
                   <td>
@@ -491,7 +474,7 @@ export default function ColoringPagesManager({
                         ⚠️ Dubbel
                       </span>
                     ) : (
-                      <span className={styles.badge} style={{ background: 'rgba(16,185,129,0.1)', color: '#34d399' }}>
+                      <span className={styles.badge} style={{ background:'rgba(16,185,129,0.1)', color:'#34d399'}}>
                         ✓ OK
                       </span>
                     )}
@@ -499,16 +482,14 @@ export default function ColoringPagesManager({
                   <td>
                     <div className={styles.actionBtns}>
                       <button
-                        type="button"
-                        onClick={() => setActiveModalPage(page)}
+                        type="button"onClick={() => setActiveModalPage(page)}
                         className={styles.btnDismiss}
                       >
                         🔍 Preview
                       </button>
                       <Link
                         href={`/en/${page.parentHub}/${page.parentTheme}/${page.ageGroup}/${page.slug}`}
-                        target="_blank"
-                        className={styles.btnDismiss}
+                        target="_blank"className={styles.btnDismiss}
                       >
                         Live ↗
                       </Link>
@@ -525,28 +506,24 @@ export default function ColoringPagesManager({
       {totalPages > 1 && (
         <div className={styles.paginationWrap}>
           <div className={styles.paginationInfo}>
-            Toont <strong>{(safeCurrentPage - 1) * pageSize + 1}</strong> -{' '}
-            <strong>{Math.min(safeCurrentPage * pageSize, processedPages.length)}</strong> van{' '}
+            Toont <strong>{(safeCurrentPage - 1) * pageSize + 1}</strong> -{''}
+            <strong>{Math.min(safeCurrentPage * pageSize, processedPages.length)}</strong> van{''}
             <strong>{processedPages.length.toLocaleString()}</strong> kleurplaten
           </div>
 
           <div className={styles.paginationControls}>
             <button
-              type="button"
-              className={styles.paginationBtn}
+              type="button"className={styles.paginationBtn}
               onClick={() => setCurrentPage(1)}
               disabled={safeCurrentPage === 1}
-              title="Eerste pagina"
-            >
+              title="Eerste pagina">
               ⏮️
             </button>
             <button
-              type="button"
-              className={styles.paginationBtn}
+              type="button"className={styles.paginationBtn}
               onClick={() => setCurrentPage(p => Math.max(1, p - 1))}
               disabled={safeCurrentPage === 1}
-              title="Vorige pagina"
-            >
+              title="Vorige pagina">
               ◀ Vorige
             </button>
 
@@ -560,8 +537,7 @@ export default function ColoringPagesManager({
               return (
                 <button
                   key={pageNum}
-                  type="button"
-                  className={`${styles.paginationBtn} ${safeCurrentPage === pageNum ? styles.paginationActive : ''}`}
+                  type="button"className={`${styles.paginationBtn} ${safeCurrentPage === pageNum ? styles.paginationActive :''}`}
                   onClick={() => setCurrentPage(pageNum)}
                 >
                   {pageNum}
@@ -570,21 +546,17 @@ export default function ColoringPagesManager({
             })}
 
             <button
-              type="button"
-              className={styles.paginationBtn}
+              type="button"className={styles.paginationBtn}
               onClick={() => setCurrentPage(p => Math.min(totalPages, p + 1))}
               disabled={safeCurrentPage === totalPages}
-              title="Volgende pagina"
-            >
+              title="Volgende pagina">
               Volgende ▶
             </button>
             <button
-              type="button"
-              className={styles.paginationBtn}
+              type="button"className={styles.paginationBtn}
               onClick={() => setCurrentPage(totalPages)}
               disabled={safeCurrentPage === totalPages}
-              title="Laatste pagina"
-            >
+              title="Laatste pagina">
               ⏭️
             </button>
           </div>
@@ -603,8 +575,7 @@ export default function ColoringPagesManager({
               <button
                 className={styles.modalClose}
                 onClick={() => setActiveModalPage(null)}
-                aria-label="Sluiten"
-              >
+                aria-label="Sluiten">
                 ✕
               </button>
             </div>
@@ -631,23 +602,23 @@ export default function ColoringPagesManager({
 
                 <div className={styles.modalMetaItem}>
                   <div className={styles.modalMetaLabel}>ID / Slug</div>
-                  <div className={styles.modalMetaValue} style={{ fontFamily: 'monospace', fontSize: '0.8rem' }}>
+                  <div className={styles.modalMetaValue} style={{ fontFamily:'monospace', fontSize:'0.8rem'}}>
                     {activeModalPage.slug}
                   </div>
                 </div>
 
                 <div className={styles.modalMetaItem}>
                   <div className={styles.modalMetaLabel}>Bekeken (Views)</div>
-                  <div className={styles.modalMetaValue} style={{ color: '#818cf8' }}>
+                  <div className={styles.modalMetaValue} style={{ color:'#818cf8'}}>
                     👁️ {activeModalPage.views?.toLocaleString()}
                   </div>
                 </div>
               </div>
 
               {activeModalPage.shortDescription && (
-                <div style={{ width: '100%', background: '#071417', padding: '0.75rem 1rem', borderRadius: '0.5rem', border: '1px solid rgba(253,246,233,0.06)' }}>
+                <div style={{ width:'100%', background:'#071417', padding:'0.75rem 1rem', borderRadius:'0.5rem', border:'1px solid rgba(253,246,233,0.06)'}}>
                   <div className={styles.modalMetaLabel}>SEO Beschrijving</div>
-                  <p style={{ margin: '0.35rem 0 0', fontSize: '0.82rem', color: 'rgba(253,246,233,0.75)', lineHeight: 1.5 }}>
+                  <p style={{ margin:'0.35rem 0 0', fontSize:'0.82rem', color:'rgba(253,246,233,0.75)', lineHeight: 1.5 }}>
                     {activeModalPage.shortDescription}
                   </p>
                 </div>
@@ -656,20 +627,17 @@ export default function ColoringPagesManager({
               <div className={styles.modalActions}>
                 <Link
                   href={`/en/${activeModalPage.parentHub}/${activeModalPage.parentTheme}/${activeModalPage.ageGroup}/${activeModalPage.slug}`}
-                  target="_blank"
-                  className={styles.modalPrimaryBtn}
+                  target="_blank"className={styles.modalPrimaryBtn}
                 >
                   🌐 Bekijk op Website ↗
                 </Link>
 
                 <a
                   href={activeModalPage.image}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  download
+                  target="_blank"rel="noopener noreferrer"download
                   className={styles.modalSecondaryBtn}
                 >
-                  ⬇️ Origineel Bestand
+                  Origineel Bestand
                 </a>
               </div>
             </div>
