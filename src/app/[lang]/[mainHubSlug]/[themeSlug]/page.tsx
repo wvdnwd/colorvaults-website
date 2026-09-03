@@ -2,9 +2,10 @@ import SafeImage from'@/components/SafeImage';
 import { getThemes, getThemeBySlug, getMainHubs, getColoringPages, safeJsonLd } from'@/lib/api';
 import { getCategorySeoData } from'@/lib/categorySeo';
 import CategorySeoBlock from'@/components/CategorySeoBlock';
-import RelatedThemes from'@/components/RelatedThemes';
-import CraftIdeasSection from'@/components/CraftIdeasSection';
-import CharacterIpDisclaimer from'@/components/CharacterIpDisclaimer';
+import RelatedThemes from '@/components/RelatedThemes';
+import CraftIdeasSection from '@/components/CraftIdeasSection';
+import ThemeFaqSection from '@/components/ThemeFaqSection';
+import CharacterIpDisclaimer from '@/components/CharacterIpDisclaimer';
 import NewsletterBox from'@/components/NewsletterBox';
 import DifficultyFilterBar from'@/components/DifficultyFilterBar';
 import { notFound } from'next/navigation';
@@ -112,10 +113,30 @@ export default async function ThemePage({
     .filter(t => t.parentHub === mainHubSlug && t.slug !== themeSlug)
     .slice(0, 5);
 
+  const imageGallerySchema = {
+    '@context': 'https://schema.org',
+    '@type': 'ImageGallery',
+    name: `${theme.title} Free Printable Coloring Pages`,
+    description: theme.description,
+    url: `https://colorvaults.com/${lang}/${mainHubSlug}/${theme.slug}`,
+    image: coloringPages.slice(0, 16).map(p => ({
+      '@type': 'ImageObject',
+      contentUrl: p.image,
+      name: p.title,
+      description: `${p.title} - Free printable coloring page on ColorVaults`,
+    })),
+  };
+
   return (
     <>
-            {/* ── Cinematic Full-Width Theme Header with 100% Uncropped Artwork ── */}
-      <div className="page-hero"data-hub={mainHubSlug} style={{ padding:'2rem 0 2.5rem'}}>
+      {/* Schema.org ImageGallery Rich Data */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: safeJsonLd(imageGallerySchema) }}
+      />
+
+      {/* ── Cinematic Full-Width Theme Header with 100% Uncropped Artwork ── */}
+      <div className="page-hero" data-hub={mainHubSlug} style={{ padding: '2rem 0 2.5rem' }}>
         <div className="container"style={{ maxWidth:'1200px'}}>
           {/* Full-Width Cinematic Theme Master Banner */}
           <div style={{
@@ -353,7 +374,65 @@ export default async function ThemePage({
           </div>
         )}
 
-        <AdSlot type="banner"text={isEn ?'Sponsored Content':'Gesponsord'} />
+        <AdSlot type="banner" text={isEn ? 'Sponsored Content' : 'Gesponsord'} />
+
+        {/* 🎨 Create Your Own Coloring Book Callout Banner (Exclusive ColorVaults Feature) */}
+        <div style={{
+          marginTop: '1.5rem',
+          marginBottom: '1.5rem',
+          background: 'linear-gradient(135deg, #EEF2FF 0%, #E0E7FF 50%, #F5F3FF 100%)',
+          border: '1.5px solid #C7D2FE',
+          borderRadius: '24px',
+          padding: '1.5rem 1.85rem',
+          display: 'flex',
+          alignItems: 'center',
+          justifyContent: 'space-between',
+          gap: '1.25rem',
+          flexWrap: 'wrap',
+          boxShadow: '0 8px 24px rgba(79, 70, 229, 0.07)',
+        }}>
+          <div style={{ display: 'flex', alignItems: 'center', gap: '1rem', maxWidth: '720px' }}>
+            <span style={{ fontSize: '2.5rem', flexShrink: 0 }}>📚</span>
+            <div>
+              <span style={{
+                display: 'inline-block',
+                background: '#4F46E5',
+                color: '#FFFFFF',
+                fontSize: '0.72rem',
+                fontWeight: 800,
+                padding: '0.2rem 0.65rem',
+                borderRadius: '9999px',
+                textTransform: 'uppercase',
+                letterSpacing: '0.04em',
+                marginBottom: '0.35rem',
+              }}>
+                {isEn ? 'Exclusive Free Feature' : 'Exclusieve Gratis Functie'}
+              </span>
+              <h3 style={{ fontSize: '1.18rem', fontWeight: 900, color: '#0F172A', margin: '0 0 0.25rem', lineHeight: 1.3 }}>
+                {isEn ? `Create a Custom ${theme.title} Coloring Book (PDF)` : `Stel Je Eigen ${theme.title} Kleurboek Samen (PDF)`}
+              </h3>
+              <p style={{ fontSize: '0.92rem', color: '#475569', margin: 0, lineHeight: 1.55 }}>
+                {isEn 
+                  ? `Click "+ Bundle" on your favorite sheets below to combine them into one organized, ready-to-print booklet with a personalized front cover!`
+                  : `Klik op "+ Kleurboek" bij je favoriete tekeningen en download ze als één compleet, printklaar boekje met eigen titelblad!`}
+              </p>
+            </div>
+          </div>
+          <div style={{ display: 'flex', gap: '0.75rem', alignItems: 'center' }}>
+            <span style={{
+              background: '#FFFFFF',
+              border: '1.5px solid #C7D2FE',
+              borderRadius: '9999px',
+              padding: '0.45rem 1.1rem',
+              fontSize: '0.84rem',
+              fontWeight: 800,
+              color: '#4F46E5',
+              boxShadow: '0 2px 8px rgba(79, 70, 229, 0.1)',
+            }}>
+              {isEn ? '✨ 100% Free • Unlimited' : '✨ 100% Gratis • Onbeperkt'}
+            </span>
+          </div>
+        </div>
 
         <DifficultyFilterBar isEn={isEn} counts={counts} />
 
@@ -487,8 +566,11 @@ export default async function ThemePage({
           </div>
         )}
 
-        {/* 5 Fun Craft Ideas & Activities (SEO Supercharger) */}
+        {/* 10 Fun Craft Ideas & Activities (SEO Supercharger) */}
         <CraftIdeasSection themeTitle={theme.title} isEn={isEn} />
+
+        {/* Frequently Asked Questions (Schema.org FAQPage Rich Results) */}
+        <ThemeFaqSection themeTitle={theme.title} isEn={isEn} />
 
         {/* Newsletter & Coloring Club */}
         <NewsletterBox isEn={isEn} lang={lang} />

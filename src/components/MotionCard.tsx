@@ -87,7 +87,8 @@ export default function MotionCard({ page, lang, isEn }: MotionCardProps) {
 
           {/* Add to Custom Coloring Booklet Button (Top Center-Right) */}
           <button
-            type="button"onClick={(e) => {
+            type="button"
+            onClick={(e) => {
               e.preventDefault();
               e.stopPropagation();
               toggleSelectPage({
@@ -100,29 +101,29 @@ export default function MotionCard({ page, lang, isEn }: MotionCardProps) {
                 ageGroup: page.ageGroup,
               });
             }}
-            title={isSelected ? (isEn ?'Remove from bundle':'Verwijder uit bundel') : (isEn ?'Add to custom bundle':'Toevoegen aan printbundel')}
+            title={isSelected ? (isEn ? 'Remove from bundle' : 'Verwijder uit bundel') : (isEn ? 'Add to custom bundle' : 'Toevoegen aan printbundel')}
             style={{
-              position:'absolute',
-              top:'10px',
-              right:'48px',
+              position: 'absolute',
+              top: '10px',
+              right: '48px',
               zIndex: 10,
-              background: isSelected ?'#10B981':'#FFFFFF',
-              color: isSelected ?'#FFFFFF':'#4F46E5',
-              borderRadius:'9999px',
-              padding:'0.22rem 0.6rem',
-              fontSize:'0.7rem',
+              background: isSelected ? '#10B981' : '#FFFFFF',
+              color: isSelected ? '#FFFFFF' : '#4F46E5',
+              borderRadius: '9999px',
+              padding: '0.22rem 0.6rem',
+              fontSize: '0.7rem',
               fontWeight: 800,
-              display:'flex',
-              alignItems:'center',
-              gap:'0.25rem',
-              border: isSelected ?'1.5px solid #059669':'1.5px solid #CBD5E1',
-              boxShadow: isSelected ?'0 3px 10px rgba(16, 185, 129, 0.4)':'0 2px 6px rgba(0,0,0,0.08)',
-              cursor:'pointer',
-              transition:'all 0.15s ease',
+              display: 'flex',
+              alignItems: 'center',
+              gap: '0.25rem',
+              border: isSelected ? '1.5px solid #059669' : '1.5px solid #CBD5E1',
+              boxShadow: isSelected ? '0 3px 10px rgba(16, 185, 129, 0.4)' : '0 2px 6px rgba(0,0,0,0.08)',
+              cursor: 'pointer',
+              transition: 'all 0.15s ease',
             }}
           >
-            <span>{isSelected ?'✓':''}</span>
-            <span>{isSelected ? (isEn ?'Added':'In Mandje') : (isEn ?'Bundle':'Bundel')}</span>
+            <span>{isSelected ? '✓' : '➕'}</span>
+            <span>{isSelected ? (isEn ? 'Added' : 'In Boekje') : (isEn ? 'Bundle' : 'Kleurboek')}</span>
           </button>
 
           {/* Favorite Button (Top Right) */}
@@ -198,37 +199,47 @@ export default function MotionCard({ page, lang, isEn }: MotionCardProps) {
               href={url}
               style={{
                 flex: 1,
-                textAlign:'center',
-                padding:'0.4rem 0.5rem',
-                borderRadius:'8px',
-                background:'var(--surface-2, #F1F5F9)',
-                color:'var(--foreground)',
-                fontSize:'0.78rem',
+                textAlign: 'center',
+                padding: '0.45rem 0.5rem',
+                borderRadius: '10px',
+                background: '#F8FAFC',
+                color: '#0F172A',
+                fontSize: '0.8rem',
                 fontWeight: 700,
-                textDecoration:'none',
-                border:'1px solid var(--gray-200)',
-                transition:'all 0.15s',
+                textDecoration: 'none',
+                border: '1.5px solid #E2E8F0',
+                display: 'inline-flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                gap: '0.35rem',
+                transition: 'all 0.15s ease',
               }}
             >
-              {isEn ?'Print / PDF':'Print / PDF'}
+              <span aria-hidden="true">🖨️</span>
+              <span>{isEn ? 'Print / PDF' : 'Print / PDF'}</span>
             </Link>
             <Link
               href={`${url}/color`}
               style={{
                 flex: 1,
-                textAlign:'center',
-                padding:'0.4rem 0.5rem',
-                borderRadius:'8px',
-                background:'linear-gradient(135deg, #FF6B35, #FF3B30)',
-                color:'#FFFFFF',
-                fontSize:'0.78rem',
+                textAlign: 'center',
+                padding: '0.45rem 0.5rem',
+                borderRadius: '10px',
+                background: 'linear-gradient(135deg, #FF6B35 0%, #FF8A00 100%)',
+                color: '#FFFFFF',
+                fontSize: '0.8rem',
                 fontWeight: 800,
-                textDecoration:'none',
-                boxShadow:'0 2px 8px rgba(255, 107, 53, 0.3)',
-                transition:'all 0.15s',
+                textDecoration: 'none',
+                boxShadow: '0 2px 8px rgba(255, 107, 53, 0.35)',
+                display: 'inline-flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                gap: '0.35rem',
+                transition: 'all 0.15s ease',
               }}
             >
-              {isEn ?'Color Online':'Inkleuren'}
+              <span aria-hidden="true">🎨</span>
+              <span>{isEn ? 'Color Online' : 'Inkleuren'}</span>
             </Link>
           </div>
         </div>

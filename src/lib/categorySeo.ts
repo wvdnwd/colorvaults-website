@@ -129,6 +129,125 @@ const SPECIFIC_SEO_DATA: Record<string, SpecificSeoOverride> = {
       <p>Laat je betoveren door deze gerelateerde categorieën:</p>
       RELATED_LINKS`,
   },
+  'pokemon': {
+    enIntro: `Catch 'em all with our massive collection of free printable Pokémon coloring pages! From iconic favorites like Pikachu, Charizard, and Gengar to beloved starter Pokémon and legendary beasts, our high-resolution line art templates are ready to download and print in A4/Letter format. Perfect for kids, anime enthusiasts, and family craft afternoons.`,
+    nlIntro: `Vang ze allemaal met onze enorme verzameling gratis Pokémon kleurplaten om uit te printen! Van favorieten zoals Pikachu, Charizard en Eevee tot legendarische Pokémon: al onze sjablonen zijn direct in hoge resolutie te downloaden en te printen op A4-formaat. Ideaal voor kinderen, Pokémon-fans en creatieve middagen.`,
+    relatedSlugs: ['pokemon-eevee-evolutions', 'super-mario', 'sonic-the-hedgehog', 'dragonball'],
+    enBottomHtml: `<h2>Print Free High-Resolution Pokémon Coloring Pages</h2>
+      <p>Bring the vibrant world of Pokémon to life with your favorite pencils, crayons, and markers. Our collection features dynamic battle scenes, cute pocket monsters, and intricate illustrations designed for trainers of all skill levels.</p>
+      <h3>Age Groups & Difficulty Levels</h3>
+      <ul>
+        <li><a href="URL_KIDS"><strong>Easy / Kids</strong></a>: Adorable baby Pokémon and simple outlines of Pikachu, Squirtle, and Bulbasaur designed for toddlers and early learners.</li>
+        <li><a href="URL_TEENS"><strong>Medium / Teens</strong></a>: Action-packed evolution battles, gym leader stadium showdowns, and anime scenes for school-age kids and teens.</li>
+        <li><a href="URL_ADULTS"><strong>Hard / Adults</strong></a>: Detailed mosaic Pokémon mandalas and complex legendary beast illustrations for advanced colorists.</li>
+      </ul>
+      <h3>Why Trainers Love ColorVaults</h3>
+      <p>Download search favorites like <em>free printable Pikachu coloring sheet PDF</em>, <em>Charizard fire battle coloring page</em>, or <em>starter Pokemon printables</em> with zero subscription fees and unlimited downloads.</p>
+      RELATED_LINKS`,
+    nlBottomHtml: `<h2>Gratis Pokémon Kleurplaten Printen in Hoge Resolutie</h2>
+      <p>Breng de kleurrijke wereld van Pokémon tot leven op papier! Onze collectie bevat spannende gevechten, schattige monstertjes en epische legendaries voor trainers van alle leeftijden.</p>
+      <h3>Leeftijdsgroepen & Moeilijkheidsgraden</h3>
+      <ul>
+        <li><a href="URL_KIDS"><strong>Makkelijk / Kinderen</strong></a>: Schattige Pikachu, Charmander en Eevee tekeningen met duidelijke dikke lijnen voor peuters en kleuters.</li>
+        <li><a href="URL_TEENS"><strong>Gemiddeld / Tieners</strong></a>: Spannende arena-gevechten en krachtige evoluties voor basisschoolkinderen en tieners.</li>
+        <li><a href="URL_ADULTS"><strong>Moeilijk / Volwassenen</strong></a>: Ingewikkelde Pokémon mandala's en gedetailleerde kunstwerken voor volwassen fans.</li>
+      </ul>
+      RELATED_LINKS`,
+  },
+  'lilo-stitch': {
+    enIntro: `Say Aloha to our delightful collection of free printable Stitch coloring pages! Featuring Disney's mischievous yet lovable Experiment 626, Lilo, Angel, and Hawaiian island adventures. Download and print crisp, high-resolution A4 and Letter PDF coloring sheets for kids, teens, and Disney fans of all ages.`,
+    nlIntro: `Zeg Aloha tegen onze vrolijke verzameling gratis Stitch kleurplaten om uit te printen! Met het ondeugende blauwe ruimtewezen Experiment 626, Lilo, Angel en tropische Hawaïaanse avonturen. Download direct haarscherpe A4-printables voor kinderen, tieners en Disney-liefhebbers.`,
+    relatedSlugs: ['frozen', 'disney-princesses', 'cute-puppies-dogs', 'unicorns-pegasus'],
+    enBottomHtml: `<h2>High-Resolution Free Printable Stitch Coloring Sheets</h2>
+      <p>Stitch has captured hearts across the globe with his hilarious antics and deep love for family (Ohana). Our printable sheets capture Stitch playing guitar, eating ice cream, riding surfboards, and dressing up in cute costumes.</p>
+      <h3>Difficulty Levels</h3>
+      <ul>
+        <li><a href="URL_KIDS"><strong>Easy / Kids</strong></a>: Big, cheerful outlines of Stitch eating snacks and smiling for toddlers and preschoolers.</li>
+        <li><a href="URL_TEENS"><strong>Medium / Teens</strong></a>: Hawaiian beach scenes, Stitch with guitar, and tropical flora for school-age kids.</li>
+        <li><a href="URL_ADULTS"><strong>Hard / Adults</strong></a>: Detailed tropical floral patterns and intricate Stitch portraits for relaxing mindfulness.</li>
+      </ul>
+      RELATED_LINKS`,
+    nlBottomHtml: `<h2>Haarscherpe Gratis Stitch Kleurplaten Printen</h2>
+      <p>Stitch heeft de harten van miljoenen veroverd met zijn grappige streken en zijn liefde voor 'Ohana' (familie). Ontdek kleurplaten van Stitch op een surfboard, met een ijsje of gitaar spelend op het strand.</p>
+      <h3>Moeilijkheidsgraden</h3>
+      <ul>
+        <li><a href="URL_KIDS"><strong>Makkelijk / Kinderen</strong></a>: Grote vrolijke tekeningen van Stitch voor peuters en kleuters.</li>
+        <li><a href="URL_TEENS"><strong>Gemiddeld / Tieners</strong></a>: Tropische Hawaï-stranden en grappige avonturen voor basisschoolkinderen.</li>
+        <li><a href="URL_ADULTS"><strong>Moeilijk / Volwassenen</strong></a>: Gedetailleerde botanische bloemenpatronen gecombineerd met Stitch voor ontspanning.</li>
+      </ul>
+      RELATED_LINKS`,
+  },
+  'paw-patrol': {
+    enIntro: `No job is too big, no pup is too small! Explore our action-packed collection of free printable PAW Patrol coloring pages. Join Chase, Marshall, Skye, Rubble, Zuma, and Rocky on exciting Adventure Bay rescue missions. 100% free high-resolution PDFs ready for instant home or classroom printing.`,
+    nlIntro: `Geen klus te groot, geen pup te klein! Ontdek onze spannende verzameling gratis PAW Patrol kleurplaten om uit te printen. Ga op reddingsmissie in Avonturenbaai met Chase, Marshall, Skye, Puin, Zuma en Rocky. 100% gratis en direct printklaar op A4-formaat.`,
+    relatedSlugs: ['cute-puppies-dogs', 'super-mario', 'sonic-the-hedgehog', 'dinosaur-adventures'],
+    enBottomHtml: `<h2>Printable PAW Patrol Hero Rescue Sheets</h2>
+      <p>Inspire courage, teamwork, and problem-solving in young children with our curated PAW Patrol coloring sheets. Perfect for birthday party craft stations, rainy afternoons, and preschool rewards.</p>
+      <h3>Characters & Difficulty</h3>
+      <ul>
+        <li><a href="URL_KIDS"><strong>Easy / Kids</strong></a>: Bold lines featuring individual hero pups in their rescue vehicles.</li>
+        <li><a href="URL_TEENS"><strong>Medium / Teens</strong></a>: Lookout tower scenes, Mighty Pups superhero action, and Adventure City missions.</li>
+      </ul>
+      RELATED_LINKS`,
+    nlBottomHtml: `<h2>Gratis PAW Patrol Kleurplaten voor Kinderen</h2>
+      <p>Stimuleer de creativiteit en fijne motoriek van jonge kinderen met de heldhaftige reddingshonden van PAW Patrol. Ideaal voor kinderfeestjes, op de opvang of gewoon gezellig thuis aan tafel.</p>
+      RELATED_LINKS`,
+  },
+  'frozen': {
+    enIntro: `Enter the winter wonderland of Arendelle with free printable Frozen coloring pages! Print enchanting designs of Queen Elsa, Princess Anna, Olaf the Snowman, Kristoff, and Sven. High-definition A4/Letter PDF templates ready for royal coloring fun.`,
+    nlIntro: `Stap in de betoverende winterwereld van Arendelle met gratis Frozen kleurplaten om uit te printen! Kleur koningin Elsa, prinses Anna, sneeuwpop Olaf, Kristoff en rendier Sven in hoge resolutie A4-formaat. 100% gratis zonder registratie.`,
+    relatedSlugs: ['disney-princesses', 'unicorns-pegasus', 'fairies', 'princesses-castles'],
+    enBottomHtml: `<h2>Magical Elsa & Anna Frozen Coloring Pages</h2>
+      <p>From Elsa's glittering ice palace to warm hugs with Olaf, our Frozen sheets transport colorists into a breathtaking snowy kingdom filled with magic and song.</p>
+      RELATED_LINKS`,
+    nlBottomHtml: `<h2>Magische Frozen Kleurplaten met Elsa & Anna</h2>
+      <p>Van het schitterende ijspaleis tot warme knuffels van Olaf: breng de magie van Frozen tot leven met je mooiste blauwe, paarse en zilveren potloden.</p>
+      RELATED_LINKS`,
+  },
+  'marvel-spider-man': {
+    enIntro: `Swing through New York City with our thrilling collection of free printable Spider-Man coloring pages! Print web-slinging heroics featuring Peter Parker, Miles Morales, Spider-Gwen, and iconic villains. High-definition PDFs optimized for crisp printing.`,
+    nlIntro: `Slinger door de straten van New York met onze actievolle gratis Spider-Man kleurplaten! Kleur Peter Parker, Miles Morales, Spider-Gwen en bekende schurken in haarscherpe A4-kwaliteit. Direct gratis printen.`,
+    relatedSlugs: ['super-mario', 'sonic-the-hedgehog', 'dragonball', 'formula-1-race-cars'],
+    enBottomHtml: `<h2>Web-Slinging Spider-Man Coloring Sheets</h2>
+      <p>Unleash your inner superhero with action poses, wall-crawling adventures, and rooftop battles across the Marvel Universe.</p>
+      RELATED_LINKS`,
+    nlBottomHtml: `<h2>Actievolle Spider-Man Kleurplaten</h2>
+      <p>Laat je innerlijke superheld los met dynamische poses, web-slingerende actie en spectaculaire stadsgezichten.</p>
+      RELATED_LINKS`,
+  },
+  'dinosaur-adventures': {
+    enIntro: `Travel back to prehistoric times with our roaring collection of free printable dinosaur coloring pages! Featuring the mighty Tyrannosaurus Rex, Triceratops, Brachiosaurus, Velociraptor, and Pterodactyl in lush Jurassic jungles. Ready to print in A4/Letter size.`,
+    nlIntro: `Reis miljoenen jaren terug in de tijd met onze stoere gratis dinosaurus kleurplaten! Van de machtige Tyrannosaurus Rex en gehoornde Triceratops tot vliegende Pterodactyls in prehistorische oerwouden. Direct printklaar op A4.`,
+    relatedSlugs: ['safari-lions-big-cats', 'animals', 'dragons'],
+    enBottomHtml: `<h2>Prehistoric Jurassic Dinosaur Printables</h2>
+      <p>Spark curiosity about science and paleontology with detailed dinosaur coloring pages suitable for toddler dino lovers and older fossil fans alike.</p>
+      RELATED_LINKS`,
+    nlBottomHtml: `<h2>Stoere Dinosaurus Kleurplaten voor Jong en Oud</h2>
+      <p>Ontdek brullende T-Rexen, vreedzame planteneters en prehistorische landschappen om zelf in te kleuren met potlood of verf.</p>
+      RELATED_LINKS`,
+  },
+  'unicorns-pegasus': {
+    enIntro: `Step into a fairy tale realm with our enchanting free printable unicorn coloring pages! Discover magical winged pegasi, rainbow unicorns, starry night skies, and baby unicorn foals. High-resolution PDF downloads for kids and fantasy lovers.`,
+    nlIntro: `Betreed een sprookjeswereld vol magie met onze gratis eenhoorn kleurplaten om uit te printen! Met magische regenbogen, sterrenhemels, gevleugelde pegasus-paarden en schattige baby eenhoorns op A4-formaat.`,
+    relatedSlugs: ['frozen', 'disney-princesses', 'cute-kittens-cats', 'cute-puppies-dogs'],
+    enBottomHtml: `<h2>Magical Unicorn & Rainbow Coloring Pages</h2>
+      <p>Perfect for dreamy afternoons, glitter pens, and pastel colors. Free high-definition printables ready to spark pure imagination.</p>
+      RELATED_LINKS`,
+    nlBottomHtml: `<h2>Magische Eenhoorn & Regenboog Kleurplaten</h2>
+      <p>Pak je glitters en pastelkleuren erbij voor de mooiste magische eenhoorns en betoverde bossen.</p>
+      RELATED_LINKS`,
+  },
+  'bluey': {
+    enIntro: `Play along with the Heeler family! Download free printable Bluey coloring pages featuring Bluey, Bingo, Bandit, Chilli, and their neighborhood friends. Wholesome, cheerful line art ready for toddlers, preschoolers, and family fun.`,
+    nlIntro: `Speel mee met Bluey en Bingo! Download gratis Bluey kleurplaten om uit te printen met de vrolijke Heeler familie. Warme, herkenbare en gezellige tekeningen voor peuters, kleuters en het hele gezin.`,
+    relatedSlugs: ['paw-patrol', 'cute-puppies-dogs', 'super-mario', 'pokemon'],
+    enBottomHtml: `<h2>Free Bluey & Bingo Coloring Sheets</h2>
+      <p>Celebrate family games, imagination, and laughter with our crisp Bluey printables. Perfect for quiet play and preschool motor skills development.</p>
+      RELATED_LINKS`,
+    nlBottomHtml: `<h2>Vrolijke Bluey Kleurplaten voor Peuters en Kleuters</h2>
+      <p>Beleef de leukste spelletjes uit de serie opnieuw op papier. Ideaal voor het oefenen van de fijne motoriek en urenlang kleurplezier.</p>
+      RELATED_LINKS`,
+  },
 };
 
 export function getCategorySeoData(
