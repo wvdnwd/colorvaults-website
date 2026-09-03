@@ -79,40 +79,63 @@ export default async function DashboardPage() {
             transition:'transform 0.15s ease',
           }}
         >
-          <div style={{ fontSize:'2rem'}}></div>
+          <div style={{ fontSize: '2rem' }}>🎨</div>
           <div>
-            <h3 style={{ margin:'0 0 0.25rem', color:'#FDF6E9', fontSize:'1rem', fontWeight: 800 }}>
+            <h3 style={{ margin: '0 0 0.25rem', color: '#FDF6E9', fontSize: '1rem', fontWeight: 800 }}>
               Kleurplaten Beheer
             </h3>
-            <p style={{ margin: 0, color:'rgba(253,246,233,0.55)', fontSize:'0.8rem'}}>
-              Zoek, filter op dubbele namen, bekijk previews en inspecteer alle {pages.length} kleurplaten.
+            <p style={{ margin: 0, color: 'rgba(253,246,233,0.55)', fontSize: '0.8rem' }}>
+              Zoek, filter op dubbele namen, bekijk previews en inspecteer alle {pages.length.toLocaleString()} kleurplaten.
             </p>
           </div>
         </Link>
 
         <Link
-          href="/admin/categories"style={{
-            background:'linear-gradient(135deg, rgba(99,102,241,0.15), rgba(99,102,241,0.05))',
-            border:'1px solid rgba(99,102,241,0.3)',
-            borderRadius:'0.75rem',
-            padding:'1.25rem',
-            textDecoration:'none',
-            display:'flex',
-            alignItems:'center',
-            gap:'1rem',
-            transition:'transform 0.15s ease',
+          href="/admin/categories"
+          style={{
+            background: 'linear-gradient(135deg, rgba(99,102,241,0.15), rgba(99,102,241,0.05))',
+            border: '1px solid rgba(99,102,241,0.3)',
+            borderRadius: '0.75rem',
+            padding: '1.25rem',
+            textDecoration: 'none',
+            display: 'flex',
+            alignItems: 'center',
+            gap: '1rem',
+            transition: 'transform 0.15s ease',
           }}
         >
-          <div style={{ fontSize:'2rem'}}>🗂️</div>
+          <div style={{ fontSize: '2rem' }}>🗂️</div>
           <div>
-            <h3 style={{ margin:'0 0 0.25rem', color:'#FDF6E9', fontSize:'1rem', fontWeight: 800 }}>
+            <h3 style={{ margin: '0 0 0.25rem', color: '#FDF6E9', fontSize: '1rem', fontWeight: 800 }}>
               Categorieën Overzicht
             </h3>
-            <p style={{ margin: 0, color:'rgba(253,246,233,0.55)', fontSize:'0.8rem'}}>
+            <p style={{ margin: 0, color: 'rgba(253,246,233,0.55)', fontSize: '0.8rem' }}>
               Bekijk categorieën op aantal afbeeldingen, controleer lege thema&apos;s en spring direct naar de platen.
             </p>
           </div>
         </Link>
+
+        <div
+          style={{
+            background: 'linear-gradient(135deg, rgba(16,185,129,0.15), rgba(16,185,129,0.05))',
+            border: '1px solid rgba(16,185,129,0.3)',
+            borderRadius: '0.75rem',
+            padding: '1.25rem',
+            display: 'flex',
+            alignItems: 'center',
+            gap: '1rem',
+          }}
+        >
+          <div style={{ fontSize: '2rem' }}>🌍</div>
+          <div>
+            <h3 style={{ margin: '0 0 0.25rem', color: '#FDF6E9', fontSize: '1rem', fontWeight: 800 }}>
+              SEO & Meertaligheid Live
+            </h3>
+            <p style={{ margin: 0, color: 'rgba(253,246,233,0.55)', fontSize: '0.8rem', lineHeight: 1.4 }}>
+              4 talen actief (NL, EN, DE, FR) met Google hreflang. <a href="/sitemap.xml" target="_blank" rel="noopener noreferrer" style={{ color: '#10B981', textDecoration: 'underline', fontWeight: 700 }}>Bekijk sitemap.xml ↗</a>
+            </p>
+          </div>
+        </div>
       </div>
 
       {/* Categories Table */}

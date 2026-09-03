@@ -63,19 +63,100 @@ export default function ColoringPagesManager({
     setCurrentPage(1);
   }, [searchQuery, selectedTheme, selectedAge, showDuplicatesOnly, sortBy, pageSize]);
 
+  const [pagesList, setPagesList] = useState<AdminColoringPage[]>(initialPages);
+  const [editingPage, setEditingPage] = useState<AdminColoringPage | null>(null);
+  const [editTitle, setEditTitle] = useState('');
+  const [editAgeGroup, setEditAgeGroup] = useState('kids');
+  const [isSaving, setIsSaving] = useState(false);
+
+  const handleStartEdit = (page: AdminColoringPage) => {
+    setEditingPage(page);
+    setEditTitle(page.title);
+    setEditAgeGroup(page.ageGroup);
+  };
+
+  const handleSaveEdit = async () => {
+    if (!editingPage) return;
+    setIsSaving(true);
+    try {
+      const res = await fetch('/api/admin/coloring-pages', {
+        method: 'PATCH',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          slug: editingPage.slug,
+          parentHub: editingPage.parentHub,
+          parentTheme: editingPage.parentTheme,
+          title: editTitle,
+          ageGroup: editAgeGroup,
+        }),
+      });
+      if (res.ok) {
+        setPagesList(prev =>
+          prev.map(p =>
+            p.slug === editingPage.slug &&
+            p.parentHub === editingPage.parentHub &&
+            p.parentTheme === editingPage.parentTheme
+              ? { ...p, title: editTitle, ageGroup: editAgeGroup }
+              : p
+          )
+        );
+        if (activeModalPage?.slug === editingPage.slug) {
+          setActiveModalPage(prev => (prev ? { ...prev, title: editTitle, ageGroup: editAgeGroup } : null));
+        }
+        setEditingPage(null);
+      }
+    } catch {
+      // silent
+    } finally {
+      setIsSaving(false);
+    }
+  };
+
+  const handleDeletePage = async (page: AdminColoringPage) => {
+    if (!confirm(`Weet je zeker dat je "${page.title}" wilt verwijderen?`)) return;
+    try {
+      const res = await fetch('/api/admin/coloring-pages', {
+        method: 'DELETE',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          slug: page.slug,
+          parentHub: page.parentHub,
+          parentTheme: page.parentTheme,
+        }),
+      });
+      if (res.ok) {
+        setPagesList(prev =>
+          prev.filter(
+            p =>
+              !(
+                p.slug === page.slug &&
+                p.parentHub === page.parentHub &&
+                p.parentTheme === page.parentTheme
+              )
+          )
+        );
+        if (activeModalPage?.slug === page.slug) {
+          setActiveModalPage(null);
+        }
+      }
+    } catch {
+      // silent
+    }
+  };
+
   // Compute duplicate title mapping
   const titleCounts = useMemo(() => {
     const counts: Record<string, number> = {};
-    for (const p of initialPages) {
+    for (const p of pagesList) {
       const norm = p.title.toLowerCase().trim();
       counts[norm] = (counts[norm] || 0) + 1;
     }
     return counts;
-  }, [initialPages]);
+  }, [pagesList]);
 
-  // Compute deterministic views if not present
+  // Compute pages with metadata
   const pagesWithViews = useMemo(() => {
-    return initialPages.map((p, idx) => {
+    return pagesList.map((p, idx) => {
       const simulatedViews = p.views || Math.floor(((p.title.length * 183 + idx * 47) % 4800) + 15);
       const isDuplicate = (titleCounts[p.title.toLowerCase().trim()] || 0) > 1;
       return {
@@ -84,7 +165,7 @@ export default function ColoringPagesManager({
         isDuplicate,
       };
     });
-  }, [initialPages, titleCounts]);
+  }, [pagesList, titleCounts]);
 
   // Filtered & Sorted Pages
   const processedPages = useMemo(() => {
@@ -381,17 +462,39 @@ export default function ColoringPagesManager({
                     </span>
                   )}
 
-                  <div style={{ display:'flex', gap:'0.35rem'}}>
+                  <div style={{ display: 'flex', gap: '0.25rem', alignItems: 'center' }}>
                     <button
-                      type="button"onClick={() => setActiveModalPage(page)}
+                      type="button"
+                      onClick={() => setActiveModalPage(page)}
                       className={styles.btnDismiss}
-                      title="Grote preview openen">
+                      title="Grote preview openen"
+                    >
                       🔍
+                    </button>
+                    <button
+                      type="button"
+                      onClick={() => handleStartEdit(page)}
+                      className={styles.btnDismiss}
+                      style={{ background: 'rgba(99, 102, 241, 0.2)', color: '#818cf8', borderColor: 'rgba(99, 102, 241, 0.4)' }}
+                      title="Bewerken"
+                    >
+                      ✏️
+                    </button>
+                    <button
+                      type="button"
+                      onClick={() => handleDeletePage(page)}
+                      className={styles.btnDismiss}
+                      style={{ background: 'rgba(239, 68, 68, 0.15)', color: '#f87171', borderColor: 'rgba(239, 68, 68, 0.3)' }}
+                      title="Verwijderen"
+                    >
+                      🗑️
                     </button>
                     <Link
                       href={`/en/${page.parentHub}/${page.parentTheme}/${page.ageGroup}/${page.slug}`}
-                      target="_blank"className={styles.btnDismiss}
-                      title="Bekijk live op website">
+                      target="_blank"
+                      className={styles.btnDismiss}
+                      title="Bekijk live op website"
+                    >
                       Live ↗
                     </Link>
                   </div>
@@ -480,16 +583,38 @@ export default function ColoringPagesManager({
                     )}
                   </td>
                   <td>
-                    <div className={styles.actionBtns}>
+                    <div className={styles.actionBtns} style={{ display: 'flex', gap: '0.25rem' }}>
                       <button
-                        type="button"onClick={() => setActiveModalPage(page)}
+                        type="button"
+                        onClick={() => setActiveModalPage(page)}
                         className={styles.btnDismiss}
+                        title="Grote preview"
                       >
-                        🔍 Preview
+                        🔍
+                      </button>
+                      <button
+                        type="button"
+                        onClick={() => handleStartEdit(page)}
+                        className={styles.btnDismiss}
+                        style={{ background: 'rgba(99, 102, 241, 0.2)', color: '#818cf8', borderColor: 'rgba(99, 102, 241, 0.4)' }}
+                        title="Bewerken"
+                      >
+                        ✏️
+                      </button>
+                      <button
+                        type="button"
+                        onClick={() => handleDeletePage(page)}
+                        className={styles.btnDismiss}
+                        style={{ background: 'rgba(239, 68, 68, 0.15)', color: '#f87171', borderColor: 'rgba(239, 68, 68, 0.3)' }}
+                        title="Verwijderen"
+                      >
+                        🗑️
                       </button>
                       <Link
                         href={`/en/${page.parentHub}/${page.parentTheme}/${page.ageGroup}/${page.slug}`}
-                        target="_blank"className={styles.btnDismiss}
+                        target="_blank"
+                        className={styles.btnDismiss}
+                        title="Live bekijken"
                       >
                         Live ↗
                       </Link>
@@ -624,21 +749,113 @@ export default function ColoringPagesManager({
                 </div>
               )}
 
-              <div className={styles.modalActions}>
+              <div className={styles.modalActions} style={{ flexWrap: 'wrap', gap: '0.6rem' }}>
                 <Link
                   href={`/en/${activeModalPage.parentHub}/${activeModalPage.parentTheme}/${activeModalPage.ageGroup}/${activeModalPage.slug}`}
-                  target="_blank"className={styles.modalPrimaryBtn}
+                  target="_blank"
+                  className={styles.modalPrimaryBtn}
                 >
                   🌐 Bekijk op Website ↗
                 </Link>
 
+                <button
+                  type="button"
+                  onClick={() => handleStartEdit(activeModalPage)}
+                  className={styles.modalSecondaryBtn}
+                  style={{ cursor: 'pointer', background: 'rgba(99, 102, 241, 0.15)', color: '#818cf8', borderColor: 'rgba(99, 102, 241, 0.4)' }}
+                >
+                  ✏️ Gegevens Bewerken
+                </button>
+
+                <button
+                  type="button"
+                  onClick={() => handleDeletePage(activeModalPage)}
+                  className={styles.modalSecondaryBtn}
+                  style={{ cursor: 'pointer', background: 'rgba(239, 68, 68, 0.15)', color: '#f87171', borderColor: 'rgba(239, 68, 68, 0.3)' }}
+                >
+                  🗑️ Verwijderen
+                </button>
+
                 <a
                   href={activeModalPage.image}
-                  target="_blank"rel="noopener noreferrer"download
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  download
                   className={styles.modalSecondaryBtn}
                 >
-                  Origineel Bestand
+                  Download Origineel
                 </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
+
+      {/* Edit Page Modal */}
+      {editingPage && (
+        <div
+          className={styles.modalOverlay}
+          onClick={(e) => { if (e.target === e.currentTarget) setEditingPage(null); }}
+        >
+          <div className={styles.modalCard} style={{ maxWidth: '480px' }}>
+            <div className={styles.modalHeader}>
+              <h2 className={styles.modalTitle}>Kleurplaat Bewerken</h2>
+              <button
+                type="button"
+                className={styles.modalClose}
+                onClick={() => setEditingPage(null)}
+              >
+                ✕
+              </button>
+            </div>
+            <div className={styles.modalBody} style={{ display: 'flex', flexDirection: 'column', gap: '1.1rem' }}>
+              <div>
+                <label style={{ fontSize: '0.78rem', color: 'rgba(253,246,233,0.6)', fontWeight: 700, display: 'block', marginBottom: '0.4rem' }}>
+                  Titel / Naam van de Kleurplaat
+                </label>
+                <input
+                  type="text"
+                  value={editTitle}
+                  onChange={(e) => setEditTitle(e.target.value)}
+                  className={styles.filterInput}
+                  style={{ width: '100%', boxSizing: 'border-box' }}
+                />
+              </div>
+
+              <div>
+                <label style={{ fontSize: '0.78rem', color: 'rgba(253,246,233,0.6)', fontWeight: 700, display: 'block', marginBottom: '0.4rem' }}>
+                  Doelgroep / Moeilijkheidsgraad
+                </label>
+                <select
+                  value={editAgeGroup}
+                  onChange={(e) => setEditAgeGroup(e.target.value)}
+                  className={styles.filterSelect}
+                  style={{ width: '100%', boxSizing: 'border-box' }}
+                >
+                  <option value="toddlers">Toddlers (Peuters / Makkelijk)</option>
+                  <option value="kids">Kids (Kinderen / Standaard)</option>
+                  <option value="teens">Teens (Tieners & Volwassenen / Gedetailleerd)</option>
+                </select>
+              </div>
+
+              <div style={{ display: 'flex', gap: '0.75rem', marginTop: '0.5rem' }}>
+                <button
+                  type="button"
+                  onClick={handleSaveEdit}
+                  disabled={isSaving}
+                  className={styles.modalPrimaryBtn}
+                  style={{ border: 'none', cursor: 'pointer' }}
+                >
+                  {isSaving ? 'Opslaan...' : '💾 Wijzigingen Opslaan'}
+                </button>
+                <button
+                  type="button"
+                  onClick={() => setEditingPage(null)}
+                  className={styles.modalSecondaryBtn}
+                  style={{ border: 'none', cursor: 'pointer' }}
+                >
+                  Annuleren
+                </button>
               </div>
             </div>
           </div>

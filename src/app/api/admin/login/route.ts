@@ -1,5 +1,5 @@
 import { NextRequest, NextResponse } from'next/server';
-import { checkAdminPassword, ADMIN_COOKIE } from'@/lib/adminAuth';
+import { checkAdminPassword, getAdminAuthToken, ADMIN_COOKIE } from'@/lib/adminAuth';
 
 export async function POST(req: NextRequest) {
   const { password } = await req.json();
@@ -9,11 +9,11 @@ export async function POST(req: NextRequest) {
   }
 
   const res = NextResponse.json({ ok: true });
-  res.cookies.set(ADMIN_COOKIE, password, {
+  res.cookies.set(ADMIN_COOKIE, getAdminAuthToken(), {
     httpOnly: true,
     secure: process.env.NODE_ENV ==='production',
     sameSite:'lax',
-    maxAge: 60 * 60 * 8, // 8 hours
+    maxAge: 60 * 60 * 24 * 30, // 30 days
     path:'/',
   });
   return res;

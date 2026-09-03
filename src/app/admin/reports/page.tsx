@@ -93,19 +93,23 @@ export default function ReportsPage() {
                     {new Date(r.date).toLocaleDateString('nl-NL')}
                   </td>
                   <td>
-                    <div className={styles.actionBtns}>
+                    <div className={styles.actionBtns} style={{ display: 'flex', gap: '0.4rem' }}>
                       <button
+                        type="button"
                         className={styles.btnDismiss}
                         onClick={() => dismiss(r.id)}
+                        style={{ background: 'rgba(16, 185, 129, 0.2)', color: '#10B981', border: '1px solid rgba(16, 185, 129, 0.4)' }}
                       >
-                        ✓ Dismiss
+                        ✓ Opgelost
                       </button>
                       <a
                         href={r.imageUrl}
-                        target="_blank"rel="noopener noreferrer"className={styles.btnDismiss}
-                        style={{ textDecoration:'none', display:'inline-flex', alignItems:'center'}}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className={styles.btnDismiss}
+                        style={{ textDecoration: 'none', display: 'inline-flex', alignItems: 'center' }}
                       >
-                        👁 View
+                        👁️ Bekijk
                       </a>
                     </div>
                   </td>
