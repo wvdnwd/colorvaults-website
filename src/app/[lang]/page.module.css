@@ -254,10 +254,10 @@
   z-index: 5;
 }
 
-/* ── Right: animated card fan ─────────────────────────────────────────────── */
+/* ── Right: animated card fan / 3D Vault Stage ───────────────────────────── */
 .heroVisual {
   position: relative;
-  height: 420px;
+  min-height: 480px;
   display: flex;
   align-items: center;
   justify-content: center;

@@ -2,7 +2,6 @@
 
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
-import ColorSplash from './ColorSplash';
 import styles from './HeroCarousel.module.css';
 
 export interface CarouselItem {
@@ -38,36 +37,47 @@ export default function HeroCarousel({ items, lang = 'nl' }: HeroCarouselProps) 
   const isEn = lang === 'en';
 
   return (
-    <div className={styles.sceneWrapper}>
-      {/* Radiant Watercolor Paint Splash Backdrop */}
-      <ColorSplash />
+    <div className={styles.vaultContainer}>
+      {/* 3D Bank Vault Frame */}
+      <div className={styles.vaultFrame}>
+        {/* eslint-disable-next-line @next/next/no-img-element */}
+        <img
+          src="/images/banner.jpg"
+          alt="ColorVaults 3D Vault Stage"
+          className={styles.vaultImage}
+        />
+        <div className={styles.vaultPortalAura} />
+      </div>
 
-      <div className={styles.scene}>
-        <div className={styles.ring} style={{ '--count': count } as React.CSSProperties}>
-          {displayItems.map((img, i) => (
-            <Link
-              key={`${img.href}-${i}`}
-              href={img.href}
-              className={styles.card}
-              style={{ '--i': i, '--count': count } as React.CSSProperties}
-              title={img.alt}
-            >
-              {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img src={img.src} alt={img.alt} className={styles.img} />
-              <div className={styles.shine} />
-              
-              {/* Album Tag Top Left */}
-              <div className={styles.albumBadge}>
-                <span>⭐ {isEn ? 'Album' : 'Album'}</span>
-              </div>
+      {/* 3D Carousel Revolving Inside Vault Center */}
+      <div className={styles.portalStage}>
+        <div className={styles.scene}>
+          <div className={styles.ring} style={{ '--count': count } as React.CSSProperties}>
+            {displayItems.map((img, i) => (
+              <Link
+                key={`${img.href}-${i}`}
+                href={img.href}
+                className={styles.card}
+                style={{ '--i': i, '--count': count } as React.CSSProperties}
+                title={img.alt}
+              >
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img src={img.src} alt={img.alt} className={styles.img} />
+                <div className={styles.shine} />
+                
+                {/* Album Badge Top Left */}
+                <div className={styles.albumBadge}>
+                  <span>⭐ {isEn ? 'Album' : 'Album'}</span>
+                </div>
 
-              {/* Album Title Bottom */}
-              <div className={styles.cardLabel}>
-                <span className={styles.albumTitle}>{img.alt}</span>
-                <span className={styles.albumCta}>{isEn ? 'View Album →' : 'Bekijk Album →'}</span>
-              </div>
-            </Link>
-          ))}
+                {/* Album Title Bottom */}
+                <div className={styles.cardLabel}>
+                  <span className={styles.albumTitle}>{img.alt}</span>
+                  <span className={styles.albumCta}>{isEn ? 'Explore →' : 'Bekijk Album →'}</span>
+                </div>
+              </Link>
+            ))}
+          </div>
         </div>
       </div>
     </div>
