@@ -61,6 +61,14 @@ const nextConfig: NextConfig = {
       },
     ],
   },
+  async rewrites() {
+    return [
+      {
+        source: '/:lang/sitemap.xml',
+        destination: '/sitemap.xml',
+      },
+    ];
+  },
   async headers() {
     return [
       {
