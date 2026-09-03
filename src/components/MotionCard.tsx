@@ -4,7 +4,6 @@ import { motion } from'framer-motion';
 import SafeImage from'./SafeImage';
 import Link from'next/link';
 import FavoriteButton from'./FavoriteButton';
-import ReportButton from'./ReportButton';
 import { useColoringBook } from'@/context/ColoringBookContext';
 
 const TRENDING_SLUGS = new Set(['paw-patrol-1','paw-patrol-2','unicorn-1','unicorn-2','mandala-1','mandala-2','pokemon-1','pikachu-1','disney-princess-1','frozen-elsa-1','spongebob-1','dinosaur-1','dinosaur-2','bluey-1','bluey-2',
@@ -178,16 +177,6 @@ export default function MotionCard({ page, lang, isEn }: MotionCardProps) {
               </div>
             );
           })()}
-
-          {/* Friendly Pencil Error Finder (Bottom Right) */}
-          <div style={{ position: 'absolute', bottom: '8px', right: '8px', zIndex: 10 }}>
-            <ReportButton
-              imageUrl={imageSrc}
-              category={page.parentTheme}
-              isEn={isEn}
-              variant="compact"
-            />
-          </div>
         </div>
         
         <div className="card-body"style={{ padding:'1rem', display:'flex', flexDirection:'column', flex: 1 }}>
