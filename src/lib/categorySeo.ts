@@ -1,3 +1,5 @@
+import { getThemes } from './api';
+
 export interface CategorySeoData {
   shortIntro: string;
   bottomTitle: string;
@@ -197,11 +199,37 @@ const SPECIFIC_SEO_DATA: Record<string, SpecificSeoOverride> = {
     enIntro: `Enter the winter wonderland of Arendelle with free printable Frozen coloring pages! Print enchanting designs of Queen Elsa, Princess Anna, Olaf the Snowman, Kristoff, and Sven. High-definition A4/Letter PDF templates ready for royal coloring fun.`,
     nlIntro: `Stap in de betoverende winterwereld van Arendelle met gratis Frozen kleurplaten om uit te printen! Kleur koningin Elsa, prinses Anna, sneeuwpop Olaf, Kristoff en rendier Sven in hoge resolutie A4-formaat. 100% gratis zonder registratie.`,
     relatedSlugs: ['disney-princesses', 'unicorns-pegasus', 'fairies', 'princesses-castles'],
-    enBottomHtml: `<h2>Magical Elsa & Anna Frozen Coloring Pages</h2>
-      <p>From Elsa's glittering ice palace to warm hugs with Olaf, our Frozen sheets transport colorists into a breathtaking snowy kingdom filled with magic and song.</p>
+    enBottomHtml: `<h2>Magical Elsa & Anna Frozen Coloring Pages for Kids & Disney Fans</h2>
+      <p>From Elsa's glittering ice palace to warm hugs with Olaf, our Frozen sheets transport colorists into a breathtaking snowy kingdom filled with magic and song. Whether recreating scenes from Frozen 1 and Frozen 2 or designing custom royal gowns, our line art brings Arendelle straight to your craft table.</p>
+
+      <h3>Age Groups & Difficulty Levels</h3>
+      <ul>
+        <li><a href="URL_KIDS"><strong>Easy / Kids (Makkelijk)</strong></a>: Big, cheerful outlines of Olaf building snowmen, baby Sven, and young Anna with thick contours for toddlers and preschoolers.</li>
+        <li><a href="URL_TEENS"><strong>Medium / Teens (Gemiddeld)</strong></a>: Elegant ice-magic poses of Queen Elsa, Princess Anna in coronation dress, and enchanted forest adventures for school kids.</li>
+        <li><a href="URL_ADULTS"><strong>Hard / Adults (Moeilijk)</strong></a>: Intricate snowflake mandalas, detailed ice crystal fractals, and artistic royal portraits for adult Disney enthusiasts.</li>
+      </ul>
+
+      <h3>Creative Coloring Tips for Frozen Pages</h3>
+      <p>Pair light blue and violet pencils with metallic silver gel pens or light glitter on Elsa's magical cape. Print on heavier A4 paper for marker coloring without bleed-through.</p>
+
+      <h3>Explore Related Fairytale Categories</h3>
+      <p>Discover more magical royalty and fantasy collections:</p>
       RELATED_LINKS`,
-    nlBottomHtml: `<h2>Magische Frozen Kleurplaten met Elsa & Anna</h2>
-      <p>Van het schitterende ijspaleis tot warme knuffels van Olaf: breng de magie van Frozen tot leven met je mooiste blauwe, paarse en zilveren potloden.</p>
+    nlBottomHtml: `<h2>Magische Frozen Kleurplaten met Elsa & Anna voor Jong en Oud</h2>
+      <p>Van het schitterende ijspaleis tot warme knuffels van Olaf: breng de magie van Frozen tot leven met je mooiste blauwe, paarse en zilveren potloden. Of je kind nu dol is op het meezingen met <em>Laat Het Los</em> of de betoverde bossen uit Frozen 2 wil ontdekken: onze printbare kleurplaten brengen Arendelle rechtstreeks naar de keukentafel.</p>
+
+      <h3>Leeftijdsgroepen & Moeilijkheidsgraden</h3>
+      <ul>
+        <li><a href="URL_KIDS"><strong>Makkelijk / Peuters & Kleuters (Easy)</strong></a>: Vrolijke grote tekeningen van Olaf de sneeuwpop, jonge Anna en baby Sven met extra dikke lijnen om makkelijk binnen de lijntjes te kleuren.</li>
+        <li><a href="URL_TEENS"><strong>Gemiddeld / Basisschool & Tieners (Medium)</strong></a>: Prachtige ijskracht-acties van koningin Elsa, kroningsjurken van Anna en spannende scènes in de sneeuw voor basisschoolkinderen.</li>
+        <li><a href="URL_ADULTS"><strong>Moeilijk / Volwassenen & Mandala's (Hard)</strong></a>: Ingewikkelde ijskristallen, gedetailleerde sneeuwvlokmandala's en sierlijke prinsessenportretten voor rustgevende kleursessies.</li>
+      </ul>
+
+      <h3>Knutsel- & Kleurtips voor Frozen Kleurplaten</h3>
+      <p>Geef Elsa's jurk een echt magisch effect met zilveren glitterstiften of pastelblauwe waterverf. Tip: knip Olaf en Elsa na het kleuren uit en plak ze op een ijsblauw karton voor je eigen winterse kijkdoos!</p>
+
+      <h3>Ontdek ook gerelateerde magische categorieën</h3>
+      <p>Laat je betoveren door meer sprookjes- en fantasiethema's:</p>
       RELATED_LINKS`,
   },
   'marvel-spider-man': {
@@ -210,9 +238,21 @@ const SPECIFIC_SEO_DATA: Record<string, SpecificSeoOverride> = {
     relatedSlugs: ['super-mario', 'sonic-the-hedgehog', 'dragonball', 'formula-1-race-cars'],
     enBottomHtml: `<h2>Web-Slinging Spider-Man Coloring Sheets</h2>
       <p>Unleash your inner superhero with action poses, wall-crawling adventures, and rooftop battles across the Marvel Universe.</p>
+      <h3>Age Groups & Difficulty Levels</h3>
+      <ul>
+        <li><a href="URL_KIDS"><strong>Easy / Kids</strong></a>: Bold outlines of Spider-Man jumping, web-shooters, and friendly chibi heroes for toddlers.</li>
+        <li><a href="URL_TEENS"><strong>Medium / Teens</strong></a>: City skyline battles, Miles Morales venom strikes, and comic book covers.</li>
+        <li><a href="URL_ADULTS"><strong>Hard / Adults</strong></a>: Intricate web-pattern line art and detailed comic splash pages.</li>
+      </ul>
       RELATED_LINKS`,
     nlBottomHtml: `<h2>Actievolle Spider-Man Kleurplaten</h2>
       <p>Laat je innerlijke superheld los met dynamische poses, web-slingerende actie en spectaculaire stadsgezichten.</p>
+      <h3>Leeftijdsgroepen & Moeilijkheidsgraden</h3>
+      <ul>
+        <li><a href="URL_KIDS"><strong>Makkelijk / Kinderen</strong></a>: Duidelijke lijnen van Spider-Man en vrolijke superheldenmaskers voor peuters.</li>
+        <li><a href="URL_TEENS"><strong>Gemiddeld / Tieners</strong></a>: Gave actiescènes tussen wolkenkrabbers en ontmoetingen met schurken.</li>
+        <li><a href="URL_ADULTS"><strong>Moeilijk / Volwassenen</strong></a>: Complexe webstructuren en gedetailleerde stripboekcovers.</li>
+      </ul>
       RELATED_LINKS`,
   },
   'dinosaur-adventures': {
@@ -221,9 +261,21 @@ const SPECIFIC_SEO_DATA: Record<string, SpecificSeoOverride> = {
     relatedSlugs: ['safari-lions-big-cats', 'animals', 'dragons'],
     enBottomHtml: `<h2>Prehistoric Jurassic Dinosaur Printables</h2>
       <p>Spark curiosity about science and paleontology with detailed dinosaur coloring pages suitable for toddler dino lovers and older fossil fans alike.</p>
+      <h3>Difficulty Levels</h3>
+      <ul>
+        <li><a href="URL_KIDS"><strong>Easy / Kids</strong></a>: Cute baby dinos hatching from eggs and friendly plant-eaters with thick outlines.</li>
+        <li><a href="URL_TEENS"><strong>Medium / Teens</strong></a>: Realistic Jurassic landscapes, volcanic eruptions, and hunting raptors.</li>
+        <li><a href="URL_ADULTS"><strong>Hard / Adults</strong></a>: Highly textured dinosaur skin, fossil skeletons, and prehistoric flora.</li>
+      </ul>
       RELATED_LINKS`,
     nlBottomHtml: `<h2>Stoere Dinosaurus Kleurplaten voor Jong en Oud</h2>
       <p>Ontdek brullende T-Rexen, vreedzame planteneters en prehistorische landschappen om zelf in te kleuren met potlood of verf.</p>
+      <h3>Leeftijdsgroepen & Moeilijkheidsgraden</h3>
+      <ul>
+        <li><a href="URL_KIDS"><strong>Makkelijk / Kinderen</strong></a>: Schattige baby dinootjes uit eieren en vrolijke dino's met dikke lijnen.</li>
+        <li><a href="URL_TEENS"><strong>Gemiddeld / Tieners</strong></a>: Spannende oerwoudscènes met vulkanen, T-Rexen en vliegende Pterodactyls.</li>
+        <li><a href="URL_ADULTS"><strong>Moeilijk / Volwassenen</strong></a>: Gedetailleerde fossielen, skeletten en realistische huidstructuren.</li>
+      </ul>
       RELATED_LINKS`,
   },
   'unicorns-pegasus': {
@@ -232,9 +284,21 @@ const SPECIFIC_SEO_DATA: Record<string, SpecificSeoOverride> = {
     relatedSlugs: ['frozen', 'disney-princesses', 'cute-kittens-cats', 'cute-puppies-dogs'],
     enBottomHtml: `<h2>Magical Unicorn & Rainbow Coloring Pages</h2>
       <p>Perfect for dreamy afternoons, glitter pens, and pastel colors. Free high-definition printables ready to spark pure imagination.</p>
+      <h3>Difficulty Levels</h3>
+      <ul>
+        <li><a href="URL_KIDS"><strong>Easy / Kids</strong></a>: Sweet smiling baby unicorns on fluffy clouds with rainbows and big stars.</li>
+        <li><a href="URL_TEENS"><strong>Medium / Teens</strong></a>: Majestic winged pegasus soaring over castles and enchanted fantasy forests.</li>
+        <li><a href="URL_ADULTS"><strong>Hard / Adults</strong></a>: Intricate celestial unicorn mandalas and flowing mane line art.</li>
+      </ul>
       RELATED_LINKS`,
     nlBottomHtml: `<h2>Magische Eenhoorn & Regenboog Kleurplaten</h2>
       <p>Pak je glitters en pastelkleuren erbij voor de mooiste magische eenhoorns en betoverde bossen.</p>
+      <h3>Leeftijdsgroepen & Moeilijkheidsgraden</h3>
+      <ul>
+        <li><a href="URL_KIDS"><strong>Makkelijk / Kinderen</strong></a>: Schattige baby-eenhoorns op wolkjes met regenbogen en sterren.</li>
+        <li><a href="URL_TEENS"><strong>Gemiddeld / Tieners</strong></a>: Gevleugelde pegasus-paarden boven sprookjeskastelen en magische bossen.</li>
+        <li><a href="URL_ADULTS"><strong>Moeilijk / Volwassenen</strong></a>: Gedetailleerde mandala-eenhoorns met sierlijke manen en bloemenkransen.</li>
+      </ul>
       RELATED_LINKS`,
   },
   'bluey': {
@@ -243,9 +307,19 @@ const SPECIFIC_SEO_DATA: Record<string, SpecificSeoOverride> = {
     relatedSlugs: ['paw-patrol', 'cute-puppies-dogs', 'super-mario', 'pokemon'],
     enBottomHtml: `<h2>Free Bluey & Bingo Coloring Sheets</h2>
       <p>Celebrate family games, imagination, and laughter with our crisp Bluey printables. Perfect for quiet play and preschool motor skills development.</p>
+      <h3>Difficulty Levels</h3>
+      <ul>
+        <li><a href="URL_KIDS"><strong>Easy / Kids</strong></a>: Simple outlines of Bluey, Bingo, and Chattermax for toddlers and early learners.</li>
+        <li><a href="URL_TEENS"><strong>Medium / Teens</strong></a>: Backyard games, Grannies dress-up, and living room adventures.</li>
+      </ul>
       RELATED_LINKS`,
     nlBottomHtml: `<h2>Vrolijke Bluey Kleurplaten voor Peuters en Kleuters</h2>
       <p>Beleef de leukste spelletjes uit de serie opnieuw op papier. Ideaal voor het oefenen van de fijne motoriek en urenlang kleurplezier.</p>
+      <h3>Leeftijdsgroepen & Moeilijkheidsgraden</h3>
+      <ul>
+        <li><a href="URL_KIDS"><strong>Makkelijk / Kinderen</strong></a>: Duidelijke tekeningen van Bluey en Bingo voor peuters en kleuters.</li>
+        <li><a href="URL_TEENS"><strong>Gemiddeld / Tieners</strong></a>: Avonturen in de achtertuin, omaatjes spelen en leuke scènes uit de serie.</li>
+      </ul>
       RELATED_LINKS`,
   },
 };
@@ -257,33 +331,36 @@ export function getCategorySeoData(
   themeTitle: string,
   allThemesInHub: Array<{ slug: string; title: string }> = []
 ): CategorySeoData {
-  const isEn = lang ==='en';
+  const isEn = lang === 'en';
   const override = SPECIFIC_SEO_DATA[themeSlug];
 
   // Base URLs for difficulty levels
-  const baseUrl =`/${lang}/${hubSlug}/${themeSlug}`;
-  const kidsUrl =`${baseUrl}/kids`;
-  const teensUrl =`${baseUrl}/teens`;
-  const adultsUrl =`${baseUrl}/adults`;
+  const baseUrl = `/${lang}/${hubSlug}/${themeSlug}`;
+  const kidsUrl = `${baseUrl}/kids`;
+  const teensUrl = `${baseUrl}/teens`;
+  const adultsUrl = `${baseUrl}/adults`;
 
   // Related category links builder
   let relatedSlugs: string[] = override?.relatedSlugs || [];
   if (relatedSlugs.length === 0 && allThemesInHub.length > 0) {
     relatedSlugs = allThemesInHub
       .filter((t) => t.slug !== themeSlug)
-      .slice(0, 3)
+      .slice(0, 4)
       .map((t) => t.slug);
   }
 
+  const allThemes = getThemes(lang);
   const relatedLinksList = relatedSlugs
     .map((slug) => {
-      const found = allThemesInHub.find((t) => t.slug === slug);
-      const title = found ? found.title : slug.replace(/-/g,'').replace(/\b\w/g, (c) => c.toUpperCase());
-      return`<li><a href="/${lang}/${hubSlug}/${slug}"><strong>${title} ${isEn ?'Coloring Pages':'Kleurplaten'}</strong></a></li>`;
+      const foundInHub = allThemesInHub.find((t) => t.slug === slug);
+      const foundInAll = allThemes.find((t) => t.slug === slug);
+      const title = foundInHub?.title || foundInAll?.title || slug.replace(/-/g, ' ').replace(/\b\w/g, (c) => c.toUpperCase());
+      const targetHub = foundInAll?.parentHub || hubSlug;
+      return `<li><a href="/${lang}/${targetHub}/${slug}"><strong>${title} ${isEn ? 'Coloring Pages' : 'Kleurplaten'}</strong></a></li>`;
     })
     .join('');
 
-  const relatedLinksHtml = relatedLinksList ?`<ul>${relatedLinksList}</ul>`:'';
+  const relatedLinksHtml = relatedLinksList ? `<ul>${relatedLinksList}</ul>` : '';
 
   if (override) {
     const rawIntro = isEn ? override.enIntro : override.nlIntro;

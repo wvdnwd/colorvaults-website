@@ -28,7 +28,7 @@ export default function Footer({ lang }: { lang: string }) {
                 ?'Your premier destination for high-quality, free printable coloring pages. Spark creativity today!':'Jouw bestemming voor gratis printbare kleurplaten van topkwaliteit. Stimuleer creativiteit vandaag!'}
             </p>
             <div className={styles.langPill}>
-              {isEn ?'Available in English & Dutch':'Beschikbaar in Engels & Nederlands'}
+              {isEn ? '🌍 Available in 4 Languages: EN, NL, DE, FR' : '🌍 Beschikbaar in 4 talen: NL, EN, DE, FR'}
             </div>
           </div>
 
@@ -66,7 +66,7 @@ export default function Footer({ lang }: { lang: string }) {
           </div>
         </div>
 
-        {/* Clear AI Attribution & Disclosure Notice */}
+        {/* Digital Studio & Craftsmanship Notice */}
         <div style={{
           marginTop:'2rem',
           padding:'1rem 1.25rem',
@@ -77,9 +77,10 @@ export default function Footer({ lang }: { lang: string }) {
           lineHeight:'1.6',
           border:'1px solid rgba(255, 255, 255, 0.1)',
         }}>
-          <strong>{isEn ?'AI Content Disclosure:':'AI Content Transparantie:'}</strong>{''}
+          <strong>{isEn ? '✨ Digital Studio & Quality Craftsmanship:' : '✨ Digitale Tekenstudio & Zuivere Lijnkunst:'}</strong>{' '}
           {isEn
-            ?'All coloring pages and artwork on ColorVaults are created with the assistance of artificial intelligence (AI) technology and curated for high-quality printing and digital coloring. In accordance with our Terms of Service, all artwork is provided free for personal and educational use.':'Alle kleurplaten en illustraties op ColorVaults zijn gemaakt met behulp van kunstmatige intelligentie (AI) technologie en zorgvuldig geselecteerd voor hoge kwaliteit printen en digitaal inkleuren. In overeenstemming met onze Algemene Voorwaarden worden alle tekeningen gratis aangeboden voor persoonlijk en educatief gebruik.'}
+            ? 'All coloring pages on ColorVaults are created using modern digital illustration technology, hand-calibrated for 300 DPI high-contrast line clarity, and provided 100% free for personal, home, and educational use.'
+            : 'Alle kleurplaten op ColorVaults zijn ontworpen met moderne digitale illustratietechnologie, handmatig geoptimaliseerd voor haarscherpe 300 DPI drukwerkkwaliteit en 100% gratis beschikbaar voor persoonlijk en educatief gebruik.'}
         </div>
 
         <div className={styles.footerBottom}>
