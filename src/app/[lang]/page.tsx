@@ -149,11 +149,25 @@ export default async function HomePage({ params }: { params: Promise<{ lang: str
                   : 'Duizenden gratis printbare kleurplaten voor peuters, kinderen, tieners en volwassenen. Direct gratis downloaden — geen account nodig!'}
               </p>
 
-              {/* Rich Popular Shortcuts Grid */}
+              {/* Trust Bar */}
+              <div className={`${styles.trustBar} hero-anim-2`}>
+                <span className={styles.trustItem}>⚡ {isEn ? '100% Free' : '100% Gratis'}</span>
+                <span className={styles.trustDot}>•</span>
+                <span className={styles.trustItem}>🖨️ {isEn ? 'A4 / Letter PDF' : 'A4 / Letter PDF'}</span>
+                <span className={styles.trustDot}>•</span>
+                <span className={styles.trustItem}>🎨 {isEn ? 'Color Online' : 'Online Inkleuren'}</span>
+                <span className={styles.trustDot}>•</span>
+                <span className={styles.trustItem}>🚀 {isEn ? 'Instant Access' : 'Geen Account'}</span>
+              </div>
+
+              {/* Rich Popular Shortcuts Glassmorphism Card */}
               <div className={`${styles.shortcutsSection} hero-anim-3`}>
                 <div className={styles.shortcutsHeader}>
                   <span className={styles.shortcutsTitle}>
-                    🔥 {isEn ? 'Popular Categories & Shortcuts:' : 'Populaire Categorieën & Snelkoppelingen:'}
+                    🔥 {isEn ? 'Top Trending Albums & Categories' : 'Top Trending Albums & Categorieën'}
+                  </span>
+                  <span className={styles.shortcutsBadge}>
+                    130+ {isEn ? 'Themes' : 'Thema\'s'}
                   </span>
                 </div>
                 <div className={styles.shortcutsGrid}>

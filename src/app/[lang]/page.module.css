@@ -1,13 +1,14 @@
 /* ── Hero Section ─────────────────────────────────────────────────────────── */
 .hero {
   position: relative;
-  padding: 5rem 0 4.5rem;
+  padding: 3.5rem 0 3rem;
   background: 
-    radial-gradient(ellipse at 80% 25%, rgba(255, 75, 114, 0.12) 0%, transparent 50%),
-    radial-gradient(ellipse at 20% 70%, rgba(0, 210, 211, 0.12) 0%, transparent 50%),
-    radial-gradient(ellipse at 50% 50%, rgba(139, 92, 246, 0.08) 0%, transparent 60%),
-    linear-gradient(180deg, #FFFFFF 0%, #F1F5F9 100%);
-  border-bottom: 1px solid var(--gray-200);
+    radial-gradient(ellipse at 85% 15%, rgba(255, 107, 74, 0.18) 0%, transparent 45%),
+    radial-gradient(ellipse at 15% 55%, rgba(99, 102, 241, 0.15) 0%, transparent 50%),
+    radial-gradient(ellipse at 50% 90%, rgba(16, 185, 129, 0.14) 0%, transparent 45%),
+    radial-gradient(ellipse at 90% 75%, rgba(236, 72, 153, 0.15) 0%, transparent 45%),
+    linear-gradient(180deg, #F8FAFC 0%, #EEF2FF 50%, #F1F5F9 100%);
+  border-bottom: 1px solid #E2E8F0;
   overflow: hidden;
 }
 
@@ -17,7 +18,7 @@
   left: -120px;
   width: 500px;
   height: 400px;
-  background: radial-gradient(circle, rgba(255, 107, 74, 0.18) 0%, transparent 70%);
+  background: radial-gradient(circle, rgba(255, 107, 74, 0.2) 0%, transparent 70%);
   border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
   animation: floatA 14s ease-in-out infinite;
 }
@@ -27,28 +28,27 @@
   right: -80px;
   width: 420px;
   height: 360px;
-  background: radial-gradient(circle, rgba(201, 163, 216, 0.15) 0%, transparent 70%);
+  background: radial-gradient(circle, rgba(201, 163, 216, 0.2) 0%, transparent 70%);
   border-radius: 40% 60% 70% 30% / 40% 50% 60% 50%;
   animation: floatC 18s ease-in-out infinite 2s;
 }
 
 .blobCenter {
-  top: 30%;
+  top: 25%;
   left: 35%;
   width: 700px;
-  height: 300px;
-  background: radial-gradient(ellipse, rgba(30, 100, 102, 0.3) 0%, transparent 65%);
+  height: 350px;
+  background: radial-gradient(ellipse, rgba(99, 102, 241, 0.12) 0%, transparent 65%);
   border-radius: 50%;
   filter: blur(60px);
   pointer-events: none;
   position: absolute;
-  opacity: 1;
 }
 
 /* Two-column layout */
 .heroLayout {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1.15fr 0.85fr;
   gap: 3rem;
   align-items: center;
   position: relative;
@@ -64,111 +64,111 @@
   display: inline-flex;
   align-items: center;
   gap: 0.5rem;
-  background: rgba(255, 107, 74, 0.14);
-  border: 1px solid rgba(255, 107, 74, 0.3);
+  background: rgba(255, 107, 74, 0.12);
+  border: 1.5px solid rgba(255, 107, 74, 0.28);
   border-radius: var(--radius-full);
-  padding: 0.45rem 1.2rem;
-  font-size: 0.82rem;
-  font-weight: 700;
-  color: var(--color-accent);
-  margin-bottom: 1.5rem;
+  padding: 0.35rem 1rem;
+  font-size: 0.8rem;
+  font-weight: 800;
+  color: #EA580C;
+  margin-bottom: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
 }
 
 .heroTitle {
-  font-size: clamp(2.4rem, 4.5vw, 4rem);
-  font-weight: 700;
-  line-height: 1.08;
-  margin-bottom: 1.1rem;
-  color: var(--color-text-light);
+  font-size: clamp(2.2rem, 3.8vw, 3.5rem);
+  font-weight: 900;
+  line-height: 1.12;
+  margin-bottom: 0.75rem;
+  color: #0F172A;
   font-family: var(--font-display), 'Fredoka', sans-serif;
+  letter-spacing: -0.02em;
 }
 
 .heroTitle span {
-  background: var(--gradient-primary);
+  background: var(--gradient-primary, linear-gradient(135deg, #FF6B35, #FF3B30));
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
 .heroSubtitle {
-  font-size: 1.05rem;
-  color: var(--color-text-muted);
-  margin-bottom: 2rem;
-  line-height: 1.7;
-  max-width: 500px;
+  font-size: 1.025rem;
+  color: #475569;
+  margin-bottom: 1rem;
+  line-height: 1.65;
+  max-width: 540px;
 }
 
-/* ── Search ───────────────────────────────────────────────────────────────── */
-.searchWrapper {
+/* ── Trust Bar ───────────────────────────────────────────────────────────── */
+.trustBar {
   display: flex;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.06);
-  border-radius: var(--radius-full);
-  overflow: hidden;
-  border: 2px solid var(--gray-200);
-  background: #FFFFFF;
-  transition: all 0.3s ease;
-  margin-bottom: 1.25rem;
-  position: relative;
-  z-index: 5;
+  align-items: center;
+  gap: 0.65rem;
+  flex-wrap: wrap;
+  margin-bottom: 1.5rem;
+  font-size: 0.825rem;
+  font-weight: 700;
+  color: #64748B;
 }
 
-.searchWrapper:focus-within {
-  border-color: var(--color-accent);
-  box-shadow: 0 16px 44px rgba(255, 107, 74, 0.22);
+.trustItem {
+  color: #334155;
 }
 
-.searchInput {
-  flex: 1;
-  border: none;
-  padding: 0.95rem 1.5rem;
-  font-size: 0.95rem;
-  font-family: var(--font-body), sans-serif;
-  outline: none;
-  color: var(--color-text-light);
-  background: transparent;
+.trustDot {
+  color: #CBD5E1;
 }
 
-.searchInput::placeholder {
-  color: var(--color-text-muted);
-}
-
-.searchBtn {
-  background: var(--gradient-primary);
-  color: white;
-  border: none;
-  padding: 0 1.75rem;
-  font-family: var(--font-body), sans-serif;
-  font-weight: 800;
-  font-size: 0.95rem;
-  cursor: pointer;
-  transition: opacity 0.2s;
-  flex-shrink: 0;
-}
-
-.searchBtn:hover { opacity: 0.9; }
-
-/* ── Trending pills ───────────────────────────────────────────────────────── */
-/* ── Shortcuts Section in Hero ───────────────────────────────────────────── */
+/* ── Shortcuts Glassmorphism Card in Hero ────────────────────────────────── */
 .shortcutsSection {
-  margin-bottom: 2rem;
+  background: rgba(255, 255, 255, 0.82);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1.5px solid rgba(255, 255, 255, 0.95);
+  border-radius: 20px;
+  padding: 1.15rem 1.25rem;
+  box-shadow: 
+    0 16px 36px -12px rgba(0, 0, 0, 0.06),
+    0 0 0 1px rgba(226, 232, 240, 0.7);
+  margin-bottom: 1.5rem;
   position: relative;
   z-index: 5;
 }
 
 .shortcutsHeader {
-  margin-bottom: 0.85rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 0.75rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid rgba(226, 232, 240, 0.75);
 }
 
 .shortcutsTitle {
-  font-size: 0.925rem;
+  font-size: 0.85rem;
   font-weight: 800;
   color: #0F172A;
   letter-spacing: -0.01em;
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.shortcutsBadge {
+  font-size: 0.7rem;
+  font-weight: 800;
+  color: #6366F1;
+  background: rgba(99, 102, 241, 0.1);
+  padding: 0.15rem 0.55rem;
+  border-radius: 9999px;
+  text-transform: uppercase;
 }
 
 .shortcutsGrid {
   display: flex;
   align-items: center;
-  gap: 0.55rem;
+  gap: 0.45rem;
   flex-wrap: wrap;
 }
 
@@ -176,13 +176,13 @@
   background: #FFFFFF;
   color: #0F172A;
   border: 1.5px solid #CBD5E1;
-  padding: 0.45rem 0.95rem;
+  padding: 0.38rem 0.85rem;
   border-radius: var(--radius-full);
-  font-size: 0.85rem;
+  font-size: 0.82rem;
   font-weight: 800;
   text-decoration: none;
   transition: all 0.2s ease;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.04);
+  box-shadow: 0 2px 5px rgba(0,0,0,0.03);
   display: inline-flex;
   align-items: center;
 }
@@ -499,34 +499,55 @@
 
 /* ── Responsive ───────────────────────────────────────────────────────────── */
 @media (max-width: 960px) {
-  .heroLayout   { grid-template-columns: 1fr; gap: 2rem; text-align: center; }
-  .heroContent  { display: flex; flex-direction: column; align-items: center; text-align: center; }
-  .heroVisual   { display: flex; width: 100%; height: 380px; margin-top: 1rem; }
-  .heroSubtitle { max-width: 100%; margin-left: auto; margin-right: auto; }
-  .heroCtas     { justify-content: center; }
-  .quickPills   { justify-content: center; }
-  .searchWrapper { width: 100%; max-width: 520px; }
-  .ageGrid      { grid-template-columns: repeat(2, 1fr); }
-  .whyInner     { grid-template-columns: 1fr; gap: 3rem; }
+  .hero { padding: 2.5rem 1rem 2.5rem; }
+  .heroLayout { 
+    grid-template-columns: 1fr; 
+    gap: 2rem; 
+    text-align: center; 
+  }
+  .heroContent { 
+    display: flex; 
+    flex-direction: column; 
+    align-items: center; 
+    text-align: center; 
+  }
+  .heroSubtitle { 
+    max-width: 100%; 
+    margin-left: auto; 
+    margin-right: auto; 
+  }
+  .trustBar {
+    justify-content: center;
+  }
+  .shortcutsSection {
+    width: 100%;
+    max-width: 560px;
+    padding: 1rem;
+  }
+  .shortcutsGrid {
+    justify-content: center;
+  }
+  .heroCtas { 
+    justify-content: center; 
+  }
+  .heroVisual { 
+    display: flex; 
+    width: 100%; 
+    height: 360px; 
+    margin: 0.5rem 0; 
+  }
+  .ageGrid { grid-template-columns: repeat(2, 1fr); }
+  .whyInner { grid-template-columns: 1fr; gap: 3rem; }
 }
 
 @media (max-width: 640px) {
   .ageGrid { grid-template-columns: 1fr; }
-  .hero { padding: 3rem 1rem 2.5rem; }
+  .hero { padding: 2.25rem 0.75rem 2rem; }
   .heroTitle { font-size: 2.1rem; }
-  .searchWrapper {
-    flex-direction: column;
-    border-radius: var(--radius-lg);
-  }
-  .searchInput {
-    padding: 0.85rem 1.1rem;
-    font-size: 0.9rem;
-  }
-  .searchBtn {
-    padding: 0.85rem 1.1rem;
-    border-radius: 0 0 var(--radius-lg) var(--radius-lg);
-    width: 100%;
-  }
+  .heroVisual { height: 320px; }
+  .trustBar { font-size: 0.75rem; gap: 0.4rem; }
+  .shortcutsSection { padding: 0.85rem 0.75rem; }
+  .quickPill { font-size: 0.78rem; padding: 0.32rem 0.75rem; }
   .heroCtas {
     flex-direction: column;
     width: 100%;
