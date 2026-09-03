@@ -11,6 +11,7 @@ import styles from'./Navbar.module.css';
 
 interface NavItem {
   label: string;
+  icon?: string;
   href?: string;
   children?: { label: string; href: string }[];
 }
@@ -100,11 +101,11 @@ export default function Navbar({ lang }: { lang: string }) {
         { label: isEn ?'Dinosaurs':'Dinosauriërs', href:`/${lang}/animals-wildlife/dinosaur-adventures`},
       ],
     },
-    { label: isEn ?'Search':'Zoeken', href:`/${lang}/search`},
-    { label: isEn ?'Favorites':'Favorieten', href:`/${lang}/favorites`},
-    { label: isEn ?'How to Draw':'Leren Tekenen', href:`/${lang}/how-to-draw`},
-    { label: isEn ?'Calendars':'Kalenders', href:`/${lang}/calendars`},
-    { label: isEn ?'Blog & Tips':'Tips & Blog', href:`/${lang}/blog`},
+    { label: isEn ?'Search':'Zoeken', icon: '🔍', href:`/${lang}/search`},
+    { label: isEn ?'Favorites':'Favorieten', icon: '❤️', href:`/${lang}/favorites`},
+    { label: isEn ?'How to Draw':'Leren Tekenen', icon: '✏️', href:`/${lang}/how-to-draw`},
+    { label: isEn ?'Calendars':'Kalenders', icon: '📅', href:`/${lang}/calendars`},
+    { label: isEn ?'Blog & Tips':'Tips & Blog', icon: '💡', href:`/${lang}/blog`},
     {
       label: isEn ?'About':'Over',
       children: [
@@ -113,6 +114,7 @@ export default function Navbar({ lang }: { lang: string }) {
         { label: isEn ?'Contest':'Wedstrijd', href:`/${lang}/contest`},
         { label: isEn ?'Request a Page':'Pagina Aanvragen', href:`/${lang}/request`},
         { label: isEn ?'Licensing':'Licentie', href:`/${lang}/licensing`},
+        { label: isEn ?'Privacy & Terms':'Privacy & Voorwaarden', href:`/${lang}/privacy-policy`},
       ],
     },
   ];
@@ -323,6 +325,41 @@ export default function Navbar({ lang }: { lang: string }) {
             <HeaderSearchBar lang={lang} />
           </div>
 
+          {/* Quick Action: Kleurboek Maker */}
+          <div style={{ padding: '0.5rem 1rem 0.75rem' }}>
+            <button
+              type="button"
+              onClick={() => {
+                setMobileOpen(false);
+                setDrawerOpen(true);
+              }}
+              style={{
+                width: '100%',
+                background: 'linear-gradient(135deg, #4F46E5 0%, #6366F1 100%)',
+                color: '#FFFFFF',
+                border: 'none',
+                borderRadius: '0.75rem',
+                padding: '0.75rem 1rem',
+                fontSize: '0.92rem',
+                fontWeight: 800,
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                gap: '0.5rem',
+                cursor: 'pointer',
+                boxShadow: '0 4px 14px rgba(79, 70, 229, 0.3)',
+              }}
+            >
+              <span>📚</span>
+              <span>{isEn ? 'Open Coloring Book Maker' : 'Kleurboek Maker Openen'}</span>
+              {totalSelected > 0 && (
+                <span style={{ background: '#FF4B72', color: '#FFF', borderRadius: '9999px', padding: '0.1rem 0.5rem', fontSize: '0.75rem' }}>
+                  {totalSelected}
+                </span>
+              )}
+            </button>
+          </div>
+
           <nav className={styles.mobileNav}>
             {navItems.map((item) => (
               <div key={item.label} className={styles.mobileGroup}>
@@ -348,6 +385,7 @@ export default function Navbar({ lang }: { lang: string }) {
                     className={styles.mobileMainLink}
                     onClick={() => setMobileOpen(false)}
                   >
+                    {item.icon && <span style={{ marginRight: '0.5rem' }}>{item.icon}</span>}
                     {item.label}
                   </Link>
                 )}

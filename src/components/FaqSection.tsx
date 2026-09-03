@@ -30,7 +30,13 @@ export default function FaqSection({ isEn }: { isEn: boolean }) {
           answer:'Yes! We have hundreds of intricate adult coloring pages, including sacred geometry mandalas, Art Nouveau floral patterns, fantasy architecture, and mindfulness anti-stress line art in our"Art & Aesthetic"and"Mandalas"categories.'},
         {
           question:'How often are new coloring pages and character themes added?',
-          answer:'We continuously expand our vault with new trending characters, animated series, superhero sagas, seasonal festivals (Christmas, Halloween, Easter, Sinterklaas), and nature collections every week.'}
+          answer:'We continuously expand our vault with new trending characters, animated series, superhero sagas, seasonal festivals (Christmas, Halloween, Easter, Sinterklaas), and nature collections every week — offering over 18,800+ free designs.'},
+        {
+          question:'What should I do if I spot an error or stray line on a coloring page?',
+          answer:'Use our world-first interactive red pencil tool directly below any coloring page! Tap the button, draw a circle around the issue with your finger or mouse, and send it to our team. Our digital artwork studio will review and fix the lines right away.'},
+        {
+          question:'Can I combine multiple coloring pages into a custom coloring book?',
+          answer:'Yes! With our free built-in Coloring Book Maker, you can select up to 12 of your favorite coloring pages and instantly download them as a single, print-ready PDF book complete with a personalized cover page.'}
       ]
     : [
         {
@@ -50,7 +56,13 @@ export default function FaqSection({ isEn }: { isEn: boolean }) {
           answer:'Ja! Wij hebben honderden gedetailleerde kleurplaten voor volwassenen, waaronder ingewikkelde bloemenmandala\'s, Art Nouveau kunstplaten, geometrische patronen en ontspannende mindfulness lijntekeningen in de categorie"Kunst & Mandala\'s".'},
         {
           question:'Hoe vaak worden er nieuwe kleurplaten en karakters toegevoegd?',
-          answer:'Onze collectie wordt wekelijks aangevuld met nieuwe populaire karakters, kinderseries, superhelden, seizoensfeesten (Sinterklaas, Kerstmis, Halloween, Pasen) en educatieve sjablonen.'}
+          answer:'Onze collectie telt inmiddels meer dan 18.800+ kleurplaten en wordt wekelijks aangevuld met nieuwe populaire karakters, kinderseries, superhelden, seizoensfeesten (Sinterklaas, Kerstmis, Halloween, Pasen) en educatieve sjablonen.'},
+        {
+          question:'Wat kan ik doen als ik een foutje of los lijntje zie op een kleurplaat?',
+          answer:'Gebruik ons unieke interactieve rode potlood direct onder de afbeelding! Omcirkel het foutje met je vinger of muis en stuur het in. Onze tekenstudio herstelt het direct om de strakste collectie ter wereld te waarborgen.'},
+        {
+          question:'Kan ik ook meerdere kleurplaten bundelen tot één eigen kleurboek?',
+          answer:'Ja! Met onze gratis ingebouwde Kleurboek Maker kun je met één klik tot 12 van je favoriete kleurplaten toevoegen en direct als één compleet, printklaar PDF-kleurboek inclusief mooie omslag downloaden.'}
       ];
 
   const jsonLdFaq = {'@context':'https://schema.org','@type':'FAQPage',
