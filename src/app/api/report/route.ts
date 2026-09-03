@@ -23,18 +23,19 @@ function saveReports(reports: unknown[]) {
 // POST — submit a new report (public)
 export async function POST(req: NextRequest) {
   try {
-    const { imageUrl, category, reason, details } = await req.json();
+    const { imageUrl, category, reason, details, annotatedImage } = await req.json();
 
-    if (!imageUrl || !reason) {
-      return NextResponse.json({ error:'Missing required fields'}, { status: 400 });
+    if (!imageUrl) {
+      return NextResponse.json({ error:'Missing imageUrl'}, { status: 400 });
     }
 
     const reports = loadReports();
     reports.unshift({
       id: randomUUID(),
       imageUrl,
+      annotatedImage: annotatedImage || '',
       category: category ||'Unknown',
-      reason,
+      reason: reason || 'Omcirkeld foutje',
       details: details ||'',
       date: new Date().toISOString(),
       status:'open',

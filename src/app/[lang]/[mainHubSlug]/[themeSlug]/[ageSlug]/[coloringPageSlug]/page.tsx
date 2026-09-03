@@ -10,6 +10,7 @@ import FavoriteButton from'@/components/FavoriteButton';
 import MotionCard from'@/components/MotionCard';
 import CharacterIpDisclaimer from'@/components/CharacterIpDisclaimer';
 import AdSlot from'@/components/AdSlot';
+import ReportButton from'@/components/ReportButton';
 import React from'react';
 
 export const dynamicParams = true;
@@ -185,6 +186,16 @@ export default async function ColoringPageDetail({ params }: { params: Promise<{
                   url:`/${lang}/${mainHubSlug}/${themeSlug}/${ageSlug}/${page.slug}`}} 
               />
             </div>
+          </div>
+
+          {/* Friendly Pencil Error Finder Tool */}
+          <div style={{ textAlign: 'center', marginTop: '0.85rem', marginBottom: '0.5rem' }}>
+            <ReportButton
+              imageUrl={page.image}
+              category={theme.title}
+              isEn={isEn}
+              variant="badge"
+            />
           </div>
 
           {/* Social Share bar */}

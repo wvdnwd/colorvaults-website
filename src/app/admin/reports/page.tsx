@@ -7,19 +7,21 @@ import styles from'../admin.module.css';
 interface Report {
   id: string;
   imageUrl: string;
+  annotatedImage?: string;
   category: string;
   reason: string;
   details: string;
   date: string;
-  status:'open'|'done';
+  status: 'open' | 'done';
 }
 
 const REASON_LABELS: Record<string, string> = {
-  quality:'Slechte kwaliteit',
-  category:'Verkeerde categorie',
-  wrong:'Verkeerde afbeelding',
-  offensive:'Aanstootgevend',
-  other:'Iets anders',
+  quality: 'Slechte kwaliteit',
+  category: 'Verkeerde categorie',
+  wrong: 'Verkeerde afbeelding',
+  offensive: 'Aanstootgevend',
+  circle_feedback: '✏️ Omcirkeld Foutje',
+  other: 'Iets anders',
 };
 
 export default function ReportsPage() {
@@ -75,10 +77,19 @@ export default function ReportsPage() {
                 <tr key={r.id}>
                   <td>
                     {/* eslint-disable-next-line @next/next/no-img-element */}
-                    <img
-                      src={`/api/proxy-image?url=${encodeURIComponent(r.imageUrl)}`}
-                      alt=""className={styles.thumb}
-                    />
+                    <a href={r.annotatedImage || r.imageUrl} target="_blank" rel="noopener noreferrer">
+                      <img
+                        src={r.annotatedImage || `/api/proxy-image?url=${encodeURIComponent(r.imageUrl)}`}
+                        alt=""
+                        className={styles.thumb}
+                        style={r.annotatedImage ? { border: '2px solid #ef4444' } : undefined}
+                      />
+                    </a>
+                    {r.annotatedImage && (
+                      <span style={{ display: 'block', fontSize: '0.68rem', color: '#ef4444', fontWeight: 800, marginTop: '3px' }}>
+                        ✏️ Omcirkeld
+                      </span>
+                    )}
                   </td>
                   <td>{r.category}</td>
                   <td>

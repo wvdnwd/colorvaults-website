@@ -349,7 +349,7 @@ export default function PrintDownloadButtons({
         isEn={isEn}
       />
 
-      <ReportButton imageUrl={fileUrl} category={category} isEn={isEn} />
+      <ReportButton imageUrl={fileUrl} category={category} isEn={isEn} variant="button" />
     </>
   );
 }
