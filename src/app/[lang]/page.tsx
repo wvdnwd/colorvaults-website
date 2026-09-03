@@ -134,21 +134,23 @@ export default async function HomePage({ params }: { params: Promise<{ lang: str
             lang={lang}
           />
 
-          {/* 2. Dark Matching Text Card Directly Under Banner (Exact same width as banner) */}
+          {/* 2. Unified Full-Width Master Card (Dark ColorVaults Theme with Text & Categories) */}
           <div className={`${styles.heroHeaderCenter} hero-anim-2`} style={{
             background: 'linear-gradient(135deg, #0F172A 0%, #1E293B 100%)',
-            border: '2px solid rgba(255, 255, 255, 0.3)',
+            border: '2px solid rgba(255, 255, 255, 0.25)',
             borderRadius: '28px',
-            padding: '1.5rem 2rem',
+            padding: '2rem 2.25rem',
             textAlign: 'center',
-            marginBottom: '1.5rem',
-            boxShadow: '0 20px 50px -10px rgba(15, 23, 42, 0.45)',
+            marginBottom: '1.75rem',
+            boxShadow: '0 25px 60px -15px rgba(15, 23, 42, 0.5), 0 0 40px rgba(255, 107, 74, 0.15)',
             width: '100%',
           }}>
+            {/* 100% Free Badge */}
             <div style={{ display: 'inline-flex', alignItems: 'center', gap: '0.5rem', background: 'rgba(255, 107, 74, 0.22)', border: '1.5px solid rgba(255, 107, 74, 0.55)', borderRadius: '9999px', padding: '0.25rem 0.85rem', fontSize: '0.76rem', fontWeight: 800, color: '#FF9E7D', textTransform: 'uppercase', letterSpacing: '0.04em', marginBottom: '0.45rem' }}>
               {isEn ? '100% Free — High Resolution Printables' : '100% Gratis — Hoge Resolutie Printables'}
             </div>
             
+            {/* Title */}
             <h1 className="title-h1" style={{ margin: '0.2rem 0 0.35rem', fontSize: 'clamp(1.85rem, 3.2vw, 2.6rem)', fontWeight: 900, color: '#FFFFFF', textShadow: '0 2px 10px rgba(0,0,0,0.6)', lineHeight: 1.2 }}>
               {isEn ? (
                 <>Free Premium <span style={{ background: 'linear-gradient(135deg, #FF6B35, #FFA07A)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent' }}>Coloring Pages</span></>
@@ -157,6 +159,7 @@ export default async function HomePage({ params }: { params: Promise<{ lang: str
               )}
             </h1>
             
+            {/* Subtitle */}
             <p style={{ maxWidth: '680px', margin: '0 auto 0.85rem', color: '#E2E8F0', fontSize: '0.95rem', lineHeight: 1.5, textShadow: '0 1px 4px rgba(0,0,0,0.5)' }}>
               {isEn
                 ? 'Thousands of high-quality printable coloring pages for toddlers, kids, teens, and adults. Free instant downloads — no account needed!'
@@ -164,7 +167,7 @@ export default async function HomePage({ params }: { params: Promise<{ lang: str
             </p>
 
             {/* Trust Bar */}
-            <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '0.45rem', flexWrap: 'wrap' }}>
+            <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '0.45rem', flexWrap: 'wrap', marginBottom: '1.5rem' }}>
               <span style={{ background: 'rgba(255, 255, 255, 0.12)', backdropFilter: 'blur(8px)', WebkitBackdropFilter: 'blur(8px)', border: '1px solid rgba(255, 255, 255, 0.2)', color: '#F8FAFC', padding: '0.25rem 0.65rem', borderRadius: '9999px', fontSize: '0.75rem', fontWeight: 700 }}>
                 {isEn ? '100% Free' : '100% Gratis'}
               </span>
@@ -178,24 +181,44 @@ export default async function HomePage({ params }: { params: Promise<{ lang: str
                 {isEn ? 'Instant Access' : 'Geen Account'}
               </span>
             </div>
-          </div>
 
-          {/* 3. Full-Width Popular Categories & Shortcuts Bar directly under the dark card */}
-          <div className={`${styles.shortcutsSectionCenter} hero-anim-3`} style={{ marginTop: '0.5rem', marginBottom: '1.75rem' }}>
-            <div className={styles.shortcutsHeader}>
-              <span className={styles.shortcutsTitle}>
-                {isEn ? 'Top Trending Albums & Categories' : 'Top Trending Albums & Categorieën'}
-              </span>
-              <span className={styles.shortcutsBadge}>
-                130+ {isEn ? 'Themes' : "Thema's"}
-              </span>
-            </div>
-            <div className={styles.shortcutsGridCenter}>
-              {quickShortcuts.map((pill) => (
-                <Link key={pill.name} href={pill.href} className={styles.quickPill}>
-                  {pill.name}
-                </Link>
-              ))}
+            {/* Sleek Divider */}
+            <div style={{ height: '1px', background: 'linear-gradient(90deg, transparent 0%, rgba(255, 255, 255, 0.2) 20%, rgba(255, 255, 255, 0.2) 80%, transparent 100%)', margin: '0 auto 1.35rem', maxWidth: '850px' }} />
+
+            {/* Integrated Trending Categories Section */}
+            <div>
+              <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '0.85rem', flexWrap: 'wrap', gap: '0.5rem' }}>
+                <span style={{ fontSize: '0.9rem', fontWeight: 800, color: '#FFFFFF', letterSpacing: '-0.01em' }}>
+                  {isEn ? 'Top Trending Albums & Categories' : 'Top Trending Albums & Categorieën'}
+                </span>
+                <span style={{ fontSize: '0.75rem', fontWeight: 800, color: '#FF9E7D', background: 'rgba(255, 107, 74, 0.2)', border: '1px solid rgba(255, 107, 74, 0.4)', padding: '0.2rem 0.65rem', borderRadius: '9999px' }}>
+                  130+ {isEn ? 'Themes' : "Thema's"}
+                </span>
+              </div>
+              <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.5rem', justifyContent: 'center' }}>
+                {quickShortcuts.map((pill) => (
+                  <Link
+                    key={pill.name}
+                    href={pill.href}
+                    style={{
+                      background: 'rgba(255, 255, 255, 0.08)',
+                      backdropFilter: 'blur(6px)',
+                      WebkitBackdropFilter: 'blur(6px)',
+                      border: '1px solid rgba(255, 255, 255, 0.18)',
+                      color: '#F8FAFC',
+                      padding: '0.35rem 0.85rem',
+                      borderRadius: '9999px',
+                      fontSize: '0.82rem',
+                      fontWeight: 700,
+                      textDecoration: 'none',
+                      transition: 'all 0.2s ease',
+                      boxShadow: '0 2px 8px rgba(0,0,0,0.2)',
+                    }}
+                  >
+                    {pill.name}
+                  </Link>
+                ))}
+              </div>
             </div>
           </div>
 
