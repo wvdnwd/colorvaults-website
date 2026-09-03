@@ -32,62 +32,9 @@ export default function PdfBookBundleModal({ themeTitle, count, isEn, lang, page
       const pageWidth = 210;
       const pageHeight = 297;
 
-      // ── PAGE 1: LUXURY COVER PAGE ─────────────────────────────────────────
-      pdf.setDrawColor(108, 92, 231);
-      pdf.setLineWidth(1.5);
-      pdf.rect(12, 12, pageWidth - 24, pageHeight - 24);
-
-      pdf.setDrawColor(245, 158, 11);
-      pdf.setLineWidth(0.6);
-      pdf.rect(15, 15, pageWidth - 30, pageHeight - 30);
-
-      // Header Brand
-      pdf.setFont('helvetica', 'bold');
-      pdf.setFontSize(16);
-      pdf.setTextColor(108, 92, 231);
-      pdf.text('COLORVAULTS.COM', pageWidth / 2, 45, { align: 'center' });
-
-      pdf.setFont('helvetica', 'normal');
-      pdf.setFontSize(11);
-      pdf.setTextColor(100, 116, 139);
-      pdf.text(isEn ? 'FREE PREMIUM COLORING BOOK' : 'GRATIS PREMIUM KLEURBOEK', pageWidth / 2, 53, { align: 'center' });
-
-      // Big Title
-      pdf.setFont('helvetica', 'bold');
-      pdf.setFontSize(26);
-      pdf.setTextColor(15, 23, 42);
-      pdf.text(themeTitle.toUpperCase(), pageWidth / 2, 100, { align: 'center', maxWidth: 160 });
-
-      // Subtitle
-      pdf.setFont('helvetica', 'normal');
-      pdf.setFontSize(13);
-      pdf.setTextColor(71, 85, 105);
-      pdf.text(
-        isEn
-          ? `Complete ${count}-Page Printable Collection`
-          : `Complete ${count}-Pagina Printbare Collectie`,
-        pageWidth / 2,
-        125,
-        { align: 'center' }
-      );
-
-      // Cute illustration box / badge
-      pdf.setFillColor(238, 242, 255);
-      pdf.roundedRect(pageWidth / 2 - 40, 150, 80, 24, 6, 6, 'F');
-      pdf.setFont('helvetica', 'bold');
-      pdf.setFontSize(12);
-      pdf.setTextColor(79, 70, 229);
-      pdf.text(isEn ? '100% Free to Color' : '100% Gratis Inkleuren', pageWidth / 2, 165, { align: 'center' });
-
-      // Footer disclaimer
-      pdf.setFontSize(9);
-      pdf.setTextColor(148, 163, 184);
-      pdf.text('© ColorVaults.com — For personal & educational use only.', pageWidth / 2, pageHeight - 25, {
-        align: 'center',
-      });
-
-      // ── PAGES 2..N: COLORING PAGES ────────────────────────────────────────
-      const maxPages = Math.min(pages.length, 25);
+      // ── COLORING PAGES (Starts directly on Page 1) ──────────────────────
+      let addedPagesCount = 0;
+      const maxPages = Math.min(pages.length, 30);
       for (let i = 0; i < maxPages; i++) {
         setProgress(i + 1);
         const p = pages[i];
@@ -105,7 +52,10 @@ export default function PdfBookBundleModal({ themeTitle, count, isEn, lang, page
               img.onerror = resolve;
             });
 
-            pdf.addPage();
+            if (addedPagesCount > 0) {
+              pdf.addPage();
+            }
+            addedPagesCount++;
 
             // Page Header Title
             pdf.setFont('helvetica', 'bold');

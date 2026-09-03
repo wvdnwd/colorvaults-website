@@ -32,61 +32,8 @@ export default function FloatingBookletBar({ lang }: { lang: string }) {
       const pageWidth = 210;
       const pageHeight = 297;
 
-      // ── COVER PAGE ────────────────────────────────────────────────────────
-      pdf.setDrawColor(108, 92, 231);
-      pdf.setLineWidth(1.5);
-      pdf.rect(12, 12, pageWidth - 24, pageHeight - 24);
-
-      pdf.setDrawColor(245, 158, 11);
-      pdf.setLineWidth(0.6);
-      pdf.rect(15, 15, pageWidth - 30, pageHeight - 30);
-
-      // Header Brand
-      pdf.setFont('helvetica', 'bold');
-      pdf.setFontSize(16);
-      pdf.setTextColor(108, 92, 231);
-      pdf.text('COLORVAULTS.COM', pageWidth / 2, 45, { align: 'center' });
-
-      pdf.setFont('helvetica', 'normal');
-      pdf.setFontSize(11);
-      pdf.setTextColor(100, 116, 139);
-      pdf.text(isEn ? 'MY CUSTOM COLORING BOOK' : 'MIJN EIGEN SAMENGESTELDE KLEURBOEK', pageWidth / 2, 53, { align: 'center' });
-
-      // Title
-      pdf.setFont('helvetica', 'bold');
-      pdf.setFontSize(26);
-      pdf.setTextColor(15, 23, 42);
-      pdf.text(isEn ? 'MY FAVORITE COLORING PAGES' : 'MIJN FAVORIETE KLEURPLATEN', pageWidth / 2, 105, { align: 'center', maxWidth: 160 });
-
-      // Subtitle
-      pdf.setFont('helvetica', 'normal');
-      pdf.setFontSize(13);
-      pdf.setTextColor(71, 85, 105);
-      pdf.text(
-        isEn
-          ? `Personalized collection of ${selectedPages.length} hand-picked coloring pages`
-          : `Persoonlijke collectie van ${selectedPages.length} zelf gekozen kleurplaten`,
-        pageWidth / 2,
-        130,
-        { align: 'center', maxWidth: 150 }
-      );
-
-      // Badge
-      pdf.setFillColor(238, 242, 255);
-      pdf.roundedRect(pageWidth / 2 - 45, 160, 90, 24, 6, 6, 'F');
-      pdf.setFont('helvetica', 'bold');
-      pdf.setFontSize(12);
-      pdf.setTextColor(79, 70, 229);
-      pdf.text(isEn ? 'Ready to Print & Color' : 'Klaar om te Printen & Kleuren', pageWidth / 2, 175, { align: 'center' });
-
-      // Footer
-      pdf.setFontSize(9);
-      pdf.setTextColor(148, 163, 184);
-      pdf.text('© ColorVaults.com — Free printable coloring pages.', pageWidth / 2, pageHeight - 25, {
-        align: 'center',
-      });
-
-      // ── PAGES 2..N: COLORING PAGES ────────────────────────────────────────
+      // ── COLORING PAGES (Starts directly on Page 1) ──────────────────────
+      let addedPagesCount = 0;
       for (let i = 0; i < selectedPages.length; i++) {
         setProgress(i + 1);
         const p = selectedPages[i];
@@ -104,7 +51,10 @@ export default function FloatingBookletBar({ lang }: { lang: string }) {
               img.onerror = resolve;
             });
 
-            pdf.addPage();
+            if (addedPagesCount > 0) {
+              pdf.addPage();
+            }
+            addedPagesCount++;
 
             // Page Header Title
             pdf.setFont('helvetica', 'bold');
@@ -139,7 +89,7 @@ export default function FloatingBookletBar({ lang }: { lang: string }) {
             // Page footer
             pdf.setFontSize(8);
             pdf.setTextColor(180, 190, 205);
-            pdf.text('ColorVaults.com', pageWidth / 2, pageHeight - 8, { align: 'center' });
+            pdf.text('© ColorVaults.com — 100% Free Printable Coloring Pages', pageWidth / 2, pageHeight - 8, { align: 'center' });
 
             URL.revokeObjectURL(img.src);
           }
