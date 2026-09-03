@@ -75,7 +75,7 @@ export default async function IPPolicyPage({ params }: { params: Promise<{ lang:
  <div style={{ marginTop:'2rem', padding:'2rem', background:'var(--gray-100)', borderRadius:'var(--radius)'}}>
  <h3 style={{ fontSize:'1.25rem', marginBottom:'1rem'}}>IP Violation Form</h3>
  <p style={{ marginBottom:'1rem'}}>Please refer to the Notification Procedure section of the policy above for the information to provide. Send your details and the required evidence to:</p>
- <a href="mailto:colorvaults@hotmail.com"style={{ display:'inline-block', background:'var(--primary)', color:'white', padding:'0.75rem 1.5rem', borderRadius:'var(--radius)', textDecoration:'none', fontWeight:'bold'}}>Email colorvaults@hotmail.com</a>
+ <a href="mailto:colorvault@hotmail.com"style={{ display:'inline-block', background:'var(--primary)', color:'white', padding:'0.75rem 1.5rem', borderRadius:'var(--radius)', textDecoration:'none', fontWeight:'bold'}}>Email colorvault@hotmail.com</a>
  </div>
  </div>
  </div>

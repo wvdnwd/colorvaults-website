@@ -113,7 +113,7 @@ export default async function PrivacyPolicyPage({ params }: { params: Promise<{ 
  {isEn ?'For any questions or privacy-related requests, please reach out to us at:':'Voor vragen of privacygerelateerde verzoeken kunt u contact opnemen via:'}
  </p>
  <div style={{ background:'var(--gray-100)', padding:'1.25rem 1.5rem', borderRadius:'var(--radius)'}}>
- <strong>Email:</strong> <a href="mailto:colorvaults@hotmail.com"style={{ color:'var(--primary)'}}>colorvaults@hotmail.com</a>
+ <strong>Email:</strong> <a href="mailto:colorvault@hotmail.com"style={{ color:'var(--primary)'}}>colorvault@hotmail.com</a>
  </div>
 
  </div>

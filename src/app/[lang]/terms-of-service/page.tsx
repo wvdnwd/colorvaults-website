@@ -97,7 +97,7 @@ export default async function TermsOfServicePage({ params }: { params: Promise<{
  ?'For questions regarding these Terms or AI Content disclosures, please contact us at:':'Voor vragen over deze Voorwaarden of AI Content verklaringen kunt u contact met ons opnemen via:'}
  </p>
  <div style={{ background:'var(--gray-100)', padding:'1.25rem 1.5rem', borderRadius:'var(--radius)'}}>
- <strong>Email:</strong> <a href="mailto:colorvaults@hotmail.com"style={{ color:'var(--primary)'}}>colorvaults@hotmail.com</a>
+ <strong>Email:</strong> <a href="mailto:colorvault@hotmail.com"style={{ color:'var(--primary)'}}>colorvault@hotmail.com</a>
  </div>
 
  </div>
