@@ -96,22 +96,51 @@ export default function MotionCard({ page, lang, isEn }: MotionCardProps) {
           </div>
 
           {/* Age / Level Tag */}
-          <div style={{
-            position: 'absolute',
-            bottom: '10px',
-            left: '10px',
-            background: 'rgba(255, 255, 255, 0.92)',
-            backdropFilter: 'blur(8px)',
-            borderRadius: '9999px',
-            padding: '0.18rem 0.6rem',
-            fontSize: '0.7rem',
-            fontWeight: 800,
-            color: 'var(--primary)',
-            textTransform: 'capitalize',
-            border: '1px solid rgba(108, 92, 231, 0.2)'
-          }}>
-            {page.ageGroup}
-          </div>
+          {(() => {
+            const age = (page.ageGroup || '').toLowerCase();
+            let label = isEn ? 'Kids 5-8y' : 'Kids 5-8j';
+            let bg = '#EFF6FF';
+            let border = '#BFDBFE';
+            let text = '#1E40AF';
+
+            if (age.includes('toddler') || age.includes('peuter')) {
+              label = isEn ? '🟢 Toddlers (2-4y)' : '🟢 Peuters (2-4j)';
+              bg = '#ECFDF5';
+              border = '#A7F3D0';
+              text = '#065F46';
+            } else if (age.includes('teen') || age.includes('tiener')) {
+              label = isEn ? '🟣 Teens (9-12y)' : '🟣 Tieners (9-12j)';
+              bg = '#FAF5FF';
+              border = '#E9D5FF';
+              text = '#6B21A8';
+            } else if (age.includes('adult') || age.includes('volwassen')) {
+              label = isEn ? '🔴 Adults (13+)' : '🔴 Volwassenen';
+              bg = '#FFF1F2';
+              border = '#FECDD3';
+              text = '#9F1239';
+            } else {
+              label = isEn ? '🔵 Kids (5-8y)' : '🔵 Kids (5-8j)';
+            }
+
+            return (
+              <div style={{
+                position: 'absolute',
+                bottom: '10px',
+                left: '10px',
+                background: bg,
+                borderRadius: '9999px',
+                padding: '0.2rem 0.65rem',
+                fontSize: '0.68rem',
+                fontWeight: 800,
+                color: text,
+                border: `1px solid ${border}`,
+                boxShadow: '0 2px 6px rgba(0,0,0,0.06)',
+                zIndex: 4,
+              }}>
+                {label}
+              </div>
+            );
+          })()}
         </div>
         
         <div className="card-body" style={{ padding: '1rem', display: 'flex', flexDirection: 'column', flex: 1 }}>

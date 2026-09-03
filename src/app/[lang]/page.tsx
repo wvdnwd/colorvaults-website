@@ -1,5 +1,6 @@
 import SafeImage from '@/components/SafeImage';
 import DailyColoringChallenge from '@/components/DailyColoringChallenge';
+import DailyFeaturedCard from '@/components/DailyFeaturedCard';
 import SeasonalEventBanner from '@/components/SeasonalEventBanner';
 import NewsletterBox from '@/components/NewsletterBox';
 import { getThemes, getColoringPages, getMainHubs, getSampleImagesForTheme } from '@/lib/api';
@@ -43,6 +44,10 @@ export default async function HomePage({ params }: { params: Promise<{ lang: str
 
   const allThemes = getThemes(lang);
   const mainHubs = getMainHubs(lang);
+  const allPagesList = getColoringPages(lang).filter(p => p.image && !p.image.includes('default.jpg'));
+  const dayOfYear = Math.floor((Date.now() - new Date(new Date().getFullYear(), 0, 0).getTime()) / (1000 * 60 * 60 * 24));
+  const dailyPage = allPagesList[dayOfYear % (allPagesList.length || 1)] || allPagesList[0];
+  const dailyTheme = allThemes.find(t => t.slug === dailyPage?.parentTheme);
 
   // Popular character theme slugs
   const characterSlugs = [
@@ -292,6 +297,17 @@ export default async function HomePage({ params }: { params: Promise<{ lang: str
               );
             })}
           </div>
+
+          {/* Daily Coloring Page Spotlight */}
+          {dailyPage && (
+            <DailyFeaturedCard
+              page={dailyPage}
+              isEn={isEn}
+              lang={lang}
+              themeTitle={dailyTheme?.title}
+            />
+          )}
+
           <SeasonalEventBanner isEn={isEn} lang={lang} />
         </div>
       </section>

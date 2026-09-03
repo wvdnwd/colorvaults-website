@@ -3,22 +3,23 @@
 import React, { useState } from 'react';
 import { fireConfetti } from '@/lib/confetti';
 
-interface PdfBookBundleModalProps {
+interface ThemeColoringBookPdfButtonProps {
   themeTitle: string;
-  count: number;
+  pages: Array<{ title: string; image: string }>;
   isEn: boolean;
-  lang: string;
-  pages?: Array<{ title: string; image: string }>;
 }
 
-export default function PdfBookBundleModal({ themeTitle, count, isEn, lang, pages = [] }: PdfBookBundleModalProps) {
-  const [isOpen, setIsOpen] = useState(false);
-  const [downloading, setDownloading] = useState(false);
+export default function ThemeColoringBookPdfButton({
+  themeTitle,
+  pages,
+  isEn,
+}: ThemeColoringBookPdfButtonProps) {
+  const [generating, setGenerating] = useState(false);
   const [progress, setProgress] = useState(0);
 
   const handleGeneratePdf = async () => {
-    if (downloading) return;
-    setDownloading(true);
+    if (generating || !pages || pages.length === 0) return;
+    setGenerating(true);
     setProgress(0);
 
     try {
@@ -33,6 +34,7 @@ export default function PdfBookBundleModal({ themeTitle, count, isEn, lang, page
       const pageHeight = 297;
 
       // ── PAGE 1: LUXURY COVER PAGE ─────────────────────────────────────────
+      // Subtle frame border
       pdf.setDrawColor(108, 92, 231);
       pdf.setLineWidth(1.5);
       pdf.rect(12, 12, pageWidth - 24, pageHeight - 24);
@@ -64,8 +66,8 @@ export default function PdfBookBundleModal({ themeTitle, count, isEn, lang, page
       pdf.setTextColor(71, 85, 105);
       pdf.text(
         isEn
-          ? `Complete ${count}-Page Printable Collection`
-          : `Complete ${count}-Pagina Printbare Collectie`,
+          ? `Complete ${pages.length}-Page Printable Collection`
+          : `Complete ${pages.length}-Pagina Printbare Collectie`,
         pageWidth / 2,
         125,
         { align: 'center' }
@@ -121,7 +123,7 @@ export default function PdfBookBundleModal({ themeTitle, count, isEn, lang, page
             // Draw coloring page image centered in A4
             const margin = 14;
             const maxWidth = pageWidth - margin * 2;
-            const maxHeight = pageHeight - margin * 2 - 14;
+            const maxHeight = pageHeight - margin * 2 - 14; // header space
 
             const imgRatio = (img.width || 800) / (img.height || 800);
             let renderWidth = maxWidth;
@@ -152,80 +154,41 @@ export default function PdfBookBundleModal({ themeTitle, count, isEn, lang, page
       const cleanSlug = themeTitle.toLowerCase().replace(/[^a-z0-9]+/g, '-');
       pdf.save(`colorvaults-${cleanSlug}-coloring-book.pdf`);
       fireConfetti();
-      setIsOpen(false);
     } catch (e) {
       console.error('Failed to generate coloring book PDF:', e);
     } finally {
-      setDownloading(false);
+      setGenerating(false);
       setProgress(0);
     }
   };
 
   return (
-    <>
-      <div style={{
-        marginTop: '1.75rem',
-        background: 'linear-gradient(135deg, #6C5CE7 0%, #A29BFE 100%)',
-        borderRadius: '20px',
-        padding: '1.25rem 1.75rem',
-        display: 'flex',
+    <button
+      onClick={handleGeneratePdf}
+      disabled={generating}
+      type="button"
+      style={{
+        display: 'inline-flex',
         alignItems: 'center',
-        justifyContent: 'space-between',
-        gap: '1.25rem',
-        flexWrap: 'wrap',
-        boxShadow: '0 10px 30px rgba(108, 92, 231, 0.3)',
+        gap: '0.6rem',
+        background: 'linear-gradient(135deg, #F59E0B 0%, #D97706 100%)',
         color: '#FFFFFF',
-      }}>
-        <div style={{ display: 'flex', alignItems: 'center', gap: '1rem' }}>
-          <div style={{
-            fontSize: '2.25rem',
-            background: 'rgba(255, 255, 255, 0.2)',
-            width: '54px',
-            height: '54px',
-            borderRadius: '14px',
-            display: 'flex',
-            alignItems: 'center',
-            justifyContent: 'center',
-          }}>
-            📚
-          </div>
-          <div>
-            <h3 style={{ margin: 0, fontSize: '1.2rem', fontWeight: 800, color: '#FFFFFF' }}>
-              {isEn
-                ? `Download Complete ${themeTitle} Coloring Book (PDF)`
-                : `Download Compleet ${themeTitle} Kleurboek (PDF)`}
-            </h3>
-            <p style={{ margin: '0.2rem 0 0', fontSize: '0.9rem', color: '#E0E7FF' }}>
-              {isEn
-                ? `All ${count} high-resolution printable pages bundled in a single printable file.`
-                : `Alle ${count} haarscherpe platen handig gebundeld in 1 bestand voor thuis of in de klas.`}
-            </p>
-          </div>
-        </div>
-
-        <button
-          type="button"
-          onClick={handleGeneratePdf}
-          disabled={downloading}
-          style={{
-            padding: '0.75rem 1.5rem',
-            borderRadius: '9999px',
-            background: '#FFFFFF',
-            color: '#4F46E5',
-            fontWeight: 800,
-            fontSize: '0.95rem',
-            border: 'none',
-            cursor: downloading ? 'not-allowed' : 'pointer',
-            boxShadow: '0 4px 15px rgba(0, 0, 0, 0.15)',
-            transition: 'all 0.2s',
-            whiteSpace: 'nowrap',
-          }}
-        >
-          {downloading
-            ? (isEn ? `Generating (${progress}/${pages.length || count})...` : `Genereren (${progress}/${pages.length || count})...`)
-            : (isEn ? '📥 Download PDF Book' : '📥 Download PDF Kleurboek')}
-        </button>
-      </div>
-    </>
+        fontWeight: 800,
+        fontSize: '0.95rem',
+        padding: '0.75rem 1.4rem',
+        borderRadius: '9999px',
+        border: 'none',
+        cursor: generating ? 'not-allowed' : 'pointer',
+        boxShadow: '0 4px 16px rgba(245, 158, 11, 0.35)',
+        transition: 'all 0.25s ease',
+      }}
+    >
+      <span style={{ fontSize: '1.1rem' }}>📕</span>
+      <span>
+        {generating
+          ? (isEn ? `Building PDF Book (${progress}/${pages.length})...` : `Kleurboek Maken (${progress}/${pages.length})...`)
+          : (isEn ? `Download Full Coloring Book (${pages.length} Pages PDF)` : `Download Heel Kleurboek (${pages.length} Pagina's PDF)`)}
+      </span>
+    </button>
   );
 }

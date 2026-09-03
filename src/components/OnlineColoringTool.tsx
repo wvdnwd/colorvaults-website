@@ -1,6 +1,7 @@
 'use client';
 
 import React, { useRef, useState, useEffect, useCallback } from 'react';
+import { fireConfetti } from '@/lib/confetti';
 import styles from './OnlineColoringTool.module.css';
 
 interface OnlineColoringToolProps {
@@ -340,6 +341,7 @@ export default function OnlineColoringTool({
  a.href = exportCanvas.toDataURL('image/png');
  a.download = `colorvaults-colored-${title.toLowerCase().replace(/[^a-z0-9]+/g, '-')}.png`;
  a.click();
+ fireConfetti();
  };
 
  // Print colored image
@@ -347,6 +349,7 @@ export default function OnlineColoringTool({
  const canvas = canvasRef.current;
  if (!canvas) return;
 
+ fireConfetti();
  const dataUrl = canvas.toDataURL('image/png');
  const printWindow = window.open('', '_blank');
  if (!printWindow) return;

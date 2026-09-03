@@ -2,6 +2,7 @@ import { getAgePages, getAgePageBySlug, getMainHubs, getThemes, getPagesByAgeGro
 import CategorySeoBlock from '@/components/CategorySeoBlock';
 import RelatedThemes from '@/components/RelatedThemes';
 import CraftIdeasSection from '@/components/CraftIdeasSection';
+import PdfBookBundleModal from '@/components/PdfBookBundleModal';
 import NewsletterBox from '@/components/NewsletterBox';
 import { notFound } from 'next/navigation';
 import Link from 'next/link';
@@ -136,6 +137,15 @@ export default async function AgePage({
               />
             </div>
           )}
+
+          {/* 📚 Complete PDF Coloring Book Download Modal */}
+          <PdfBookBundleModal
+            themeTitle={`${theme.title} (${agePage.title})`}
+            count={allColoringPages.length}
+            isEn={isEn}
+            lang={lang}
+            pages={allColoringPages.map(p => ({ title: p.title, image: p.image }))}
+          />
 
           {/* Paper Size & How to Use Notice */}
           <div style={{

@@ -181,6 +181,7 @@ export default async function ThemePage({
             count={allColoringPages.length}
             isEn={isEn}
             lang={lang}
+            pages={allColoringPages.map(p => ({ title: p.title, image: p.image }))}
           />
 
           {/* Paper Size & How to Use Notice */}

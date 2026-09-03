@@ -55,15 +55,49 @@ export default async function MainHubPage({ params }: { params: Promise<{ lang: 
   return (
     <>
       <div className="page-hero" data-hub={mainHubSlug}>
-        <div className="container">
-          <Breadcrumbs items={[{ label: hub.title }]} lang={lang} />
-          <h1 className="title-h1" style={{ marginTop: '1rem' }}>{hub.title}</h1>
-          <p style={{ color: 'var(--gray-600)', fontSize: '1.1rem', maxWidth: '640px', marginTop: '0.6rem', lineHeight: 1.7 }}>
-            {hub.description}
-          </p>
-          <span className="badge" style={{ marginTop: '1.25rem' }}>
-            {allThemes.length} {isEn ? 'themes available' : 'thema\'s beschikbaar'}
-          </span>
+        <div className="container" style={{ display: 'grid', gridTemplateColumns: hub.image ? '1.2fr 0.8fr' : '1fr', gap: '2.5rem', alignItems: 'center' }}>
+          <div>
+            <Breadcrumbs items={[{ label: hub.title }]} lang={lang} />
+            <h1 className="title-h1" style={{ marginTop: '1rem' }}>{hub.title}</h1>
+            <p style={{ color: 'var(--gray-600)', fontSize: '1.1rem', maxWidth: '640px', marginTop: '0.6rem', lineHeight: 1.7 }}>
+              {hub.description}
+            </p>
+            <div style={{ display: 'flex', gap: '0.5rem', alignItems: 'center', marginTop: '1.25rem', flexWrap: 'wrap' }}>
+              <span className="badge">
+                {allThemes.length} {isEn ? 'Collections' : 'Collecties'}
+              </span>
+              <span className="badge" style={{ background: '#ECFDF5', color: '#065F46', borderColor: '#A7F3D0' }}>
+                🟢 {isEn ? 'Toddlers (2-4y)' : 'Peuters (2-4j)'}
+              </span>
+              <span className="badge" style={{ background: '#EFF6FF', color: '#1E40AF', borderColor: '#BFDBFE' }}>
+                🔵 {isEn ? 'Kids (5-8y)' : 'Kids (5-8j)'}
+              </span>
+              <span className="badge" style={{ background: '#FAF5FF', color: '#6B21A8', borderColor: '#E9D5FF' }}>
+                🟣 {isEn ? 'Teens (9-12y)' : 'Tieners (9-12j)'}
+              </span>
+              <span className="badge" style={{ background: '#FFF1F2', color: '#9F1239', borderColor: '#FECDD3' }}>
+                🔴 {isEn ? 'Adults (13+)' : 'Volwassenen'}
+              </span>
+            </div>
+          </div>
+
+          {/* 8K Hub Master Artwork Banner */}
+          {hub.image && (
+            <div style={{
+              borderRadius: '24px',
+              overflow: 'hidden',
+              boxShadow: '0 20px 50px rgba(0,0,0,0.15)',
+              border: '3px solid #FFFFFF',
+              aspectRatio: '16/10',
+            }}>
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
+                src={hub.image}
+                alt={hub.title}
+                style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }}
+              />
+            </div>
+          )}
         </div>
       </div>
 
@@ -71,7 +105,13 @@ export default async function MainHubPage({ params }: { params: Promise<{ lang: 
         <AdSlot type="banner" text={isEn ? "Sponsored Content" : "Gesponsord"} />
 
         <div className="section-header">
-          <h2 className="title-h2">{isEn ? 'Explore Themes' : 'Kies een Thema'}</h2>
+          <div>
+            <span className="badge">{isEn ? 'Browse Hub' : 'Bladeren'}</span>
+            <h2 className="title-h2" style={{ marginTop: '0.5rem' }}>{isEn ? 'All Themes in this Hub' : 'Alle Thema\'s in deze Hoofdcategorie'}</h2>
+          </div>
+          <Link href={`/${lang}/how-to-draw`} className="btn-secondary" style={{ fontSize: '0.85rem' }}>
+            ✏️ {isEn ? 'Drawing Academy' : 'Leren Tekenen'}
+          </Link>
         </div>
         
         <div className="grid-4">

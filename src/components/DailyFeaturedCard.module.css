@@ -1,0 +1,231 @@
+
+.container {
+  margin: 3.5rem 0 1.5rem;
+  position: relative;
+  z-index: 5;
+}
+
+.card {
+  display: grid;
+  grid-template-columns: 340px 1fr;
+  gap: 2.5rem;
+  align-items: center;
+  background: linear-gradient(135deg, #FFFBEB 0%, #FFFFFF 50%, #F0FDF4 100%);
+  border: 2px solid #FDE68A;
+  border-radius: 28px;
+  padding: 2rem;
+  box-shadow: 
+    0 20px 50px -15px rgba(245, 158, 11, 0.15),
+    0 0 0 1px rgba(253, 230, 138, 0.6);
+  position: relative;
+  overflow: hidden;
+}
+
+.card::before {
+  content: '';
+  position: absolute;
+  top: -50px;
+  right: -50px;
+  width: 200px;
+  height: 200px;
+  background: radial-gradient(circle, rgba(251, 191, 36, 0.25) 0%, transparent 70%);
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+.imageWrapper {
+  position: relative;
+  background: #FFFFFF;
+  border-radius: 20px;
+  overflow: hidden;
+  border: 1.5px solid #E2E8F0;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+  aspect-ratio: 3/4;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.3s ease;
+}
+
+.imageWrapper:hover {
+  transform: scale(1.02);
+}
+
+.dailyBadge {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  background: linear-gradient(135deg, #F59E0B, #D97706);
+  color: #FFFFFF;
+  font-size: 0.72rem;
+  font-weight: 800;
+  padding: 0.3rem 0.75rem;
+  border-radius: 9999px;
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+  box-shadow: 0 4px 12px rgba(217, 119, 6, 0.35);
+  z-index: 3;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+}
+
+.star {
+  font-size: 0.85rem;
+}
+
+.imgLink {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  flex-wrap: wrap;
+}
+
+.themeBadge {
+  font-size: 0.75rem;
+  font-weight: 800;
+  color: #B45309;
+  background: #FEF3C7;
+  padding: 0.25rem 0.75rem;
+  border-radius: 9999px;
+  text-transform: uppercase;
+}
+
+.ageBadge {
+  font-size: 0.75rem;
+  font-weight: 800;
+  color: #047857;
+  background: #D1FAE5;
+  padding: 0.25rem 0.75rem;
+  border-radius: 9999px;
+}
+
+.title {
+  font-size: 1.85rem;
+  font-weight: 900;
+  color: #0F172A;
+  line-height: 1.2;
+  margin: 0;
+  font-family: var(--font-display), 'Fredoka', sans-serif;
+}
+
+.title a {
+  color: inherit;
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.title a:hover {
+  color: #F59E0B;
+}
+
+.description {
+  font-size: 0.98rem;
+  color: #475569;
+  line-height: 1.6;
+  margin: 0;
+  max-width: 600px;
+}
+
+.actions {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+  margin-top: 0.5rem;
+}
+
+.btnColorOnline {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: linear-gradient(135deg, #10B981, #059669);
+  color: #FFFFFF;
+  font-weight: 800;
+  font-size: 0.95rem;
+  padding: 0.75rem 1.4rem;
+  border-radius: 9999px;
+  border: none;
+  cursor: pointer;
+  box-shadow: 0 4px 14px rgba(16, 185, 129, 0.3);
+  transition: all 0.2s ease;
+}
+
+.btnColorOnline:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(16, 185, 129, 0.4);
+}
+
+.btnPrint {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: #FFFFFF;
+  color: #0F172A;
+  font-weight: 800;
+  font-size: 0.95rem;
+  padding: 0.75rem 1.4rem;
+  border-radius: 9999px;
+  border: 1.5px solid #CBD5E1;
+  cursor: pointer;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.04);
+  transition: all 0.2s ease;
+}
+
+.btnPrint:hover {
+  border-color: #94A3B8;
+  transform: translateY(-2px);
+}
+
+.btnTheme {
+  color: #6366F1;
+  font-weight: 800;
+  font-size: 0.92rem;
+  text-decoration: none;
+  padding: 0.75rem 1rem;
+  transition: color 0.2s;
+}
+
+.btnTheme:hover {
+  color: #4F46E5;
+  text-decoration: underline;
+}
+
+@media (max-width: 960px) {
+  .card {
+    grid-template-columns: 1fr;
+    text-align: center;
+    gap: 1.5rem;
+    padding: 1.5rem;
+  }
+  .imageWrapper {
+    max-width: 280px;
+    margin: 0 auto;
+  }
+  .header, .actions {
+    justify-content: center;
+  }
+  .btnColorOnline, .btnPrint {
+    width: 100%;
+    justify-content: center;
+  }
+}
