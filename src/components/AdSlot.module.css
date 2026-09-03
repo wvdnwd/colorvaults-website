@@ -100,3 +100,16 @@
     margin: 1.5rem 0;
   }
 }
+
+/* Auto-clean when AdSense successfully fills the ad unit */
+.adSlot:has(ins[data-ad-status="filled"]),
+.adSlot:has(iframe) {
+  border: none;
+  background: transparent;
+  box-shadow: none;
+}
+
+/* Gracefully auto-collapse when AdSense marks unit as unfilled */
+.adSlot:has(ins[data-ad-status="unfilled"]) {
+  display: none !important;
+}

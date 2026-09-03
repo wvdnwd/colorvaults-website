@@ -124,7 +124,7 @@ export default async function RootLayout({
                 <CookieBanner lang={lang} />
                 <BackToTop />
                 <GoogleTranslator />
-                <StickyBottomAd isEn={lang ==='en'} />
+                <StickyBottomAd isEn={lang !== 'nl'} />
               </div>
             </ColoringBookProvider>
           </FavoritesProvider>
