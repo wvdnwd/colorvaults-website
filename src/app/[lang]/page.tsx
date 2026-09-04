@@ -56,6 +56,24 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
       title,
       description,
       url: `https://colorvaults.com/${lang}`,
+      siteName: 'ColorVaults',
+      locale: lang === 'nl' ? 'nl_NL' : lang === 'de' ? 'de_DE' : lang === 'fr' ? 'fr_FR' : 'en_US',
+      type: 'website',
+      images: [
+        {
+          url: 'https://colorvaults.com/images/og-share.jpg',
+          width: 1200,
+          height: 630,
+          type: 'image/jpeg',
+          alt: 'ColorVaults — Free Premium Coloring Pages',
+        },
+      ],
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title,
+      description,
+      images: ['https://colorvaults.com/images/og-share.jpg'],
     },
   };
 }

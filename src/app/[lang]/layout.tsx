@@ -47,20 +47,21 @@ export const metadata: Metadata = {
     google:"r57LIyNltfhaHeN4Lean5iNHEkbWBJbD-z-s6uF9t0s",
   },
   openGraph: {
-    siteName:"ColorVaults",
-    type:"website",
+    siteName: "ColorVaults",
+    type: "website",
     images: [
       {
-        url:"/images/banner.jpg",
+        url: "/images/og-share.jpg",
         width: 1200,
         height: 630,
-        alt:"ColorVaults — Free Premium Coloring Pages",
+        type: "image/jpeg",
+        alt: "ColorVaults — Free Premium Coloring Pages",
       },
     ],
   },
   twitter: {
-    card:"summary_large_image",
-    images: ["/images/banner.jpg"],
+    card: "summary_large_image",
+    images: ["/images/og-share.jpg"],
   },
 };
 
