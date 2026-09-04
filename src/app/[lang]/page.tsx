@@ -61,7 +61,8 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
       type: 'website',
       images: [
         {
-          url: 'https://colorvaults.com/images/og-share.jpg',
+          url: 'https://www.colorvaults.com/images/og-share.jpg',
+          secureUrl: 'https://www.colorvaults.com/images/og-share.jpg',
           width: 1200,
           height: 630,
           type: 'image/jpeg',
@@ -73,7 +74,7 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
       card: 'summary_large_image',
       title,
       description,
-      images: ['https://colorvaults.com/images/og-share.jpg'],
+      images: ['https://www.colorvaults.com/images/og-share.jpg'],
     },
   };
 }

@@ -37,7 +37,7 @@ const gaId = process.env.NEXT_PUBLIC_GA_ID;
 const adsenseClientId = process.env.NEXT_PUBLIC_ADSENSE_CLIENT_ID;
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://colorvaults.com"),
+  metadataBase: new URL("https://www.colorvaults.com"),
   title: {
     template:"%s | ColorVaults",
     default:"ColorVaults | Free Premium Coloring Pages",
@@ -51,7 +51,8 @@ export const metadata: Metadata = {
     type: "website",
     images: [
       {
-        url: "/images/og-share.jpg",
+        url: "https://www.colorvaults.com/images/og-share.jpg",
+        secureUrl: "https://www.colorvaults.com/images/og-share.jpg",
         width: 1200,
         height: 630,
         type: "image/jpeg",
@@ -61,7 +62,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    images: ["/images/og-share.jpg"],
+    images: ["https://www.colorvaults.com/images/og-share.jpg"],
   },
 };
 
