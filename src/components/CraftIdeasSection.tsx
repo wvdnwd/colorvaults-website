@@ -14,8 +14,71 @@ interface Props {
   isEn?: boolean;
 }
 
+const HUB_BADGES: Record<string, Record<string, string>> = {
+  'animals-wildlife': {
+    nl: '🐾 12 Dieren & Safari Knutselideeën',
+    en: '🐾 12 Animal & Wildlife Craft Activities',
+    de: '🐾 12 Tier- & Natur-Bastelideen',
+    fr: '🐾 12 Activités & Bricolages Animaux Sauvages'
+  },
+  'vehicles-transportation': {
+    nl: '🏎️ 12 Race & Voertuigen Knutseltips',
+    en: '🏎️ 12 Vehicle & Racing Craft Activities',
+    de: '🏎️ 12 Renn- & Fahrzeug-Bastelideen',
+    fr: '🏎️ 12 Bricolages Véhicules & Circuits de Course'
+  },
+  'fantasy-fairytales': {
+    nl: '✨ 12 Magische Sprookjes Knutselideeën',
+    en: '✨ 12 Magical Fairy Tale Craft Ideas',
+    de: '✨ 12 Magische Märchen-Bastelideen',
+    fr: '✨ 12 Bricolages Magiques & Contes de Fées'
+  },
+  'disney-pixar': {
+    nl: '👑 12 Magische Kasteel & Karakter Ideeën',
+    en: '👑 12 Magical Castle & Character Crafts',
+    de: '👑 12 Schloss- & Märchen-Bastelideen',
+    fr: '👑 12 Bricolages Royaux & Personnages Magiques'
+  },
+  'art-aesthetic': {
+    nl: '🧘 12 Mindful Mandala & Zen Kunstideeën',
+    en: '🧘 12 Mindful Mandala & Zen Art Activities',
+    de: '🧘 12 Achtsame Mandala- & Zen-Bastelideen',
+    fr: '🧘 12 Activités Zen & Mandalas Méditatifs'
+  },
+  'gaming-virtual-worlds': {
+    nl: '🎮 12 Gaming & Arcade DIY Projecten',
+    en: '🎮 12 Gaming & Arcade DIY Craft Quests',
+    de: '🎮 12 Gaming- & Arcade-Bastelprojekte',
+    fr: '🎮 12 Quêtes & Bricolages Rétro Gaming'
+  },
+  'superheroes-comic-universes': {
+    nl: '⚡ 12 Superhelden & Comic Actieprojecten',
+    en: '⚡ 12 Superhero & Comic Action Projects',
+    de: '⚡ 12 Superhelden- & Comic-Mitmachideen',
+    fr: '⚡ 12 Missions & Bricolages Super-Héros'
+  },
+  'anime-manga': {
+    nl: '⚡ 12 Anime & Manga Creatieve Projecten',
+    en: '⚡ 12 Anime & Manga Creative DIY Projects',
+    de: '⚡ 12 Anime- & Manga-Kreativideen',
+    fr: '⚡ 12 Créations Manga & Projets Otaku'
+  },
+  'holidays-seasons': {
+    nl: '🎉 12 Feestdagen & Seizoensknutsels',
+    en: '🎉 12 Holiday & Seasonal Celebration Crafts',
+    de: '🎉 12 Feiertags- & Jahreszeiten-Basteltipps',
+    fr: '🎉 12 Bricolages Festifs de Saison & Réveillon'
+  },
+  'kids-tv-shows': {
+    nl: '🧸 12 Peuter- & Kleuter Doe-Activiteiten',
+    en: '🧸 12 Toddler & Preschool Fun Activities',
+    de: '🧸 12 Mitmach-Aktivitäten für Kleinkinder',
+    fr: '🧸 12 Activités Mignonnes pour Tout-Petits'
+  }
+};
+
 const UI_STRINGS: Record<string, {
-  badge: string;
+  defaultBadge: string;
   heading: string;
   subheading: string;
   materialsNeeded: string;
@@ -23,7 +86,7 @@ const UI_STRINGS: Record<string, {
   difficultyLabel: string;
 }> = {
   nl: {
-    badge: '12 Creatieve Knutsel Ideeën',
+    defaultBadge: '💡 12 Creatieve Knutsel Ideeën',
     heading: '12 Leuke Dingen Om Te Doen Met Deze Kleurplaat',
     subheading: 'Klaar met inkleuren? Gooi je meesterwerk niet weg! Hier zijn 12 geweldige, originele knutselprojecten en spelletjes die je kunt maken met deze {TITLE} kleurplaat.',
     materialsNeeded: 'Benodigdheden',
@@ -31,7 +94,7 @@ const UI_STRINGS: Record<string, {
     difficultyLabel: 'Niveau'
   },
   en: {
-    badge: '12 Creative Craft Activities',
+    defaultBadge: '💡 12 Creative Craft Activities',
     heading: '12 Fun Things To Do With This Coloring Page',
     subheading: 'Finished coloring? Don’t let your masterpiece go to waste! Here are 12 original, hands-on craft projects and games you can make with this {TITLE} coloring sheet.',
     materialsNeeded: 'Supplies Needed',
@@ -39,7 +102,7 @@ const UI_STRINGS: Record<string, {
     difficultyLabel: 'Level'
   },
   de: {
-    badge: '12 Kreative Bastelideen',
+    defaultBadge: '💡 12 Kreative Bastelideen',
     heading: '12 Tolle Bastel- und Spielideen mit diesem Bild',
     subheading: 'Fertig ausgemalt? Werfe dein Meisterwerk nicht weg! Hier sind 12 originelle Bastelideen und Spiele für deine {TITLE} Malvorlage.',
     materialsNeeded: 'Benötigte Materialien',
@@ -47,7 +110,7 @@ const UI_STRINGS: Record<string, {
     difficultyLabel: 'Schwierigkeit'
   },
   fr: {
-    badge: '12 Idées de Bricolage Créatives',
+    defaultBadge: '💡 12 Idées de Bricolage Créatives',
     heading: '12 Choses Amusantes à Faire avec ce Coloriage',
     subheading: 'Votre coloriage est terminé? Ne le laissez pas traîner! Voici 12 projets créatifs manuels et jeux originaux à fabriquer avec ce coloriage {TITLE}.',
     materialsNeeded: 'Matériel nécessaire',
@@ -74,13 +137,17 @@ export default function CraftIdeasSection({
 
   const headingText = t.heading.replace(/{TITLE}/g, effectiveTitle);
   const subheadText = t.subheading.replace(/{TITLE}/g, effectiveTitle);
+  
+  // Theme-specific badge
+  const categoryBadge = (effectiveHub && HUB_BADGES[effectiveHub] && HUB_BADGES[effectiveHub][currentLang]) 
+    ? HUB_BADGES[effectiveHub][currentLang] 
+    : t.defaultBadge;
 
   return (
     <section className={styles.container} aria-label={headingText}>
       <div className={styles.header}>
         <div className={styles.topBadge}>
-          <span>💡</span>
-          <span>{t.badge}</span>
+          <span>{categoryBadge}</span>
         </div>
         <h2 className={styles.title}>{headingText}</h2>
         <p className={styles.subtitle}>{subheadText}</p>
