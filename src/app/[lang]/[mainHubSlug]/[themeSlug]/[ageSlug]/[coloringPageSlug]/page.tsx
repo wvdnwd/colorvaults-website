@@ -11,6 +11,7 @@ import MotionCard from'@/components/MotionCard';
 import CharacterIpDisclaimer from'@/components/CharacterIpDisclaimer';
 import AdSlot from'@/components/AdSlot';
 import ReportButton from'@/components/ReportButton';
+import CraftIdeasSection from '@/components/CraftIdeasSection';
 import React from'react';
 
 export const dynamicParams = true;
@@ -297,6 +298,15 @@ export default async function ColoringPageDetail({ params }: { params: Promise<{
           </Link>
         </div>
       </div>
+      
+      {/* 12 Creative Craft Ideas & DIY Activities */}
+      <CraftIdeasSection
+        pageTitle={page.title}
+        parentHub={mainHubSlug}
+        ageGroup={ageSlug}
+        lang={lang}
+        isEn={isEn}
+      />
 
       {/* Related Pages Section with Ads in between */}
       {displayPages.length > 0 && (
