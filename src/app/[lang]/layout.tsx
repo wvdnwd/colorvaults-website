@@ -81,8 +81,27 @@ export default async function RootLayout({
   return (
     <html lang={lang} className={`${fredoka.variable} ${nunito.variable}`} data-theme="dark">
       <head>
-        <meta name="viewport"content="width=device-width, initial-scale=1.0, maximum-scale=5.0"/>
-        <meta name="google-adsense-account"content="ca-pub-1184801748776428"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0" />
+        <meta name="google-adsense-account" content="ca-pub-1184801748776428" />
+
+        {/* Static Open Graph & WhatsApp Preview Tags in raw <head> */}
+        <meta property="og:site_name" content="ColorVaults" />
+        <meta property="og:type" content="website" />
+        <meta property="og:title" content="ColorVaults | Free Premium Coloring Pages" />
+        <meta property="og:description" content="Download thousands of high-quality free printable coloring pages for kids, toddlers, teens and adults. 100% free, no account required." />
+        <meta property="og:url" content="https://www.colorvaults.com" />
+        <meta property="og:image" content="https://www.colorvaults.com/images/og-share.jpg" />
+        <meta property="og:image:secure_url" content="https://www.colorvaults.com/images/og-share.jpg" />
+        <meta property="og:image:type" content="image/jpeg" />
+        <meta property="og:image:width" content="1200" />
+        <meta property="og:image:height" content="630" />
+        <meta property="og:image:alt" content="ColorVaults — Free Premium Coloring Pages" />
+
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="ColorVaults | Free Premium Coloring Pages" />
+        <meta name="twitter:description" content="Download thousands of high-quality free printable coloring pages for kids, toddlers, teens and adults. 100% free, no account required." />
+        <meta name="twitter:image" content="https://www.colorvaults.com/images/og-share.jpg" />
+        <link rel="image_src" href="https://www.colorvaults.com/images/og-share.jpg" />
       </head>
       <body>
         <Script
