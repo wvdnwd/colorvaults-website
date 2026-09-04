@@ -1,5 +1,4 @@
-import SafeImage from'@/components/SafeImage';
-import { getThemes, getThemeBySlug, getMainHubs, getColoringPages, safeJsonLd } from'@/lib/api';
+import { getThemes, getThemeBySlug, getMainHubs, getColoringPages, getColoringPagesForTheme, safeJsonLd } from '@/lib/api';
 import { getCategorySeoData } from'@/lib/categorySeo';
 import CategorySeoBlock from'@/components/CategorySeoBlock';
 import RelatedThemes from '@/components/RelatedThemes';
@@ -88,10 +87,8 @@ export default async function ThemePage({
 
   const seoData = getCategorySeoData(lang, mainHubSlug, themeSlug, theme.title, allThemesInHub);
 
-  // Get ALL coloring pages for this theme
-  const allColoringPages = getColoringPages(lang).filter(
-    p => p.parentHub === mainHubSlug && p.parentTheme === themeSlug
-  );
+  // Get ALL coloring pages for this theme via O(1) index
+  const allColoringPages = getColoringPagesForTheme(lang, mainHubSlug, themeSlug);
 
   const counts = {
     all: allColoringPages.length,

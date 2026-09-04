@@ -1,6 +1,5 @@
 'use client';
 
-import { motion } from'framer-motion';
 import SafeImage from'./SafeImage';
 import Link from'next/link';
 import FavoriteButton from'./FavoriteButton';
@@ -38,13 +37,11 @@ export default function MotionCard({ page, lang, isEn }: MotionCardProps) {
   const pinterestShareUrl =`https://www.pinterest.com/pin/create/button/?url=${encodeURIComponent(`https://colorvaults.com${url}`)}&media=${encodeURIComponent(imageSrc)}&description=${encodeURIComponent(`${page.title} - Free Printable Coloring Page on ColorVaults.com`)}`;
 
   return (
-    <motion.div
-      initial={{ opacity: 0 }}
-      whileInView={{ opacity: 1 }}
-      viewport={{ once: true, margin:'-50px'}}
-      whileHover={{ y: -6 }}
-      transition={{ duration: 0.25, ease: [0.34, 1.56, 0.64, 1] }}
-      style={{ position:'relative'}}
+    <div
+      style={{
+        position: 'relative',
+        transition: 'transform 0.2s ease, box-shadow 0.2s ease',
+      }}
     >
       <div className="card"style={{ height:'100%', display:'flex', flexDirection:'column'}}>
         <div className="card-img-wrapper"style={{ aspectRatio:'3/4', position:'relative', background:'#FFFFFF', padding:'0.85rem', borderBottom:'1px solid var(--gray-200)'}}>
@@ -244,6 +241,6 @@ export default function MotionCard({ page, lang, isEn }: MotionCardProps) {
           </div>
         </div>
       </div>
-    </motion.div>
+    </div>
   );
 }

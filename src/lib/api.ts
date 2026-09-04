@@ -108,7 +108,16 @@ const hubTranslations: Record<string, Record<string, { title: string; descriptio
   }
 };
 
+// In-memory pre-indexed caches for blazing fast O(1) performance
+const mainHubsCache: Record<string, MainHub[]> = {};
+const themesCache: Record<string, Theme[]> = {};
+const themeBySlugCache: Record<string, Map<string, Theme>> = {};
+const pagesByThemeCache: Record<string, Map<string, ColoringPage[]>> = {};
+const pageBySlugCache: Record<string, Map<string, ColoringPage>> = {};
+
 export function getMainHubs(lang: string): MainHub[] {
+  if (mainHubsCache[lang]) return mainHubsCache[lang];
+
   const hubs = getCached<MainHub>(lang, 'hubs', 'main-hubs.json');
   const pages = getColoringPages(lang);
 
@@ -117,7 +126,7 @@ export function getMainHubs(lang: string): MainHub[] {
     countByHub[p.parentHub] = (countByHub[p.parentHub] || 0) + 1;
   }
 
-  return hubs.map(h => {
+  const result = hubs.map(h => {
     const tr = hubTranslations[lang]?.[h.slug];
     return {
       ...h,
@@ -127,31 +136,49 @@ export function getMainHubs(lang: string): MainHub[] {
       pageCount: countByHub[h.slug] || h.themeCount || 0,
     };
   });
+
+  mainHubsCache[lang] = result;
+  return result;
 }
 
 export function getThemes(lang: string): Theme[] {
-  const themes = getCached<Theme>(lang,'themes','themes.json');
+  if (themesCache[lang]) return themesCache[lang];
+
+  const themes = getCached<Theme>(lang, 'themes', 'themes.json');
   const pages = getColoringPages(lang);
 
   const countByTheme: Record<string, number> = {};
   for (const p of pages) {
-    const key =`${p.parentHub}/${p.parentTheme}`;
+    const key = `${p.parentHub}/${p.parentTheme}`;
     countByTheme[key] = (countByTheme[key] || 0) + 1;
   }
 
-  return themes.map(t => ({
+  const result = themes.map(t => ({
     ...t,
-    pageCount: countByTheme[`${t.parentHub}/${t.slug}`] || 0,
+    pageCount: countByTheme[`${t.parentHub}/${t.slug}`] || t.pageCount || 0,
   }));
+
+  themesCache[lang] = result;
+
+  const map = new Map<string, Theme>();
+  for (const t of result) {
+    map.set(`${t.parentHub}/${t.slug}`, t);
+    map.set(t.slug, t);
+  }
+  themeBySlugCache[lang] = map;
+
+  return result;
 }
 
 export function getThemeBySlug(lang: string, parentHubSlug: string, themeSlug: string): Theme | undefined {
-  const themes = getThemes(lang);
-  return themes.find(t => t.parentHub === parentHubSlug && t.slug === themeSlug);
+  if (!themeBySlugCache[lang]) {
+    getThemes(lang); // populates themeBySlugCache[lang]
+  }
+  return themeBySlugCache[lang]?.get(`${parentHubSlug}/${themeSlug}`) || themeBySlugCache[lang]?.get(themeSlug);
 }
 
 export function getAgePages(lang: string): AgePage[] {
-  return getCached<AgePage>(lang,'agePages','age-pages.json');
+  return getCached<AgePage>(lang, 'agePages', 'age-pages.json');
 }
 
 export function getAgePageBySlug(lang: string, parentHubSlug: string, themeSlug: string, ageGroupSlug: string): AgePage | undefined {
@@ -160,17 +187,43 @@ export function getAgePageBySlug(lang: string, parentHubSlug: string, themeSlug:
 }
 
 export function getColoringPages(lang: string): ColoringPage[] {
-  return getCached<ColoringPage>(lang,'coloringPages','coloring-pages.json');
+  return getCached<ColoringPage>(lang, 'coloringPages', 'coloring-pages.json');
+}
+
+export function getColoringPagesForTheme(lang: string, parentHubSlug: string, themeSlug: string): ColoringPage[] {
+  if (!pagesByThemeCache[lang]) {
+    const map = new Map<string, ColoringPage[]>();
+    const pages = getColoringPages(lang);
+    for (const p of pages) {
+      const k = `${p.parentHub}/${p.parentTheme}`;
+      let list = map.get(k);
+      if (!list) {
+        list = [];
+        map.set(k, list);
+      }
+      list.push(p);
+    }
+    pagesByThemeCache[lang] = map;
+  }
+  return pagesByThemeCache[lang].get(`${parentHubSlug}/${themeSlug}`) || [];
 }
 
 export function getPagesByAgeGroup(lang: string, parentHubSlug: string, themeSlug: string, ageGroupSlug: string): ColoringPage[] {
-  const pages = getColoringPages(lang);
-  return pages.filter(p => p.parentHub === parentHubSlug && p.parentTheme === themeSlug && p.ageGroup === ageGroupSlug);
+  const pages = getColoringPagesForTheme(lang, parentHubSlug, themeSlug);
+  return pages.filter(p => p.ageGroup === ageGroupSlug);
 }
 
 export function getPageBySlug(lang: string, parentHubSlug: string, themeSlug: string, ageGroupSlug: string, pageSlug: string): ColoringPage | undefined {
-  const pages = getColoringPages(lang);
-  return pages.find(p => p.parentHub === parentHubSlug && p.parentTheme === themeSlug && p.ageGroup === ageGroupSlug && p.slug === pageSlug);
+  if (!pageBySlugCache[lang]) {
+    const map = new Map<string, ColoringPage>();
+    const pages = getColoringPages(lang);
+    for (const p of pages) {
+      map.set(`${p.parentHub}/${p.parentTheme}/${p.ageGroup}/${p.slug}`, p);
+      map.set(p.slug, p);
+    }
+    pageBySlugCache[lang] = map;
+  }
+  return pageBySlugCache[lang].get(`${parentHubSlug}/${themeSlug}/${ageGroupSlug}/${pageSlug}`) || pageBySlugCache[lang].get(pageSlug);
 }
 
 export function getSampleImagesForTheme(lang: string, parentHubSlug: string, themeSlug: string, defaultImage: string, count = 3): string[] {
@@ -178,13 +231,13 @@ export function getSampleImagesForTheme(lang: string, parentHubSlug: string, the
   if (defaultImage) {
     result.push(defaultImage);
   }
-  const pages = getColoringPages(lang).filter(p => p.parentHub === parentHubSlug && p.parentTheme === themeSlug);
+  const pages = getColoringPagesForTheme(lang, parentHubSlug, themeSlug);
   for (const p of pages) {
     if (p.image && !result.includes(p.image) && result.length < count) {
       result.push(p.image);
     }
   }
-  return result.length > 0 ? result : [defaultImage ||'/images/banner.jpg'];
+  return result.length > 0 ? result : [defaultImage || '/images/banner.jpg'];
 }
 
 export function validateDataModel() {
