@@ -287,12 +287,14 @@ for (const [themeSlug, items] of Object.entries(themeGroupsEn)) {
 
   items.forEach(({ page, idx }) => {
     const filename = decodeURIComponent(page.image.split('/').pop());
-    const isBad = (/\d{10,}/.test(page.title) || /clean printable/i.test(page.title) || /colorin/i.test(page.title) || /^Coloring Page/i.test(page.title) || page.title.trim().toLowerCase() === themeTitle.toLowerCase());
+    const pngFilename = filename.replace(/\.webp$/i, '.png');
+    const webpFilename = filename.replace(/\.png$/i, '.webp');
+    const promptInfo = promptMap[filename] || promptMap[pngFilename] || promptMap[webpFilename];
 
+    const isBad = (/\d{10,}/.test(page.title) || /clean printable/i.test(page.title) || /colorin/i.test(page.title) || /^Coloring Page/i.test(page.title) || page.title.trim().toLowerCase() === themeTitle.toLowerCase());
     let cleanTitle = page.title;
 
-    if (isBad || promptMap[filename]) {
-      const promptInfo = promptMap[filename];
+    if (isBad || promptInfo) {
       if (promptInfo && promptInfo.prompt) {
         cleanTitle = cleanPromptToTitle(promptInfo.prompt, themeTitle);
         fromPrompts++;
