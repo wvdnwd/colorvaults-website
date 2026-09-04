@@ -2,12 +2,17 @@ const fs = require('fs');
 const path = require('path');
 
 const MAP_PATH = 'C:/Users/Gebruiker/Desktop/colorvaults/output/prompt_history_map.json';
+const EMBEDDED_MAP_PATH = 'C:/Users/Gebruiker/Desktop/colorvaults/output/comfy_embedded_prompts.json';
 const EN_PATH = path.join(__dirname, '..', 'src', 'data', 'en', 'coloring-pages.json');
 const NL_PATH = path.join(__dirname, '..', 'src', 'data', 'nl', 'coloring-pages.json');
 const THEMES_EN_PATH = path.join(__dirname, '..', 'src', 'data', 'en', 'themes.json');
 
-console.log('Loading prompt history map...');
+console.log('Loading prompt history map and embedded prompts...');
 const promptMap = JSON.parse(fs.readFileSync(MAP_PATH, 'utf8'));
+if (fs.existsSync(EMBEDDED_MAP_PATH)) {
+  const embeddedMap = JSON.parse(fs.readFileSync(EMBEDDED_MAP_PATH, 'utf8'));
+  Object.assign(promptMap, embeddedMap);
+}
 
 console.log('Loading coloring pages...');
 const pagesEn = JSON.parse(fs.readFileSync(EN_PATH, 'utf8'));
