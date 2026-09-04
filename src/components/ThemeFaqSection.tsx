@@ -12,11 +12,21 @@ interface ThemeFaqSectionProps {
   isEn: boolean;
   hubSlug?: string;
   themeSlug?: string;
+  pageTitle?: string;
+  customTitle?: string;
 }
 
-export default function ThemeFaqSection({ themeTitle, isEn, hubSlug = '', themeSlug = '' }: ThemeFaqSectionProps) {
+export default function ThemeFaqSection({
+  themeTitle,
+  isEn,
+  hubSlug = '',
+  themeSlug = '',
+  pageTitle,
+  customTitle,
+}: ThemeFaqSectionProps) {
   const [openIndex, setOpenIndex] = useState<number | null>(0);
 
+  const displayTitle = pageTitle || themeTitle;
   const slug = (themeSlug || '').toLowerCase();
   const hub = (hubSlug || '').toLowerCase();
 
@@ -28,7 +38,7 @@ export default function ThemeFaqSection({ themeTitle, isEn, hubSlug = '', themeS
     if (isMandala) {
       return isEn ? [
         {
-          question: `Are these ${themeTitle} coloring pages suitable for adult stress relief and mindfulness?`,
+          question: `Are these ${displayTitle} coloring pages suitable for adult stress relief and mindfulness?`,
           answer: `Yes! Our mandala collection features intricate sacred geometry, floral symmetries, and fine circular designs specifically formatted for adult relaxation, art therapy, and mindfulness meditation.`,
         },
         {
@@ -37,7 +47,7 @@ export default function ThemeFaqSection({ themeTitle, isEn, hubSlug = '', themeS
         },
       ] : [
         {
-          question: `Zijn deze ${themeTitle} kleurplaten geschikt voor volwassenen en ontspanning?`,
+          question: `Zijn deze ${displayTitle} kleurplaten geschikt voor volwassenen en ontspanning?`,
           answer: `Zeker weten! Onze mandala's hebben fijne geometrische patronen en bloemensymmetrieën die speciaal zijn ontworpen voor ontspanning, mindfulness en anti-stress kleurtherapie bij volwassenen en jongeren.`,
         },
         {
@@ -50,20 +60,20 @@ export default function ThemeFaqSection({ themeTitle, isEn, hubSlug = '', themeS
     if (isCharacter) {
       return isEn ? [
         {
-          question: `Can I print these ${themeTitle} pages for a themed birthday party?`,
-          answer: `Yes, absolutely! Many parents and party organizers print sets of our ${themeTitle} sheets to set up a craft coloring table, slip into goodie treat bags, or hand out as fun party activity games.`,
+          question: `Can I print these ${displayTitle} pages for a themed birthday party?`,
+          answer: `Yes, absolutely! Many parents and party organizers print sets of our ${displayTitle} sheets to set up a craft coloring table, slip into goodie treat bags, or hand out as fun party activity games.`,
         },
         {
-          question: `Which characters and styles are included in this ${themeTitle} collection?`,
+          question: `Which characters and styles are included in this ${displayTitle} collection?`,
           answer: `Our library covers a wide variety of character poses, action-packed scenes, cute chibi designs for younger kids, and detailed dynamic artwork for older fans and teens.`,
         },
       ] : [
         {
-          question: `Kan ik deze ${themeTitle} kleurplaten printen voor een kinderfeestje?`,
-          answer: `Ja, heel graag! Veel ouders en leerkrachten printen stapels ${themeTitle} platen voor een gezellige knutseltafel, als activiteit tijdens verjaardagsfeestjes of om mee te geven in traktatiezakjes.`,
+          question: `Kan ik deze ${displayTitle} kleurplaten printen voor een kinderfeestje?`,
+          answer: `Ja, heel graag! Veel ouders en leerkrachten printen stapels ${displayTitle} platen voor een gezellige knutseltafel, als activiteit tijdens verjaardagsfeestjes of om mee te geven in traktatiezakjes.`,
         },
         {
-          question: `Welke personages en stijlen zitten er in deze ${themeTitle} verzameling?`,
+          question: `Welke personages en stijlen zitten er in deze ${displayTitle} verzameling?`,
           answer: `Je vindt een gevarieerde mix van vrolijke poses, actiescènes, makkelijke tekeningen voor peuters en kleuters en gedetailleerde scènes voor oudere kinderen en tieners.`,
         },
       ];
@@ -72,12 +82,12 @@ export default function ThemeFaqSection({ themeTitle, isEn, hubSlug = '', themeS
     if (isAnimal) {
       return isEn ? [
         {
-          question: `Can teachers use these ${themeTitle} coloring sheets for science & nature lessons?`,
+          question: `Can teachers use these ${displayTitle} coloring sheets for science & nature lessons?`,
           answer: `Yes! Our wildlife and prehistoric sheets are widely used in preschools and elementary classrooms to accompany lessons about animal habitats, biology, paleontology, and environmental awareness.`,
         },
       ] : [
         {
-          question: `Mogen juffen en meesters deze ${themeTitle} kleurplaten gebruiken voor natuurlessen?`,
+          question: `Mogen juffen en meesters deze ${displayTitle} kleurplaten gebruiken voor natuurlessen?`,
           answer: `Ja, absoluut! Onze dieren- en natuurkleurplaten worden veelvuldig gebruikt in het basisonderwijs en op de kinderopvang bij themaweken over dieren, de seizoenen en het milieu.`,
         },
       ];
@@ -88,8 +98,8 @@ export default function ThemeFaqSection({ themeTitle, isEn, hubSlug = '', themeS
 
   const baseFaqs: FaqItem[] = isEn ? [
     {
-      question: `Are these ${themeTitle} coloring pages 100% free to print?`,
-      answer: `Yes! Every single ${themeTitle} coloring page in our library is 100% free for personal, family, and educational use. There are no subscriptions, paywalls, or account registrations required. You can print as many copies as you like.`,
+      question: `Are these ${displayTitle} coloring pages 100% free to print?`,
+      answer: `Yes! Every single ${displayTitle} coloring page in our library is 100% free for personal, family, and educational use. There are no subscriptions, paywalls, or account registrations required. You can print as many copies as you like.`,
     },
     ...getGenreFaqs(),
     {
@@ -102,10 +112,10 @@ export default function ThemeFaqSection({ themeTitle, isEn, hubSlug = '', themeS
     },
     {
       question: `Can my child color these online without a printer?`,
-      answer: `Yes! ColorVaults features an interactive Online Coloring Studio. Simply click the "Color Online" button on any ${themeTitle} page to start coloring directly on your iPad, tablet, smartphone, or laptop with digital fill buckets, brushes, and color palettes.`,
+      answer: `Yes! ColorVaults features an interactive Online Coloring Studio. Simply click the "Color Online" button on any ${displayTitle} page to start coloring directly on your iPad, tablet, smartphone, or laptop with digital fill buckets, brushes, and color palettes.`,
     },
     {
-      question: `How do I bundle multiple ${themeTitle} pages into a custom coloring book?`,
+      question: `How do I bundle multiple ${displayTitle} pages into a custom coloring book?`,
       answer: `Click the "+ Bundle" button on any coloring page to add it to your custom bundle. Once you have selected your favorite sheets (e.g. 5, 10, or 20 pages), open the floating bundle bar at the bottom of your screen to download one unified, beautifully formatted PDF coloring book with a custom cover!`,
     },
     {
@@ -114,8 +124,8 @@ export default function ThemeFaqSection({ themeTitle, isEn, hubSlug = '', themeS
     },
   ] : [
     {
-      question: `Zijn deze ${themeTitle} kleurplaten echt 100% gratis te printen?`,
-      answer: `Ja, absoluut! Alle ${themeTitle} kleurplaten op ColorVaults zijn 100% gratis te downloaden en te printen voor thuis, op school of op de opvang. Er zijn geen abonnementen, verborgen kosten of verplichte accounts nodig.`,
+      question: `Zijn deze ${displayTitle} kleurplaten echt 100% gratis te printen?`,
+      answer: `Ja, absoluut! Alle ${displayTitle} kleurplaten op ColorVaults zijn 100% gratis te downloaden en te printen voor thuis, op school of op de opvang. Er zijn geen abonnementen, verborgen kosten of verplichte accounts nodig.`,
     },
     ...getGenreFaqs(),
     {
@@ -128,10 +138,10 @@ export default function ThemeFaqSection({ themeTitle, isEn, hubSlug = '', themeS
     },
     {
       question: `Kan mijn kind deze kleurplaten ook digitaal inkleuren zonder printer?`,
-      answer: `Ja! ColorVaults heeft een ingebouwde interactieve Online Kleurtool. Klik bij een ${themeTitle} kleurplaat op "Online Inkleuren" om direct op een tablet, iPad of telefoon te kleuren met verfemmers, kwasten en een rijk kleurenpalet.`,
+      answer: `Ja! ColorVaults heeft een ingebouwde interactieve Online Kleurtool. Klik bij een ${displayTitle} kleurplaat op "Online Inkleuren" om direct op een tablet, iPad of telefoon te kleuren met verfemmers, kwasten en een rijk kleurenpalet.`,
     },
     {
-      question: `Hoe stel ik mijn eigen ${themeTitle} kleurboek samen?`,
+      question: `Hoe stel ik mijn eigen ${displayTitle} kleurboek samen?`,
       answer: `Klik op de knop "+ Bundel" bij de gewenste kleurplaten. Ze worden verzameld in je persoonlijke kleurboek. Klik onderaan het scherm op de zwevende bundelbalk om in 1 klik één compleet PDF-kleurboek met een mooie voorpagina te downloaden!`,
     },
     {
@@ -201,7 +211,11 @@ export default function ThemeFaqSection({ themeTitle, isEn, hubSlug = '', themeS
           letterSpacing: '-0.02em',
           lineHeight: 1.25,
         }}>
-          {isEn ? `Frequently Asked Questions About ${themeTitle} Coloring Pages` : `Veelgestelde Vragen over ${themeTitle} Kleurplaten`}
+          {customTitle
+            ? customTitle
+            : isEn
+            ? `Frequently Asked Questions About ${displayTitle} Coloring Pages`
+            : `Veelgestelde Vragen over ${displayTitle} Kleurplaten`}
         </h2>
         <p style={{ color: '#475569', fontSize: '1rem', marginTop: '0.5rem', lineHeight: 1.65, maxWidth: '800px' }}>
           {isEn

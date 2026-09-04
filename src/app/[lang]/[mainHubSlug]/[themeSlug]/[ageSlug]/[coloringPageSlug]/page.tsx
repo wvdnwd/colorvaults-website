@@ -12,6 +12,8 @@ import CharacterIpDisclaimer from'@/components/CharacterIpDisclaimer';
 import AdSlot from'@/components/AdSlot';
 import ReportButton from'@/components/ReportButton';
 import CraftIdeasSection from '@/components/CraftIdeasSection';
+import ThemeFaqSection from '@/components/ThemeFaqSection';
+import NewsletterBox from '@/components/NewsletterBox';
 import React from'react';
 
 export const dynamicParams = true;
@@ -253,6 +255,8 @@ export default async function ColoringPageDetail({ params }: { params: Promise<{
             isEn={isEn} 
             fileUrl={page.image} 
             colorPageUrl={`/${lang}/${mainHubSlug}/${themeSlug}/${ageSlug}/${page.slug}/color`}
+            lang={lang}
+            category={theme.title}
           />
 
           {/* Metadata Chips */}
@@ -353,6 +357,18 @@ export default async function ColoringPageDetail({ params }: { params: Promise<{
           </div>
         </section>
       )}
+
+      {/* Frequently Asked Questions (Schema.org FAQPage Rich Results) */}
+      <ThemeFaqSection
+        themeTitle={theme.title}
+        pageTitle={page.title}
+        isEn={isEn}
+        hubSlug={mainHubSlug}
+        themeSlug={themeSlug}
+      />
+
+      {/* Newsletter & Coloring Club */}
+      <NewsletterBox isEn={isEn} lang={lang} />
 
       {/* Intellectual Property & Fair-Use Disclaimer */}
       <CharacterIpDisclaimer themeTitle={theme.title} isEn={isEn} lang={lang} />

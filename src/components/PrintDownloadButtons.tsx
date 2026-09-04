@@ -1,27 +1,44 @@
 'use client';
 
-import { useState } from'react';
-import Link from'next/link';
-import PrintPreviewModal from'./PrintPreviewModal';
-import OnlineColoringTool from'./OnlineColoringTool';
-import ReportButton from'./ReportButton';
-import { useColoringBook } from'@/context/ColoringBookContext';
+import { useState } from 'react';
+import Link from 'next/link';
+import PrintPreviewModal from './PrintPreviewModal';
+import OnlineColoringTool from './OnlineColoringTool';
+import ReportButton from './ReportButton';
+import DownloadEmailModal from './DownloadEmailModal';
+import { useColoringBook } from '@/context/ColoringBookContext';
 
 export default function PrintDownloadButtons({
   isEn,
   fileUrl,
-  category ='Unknown',
+  category = 'Unknown',
   colorPageUrl,
+  lang = 'nl',
 }: {
   isEn: boolean;
   fileUrl: string;
   category?: string;
   colorPageUrl?: string;
+  lang?: string;
 }) {
   const [downloading, setDownloading] = useState(false);
   const [downloadingPdf, setDownloadingPdf] = useState(false);
   const [showPreview, setShowPreview] = useState(false);
   const [showColorOnline, setShowColorOnline] = useState(false);
+  const [showEmailModal, setShowEmailModal] = useState(false);
+
+  const checkAndTriggerEmailModal = () => {
+    try {
+      const alreadyJoined = localStorage.getItem('cv_newsletter_joined');
+      const alreadyDismissed = localStorage.getItem('cv_download_modal_dismissed');
+      if (!alreadyJoined && !alreadyDismissed) {
+        // Show after a tiny delay so the browser download/print prompt starts first
+        setTimeout(() => {
+          setShowEmailModal(true);
+        }, 900);
+      }
+    } catch {}
+  };
 
   const { isPageSelected, toggleSelectPage } = useColoringBook();
   const pageSlug = fileUrl.split('/').pop()?.replace(/\.[^.]+$/,'') ||'page';
@@ -31,7 +48,10 @@ export default function PrintDownloadButtons({
   const previewUrl =`/api/proxy-image?url=${encodeURIComponent(fileUrl)}`;
 
   const handlePrintClick = () => setShowPreview(true);
-  const doActualPrint = () => window.print();
+  const doActualPrint = () => {
+    window.print();
+    checkAndTriggerEmailModal();
+  };
 
   // Download High-Res Image with Watermark
   const handleDownload = async (e: React.MouseEvent) => {
@@ -93,6 +113,7 @@ export default function PrintDownloadButtons({
         document.body.removeChild(a);
         URL.revokeObjectURL(url);
         setDownloading(false);
+        checkAndTriggerEmailModal();
       },'image/png');
     } catch (err) {
       console.error('Failed to add watermark, falling back to direct download', err);
@@ -103,6 +124,7 @@ export default function PrintDownloadButtons({
       a.click();
       document.body.removeChild(a);
       setDownloading(false);
+      checkAndTriggerEmailModal();
     }
   };
 
@@ -173,6 +195,7 @@ export default function PrintDownloadButtons({
       const cleanSlug = pageTitle.toLowerCase().replace(/[^a-z0-9]+/g,'-');
       pdf.save(`colorvaults-${cleanSlug}-A4.pdf`);
       setDownloadingPdf(false);
+      checkAndTriggerEmailModal();
     } catch (err) {
       console.error('Failed to generate PDF', err);
       alert(isEn ?'Could not generate PDF, please try downloading image.':'PDF kon niet worden gegenereerd.');
@@ -347,6 +370,15 @@ export default function PrintDownloadButtons({
         isOpen={showColorOnline}
         onClose={() => setShowColorOnline(false)}
         isEn={isEn}
+      />
+
+      {/* Post-Download / Post-Print Email Newsletter Capture Modal */}
+      <DownloadEmailModal
+        isOpen={showEmailModal}
+        onClose={() => setShowEmailModal(false)}
+        lang={lang}
+        isEn={isEn}
+        pageTitle={pageTitle}
       />
 
       <ReportButton imageUrl={fileUrl} category={category} isEn={isEn} variant="button" />
