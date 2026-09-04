@@ -10,8 +10,8 @@ export interface DrawingStep {
 
 export interface HowToDrawLesson {
   slug: string;
-  category:'animals'|'fantasy'|'nature'|'vehicles'|'kids';
-  difficulty:'easy'|'medium';
+  category: 'animals' | 'fantasy' | 'nature' | 'vehicles' | 'kids';
+  difficulty: 'easy' | 'medium';
   timeMinutes: number;
   icon: string;
   titleEn: string;
@@ -25,355 +25,6111 @@ export interface HowToDrawLesson {
 
 export const HOW_TO_DRAW_LESSONS: HowToDrawLesson[] = [
   {
-    slug:'how-to-draw-a-dinosaur',
-    category:'animals',
-    difficulty:'easy',
-    timeMinutes: 10,
-    icon:'',
-    titleEn:'How to Draw a T-Rex Dinosaur',
-    titleNl:'Hoe Teken Je een T-Rex Dinosaurus',
-    descEn:'Learn how to draw a friendly cartoon T-Rex dinosaur in 6 simple, easy-to-follow steps!',
-    descNl:'Leer stap voor stap een stoere en vrolijke T-Rex dinosaurus tekenen in 6 simpele stappen!',
-    relatedHubSlug:'animals-wildlife',
-    relatedThemeSlug:'dinosaur-adventures',
-    steps: [
+    "slug": "how-to-draw-a-dinosaur",
+    "category": "animals",
+    "difficulty": "easy",
+    "timeMinutes": 10,
+    "icon": "🦖",
+    "titleEn": "How to Draw a T-Rex Dinosaur",
+    "titleNl": "Hoe Teken Je een T-Rex Dinosaurus",
+    "descEn": "Learn how to draw a fun, easy t-rex dinosaur step-by-step in 6 simple illustrated stages! Perfect for kids, parents, and classrooms.",
+    "descNl": "Leer stap voor stap een vrolijke t-rex dinosaurus tekenen in 6 simpele, duidelijke stappen! Ideaal voor kinderen, thuis en in de klas.",
+    "relatedHubSlug": "animals-wildlife",
+    "relatedThemeSlug": "dinosaur-adventures",
+    "steps": [
       {
-        stepNumber: 1,
-        titleEn:'Step 1: Head and Body Guidelines',
-        titleNl:'Stap 1: Hoofd- en Lichaamsvormen',
-        instructionEn:'Draw a large oval shape for the body and a rounded egg-like shape above it for the dinosaur head.',
-        instructionNl:'Teken een grote ovale vorm voor het lichaam en een afgeronde ei-vorm erboven voor de dino-kop.',
-        tipEn:'Draw with light pencil lines so you can easily erase them later.',
-        tipNl:'Teken met lichte potloodlijnen zodat je ze later makkelijk kunt uitgummen.'},
-      {
-        stepNumber: 2,
-        titleEn:'Step 2: Connecting Neck and Big Tail',
-        titleNl:'Stap 2: Nek en de Grote Staart',
-        instructionEn:'Connect the head to the body with two curved neck lines, and draw a long, tapering tail pointing upwards at the back.',
-        instructionNl:'Verbind de kop met het lichaam met twee gebogen neklijnen en teken aan de achterkant een lange staart.',
-        tipEn:'Make the tail wide at the base and sharp at the tip.',
-        tipNl:'Maak de staart breed aan het begin en puntig aan het uiteinde.'},
-      {
-        stepNumber: 3,
-        titleEn:'Step 3: Sturdy Legs and Feet',
-        titleNl:'Stap 3: Stevige Poten en Voeten',
-        instructionEn:'Draw two strong, muscular back legs with three rounded claws on each foot to keep your dino standing tall.',
-        instructionNl:'Teken twee sterke achterpoten met aan elke voet drie afgeronde klauwtjes.',
+        "stepNumber": 1,
+        "titleEn": "Step 1: Basic Guidelines for T-Rex Dinosaur",
+        "titleNl": "Stap 1: Basisvormen voor T-Rex Dinosaurus",
+        "instructionEn": "Start by lightly sketching simple oval and circular guide shapes for the body and structure of your t-rex dinosaur.",
+        "instructionNl": "Begin met het zachtjes schetsen van eenvoudige cirkels en ovalen voor het lichaam en de basis van je t-rex dinosaurus.",
+        "tipEn": "Keep your pencil strokes light so they are easy to refine later.",
+        "tipNl": "Druk niet te hard op je potlood zodat je lijntjes straks makkelijk kunt uitgummen."
       },
       {
-        stepNumber: 4,
-        titleEn:'Step 4: Cute Tiny Arms and Eye',
-        titleNl:'Stap 4: Kleine Armpjes en het Oog',
-        instructionEn:'Add the iconic tiny T-Rex arms on the chest with two little fingers each. Draw a big, cheerful circle for the eye with a white reflection dot.',
-        instructionNl:'Teken de bekende kleine T-Rex armpjes op de borst met twee vingertjes. Maak een groot vrolijk oog met een glanspuntje.',
+        "stepNumber": 2,
+        "titleEn": "Step 2: Connecting Contours",
+        "titleNl": "Stap 2: Lijnen Verbinden",
+        "instructionEn": "Connect your initial guidelines with smooth, confident outer curves to give your t-rex dinosaur its true silhouette.",
+        "instructionNl": "Verbind de basisvormen met soepele lijnen om de herkenbare omtrek van je t-rex dinosaurus te vormen.",
+        "tipEn": "Focus on clean flowing lines.",
+        "tipNl": "Let op mooie ronde en vloeiende lijnen."
       },
       {
-        stepNumber: 5,
-        titleEn:'Step 5: Big Smile and Back Spikes',
-        titleNl:'Stap 5: Grote Lach en Stekels',
-        instructionEn:'Draw a happy smiling jawline with small zig-zag teeth. Along the back from head to tail, add small triangle spikes.',
-        instructionNl:'Teken een vrolijke bek met kleine tandjes. Voeg langs de rug tot aan de staart kleine driehoekige stekeltjes toe.',
+        "stepNumber": 3,
+        "titleEn": "Step 3: Key Features & Proportions",
+        "titleNl": "Stap 3: Belangrijkste Details",
+        "instructionEn": "Draw in the primary characteristic features such as limbs, facial outlines, wings, or wheels.",
+        "instructionNl": "Teken de belangrijkste herkenbare onderdelen zoals pootjes, wielen, vleugels of het gezicht."
       },
       {
-        stepNumber: 6,
-        titleEn:'Step 6: Outline & Color!',
-        titleNl:'Stap 6: Omlijnen & Inkleuren!',
-        instructionEn:'Trace your final lines with a black marker, erase your pencil sketch, and color your dinosaur green, blue, or rainbow in our coloring studio!',
-        instructionNl:'Trek de definitieve lijnen over met een zwarte stift, gum het potlood weg en kleur je dinosaurus groen, blauw of paars in!',
+        "stepNumber": 4,
+        "titleEn": "Step 4: Expressive Details & Textures",
+        "titleNl": "Stap 4: Uitdrukking en Textuur",
+        "instructionEn": "Add friendly facial expressions, textures, patterns, and signature accessories to bring your drawing to life.",
+        "instructionNl": "Voeg vrolijke ogen, een lach, patronen en details toe om je tekening echt tot leven te wekken."
+      },
+      {
+        "stepNumber": 5,
+        "titleEn": "Step 5: Refine & Clean Up",
+        "titleNl": "Stap 5: Verfijnen & Gummen",
+        "instructionEn": "Trace over your best lines with a clean, confident darker pencil or marker and erase any overlapping sketch lines.",
+        "instructionNl": "Trek de mooiste lijnen wat donkerder over en gum alle hulplijntjes die je niet meer nodig hebt netjes weg."
+      },
+      {
+        "stepNumber": 6,
+        "titleEn": "Step 6: Final Line Art & Coloring!",
+        "titleNl": "Stap 6: Omlijnen & Inkleuren!",
+        "instructionEn": "Finish your masterpiece! Add crisp black outlines, then grab your pencils, markers, or use our Online Coloring Studio to color it in!",
+        "instructionNl": "Maak je meesterwerk af! Trek strakke zwarte contourlijnen en kleur alles prachtig in met viltstiften, potloden of in onze Online Kleurtool!"
       }
     ]
   },
   {
-    slug:'how-to-draw-a-unicorn',
-    category:'fantasy',
-    difficulty:'easy',
-    timeMinutes: 12,
-    icon:'',
-    titleEn:'How to Draw a Magical Unicorn',
-    titleNl:'Hoe Teken Je een Magische Eenhoorn',
-    descEn:'Follow these 6 simple steps to draw a beautiful, majestic unicorn with a glowing spiral horn and flowing mane.',
-    descNl:'Volg deze 6 simpele stappen om een prachtige eenhoorn met een magische hoorn en golvende manen te tekenen.',
-    relatedHubSlug:'fantasy-fairytales',
-    relatedThemeSlug:'unicorns-pegasus',
-    steps: [
+    "slug": "how-to-draw-a-triceratops",
+    "category": "animals",
+    "difficulty": "easy",
+    "timeMinutes": 10,
+    "icon": "🦕",
+    "titleEn": "How to Draw a Triceratops Dinosaur",
+    "titleNl": "Hoe Teken Je een Triceratops Dinosaurus",
+    "descEn": "Learn how to draw a fun, easy triceratops dinosaur step-by-step in 6 simple illustrated stages! Perfect for kids, parents, and classrooms.",
+    "descNl": "Leer stap voor stap een vrolijke triceratops dinosaurus tekenen in 6 simpele, duidelijke stappen! Ideaal voor kinderen, thuis en in de klas.",
+    "relatedHubSlug": "animals-wildlife",
+    "relatedThemeSlug": "dinosaur-adventures",
+    "steps": [
       {
-        stepNumber: 1,
-        titleEn:'Step 1: Head and Muzzle',
-        titleNl:'Stap 1: Hoofd en Snuit',
-        instructionEn:'Draw a soft rounded muzzle that curves up into the forehead and cheek of the unicorn.',
-        instructionNl:'Teken een zachte afgeronde snuit die omhoog buigt naar het voorhoofd en de wang van de eenhoorn.',
+        "stepNumber": 1,
+        "titleEn": "Step 1: Basic Guidelines for Triceratops Dinosaur",
+        "titleNl": "Stap 1: Basisvormen voor Triceratops Dinosaurus",
+        "instructionEn": "Start by lightly sketching simple oval and circular guide shapes for the body and structure of your triceratops dinosaur.",
+        "instructionNl": "Begin met het zachtjes schetsen van eenvoudige cirkels en ovalen voor het lichaam en de basis van je triceratops dinosaurus.",
+        "tipEn": "Keep your pencil strokes light so they are easy to refine later.",
+        "tipNl": "Druk niet te hard op je potlood zodat je lijntjes straks makkelijk kunt uitgummen."
       },
       {
-        stepNumber: 2,
-        titleEn:'Step 2: The Magic Spiral Horn',
-        titleNl:'Stap 2: De Magische Spiraal Hoorn',
-        instructionEn:'Draw a long, pointy cone shape on the forehead. Add diagonal lines across it to make it look twisted and magical!',
-        instructionNl:'Teken een lange puntige hoorn op het voorhoofd. Voeg schuine lijntjes toe voor een magisch spiraal-effect!',
+        "stepNumber": 2,
+        "titleEn": "Step 2: Connecting Contours",
+        "titleNl": "Stap 2: Lijnen Verbinden",
+        "instructionEn": "Connect your initial guidelines with smooth, confident outer curves to give your triceratops dinosaur its true silhouette.",
+        "instructionNl": "Verbind de basisvormen met soepele lijnen om de herkenbare omtrek van je triceratops dinosaurus te vormen.",
+        "tipEn": "Focus on clean flowing lines.",
+        "tipNl": "Let op mooie ronde en vloeiende lijnen."
       },
       {
-        stepNumber: 3,
-        titleEn:'Step 3: Gentle Eye and Ears',
-        titleNl:'Stap 3: Vriendelijk Oog en Oortjes',
-        instructionEn:'Draw two pointed horse ears next to the horn, and a large sparkling eye with cute long eyelashes.',
-        instructionNl:'Teken twee spitse oortjes naast de hoorn en een groot glanzend oog met lange wimpers.',
+        "stepNumber": 3,
+        "titleEn": "Step 3: Key Features & Proportions",
+        "titleNl": "Stap 3: Belangrijkste Details",
+        "instructionEn": "Draw in the primary characteristic features such as limbs, facial outlines, wings, or wheels.",
+        "instructionNl": "Teken de belangrijkste herkenbare onderdelen zoals pootjes, wielen, vleugels of het gezicht."
       },
       {
-        stepNumber: 4,
-        titleEn:'Step 4: Flowing Rainbow Mane',
-        titleNl:'Stap 4: Golvende Manen',
-        instructionEn:'Draw wavy, ribbon-like hair locks cascading down the neck in lush layers.',
-        instructionNl:'Teken golvende lokken haar die sierlijk langs de hals naar beneden vallen.',
+        "stepNumber": 4,
+        "titleEn": "Step 4: Expressive Details & Textures",
+        "titleNl": "Stap 4: Uitdrukking en Textuur",
+        "instructionEn": "Add friendly facial expressions, textures, patterns, and signature accessories to bring your drawing to life.",
+        "instructionNl": "Voeg vrolijke ogen, een lach, patronen en details toe om je tekening echt tot leven te wekken."
       },
       {
-        stepNumber: 5,
-        titleEn:'Step 5: Slender Body and Hooves',
-        titleNl:'Stap 5: Slank Lichaam en Hoefjes',
-        instructionEn:'Draw the graceful back curve, four slender legs with small hooves, and a fluffy cloud-like tail.',
-        instructionNl:'Teken de sierlijke rug, vier slanke beentjes met hoefjes en een weelderige staart.',
+        "stepNumber": 5,
+        "titleEn": "Step 5: Refine & Clean Up",
+        "titleNl": "Stap 5: Verfijnen & Gummen",
+        "instructionEn": "Trace over your best lines with a clean, confident darker pencil or marker and erase any overlapping sketch lines.",
+        "instructionNl": "Trek de mooiste lijnen wat donkerder over en gum alle hulplijntjes die je niet meer nodig hebt netjes weg."
       },
       {
-        stepNumber: 6,
-        titleEn:'Step 6: Sparkling Details & Color',
-        titleNl:'Stap 6: Glitters & Inkleuren',
-        instructionEn:'Add little stars around your unicorn and color with pastel pinks, purples, blues, and gold!',
-        instructionNl:'Teken kleine fonkelende sterretjes om je eenhoorn heen en kleur hem in met pastelroze, paars en goud!',
+        "stepNumber": 6,
+        "titleEn": "Step 6: Final Line Art & Coloring!",
+        "titleNl": "Stap 6: Omlijnen & Inkleuren!",
+        "instructionEn": "Finish your masterpiece! Add crisp black outlines, then grab your pencils, markers, or use our Online Coloring Studio to color it in!",
+        "instructionNl": "Maak je meesterwerk af! Trek strakke zwarte contourlijnen en kleur alles prachtig in met viltstiften, potloden of in onze Online Kleurtool!"
       }
     ]
   },
   {
-    slug:'how-to-draw-a-puppy',
-    category:'animals',
-    difficulty:'easy',
-    timeMinutes: 8,
-    icon:'',
-    titleEn:'How to Draw a Cute Puppy',
-    titleNl:'Hoe Teken Je een Schattig Hondje',
-    descEn:'A fun and easy drawing guide to sketch an adorable puppy with floppy ears and a wagging tail.',
-    descNl:'Een leuke en makkelijke tekengids om een schattig puppyhondje met flaporen en een kwispelstaart te tekenen.',
-    relatedHubSlug:'animals-wildlife',
-    relatedThemeSlug:'cute-pets-animals',
-    steps: [
+    "slug": "how-to-draw-a-brachiosaurus",
+    "category": "animals",
+    "difficulty": "easy",
+    "timeMinutes": 10,
+    "icon": "🦕",
+    "titleEn": "How to Draw a Brachiosaurus Longneck",
+    "titleNl": "Hoe Teken Je een Brachiosaurus Langnek",
+    "descEn": "Learn how to draw a fun, easy brachiosaurus longneck step-by-step in 6 simple illustrated stages! Perfect for kids, parents, and classrooms.",
+    "descNl": "Leer stap voor stap een vrolijke brachiosaurus langnek tekenen in 6 simpele, duidelijke stappen! Ideaal voor kinderen, thuis en in de klas.",
+    "relatedHubSlug": "animals-wildlife",
+    "relatedThemeSlug": "dinosaur-adventures",
+    "steps": [
       {
-        stepNumber: 1,
-        titleEn:'Step 1: Circle Head and Floppy Ears',
-        titleNl:'Stap 1: Rond Hoofdje en Flaporen',
-        instructionEn:'Start with a round circle for the head, then add two teardrop-shaped floppy ears on both sides.',
-        instructionNl:'Begin met een ronde cirkel voor het hoofd en teken twee hangende druppelvormige flaporen aan de zijkanten.',
+        "stepNumber": 1,
+        "titleEn": "Step 1: Basic Guidelines for Brachiosaurus Longneck",
+        "titleNl": "Stap 1: Basisvormen voor Brachiosaurus Langnek",
+        "instructionEn": "Start by lightly sketching simple oval and circular guide shapes for the body and structure of your brachiosaurus longneck.",
+        "instructionNl": "Begin met het zachtjes schetsen van eenvoudige cirkels en ovalen voor het lichaam en de basis van je brachiosaurus langnek.",
+        "tipEn": "Keep your pencil strokes light so they are easy to refine later.",
+        "tipNl": "Druk niet te hard op je potlood zodat je lijntjes straks makkelijk kunt uitgummen."
       },
       {
-        stepNumber: 2,
-        titleEn:'Step 2: Big Button Nose and Smile',
-        titleNl:'Stap 2: Grote Neusdop en Lach',
-        instructionEn:'In the center of the face, draw a shiny round nose, an anchor-shaped smile, and a cute little tongue sticking out.',
-        instructionNl:'Teken in het midden een glanzend zwart neusje, een anker-vormige lach en een klein uitstekend tongetje.',
+        "stepNumber": 2,
+        "titleEn": "Step 2: Connecting Contours",
+        "titleNl": "Stap 2: Lijnen Verbinden",
+        "instructionEn": "Connect your initial guidelines with smooth, confident outer curves to give your brachiosaurus longneck its true silhouette.",
+        "instructionNl": "Verbind de basisvormen met soepele lijnen om de herkenbare omtrek van je brachiosaurus langnek te vormen.",
+        "tipEn": "Focus on clean flowing lines.",
+        "tipNl": "Let op mooie ronde en vloeiende lijnen."
       },
       {
-        stepNumber: 3,
-        titleEn:'Step 3: Big Puppy Eyes',
-        titleNl:'Stap 3: Grote Puppy-ogen',
-        instructionEn:'Draw two large dark circles with two white highlight circles inside each eye for that irresistible puppy look.',
-        instructionNl:'Teken twee grote donkere ogen met twee witte glanscirkels voor die onweerstaanbare puppy-blik.',
+        "stepNumber": 3,
+        "titleEn": "Step 3: Key Features & Proportions",
+        "titleNl": "Stap 3: Belangrijkste Details",
+        "instructionEn": "Draw in the primary characteristic features such as limbs, facial outlines, wings, or wheels.",
+        "instructionNl": "Teken de belangrijkste herkenbare onderdelen zoals pootjes, wielen, vleugels of het gezicht."
       },
       {
-        stepNumber: 4,
-        titleEn:'Step 4: Sitting Body and Front Paws',
-        titleNl:'Stap 4: Zittend Lichaampje en Voorpootjes',
-        instructionEn:'Draw the body sitting down with two straight front legs and rounded paws with three toe lines.',
-        instructionNl:'Teken het zittende lijfje met twee rechte voorpootjes en afgeronde kussentjes met teentjes.',
+        "stepNumber": 4,
+        "titleEn": "Step 4: Expressive Details & Textures",
+        "titleNl": "Stap 4: Uitdrukking en Textuur",
+        "instructionEn": "Add friendly facial expressions, textures, patterns, and signature accessories to bring your drawing to life.",
+        "instructionNl": "Voeg vrolijke ogen, een lach, patronen en details toe om je tekening echt tot leven te wekken."
       },
       {
-        stepNumber: 5,
-        titleEn:'Step 5: Back Legs and Wagging Tail',
-        titleNl:'Stap 5: Achterpootjes en Kwispelstaart',
-        instructionEn:'Add the curved sitting hind legs on the sides and a perky tail wagging happily in the air.',
-        instructionNl:'Voeg de gebogen zittende achterpoten toe en een vrolijk omhoogstaand kwispelstaartje.',
+        "stepNumber": 5,
+        "titleEn": "Step 5: Refine & Clean Up",
+        "titleNl": "Stap 5: Verfijnen & Gummen",
+        "instructionEn": "Trace over your best lines with a clean, confident darker pencil or marker and erase any overlapping sketch lines.",
+        "instructionNl": "Trek de mooiste lijnen wat donkerder over en gum alle hulplijntjes die je niet meer nodig hebt netjes weg."
       },
       {
-        stepNumber: 6,
-        titleEn:'Step 6: Spots and Color',
-        titleNl:'Stap 6: Vlekjes & Inkleuren',
-        instructionEn:'Add an eye patch or spots on the back, ink with a pen, and color in warm golden brown or dalmatian spots!',
-        instructionNl:'Geef je hondje een oogvlek of stippen op de rug en kleur hem warm bruin, beige of als een dalmatiër in!',
+        "stepNumber": 6,
+        "titleEn": "Step 6: Final Line Art & Coloring!",
+        "titleNl": "Stap 6: Omlijnen & Inkleuren!",
+        "instructionEn": "Finish your masterpiece! Add crisp black outlines, then grab your pencils, markers, or use our Online Coloring Studio to color it in!",
+        "instructionNl": "Maak je meesterwerk af! Trek strakke zwarte contourlijnen en kleur alles prachtig in met viltstiften, potloden of in onze Online Kleurtool!"
       }
     ]
   },
   {
-    slug:'how-to-draw-a-kitty-cat',
-    category:'animals',
-    difficulty:'easy',
-    timeMinutes: 8,
-    icon:'',
-    titleEn:'How to Draw a Cute Kitty Cat',
-    titleNl:'Hoe Teken Je een Lieve Poes',
-    descEn:'Learn how to draw a sweet, purring kitten with triangle ears, whiskers, and big shiny eyes.',
-    descNl:'Leer stap voor stap een schattig katje tekenen met spitse oortjes, snorharen en grote glanzende oogjes.',
-    relatedHubSlug:'animals-wildlife',
-    relatedThemeSlug:'cute-pets-animals',
-    steps: [
+    "slug": "how-to-draw-a-stegosaurus",
+    "category": "animals",
+    "difficulty": "easy",
+    "timeMinutes": 10,
+    "icon": "🦖",
+    "titleEn": "How to Draw a Stegosaurus",
+    "titleNl": "Hoe Teken Je een Stegosaurus",
+    "descEn": "Learn how to draw a fun, easy stegosaurus step-by-step in 6 simple illustrated stages! Perfect for kids, parents, and classrooms.",
+    "descNl": "Leer stap voor stap een vrolijke stegosaurus tekenen in 6 simpele, duidelijke stappen! Ideaal voor kinderen, thuis en in de klas.",
+    "relatedHubSlug": "animals-wildlife",
+    "relatedThemeSlug": "dinosaur-adventures",
+    "steps": [
       {
-        stepNumber: 1,
-        titleEn:'Step 1: Head & Triangle Ears',
-        titleNl:'Stap 1: Hoofdje & Driehoekige Oortjes',
-        instructionEn:'Draw a slightly squished circle for the head and two pointy triangle ears on top.',
-        instructionNl:'Teken een licht afgeplat rondje voor het hoofdje met twee spitse driehoekige oortjes erbovenop.',
+        "stepNumber": 1,
+        "titleEn": "Step 1: Basic Guidelines for Stegosaurus",
+        "titleNl": "Stap 1: Basisvormen voor Stegosaurus",
+        "instructionEn": "Start by lightly sketching simple oval and circular guide shapes for the body and structure of your stegosaurus.",
+        "instructionNl": "Begin met het zachtjes schetsen van eenvoudige cirkels en ovalen voor het lichaam en de basis van je stegosaurus.",
+        "tipEn": "Keep your pencil strokes light so they are easy to refine later.",
+        "tipNl": "Druk niet te hard op je potlood zodat je lijntjes straks makkelijk kunt uitgummen."
       },
       {
-        stepNumber: 2,
-        titleEn:'Step 2: Sweet Cat Face',
-        titleNl:'Stap 2: Lief Kattengezichtje',
-        instructionEn:'Draw a small triangle nose, a"w"-shaped smiling mouth, and 3 long whiskers on each cheek.',
-        instructionNl:'Teken een klein driehoekig neusje, een"w"-vormig mondje en aan elke kant 3 lange snorharen.',
+        "stepNumber": 2,
+        "titleEn": "Step 2: Connecting Contours",
+        "titleNl": "Stap 2: Lijnen Verbinden",
+        "instructionEn": "Connect your initial guidelines with smooth, confident outer curves to give your stegosaurus its true silhouette.",
+        "instructionNl": "Verbind de basisvormen met soepele lijnen om de herkenbare omtrek van je stegosaurus te vormen.",
+        "tipEn": "Focus on clean flowing lines.",
+        "tipNl": "Let op mooie ronde en vloeiende lijnen."
       },
       {
-        stepNumber: 3,
-        titleEn:'Step 3: Almond Eyes',
-        titleNl:'Stap 3: Grote Kattenogen',
-        instructionEn:'Draw two big sparkling almond eyes with vertical cat pupils and shiny white highlights.',
-        instructionNl:'Teken twee grote amandelvormige ogen met een verticale pupil en glanspuntjes.',
+        "stepNumber": 3,
+        "titleEn": "Step 3: Key Features & Proportions",
+        "titleNl": "Stap 3: Belangrijkste Details",
+        "instructionEn": "Draw in the primary characteristic features such as limbs, facial outlines, wings, or wheels.",
+        "instructionNl": "Teken de belangrijkste herkenbare onderdelen zoals pootjes, wielen, vleugels of het gezicht."
       },
       {
-        stepNumber: 4,
-        titleEn:'Step 4: Curved Body & Paws',
-        titleNl:'Stap 4: Zittend Lichaam & Pootjes',
-        instructionEn:'Draw the curved chest and two neat little front paws tucked together in front.',
-        instructionNl:'Teken het zachte borstje en twee nette voorpootjes die netjes naast elkaar staan.',
+        "stepNumber": 4,
+        "titleEn": "Step 4: Expressive Details & Textures",
+        "titleNl": "Stap 4: Uitdrukking en Textuur",
+        "instructionEn": "Add friendly facial expressions, textures, patterns, and signature accessories to bring your drawing to life.",
+        "instructionNl": "Voeg vrolijke ogen, een lach, patronen en details toe om je tekening echt tot leven te wekken."
       },
       {
-        stepNumber: 5,
-        titleEn:'Step 5: Curved Tail',
-        titleNl:'Stap 5: Sierlijke Kattenstaart',
-        instructionEn:'Draw a smooth, elegant S-curved tail wrapping around the kitten’s side.',
-        instructionNl:'Teken een sierlijke, gebogen staart die gezellig om het lijfje heen krult.',
+        "stepNumber": 5,
+        "titleEn": "Step 5: Refine & Clean Up",
+        "titleNl": "Stap 5: Verfijnen & Gummen",
+        "instructionEn": "Trace over your best lines with a clean, confident darker pencil or marker and erase any overlapping sketch lines.",
+        "instructionNl": "Trek de mooiste lijnen wat donkerder over en gum alle hulplijntjes die je niet meer nodig hebt netjes weg."
       },
       {
-        stepNumber: 6,
-        titleEn:'Step 6: Stripes & Color',
-        titleNl:'Stap 6: Streepjes & Inkleuren',
-        instructionEn:'Add tiger stripes or calico patches, and color with soft orange, grey, or black and white!',
-        instructionNl:'Voeg cypers-streepjes of vlekjes toe en kleur je katje oranje, grijs, wit of zwart in!',
+        "stepNumber": 6,
+        "titleEn": "Step 6: Final Line Art & Coloring!",
+        "titleNl": "Stap 6: Omlijnen & Inkleuren!",
+        "instructionEn": "Finish your masterpiece! Add crisp black outlines, then grab your pencils, markers, or use our Online Coloring Studio to color it in!",
+        "instructionNl": "Maak je meesterwerk af! Trek strakke zwarte contourlijnen en kleur alles prachtig in met viltstiften, potloden of in onze Online Kleurtool!"
       }
     ]
   },
   {
-    slug:'how-to-draw-a-butterfly',
-    category:'nature',
-    difficulty:'easy',
-    timeMinutes: 10,
-    icon:'🦋',
-    titleEn:'How to Draw a Beautiful Butterfly',
-    titleNl:'Hoe Teken Je een Prachtige Vlinder',
-    descEn:'Create symmetrical, ornate butterfly wings with simple geometric curves and beautiful patterns.',
-    descNl:'Teken een symmetrische, sierlijke vlinder met prachtige vleugelpatronen en voelsprieten.',
-    relatedHubSlug:'animals-wildlife',
-    relatedThemeSlug:'insects-bugs',
-    steps: [
+    "slug": "how-to-draw-a-pterodactyl",
+    "category": "animals",
+    "difficulty": "easy",
+    "timeMinutes": 10,
+    "icon": "🦅",
+    "titleEn": "How to Draw a Pterodactyl Flying Dino",
+    "titleNl": "Hoe Teken Je een Pterodactylus Vliegdino",
+    "descEn": "Learn how to draw a fun, easy pterodactyl flying dino step-by-step in 6 simple illustrated stages! Perfect for kids, parents, and classrooms.",
+    "descNl": "Leer stap voor stap een vrolijke pterodactylus vliegdino tekenen in 6 simpele, duidelijke stappen! Ideaal voor kinderen, thuis en in de klas.",
+    "relatedHubSlug": "animals-wildlife",
+    "relatedThemeSlug": "dinosaur-adventures",
+    "steps": [
       {
-        stepNumber: 1,
-        titleEn:'Step 1: The Slender Body',
-        titleNl:'Stap 1: Het Slanke Lijfje',
-        instructionEn:'Draw a small circle for the head and a long slender oval below it for the butterfly body.',
-        instructionNl:'Teken een klein rondje voor het kopje en een langwerpig ovaal lijfje eronder.',
+        "stepNumber": 1,
+        "titleEn": "Step 1: Basic Guidelines for Pterodactyl Flying Dino",
+        "titleNl": "Stap 1: Basisvormen voor Pterodactylus Vliegdino",
+        "instructionEn": "Start by lightly sketching simple oval and circular guide shapes for the body and structure of your pterodactyl flying dino.",
+        "instructionNl": "Begin met het zachtjes schetsen van eenvoudige cirkels en ovalen voor het lichaam en de basis van je pterodactylus vliegdino.",
+        "tipEn": "Keep your pencil strokes light so they are easy to refine later.",
+        "tipNl": "Druk niet te hard op je potlood zodat je lijntjes straks makkelijk kunt uitgummen."
       },
       {
-        stepNumber: 2,
-        titleEn:'Step 2: Top Wings',
-        titleNl:'Stap 2: De Bovenste Vleugels',
-        instructionEn:'Draw two large, sweeping heart-shaped curves expanding outward from the shoulders.',
-        instructionNl:'Teken twee grote, zwierige vleugelbogen die vanuit de schouders naar buiten waaieren.',
+        "stepNumber": 2,
+        "titleEn": "Step 2: Connecting Contours",
+        "titleNl": "Stap 2: Lijnen Verbinden",
+        "instructionEn": "Connect your initial guidelines with smooth, confident outer curves to give your pterodactyl flying dino its true silhouette.",
+        "instructionNl": "Verbind de basisvormen met soepele lijnen om de herkenbare omtrek van je pterodactylus vliegdino te vormen.",
+        "tipEn": "Focus on clean flowing lines.",
+        "tipNl": "Let op mooie ronde en vloeiende lijnen."
       },
       {
-        stepNumber: 3,
-        titleEn:'Step 3: Bottom Wings',
-        titleNl:'Stap 3: De Onderste Vleugels',
-        instructionEn:'Draw two slightly smaller teardrop-shaped lower wings beneath the top wings.',
-        instructionNl:'Teken twee iets kleinere, ronde ondervleugels direct onder de bovenste vleugels.',
+        "stepNumber": 3,
+        "titleEn": "Step 3: Key Features & Proportions",
+        "titleNl": "Stap 3: Belangrijkste Details",
+        "instructionEn": "Draw in the primary characteristic features such as limbs, facial outlines, wings, or wheels.",
+        "instructionNl": "Teken de belangrijkste herkenbare onderdelen zoals pootjes, wielen, vleugels of het gezicht."
       },
       {
-        stepNumber: 4,
-        titleEn:'Step 4: Antennae & Eyes',
-        titleNl:'Stap 4: Voelsprieten & Oogjes',
-        instructionEn:'Add two graceful curved antennae on top of the head with small spiral tips.',
-        instructionNl:'Voeg twee sierlijke gekrulde voelsprieten toe op het kopje met kleine krulletjes.',
+        "stepNumber": 4,
+        "titleEn": "Step 4: Expressive Details & Textures",
+        "titleNl": "Stap 4: Uitdrukking en Textuur",
+        "instructionEn": "Add friendly facial expressions, textures, patterns, and signature accessories to bring your drawing to life.",
+        "instructionNl": "Voeg vrolijke ogen, een lach, patronen en details toe om je tekening echt tot leven te wekken."
       },
       {
-        stepNumber: 5,
-        titleEn:'Step 5: Wing Patterns & Spots',
-        titleNl:'Stap 5: Vleugelpatronen & Cirkels',
-        instructionEn:'Draw circles, teardrops, and stained-glass veins inside the wings for vibrant detail.',
-        instructionNl:'Teken cirkels, druppelvormen en adertjes binnenin de vleugels voor een betoverend patroon.',
+        "stepNumber": 5,
+        "titleEn": "Step 5: Refine & Clean Up",
+        "titleNl": "Stap 5: Verfijnen & Gummen",
+        "instructionEn": "Trace over your best lines with a clean, confident darker pencil or marker and erase any overlapping sketch lines.",
+        "instructionNl": "Trek de mooiste lijnen wat donkerder over en gum alle hulplijntjes die je niet meer nodig hebt netjes weg."
       },
       {
-        stepNumber: 6,
-        titleEn:'Step 6: Rainbow Color Explosion',
-        titleNl:'Stap 6: Regenboog Inkleuren',
-        instructionEn:'Color with brilliant turquoise, magenta, yellow, and deep purple gradients!',
-        instructionNl:'Kleur je vlinder in met fel turquoise, roze, goudgeel en diep paars!',
+        "stepNumber": 6,
+        "titleEn": "Step 6: Final Line Art & Coloring!",
+        "titleNl": "Stap 6: Omlijnen & Inkleuren!",
+        "instructionEn": "Finish your masterpiece! Add crisp black outlines, then grab your pencils, markers, or use our Online Coloring Studio to color it in!",
+        "instructionNl": "Maak je meesterwerk af! Trek strakke zwarte contourlijnen en kleur alles prachtig in met viltstiften, potloden of in onze Online Kleurtool!"
       }
     ]
   },
   {
-    slug:'how-to-draw-a-space-rocket',
-    category:'vehicles',
-    difficulty:'easy',
-    timeMinutes: 10,
-    icon:'',
-    titleEn:'How to Draw a Space Rocket',
-    titleNl:'Hoe Teken Je een Ruimteschip',
-    descEn:'Blast off into space by drawing a cool rocket ship with flame thrusters and astronaut windows!',
-    descNl:'Vlieg de ruimte in door een stoere raket te tekenen met vlammen en een rond astronautenraam!',
-    relatedHubSlug:'vehicles-transportation',
-    relatedThemeSlug:'spacecraft-rockets',
-    steps: [
+    "slug": "how-to-draw-a-puppy",
+    "category": "animals",
+    "difficulty": "easy",
+    "timeMinutes": 8,
+    "icon": "🐶",
+    "titleEn": "How to Draw a Cute Puppy Dog",
+    "titleNl": "Hoe Teken Je een Schattige Puppy Hond",
+    "descEn": "Learn how to draw a fun, easy cute puppy dog step-by-step in 6 simple illustrated stages! Perfect for kids, parents, and classrooms.",
+    "descNl": "Leer stap voor stap een vrolijke schattige puppy hond tekenen in 6 simpele, duidelijke stappen! Ideaal voor kinderen, thuis en in de klas.",
+    "relatedHubSlug": "animals-wildlife",
+    "relatedThemeSlug": "cute-pets-animals",
+    "steps": [
       {
-        stepNumber: 1,
-        titleEn:'Step 1: The Fuselage Cone',
-        titleNl:'Stap 1: De Raketromp',
-        instructionEn:'Draw a tall bullet-shaped curve that comes to a sharp point at the top nosecone.',
-        instructionNl:'Teken een lange kogelvormige romp die bovenaan eindigt in een spitse neus.',
+        "stepNumber": 1,
+        "titleEn": "Step 1: Basic Guidelines for Cute Puppy Dog",
+        "titleNl": "Stap 1: Basisvormen voor Schattige Puppy Hond",
+        "instructionEn": "Start by lightly sketching simple oval and circular guide shapes for the body and structure of your cute puppy dog.",
+        "instructionNl": "Begin met het zachtjes schetsen van eenvoudige cirkels en ovalen voor het lichaam en de basis van je schattige puppy hond.",
+        "tipEn": "Keep your pencil strokes light so they are easy to refine later.",
+        "tipNl": "Druk niet te hard op je potlood zodat je lijntjes straks makkelijk kunt uitgummen."
       },
       {
-        stepNumber: 2,
-        titleEn:'Step 2: Porthole Window',
-        titleNl:'Stap 2: Rond Patrijspoort Raam',
-        instructionEn:'Draw a large double-circle in the upper center of the rocket for the astronaut viewing window.',
-        instructionNl:'Teken een grote dubbele cirkel in het midden van de raket voor het astronautenraam.',
+        "stepNumber": 2,
+        "titleEn": "Step 2: Connecting Contours",
+        "titleNl": "Stap 2: Lijnen Verbinden",
+        "instructionEn": "Connect your initial guidelines with smooth, confident outer curves to give your cute puppy dog its true silhouette.",
+        "instructionNl": "Verbind de basisvormen met soepele lijnen om de herkenbare omtrek van je schattige puppy hond te vormen.",
+        "tipEn": "Focus on clean flowing lines.",
+        "tipNl": "Let op mooie ronde en vloeiende lijnen."
       },
       {
-        stepNumber: 3,
-        titleEn:'Step 3: Rocket Fins',
-        titleNl:'Stap 3: Vleugels & Vinnen',
-        instructionEn:'Add two sharp aerodynamic booster fins on the left and right sides of the base, and one in the center.',
-        instructionNl:'Teken twee scherpe vleugelvinnen aan de zijkanten van de raket en een vin in het midden.',
+        "stepNumber": 3,
+        "titleEn": "Step 3: Key Features & Proportions",
+        "titleNl": "Stap 3: Belangrijkste Details",
+        "instructionEn": "Draw in the primary characteristic features such as limbs, facial outlines, wings, or wheels.",
+        "instructionNl": "Teken de belangrijkste herkenbare onderdelen zoals pootjes, wielen, vleugels of het gezicht."
       },
       {
-        stepNumber: 4,
-        titleEn:'Step 4: Exhaust Engine Nozzle',
-        titleNl:'Stap 4: Uitlaat & Motor',
-        instructionEn:'Draw a trapezoid exhaust cone attached to the bottom of the fuselage.',
-        instructionNl:'Teken de motoruitlaat aan de onderkant van de raketromp.',
+        "stepNumber": 4,
+        "titleEn": "Step 4: Expressive Details & Textures",
+        "titleNl": "Stap 4: Uitdrukking en Textuur",
+        "instructionEn": "Add friendly facial expressions, textures, patterns, and signature accessories to bring your drawing to life.",
+        "instructionNl": "Voeg vrolijke ogen, een lach, patronen en details toe om je tekening echt tot leven te wekken."
       },
       {
-        stepNumber: 5,
-        titleEn:'Step 5: Blazing Rocket Flames',
-        titleNl:'Stap 5: Vlammenzee',
-        instructionEn:'Draw dynamic zig-zag fire and smoke clouds bursting out from the engine.',
-        instructionNl:'Teken felle puntige vlammen en rookwolken die onderuit de motor schieten.',
+        "stepNumber": 5,
+        "titleEn": "Step 5: Refine & Clean Up",
+        "titleNl": "Stap 5: Verfijnen & Gummen",
+        "instructionEn": "Trace over your best lines with a clean, confident darker pencil or marker and erase any overlapping sketch lines.",
+        "instructionNl": "Trek de mooiste lijnen wat donkerder over en gum alle hulplijntjes die je niet meer nodig hebt netjes weg."
       },
       {
-        stepNumber: 6,
-        titleEn:'Step 6: Stars and Planets',
-        titleNl:'Stap 6: Sterren & Planeten',
-        instructionEn:'Add planets, twinkling stars, and color your rocket shiny silver, bright red, and neon orange!',
-        instructionNl:'Teken planeten en sterren om je raket heen en kleur hem in met zilver, vlammend rood en oranje!',
+        "stepNumber": 6,
+        "titleEn": "Step 6: Final Line Art & Coloring!",
+        "titleNl": "Stap 6: Omlijnen & Inkleuren!",
+        "instructionEn": "Finish your masterpiece! Add crisp black outlines, then grab your pencils, markers, or use our Online Coloring Studio to color it in!",
+        "instructionNl": "Maak je meesterwerk af! Trek strakke zwarte contourlijnen en kleur alles prachtig in met viltstiften, potloden of in onze Online Kleurtool!"
+      }
+    ]
+  },
+  {
+    "slug": "how-to-draw-a-kitten",
+    "category": "animals",
+    "difficulty": "easy",
+    "timeMinutes": 8,
+    "icon": "🐱",
+    "titleEn": "How to Draw a Playful Kitten",
+    "titleNl": "Hoe Teken Je een Speels Katje",
+    "descEn": "Learn how to draw a fun, easy playful kitten step-by-step in 6 simple illustrated stages! Perfect for kids, parents, and classrooms.",
+    "descNl": "Leer stap voor stap een vrolijke speels katje tekenen in 6 simpele, duidelijke stappen! Ideaal voor kinderen, thuis en in de klas.",
+    "relatedHubSlug": "animals-wildlife",
+    "relatedThemeSlug": "cute-pets-animals",
+    "steps": [
+      {
+        "stepNumber": 1,
+        "titleEn": "Step 1: Basic Guidelines for Playful Kitten",
+        "titleNl": "Stap 1: Basisvormen voor Speels Katje",
+        "instructionEn": "Start by lightly sketching simple oval and circular guide shapes for the body and structure of your playful kitten.",
+        "instructionNl": "Begin met het zachtjes schetsen van eenvoudige cirkels en ovalen voor het lichaam en de basis van je speels katje.",
+        "tipEn": "Keep your pencil strokes light so they are easy to refine later.",
+        "tipNl": "Druk niet te hard op je potlood zodat je lijntjes straks makkelijk kunt uitgummen."
+      },
+      {
+        "stepNumber": 2,
+        "titleEn": "Step 2: Connecting Contours",
+        "titleNl": "Stap 2: Lijnen Verbinden",
+        "instructionEn": "Connect your initial guidelines with smooth, confident outer curves to give your playful kitten its true silhouette.",
+        "instructionNl": "Verbind de basisvormen met soepele lijnen om de herkenbare omtrek van je speels katje te vormen.",
+        "tipEn": "Focus on clean flowing lines.",
+        "tipNl": "Let op mooie ronde en vloeiende lijnen."
+      },
+      {
+        "stepNumber": 3,
+        "titleEn": "Step 3: Key Features & Proportions",
+        "titleNl": "Stap 3: Belangrijkste Details",
+        "instructionEn": "Draw in the primary characteristic features such as limbs, facial outlines, wings, or wheels.",
+        "instructionNl": "Teken de belangrijkste herkenbare onderdelen zoals pootjes, wielen, vleugels of het gezicht."
+      },
+      {
+        "stepNumber": 4,
+        "titleEn": "Step 4: Expressive Details & Textures",
+        "titleNl": "Stap 4: Uitdrukking en Textuur",
+        "instructionEn": "Add friendly facial expressions, textures, patterns, and signature accessories to bring your drawing to life.",
+        "instructionNl": "Voeg vrolijke ogen, een lach, patronen en details toe om je tekening echt tot leven te wekken."
+      },
+      {
+        "stepNumber": 5,
+        "titleEn": "Step 5: Refine & Clean Up",
+        "titleNl": "Stap 5: Verfijnen & Gummen",
+        "instructionEn": "Trace over your best lines with a clean, confident darker pencil or marker and erase any overlapping sketch lines.",
+        "instructionNl": "Trek de mooiste lijnen wat donkerder over en gum alle hulplijntjes die je niet meer nodig hebt netjes weg."
+      },
+      {
+        "stepNumber": 6,
+        "titleEn": "Step 6: Final Line Art & Coloring!",
+        "titleNl": "Stap 6: Omlijnen & Inkleuren!",
+        "instructionEn": "Finish your masterpiece! Add crisp black outlines, then grab your pencils, markers, or use our Online Coloring Studio to color it in!",
+        "instructionNl": "Maak je meesterwerk af! Trek strakke zwarte contourlijnen en kleur alles prachtig in met viltstiften, potloden of in onze Online Kleurtool!"
+      }
+    ]
+  },
+  {
+    "slug": "how-to-draw-a-bunny",
+    "category": "animals",
+    "difficulty": "easy",
+    "timeMinutes": 8,
+    "icon": "🐰",
+    "titleEn": "How to Draw a Fluffy Bunny Rabbit",
+    "titleNl": "Hoe Teken Je een Pluizig Konijntje",
+    "descEn": "Learn how to draw a fun, easy fluffy bunny rabbit step-by-step in 6 simple illustrated stages! Perfect for kids, parents, and classrooms.",
+    "descNl": "Leer stap voor stap een vrolijke pluizig konijntje tekenen in 6 simpele, duidelijke stappen! Ideaal voor kinderen, thuis en in de klas.",
+    "relatedHubSlug": "animals-wildlife",
+    "relatedThemeSlug": "cute-pets-animals",
+    "steps": [
+      {
+        "stepNumber": 1,
+        "titleEn": "Step 1: Basic Guidelines for Fluffy Bunny Rabbit",
+        "titleNl": "Stap 1: Basisvormen voor Pluizig Konijntje",
+        "instructionEn": "Start by lightly sketching simple oval and circular guide shapes for the body and structure of your fluffy bunny rabbit.",
+        "instructionNl": "Begin met het zachtjes schetsen van eenvoudige cirkels en ovalen voor het lichaam en de basis van je pluizig konijntje.",
+        "tipEn": "Keep your pencil strokes light so they are easy to refine later.",
+        "tipNl": "Druk niet te hard op je potlood zodat je lijntjes straks makkelijk kunt uitgummen."
+      },
+      {
+        "stepNumber": 2,
+        "titleEn": "Step 2: Connecting Contours",
+        "titleNl": "Stap 2: Lijnen Verbinden",
+        "instructionEn": "Connect your initial guidelines with smooth, confident outer curves to give your fluffy bunny rabbit its true silhouette.",
+        "instructionNl": "Verbind de basisvormen met soepele lijnen om de herkenbare omtrek van je pluizig konijntje te vormen.",
+        "tipEn": "Focus on clean flowing lines.",
+        "tipNl": "Let op mooie ronde en vloeiende lijnen."
+      },
+      {
+        "stepNumber": 3,
+        "titleEn": "Step 3: Key Features & Proportions",
+        "titleNl": "Stap 3: Belangrijkste Details",
+        "instructionEn": "Draw in the primary characteristic features such as limbs, facial outlines, wings, or wheels.",
+        "instructionNl": "Teken de belangrijkste herkenbare onderdelen zoals pootjes, wielen, vleugels of het gezicht."
+      },
+      {
+        "stepNumber": 4,
+        "titleEn": "Step 4: Expressive Details & Textures",
+        "titleNl": "Stap 4: Uitdrukking en Textuur",
+        "instructionEn": "Add friendly facial expressions, textures, patterns, and signature accessories to bring your drawing to life.",
+        "instructionNl": "Voeg vrolijke ogen, een lach, patronen en details toe om je tekening echt tot leven te wekken."
+      },
+      {
+        "stepNumber": 5,
+        "titleEn": "Step 5: Refine & Clean Up",
+        "titleNl": "Stap 5: Verfijnen & Gummen",
+        "instructionEn": "Trace over your best lines with a clean, confident darker pencil or marker and erase any overlapping sketch lines.",
+        "instructionNl": "Trek de mooiste lijnen wat donkerder over en gum alle hulplijntjes die je niet meer nodig hebt netjes weg."
+      },
+      {
+        "stepNumber": 6,
+        "titleEn": "Step 6: Final Line Art & Coloring!",
+        "titleNl": "Stap 6: Omlijnen & Inkleuren!",
+        "instructionEn": "Finish your masterpiece! Add crisp black outlines, then grab your pencils, markers, or use our Online Coloring Studio to color it in!",
+        "instructionNl": "Maak je meesterwerk af! Trek strakke zwarte contourlijnen en kleur alles prachtig in met viltstiften, potloden of in onze Online Kleurtool!"
+      }
+    ]
+  },
+  {
+    "slug": "how-to-draw-a-lion",
+    "category": "animals",
+    "difficulty": "medium",
+    "timeMinutes": 12,
+    "icon": "🦁",
+    "titleEn": "How to Draw a Majestic Lion King",
+    "titleNl": "Hoe Teken Je een Koninklijke Leeuw",
+    "descEn": "Learn how to draw a fun, easy majestic lion king step-by-step in 6 simple illustrated stages! Perfect for kids, parents, and classrooms.",
+    "descNl": "Leer stap voor stap een vrolijke koninklijke leeuw tekenen in 6 simpele, duidelijke stappen! Ideaal voor kinderen, thuis en in de klas.",
+    "relatedHubSlug": "animals-wildlife",
+    "relatedThemeSlug": "safari-jungle",
+    "steps": [
+      {
+        "stepNumber": 1,
+        "titleEn": "Step 1: Basic Guidelines for Majestic Lion King",
+        "titleNl": "Stap 1: Basisvormen voor Koninklijke Leeuw",
+        "instructionEn": "Start by lightly sketching simple oval and circular guide shapes for the body and structure of your majestic lion king.",
+        "instructionNl": "Begin met het zachtjes schetsen van eenvoudige cirkels en ovalen voor het lichaam en de basis van je koninklijke leeuw.",
+        "tipEn": "Keep your pencil strokes light so they are easy to refine later.",
+        "tipNl": "Druk niet te hard op je potlood zodat je lijntjes straks makkelijk kunt uitgummen."
+      },
+      {
+        "stepNumber": 2,
+        "titleEn": "Step 2: Connecting Contours",
+        "titleNl": "Stap 2: Lijnen Verbinden",
+        "instructionEn": "Connect your initial guidelines with smooth, confident outer curves to give your majestic lion king its true silhouette.",
+        "instructionNl": "Verbind de basisvormen met soepele lijnen om de herkenbare omtrek van je koninklijke leeuw te vormen.",
+        "tipEn": "Focus on clean flowing lines.",
+        "tipNl": "Let op mooie ronde en vloeiende lijnen."
+      },
+      {
+        "stepNumber": 3,
+        "titleEn": "Step 3: Key Features & Proportions",
+        "titleNl": "Stap 3: Belangrijkste Details",
+        "instructionEn": "Draw in the primary characteristic features such as limbs, facial outlines, wings, or wheels.",
+        "instructionNl": "Teken de belangrijkste herkenbare onderdelen zoals pootjes, wielen, vleugels of het gezicht."
+      },
+      {
+        "stepNumber": 4,
+        "titleEn": "Step 4: Expressive Details & Textures",
+        "titleNl": "Stap 4: Uitdrukking en Textuur",
+        "instructionEn": "Add friendly facial expressions, textures, patterns, and signature accessories to bring your drawing to life.",
+        "instructionNl": "Voeg vrolijke ogen, een lach, patronen en details toe om je tekening echt tot leven te wekken."
+      },
+      {
+        "stepNumber": 5,
+        "titleEn": "Step 5: Refine & Clean Up",
+        "titleNl": "Stap 5: Verfijnen & Gummen",
+        "instructionEn": "Trace over your best lines with a clean, confident darker pencil or marker and erase any overlapping sketch lines.",
+        "instructionNl": "Trek de mooiste lijnen wat donkerder over en gum alle hulplijntjes die je niet meer nodig hebt netjes weg."
+      },
+      {
+        "stepNumber": 6,
+        "titleEn": "Step 6: Final Line Art & Coloring!",
+        "titleNl": "Stap 6: Omlijnen & Inkleuren!",
+        "instructionEn": "Finish your masterpiece! Add crisp black outlines, then grab your pencils, markers, or use our Online Coloring Studio to color it in!",
+        "instructionNl": "Maak je meesterwerk af! Trek strakke zwarte contourlijnen en kleur alles prachtig in met viltstiften, potloden of in onze Online Kleurtool!"
+      }
+    ]
+  },
+  {
+    "slug": "how-to-draw-an-elephant",
+    "category": "animals",
+    "difficulty": "easy",
+    "timeMinutes": 10,
+    "icon": "🐘",
+    "titleEn": "How to Draw a Baby Elephant",
+    "titleNl": "Hoe Teken Je een Baby Olifantje",
+    "descEn": "Learn how to draw a fun, easy baby elephant step-by-step in 6 simple illustrated stages! Perfect for kids, parents, and classrooms.",
+    "descNl": "Leer stap voor stap een vrolijke baby olifantje tekenen in 6 simpele, duidelijke stappen! Ideaal voor kinderen, thuis en in de klas.",
+    "relatedHubSlug": "animals-wildlife",
+    "relatedThemeSlug": "safari-jungle",
+    "steps": [
+      {
+        "stepNumber": 1,
+        "titleEn": "Step 1: Basic Guidelines for Baby Elephant",
+        "titleNl": "Stap 1: Basisvormen voor Baby Olifantje",
+        "instructionEn": "Start by lightly sketching simple oval and circular guide shapes for the body and structure of your baby elephant.",
+        "instructionNl": "Begin met het zachtjes schetsen van eenvoudige cirkels en ovalen voor het lichaam en de basis van je baby olifantje.",
+        "tipEn": "Keep your pencil strokes light so they are easy to refine later.",
+        "tipNl": "Druk niet te hard op je potlood zodat je lijntjes straks makkelijk kunt uitgummen."
+      },
+      {
+        "stepNumber": 2,
+        "titleEn": "Step 2: Connecting Contours",
+        "titleNl": "Stap 2: Lijnen Verbinden",
+        "instructionEn": "Connect your initial guidelines with smooth, confident outer curves to give your baby elephant its true silhouette.",
+        "instructionNl": "Verbind de basisvormen met soepele lijnen om de herkenbare omtrek van je baby olifantje te vormen.",
+        "tipEn": "Focus on clean flowing lines.",
+        "tipNl": "Let op mooie ronde en vloeiende lijnen."
+      },
+      {
+        "stepNumber": 3,
+        "titleEn": "Step 3: Key Features & Proportions",
+        "titleNl": "Stap 3: Belangrijkste Details",
+        "instructionEn": "Draw in the primary characteristic features such as limbs, facial outlines, wings, or wheels.",
+        "instructionNl": "Teken de belangrijkste herkenbare onderdelen zoals pootjes, wielen, vleugels of het gezicht."
+      },
+      {
+        "stepNumber": 4,
+        "titleEn": "Step 4: Expressive Details & Textures",
+        "titleNl": "Stap 4: Uitdrukking en Textuur",
+        "instructionEn": "Add friendly facial expressions, textures, patterns, and signature accessories to bring your drawing to life.",
+        "instructionNl": "Voeg vrolijke ogen, een lach, patronen en details toe om je tekening echt tot leven te wekken."
+      },
+      {
+        "stepNumber": 5,
+        "titleEn": "Step 5: Refine & Clean Up",
+        "titleNl": "Stap 5: Verfijnen & Gummen",
+        "instructionEn": "Trace over your best lines with a clean, confident darker pencil or marker and erase any overlapping sketch lines.",
+        "instructionNl": "Trek de mooiste lijnen wat donkerder over en gum alle hulplijntjes die je niet meer nodig hebt netjes weg."
+      },
+      {
+        "stepNumber": 6,
+        "titleEn": "Step 6: Final Line Art & Coloring!",
+        "titleNl": "Stap 6: Omlijnen & Inkleuren!",
+        "instructionEn": "Finish your masterpiece! Add crisp black outlines, then grab your pencils, markers, or use our Online Coloring Studio to color it in!",
+        "instructionNl": "Maak je meesterwerk af! Trek strakke zwarte contourlijnen en kleur alles prachtig in met viltstiften, potloden of in onze Online Kleurtool!"
+      }
+    ]
+  },
+  {
+    "slug": "how-to-draw-a-giraffe",
+    "category": "animals",
+    "difficulty": "easy",
+    "timeMinutes": 10,
+    "icon": "🦒",
+    "titleEn": "How to Draw a Tall Giraffe",
+    "titleNl": "Hoe Teken Je een Lange Giraf",
+    "descEn": "Learn how to draw a fun, easy tall giraffe step-by-step in 6 simple illustrated stages! Perfect for kids, parents, and classrooms.",
+    "descNl": "Leer stap voor stap een vrolijke lange giraf tekenen in 6 simpele, duidelijke stappen! Ideaal voor kinderen, thuis en in de klas.",
+    "relatedHubSlug": "animals-wildlife",
+    "relatedThemeSlug": "safari-jungle",
+    "steps": [
+      {
+        "stepNumber": 1,
+        "titleEn": "Step 1: Basic Guidelines for Tall Giraffe",
+        "titleNl": "Stap 1: Basisvormen voor Lange Giraf",
+        "instructionEn": "Start by lightly sketching simple oval and circular guide shapes for the body and structure of your tall giraffe.",
+        "instructionNl": "Begin met het zachtjes schetsen van eenvoudige cirkels en ovalen voor het lichaam en de basis van je lange giraf.",
+        "tipEn": "Keep your pencil strokes light so they are easy to refine later.",
+        "tipNl": "Druk niet te hard op je potlood zodat je lijntjes straks makkelijk kunt uitgummen."
+      },
+      {
+        "stepNumber": 2,
+        "titleEn": "Step 2: Connecting Contours",
+        "titleNl": "Stap 2: Lijnen Verbinden",
+        "instructionEn": "Connect your initial guidelines with smooth, confident outer curves to give your tall giraffe its true silhouette.",
+        "instructionNl": "Verbind de basisvormen met soepele lijnen om de herkenbare omtrek van je lange giraf te vormen.",
+        "tipEn": "Focus on clean flowing lines.",
+        "tipNl": "Let op mooie ronde en vloeiende lijnen."
+      },
+      {
+        "stepNumber": 3,
+        "titleEn": "Step 3: Key Features & Proportions",
+        "titleNl": "Stap 3: Belangrijkste Details",
+        "instructionEn": "Draw in the primary characteristic features such as limbs, facial outlines, wings, or wheels.",
+        "instructionNl": "Teken de belangrijkste herkenbare onderdelen zoals pootjes, wielen, vleugels of het gezicht."
+      },
+      {
+        "stepNumber": 4,
+        "titleEn": "Step 4: Expressive Details & Textures",
+        "titleNl": "Stap 4: Uitdrukking en Textuur",
+        "instructionEn": "Add friendly facial expressions, textures, patterns, and signature accessories to bring your drawing to life.",
+        "instructionNl": "Voeg vrolijke ogen, een lach, patronen en details toe om je tekening echt tot leven te wekken."
+      },
+      {
+        "stepNumber": 5,
+        "titleEn": "Step 5: Refine & Clean Up",
+        "titleNl": "Stap 5: Verfijnen & Gummen",
+        "instructionEn": "Trace over your best lines with a clean, confident darker pencil or marker and erase any overlapping sketch lines.",
+        "instructionNl": "Trek de mooiste lijnen wat donkerder over en gum alle hulplijntjes die je niet meer nodig hebt netjes weg."
+      },
+      {
+        "stepNumber": 6,
+        "titleEn": "Step 6: Final Line Art & Coloring!",
+        "titleNl": "Stap 6: Omlijnen & Inkleuren!",
+        "instructionEn": "Finish your masterpiece! Add crisp black outlines, then grab your pencils, markers, or use our Online Coloring Studio to color it in!",
+        "instructionNl": "Maak je meesterwerk af! Trek strakke zwarte contourlijnen en kleur alles prachtig in met viltstiften, potloden of in onze Online Kleurtool!"
+      }
+    ]
+  },
+  {
+    "slug": "how-to-draw-a-panda",
+    "category": "animals",
+    "difficulty": "easy",
+    "timeMinutes": 10,
+    "icon": "🐼",
+    "titleEn": "How to Draw a Giant Panda Bear",
+    "titleNl": "Hoe Teken Je een Reuze Pandabeer",
+    "descEn": "Learn how to draw a fun, easy giant panda bear step-by-step in 6 simple illustrated stages! Perfect for kids, parents, and classrooms.",
+    "descNl": "Leer stap voor stap een vrolijke reuze pandabeer tekenen in 6 simpele, duidelijke stappen! Ideaal voor kinderen, thuis en in de klas.",
+    "relatedHubSlug": "animals-wildlife",
+    "relatedThemeSlug": "cute-pets-animals",
+    "steps": [
+      {
+        "stepNumber": 1,
+        "titleEn": "Step 1: Basic Guidelines for Giant Panda Bear",
+        "titleNl": "Stap 1: Basisvormen voor Reuze Pandabeer",
+        "instructionEn": "Start by lightly sketching simple oval and circular guide shapes for the body and structure of your giant panda bear.",
+        "instructionNl": "Begin met het zachtjes schetsen van eenvoudige cirkels en ovalen voor het lichaam en de basis van je reuze pandabeer.",
+        "tipEn": "Keep your pencil strokes light so they are easy to refine later.",
+        "tipNl": "Druk niet te hard op je potlood zodat je lijntjes straks makkelijk kunt uitgummen."
+      },
+      {
+        "stepNumber": 2,
+        "titleEn": "Step 2: Connecting Contours",
+        "titleNl": "Stap 2: Lijnen Verbinden",
+        "instructionEn": "Connect your initial guidelines with smooth, confident outer curves to give your giant panda bear its true silhouette.",
+        "instructionNl": "Verbind de basisvormen met soepele lijnen om de herkenbare omtrek van je reuze pandabeer te vormen.",
+        "tipEn": "Focus on clean flowing lines.",
+        "tipNl": "Let op mooie ronde en vloeiende lijnen."
+      },
+      {
+        "stepNumber": 3,
+        "titleEn": "Step 3: Key Features & Proportions",
+        "titleNl": "Stap 3: Belangrijkste Details",
+        "instructionEn": "Draw in the primary characteristic features such as limbs, facial outlines, wings, or wheels.",
+        "instructionNl": "Teken de belangrijkste herkenbare onderdelen zoals pootjes, wielen, vleugels of het gezicht."
+      },
+      {
+        "stepNumber": 4,
+        "titleEn": "Step 4: Expressive Details & Textures",
+        "titleNl": "Stap 4: Uitdrukking en Textuur",
+        "instructionEn": "Add friendly facial expressions, textures, patterns, and signature accessories to bring your drawing to life.",
+        "instructionNl": "Voeg vrolijke ogen, een lach, patronen en details toe om je tekening echt tot leven te wekken."
+      },
+      {
+        "stepNumber": 5,
+        "titleEn": "Step 5: Refine & Clean Up",
+        "titleNl": "Stap 5: Verfijnen & Gummen",
+        "instructionEn": "Trace over your best lines with a clean, confident darker pencil or marker and erase any overlapping sketch lines.",
+        "instructionNl": "Trek de mooiste lijnen wat donkerder over en gum alle hulplijntjes die je niet meer nodig hebt netjes weg."
+      },
+      {
+        "stepNumber": 6,
+        "titleEn": "Step 6: Final Line Art & Coloring!",
+        "titleNl": "Stap 6: Omlijnen & Inkleuren!",
+        "instructionEn": "Finish your masterpiece! Add crisp black outlines, then grab your pencils, markers, or use our Online Coloring Studio to color it in!",
+        "instructionNl": "Maak je meesterwerk af! Trek strakke zwarte contourlijnen en kleur alles prachtig in met viltstiften, potloden of in onze Online Kleurtool!"
+      }
+    ]
+  },
+  {
+    "slug": "how-to-draw-a-dolphin",
+    "category": "animals",
+    "difficulty": "easy",
+    "timeMinutes": 10,
+    "icon": "🐬",
+    "titleEn": "How to Draw a Leaping Dolphin",
+    "titleNl": "Hoe Teken Je een Springende Dolfijn",
+    "descEn": "Learn how to draw a fun, easy leaping dolphin step-by-step in 6 simple illustrated stages! Perfect for kids, parents, and classrooms.",
+    "descNl": "Leer stap voor stap een vrolijke springende dolfijn tekenen in 6 simpele, duidelijke stappen! Ideaal voor kinderen, thuis en in de klas.",
+    "relatedHubSlug": "animals-wildlife",
+    "relatedThemeSlug": "ocean-sea-creatures",
+    "steps": [
+      {
+        "stepNumber": 1,
+        "titleEn": "Step 1: Basic Guidelines for Leaping Dolphin",
+        "titleNl": "Stap 1: Basisvormen voor Springende Dolfijn",
+        "instructionEn": "Start by lightly sketching simple oval and circular guide shapes for the body and structure of your leaping dolphin.",
+        "instructionNl": "Begin met het zachtjes schetsen van eenvoudige cirkels en ovalen voor het lichaam en de basis van je springende dolfijn.",
+        "tipEn": "Keep your pencil strokes light so they are easy to refine later.",
+        "tipNl": "Druk niet te hard op je potlood zodat je lijntjes straks makkelijk kunt uitgummen."
+      },
+      {
+        "stepNumber": 2,
+        "titleEn": "Step 2: Connecting Contours",
+        "titleNl": "Stap 2: Lijnen Verbinden",
+        "instructionEn": "Connect your initial guidelines with smooth, confident outer curves to give your leaping dolphin its true silhouette.",
+        "instructionNl": "Verbind de basisvormen met soepele lijnen om de herkenbare omtrek van je springende dolfijn te vormen.",
+        "tipEn": "Focus on clean flowing lines.",
+        "tipNl": "Let op mooie ronde en vloeiende lijnen."
+      },
+      {
+        "stepNumber": 3,
+        "titleEn": "Step 3: Key Features & Proportions",
+        "titleNl": "Stap 3: Belangrijkste Details",
+        "instructionEn": "Draw in the primary characteristic features such as limbs, facial outlines, wings, or wheels.",
+        "instructionNl": "Teken de belangrijkste herkenbare onderdelen zoals pootjes, wielen, vleugels of het gezicht."
+      },
+      {
+        "stepNumber": 4,
+        "titleEn": "Step 4: Expressive Details & Textures",
+        "titleNl": "Stap 4: Uitdrukking en Textuur",
+        "instructionEn": "Add friendly facial expressions, textures, patterns, and signature accessories to bring your drawing to life.",
+        "instructionNl": "Voeg vrolijke ogen, een lach, patronen en details toe om je tekening echt tot leven te wekken."
+      },
+      {
+        "stepNumber": 5,
+        "titleEn": "Step 5: Refine & Clean Up",
+        "titleNl": "Stap 5: Verfijnen & Gummen",
+        "instructionEn": "Trace over your best lines with a clean, confident darker pencil or marker and erase any overlapping sketch lines.",
+        "instructionNl": "Trek de mooiste lijnen wat donkerder over en gum alle hulplijntjes die je niet meer nodig hebt netjes weg."
+      },
+      {
+        "stepNumber": 6,
+        "titleEn": "Step 6: Final Line Art & Coloring!",
+        "titleNl": "Stap 6: Omlijnen & Inkleuren!",
+        "instructionEn": "Finish your masterpiece! Add crisp black outlines, then grab your pencils, markers, or use our Online Coloring Studio to color it in!",
+        "instructionNl": "Maak je meesterwerk af! Trek strakke zwarte contourlijnen en kleur alles prachtig in met viltstiften, potloden of in onze Online Kleurtool!"
+      }
+    ]
+  },
+  {
+    "slug": "how-to-draw-a-sea-turtle",
+    "category": "animals",
+    "difficulty": "easy",
+    "timeMinutes": 10,
+    "icon": "🐢",
+    "titleEn": "How to Draw a Sea Turtle",
+    "titleNl": "Hoe Teken Je een Zeeschildpad",
+    "descEn": "Learn how to draw a fun, easy sea turtle step-by-step in 6 simple illustrated stages! Perfect for kids, parents, and classrooms.",
+    "descNl": "Leer stap voor stap een vrolijke zeeschildpad tekenen in 6 simpele, duidelijke stappen! Ideaal voor kinderen, thuis en in de klas.",
+    "relatedHubSlug": "animals-wildlife",
+    "relatedThemeSlug": "ocean-sea-creatures",
+    "steps": [
+      {
+        "stepNumber": 1,
+        "titleEn": "Step 1: Basic Guidelines for Sea Turtle",
+        "titleNl": "Stap 1: Basisvormen voor Zeeschildpad",
+        "instructionEn": "Start by lightly sketching simple oval and circular guide shapes for the body and structure of your sea turtle.",
+        "instructionNl": "Begin met het zachtjes schetsen van eenvoudige cirkels en ovalen voor het lichaam en de basis van je zeeschildpad.",
+        "tipEn": "Keep your pencil strokes light so they are easy to refine later.",
+        "tipNl": "Druk niet te hard op je potlood zodat je lijntjes straks makkelijk kunt uitgummen."
+      },
+      {
+        "stepNumber": 2,
+        "titleEn": "Step 2: Connecting Contours",
+        "titleNl": "Stap 2: Lijnen Verbinden",
+        "instructionEn": "Connect your initial guidelines with smooth, confident outer curves to give your sea turtle its true silhouette.",
+        "instructionNl": "Verbind de basisvormen met soepele lijnen om de herkenbare omtrek van je zeeschildpad te vormen.",
+        "tipEn": "Focus on clean flowing lines.",
+        "tipNl": "Let op mooie ronde en vloeiende lijnen."
+      },
+      {
+        "stepNumber": 3,
+        "titleEn": "Step 3: Key Features & Proportions",
+        "titleNl": "Stap 3: Belangrijkste Details",
+        "instructionEn": "Draw in the primary characteristic features such as limbs, facial outlines, wings, or wheels.",
+        "instructionNl": "Teken de belangrijkste herkenbare onderdelen zoals pootjes, wielen, vleugels of het gezicht."
+      },
+      {
+        "stepNumber": 4,
+        "titleEn": "Step 4: Expressive Details & Textures",
+        "titleNl": "Stap 4: Uitdrukking en Textuur",
+        "instructionEn": "Add friendly facial expressions, textures, patterns, and signature accessories to bring your drawing to life.",
+        "instructionNl": "Voeg vrolijke ogen, een lach, patronen en details toe om je tekening echt tot leven te wekken."
+      },
+      {
+        "stepNumber": 5,
+        "titleEn": "Step 5: Refine & Clean Up",
+        "titleNl": "Stap 5: Verfijnen & Gummen",
+        "instructionEn": "Trace over your best lines with a clean, confident darker pencil or marker and erase any overlapping sketch lines.",
+        "instructionNl": "Trek de mooiste lijnen wat donkerder over en gum alle hulplijntjes die je niet meer nodig hebt netjes weg."
+      },
+      {
+        "stepNumber": 6,
+        "titleEn": "Step 6: Final Line Art & Coloring!",
+        "titleNl": "Stap 6: Omlijnen & Inkleuren!",
+        "instructionEn": "Finish your masterpiece! Add crisp black outlines, then grab your pencils, markers, or use our Online Coloring Studio to color it in!",
+        "instructionNl": "Maak je meesterwerk af! Trek strakke zwarte contourlijnen en kleur alles prachtig in met viltstiften, potloden of in onze Online Kleurtool!"
+      }
+    ]
+  },
+  {
+    "slug": "how-to-draw-a-shark",
+    "category": "animals",
+    "difficulty": "medium",
+    "timeMinutes": 12,
+    "icon": "🦈",
+    "titleEn": "How to Draw a Great White Shark",
+    "titleNl": "Hoe Teken Je een Witte Haai",
+    "descEn": "Learn how to draw a fun, easy great white shark step-by-step in 6 simple illustrated stages! Perfect for kids, parents, and classrooms.",
+    "descNl": "Leer stap voor stap een vrolijke witte haai tekenen in 6 simpele, duidelijke stappen! Ideaal voor kinderen, thuis en in de klas.",
+    "relatedHubSlug": "animals-wildlife",
+    "relatedThemeSlug": "ocean-sea-creatures",
+    "steps": [
+      {
+        "stepNumber": 1,
+        "titleEn": "Step 1: Basic Guidelines for Great White Shark",
+        "titleNl": "Stap 1: Basisvormen voor Witte Haai",
+        "instructionEn": "Start by lightly sketching simple oval and circular guide shapes for the body and structure of your great white shark.",
+        "instructionNl": "Begin met het zachtjes schetsen van eenvoudige cirkels en ovalen voor het lichaam en de basis van je witte haai.",
+        "tipEn": "Keep your pencil strokes light so they are easy to refine later.",
+        "tipNl": "Druk niet te hard op je potlood zodat je lijntjes straks makkelijk kunt uitgummen."
+      },
+      {
+        "stepNumber": 2,
+        "titleEn": "Step 2: Connecting Contours",
+        "titleNl": "Stap 2: Lijnen Verbinden",
+        "instructionEn": "Connect your initial guidelines with smooth, confident outer curves to give your great white shark its true silhouette.",
+        "instructionNl": "Verbind de basisvormen met soepele lijnen om de herkenbare omtrek van je witte haai te vormen.",
+        "tipEn": "Focus on clean flowing lines.",
+        "tipNl": "Let op mooie ronde en vloeiende lijnen."
+      },
+      {
+        "stepNumber": 3,
+        "titleEn": "Step 3: Key Features & Proportions",
+        "titleNl": "Stap 3: Belangrijkste Details",
+        "instructionEn": "Draw in the primary characteristic features such as limbs, facial outlines, wings, or wheels.",
+        "instructionNl": "Teken de belangrijkste herkenbare onderdelen zoals pootjes, wielen, vleugels of het gezicht."
+      },
+      {
+        "stepNumber": 4,
+        "titleEn": "Step 4: Expressive Details & Textures",
+        "titleNl": "Stap 4: Uitdrukking en Textuur",
+        "instructionEn": "Add friendly facial expressions, textures, patterns, and signature accessories to bring your drawing to life.",
+        "instructionNl": "Voeg vrolijke ogen, een lach, patronen en details toe om je tekening echt tot leven te wekken."
+      },
+      {
+        "stepNumber": 5,
+        "titleEn": "Step 5: Refine & Clean Up",
+        "titleNl": "Stap 5: Verfijnen & Gummen",
+        "instructionEn": "Trace over your best lines with a clean, confident darker pencil or marker and erase any overlapping sketch lines.",
+        "instructionNl": "Trek de mooiste lijnen wat donkerder over en gum alle hulplijntjes die je niet meer nodig hebt netjes weg."
+      },
+      {
+        "stepNumber": 6,
+        "titleEn": "Step 6: Final Line Art & Coloring!",
+        "titleNl": "Stap 6: Omlijnen & Inkleuren!",
+        "instructionEn": "Finish your masterpiece! Add crisp black outlines, then grab your pencils, markers, or use our Online Coloring Studio to color it in!",
+        "instructionNl": "Maak je meesterwerk af! Trek strakke zwarte contourlijnen en kleur alles prachtig in met viltstiften, potloden of in onze Online Kleurtool!"
+      }
+    ]
+  },
+  {
+    "slug": "how-to-draw-an-owl",
+    "category": "animals",
+    "difficulty": "easy",
+    "timeMinutes": 10,
+    "icon": "🦉",
+    "titleEn": "How to Draw a Wise Forest Owl",
+    "titleNl": "Hoe Teken Je een Wijze Bosuil",
+    "descEn": "Learn how to draw a fun, easy wise forest owl step-by-step in 6 simple illustrated stages! Perfect for kids, parents, and classrooms.",
+    "descNl": "Leer stap voor stap een vrolijke wijze bosuil tekenen in 6 simpele, duidelijke stappen! Ideaal voor kinderen, thuis en in de klas.",
+    "relatedHubSlug": "animals-wildlife",
+    "relatedThemeSlug": "birds-insects",
+    "steps": [
+      {
+        "stepNumber": 1,
+        "titleEn": "Step 1: Basic Guidelines for Wise Forest Owl",
+        "titleNl": "Stap 1: Basisvormen voor Wijze Bosuil",
+        "instructionEn": "Start by lightly sketching simple oval and circular guide shapes for the body and structure of your wise forest owl.",
+        "instructionNl": "Begin met het zachtjes schetsen van eenvoudige cirkels en ovalen voor het lichaam en de basis van je wijze bosuil.",
+        "tipEn": "Keep your pencil strokes light so they are easy to refine later.",
+        "tipNl": "Druk niet te hard op je potlood zodat je lijntjes straks makkelijk kunt uitgummen."
+      },
+      {
+        "stepNumber": 2,
+        "titleEn": "Step 2: Connecting Contours",
+        "titleNl": "Stap 2: Lijnen Verbinden",
+        "instructionEn": "Connect your initial guidelines with smooth, confident outer curves to give your wise forest owl its true silhouette.",
+        "instructionNl": "Verbind de basisvormen met soepele lijnen om de herkenbare omtrek van je wijze bosuil te vormen.",
+        "tipEn": "Focus on clean flowing lines.",
+        "tipNl": "Let op mooie ronde en vloeiende lijnen."
+      },
+      {
+        "stepNumber": 3,
+        "titleEn": "Step 3: Key Features & Proportions",
+        "titleNl": "Stap 3: Belangrijkste Details",
+        "instructionEn": "Draw in the primary characteristic features such as limbs, facial outlines, wings, or wheels.",
+        "instructionNl": "Teken de belangrijkste herkenbare onderdelen zoals pootjes, wielen, vleugels of het gezicht."
+      },
+      {
+        "stepNumber": 4,
+        "titleEn": "Step 4: Expressive Details & Textures",
+        "titleNl": "Stap 4: Uitdrukking en Textuur",
+        "instructionEn": "Add friendly facial expressions, textures, patterns, and signature accessories to bring your drawing to life.",
+        "instructionNl": "Voeg vrolijke ogen, een lach, patronen en details toe om je tekening echt tot leven te wekken."
+      },
+      {
+        "stepNumber": 5,
+        "titleEn": "Step 5: Refine & Clean Up",
+        "titleNl": "Stap 5: Verfijnen & Gummen",
+        "instructionEn": "Trace over your best lines with a clean, confident darker pencil or marker and erase any overlapping sketch lines.",
+        "instructionNl": "Trek de mooiste lijnen wat donkerder over en gum alle hulplijntjes die je niet meer nodig hebt netjes weg."
+      },
+      {
+        "stepNumber": 6,
+        "titleEn": "Step 6: Final Line Art & Coloring!",
+        "titleNl": "Stap 6: Omlijnen & Inkleuren!",
+        "instructionEn": "Finish your masterpiece! Add crisp black outlines, then grab your pencils, markers, or use our Online Coloring Studio to color it in!",
+        "instructionNl": "Maak je meesterwerk af! Trek strakke zwarte contourlijnen en kleur alles prachtig in met viltstiften, potloden of in onze Online Kleurtool!"
+      }
+    ]
+  },
+  {
+    "slug": "how-to-draw-a-fox",
+    "category": "animals",
+    "difficulty": "easy",
+    "timeMinutes": 10,
+    "icon": "🦊",
+    "titleEn": "How to Draw a Clever Red Fox",
+    "titleNl": "Hoe Teken Je een Slimme Rode Vos",
+    "descEn": "Learn how to draw a fun, easy clever red fox step-by-step in 6 simple illustrated stages! Perfect for kids, parents, and classrooms.",
+    "descNl": "Leer stap voor stap een vrolijke slimme rode vos tekenen in 6 simpele, duidelijke stappen! Ideaal voor kinderen, thuis en in de klas.",
+    "relatedHubSlug": "animals-wildlife",
+    "relatedThemeSlug": "forest-woodland",
+    "steps": [
+      {
+        "stepNumber": 1,
+        "titleEn": "Step 1: Basic Guidelines for Clever Red Fox",
+        "titleNl": "Stap 1: Basisvormen voor Slimme Rode Vos",
+        "instructionEn": "Start by lightly sketching simple oval and circular guide shapes for the body and structure of your clever red fox.",
+        "instructionNl": "Begin met het zachtjes schetsen van eenvoudige cirkels en ovalen voor het lichaam en de basis van je slimme rode vos.",
+        "tipEn": "Keep your pencil strokes light so they are easy to refine later.",
+        "tipNl": "Druk niet te hard op je potlood zodat je lijntjes straks makkelijk kunt uitgummen."
+      },
+      {
+        "stepNumber": 2,
+        "titleEn": "Step 2: Connecting Contours",
+        "titleNl": "Stap 2: Lijnen Verbinden",
+        "instructionEn": "Connect your initial guidelines with smooth, confident outer curves to give your clever red fox its true silhouette.",
+        "instructionNl": "Verbind de basisvormen met soepele lijnen om de herkenbare omtrek van je slimme rode vos te vormen.",
+        "tipEn": "Focus on clean flowing lines.",
+        "tipNl": "Let op mooie ronde en vloeiende lijnen."
+      },
+      {
+        "stepNumber": 3,
+        "titleEn": "Step 3: Key Features & Proportions",
+        "titleNl": "Stap 3: Belangrijkste Details",
+        "instructionEn": "Draw in the primary characteristic features such as limbs, facial outlines, wings, or wheels.",
+        "instructionNl": "Teken de belangrijkste herkenbare onderdelen zoals pootjes, wielen, vleugels of het gezicht."
+      },
+      {
+        "stepNumber": 4,
+        "titleEn": "Step 4: Expressive Details & Textures",
+        "titleNl": "Stap 4: Uitdrukking en Textuur",
+        "instructionEn": "Add friendly facial expressions, textures, patterns, and signature accessories to bring your drawing to life.",
+        "instructionNl": "Voeg vrolijke ogen, een lach, patronen en details toe om je tekening echt tot leven te wekken."
+      },
+      {
+        "stepNumber": 5,
+        "titleEn": "Step 5: Refine & Clean Up",
+        "titleNl": "Stap 5: Verfijnen & Gummen",
+        "instructionEn": "Trace over your best lines with a clean, confident darker pencil or marker and erase any overlapping sketch lines.",
+        "instructionNl": "Trek de mooiste lijnen wat donkerder over en gum alle hulplijntjes die je niet meer nodig hebt netjes weg."
+      },
+      {
+        "stepNumber": 6,
+        "titleEn": "Step 6: Final Line Art & Coloring!",
+        "titleNl": "Stap 6: Omlijnen & Inkleuren!",
+        "instructionEn": "Finish your masterpiece! Add crisp black outlines, then grab your pencils, markers, or use our Online Coloring Studio to color it in!",
+        "instructionNl": "Maak je meesterwerk af! Trek strakke zwarte contourlijnen en kleur alles prachtig in met viltstiften, potloden of in onze Online Kleurtool!"
+      }
+    ]
+  },
+  {
+    "slug": "how-to-draw-a-bear",
+    "category": "animals",
+    "difficulty": "easy",
+    "timeMinutes": 10,
+    "icon": "🐻",
+    "titleEn": "How to Draw a Grizzly Bear",
+    "titleNl": "Hoe Teken Je een Grizzlybeer",
+    "descEn": "Learn how to draw a fun, easy grizzly bear step-by-step in 6 simple illustrated stages! Perfect for kids, parents, and classrooms.",
+    "descNl": "Leer stap voor stap een vrolijke grizzlybeer tekenen in 6 simpele, duidelijke stappen! Ideaal voor kinderen, thuis en in de klas.",
+    "relatedHubSlug": "animals-wildlife",
+    "relatedThemeSlug": "forest-woodland",
+    "steps": [
+      {
+        "stepNumber": 1,
+        "titleEn": "Step 1: Basic Guidelines for Grizzly Bear",
+        "titleNl": "Stap 1: Basisvormen voor Grizzlybeer",
+        "instructionEn": "Start by lightly sketching simple oval and circular guide shapes for the body and structure of your grizzly bear.",
+        "instructionNl": "Begin met het zachtjes schetsen van eenvoudige cirkels en ovalen voor het lichaam en de basis van je grizzlybeer.",
+        "tipEn": "Keep your pencil strokes light so they are easy to refine later.",
+        "tipNl": "Druk niet te hard op je potlood zodat je lijntjes straks makkelijk kunt uitgummen."
+      },
+      {
+        "stepNumber": 2,
+        "titleEn": "Step 2: Connecting Contours",
+        "titleNl": "Stap 2: Lijnen Verbinden",
+        "instructionEn": "Connect your initial guidelines with smooth, confident outer curves to give your grizzly bear its true silhouette.",
+        "instructionNl": "Verbind de basisvormen met soepele lijnen om de herkenbare omtrek van je grizzlybeer te vormen.",
+        "tipEn": "Focus on clean flowing lines.",
+        "tipNl": "Let op mooie ronde en vloeiende lijnen."
+      },
+      {
+        "stepNumber": 3,
+        "titleEn": "Step 3: Key Features & Proportions",
+        "titleNl": "Stap 3: Belangrijkste Details",
+        "instructionEn": "Draw in the primary characteristic features such as limbs, facial outlines, wings, or wheels.",
+        "instructionNl": "Teken de belangrijkste herkenbare onderdelen zoals pootjes, wielen, vleugels of het gezicht."
+      },
+      {
+        "stepNumber": 4,
+        "titleEn": "Step 4: Expressive Details & Textures",
+        "titleNl": "Stap 4: Uitdrukking en Textuur",
+        "instructionEn": "Add friendly facial expressions, textures, patterns, and signature accessories to bring your drawing to life.",
+        "instructionNl": "Voeg vrolijke ogen, een lach, patronen en details toe om je tekening echt tot leven te wekken."
+      },
+      {
+        "stepNumber": 5,
+        "titleEn": "Step 5: Refine & Clean Up",
+        "titleNl": "Stap 5: Verfijnen & Gummen",
+        "instructionEn": "Trace over your best lines with a clean, confident darker pencil or marker and erase any overlapping sketch lines.",
+        "instructionNl": "Trek de mooiste lijnen wat donkerder over en gum alle hulplijntjes die je niet meer nodig hebt netjes weg."
+      },
+      {
+        "stepNumber": 6,
+        "titleEn": "Step 6: Final Line Art & Coloring!",
+        "titleNl": "Stap 6: Omlijnen & Inkleuren!",
+        "instructionEn": "Finish your masterpiece! Add crisp black outlines, then grab your pencils, markers, or use our Online Coloring Studio to color it in!",
+        "instructionNl": "Maak je meesterwerk af! Trek strakke zwarte contourlijnen en kleur alles prachtig in met viltstiften, potloden of in onze Online Kleurtool!"
+      }
+    ]
+  },
+  {
+    "slug": "how-to-draw-a-frog",
+    "category": "animals",
+    "difficulty": "easy",
+    "timeMinutes": 8,
+    "icon": "🐸",
+    "titleEn": "How to Draw a Jumping Frog",
+    "titleNl": "Hoe Teken Je een Springende Kikker",
+    "descEn": "Learn how to draw a fun, easy jumping frog step-by-step in 6 simple illustrated stages! Perfect for kids, parents, and classrooms.",
+    "descNl": "Leer stap voor stap een vrolijke springende kikker tekenen in 6 simpele, duidelijke stappen! Ideaal voor kinderen, thuis en in de klas.",
+    "relatedHubSlug": "animals-wildlife",
+    "relatedThemeSlug": "forest-woodland",
+    "steps": [
+      {
+        "stepNumber": 1,
+        "titleEn": "Step 1: Basic Guidelines for Jumping Frog",
+        "titleNl": "Stap 1: Basisvormen voor Springende Kikker",
+        "instructionEn": "Start by lightly sketching simple oval and circular guide shapes for the body and structure of your jumping frog.",
+        "instructionNl": "Begin met het zachtjes schetsen van eenvoudige cirkels en ovalen voor het lichaam en de basis van je springende kikker.",
+        "tipEn": "Keep your pencil strokes light so they are easy to refine later.",
+        "tipNl": "Druk niet te hard op je potlood zodat je lijntjes straks makkelijk kunt uitgummen."
+      },
+      {
+        "stepNumber": 2,
+        "titleEn": "Step 2: Connecting Contours",
+        "titleNl": "Stap 2: Lijnen Verbinden",
+        "instructionEn": "Connect your initial guidelines with smooth, confident outer curves to give your jumping frog its true silhouette.",
+        "instructionNl": "Verbind de basisvormen met soepele lijnen om de herkenbare omtrek van je springende kikker te vormen.",
+        "tipEn": "Focus on clean flowing lines.",
+        "tipNl": "Let op mooie ronde en vloeiende lijnen."
+      },
+      {
+        "stepNumber": 3,
+        "titleEn": "Step 3: Key Features & Proportions",
+        "titleNl": "Stap 3: Belangrijkste Details",
+        "instructionEn": "Draw in the primary characteristic features such as limbs, facial outlines, wings, or wheels.",
+        "instructionNl": "Teken de belangrijkste herkenbare onderdelen zoals pootjes, wielen, vleugels of het gezicht."
+      },
+      {
+        "stepNumber": 4,
+        "titleEn": "Step 4: Expressive Details & Textures",
+        "titleNl": "Stap 4: Uitdrukking en Textuur",
+        "instructionEn": "Add friendly facial expressions, textures, patterns, and signature accessories to bring your drawing to life.",
+        "instructionNl": "Voeg vrolijke ogen, een lach, patronen en details toe om je tekening echt tot leven te wekken."
+      },
+      {
+        "stepNumber": 5,
+        "titleEn": "Step 5: Refine & Clean Up",
+        "titleNl": "Stap 5: Verfijnen & Gummen",
+        "instructionEn": "Trace over your best lines with a clean, confident darker pencil or marker and erase any overlapping sketch lines.",
+        "instructionNl": "Trek de mooiste lijnen wat donkerder over en gum alle hulplijntjes die je niet meer nodig hebt netjes weg."
+      },
+      {
+        "stepNumber": 6,
+        "titleEn": "Step 6: Final Line Art & Coloring!",
+        "titleNl": "Stap 6: Omlijnen & Inkleuren!",
+        "instructionEn": "Finish your masterpiece! Add crisp black outlines, then grab your pencils, markers, or use our Online Coloring Studio to color it in!",
+        "instructionNl": "Maak je meesterwerk af! Trek strakke zwarte contourlijnen en kleur alles prachtig in met viltstiften, potloden of in onze Online Kleurtool!"
+      }
+    ]
+  },
+  {
+    "slug": "how-to-draw-a-horse",
+    "category": "animals",
+    "difficulty": "medium",
+    "timeMinutes": 15,
+    "icon": "🐴",
+    "titleEn": "How to Draw a Galloping Horse",
+    "titleNl": "Hoe Teken Je een Galopperend Paard",
+    "descEn": "Learn how to draw a fun, easy galloping horse step-by-step in 6 simple illustrated stages! Perfect for kids, parents, and classrooms.",
+    "descNl": "Leer stap voor stap een vrolijke galopperend paard tekenen in 6 simpele, duidelijke stappen! Ideaal voor kinderen, thuis en in de klas.",
+    "relatedHubSlug": "animals-wildlife",
+    "relatedThemeSlug": "farm-animals",
+    "steps": [
+      {
+        "stepNumber": 1,
+        "titleEn": "Step 1: Basic Guidelines for Galloping Horse",
+        "titleNl": "Stap 1: Basisvormen voor Galopperend Paard",
+        "instructionEn": "Start by lightly sketching simple oval and circular guide shapes for the body and structure of your galloping horse.",
+        "instructionNl": "Begin met het zachtjes schetsen van eenvoudige cirkels en ovalen voor het lichaam en de basis van je galopperend paard.",
+        "tipEn": "Keep your pencil strokes light so they are easy to refine later.",
+        "tipNl": "Druk niet te hard op je potlood zodat je lijntjes straks makkelijk kunt uitgummen."
+      },
+      {
+        "stepNumber": 2,
+        "titleEn": "Step 2: Connecting Contours",
+        "titleNl": "Stap 2: Lijnen Verbinden",
+        "instructionEn": "Connect your initial guidelines with smooth, confident outer curves to give your galloping horse its true silhouette.",
+        "instructionNl": "Verbind de basisvormen met soepele lijnen om de herkenbare omtrek van je galopperend paard te vormen.",
+        "tipEn": "Focus on clean flowing lines.",
+        "tipNl": "Let op mooie ronde en vloeiende lijnen."
+      },
+      {
+        "stepNumber": 3,
+        "titleEn": "Step 3: Key Features & Proportions",
+        "titleNl": "Stap 3: Belangrijkste Details",
+        "instructionEn": "Draw in the primary characteristic features such as limbs, facial outlines, wings, or wheels.",
+        "instructionNl": "Teken de belangrijkste herkenbare onderdelen zoals pootjes, wielen, vleugels of het gezicht."
+      },
+      {
+        "stepNumber": 4,
+        "titleEn": "Step 4: Expressive Details & Textures",
+        "titleNl": "Stap 4: Uitdrukking en Textuur",
+        "instructionEn": "Add friendly facial expressions, textures, patterns, and signature accessories to bring your drawing to life.",
+        "instructionNl": "Voeg vrolijke ogen, een lach, patronen en details toe om je tekening echt tot leven te wekken."
+      },
+      {
+        "stepNumber": 5,
+        "titleEn": "Step 5: Refine & Clean Up",
+        "titleNl": "Stap 5: Verfijnen & Gummen",
+        "instructionEn": "Trace over your best lines with a clean, confident darker pencil or marker and erase any overlapping sketch lines.",
+        "instructionNl": "Trek de mooiste lijnen wat donkerder over en gum alle hulplijntjes die je niet meer nodig hebt netjes weg."
+      },
+      {
+        "stepNumber": 6,
+        "titleEn": "Step 6: Final Line Art & Coloring!",
+        "titleNl": "Stap 6: Omlijnen & Inkleuren!",
+        "instructionEn": "Finish your masterpiece! Add crisp black outlines, then grab your pencils, markers, or use our Online Coloring Studio to color it in!",
+        "instructionNl": "Maak je meesterwerk af! Trek strakke zwarte contourlijnen en kleur alles prachtig in met viltstiften, potloden of in onze Online Kleurtool!"
+      }
+    ]
+  },
+  {
+    "slug": "how-to-draw-a-koala",
+    "category": "animals",
+    "difficulty": "easy",
+    "timeMinutes": 10,
+    "icon": "🐨",
+    "titleEn": "How to Draw a Sweet Koala",
+    "titleNl": "Hoe Teken Je een Lieve Koala",
+    "descEn": "Learn how to draw a fun, easy sweet koala step-by-step in 6 simple illustrated stages! Perfect for kids, parents, and classrooms.",
+    "descNl": "Leer stap voor stap een vrolijke lieve koala tekenen in 6 simpele, duidelijke stappen! Ideaal voor kinderen, thuis en in de klas.",
+    "relatedHubSlug": "animals-wildlife",
+    "relatedThemeSlug": "cute-pets-animals",
+    "steps": [
+      {
+        "stepNumber": 1,
+        "titleEn": "Step 1: Basic Guidelines for Sweet Koala",
+        "titleNl": "Stap 1: Basisvormen voor Lieve Koala",
+        "instructionEn": "Start by lightly sketching simple oval and circular guide shapes for the body and structure of your sweet koala.",
+        "instructionNl": "Begin met het zachtjes schetsen van eenvoudige cirkels en ovalen voor het lichaam en de basis van je lieve koala.",
+        "tipEn": "Keep your pencil strokes light so they are easy to refine later.",
+        "tipNl": "Druk niet te hard op je potlood zodat je lijntjes straks makkelijk kunt uitgummen."
+      },
+      {
+        "stepNumber": 2,
+        "titleEn": "Step 2: Connecting Contours",
+        "titleNl": "Stap 2: Lijnen Verbinden",
+        "instructionEn": "Connect your initial guidelines with smooth, confident outer curves to give your sweet koala its true silhouette.",
+        "instructionNl": "Verbind de basisvormen met soepele lijnen om de herkenbare omtrek van je lieve koala te vormen.",
+        "tipEn": "Focus on clean flowing lines.",
+        "tipNl": "Let op mooie ronde en vloeiende lijnen."
+      },
+      {
+        "stepNumber": 3,
+        "titleEn": "Step 3: Key Features & Proportions",
+        "titleNl": "Stap 3: Belangrijkste Details",
+        "instructionEn": "Draw in the primary characteristic features such as limbs, facial outlines, wings, or wheels.",
+        "instructionNl": "Teken de belangrijkste herkenbare onderdelen zoals pootjes, wielen, vleugels of het gezicht."
+      },
+      {
+        "stepNumber": 4,
+        "titleEn": "Step 4: Expressive Details & Textures",
+        "titleNl": "Stap 4: Uitdrukking en Textuur",
+        "instructionEn": "Add friendly facial expressions, textures, patterns, and signature accessories to bring your drawing to life.",
+        "instructionNl": "Voeg vrolijke ogen, een lach, patronen en details toe om je tekening echt tot leven te wekken."
+      },
+      {
+        "stepNumber": 5,
+        "titleEn": "Step 5: Refine & Clean Up",
+        "titleNl": "Stap 5: Verfijnen & Gummen",
+        "instructionEn": "Trace over your best lines with a clean, confident darker pencil or marker and erase any overlapping sketch lines.",
+        "instructionNl": "Trek de mooiste lijnen wat donkerder over en gum alle hulplijntjes die je niet meer nodig hebt netjes weg."
+      },
+      {
+        "stepNumber": 6,
+        "titleEn": "Step 6: Final Line Art & Coloring!",
+        "titleNl": "Stap 6: Omlijnen & Inkleuren!",
+        "instructionEn": "Finish your masterpiece! Add crisp black outlines, then grab your pencils, markers, or use our Online Coloring Studio to color it in!",
+        "instructionNl": "Maak je meesterwerk af! Trek strakke zwarte contourlijnen en kleur alles prachtig in met viltstiften, potloden of in onze Online Kleurtool!"
+      }
+    ]
+  },
+  {
+    "slug": "how-to-draw-a-kangaroo",
+    "category": "animals",
+    "difficulty": "medium",
+    "timeMinutes": 12,
+    "icon": "🦘",
+    "titleEn": "How to Draw a Kangaroo with Joey",
+    "titleNl": "Hoe Teken Je een Kangoeroe met Baby",
+    "descEn": "Learn how to draw a fun, easy kangaroo with joey step-by-step in 6 simple illustrated stages! Perfect for kids, parents, and classrooms.",
+    "descNl": "Leer stap voor stap een vrolijke kangoeroe met baby tekenen in 6 simpele, duidelijke stappen! Ideaal voor kinderen, thuis en in de klas.",
+    "relatedHubSlug": "animals-wildlife",
+    "relatedThemeSlug": "safari-jungle",
+    "steps": [
+      {
+        "stepNumber": 1,
+        "titleEn": "Step 1: Basic Guidelines for Kangaroo with Joey",
+        "titleNl": "Stap 1: Basisvormen voor Kangoeroe met Baby",
+        "instructionEn": "Start by lightly sketching simple oval and circular guide shapes for the body and structure of your kangaroo with joey.",
+        "instructionNl": "Begin met het zachtjes schetsen van eenvoudige cirkels en ovalen voor het lichaam en de basis van je kangoeroe met baby.",
+        "tipEn": "Keep your pencil strokes light so they are easy to refine later.",
+        "tipNl": "Druk niet te hard op je potlood zodat je lijntjes straks makkelijk kunt uitgummen."
+      },
+      {
+        "stepNumber": 2,
+        "titleEn": "Step 2: Connecting Contours",
+        "titleNl": "Stap 2: Lijnen Verbinden",
+        "instructionEn": "Connect your initial guidelines with smooth, confident outer curves to give your kangaroo with joey its true silhouette.",
+        "instructionNl": "Verbind de basisvormen met soepele lijnen om de herkenbare omtrek van je kangoeroe met baby te vormen.",
+        "tipEn": "Focus on clean flowing lines.",
+        "tipNl": "Let op mooie ronde en vloeiende lijnen."
+      },
+      {
+        "stepNumber": 3,
+        "titleEn": "Step 3: Key Features & Proportions",
+        "titleNl": "Stap 3: Belangrijkste Details",
+        "instructionEn": "Draw in the primary characteristic features such as limbs, facial outlines, wings, or wheels.",
+        "instructionNl": "Teken de belangrijkste herkenbare onderdelen zoals pootjes, wielen, vleugels of het gezicht."
+      },
+      {
+        "stepNumber": 4,
+        "titleEn": "Step 4: Expressive Details & Textures",
+        "titleNl": "Stap 4: Uitdrukking en Textuur",
+        "instructionEn": "Add friendly facial expressions, textures, patterns, and signature accessories to bring your drawing to life.",
+        "instructionNl": "Voeg vrolijke ogen, een lach, patronen en details toe om je tekening echt tot leven te wekken."
+      },
+      {
+        "stepNumber": 5,
+        "titleEn": "Step 5: Refine & Clean Up",
+        "titleNl": "Stap 5: Verfijnen & Gummen",
+        "instructionEn": "Trace over your best lines with a clean, confident darker pencil or marker and erase any overlapping sketch lines.",
+        "instructionNl": "Trek de mooiste lijnen wat donkerder over en gum alle hulplijntjes die je niet meer nodig hebt netjes weg."
+      },
+      {
+        "stepNumber": 6,
+        "titleEn": "Step 6: Final Line Art & Coloring!",
+        "titleNl": "Stap 6: Omlijnen & Inkleuren!",
+        "instructionEn": "Finish your masterpiece! Add crisp black outlines, then grab your pencils, markers, or use our Online Coloring Studio to color it in!",
+        "instructionNl": "Maak je meesterwerk af! Trek strakke zwarte contourlijnen en kleur alles prachtig in met viltstiften, potloden of in onze Online Kleurtool!"
+      }
+    ]
+  },
+  {
+    "slug": "how-to-draw-a-penguin",
+    "category": "animals",
+    "difficulty": "easy",
+    "timeMinutes": 8,
+    "icon": "🐧",
+    "titleEn": "How to Draw a Emperor Penguin",
+    "titleNl": "Hoe Teken Je een Keizerspinguïn",
+    "descEn": "Learn how to draw a fun, easy emperor penguin step-by-step in 6 simple illustrated stages! Perfect for kids, parents, and classrooms.",
+    "descNl": "Leer stap voor stap een vrolijke keizerspinguïn tekenen in 6 simpele, duidelijke stappen! Ideaal voor kinderen, thuis en in de klas.",
+    "relatedHubSlug": "animals-wildlife",
+    "relatedThemeSlug": "ocean-sea-creatures",
+    "steps": [
+      {
+        "stepNumber": 1,
+        "titleEn": "Step 1: Basic Guidelines for Emperor Penguin",
+        "titleNl": "Stap 1: Basisvormen voor Keizerspinguïn",
+        "instructionEn": "Start by lightly sketching simple oval and circular guide shapes for the body and structure of your emperor penguin.",
+        "instructionNl": "Begin met het zachtjes schetsen van eenvoudige cirkels en ovalen voor het lichaam en de basis van je keizerspinguïn.",
+        "tipEn": "Keep your pencil strokes light so they are easy to refine later.",
+        "tipNl": "Druk niet te hard op je potlood zodat je lijntjes straks makkelijk kunt uitgummen."
+      },
+      {
+        "stepNumber": 2,
+        "titleEn": "Step 2: Connecting Contours",
+        "titleNl": "Stap 2: Lijnen Verbinden",
+        "instructionEn": "Connect your initial guidelines with smooth, confident outer curves to give your emperor penguin its true silhouette.",
+        "instructionNl": "Verbind de basisvormen met soepele lijnen om de herkenbare omtrek van je keizerspinguïn te vormen.",
+        "tipEn": "Focus on clean flowing lines.",
+        "tipNl": "Let op mooie ronde en vloeiende lijnen."
+      },
+      {
+        "stepNumber": 3,
+        "titleEn": "Step 3: Key Features & Proportions",
+        "titleNl": "Stap 3: Belangrijkste Details",
+        "instructionEn": "Draw in the primary characteristic features such as limbs, facial outlines, wings, or wheels.",
+        "instructionNl": "Teken de belangrijkste herkenbare onderdelen zoals pootjes, wielen, vleugels of het gezicht."
+      },
+      {
+        "stepNumber": 4,
+        "titleEn": "Step 4: Expressive Details & Textures",
+        "titleNl": "Stap 4: Uitdrukking en Textuur",
+        "instructionEn": "Add friendly facial expressions, textures, patterns, and signature accessories to bring your drawing to life.",
+        "instructionNl": "Voeg vrolijke ogen, een lach, patronen en details toe om je tekening echt tot leven te wekken."
+      },
+      {
+        "stepNumber": 5,
+        "titleEn": "Step 5: Refine & Clean Up",
+        "titleNl": "Stap 5: Verfijnen & Gummen",
+        "instructionEn": "Trace over your best lines with a clean, confident darker pencil or marker and erase any overlapping sketch lines.",
+        "instructionNl": "Trek de mooiste lijnen wat donkerder over en gum alle hulplijntjes die je niet meer nodig hebt netjes weg."
+      },
+      {
+        "stepNumber": 6,
+        "titleEn": "Step 6: Final Line Art & Coloring!",
+        "titleNl": "Stap 6: Omlijnen & Inkleuren!",
+        "instructionEn": "Finish your masterpiece! Add crisp black outlines, then grab your pencils, markers, or use our Online Coloring Studio to color it in!",
+        "instructionNl": "Maak je meesterwerk af! Trek strakke zwarte contourlijnen en kleur alles prachtig in met viltstiften, potloden of in onze Online Kleurtool!"
+      }
+    ]
+  },
+  {
+    "slug": "how-to-draw-a-toucan",
+    "category": "animals",
+    "difficulty": "easy",
+    "timeMinutes": 10,
+    "icon": "🦜",
+    "titleEn": "How to Draw a Tropical Toucan",
+    "titleNl": "Hoe Teken Je een Tropische Toekan",
+    "descEn": "Learn how to draw a fun, easy tropical toucan step-by-step in 6 simple illustrated stages! Perfect for kids, parents, and classrooms.",
+    "descNl": "Leer stap voor stap een vrolijke tropische toekan tekenen in 6 simpele, duidelijke stappen! Ideaal voor kinderen, thuis en in de klas.",
+    "relatedHubSlug": "animals-wildlife",
+    "relatedThemeSlug": "birds-insects",
+    "steps": [
+      {
+        "stepNumber": 1,
+        "titleEn": "Step 1: Basic Guidelines for Tropical Toucan",
+        "titleNl": "Stap 1: Basisvormen voor Tropische Toekan",
+        "instructionEn": "Start by lightly sketching simple oval and circular guide shapes for the body and structure of your tropical toucan.",
+        "instructionNl": "Begin met het zachtjes schetsen van eenvoudige cirkels en ovalen voor het lichaam en de basis van je tropische toekan.",
+        "tipEn": "Keep your pencil strokes light so they are easy to refine later.",
+        "tipNl": "Druk niet te hard op je potlood zodat je lijntjes straks makkelijk kunt uitgummen."
+      },
+      {
+        "stepNumber": 2,
+        "titleEn": "Step 2: Connecting Contours",
+        "titleNl": "Stap 2: Lijnen Verbinden",
+        "instructionEn": "Connect your initial guidelines with smooth, confident outer curves to give your tropical toucan its true silhouette.",
+        "instructionNl": "Verbind de basisvormen met soepele lijnen om de herkenbare omtrek van je tropische toekan te vormen.",
+        "tipEn": "Focus on clean flowing lines.",
+        "tipNl": "Let op mooie ronde en vloeiende lijnen."
+      },
+      {
+        "stepNumber": 3,
+        "titleEn": "Step 3: Key Features & Proportions",
+        "titleNl": "Stap 3: Belangrijkste Details",
+        "instructionEn": "Draw in the primary characteristic features such as limbs, facial outlines, wings, or wheels.",
+        "instructionNl": "Teken de belangrijkste herkenbare onderdelen zoals pootjes, wielen, vleugels of het gezicht."
+      },
+      {
+        "stepNumber": 4,
+        "titleEn": "Step 4: Expressive Details & Textures",
+        "titleNl": "Stap 4: Uitdrukking en Textuur",
+        "instructionEn": "Add friendly facial expressions, textures, patterns, and signature accessories to bring your drawing to life.",
+        "instructionNl": "Voeg vrolijke ogen, een lach, patronen en details toe om je tekening echt tot leven te wekken."
+      },
+      {
+        "stepNumber": 5,
+        "titleEn": "Step 5: Refine & Clean Up",
+        "titleNl": "Stap 5: Verfijnen & Gummen",
+        "instructionEn": "Trace over your best lines with a clean, confident darker pencil or marker and erase any overlapping sketch lines.",
+        "instructionNl": "Trek de mooiste lijnen wat donkerder over en gum alle hulplijntjes die je niet meer nodig hebt netjes weg."
+      },
+      {
+        "stepNumber": 6,
+        "titleEn": "Step 6: Final Line Art & Coloring!",
+        "titleNl": "Stap 6: Omlijnen & Inkleuren!",
+        "instructionEn": "Finish your masterpiece! Add crisp black outlines, then grab your pencils, markers, or use our Online Coloring Studio to color it in!",
+        "instructionNl": "Maak je meesterwerk af! Trek strakke zwarte contourlijnen en kleur alles prachtig in met viltstiften, potloden of in onze Online Kleurtool!"
+      }
+    ]
+  },
+  {
+    "slug": "how-to-draw-a-hedgehog",
+    "category": "animals",
+    "difficulty": "easy",
+    "timeMinutes": 8,
+    "icon": "🦔",
+    "titleEn": "How to Draw a Cute Hedgehog",
+    "titleNl": "Hoe Teken Je een Schattig Egeltje",
+    "descEn": "Learn how to draw a fun, easy cute hedgehog step-by-step in 6 simple illustrated stages! Perfect for kids, parents, and classrooms.",
+    "descNl": "Leer stap voor stap een vrolijke schattig egeltje tekenen in 6 simpele, duidelijke stappen! Ideaal voor kinderen, thuis en in de klas.",
+    "relatedHubSlug": "animals-wildlife",
+    "relatedThemeSlug": "forest-woodland",
+    "steps": [
+      {
+        "stepNumber": 1,
+        "titleEn": "Step 1: Basic Guidelines for Cute Hedgehog",
+        "titleNl": "Stap 1: Basisvormen voor Schattig Egeltje",
+        "instructionEn": "Start by lightly sketching simple oval and circular guide shapes for the body and structure of your cute hedgehog.",
+        "instructionNl": "Begin met het zachtjes schetsen van eenvoudige cirkels en ovalen voor het lichaam en de basis van je schattig egeltje.",
+        "tipEn": "Keep your pencil strokes light so they are easy to refine later.",
+        "tipNl": "Druk niet te hard op je potlood zodat je lijntjes straks makkelijk kunt uitgummen."
+      },
+      {
+        "stepNumber": 2,
+        "titleEn": "Step 2: Connecting Contours",
+        "titleNl": "Stap 2: Lijnen Verbinden",
+        "instructionEn": "Connect your initial guidelines with smooth, confident outer curves to give your cute hedgehog its true silhouette.",
+        "instructionNl": "Verbind de basisvormen met soepele lijnen om de herkenbare omtrek van je schattig egeltje te vormen.",
+        "tipEn": "Focus on clean flowing lines.",
+        "tipNl": "Let op mooie ronde en vloeiende lijnen."
+      },
+      {
+        "stepNumber": 3,
+        "titleEn": "Step 3: Key Features & Proportions",
+        "titleNl": "Stap 3: Belangrijkste Details",
+        "instructionEn": "Draw in the primary characteristic features such as limbs, facial outlines, wings, or wheels.",
+        "instructionNl": "Teken de belangrijkste herkenbare onderdelen zoals pootjes, wielen, vleugels of het gezicht."
+      },
+      {
+        "stepNumber": 4,
+        "titleEn": "Step 4: Expressive Details & Textures",
+        "titleNl": "Stap 4: Uitdrukking en Textuur",
+        "instructionEn": "Add friendly facial expressions, textures, patterns, and signature accessories to bring your drawing to life.",
+        "instructionNl": "Voeg vrolijke ogen, een lach, patronen en details toe om je tekening echt tot leven te wekken."
+      },
+      {
+        "stepNumber": 5,
+        "titleEn": "Step 5: Refine & Clean Up",
+        "titleNl": "Stap 5: Verfijnen & Gummen",
+        "instructionEn": "Trace over your best lines with a clean, confident darker pencil or marker and erase any overlapping sketch lines.",
+        "instructionNl": "Trek de mooiste lijnen wat donkerder over en gum alle hulplijntjes die je niet meer nodig hebt netjes weg."
+      },
+      {
+        "stepNumber": 6,
+        "titleEn": "Step 6: Final Line Art & Coloring!",
+        "titleNl": "Stap 6: Omlijnen & Inkleuren!",
+        "instructionEn": "Finish your masterpiece! Add crisp black outlines, then grab your pencils, markers, or use our Online Coloring Studio to color it in!",
+        "instructionNl": "Maak je meesterwerk af! Trek strakke zwarte contourlijnen en kleur alles prachtig in met viltstiften, potloden of in onze Online Kleurtool!"
+      }
+    ]
+  },
+  {
+    "slug": "how-to-draw-a-unicorn",
+    "category": "fantasy",
+    "difficulty": "easy",
+    "timeMinutes": 12,
+    "icon": "🦄",
+    "titleEn": "How to Draw a Magical Unicorn",
+    "titleNl": "Hoe Teken Je een Magische Eenhoorn",
+    "descEn": "Learn how to draw a fun, easy magical unicorn step-by-step in 6 simple illustrated stages! Perfect for kids, parents, and classrooms.",
+    "descNl": "Leer stap voor stap een vrolijke magische eenhoorn tekenen in 6 simpele, duidelijke stappen! Ideaal voor kinderen, thuis en in de klas.",
+    "relatedHubSlug": "fantasy-fairytales",
+    "relatedThemeSlug": "unicorns-pegasus",
+    "steps": [
+      {
+        "stepNumber": 1,
+        "titleEn": "Step 1: Basic Guidelines for Magical Unicorn",
+        "titleNl": "Stap 1: Basisvormen voor Magische Eenhoorn",
+        "instructionEn": "Start by lightly sketching simple oval and circular guide shapes for the body and structure of your magical unicorn.",
+        "instructionNl": "Begin met het zachtjes schetsen van eenvoudige cirkels en ovalen voor het lichaam en de basis van je magische eenhoorn.",
+        "tipEn": "Keep your pencil strokes light so they are easy to refine later.",
+        "tipNl": "Druk niet te hard op je potlood zodat je lijntjes straks makkelijk kunt uitgummen."
+      },
+      {
+        "stepNumber": 2,
+        "titleEn": "Step 2: Connecting Contours",
+        "titleNl": "Stap 2: Lijnen Verbinden",
+        "instructionEn": "Connect your initial guidelines with smooth, confident outer curves to give your magical unicorn its true silhouette.",
+        "instructionNl": "Verbind de basisvormen met soepele lijnen om de herkenbare omtrek van je magische eenhoorn te vormen.",
+        "tipEn": "Focus on clean flowing lines.",
+        "tipNl": "Let op mooie ronde en vloeiende lijnen."
+      },
+      {
+        "stepNumber": 3,
+        "titleEn": "Step 3: Key Features & Proportions",
+        "titleNl": "Stap 3: Belangrijkste Details",
+        "instructionEn": "Draw in the primary characteristic features such as limbs, facial outlines, wings, or wheels.",
+        "instructionNl": "Teken de belangrijkste herkenbare onderdelen zoals pootjes, wielen, vleugels of het gezicht."
+      },
+      {
+        "stepNumber": 4,
+        "titleEn": "Step 4: Expressive Details & Textures",
+        "titleNl": "Stap 4: Uitdrukking en Textuur",
+        "instructionEn": "Add friendly facial expressions, textures, patterns, and signature accessories to bring your drawing to life.",
+        "instructionNl": "Voeg vrolijke ogen, een lach, patronen en details toe om je tekening echt tot leven te wekken."
+      },
+      {
+        "stepNumber": 5,
+        "titleEn": "Step 5: Refine & Clean Up",
+        "titleNl": "Stap 5: Verfijnen & Gummen",
+        "instructionEn": "Trace over your best lines with a clean, confident darker pencil or marker and erase any overlapping sketch lines.",
+        "instructionNl": "Trek de mooiste lijnen wat donkerder over en gum alle hulplijntjes die je niet meer nodig hebt netjes weg."
+      },
+      {
+        "stepNumber": 6,
+        "titleEn": "Step 6: Final Line Art & Coloring!",
+        "titleNl": "Stap 6: Omlijnen & Inkleuren!",
+        "instructionEn": "Finish your masterpiece! Add crisp black outlines, then grab your pencils, markers, or use our Online Coloring Studio to color it in!",
+        "instructionNl": "Maak je meesterwerk af! Trek strakke zwarte contourlijnen en kleur alles prachtig in met viltstiften, potloden of in onze Online Kleurtool!"
+      }
+    ]
+  },
+  {
+    "slug": "how-to-draw-a-dragon",
+    "category": "fantasy",
+    "difficulty": "medium",
+    "timeMinutes": 14,
+    "icon": "🐉",
+    "titleEn": "How to Draw a Friendly Fire Dragon",
+    "titleNl": "Hoe Teken Je een Vriendelijke Vuurspuwende Draak",
+    "descEn": "Learn how to draw a fun, easy friendly fire dragon step-by-step in 6 simple illustrated stages! Perfect for kids, parents, and classrooms.",
+    "descNl": "Leer stap voor stap een vrolijke vriendelijke vuurspuwende draak tekenen in 6 simpele, duidelijke stappen! Ideaal voor kinderen, thuis en in de klas.",
+    "relatedHubSlug": "fantasy-fairytales",
+    "relatedThemeSlug": "dragons-mythical",
+    "steps": [
+      {
+        "stepNumber": 1,
+        "titleEn": "Step 1: Basic Guidelines for Friendly Fire Dragon",
+        "titleNl": "Stap 1: Basisvormen voor Vriendelijke Vuurspuwende Draak",
+        "instructionEn": "Start by lightly sketching simple oval and circular guide shapes for the body and structure of your friendly fire dragon.",
+        "instructionNl": "Begin met het zachtjes schetsen van eenvoudige cirkels en ovalen voor het lichaam en de basis van je vriendelijke vuurspuwende draak.",
+        "tipEn": "Keep your pencil strokes light so they are easy to refine later.",
+        "tipNl": "Druk niet te hard op je potlood zodat je lijntjes straks makkelijk kunt uitgummen."
+      },
+      {
+        "stepNumber": 2,
+        "titleEn": "Step 2: Connecting Contours",
+        "titleNl": "Stap 2: Lijnen Verbinden",
+        "instructionEn": "Connect your initial guidelines with smooth, confident outer curves to give your friendly fire dragon its true silhouette.",
+        "instructionNl": "Verbind de basisvormen met soepele lijnen om de herkenbare omtrek van je vriendelijke vuurspuwende draak te vormen.",
+        "tipEn": "Focus on clean flowing lines.",
+        "tipNl": "Let op mooie ronde en vloeiende lijnen."
+      },
+      {
+        "stepNumber": 3,
+        "titleEn": "Step 3: Key Features & Proportions",
+        "titleNl": "Stap 3: Belangrijkste Details",
+        "instructionEn": "Draw in the primary characteristic features such as limbs, facial outlines, wings, or wheels.",
+        "instructionNl": "Teken de belangrijkste herkenbare onderdelen zoals pootjes, wielen, vleugels of het gezicht."
+      },
+      {
+        "stepNumber": 4,
+        "titleEn": "Step 4: Expressive Details & Textures",
+        "titleNl": "Stap 4: Uitdrukking en Textuur",
+        "instructionEn": "Add friendly facial expressions, textures, patterns, and signature accessories to bring your drawing to life.",
+        "instructionNl": "Voeg vrolijke ogen, een lach, patronen en details toe om je tekening echt tot leven te wekken."
+      },
+      {
+        "stepNumber": 5,
+        "titleEn": "Step 5: Refine & Clean Up",
+        "titleNl": "Stap 5: Verfijnen & Gummen",
+        "instructionEn": "Trace over your best lines with a clean, confident darker pencil or marker and erase any overlapping sketch lines.",
+        "instructionNl": "Trek de mooiste lijnen wat donkerder over en gum alle hulplijntjes die je niet meer nodig hebt netjes weg."
+      },
+      {
+        "stepNumber": 6,
+        "titleEn": "Step 6: Final Line Art & Coloring!",
+        "titleNl": "Stap 6: Omlijnen & Inkleuren!",
+        "instructionEn": "Finish your masterpiece! Add crisp black outlines, then grab your pencils, markers, or use our Online Coloring Studio to color it in!",
+        "instructionNl": "Maak je meesterwerk af! Trek strakke zwarte contourlijnen en kleur alles prachtig in met viltstiften, potloden of in onze Online Kleurtool!"
+      }
+    ]
+  },
+  {
+    "slug": "how-to-draw-a-mermaid",
+    "category": "fantasy",
+    "difficulty": "medium",
+    "timeMinutes": 12,
+    "icon": "🧜‍♀️",
+    "titleEn": "How to Draw a Mermaid Princess",
+    "titleNl": "Hoe Teken Je een Zeemeermin Prinses",
+    "descEn": "Learn how to draw a fun, easy mermaid princess step-by-step in 6 simple illustrated stages! Perfect for kids, parents, and classrooms.",
+    "descNl": "Leer stap voor stap een vrolijke zeemeermin prinses tekenen in 6 simpele, duidelijke stappen! Ideaal voor kinderen, thuis en in de klas.",
+    "relatedHubSlug": "fantasy-fairytales",
+    "relatedThemeSlug": "fairytale-kingdoms-castles",
+    "steps": [
+      {
+        "stepNumber": 1,
+        "titleEn": "Step 1: Basic Guidelines for Mermaid Princess",
+        "titleNl": "Stap 1: Basisvormen voor Zeemeermin Prinses",
+        "instructionEn": "Start by lightly sketching simple oval and circular guide shapes for the body and structure of your mermaid princess.",
+        "instructionNl": "Begin met het zachtjes schetsen van eenvoudige cirkels en ovalen voor het lichaam en de basis van je zeemeermin prinses.",
+        "tipEn": "Keep your pencil strokes light so they are easy to refine later.",
+        "tipNl": "Druk niet te hard op je potlood zodat je lijntjes straks makkelijk kunt uitgummen."
+      },
+      {
+        "stepNumber": 2,
+        "titleEn": "Step 2: Connecting Contours",
+        "titleNl": "Stap 2: Lijnen Verbinden",
+        "instructionEn": "Connect your initial guidelines with smooth, confident outer curves to give your mermaid princess its true silhouette.",
+        "instructionNl": "Verbind de basisvormen met soepele lijnen om de herkenbare omtrek van je zeemeermin prinses te vormen.",
+        "tipEn": "Focus on clean flowing lines.",
+        "tipNl": "Let op mooie ronde en vloeiende lijnen."
+      },
+      {
+        "stepNumber": 3,
+        "titleEn": "Step 3: Key Features & Proportions",
+        "titleNl": "Stap 3: Belangrijkste Details",
+        "instructionEn": "Draw in the primary characteristic features such as limbs, facial outlines, wings, or wheels.",
+        "instructionNl": "Teken de belangrijkste herkenbare onderdelen zoals pootjes, wielen, vleugels of het gezicht."
+      },
+      {
+        "stepNumber": 4,
+        "titleEn": "Step 4: Expressive Details & Textures",
+        "titleNl": "Stap 4: Uitdrukking en Textuur",
+        "instructionEn": "Add friendly facial expressions, textures, patterns, and signature accessories to bring your drawing to life.",
+        "instructionNl": "Voeg vrolijke ogen, een lach, patronen en details toe om je tekening echt tot leven te wekken."
+      },
+      {
+        "stepNumber": 5,
+        "titleEn": "Step 5: Refine & Clean Up",
+        "titleNl": "Stap 5: Verfijnen & Gummen",
+        "instructionEn": "Trace over your best lines with a clean, confident darker pencil or marker and erase any overlapping sketch lines.",
+        "instructionNl": "Trek de mooiste lijnen wat donkerder over en gum alle hulplijntjes die je niet meer nodig hebt netjes weg."
+      },
+      {
+        "stepNumber": 6,
+        "titleEn": "Step 6: Final Line Art & Coloring!",
+        "titleNl": "Stap 6: Omlijnen & Inkleuren!",
+        "instructionEn": "Finish your masterpiece! Add crisp black outlines, then grab your pencils, markers, or use our Online Coloring Studio to color it in!",
+        "instructionNl": "Maak je meesterwerk af! Trek strakke zwarte contourlijnen en kleur alles prachtig in met viltstiften, potloden of in onze Online Kleurtool!"
+      }
+    ]
+  },
+  {
+    "slug": "how-to-draw-a-fairy",
+    "category": "fantasy",
+    "difficulty": "easy",
+    "timeMinutes": 10,
+    "icon": "🧚‍♀️",
+    "titleEn": "How to Draw a Winged Garden Fairy",
+    "titleNl": "Hoe Teken Je een Gevleugelde Tuinfee",
+    "descEn": "Learn how to draw a fun, easy winged garden fairy step-by-step in 6 simple illustrated stages! Perfect for kids, parents, and classrooms.",
+    "descNl": "Leer stap voor stap een vrolijke gevleugelde tuinfee tekenen in 6 simpele, duidelijke stappen! Ideaal voor kinderen, thuis en in de klas.",
+    "relatedHubSlug": "fantasy-fairytales",
+    "relatedThemeSlug": "fairytale-kingdoms-castles",
+    "steps": [
+      {
+        "stepNumber": 1,
+        "titleEn": "Step 1: Basic Guidelines for Winged Garden Fairy",
+        "titleNl": "Stap 1: Basisvormen voor Gevleugelde Tuinfee",
+        "instructionEn": "Start by lightly sketching simple oval and circular guide shapes for the body and structure of your winged garden fairy.",
+        "instructionNl": "Begin met het zachtjes schetsen van eenvoudige cirkels en ovalen voor het lichaam en de basis van je gevleugelde tuinfee.",
+        "tipEn": "Keep your pencil strokes light so they are easy to refine later.",
+        "tipNl": "Druk niet te hard op je potlood zodat je lijntjes straks makkelijk kunt uitgummen."
+      },
+      {
+        "stepNumber": 2,
+        "titleEn": "Step 2: Connecting Contours",
+        "titleNl": "Stap 2: Lijnen Verbinden",
+        "instructionEn": "Connect your initial guidelines with smooth, confident outer curves to give your winged garden fairy its true silhouette.",
+        "instructionNl": "Verbind de basisvormen met soepele lijnen om de herkenbare omtrek van je gevleugelde tuinfee te vormen.",
+        "tipEn": "Focus on clean flowing lines.",
+        "tipNl": "Let op mooie ronde en vloeiende lijnen."
+      },
+      {
+        "stepNumber": 3,
+        "titleEn": "Step 3: Key Features & Proportions",
+        "titleNl": "Stap 3: Belangrijkste Details",
+        "instructionEn": "Draw in the primary characteristic features such as limbs, facial outlines, wings, or wheels.",
+        "instructionNl": "Teken de belangrijkste herkenbare onderdelen zoals pootjes, wielen, vleugels of het gezicht."
+      },
+      {
+        "stepNumber": 4,
+        "titleEn": "Step 4: Expressive Details & Textures",
+        "titleNl": "Stap 4: Uitdrukking en Textuur",
+        "instructionEn": "Add friendly facial expressions, textures, patterns, and signature accessories to bring your drawing to life.",
+        "instructionNl": "Voeg vrolijke ogen, een lach, patronen en details toe om je tekening echt tot leven te wekken."
+      },
+      {
+        "stepNumber": 5,
+        "titleEn": "Step 5: Refine & Clean Up",
+        "titleNl": "Stap 5: Verfijnen & Gummen",
+        "instructionEn": "Trace over your best lines with a clean, confident darker pencil or marker and erase any overlapping sketch lines.",
+        "instructionNl": "Trek de mooiste lijnen wat donkerder over en gum alle hulplijntjes die je niet meer nodig hebt netjes weg."
+      },
+      {
+        "stepNumber": 6,
+        "titleEn": "Step 6: Final Line Art & Coloring!",
+        "titleNl": "Stap 6: Omlijnen & Inkleuren!",
+        "instructionEn": "Finish your masterpiece! Add crisp black outlines, then grab your pencils, markers, or use our Online Coloring Studio to color it in!",
+        "instructionNl": "Maak je meesterwerk af! Trek strakke zwarte contourlijnen en kleur alles prachtig in met viltstiften, potloden of in onze Online Kleurtool!"
+      }
+    ]
+  },
+  {
+    "slug": "how-to-draw-a-castle",
+    "category": "fantasy",
+    "difficulty": "medium",
+    "timeMinutes": 15,
+    "icon": "🏰",
+    "titleEn": "How to Draw a Medieval Fairytale Castle",
+    "titleNl": "Hoe Teken Je een Middeleeuws Sprookjeskasteel",
+    "descEn": "Learn how to draw a fun, easy medieval fairytale castle step-by-step in 6 simple illustrated stages! Perfect for kids, parents, and classrooms.",
+    "descNl": "Leer stap voor stap een vrolijke middeleeuws sprookjeskasteel tekenen in 6 simpele, duidelijke stappen! Ideaal voor kinderen, thuis en in de klas.",
+    "relatedHubSlug": "fantasy-fairytales",
+    "relatedThemeSlug": "fairytale-kingdoms-castles",
+    "steps": [
+      {
+        "stepNumber": 1,
+        "titleEn": "Step 1: Basic Guidelines for Medieval Fairytale Castle",
+        "titleNl": "Stap 1: Basisvormen voor Middeleeuws Sprookjeskasteel",
+        "instructionEn": "Start by lightly sketching simple oval and circular guide shapes for the body and structure of your medieval fairytale castle.",
+        "instructionNl": "Begin met het zachtjes schetsen van eenvoudige cirkels en ovalen voor het lichaam en de basis van je middeleeuws sprookjeskasteel.",
+        "tipEn": "Keep your pencil strokes light so they are easy to refine later.",
+        "tipNl": "Druk niet te hard op je potlood zodat je lijntjes straks makkelijk kunt uitgummen."
+      },
+      {
+        "stepNumber": 2,
+        "titleEn": "Step 2: Connecting Contours",
+        "titleNl": "Stap 2: Lijnen Verbinden",
+        "instructionEn": "Connect your initial guidelines with smooth, confident outer curves to give your medieval fairytale castle its true silhouette.",
+        "instructionNl": "Verbind de basisvormen met soepele lijnen om de herkenbare omtrek van je middeleeuws sprookjeskasteel te vormen.",
+        "tipEn": "Focus on clean flowing lines.",
+        "tipNl": "Let op mooie ronde en vloeiende lijnen."
+      },
+      {
+        "stepNumber": 3,
+        "titleEn": "Step 3: Key Features & Proportions",
+        "titleNl": "Stap 3: Belangrijkste Details",
+        "instructionEn": "Draw in the primary characteristic features such as limbs, facial outlines, wings, or wheels.",
+        "instructionNl": "Teken de belangrijkste herkenbare onderdelen zoals pootjes, wielen, vleugels of het gezicht."
+      },
+      {
+        "stepNumber": 4,
+        "titleEn": "Step 4: Expressive Details & Textures",
+        "titleNl": "Stap 4: Uitdrukking en Textuur",
+        "instructionEn": "Add friendly facial expressions, textures, patterns, and signature accessories to bring your drawing to life.",
+        "instructionNl": "Voeg vrolijke ogen, een lach, patronen en details toe om je tekening echt tot leven te wekken."
+      },
+      {
+        "stepNumber": 5,
+        "titleEn": "Step 5: Refine & Clean Up",
+        "titleNl": "Stap 5: Verfijnen & Gummen",
+        "instructionEn": "Trace over your best lines with a clean, confident darker pencil or marker and erase any overlapping sketch lines.",
+        "instructionNl": "Trek de mooiste lijnen wat donkerder over en gum alle hulplijntjes die je niet meer nodig hebt netjes weg."
+      },
+      {
+        "stepNumber": 6,
+        "titleEn": "Step 6: Final Line Art & Coloring!",
+        "titleNl": "Stap 6: Omlijnen & Inkleuren!",
+        "instructionEn": "Finish your masterpiece! Add crisp black outlines, then grab your pencils, markers, or use our Online Coloring Studio to color it in!",
+        "instructionNl": "Maak je meesterwerk af! Trek strakke zwarte contourlijnen en kleur alles prachtig in met viltstiften, potloden of in onze Online Kleurtool!"
+      }
+    ]
+  },
+  {
+    "slug": "how-to-draw-a-pirate",
+    "category": "fantasy",
+    "difficulty": "medium",
+    "timeMinutes": 12,
+    "icon": "🏴‍☠️",
+    "titleEn": "How to Draw a Pirate Captain",
+    "titleNl": "Hoe Teken Je een Stoere Piratenkapitein",
+    "descEn": "Learn how to draw a fun, easy pirate captain step-by-step in 6 simple illustrated stages! Perfect for kids, parents, and classrooms.",
+    "descNl": "Leer stap voor stap een vrolijke stoere piratenkapitein tekenen in 6 simpele, duidelijke stappen! Ideaal voor kinderen, thuis en in de klas.",
+    "relatedHubSlug": "fantasy-fairytales",
+    "relatedThemeSlug": "fairytale-kingdoms-castles",
+    "steps": [
+      {
+        "stepNumber": 1,
+        "titleEn": "Step 1: Basic Guidelines for Pirate Captain",
+        "titleNl": "Stap 1: Basisvormen voor Stoere Piratenkapitein",
+        "instructionEn": "Start by lightly sketching simple oval and circular guide shapes for the body and structure of your pirate captain.",
+        "instructionNl": "Begin met het zachtjes schetsen van eenvoudige cirkels en ovalen voor het lichaam en de basis van je stoere piratenkapitein.",
+        "tipEn": "Keep your pencil strokes light so they are easy to refine later.",
+        "tipNl": "Druk niet te hard op je potlood zodat je lijntjes straks makkelijk kunt uitgummen."
+      },
+      {
+        "stepNumber": 2,
+        "titleEn": "Step 2: Connecting Contours",
+        "titleNl": "Stap 2: Lijnen Verbinden",
+        "instructionEn": "Connect your initial guidelines with smooth, confident outer curves to give your pirate captain its true silhouette.",
+        "instructionNl": "Verbind de basisvormen met soepele lijnen om de herkenbare omtrek van je stoere piratenkapitein te vormen.",
+        "tipEn": "Focus on clean flowing lines.",
+        "tipNl": "Let op mooie ronde en vloeiende lijnen."
+      },
+      {
+        "stepNumber": 3,
+        "titleEn": "Step 3: Key Features & Proportions",
+        "titleNl": "Stap 3: Belangrijkste Details",
+        "instructionEn": "Draw in the primary characteristic features such as limbs, facial outlines, wings, or wheels.",
+        "instructionNl": "Teken de belangrijkste herkenbare onderdelen zoals pootjes, wielen, vleugels of het gezicht."
+      },
+      {
+        "stepNumber": 4,
+        "titleEn": "Step 4: Expressive Details & Textures",
+        "titleNl": "Stap 4: Uitdrukking en Textuur",
+        "instructionEn": "Add friendly facial expressions, textures, patterns, and signature accessories to bring your drawing to life.",
+        "instructionNl": "Voeg vrolijke ogen, een lach, patronen en details toe om je tekening echt tot leven te wekken."
+      },
+      {
+        "stepNumber": 5,
+        "titleEn": "Step 5: Refine & Clean Up",
+        "titleNl": "Stap 5: Verfijnen & Gummen",
+        "instructionEn": "Trace over your best lines with a clean, confident darker pencil or marker and erase any overlapping sketch lines.",
+        "instructionNl": "Trek de mooiste lijnen wat donkerder over en gum alle hulplijntjes die je niet meer nodig hebt netjes weg."
+      },
+      {
+        "stepNumber": 6,
+        "titleEn": "Step 6: Final Line Art & Coloring!",
+        "titleNl": "Stap 6: Omlijnen & Inkleuren!",
+        "instructionEn": "Finish your masterpiece! Add crisp black outlines, then grab your pencils, markers, or use our Online Coloring Studio to color it in!",
+        "instructionNl": "Maak je meesterwerk af! Trek strakke zwarte contourlijnen en kleur alles prachtig in met viltstiften, potloden of in onze Online Kleurtool!"
+      }
+    ]
+  },
+  {
+    "slug": "how-to-draw-a-pirate-ship",
+    "category": "fantasy",
+    "difficulty": "medium",
+    "timeMinutes": 15,
+    "icon": "⛵",
+    "titleEn": "How to Draw a Pirate Galleon Ship",
+    "titleNl": "Hoe Teken Je een Piratenschip op Zee",
+    "descEn": "Learn how to draw a fun, easy pirate galleon ship step-by-step in 6 simple illustrated stages! Perfect for kids, parents, and classrooms.",
+    "descNl": "Leer stap voor stap een vrolijke piratenschip op zee tekenen in 6 simpele, duidelijke stappen! Ideaal voor kinderen, thuis en in de klas.",
+    "relatedHubSlug": "fantasy-fairytales",
+    "relatedThemeSlug": "fairytale-kingdoms-castles",
+    "steps": [
+      {
+        "stepNumber": 1,
+        "titleEn": "Step 1: Basic Guidelines for Pirate Galleon Ship",
+        "titleNl": "Stap 1: Basisvormen voor Piratenschip op Zee",
+        "instructionEn": "Start by lightly sketching simple oval and circular guide shapes for the body and structure of your pirate galleon ship.",
+        "instructionNl": "Begin met het zachtjes schetsen van eenvoudige cirkels en ovalen voor het lichaam en de basis van je piratenschip op zee.",
+        "tipEn": "Keep your pencil strokes light so they are easy to refine later.",
+        "tipNl": "Druk niet te hard op je potlood zodat je lijntjes straks makkelijk kunt uitgummen."
+      },
+      {
+        "stepNumber": 2,
+        "titleEn": "Step 2: Connecting Contours",
+        "titleNl": "Stap 2: Lijnen Verbinden",
+        "instructionEn": "Connect your initial guidelines with smooth, confident outer curves to give your pirate galleon ship its true silhouette.",
+        "instructionNl": "Verbind de basisvormen met soepele lijnen om de herkenbare omtrek van je piratenschip op zee te vormen.",
+        "tipEn": "Focus on clean flowing lines.",
+        "tipNl": "Let op mooie ronde en vloeiende lijnen."
+      },
+      {
+        "stepNumber": 3,
+        "titleEn": "Step 3: Key Features & Proportions",
+        "titleNl": "Stap 3: Belangrijkste Details",
+        "instructionEn": "Draw in the primary characteristic features such as limbs, facial outlines, wings, or wheels.",
+        "instructionNl": "Teken de belangrijkste herkenbare onderdelen zoals pootjes, wielen, vleugels of het gezicht."
+      },
+      {
+        "stepNumber": 4,
+        "titleEn": "Step 4: Expressive Details & Textures",
+        "titleNl": "Stap 4: Uitdrukking en Textuur",
+        "instructionEn": "Add friendly facial expressions, textures, patterns, and signature accessories to bring your drawing to life.",
+        "instructionNl": "Voeg vrolijke ogen, een lach, patronen en details toe om je tekening echt tot leven te wekken."
+      },
+      {
+        "stepNumber": 5,
+        "titleEn": "Step 5: Refine & Clean Up",
+        "titleNl": "Stap 5: Verfijnen & Gummen",
+        "instructionEn": "Trace over your best lines with a clean, confident darker pencil or marker and erase any overlapping sketch lines.",
+        "instructionNl": "Trek de mooiste lijnen wat donkerder over en gum alle hulplijntjes die je niet meer nodig hebt netjes weg."
+      },
+      {
+        "stepNumber": 6,
+        "titleEn": "Step 6: Final Line Art & Coloring!",
+        "titleNl": "Stap 6: Omlijnen & Inkleuren!",
+        "instructionEn": "Finish your masterpiece! Add crisp black outlines, then grab your pencils, markers, or use our Online Coloring Studio to color it in!",
+        "instructionNl": "Maak je meesterwerk af! Trek strakke zwarte contourlijnen en kleur alles prachtig in met viltstiften, potloden of in onze Online Kleurtool!"
+      }
+    ]
+  },
+  {
+    "slug": "how-to-draw-a-treasure-chest",
+    "category": "fantasy",
+    "difficulty": "easy",
+    "timeMinutes": 10,
+    "icon": "💎",
+    "titleEn": "How to Draw a Treasure Chest",
+    "titleNl": "Hoe Teken Je een Gouden Schatkist",
+    "descEn": "Learn how to draw a fun, easy treasure chest step-by-step in 6 simple illustrated stages! Perfect for kids, parents, and classrooms.",
+    "descNl": "Leer stap voor stap een vrolijke gouden schatkist tekenen in 6 simpele, duidelijke stappen! Ideaal voor kinderen, thuis en in de klas.",
+    "relatedHubSlug": "fantasy-fairytales",
+    "relatedThemeSlug": "fairytale-kingdoms-castles",
+    "steps": [
+      {
+        "stepNumber": 1,
+        "titleEn": "Step 1: Basic Guidelines for Treasure Chest",
+        "titleNl": "Stap 1: Basisvormen voor Gouden Schatkist",
+        "instructionEn": "Start by lightly sketching simple oval and circular guide shapes for the body and structure of your treasure chest.",
+        "instructionNl": "Begin met het zachtjes schetsen van eenvoudige cirkels en ovalen voor het lichaam en de basis van je gouden schatkist.",
+        "tipEn": "Keep your pencil strokes light so they are easy to refine later.",
+        "tipNl": "Druk niet te hard op je potlood zodat je lijntjes straks makkelijk kunt uitgummen."
+      },
+      {
+        "stepNumber": 2,
+        "titleEn": "Step 2: Connecting Contours",
+        "titleNl": "Stap 2: Lijnen Verbinden",
+        "instructionEn": "Connect your initial guidelines with smooth, confident outer curves to give your treasure chest its true silhouette.",
+        "instructionNl": "Verbind de basisvormen met soepele lijnen om de herkenbare omtrek van je gouden schatkist te vormen.",
+        "tipEn": "Focus on clean flowing lines.",
+        "tipNl": "Let op mooie ronde en vloeiende lijnen."
+      },
+      {
+        "stepNumber": 3,
+        "titleEn": "Step 3: Key Features & Proportions",
+        "titleNl": "Stap 3: Belangrijkste Details",
+        "instructionEn": "Draw in the primary characteristic features such as limbs, facial outlines, wings, or wheels.",
+        "instructionNl": "Teken de belangrijkste herkenbare onderdelen zoals pootjes, wielen, vleugels of het gezicht."
+      },
+      {
+        "stepNumber": 4,
+        "titleEn": "Step 4: Expressive Details & Textures",
+        "titleNl": "Stap 4: Uitdrukking en Textuur",
+        "instructionEn": "Add friendly facial expressions, textures, patterns, and signature accessories to bring your drawing to life.",
+        "instructionNl": "Voeg vrolijke ogen, een lach, patronen en details toe om je tekening echt tot leven te wekken."
+      },
+      {
+        "stepNumber": 5,
+        "titleEn": "Step 5: Refine & Clean Up",
+        "titleNl": "Stap 5: Verfijnen & Gummen",
+        "instructionEn": "Trace over your best lines with a clean, confident darker pencil or marker and erase any overlapping sketch lines.",
+        "instructionNl": "Trek de mooiste lijnen wat donkerder over en gum alle hulplijntjes die je niet meer nodig hebt netjes weg."
+      },
+      {
+        "stepNumber": 6,
+        "titleEn": "Step 6: Final Line Art & Coloring!",
+        "titleNl": "Stap 6: Omlijnen & Inkleuren!",
+        "instructionEn": "Finish your masterpiece! Add crisp black outlines, then grab your pencils, markers, or use our Online Coloring Studio to color it in!",
+        "instructionNl": "Maak je meesterwerk af! Trek strakke zwarte contourlijnen en kleur alles prachtig in met viltstiften, potloden of in onze Online Kleurtool!"
+      }
+    ]
+  },
+  {
+    "slug": "how-to-draw-an-astronaut",
+    "category": "fantasy",
+    "difficulty": "medium",
+    "timeMinutes": 12,
+    "icon": "👨‍🚀",
+    "titleEn": "How to Draw a Space Astronaut",
+    "titleNl": "Hoe Teken Je een Ruimte Astronaut",
+    "descEn": "Learn how to draw a fun, easy space astronaut step-by-step in 6 simple illustrated stages! Perfect for kids, parents, and classrooms.",
+    "descNl": "Leer stap voor stap een vrolijke ruimte astronaut tekenen in 6 simpele, duidelijke stappen! Ideaal voor kinderen, thuis en in de klas.",
+    "relatedHubSlug": "vehicles-transportation",
+    "relatedThemeSlug": "space-rockets",
+    "steps": [
+      {
+        "stepNumber": 1,
+        "titleEn": "Step 1: Basic Guidelines for Space Astronaut",
+        "titleNl": "Stap 1: Basisvormen voor Ruimte Astronaut",
+        "instructionEn": "Start by lightly sketching simple oval and circular guide shapes for the body and structure of your space astronaut.",
+        "instructionNl": "Begin met het zachtjes schetsen van eenvoudige cirkels en ovalen voor het lichaam en de basis van je ruimte astronaut.",
+        "tipEn": "Keep your pencil strokes light so they are easy to refine later.",
+        "tipNl": "Druk niet te hard op je potlood zodat je lijntjes straks makkelijk kunt uitgummen."
+      },
+      {
+        "stepNumber": 2,
+        "titleEn": "Step 2: Connecting Contours",
+        "titleNl": "Stap 2: Lijnen Verbinden",
+        "instructionEn": "Connect your initial guidelines with smooth, confident outer curves to give your space astronaut its true silhouette.",
+        "instructionNl": "Verbind de basisvormen met soepele lijnen om de herkenbare omtrek van je ruimte astronaut te vormen.",
+        "tipEn": "Focus on clean flowing lines.",
+        "tipNl": "Let op mooie ronde en vloeiende lijnen."
+      },
+      {
+        "stepNumber": 3,
+        "titleEn": "Step 3: Key Features & Proportions",
+        "titleNl": "Stap 3: Belangrijkste Details",
+        "instructionEn": "Draw in the primary characteristic features such as limbs, facial outlines, wings, or wheels.",
+        "instructionNl": "Teken de belangrijkste herkenbare onderdelen zoals pootjes, wielen, vleugels of het gezicht."
+      },
+      {
+        "stepNumber": 4,
+        "titleEn": "Step 4: Expressive Details & Textures",
+        "titleNl": "Stap 4: Uitdrukking en Textuur",
+        "instructionEn": "Add friendly facial expressions, textures, patterns, and signature accessories to bring your drawing to life.",
+        "instructionNl": "Voeg vrolijke ogen, een lach, patronen en details toe om je tekening echt tot leven te wekken."
+      },
+      {
+        "stepNumber": 5,
+        "titleEn": "Step 5: Refine & Clean Up",
+        "titleNl": "Stap 5: Verfijnen & Gummen",
+        "instructionEn": "Trace over your best lines with a clean, confident darker pencil or marker and erase any overlapping sketch lines.",
+        "instructionNl": "Trek de mooiste lijnen wat donkerder over en gum alle hulplijntjes die je niet meer nodig hebt netjes weg."
+      },
+      {
+        "stepNumber": 6,
+        "titleEn": "Step 6: Final Line Art & Coloring!",
+        "titleNl": "Stap 6: Omlijnen & Inkleuren!",
+        "instructionEn": "Finish your masterpiece! Add crisp black outlines, then grab your pencils, markers, or use our Online Coloring Studio to color it in!",
+        "instructionNl": "Maak je meesterwerk af! Trek strakke zwarte contourlijnen en kleur alles prachtig in met viltstiften, potloden of in onze Online Kleurtool!"
+      }
+    ]
+  },
+  {
+    "slug": "how-to-draw-an-alien-ufo",
+    "category": "fantasy",
+    "difficulty": "easy",
+    "timeMinutes": 8,
+    "icon": "🛸",
+    "titleEn": "How to Draw a Cute Alien & Flying Saucer",
+    "titleNl": "Hoe Teken Je een Schattige Alien & Vliegende Schotel",
+    "descEn": "Learn how to draw a fun, easy cute alien & flying saucer step-by-step in 6 simple illustrated stages! Perfect for kids, parents, and classrooms.",
+    "descNl": "Leer stap voor stap een vrolijke schattige alien & vliegende schotel tekenen in 6 simpele, duidelijke stappen! Ideaal voor kinderen, thuis en in de klas.",
+    "relatedHubSlug": "vehicles-transportation",
+    "relatedThemeSlug": "space-rockets",
+    "steps": [
+      {
+        "stepNumber": 1,
+        "titleEn": "Step 1: Basic Guidelines for Cute Alien & Flying Saucer",
+        "titleNl": "Stap 1: Basisvormen voor Schattige Alien & Vliegende Schotel",
+        "instructionEn": "Start by lightly sketching simple oval and circular guide shapes for the body and structure of your cute alien & flying saucer.",
+        "instructionNl": "Begin met het zachtjes schetsen van eenvoudige cirkels en ovalen voor het lichaam en de basis van je schattige alien & vliegende schotel.",
+        "tipEn": "Keep your pencil strokes light so they are easy to refine later.",
+        "tipNl": "Druk niet te hard op je potlood zodat je lijntjes straks makkelijk kunt uitgummen."
+      },
+      {
+        "stepNumber": 2,
+        "titleEn": "Step 2: Connecting Contours",
+        "titleNl": "Stap 2: Lijnen Verbinden",
+        "instructionEn": "Connect your initial guidelines with smooth, confident outer curves to give your cute alien & flying saucer its true silhouette.",
+        "instructionNl": "Verbind de basisvormen met soepele lijnen om de herkenbare omtrek van je schattige alien & vliegende schotel te vormen.",
+        "tipEn": "Focus on clean flowing lines.",
+        "tipNl": "Let op mooie ronde en vloeiende lijnen."
+      },
+      {
+        "stepNumber": 3,
+        "titleEn": "Step 3: Key Features & Proportions",
+        "titleNl": "Stap 3: Belangrijkste Details",
+        "instructionEn": "Draw in the primary characteristic features such as limbs, facial outlines, wings, or wheels.",
+        "instructionNl": "Teken de belangrijkste herkenbare onderdelen zoals pootjes, wielen, vleugels of het gezicht."
+      },
+      {
+        "stepNumber": 4,
+        "titleEn": "Step 4: Expressive Details & Textures",
+        "titleNl": "Stap 4: Uitdrukking en Textuur",
+        "instructionEn": "Add friendly facial expressions, textures, patterns, and signature accessories to bring your drawing to life.",
+        "instructionNl": "Voeg vrolijke ogen, een lach, patronen en details toe om je tekening echt tot leven te wekken."
+      },
+      {
+        "stepNumber": 5,
+        "titleEn": "Step 5: Refine & Clean Up",
+        "titleNl": "Stap 5: Verfijnen & Gummen",
+        "instructionEn": "Trace over your best lines with a clean, confident darker pencil or marker and erase any overlapping sketch lines.",
+        "instructionNl": "Trek de mooiste lijnen wat donkerder over en gum alle hulplijntjes die je niet meer nodig hebt netjes weg."
+      },
+      {
+        "stepNumber": 6,
+        "titleEn": "Step 6: Final Line Art & Coloring!",
+        "titleNl": "Stap 6: Omlijnen & Inkleuren!",
+        "instructionEn": "Finish your masterpiece! Add crisp black outlines, then grab your pencils, markers, or use our Online Coloring Studio to color it in!",
+        "instructionNl": "Maak je meesterwerk af! Trek strakke zwarte contourlijnen en kleur alles prachtig in met viltstiften, potloden of in onze Online Kleurtool!"
+      }
+    ]
+  },
+  {
+    "slug": "how-to-draw-a-wizard",
+    "category": "fantasy",
+    "difficulty": "medium",
+    "timeMinutes": 12,
+    "icon": "🧙‍♂️",
+    "titleEn": "How to Draw a Wizard with Magic Staff",
+    "titleNl": "Hoe Teken Je een Tovenaar met Toverstaf",
+    "descEn": "Learn how to draw a fun, easy wizard with magic staff step-by-step in 6 simple illustrated stages! Perfect for kids, parents, and classrooms.",
+    "descNl": "Leer stap voor stap een vrolijke tovenaar met toverstaf tekenen in 6 simpele, duidelijke stappen! Ideaal voor kinderen, thuis en in de klas.",
+    "relatedHubSlug": "fantasy-fairytales",
+    "relatedThemeSlug": "dragons-mythical",
+    "steps": [
+      {
+        "stepNumber": 1,
+        "titleEn": "Step 1: Basic Guidelines for Wizard with Magic Staff",
+        "titleNl": "Stap 1: Basisvormen voor Tovenaar met Toverstaf",
+        "instructionEn": "Start by lightly sketching simple oval and circular guide shapes for the body and structure of your wizard with magic staff.",
+        "instructionNl": "Begin met het zachtjes schetsen van eenvoudige cirkels en ovalen voor het lichaam en de basis van je tovenaar met toverstaf.",
+        "tipEn": "Keep your pencil strokes light so they are easy to refine later.",
+        "tipNl": "Druk niet te hard op je potlood zodat je lijntjes straks makkelijk kunt uitgummen."
+      },
+      {
+        "stepNumber": 2,
+        "titleEn": "Step 2: Connecting Contours",
+        "titleNl": "Stap 2: Lijnen Verbinden",
+        "instructionEn": "Connect your initial guidelines with smooth, confident outer curves to give your wizard with magic staff its true silhouette.",
+        "instructionNl": "Verbind de basisvormen met soepele lijnen om de herkenbare omtrek van je tovenaar met toverstaf te vormen.",
+        "tipEn": "Focus on clean flowing lines.",
+        "tipNl": "Let op mooie ronde en vloeiende lijnen."
+      },
+      {
+        "stepNumber": 3,
+        "titleEn": "Step 3: Key Features & Proportions",
+        "titleNl": "Stap 3: Belangrijkste Details",
+        "instructionEn": "Draw in the primary characteristic features such as limbs, facial outlines, wings, or wheels.",
+        "instructionNl": "Teken de belangrijkste herkenbare onderdelen zoals pootjes, wielen, vleugels of het gezicht."
+      },
+      {
+        "stepNumber": 4,
+        "titleEn": "Step 4: Expressive Details & Textures",
+        "titleNl": "Stap 4: Uitdrukking en Textuur",
+        "instructionEn": "Add friendly facial expressions, textures, patterns, and signature accessories to bring your drawing to life.",
+        "instructionNl": "Voeg vrolijke ogen, een lach, patronen en details toe om je tekening echt tot leven te wekken."
+      },
+      {
+        "stepNumber": 5,
+        "titleEn": "Step 5: Refine & Clean Up",
+        "titleNl": "Stap 5: Verfijnen & Gummen",
+        "instructionEn": "Trace over your best lines with a clean, confident darker pencil or marker and erase any overlapping sketch lines.",
+        "instructionNl": "Trek de mooiste lijnen wat donkerder over en gum alle hulplijntjes die je niet meer nodig hebt netjes weg."
+      },
+      {
+        "stepNumber": 6,
+        "titleEn": "Step 6: Final Line Art & Coloring!",
+        "titleNl": "Stap 6: Omlijnen & Inkleuren!",
+        "instructionEn": "Finish your masterpiece! Add crisp black outlines, then grab your pencils, markers, or use our Online Coloring Studio to color it in!",
+        "instructionNl": "Maak je meesterwerk af! Trek strakke zwarte contourlijnen en kleur alles prachtig in met viltstiften, potloden of in onze Online Kleurtool!"
+      }
+    ]
+  },
+  {
+    "slug": "how-to-draw-a-ghost",
+    "category": "fantasy",
+    "difficulty": "easy",
+    "timeMinutes": 6,
+    "icon": "👻",
+    "titleEn": "How to Draw a Friendly Halloween Ghost",
+    "titleNl": "Hoe Teken Je een Vriendelijk Spookje",
+    "descEn": "Learn how to draw a fun, easy friendly halloween ghost step-by-step in 6 simple illustrated stages! Perfect for kids, parents, and classrooms.",
+    "descNl": "Leer stap voor stap een vrolijke vriendelijk spookje tekenen in 6 simpele, duidelijke stappen! Ideaal voor kinderen, thuis en in de klas.",
+    "relatedHubSlug": "holidays-seasons",
+    "relatedThemeSlug": "halloween-spooky",
+    "steps": [
+      {
+        "stepNumber": 1,
+        "titleEn": "Step 1: Basic Guidelines for Friendly Halloween Ghost",
+        "titleNl": "Stap 1: Basisvormen voor Vriendelijk Spookje",
+        "instructionEn": "Start by lightly sketching simple oval and circular guide shapes for the body and structure of your friendly halloween ghost.",
+        "instructionNl": "Begin met het zachtjes schetsen van eenvoudige cirkels en ovalen voor het lichaam en de basis van je vriendelijk spookje.",
+        "tipEn": "Keep your pencil strokes light so they are easy to refine later.",
+        "tipNl": "Druk niet te hard op je potlood zodat je lijntjes straks makkelijk kunt uitgummen."
+      },
+      {
+        "stepNumber": 2,
+        "titleEn": "Step 2: Connecting Contours",
+        "titleNl": "Stap 2: Lijnen Verbinden",
+        "instructionEn": "Connect your initial guidelines with smooth, confident outer curves to give your friendly halloween ghost its true silhouette.",
+        "instructionNl": "Verbind de basisvormen met soepele lijnen om de herkenbare omtrek van je vriendelijk spookje te vormen.",
+        "tipEn": "Focus on clean flowing lines.",
+        "tipNl": "Let op mooie ronde en vloeiende lijnen."
+      },
+      {
+        "stepNumber": 3,
+        "titleEn": "Step 3: Key Features & Proportions",
+        "titleNl": "Stap 3: Belangrijkste Details",
+        "instructionEn": "Draw in the primary characteristic features such as limbs, facial outlines, wings, or wheels.",
+        "instructionNl": "Teken de belangrijkste herkenbare onderdelen zoals pootjes, wielen, vleugels of het gezicht."
+      },
+      {
+        "stepNumber": 4,
+        "titleEn": "Step 4: Expressive Details & Textures",
+        "titleNl": "Stap 4: Uitdrukking en Textuur",
+        "instructionEn": "Add friendly facial expressions, textures, patterns, and signature accessories to bring your drawing to life.",
+        "instructionNl": "Voeg vrolijke ogen, een lach, patronen en details toe om je tekening echt tot leven te wekken."
+      },
+      {
+        "stepNumber": 5,
+        "titleEn": "Step 5: Refine & Clean Up",
+        "titleNl": "Stap 5: Verfijnen & Gummen",
+        "instructionEn": "Trace over your best lines with a clean, confident darker pencil or marker and erase any overlapping sketch lines.",
+        "instructionNl": "Trek de mooiste lijnen wat donkerder over en gum alle hulplijntjes die je niet meer nodig hebt netjes weg."
+      },
+      {
+        "stepNumber": 6,
+        "titleEn": "Step 6: Final Line Art & Coloring!",
+        "titleNl": "Stap 6: Omlijnen & Inkleuren!",
+        "instructionEn": "Finish your masterpiece! Add crisp black outlines, then grab your pencils, markers, or use our Online Coloring Studio to color it in!",
+        "instructionNl": "Maak je meesterwerk af! Trek strakke zwarte contourlijnen en kleur alles prachtig in met viltstiften, potloden of in onze Online Kleurtool!"
+      }
+    ]
+  },
+  {
+    "slug": "how-to-draw-a-knight",
+    "category": "fantasy",
+    "difficulty": "medium",
+    "timeMinutes": 14,
+    "icon": "🛡️",
+    "titleEn": "How to Draw a Brave Armored Knight",
+    "titleNl": "Hoe Teken Je een Dappere Ridder in Harnas",
+    "descEn": "Learn how to draw a fun, easy brave armored knight step-by-step in 6 simple illustrated stages! Perfect for kids, parents, and classrooms.",
+    "descNl": "Leer stap voor stap een vrolijke dappere ridder in harnas tekenen in 6 simpele, duidelijke stappen! Ideaal voor kinderen, thuis en in de klas.",
+    "relatedHubSlug": "fantasy-fairytales",
+    "relatedThemeSlug": "fairytale-kingdoms-castles",
+    "steps": [
+      {
+        "stepNumber": 1,
+        "titleEn": "Step 1: Basic Guidelines for Brave Armored Knight",
+        "titleNl": "Stap 1: Basisvormen voor Dappere Ridder in Harnas",
+        "instructionEn": "Start by lightly sketching simple oval and circular guide shapes for the body and structure of your brave armored knight.",
+        "instructionNl": "Begin met het zachtjes schetsen van eenvoudige cirkels en ovalen voor het lichaam en de basis van je dappere ridder in harnas.",
+        "tipEn": "Keep your pencil strokes light so they are easy to refine later.",
+        "tipNl": "Druk niet te hard op je potlood zodat je lijntjes straks makkelijk kunt uitgummen."
+      },
+      {
+        "stepNumber": 2,
+        "titleEn": "Step 2: Connecting Contours",
+        "titleNl": "Stap 2: Lijnen Verbinden",
+        "instructionEn": "Connect your initial guidelines with smooth, confident outer curves to give your brave armored knight its true silhouette.",
+        "instructionNl": "Verbind de basisvormen met soepele lijnen om de herkenbare omtrek van je dappere ridder in harnas te vormen.",
+        "tipEn": "Focus on clean flowing lines.",
+        "tipNl": "Let op mooie ronde en vloeiende lijnen."
+      },
+      {
+        "stepNumber": 3,
+        "titleEn": "Step 3: Key Features & Proportions",
+        "titleNl": "Stap 3: Belangrijkste Details",
+        "instructionEn": "Draw in the primary characteristic features such as limbs, facial outlines, wings, or wheels.",
+        "instructionNl": "Teken de belangrijkste herkenbare onderdelen zoals pootjes, wielen, vleugels of het gezicht."
+      },
+      {
+        "stepNumber": 4,
+        "titleEn": "Step 4: Expressive Details & Textures",
+        "titleNl": "Stap 4: Uitdrukking en Textuur",
+        "instructionEn": "Add friendly facial expressions, textures, patterns, and signature accessories to bring your drawing to life.",
+        "instructionNl": "Voeg vrolijke ogen, een lach, patronen en details toe om je tekening echt tot leven te wekken."
+      },
+      {
+        "stepNumber": 5,
+        "titleEn": "Step 5: Refine & Clean Up",
+        "titleNl": "Stap 5: Verfijnen & Gummen",
+        "instructionEn": "Trace over your best lines with a clean, confident darker pencil or marker and erase any overlapping sketch lines.",
+        "instructionNl": "Trek de mooiste lijnen wat donkerder over en gum alle hulplijntjes die je niet meer nodig hebt netjes weg."
+      },
+      {
+        "stepNumber": 6,
+        "titleEn": "Step 6: Final Line Art & Coloring!",
+        "titleNl": "Stap 6: Omlijnen & Inkleuren!",
+        "instructionEn": "Finish your masterpiece! Add crisp black outlines, then grab your pencils, markers, or use our Online Coloring Studio to color it in!",
+        "instructionNl": "Maak je meesterwerk af! Trek strakke zwarte contourlijnen en kleur alles prachtig in met viltstiften, potloden of in onze Online Kleurtool!"
+      }
+    ]
+  },
+  {
+    "slug": "how-to-draw-a-princess",
+    "category": "fantasy",
+    "difficulty": "easy",
+    "timeMinutes": 10,
+    "icon": "👸",
+    "titleEn": "How to Draw a Royal Princess",
+    "titleNl": "Hoe Teken Je een Koninklijke Prinses",
+    "descEn": "Learn how to draw a fun, easy royal princess step-by-step in 6 simple illustrated stages! Perfect for kids, parents, and classrooms.",
+    "descNl": "Leer stap voor stap een vrolijke koninklijke prinses tekenen in 6 simpele, duidelijke stappen! Ideaal voor kinderen, thuis en in de klas.",
+    "relatedHubSlug": "fantasy-fairytales",
+    "relatedThemeSlug": "fairytale-kingdoms-castles",
+    "steps": [
+      {
+        "stepNumber": 1,
+        "titleEn": "Step 1: Basic Guidelines for Royal Princess",
+        "titleNl": "Stap 1: Basisvormen voor Koninklijke Prinses",
+        "instructionEn": "Start by lightly sketching simple oval and circular guide shapes for the body and structure of your royal princess.",
+        "instructionNl": "Begin met het zachtjes schetsen van eenvoudige cirkels en ovalen voor het lichaam en de basis van je koninklijke prinses.",
+        "tipEn": "Keep your pencil strokes light so they are easy to refine later.",
+        "tipNl": "Druk niet te hard op je potlood zodat je lijntjes straks makkelijk kunt uitgummen."
+      },
+      {
+        "stepNumber": 2,
+        "titleEn": "Step 2: Connecting Contours",
+        "titleNl": "Stap 2: Lijnen Verbinden",
+        "instructionEn": "Connect your initial guidelines with smooth, confident outer curves to give your royal princess its true silhouette.",
+        "instructionNl": "Verbind de basisvormen met soepele lijnen om de herkenbare omtrek van je koninklijke prinses te vormen.",
+        "tipEn": "Focus on clean flowing lines.",
+        "tipNl": "Let op mooie ronde en vloeiende lijnen."
+      },
+      {
+        "stepNumber": 3,
+        "titleEn": "Step 3: Key Features & Proportions",
+        "titleNl": "Stap 3: Belangrijkste Details",
+        "instructionEn": "Draw in the primary characteristic features such as limbs, facial outlines, wings, or wheels.",
+        "instructionNl": "Teken de belangrijkste herkenbare onderdelen zoals pootjes, wielen, vleugels of het gezicht."
+      },
+      {
+        "stepNumber": 4,
+        "titleEn": "Step 4: Expressive Details & Textures",
+        "titleNl": "Stap 4: Uitdrukking en Textuur",
+        "instructionEn": "Add friendly facial expressions, textures, patterns, and signature accessories to bring your drawing to life.",
+        "instructionNl": "Voeg vrolijke ogen, een lach, patronen en details toe om je tekening echt tot leven te wekken."
+      },
+      {
+        "stepNumber": 5,
+        "titleEn": "Step 5: Refine & Clean Up",
+        "titleNl": "Stap 5: Verfijnen & Gummen",
+        "instructionEn": "Trace over your best lines with a clean, confident darker pencil or marker and erase any overlapping sketch lines.",
+        "instructionNl": "Trek de mooiste lijnen wat donkerder over en gum alle hulplijntjes die je niet meer nodig hebt netjes weg."
+      },
+      {
+        "stepNumber": 6,
+        "titleEn": "Step 6: Final Line Art & Coloring!",
+        "titleNl": "Stap 6: Omlijnen & Inkleuren!",
+        "instructionEn": "Finish your masterpiece! Add crisp black outlines, then grab your pencils, markers, or use our Online Coloring Studio to color it in!",
+        "instructionNl": "Maak je meesterwerk af! Trek strakke zwarte contourlijnen en kleur alles prachtig in met viltstiften, potloden of in onze Online Kleurtool!"
+      }
+    ]
+  },
+  {
+    "slug": "how-to-draw-a-crown",
+    "category": "fantasy",
+    "difficulty": "easy",
+    "timeMinutes": 8,
+    "icon": "👑",
+    "titleEn": "How to Draw a Golden Royal Crown",
+    "titleNl": "Hoe Teken Je een Gouden Koninklijke Kroon",
+    "descEn": "Learn how to draw a fun, easy golden royal crown step-by-step in 6 simple illustrated stages! Perfect for kids, parents, and classrooms.",
+    "descNl": "Leer stap voor stap een vrolijke gouden koninklijke kroon tekenen in 6 simpele, duidelijke stappen! Ideaal voor kinderen, thuis en in de klas.",
+    "relatedHubSlug": "fantasy-fairytales",
+    "relatedThemeSlug": "fairytale-kingdoms-castles",
+    "steps": [
+      {
+        "stepNumber": 1,
+        "titleEn": "Step 1: Basic Guidelines for Golden Royal Crown",
+        "titleNl": "Stap 1: Basisvormen voor Gouden Koninklijke Kroon",
+        "instructionEn": "Start by lightly sketching simple oval and circular guide shapes for the body and structure of your golden royal crown.",
+        "instructionNl": "Begin met het zachtjes schetsen van eenvoudige cirkels en ovalen voor het lichaam en de basis van je gouden koninklijke kroon.",
+        "tipEn": "Keep your pencil strokes light so they are easy to refine later.",
+        "tipNl": "Druk niet te hard op je potlood zodat je lijntjes straks makkelijk kunt uitgummen."
+      },
+      {
+        "stepNumber": 2,
+        "titleEn": "Step 2: Connecting Contours",
+        "titleNl": "Stap 2: Lijnen Verbinden",
+        "instructionEn": "Connect your initial guidelines with smooth, confident outer curves to give your golden royal crown its true silhouette.",
+        "instructionNl": "Verbind de basisvormen met soepele lijnen om de herkenbare omtrek van je gouden koninklijke kroon te vormen.",
+        "tipEn": "Focus on clean flowing lines.",
+        "tipNl": "Let op mooie ronde en vloeiende lijnen."
+      },
+      {
+        "stepNumber": 3,
+        "titleEn": "Step 3: Key Features & Proportions",
+        "titleNl": "Stap 3: Belangrijkste Details",
+        "instructionEn": "Draw in the primary characteristic features such as limbs, facial outlines, wings, or wheels.",
+        "instructionNl": "Teken de belangrijkste herkenbare onderdelen zoals pootjes, wielen, vleugels of het gezicht."
+      },
+      {
+        "stepNumber": 4,
+        "titleEn": "Step 4: Expressive Details & Textures",
+        "titleNl": "Stap 4: Uitdrukking en Textuur",
+        "instructionEn": "Add friendly facial expressions, textures, patterns, and signature accessories to bring your drawing to life.",
+        "instructionNl": "Voeg vrolijke ogen, een lach, patronen en details toe om je tekening echt tot leven te wekken."
+      },
+      {
+        "stepNumber": 5,
+        "titleEn": "Step 5: Refine & Clean Up",
+        "titleNl": "Stap 5: Verfijnen & Gummen",
+        "instructionEn": "Trace over your best lines with a clean, confident darker pencil or marker and erase any overlapping sketch lines.",
+        "instructionNl": "Trek de mooiste lijnen wat donkerder over en gum alle hulplijntjes die je niet meer nodig hebt netjes weg."
+      },
+      {
+        "stepNumber": 6,
+        "titleEn": "Step 6: Final Line Art & Coloring!",
+        "titleNl": "Stap 6: Omlijnen & Inkleuren!",
+        "instructionEn": "Finish your masterpiece! Add crisp black outlines, then grab your pencils, markers, or use our Online Coloring Studio to color it in!",
+        "instructionNl": "Maak je meesterwerk af! Trek strakke zwarte contourlijnen en kleur alles prachtig in met viltstiften, potloden of in onze Online Kleurtool!"
+      }
+    ]
+  },
+  {
+    "slug": "how-to-draw-a-robot",
+    "category": "fantasy",
+    "difficulty": "easy",
+    "timeMinutes": 10,
+    "icon": "🤖",
+    "titleEn": "How to Draw a Retro Smiling Robot",
+    "titleNl": "Hoe Teken Je een Vrolijke Retro Robot",
+    "descEn": "Learn how to draw a fun, easy retro smiling robot step-by-step in 6 simple illustrated stages! Perfect for kids, parents, and classrooms.",
+    "descNl": "Leer stap voor stap een vrolijke vrolijke retro robot tekenen in 6 simpele, duidelijke stappen! Ideaal voor kinderen, thuis en in de klas.",
+    "relatedHubSlug": "gaming-virtual-worlds",
+    "relatedThemeSlug": "cyberpunk-future",
+    "steps": [
+      {
+        "stepNumber": 1,
+        "titleEn": "Step 1: Basic Guidelines for Retro Smiling Robot",
+        "titleNl": "Stap 1: Basisvormen voor Vrolijke Retro Robot",
+        "instructionEn": "Start by lightly sketching simple oval and circular guide shapes for the body and structure of your retro smiling robot.",
+        "instructionNl": "Begin met het zachtjes schetsen van eenvoudige cirkels en ovalen voor het lichaam en de basis van je vrolijke retro robot.",
+        "tipEn": "Keep your pencil strokes light so they are easy to refine later.",
+        "tipNl": "Druk niet te hard op je potlood zodat je lijntjes straks makkelijk kunt uitgummen."
+      },
+      {
+        "stepNumber": 2,
+        "titleEn": "Step 2: Connecting Contours",
+        "titleNl": "Stap 2: Lijnen Verbinden",
+        "instructionEn": "Connect your initial guidelines with smooth, confident outer curves to give your retro smiling robot its true silhouette.",
+        "instructionNl": "Verbind de basisvormen met soepele lijnen om de herkenbare omtrek van je vrolijke retro robot te vormen.",
+        "tipEn": "Focus on clean flowing lines.",
+        "tipNl": "Let op mooie ronde en vloeiende lijnen."
+      },
+      {
+        "stepNumber": 3,
+        "titleEn": "Step 3: Key Features & Proportions",
+        "titleNl": "Stap 3: Belangrijkste Details",
+        "instructionEn": "Draw in the primary characteristic features such as limbs, facial outlines, wings, or wheels.",
+        "instructionNl": "Teken de belangrijkste herkenbare onderdelen zoals pootjes, wielen, vleugels of het gezicht."
+      },
+      {
+        "stepNumber": 4,
+        "titleEn": "Step 4: Expressive Details & Textures",
+        "titleNl": "Stap 4: Uitdrukking en Textuur",
+        "instructionEn": "Add friendly facial expressions, textures, patterns, and signature accessories to bring your drawing to life.",
+        "instructionNl": "Voeg vrolijke ogen, een lach, patronen en details toe om je tekening echt tot leven te wekken."
+      },
+      {
+        "stepNumber": 5,
+        "titleEn": "Step 5: Refine & Clean Up",
+        "titleNl": "Stap 5: Verfijnen & Gummen",
+        "instructionEn": "Trace over your best lines with a clean, confident darker pencil or marker and erase any overlapping sketch lines.",
+        "instructionNl": "Trek de mooiste lijnen wat donkerder over en gum alle hulplijntjes die je niet meer nodig hebt netjes weg."
+      },
+      {
+        "stepNumber": 6,
+        "titleEn": "Step 6: Final Line Art & Coloring!",
+        "titleNl": "Stap 6: Omlijnen & Inkleuren!",
+        "instructionEn": "Finish your masterpiece! Add crisp black outlines, then grab your pencils, markers, or use our Online Coloring Studio to color it in!",
+        "instructionNl": "Maak je meesterwerk af! Trek strakke zwarte contourlijnen en kleur alles prachtig in met viltstiften, potloden of in onze Online Kleurtool!"
+      }
+    ]
+  },
+  {
+    "slug": "how-to-draw-a-superhero-boy",
+    "category": "fantasy",
+    "difficulty": "medium",
+    "timeMinutes": 12,
+    "icon": "🦸‍♂️",
+    "titleEn": "How to Draw a Flying Superhero Boy",
+    "titleNl": "Hoe Teken Je een Vliegende Superheld Jongen",
+    "descEn": "Learn how to draw a fun, easy flying superhero boy step-by-step in 6 simple illustrated stages! Perfect for kids, parents, and classrooms.",
+    "descNl": "Leer stap voor stap een vrolijke vliegende superheld jongen tekenen in 6 simpele, duidelijke stappen! Ideaal voor kinderen, thuis en in de klas.",
+    "relatedHubSlug": "superheroes-comic-universes",
+    "relatedThemeSlug": "marvel-spider-man",
+    "steps": [
+      {
+        "stepNumber": 1,
+        "titleEn": "Step 1: Basic Guidelines for Flying Superhero Boy",
+        "titleNl": "Stap 1: Basisvormen voor Vliegende Superheld Jongen",
+        "instructionEn": "Start by lightly sketching simple oval and circular guide shapes for the body and structure of your flying superhero boy.",
+        "instructionNl": "Begin met het zachtjes schetsen van eenvoudige cirkels en ovalen voor het lichaam en de basis van je vliegende superheld jongen.",
+        "tipEn": "Keep your pencil strokes light so they are easy to refine later.",
+        "tipNl": "Druk niet te hard op je potlood zodat je lijntjes straks makkelijk kunt uitgummen."
+      },
+      {
+        "stepNumber": 2,
+        "titleEn": "Step 2: Connecting Contours",
+        "titleNl": "Stap 2: Lijnen Verbinden",
+        "instructionEn": "Connect your initial guidelines with smooth, confident outer curves to give your flying superhero boy its true silhouette.",
+        "instructionNl": "Verbind de basisvormen met soepele lijnen om de herkenbare omtrek van je vliegende superheld jongen te vormen.",
+        "tipEn": "Focus on clean flowing lines.",
+        "tipNl": "Let op mooie ronde en vloeiende lijnen."
+      },
+      {
+        "stepNumber": 3,
+        "titleEn": "Step 3: Key Features & Proportions",
+        "titleNl": "Stap 3: Belangrijkste Details",
+        "instructionEn": "Draw in the primary characteristic features such as limbs, facial outlines, wings, or wheels.",
+        "instructionNl": "Teken de belangrijkste herkenbare onderdelen zoals pootjes, wielen, vleugels of het gezicht."
+      },
+      {
+        "stepNumber": 4,
+        "titleEn": "Step 4: Expressive Details & Textures",
+        "titleNl": "Stap 4: Uitdrukking en Textuur",
+        "instructionEn": "Add friendly facial expressions, textures, patterns, and signature accessories to bring your drawing to life.",
+        "instructionNl": "Voeg vrolijke ogen, een lach, patronen en details toe om je tekening echt tot leven te wekken."
+      },
+      {
+        "stepNumber": 5,
+        "titleEn": "Step 5: Refine & Clean Up",
+        "titleNl": "Stap 5: Verfijnen & Gummen",
+        "instructionEn": "Trace over your best lines with a clean, confident darker pencil or marker and erase any overlapping sketch lines.",
+        "instructionNl": "Trek de mooiste lijnen wat donkerder over en gum alle hulplijntjes die je niet meer nodig hebt netjes weg."
+      },
+      {
+        "stepNumber": 6,
+        "titleEn": "Step 6: Final Line Art & Coloring!",
+        "titleNl": "Stap 6: Omlijnen & Inkleuren!",
+        "instructionEn": "Finish your masterpiece! Add crisp black outlines, then grab your pencils, markers, or use our Online Coloring Studio to color it in!",
+        "instructionNl": "Maak je meesterwerk af! Trek strakke zwarte contourlijnen en kleur alles prachtig in met viltstiften, potloden of in onze Online Kleurtool!"
+      }
+    ]
+  },
+  {
+    "slug": "how-to-draw-a-superhero-girl",
+    "category": "fantasy",
+    "difficulty": "medium",
+    "timeMinutes": 12,
+    "icon": "🦸‍♀️",
+    "titleEn": "How to Draw a Mighty Superhero Girl",
+    "titleNl": "Hoe Teken Je een Sterke Superheldin Meisje",
+    "descEn": "Learn how to draw a fun, easy mighty superhero girl step-by-step in 6 simple illustrated stages! Perfect for kids, parents, and classrooms.",
+    "descNl": "Leer stap voor stap een vrolijke sterke superheldin meisje tekenen in 6 simpele, duidelijke stappen! Ideaal voor kinderen, thuis en in de klas.",
+    "relatedHubSlug": "superheroes-comic-universes",
+    "relatedThemeSlug": "marvel-spider-man",
+    "steps": [
+      {
+        "stepNumber": 1,
+        "titleEn": "Step 1: Basic Guidelines for Mighty Superhero Girl",
+        "titleNl": "Stap 1: Basisvormen voor Sterke Superheldin Meisje",
+        "instructionEn": "Start by lightly sketching simple oval and circular guide shapes for the body and structure of your mighty superhero girl.",
+        "instructionNl": "Begin met het zachtjes schetsen van eenvoudige cirkels en ovalen voor het lichaam en de basis van je sterke superheldin meisje.",
+        "tipEn": "Keep your pencil strokes light so they are easy to refine later.",
+        "tipNl": "Druk niet te hard op je potlood zodat je lijntjes straks makkelijk kunt uitgummen."
+      },
+      {
+        "stepNumber": 2,
+        "titleEn": "Step 2: Connecting Contours",
+        "titleNl": "Stap 2: Lijnen Verbinden",
+        "instructionEn": "Connect your initial guidelines with smooth, confident outer curves to give your mighty superhero girl its true silhouette.",
+        "instructionNl": "Verbind de basisvormen met soepele lijnen om de herkenbare omtrek van je sterke superheldin meisje te vormen.",
+        "tipEn": "Focus on clean flowing lines.",
+        "tipNl": "Let op mooie ronde en vloeiende lijnen."
+      },
+      {
+        "stepNumber": 3,
+        "titleEn": "Step 3: Key Features & Proportions",
+        "titleNl": "Stap 3: Belangrijkste Details",
+        "instructionEn": "Draw in the primary characteristic features such as limbs, facial outlines, wings, or wheels.",
+        "instructionNl": "Teken de belangrijkste herkenbare onderdelen zoals pootjes, wielen, vleugels of het gezicht."
+      },
+      {
+        "stepNumber": 4,
+        "titleEn": "Step 4: Expressive Details & Textures",
+        "titleNl": "Stap 4: Uitdrukking en Textuur",
+        "instructionEn": "Add friendly facial expressions, textures, patterns, and signature accessories to bring your drawing to life.",
+        "instructionNl": "Voeg vrolijke ogen, een lach, patronen en details toe om je tekening echt tot leven te wekken."
+      },
+      {
+        "stepNumber": 5,
+        "titleEn": "Step 5: Refine & Clean Up",
+        "titleNl": "Stap 5: Verfijnen & Gummen",
+        "instructionEn": "Trace over your best lines with a clean, confident darker pencil or marker and erase any overlapping sketch lines.",
+        "instructionNl": "Trek de mooiste lijnen wat donkerder over en gum alle hulplijntjes die je niet meer nodig hebt netjes weg."
+      },
+      {
+        "stepNumber": 6,
+        "titleEn": "Step 6: Final Line Art & Coloring!",
+        "titleNl": "Stap 6: Omlijnen & Inkleuren!",
+        "instructionEn": "Finish your masterpiece! Add crisp black outlines, then grab your pencils, markers, or use our Online Coloring Studio to color it in!",
+        "instructionNl": "Maak je meesterwerk af! Trek strakke zwarte contourlijnen en kleur alles prachtig in met viltstiften, potloden of in onze Online Kleurtool!"
+      }
+    ]
+  },
+  {
+    "slug": "how-to-draw-a-cute-monster",
+    "category": "fantasy",
+    "difficulty": "easy",
+    "timeMinutes": 8,
+    "icon": "👾",
+    "titleEn": "How to Draw a Furry Cute Monster",
+    "titleNl": "Hoe Teken Je een Vriendelijk Pluizig Monster",
+    "descEn": "Learn how to draw a fun, easy furry cute monster step-by-step in 6 simple illustrated stages! Perfect for kids, parents, and classrooms.",
+    "descNl": "Leer stap voor stap een vrolijke vriendelijk pluizig monster tekenen in 6 simpele, duidelijke stappen! Ideaal voor kinderen, thuis en in de klas.",
+    "relatedHubSlug": "kids-tv-shows",
+    "relatedThemeSlug": "cartoons",
+    "steps": [
+      {
+        "stepNumber": 1,
+        "titleEn": "Step 1: Basic Guidelines for Furry Cute Monster",
+        "titleNl": "Stap 1: Basisvormen voor Vriendelijk Pluizig Monster",
+        "instructionEn": "Start by lightly sketching simple oval and circular guide shapes for the body and structure of your furry cute monster.",
+        "instructionNl": "Begin met het zachtjes schetsen van eenvoudige cirkels en ovalen voor het lichaam en de basis van je vriendelijk pluizig monster.",
+        "tipEn": "Keep your pencil strokes light so they are easy to refine later.",
+        "tipNl": "Druk niet te hard op je potlood zodat je lijntjes straks makkelijk kunt uitgummen."
+      },
+      {
+        "stepNumber": 2,
+        "titleEn": "Step 2: Connecting Contours",
+        "titleNl": "Stap 2: Lijnen Verbinden",
+        "instructionEn": "Connect your initial guidelines with smooth, confident outer curves to give your furry cute monster its true silhouette.",
+        "instructionNl": "Verbind de basisvormen met soepele lijnen om de herkenbare omtrek van je vriendelijk pluizig monster te vormen.",
+        "tipEn": "Focus on clean flowing lines.",
+        "tipNl": "Let op mooie ronde en vloeiende lijnen."
+      },
+      {
+        "stepNumber": 3,
+        "titleEn": "Step 3: Key Features & Proportions",
+        "titleNl": "Stap 3: Belangrijkste Details",
+        "instructionEn": "Draw in the primary characteristic features such as limbs, facial outlines, wings, or wheels.",
+        "instructionNl": "Teken de belangrijkste herkenbare onderdelen zoals pootjes, wielen, vleugels of het gezicht."
+      },
+      {
+        "stepNumber": 4,
+        "titleEn": "Step 4: Expressive Details & Textures",
+        "titleNl": "Stap 4: Uitdrukking en Textuur",
+        "instructionEn": "Add friendly facial expressions, textures, patterns, and signature accessories to bring your drawing to life.",
+        "instructionNl": "Voeg vrolijke ogen, een lach, patronen en details toe om je tekening echt tot leven te wekken."
+      },
+      {
+        "stepNumber": 5,
+        "titleEn": "Step 5: Refine & Clean Up",
+        "titleNl": "Stap 5: Verfijnen & Gummen",
+        "instructionEn": "Trace over your best lines with a clean, confident darker pencil or marker and erase any overlapping sketch lines.",
+        "instructionNl": "Trek de mooiste lijnen wat donkerder over en gum alle hulplijntjes die je niet meer nodig hebt netjes weg."
+      },
+      {
+        "stepNumber": 6,
+        "titleEn": "Step 6: Final Line Art & Coloring!",
+        "titleNl": "Stap 6: Omlijnen & Inkleuren!",
+        "instructionEn": "Finish your masterpiece! Add crisp black outlines, then grab your pencils, markers, or use our Online Coloring Studio to color it in!",
+        "instructionNl": "Maak je meesterwerk af! Trek strakke zwarte contourlijnen en kleur alles prachtig in met viltstiften, potloden of in onze Online Kleurtool!"
+      }
+    ]
+  },
+  {
+    "slug": "how-to-draw-an-airship",
+    "category": "fantasy",
+    "difficulty": "medium",
+    "timeMinutes": 14,
+    "icon": "🎈",
+    "titleEn": "How to Draw a Steampunk Airship",
+    "titleNl": "Hoe Teken Je een Steampunk Luchtschip",
+    "descEn": "Learn how to draw a fun, easy steampunk airship step-by-step in 6 simple illustrated stages! Perfect for kids, parents, and classrooms.",
+    "descNl": "Leer stap voor stap een vrolijke steampunk luchtschip tekenen in 6 simpele, duidelijke stappen! Ideaal voor kinderen, thuis en in de klas.",
+    "relatedHubSlug": "vehicles-transportation",
+    "relatedThemeSlug": "airplanes-helicopters",
+    "steps": [
+      {
+        "stepNumber": 1,
+        "titleEn": "Step 1: Basic Guidelines for Steampunk Airship",
+        "titleNl": "Stap 1: Basisvormen voor Steampunk Luchtschip",
+        "instructionEn": "Start by lightly sketching simple oval and circular guide shapes for the body and structure of your steampunk airship.",
+        "instructionNl": "Begin met het zachtjes schetsen van eenvoudige cirkels en ovalen voor het lichaam en de basis van je steampunk luchtschip.",
+        "tipEn": "Keep your pencil strokes light so they are easy to refine later.",
+        "tipNl": "Druk niet te hard op je potlood zodat je lijntjes straks makkelijk kunt uitgummen."
+      },
+      {
+        "stepNumber": 2,
+        "titleEn": "Step 2: Connecting Contours",
+        "titleNl": "Stap 2: Lijnen Verbinden",
+        "instructionEn": "Connect your initial guidelines with smooth, confident outer curves to give your steampunk airship its true silhouette.",
+        "instructionNl": "Verbind de basisvormen met soepele lijnen om de herkenbare omtrek van je steampunk luchtschip te vormen.",
+        "tipEn": "Focus on clean flowing lines.",
+        "tipNl": "Let op mooie ronde en vloeiende lijnen."
+      },
+      {
+        "stepNumber": 3,
+        "titleEn": "Step 3: Key Features & Proportions",
+        "titleNl": "Stap 3: Belangrijkste Details",
+        "instructionEn": "Draw in the primary characteristic features such as limbs, facial outlines, wings, or wheels.",
+        "instructionNl": "Teken de belangrijkste herkenbare onderdelen zoals pootjes, wielen, vleugels of het gezicht."
+      },
+      {
+        "stepNumber": 4,
+        "titleEn": "Step 4: Expressive Details & Textures",
+        "titleNl": "Stap 4: Uitdrukking en Textuur",
+        "instructionEn": "Add friendly facial expressions, textures, patterns, and signature accessories to bring your drawing to life.",
+        "instructionNl": "Voeg vrolijke ogen, een lach, patronen en details toe om je tekening echt tot leven te wekken."
+      },
+      {
+        "stepNumber": 5,
+        "titleEn": "Step 5: Refine & Clean Up",
+        "titleNl": "Stap 5: Verfijnen & Gummen",
+        "instructionEn": "Trace over your best lines with a clean, confident darker pencil or marker and erase any overlapping sketch lines.",
+        "instructionNl": "Trek de mooiste lijnen wat donkerder over en gum alle hulplijntjes die je niet meer nodig hebt netjes weg."
+      },
+      {
+        "stepNumber": 6,
+        "titleEn": "Step 6: Final Line Art & Coloring!",
+        "titleNl": "Stap 6: Omlijnen & Inkleuren!",
+        "instructionEn": "Finish your masterpiece! Add crisp black outlines, then grab your pencils, markers, or use our Online Coloring Studio to color it in!",
+        "instructionNl": "Maak je meesterwerk af! Trek strakke zwarte contourlijnen en kleur alles prachtig in met viltstiften, potloden of in onze Online Kleurtool!"
+      }
+    ]
+  },
+  {
+    "slug": "how-to-draw-a-pumpkin",
+    "category": "fantasy",
+    "difficulty": "easy",
+    "timeMinutes": 8,
+    "icon": "🎃",
+    "titleEn": "How to Draw a Smiling Jack-o-Lantern",
+    "titleNl": "Hoe Teken Je een Vrolijke Halloween Pompoen",
+    "descEn": "Learn how to draw a fun, easy smiling jack-o-lantern step-by-step in 6 simple illustrated stages! Perfect for kids, parents, and classrooms.",
+    "descNl": "Leer stap voor stap een vrolijke vrolijke halloween pompoen tekenen in 6 simpele, duidelijke stappen! Ideaal voor kinderen, thuis en in de klas.",
+    "relatedHubSlug": "holidays-seasons",
+    "relatedThemeSlug": "halloween-spooky",
+    "steps": [
+      {
+        "stepNumber": 1,
+        "titleEn": "Step 1: Basic Guidelines for Smiling Jack-o-Lantern",
+        "titleNl": "Stap 1: Basisvormen voor Vrolijke Halloween Pompoen",
+        "instructionEn": "Start by lightly sketching simple oval and circular guide shapes for the body and structure of your smiling jack-o-lantern.",
+        "instructionNl": "Begin met het zachtjes schetsen van eenvoudige cirkels en ovalen voor het lichaam en de basis van je vrolijke halloween pompoen.",
+        "tipEn": "Keep your pencil strokes light so they are easy to refine later.",
+        "tipNl": "Druk niet te hard op je potlood zodat je lijntjes straks makkelijk kunt uitgummen."
+      },
+      {
+        "stepNumber": 2,
+        "titleEn": "Step 2: Connecting Contours",
+        "titleNl": "Stap 2: Lijnen Verbinden",
+        "instructionEn": "Connect your initial guidelines with smooth, confident outer curves to give your smiling jack-o-lantern its true silhouette.",
+        "instructionNl": "Verbind de basisvormen met soepele lijnen om de herkenbare omtrek van je vrolijke halloween pompoen te vormen.",
+        "tipEn": "Focus on clean flowing lines.",
+        "tipNl": "Let op mooie ronde en vloeiende lijnen."
+      },
+      {
+        "stepNumber": 3,
+        "titleEn": "Step 3: Key Features & Proportions",
+        "titleNl": "Stap 3: Belangrijkste Details",
+        "instructionEn": "Draw in the primary characteristic features such as limbs, facial outlines, wings, or wheels.",
+        "instructionNl": "Teken de belangrijkste herkenbare onderdelen zoals pootjes, wielen, vleugels of het gezicht."
+      },
+      {
+        "stepNumber": 4,
+        "titleEn": "Step 4: Expressive Details & Textures",
+        "titleNl": "Stap 4: Uitdrukking en Textuur",
+        "instructionEn": "Add friendly facial expressions, textures, patterns, and signature accessories to bring your drawing to life.",
+        "instructionNl": "Voeg vrolijke ogen, een lach, patronen en details toe om je tekening echt tot leven te wekken."
+      },
+      {
+        "stepNumber": 5,
+        "titleEn": "Step 5: Refine & Clean Up",
+        "titleNl": "Stap 5: Verfijnen & Gummen",
+        "instructionEn": "Trace over your best lines with a clean, confident darker pencil or marker and erase any overlapping sketch lines.",
+        "instructionNl": "Trek de mooiste lijnen wat donkerder over en gum alle hulplijntjes die je niet meer nodig hebt netjes weg."
+      },
+      {
+        "stepNumber": 6,
+        "titleEn": "Step 6: Final Line Art & Coloring!",
+        "titleNl": "Stap 6: Omlijnen & Inkleuren!",
+        "instructionEn": "Finish your masterpiece! Add crisp black outlines, then grab your pencils, markers, or use our Online Coloring Studio to color it in!",
+        "instructionNl": "Maak je meesterwerk af! Trek strakke zwarte contourlijnen en kleur alles prachtig in met viltstiften, potloden of in onze Online Kleurtool!"
+      }
+    ]
+  },
+  {
+    "slug": "how-to-draw-santa-claus",
+    "category": "fantasy",
+    "difficulty": "medium",
+    "timeMinutes": 12,
+    "icon": "🎅",
+    "titleEn": "How to Draw a Jolly Santa Claus",
+    "titleNl": "Hoe Teken Je een Vrolijke Kerstman",
+    "descEn": "Learn how to draw a fun, easy jolly santa claus step-by-step in 6 simple illustrated stages! Perfect for kids, parents, and classrooms.",
+    "descNl": "Leer stap voor stap een vrolijke vrolijke kerstman tekenen in 6 simpele, duidelijke stappen! Ideaal voor kinderen, thuis en in de klas.",
+    "relatedHubSlug": "holidays-seasons",
+    "relatedThemeSlug": "christmas-winter",
+    "steps": [
+      {
+        "stepNumber": 1,
+        "titleEn": "Step 1: Basic Guidelines for Jolly Santa Claus",
+        "titleNl": "Stap 1: Basisvormen voor Vrolijke Kerstman",
+        "instructionEn": "Start by lightly sketching simple oval and circular guide shapes for the body and structure of your jolly santa claus.",
+        "instructionNl": "Begin met het zachtjes schetsen van eenvoudige cirkels en ovalen voor het lichaam en de basis van je vrolijke kerstman.",
+        "tipEn": "Keep your pencil strokes light so they are easy to refine later.",
+        "tipNl": "Druk niet te hard op je potlood zodat je lijntjes straks makkelijk kunt uitgummen."
+      },
+      {
+        "stepNumber": 2,
+        "titleEn": "Step 2: Connecting Contours",
+        "titleNl": "Stap 2: Lijnen Verbinden",
+        "instructionEn": "Connect your initial guidelines with smooth, confident outer curves to give your jolly santa claus its true silhouette.",
+        "instructionNl": "Verbind de basisvormen met soepele lijnen om de herkenbare omtrek van je vrolijke kerstman te vormen.",
+        "tipEn": "Focus on clean flowing lines.",
+        "tipNl": "Let op mooie ronde en vloeiende lijnen."
+      },
+      {
+        "stepNumber": 3,
+        "titleEn": "Step 3: Key Features & Proportions",
+        "titleNl": "Stap 3: Belangrijkste Details",
+        "instructionEn": "Draw in the primary characteristic features such as limbs, facial outlines, wings, or wheels.",
+        "instructionNl": "Teken de belangrijkste herkenbare onderdelen zoals pootjes, wielen, vleugels of het gezicht."
+      },
+      {
+        "stepNumber": 4,
+        "titleEn": "Step 4: Expressive Details & Textures",
+        "titleNl": "Stap 4: Uitdrukking en Textuur",
+        "instructionEn": "Add friendly facial expressions, textures, patterns, and signature accessories to bring your drawing to life.",
+        "instructionNl": "Voeg vrolijke ogen, een lach, patronen en details toe om je tekening echt tot leven te wekken."
+      },
+      {
+        "stepNumber": 5,
+        "titleEn": "Step 5: Refine & Clean Up",
+        "titleNl": "Stap 5: Verfijnen & Gummen",
+        "instructionEn": "Trace over your best lines with a clean, confident darker pencil or marker and erase any overlapping sketch lines.",
+        "instructionNl": "Trek de mooiste lijnen wat donkerder over en gum alle hulplijntjes die je niet meer nodig hebt netjes weg."
+      },
+      {
+        "stepNumber": 6,
+        "titleEn": "Step 6: Final Line Art & Coloring!",
+        "titleNl": "Stap 6: Omlijnen & Inkleuren!",
+        "instructionEn": "Finish your masterpiece! Add crisp black outlines, then grab your pencils, markers, or use our Online Coloring Studio to color it in!",
+        "instructionNl": "Maak je meesterwerk af! Trek strakke zwarte contourlijnen en kleur alles prachtig in met viltstiften, potloden of in onze Online Kleurtool!"
+      }
+    ]
+  },
+  {
+    "slug": "how-to-draw-an-easter-basket",
+    "category": "fantasy",
+    "difficulty": "easy",
+    "timeMinutes": 10,
+    "icon": "🧺",
+    "titleEn": "How to Draw a Easter Egg Basket",
+    "titleNl": "Hoe Teken Je een Paasmandje vol Eieren",
+    "descEn": "Learn how to draw a fun, easy easter egg basket step-by-step in 6 simple illustrated stages! Perfect for kids, parents, and classrooms.",
+    "descNl": "Leer stap voor stap een vrolijke paasmandje vol eieren tekenen in 6 simpele, duidelijke stappen! Ideaal voor kinderen, thuis en in de klas.",
+    "relatedHubSlug": "holidays-seasons",
+    "relatedThemeSlug": "spring-easter",
+    "steps": [
+      {
+        "stepNumber": 1,
+        "titleEn": "Step 1: Basic Guidelines for Easter Egg Basket",
+        "titleNl": "Stap 1: Basisvormen voor Paasmandje vol Eieren",
+        "instructionEn": "Start by lightly sketching simple oval and circular guide shapes for the body and structure of your easter egg basket.",
+        "instructionNl": "Begin met het zachtjes schetsen van eenvoudige cirkels en ovalen voor het lichaam en de basis van je paasmandje vol eieren.",
+        "tipEn": "Keep your pencil strokes light so they are easy to refine later.",
+        "tipNl": "Druk niet te hard op je potlood zodat je lijntjes straks makkelijk kunt uitgummen."
+      },
+      {
+        "stepNumber": 2,
+        "titleEn": "Step 2: Connecting Contours",
+        "titleNl": "Stap 2: Lijnen Verbinden",
+        "instructionEn": "Connect your initial guidelines with smooth, confident outer curves to give your easter egg basket its true silhouette.",
+        "instructionNl": "Verbind de basisvormen met soepele lijnen om de herkenbare omtrek van je paasmandje vol eieren te vormen.",
+        "tipEn": "Focus on clean flowing lines.",
+        "tipNl": "Let op mooie ronde en vloeiende lijnen."
+      },
+      {
+        "stepNumber": 3,
+        "titleEn": "Step 3: Key Features & Proportions",
+        "titleNl": "Stap 3: Belangrijkste Details",
+        "instructionEn": "Draw in the primary characteristic features such as limbs, facial outlines, wings, or wheels.",
+        "instructionNl": "Teken de belangrijkste herkenbare onderdelen zoals pootjes, wielen, vleugels of het gezicht."
+      },
+      {
+        "stepNumber": 4,
+        "titleEn": "Step 4: Expressive Details & Textures",
+        "titleNl": "Stap 4: Uitdrukking en Textuur",
+        "instructionEn": "Add friendly facial expressions, textures, patterns, and signature accessories to bring your drawing to life.",
+        "instructionNl": "Voeg vrolijke ogen, een lach, patronen en details toe om je tekening echt tot leven te wekken."
+      },
+      {
+        "stepNumber": 5,
+        "titleEn": "Step 5: Refine & Clean Up",
+        "titleNl": "Stap 5: Verfijnen & Gummen",
+        "instructionEn": "Trace over your best lines with a clean, confident darker pencil or marker and erase any overlapping sketch lines.",
+        "instructionNl": "Trek de mooiste lijnen wat donkerder over en gum alle hulplijntjes die je niet meer nodig hebt netjes weg."
+      },
+      {
+        "stepNumber": 6,
+        "titleEn": "Step 6: Final Line Art & Coloring!",
+        "titleNl": "Stap 6: Omlijnen & Inkleuren!",
+        "instructionEn": "Finish your masterpiece! Add crisp black outlines, then grab your pencils, markers, or use our Online Coloring Studio to color it in!",
+        "instructionNl": "Maak je meesterwerk af! Trek strakke zwarte contourlijnen en kleur alles prachtig in met viltstiften, potloden of in onze Online Kleurtool!"
+      }
+    ]
+  },
+  {
+    "slug": "how-to-draw-a-pegasus",
+    "category": "fantasy",
+    "difficulty": "medium",
+    "timeMinutes": 15,
+    "icon": "🪽",
+    "titleEn": "How to Draw a Winged Pegasus Horse",
+    "titleNl": "Hoe Teken Je een Gevleugeld Pegasus Paard",
+    "descEn": "Learn how to draw a fun, easy winged pegasus horse step-by-step in 6 simple illustrated stages! Perfect for kids, parents, and classrooms.",
+    "descNl": "Leer stap voor stap een vrolijke gevleugeld pegasus paard tekenen in 6 simpele, duidelijke stappen! Ideaal voor kinderen, thuis en in de klas.",
+    "relatedHubSlug": "fantasy-fairytales",
+    "relatedThemeSlug": "unicorns-pegasus",
+    "steps": [
+      {
+        "stepNumber": 1,
+        "titleEn": "Step 1: Basic Guidelines for Winged Pegasus Horse",
+        "titleNl": "Stap 1: Basisvormen voor Gevleugeld Pegasus Paard",
+        "instructionEn": "Start by lightly sketching simple oval and circular guide shapes for the body and structure of your winged pegasus horse.",
+        "instructionNl": "Begin met het zachtjes schetsen van eenvoudige cirkels en ovalen voor het lichaam en de basis van je gevleugeld pegasus paard.",
+        "tipEn": "Keep your pencil strokes light so they are easy to refine later.",
+        "tipNl": "Druk niet te hard op je potlood zodat je lijntjes straks makkelijk kunt uitgummen."
+      },
+      {
+        "stepNumber": 2,
+        "titleEn": "Step 2: Connecting Contours",
+        "titleNl": "Stap 2: Lijnen Verbinden",
+        "instructionEn": "Connect your initial guidelines with smooth, confident outer curves to give your winged pegasus horse its true silhouette.",
+        "instructionNl": "Verbind de basisvormen met soepele lijnen om de herkenbare omtrek van je gevleugeld pegasus paard te vormen.",
+        "tipEn": "Focus on clean flowing lines.",
+        "tipNl": "Let op mooie ronde en vloeiende lijnen."
+      },
+      {
+        "stepNumber": 3,
+        "titleEn": "Step 3: Key Features & Proportions",
+        "titleNl": "Stap 3: Belangrijkste Details",
+        "instructionEn": "Draw in the primary characteristic features such as limbs, facial outlines, wings, or wheels.",
+        "instructionNl": "Teken de belangrijkste herkenbare onderdelen zoals pootjes, wielen, vleugels of het gezicht."
+      },
+      {
+        "stepNumber": 4,
+        "titleEn": "Step 4: Expressive Details & Textures",
+        "titleNl": "Stap 4: Uitdrukking en Textuur",
+        "instructionEn": "Add friendly facial expressions, textures, patterns, and signature accessories to bring your drawing to life.",
+        "instructionNl": "Voeg vrolijke ogen, een lach, patronen en details toe om je tekening echt tot leven te wekken."
+      },
+      {
+        "stepNumber": 5,
+        "titleEn": "Step 5: Refine & Clean Up",
+        "titleNl": "Stap 5: Verfijnen & Gummen",
+        "instructionEn": "Trace over your best lines with a clean, confident darker pencil or marker and erase any overlapping sketch lines.",
+        "instructionNl": "Trek de mooiste lijnen wat donkerder over en gum alle hulplijntjes die je niet meer nodig hebt netjes weg."
+      },
+      {
+        "stepNumber": 6,
+        "titleEn": "Step 6: Final Line Art & Coloring!",
+        "titleNl": "Stap 6: Omlijnen & Inkleuren!",
+        "instructionEn": "Finish your masterpiece! Add crisp black outlines, then grab your pencils, markers, or use our Online Coloring Studio to color it in!",
+        "instructionNl": "Maak je meesterwerk af! Trek strakke zwarte contourlijnen en kleur alles prachtig in met viltstiften, potloden of in onze Online Kleurtool!"
+      }
+    ]
+  },
+  {
+    "slug": "how-to-draw-a-phoenix",
+    "category": "fantasy",
+    "difficulty": "medium",
+    "timeMinutes": 15,
+    "icon": "🔥",
+    "titleEn": "How to Draw a Mythical Fire Phoenix",
+    "titleNl": "Hoe Teken Je een Mythische Vuur Feniks",
+    "descEn": "Learn how to draw a fun, easy mythical fire phoenix step-by-step in 6 simple illustrated stages! Perfect for kids, parents, and classrooms.",
+    "descNl": "Leer stap voor stap een vrolijke mythische vuur feniks tekenen in 6 simpele, duidelijke stappen! Ideaal voor kinderen, thuis en in de klas.",
+    "relatedHubSlug": "fantasy-fairytales",
+    "relatedThemeSlug": "dragons-mythical",
+    "steps": [
+      {
+        "stepNumber": 1,
+        "titleEn": "Step 1: Basic Guidelines for Mythical Fire Phoenix",
+        "titleNl": "Stap 1: Basisvormen voor Mythische Vuur Feniks",
+        "instructionEn": "Start by lightly sketching simple oval and circular guide shapes for the body and structure of your mythical fire phoenix.",
+        "instructionNl": "Begin met het zachtjes schetsen van eenvoudige cirkels en ovalen voor het lichaam en de basis van je mythische vuur feniks.",
+        "tipEn": "Keep your pencil strokes light so they are easy to refine later.",
+        "tipNl": "Druk niet te hard op je potlood zodat je lijntjes straks makkelijk kunt uitgummen."
+      },
+      {
+        "stepNumber": 2,
+        "titleEn": "Step 2: Connecting Contours",
+        "titleNl": "Stap 2: Lijnen Verbinden",
+        "instructionEn": "Connect your initial guidelines with smooth, confident outer curves to give your mythical fire phoenix its true silhouette.",
+        "instructionNl": "Verbind de basisvormen met soepele lijnen om de herkenbare omtrek van je mythische vuur feniks te vormen.",
+        "tipEn": "Focus on clean flowing lines.",
+        "tipNl": "Let op mooie ronde en vloeiende lijnen."
+      },
+      {
+        "stepNumber": 3,
+        "titleEn": "Step 3: Key Features & Proportions",
+        "titleNl": "Stap 3: Belangrijkste Details",
+        "instructionEn": "Draw in the primary characteristic features such as limbs, facial outlines, wings, or wheels.",
+        "instructionNl": "Teken de belangrijkste herkenbare onderdelen zoals pootjes, wielen, vleugels of het gezicht."
+      },
+      {
+        "stepNumber": 4,
+        "titleEn": "Step 4: Expressive Details & Textures",
+        "titleNl": "Stap 4: Uitdrukking en Textuur",
+        "instructionEn": "Add friendly facial expressions, textures, patterns, and signature accessories to bring your drawing to life.",
+        "instructionNl": "Voeg vrolijke ogen, een lach, patronen en details toe om je tekening echt tot leven te wekken."
+      },
+      {
+        "stepNumber": 5,
+        "titleEn": "Step 5: Refine & Clean Up",
+        "titleNl": "Stap 5: Verfijnen & Gummen",
+        "instructionEn": "Trace over your best lines with a clean, confident darker pencil or marker and erase any overlapping sketch lines.",
+        "instructionNl": "Trek de mooiste lijnen wat donkerder over en gum alle hulplijntjes die je niet meer nodig hebt netjes weg."
+      },
+      {
+        "stepNumber": 6,
+        "titleEn": "Step 6: Final Line Art & Coloring!",
+        "titleNl": "Stap 6: Omlijnen & Inkleuren!",
+        "instructionEn": "Finish your masterpiece! Add crisp black outlines, then grab your pencils, markers, or use our Online Coloring Studio to color it in!",
+        "instructionNl": "Maak je meesterwerk af! Trek strakke zwarte contourlijnen en kleur alles prachtig in met viltstiften, potloden of in onze Online Kleurtool!"
+      }
+    ]
+  },
+  {
+    "slug": "how-to-draw-a-race-car",
+    "category": "vehicles",
+    "difficulty": "medium",
+    "timeMinutes": 12,
+    "icon": "🏎️",
+    "titleEn": "How to Draw a Formula 1 Race Car",
+    "titleNl": "Hoe Teken Je een Formule 1 Raceauto",
+    "descEn": "Learn how to draw a fun, easy formula 1 race car step-by-step in 6 simple illustrated stages! Perfect for kids, parents, and classrooms.",
+    "descNl": "Leer stap voor stap een vrolijke formule 1 raceauto tekenen in 6 simpele, duidelijke stappen! Ideaal voor kinderen, thuis en in de klas.",
+    "relatedHubSlug": "vehicles-transportation",
+    "relatedThemeSlug": "cars-trucks",
+    "steps": [
+      {
+        "stepNumber": 1,
+        "titleEn": "Step 1: Basic Guidelines for Formula 1 Race Car",
+        "titleNl": "Stap 1: Basisvormen voor Formule 1 Raceauto",
+        "instructionEn": "Start by lightly sketching simple oval and circular guide shapes for the body and structure of your formula 1 race car.",
+        "instructionNl": "Begin met het zachtjes schetsen van eenvoudige cirkels en ovalen voor het lichaam en de basis van je formule 1 raceauto.",
+        "tipEn": "Keep your pencil strokes light so they are easy to refine later.",
+        "tipNl": "Druk niet te hard op je potlood zodat je lijntjes straks makkelijk kunt uitgummen."
+      },
+      {
+        "stepNumber": 2,
+        "titleEn": "Step 2: Connecting Contours",
+        "titleNl": "Stap 2: Lijnen Verbinden",
+        "instructionEn": "Connect your initial guidelines with smooth, confident outer curves to give your formula 1 race car its true silhouette.",
+        "instructionNl": "Verbind de basisvormen met soepele lijnen om de herkenbare omtrek van je formule 1 raceauto te vormen.",
+        "tipEn": "Focus on clean flowing lines.",
+        "tipNl": "Let op mooie ronde en vloeiende lijnen."
+      },
+      {
+        "stepNumber": 3,
+        "titleEn": "Step 3: Key Features & Proportions",
+        "titleNl": "Stap 3: Belangrijkste Details",
+        "instructionEn": "Draw in the primary characteristic features such as limbs, facial outlines, wings, or wheels.",
+        "instructionNl": "Teken de belangrijkste herkenbare onderdelen zoals pootjes, wielen, vleugels of het gezicht."
+      },
+      {
+        "stepNumber": 4,
+        "titleEn": "Step 4: Expressive Details & Textures",
+        "titleNl": "Stap 4: Uitdrukking en Textuur",
+        "instructionEn": "Add friendly facial expressions, textures, patterns, and signature accessories to bring your drawing to life.",
+        "instructionNl": "Voeg vrolijke ogen, een lach, patronen en details toe om je tekening echt tot leven te wekken."
+      },
+      {
+        "stepNumber": 5,
+        "titleEn": "Step 5: Refine & Clean Up",
+        "titleNl": "Stap 5: Verfijnen & Gummen",
+        "instructionEn": "Trace over your best lines with a clean, confident darker pencil or marker and erase any overlapping sketch lines.",
+        "instructionNl": "Trek de mooiste lijnen wat donkerder over en gum alle hulplijntjes die je niet meer nodig hebt netjes weg."
+      },
+      {
+        "stepNumber": 6,
+        "titleEn": "Step 6: Final Line Art & Coloring!",
+        "titleNl": "Stap 6: Omlijnen & Inkleuren!",
+        "instructionEn": "Finish your masterpiece! Add crisp black outlines, then grab your pencils, markers, or use our Online Coloring Studio to color it in!",
+        "instructionNl": "Maak je meesterwerk af! Trek strakke zwarte contourlijnen en kleur alles prachtig in met viltstiften, potloden of in onze Online Kleurtool!"
+      }
+    ]
+  },
+  {
+    "slug": "how-to-draw-a-monster-truck",
+    "category": "vehicles",
+    "difficulty": "medium",
+    "timeMinutes": 14,
+    "icon": "🛻",
+    "titleEn": "How to Draw a Big Wheel Monster Truck",
+    "titleNl": "Hoe Teken Je een Grote Monster Truck",
+    "descEn": "Learn how to draw a fun, easy big wheel monster truck step-by-step in 6 simple illustrated stages! Perfect for kids, parents, and classrooms.",
+    "descNl": "Leer stap voor stap een vrolijke grote monster truck tekenen in 6 simpele, duidelijke stappen! Ideaal voor kinderen, thuis en in de klas.",
+    "relatedHubSlug": "vehicles-transportation",
+    "relatedThemeSlug": "cars-trucks",
+    "steps": [
+      {
+        "stepNumber": 1,
+        "titleEn": "Step 1: Basic Guidelines for Big Wheel Monster Truck",
+        "titleNl": "Stap 1: Basisvormen voor Grote Monster Truck",
+        "instructionEn": "Start by lightly sketching simple oval and circular guide shapes for the body and structure of your big wheel monster truck.",
+        "instructionNl": "Begin met het zachtjes schetsen van eenvoudige cirkels en ovalen voor het lichaam en de basis van je grote monster truck.",
+        "tipEn": "Keep your pencil strokes light so they are easy to refine later.",
+        "tipNl": "Druk niet te hard op je potlood zodat je lijntjes straks makkelijk kunt uitgummen."
+      },
+      {
+        "stepNumber": 2,
+        "titleEn": "Step 2: Connecting Contours",
+        "titleNl": "Stap 2: Lijnen Verbinden",
+        "instructionEn": "Connect your initial guidelines with smooth, confident outer curves to give your big wheel monster truck its true silhouette.",
+        "instructionNl": "Verbind de basisvormen met soepele lijnen om de herkenbare omtrek van je grote monster truck te vormen.",
+        "tipEn": "Focus on clean flowing lines.",
+        "tipNl": "Let op mooie ronde en vloeiende lijnen."
+      },
+      {
+        "stepNumber": 3,
+        "titleEn": "Step 3: Key Features & Proportions",
+        "titleNl": "Stap 3: Belangrijkste Details",
+        "instructionEn": "Draw in the primary characteristic features such as limbs, facial outlines, wings, or wheels.",
+        "instructionNl": "Teken de belangrijkste herkenbare onderdelen zoals pootjes, wielen, vleugels of het gezicht."
+      },
+      {
+        "stepNumber": 4,
+        "titleEn": "Step 4: Expressive Details & Textures",
+        "titleNl": "Stap 4: Uitdrukking en Textuur",
+        "instructionEn": "Add friendly facial expressions, textures, patterns, and signature accessories to bring your drawing to life.",
+        "instructionNl": "Voeg vrolijke ogen, een lach, patronen en details toe om je tekening echt tot leven te wekken."
+      },
+      {
+        "stepNumber": 5,
+        "titleEn": "Step 5: Refine & Clean Up",
+        "titleNl": "Stap 5: Verfijnen & Gummen",
+        "instructionEn": "Trace over your best lines with a clean, confident darker pencil or marker and erase any overlapping sketch lines.",
+        "instructionNl": "Trek de mooiste lijnen wat donkerder over en gum alle hulplijntjes die je niet meer nodig hebt netjes weg."
+      },
+      {
+        "stepNumber": 6,
+        "titleEn": "Step 6: Final Line Art & Coloring!",
+        "titleNl": "Stap 6: Omlijnen & Inkleuren!",
+        "instructionEn": "Finish your masterpiece! Add crisp black outlines, then grab your pencils, markers, or use our Online Coloring Studio to color it in!",
+        "instructionNl": "Maak je meesterwerk af! Trek strakke zwarte contourlijnen en kleur alles prachtig in met viltstiften, potloden of in onze Online Kleurtool!"
+      }
+    ]
+  },
+  {
+    "slug": "how-to-draw-a-fire-truck",
+    "category": "vehicles",
+    "difficulty": "easy",
+    "timeMinutes": 10,
+    "icon": "🚒",
+    "titleEn": "How to Draw a Emergency Fire Truck",
+    "titleNl": "Hoe Teken Je een Brandweerwagen met Ladder",
+    "descEn": "Learn how to draw a fun, easy emergency fire truck step-by-step in 6 simple illustrated stages! Perfect for kids, parents, and classrooms.",
+    "descNl": "Leer stap voor stap een vrolijke brandweerwagen met ladder tekenen in 6 simpele, duidelijke stappen! Ideaal voor kinderen, thuis en in de klas.",
+    "relatedHubSlug": "vehicles-transportation",
+    "relatedThemeSlug": "cars-trucks",
+    "steps": [
+      {
+        "stepNumber": 1,
+        "titleEn": "Step 1: Basic Guidelines for Emergency Fire Truck",
+        "titleNl": "Stap 1: Basisvormen voor Brandweerwagen met Ladder",
+        "instructionEn": "Start by lightly sketching simple oval and circular guide shapes for the body and structure of your emergency fire truck.",
+        "instructionNl": "Begin met het zachtjes schetsen van eenvoudige cirkels en ovalen voor het lichaam en de basis van je brandweerwagen met ladder.",
+        "tipEn": "Keep your pencil strokes light so they are easy to refine later.",
+        "tipNl": "Druk niet te hard op je potlood zodat je lijntjes straks makkelijk kunt uitgummen."
+      },
+      {
+        "stepNumber": 2,
+        "titleEn": "Step 2: Connecting Contours",
+        "titleNl": "Stap 2: Lijnen Verbinden",
+        "instructionEn": "Connect your initial guidelines with smooth, confident outer curves to give your emergency fire truck its true silhouette.",
+        "instructionNl": "Verbind de basisvormen met soepele lijnen om de herkenbare omtrek van je brandweerwagen met ladder te vormen.",
+        "tipEn": "Focus on clean flowing lines.",
+        "tipNl": "Let op mooie ronde en vloeiende lijnen."
+      },
+      {
+        "stepNumber": 3,
+        "titleEn": "Step 3: Key Features & Proportions",
+        "titleNl": "Stap 3: Belangrijkste Details",
+        "instructionEn": "Draw in the primary characteristic features such as limbs, facial outlines, wings, or wheels.",
+        "instructionNl": "Teken de belangrijkste herkenbare onderdelen zoals pootjes, wielen, vleugels of het gezicht."
+      },
+      {
+        "stepNumber": 4,
+        "titleEn": "Step 4: Expressive Details & Textures",
+        "titleNl": "Stap 4: Uitdrukking en Textuur",
+        "instructionEn": "Add friendly facial expressions, textures, patterns, and signature accessories to bring your drawing to life.",
+        "instructionNl": "Voeg vrolijke ogen, een lach, patronen en details toe om je tekening echt tot leven te wekken."
+      },
+      {
+        "stepNumber": 5,
+        "titleEn": "Step 5: Refine & Clean Up",
+        "titleNl": "Stap 5: Verfijnen & Gummen",
+        "instructionEn": "Trace over your best lines with a clean, confident darker pencil or marker and erase any overlapping sketch lines.",
+        "instructionNl": "Trek de mooiste lijnen wat donkerder over en gum alle hulplijntjes die je niet meer nodig hebt netjes weg."
+      },
+      {
+        "stepNumber": 6,
+        "titleEn": "Step 6: Final Line Art & Coloring!",
+        "titleNl": "Stap 6: Omlijnen & Inkleuren!",
+        "instructionEn": "Finish your masterpiece! Add crisp black outlines, then grab your pencils, markers, or use our Online Coloring Studio to color it in!",
+        "instructionNl": "Maak je meesterwerk af! Trek strakke zwarte contourlijnen en kleur alles prachtig in met viltstiften, potloden of in onze Online Kleurtool!"
+      }
+    ]
+  },
+  {
+    "slug": "how-to-draw-a-police-car",
+    "category": "vehicles",
+    "difficulty": "easy",
+    "timeMinutes": 10,
+    "icon": "🚓",
+    "titleEn": "How to Draw a City Police Patrol Car",
+    "titleNl": "Hoe Teken Je een Politieauto met Zwaailicht",
+    "descEn": "Learn how to draw a fun, easy city police patrol car step-by-step in 6 simple illustrated stages! Perfect for kids, parents, and classrooms.",
+    "descNl": "Leer stap voor stap een vrolijke politieauto met zwaailicht tekenen in 6 simpele, duidelijke stappen! Ideaal voor kinderen, thuis en in de klas.",
+    "relatedHubSlug": "vehicles-transportation",
+    "relatedThemeSlug": "cars-trucks",
+    "steps": [
+      {
+        "stepNumber": 1,
+        "titleEn": "Step 1: Basic Guidelines for City Police Patrol Car",
+        "titleNl": "Stap 1: Basisvormen voor Politieauto met Zwaailicht",
+        "instructionEn": "Start by lightly sketching simple oval and circular guide shapes for the body and structure of your city police patrol car.",
+        "instructionNl": "Begin met het zachtjes schetsen van eenvoudige cirkels en ovalen voor het lichaam en de basis van je politieauto met zwaailicht.",
+        "tipEn": "Keep your pencil strokes light so they are easy to refine later.",
+        "tipNl": "Druk niet te hard op je potlood zodat je lijntjes straks makkelijk kunt uitgummen."
+      },
+      {
+        "stepNumber": 2,
+        "titleEn": "Step 2: Connecting Contours",
+        "titleNl": "Stap 2: Lijnen Verbinden",
+        "instructionEn": "Connect your initial guidelines with smooth, confident outer curves to give your city police patrol car its true silhouette.",
+        "instructionNl": "Verbind de basisvormen met soepele lijnen om de herkenbare omtrek van je politieauto met zwaailicht te vormen.",
+        "tipEn": "Focus on clean flowing lines.",
+        "tipNl": "Let op mooie ronde en vloeiende lijnen."
+      },
+      {
+        "stepNumber": 3,
+        "titleEn": "Step 3: Key Features & Proportions",
+        "titleNl": "Stap 3: Belangrijkste Details",
+        "instructionEn": "Draw in the primary characteristic features such as limbs, facial outlines, wings, or wheels.",
+        "instructionNl": "Teken de belangrijkste herkenbare onderdelen zoals pootjes, wielen, vleugels of het gezicht."
+      },
+      {
+        "stepNumber": 4,
+        "titleEn": "Step 4: Expressive Details & Textures",
+        "titleNl": "Stap 4: Uitdrukking en Textuur",
+        "instructionEn": "Add friendly facial expressions, textures, patterns, and signature accessories to bring your drawing to life.",
+        "instructionNl": "Voeg vrolijke ogen, een lach, patronen en details toe om je tekening echt tot leven te wekken."
+      },
+      {
+        "stepNumber": 5,
+        "titleEn": "Step 5: Refine & Clean Up",
+        "titleNl": "Stap 5: Verfijnen & Gummen",
+        "instructionEn": "Trace over your best lines with a clean, confident darker pencil or marker and erase any overlapping sketch lines.",
+        "instructionNl": "Trek de mooiste lijnen wat donkerder over en gum alle hulplijntjes die je niet meer nodig hebt netjes weg."
+      },
+      {
+        "stepNumber": 6,
+        "titleEn": "Step 6: Final Line Art & Coloring!",
+        "titleNl": "Stap 6: Omlijnen & Inkleuren!",
+        "instructionEn": "Finish your masterpiece! Add crisp black outlines, then grab your pencils, markers, or use our Online Coloring Studio to color it in!",
+        "instructionNl": "Maak je meesterwerk af! Trek strakke zwarte contourlijnen en kleur alles prachtig in met viltstiften, potloden of in onze Online Kleurtool!"
+      }
+    ]
+  },
+  {
+    "slug": "how-to-draw-a-train",
+    "category": "vehicles",
+    "difficulty": "easy",
+    "timeMinutes": 10,
+    "icon": "🚂",
+    "titleEn": "How to Draw a Steam Locomotive Train",
+    "titleNl": "Hoe Teken Je een Klassieke Stoomtrein",
+    "descEn": "Learn how to draw a fun, easy steam locomotive train step-by-step in 6 simple illustrated stages! Perfect for kids, parents, and classrooms.",
+    "descNl": "Leer stap voor stap een vrolijke klassieke stoomtrein tekenen in 6 simpele, duidelijke stappen! Ideaal voor kinderen, thuis en in de klas.",
+    "relatedHubSlug": "vehicles-transportation",
+    "relatedThemeSlug": "trains-railways",
+    "steps": [
+      {
+        "stepNumber": 1,
+        "titleEn": "Step 1: Basic Guidelines for Steam Locomotive Train",
+        "titleNl": "Stap 1: Basisvormen voor Klassieke Stoomtrein",
+        "instructionEn": "Start by lightly sketching simple oval and circular guide shapes for the body and structure of your steam locomotive train.",
+        "instructionNl": "Begin met het zachtjes schetsen van eenvoudige cirkels en ovalen voor het lichaam en de basis van je klassieke stoomtrein.",
+        "tipEn": "Keep your pencil strokes light so they are easy to refine later.",
+        "tipNl": "Druk niet te hard op je potlood zodat je lijntjes straks makkelijk kunt uitgummen."
+      },
+      {
+        "stepNumber": 2,
+        "titleEn": "Step 2: Connecting Contours",
+        "titleNl": "Stap 2: Lijnen Verbinden",
+        "instructionEn": "Connect your initial guidelines with smooth, confident outer curves to give your steam locomotive train its true silhouette.",
+        "instructionNl": "Verbind de basisvormen met soepele lijnen om de herkenbare omtrek van je klassieke stoomtrein te vormen.",
+        "tipEn": "Focus on clean flowing lines.",
+        "tipNl": "Let op mooie ronde en vloeiende lijnen."
+      },
+      {
+        "stepNumber": 3,
+        "titleEn": "Step 3: Key Features & Proportions",
+        "titleNl": "Stap 3: Belangrijkste Details",
+        "instructionEn": "Draw in the primary characteristic features such as limbs, facial outlines, wings, or wheels.",
+        "instructionNl": "Teken de belangrijkste herkenbare onderdelen zoals pootjes, wielen, vleugels of het gezicht."
+      },
+      {
+        "stepNumber": 4,
+        "titleEn": "Step 4: Expressive Details & Textures",
+        "titleNl": "Stap 4: Uitdrukking en Textuur",
+        "instructionEn": "Add friendly facial expressions, textures, patterns, and signature accessories to bring your drawing to life.",
+        "instructionNl": "Voeg vrolijke ogen, een lach, patronen en details toe om je tekening echt tot leven te wekken."
+      },
+      {
+        "stepNumber": 5,
+        "titleEn": "Step 5: Refine & Clean Up",
+        "titleNl": "Stap 5: Verfijnen & Gummen",
+        "instructionEn": "Trace over your best lines with a clean, confident darker pencil or marker and erase any overlapping sketch lines.",
+        "instructionNl": "Trek de mooiste lijnen wat donkerder over en gum alle hulplijntjes die je niet meer nodig hebt netjes weg."
+      },
+      {
+        "stepNumber": 6,
+        "titleEn": "Step 6: Final Line Art & Coloring!",
+        "titleNl": "Stap 6: Omlijnen & Inkleuren!",
+        "instructionEn": "Finish your masterpiece! Add crisp black outlines, then grab your pencils, markers, or use our Online Coloring Studio to color it in!",
+        "instructionNl": "Maak je meesterwerk af! Trek strakke zwarte contourlijnen en kleur alles prachtig in met viltstiften, potloden of in onze Online Kleurtool!"
+      }
+    ]
+  },
+  {
+    "slug": "how-to-draw-a-rocket",
+    "category": "vehicles",
+    "difficulty": "easy",
+    "timeMinutes": 8,
+    "icon": "🚀",
+    "titleEn": "How to Draw a Space Rocket",
+    "titleNl": "Hoe Teken Je een Ruimteraket",
+    "descEn": "Learn how to draw a fun, easy space rocket step-by-step in 6 simple illustrated stages! Perfect for kids, parents, and classrooms.",
+    "descNl": "Leer stap voor stap een vrolijke ruimteraket tekenen in 6 simpele, duidelijke stappen! Ideaal voor kinderen, thuis en in de klas.",
+    "relatedHubSlug": "vehicles-transportation",
+    "relatedThemeSlug": "space-rockets",
+    "steps": [
+      {
+        "stepNumber": 1,
+        "titleEn": "Step 1: Basic Guidelines for Space Rocket",
+        "titleNl": "Stap 1: Basisvormen voor Ruimteraket",
+        "instructionEn": "Start by lightly sketching simple oval and circular guide shapes for the body and structure of your space rocket.",
+        "instructionNl": "Begin met het zachtjes schetsen van eenvoudige cirkels en ovalen voor het lichaam en de basis van je ruimteraket.",
+        "tipEn": "Keep your pencil strokes light so they are easy to refine later.",
+        "tipNl": "Druk niet te hard op je potlood zodat je lijntjes straks makkelijk kunt uitgummen."
+      },
+      {
+        "stepNumber": 2,
+        "titleEn": "Step 2: Connecting Contours",
+        "titleNl": "Stap 2: Lijnen Verbinden",
+        "instructionEn": "Connect your initial guidelines with smooth, confident outer curves to give your space rocket its true silhouette.",
+        "instructionNl": "Verbind de basisvormen met soepele lijnen om de herkenbare omtrek van je ruimteraket te vormen.",
+        "tipEn": "Focus on clean flowing lines.",
+        "tipNl": "Let op mooie ronde en vloeiende lijnen."
+      },
+      {
+        "stepNumber": 3,
+        "titleEn": "Step 3: Key Features & Proportions",
+        "titleNl": "Stap 3: Belangrijkste Details",
+        "instructionEn": "Draw in the primary characteristic features such as limbs, facial outlines, wings, or wheels.",
+        "instructionNl": "Teken de belangrijkste herkenbare onderdelen zoals pootjes, wielen, vleugels of het gezicht."
+      },
+      {
+        "stepNumber": 4,
+        "titleEn": "Step 4: Expressive Details & Textures",
+        "titleNl": "Stap 4: Uitdrukking en Textuur",
+        "instructionEn": "Add friendly facial expressions, textures, patterns, and signature accessories to bring your drawing to life.",
+        "instructionNl": "Voeg vrolijke ogen, een lach, patronen en details toe om je tekening echt tot leven te wekken."
+      },
+      {
+        "stepNumber": 5,
+        "titleEn": "Step 5: Refine & Clean Up",
+        "titleNl": "Stap 5: Verfijnen & Gummen",
+        "instructionEn": "Trace over your best lines with a clean, confident darker pencil or marker and erase any overlapping sketch lines.",
+        "instructionNl": "Trek de mooiste lijnen wat donkerder over en gum alle hulplijntjes die je niet meer nodig hebt netjes weg."
+      },
+      {
+        "stepNumber": 6,
+        "titleEn": "Step 6: Final Line Art & Coloring!",
+        "titleNl": "Stap 6: Omlijnen & Inkleuren!",
+        "instructionEn": "Finish your masterpiece! Add crisp black outlines, then grab your pencils, markers, or use our Online Coloring Studio to color it in!",
+        "instructionNl": "Maak je meesterwerk af! Trek strakke zwarte contourlijnen en kleur alles prachtig in met viltstiften, potloden of in onze Online Kleurtool!"
+      }
+    ]
+  },
+  {
+    "slug": "how-to-draw-a-helicopter",
+    "category": "vehicles",
+    "difficulty": "medium",
+    "timeMinutes": 12,
+    "icon": "🚁",
+    "titleEn": "How to Draw a Rescue Helicopter",
+    "titleNl": "Hoe Teken Je een Reddingshelikopter",
+    "descEn": "Learn how to draw a fun, easy rescue helicopter step-by-step in 6 simple illustrated stages! Perfect for kids, parents, and classrooms.",
+    "descNl": "Leer stap voor stap een vrolijke reddingshelikopter tekenen in 6 simpele, duidelijke stappen! Ideaal voor kinderen, thuis en in de klas.",
+    "relatedHubSlug": "vehicles-transportation",
+    "relatedThemeSlug": "airplanes-helicopters",
+    "steps": [
+      {
+        "stepNumber": 1,
+        "titleEn": "Step 1: Basic Guidelines for Rescue Helicopter",
+        "titleNl": "Stap 1: Basisvormen voor Reddingshelikopter",
+        "instructionEn": "Start by lightly sketching simple oval and circular guide shapes for the body and structure of your rescue helicopter.",
+        "instructionNl": "Begin met het zachtjes schetsen van eenvoudige cirkels en ovalen voor het lichaam en de basis van je reddingshelikopter.",
+        "tipEn": "Keep your pencil strokes light so they are easy to refine later.",
+        "tipNl": "Druk niet te hard op je potlood zodat je lijntjes straks makkelijk kunt uitgummen."
+      },
+      {
+        "stepNumber": 2,
+        "titleEn": "Step 2: Connecting Contours",
+        "titleNl": "Stap 2: Lijnen Verbinden",
+        "instructionEn": "Connect your initial guidelines with smooth, confident outer curves to give your rescue helicopter its true silhouette.",
+        "instructionNl": "Verbind de basisvormen met soepele lijnen om de herkenbare omtrek van je reddingshelikopter te vormen.",
+        "tipEn": "Focus on clean flowing lines.",
+        "tipNl": "Let op mooie ronde en vloeiende lijnen."
+      },
+      {
+        "stepNumber": 3,
+        "titleEn": "Step 3: Key Features & Proportions",
+        "titleNl": "Stap 3: Belangrijkste Details",
+        "instructionEn": "Draw in the primary characteristic features such as limbs, facial outlines, wings, or wheels.",
+        "instructionNl": "Teken de belangrijkste herkenbare onderdelen zoals pootjes, wielen, vleugels of het gezicht."
+      },
+      {
+        "stepNumber": 4,
+        "titleEn": "Step 4: Expressive Details & Textures",
+        "titleNl": "Stap 4: Uitdrukking en Textuur",
+        "instructionEn": "Add friendly facial expressions, textures, patterns, and signature accessories to bring your drawing to life.",
+        "instructionNl": "Voeg vrolijke ogen, een lach, patronen en details toe om je tekening echt tot leven te wekken."
+      },
+      {
+        "stepNumber": 5,
+        "titleEn": "Step 5: Refine & Clean Up",
+        "titleNl": "Stap 5: Verfijnen & Gummen",
+        "instructionEn": "Trace over your best lines with a clean, confident darker pencil or marker and erase any overlapping sketch lines.",
+        "instructionNl": "Trek de mooiste lijnen wat donkerder over en gum alle hulplijntjes die je niet meer nodig hebt netjes weg."
+      },
+      {
+        "stepNumber": 6,
+        "titleEn": "Step 6: Final Line Art & Coloring!",
+        "titleNl": "Stap 6: Omlijnen & Inkleuren!",
+        "instructionEn": "Finish your masterpiece! Add crisp black outlines, then grab your pencils, markers, or use our Online Coloring Studio to color it in!",
+        "instructionNl": "Maak je meesterwerk af! Trek strakke zwarte contourlijnen en kleur alles prachtig in met viltstiften, potloden of in onze Online Kleurtool!"
+      }
+    ]
+  },
+  {
+    "slug": "how-to-draw-an-airplane",
+    "category": "vehicles",
+    "difficulty": "easy",
+    "timeMinutes": 10,
+    "icon": "✈️",
+    "titleEn": "How to Draw a Passenger Jet Airplane",
+    "titleNl": "Hoe Teken Je een Passagiersvliegtuig",
+    "descEn": "Learn how to draw a fun, easy passenger jet airplane step-by-step in 6 simple illustrated stages! Perfect for kids, parents, and classrooms.",
+    "descNl": "Leer stap voor stap een vrolijke passagiersvliegtuig tekenen in 6 simpele, duidelijke stappen! Ideaal voor kinderen, thuis en in de klas.",
+    "relatedHubSlug": "vehicles-transportation",
+    "relatedThemeSlug": "airplanes-helicopters",
+    "steps": [
+      {
+        "stepNumber": 1,
+        "titleEn": "Step 1: Basic Guidelines for Passenger Jet Airplane",
+        "titleNl": "Stap 1: Basisvormen voor Passagiersvliegtuig",
+        "instructionEn": "Start by lightly sketching simple oval and circular guide shapes for the body and structure of your passenger jet airplane.",
+        "instructionNl": "Begin met het zachtjes schetsen van eenvoudige cirkels en ovalen voor het lichaam en de basis van je passagiersvliegtuig.",
+        "tipEn": "Keep your pencil strokes light so they are easy to refine later.",
+        "tipNl": "Druk niet te hard op je potlood zodat je lijntjes straks makkelijk kunt uitgummen."
+      },
+      {
+        "stepNumber": 2,
+        "titleEn": "Step 2: Connecting Contours",
+        "titleNl": "Stap 2: Lijnen Verbinden",
+        "instructionEn": "Connect your initial guidelines with smooth, confident outer curves to give your passenger jet airplane its true silhouette.",
+        "instructionNl": "Verbind de basisvormen met soepele lijnen om de herkenbare omtrek van je passagiersvliegtuig te vormen.",
+        "tipEn": "Focus on clean flowing lines.",
+        "tipNl": "Let op mooie ronde en vloeiende lijnen."
+      },
+      {
+        "stepNumber": 3,
+        "titleEn": "Step 3: Key Features & Proportions",
+        "titleNl": "Stap 3: Belangrijkste Details",
+        "instructionEn": "Draw in the primary characteristic features such as limbs, facial outlines, wings, or wheels.",
+        "instructionNl": "Teken de belangrijkste herkenbare onderdelen zoals pootjes, wielen, vleugels of het gezicht."
+      },
+      {
+        "stepNumber": 4,
+        "titleEn": "Step 4: Expressive Details & Textures",
+        "titleNl": "Stap 4: Uitdrukking en Textuur",
+        "instructionEn": "Add friendly facial expressions, textures, patterns, and signature accessories to bring your drawing to life.",
+        "instructionNl": "Voeg vrolijke ogen, een lach, patronen en details toe om je tekening echt tot leven te wekken."
+      },
+      {
+        "stepNumber": 5,
+        "titleEn": "Step 5: Refine & Clean Up",
+        "titleNl": "Stap 5: Verfijnen & Gummen",
+        "instructionEn": "Trace over your best lines with a clean, confident darker pencil or marker and erase any overlapping sketch lines.",
+        "instructionNl": "Trek de mooiste lijnen wat donkerder over en gum alle hulplijntjes die je niet meer nodig hebt netjes weg."
+      },
+      {
+        "stepNumber": 6,
+        "titleEn": "Step 6: Final Line Art & Coloring!",
+        "titleNl": "Stap 6: Omlijnen & Inkleuren!",
+        "instructionEn": "Finish your masterpiece! Add crisp black outlines, then grab your pencils, markers, or use our Online Coloring Studio to color it in!",
+        "instructionNl": "Maak je meesterwerk af! Trek strakke zwarte contourlijnen en kleur alles prachtig in met viltstiften, potloden of in onze Online Kleurtool!"
+      }
+    ]
+  },
+  {
+    "slug": "how-to-draw-a-school-bus",
+    "category": "vehicles",
+    "difficulty": "easy",
+    "timeMinutes": 10,
+    "icon": "🚌",
+    "titleEn": "How to Draw a Yellow School Bus",
+    "titleNl": "Hoe Teken Je een Gele Schoolbus",
+    "descEn": "Learn how to draw a fun, easy yellow school bus step-by-step in 6 simple illustrated stages! Perfect for kids, parents, and classrooms.",
+    "descNl": "Leer stap voor stap een vrolijke gele schoolbus tekenen in 6 simpele, duidelijke stappen! Ideaal voor kinderen, thuis en in de klas.",
+    "relatedHubSlug": "vehicles-transportation",
+    "relatedThemeSlug": "cars-trucks",
+    "steps": [
+      {
+        "stepNumber": 1,
+        "titleEn": "Step 1: Basic Guidelines for Yellow School Bus",
+        "titleNl": "Stap 1: Basisvormen voor Gele Schoolbus",
+        "instructionEn": "Start by lightly sketching simple oval and circular guide shapes for the body and structure of your yellow school bus.",
+        "instructionNl": "Begin met het zachtjes schetsen van eenvoudige cirkels en ovalen voor het lichaam en de basis van je gele schoolbus.",
+        "tipEn": "Keep your pencil strokes light so they are easy to refine later.",
+        "tipNl": "Druk niet te hard op je potlood zodat je lijntjes straks makkelijk kunt uitgummen."
+      },
+      {
+        "stepNumber": 2,
+        "titleEn": "Step 2: Connecting Contours",
+        "titleNl": "Stap 2: Lijnen Verbinden",
+        "instructionEn": "Connect your initial guidelines with smooth, confident outer curves to give your yellow school bus its true silhouette.",
+        "instructionNl": "Verbind de basisvormen met soepele lijnen om de herkenbare omtrek van je gele schoolbus te vormen.",
+        "tipEn": "Focus on clean flowing lines.",
+        "tipNl": "Let op mooie ronde en vloeiende lijnen."
+      },
+      {
+        "stepNumber": 3,
+        "titleEn": "Step 3: Key Features & Proportions",
+        "titleNl": "Stap 3: Belangrijkste Details",
+        "instructionEn": "Draw in the primary characteristic features such as limbs, facial outlines, wings, or wheels.",
+        "instructionNl": "Teken de belangrijkste herkenbare onderdelen zoals pootjes, wielen, vleugels of het gezicht."
+      },
+      {
+        "stepNumber": 4,
+        "titleEn": "Step 4: Expressive Details & Textures",
+        "titleNl": "Stap 4: Uitdrukking en Textuur",
+        "instructionEn": "Add friendly facial expressions, textures, patterns, and signature accessories to bring your drawing to life.",
+        "instructionNl": "Voeg vrolijke ogen, een lach, patronen en details toe om je tekening echt tot leven te wekken."
+      },
+      {
+        "stepNumber": 5,
+        "titleEn": "Step 5: Refine & Clean Up",
+        "titleNl": "Stap 5: Verfijnen & Gummen",
+        "instructionEn": "Trace over your best lines with a clean, confident darker pencil or marker and erase any overlapping sketch lines.",
+        "instructionNl": "Trek de mooiste lijnen wat donkerder over en gum alle hulplijntjes die je niet meer nodig hebt netjes weg."
+      },
+      {
+        "stepNumber": 6,
+        "titleEn": "Step 6: Final Line Art & Coloring!",
+        "titleNl": "Stap 6: Omlijnen & Inkleuren!",
+        "instructionEn": "Finish your masterpiece! Add crisp black outlines, then grab your pencils, markers, or use our Online Coloring Studio to color it in!",
+        "instructionNl": "Maak je meesterwerk af! Trek strakke zwarte contourlijnen en kleur alles prachtig in met viltstiften, potloden of in onze Online Kleurtool!"
+      }
+    ]
+  },
+  {
+    "slug": "how-to-draw-an-excavator",
+    "category": "vehicles",
+    "difficulty": "medium",
+    "timeMinutes": 14,
+    "icon": "🚜",
+    "titleEn": "How to Draw a Construction Excavator",
+    "titleNl": "Hoe Teken Je een Graafmachine",
+    "descEn": "Learn how to draw a fun, easy construction excavator step-by-step in 6 simple illustrated stages! Perfect for kids, parents, and classrooms.",
+    "descNl": "Leer stap voor stap een vrolijke graafmachine tekenen in 6 simpele, duidelijke stappen! Ideaal voor kinderen, thuis en in de klas.",
+    "relatedHubSlug": "vehicles-transportation",
+    "relatedThemeSlug": "construction-vehicles",
+    "steps": [
+      {
+        "stepNumber": 1,
+        "titleEn": "Step 1: Basic Guidelines for Construction Excavator",
+        "titleNl": "Stap 1: Basisvormen voor Graafmachine",
+        "instructionEn": "Start by lightly sketching simple oval and circular guide shapes for the body and structure of your construction excavator.",
+        "instructionNl": "Begin met het zachtjes schetsen van eenvoudige cirkels en ovalen voor het lichaam en de basis van je graafmachine.",
+        "tipEn": "Keep your pencil strokes light so they are easy to refine later.",
+        "tipNl": "Druk niet te hard op je potlood zodat je lijntjes straks makkelijk kunt uitgummen."
+      },
+      {
+        "stepNumber": 2,
+        "titleEn": "Step 2: Connecting Contours",
+        "titleNl": "Stap 2: Lijnen Verbinden",
+        "instructionEn": "Connect your initial guidelines with smooth, confident outer curves to give your construction excavator its true silhouette.",
+        "instructionNl": "Verbind de basisvormen met soepele lijnen om de herkenbare omtrek van je graafmachine te vormen.",
+        "tipEn": "Focus on clean flowing lines.",
+        "tipNl": "Let op mooie ronde en vloeiende lijnen."
+      },
+      {
+        "stepNumber": 3,
+        "titleEn": "Step 3: Key Features & Proportions",
+        "titleNl": "Stap 3: Belangrijkste Details",
+        "instructionEn": "Draw in the primary characteristic features such as limbs, facial outlines, wings, or wheels.",
+        "instructionNl": "Teken de belangrijkste herkenbare onderdelen zoals pootjes, wielen, vleugels of het gezicht."
+      },
+      {
+        "stepNumber": 4,
+        "titleEn": "Step 4: Expressive Details & Textures",
+        "titleNl": "Stap 4: Uitdrukking en Textuur",
+        "instructionEn": "Add friendly facial expressions, textures, patterns, and signature accessories to bring your drawing to life.",
+        "instructionNl": "Voeg vrolijke ogen, een lach, patronen en details toe om je tekening echt tot leven te wekken."
+      },
+      {
+        "stepNumber": 5,
+        "titleEn": "Step 5: Refine & Clean Up",
+        "titleNl": "Stap 5: Verfijnen & Gummen",
+        "instructionEn": "Trace over your best lines with a clean, confident darker pencil or marker and erase any overlapping sketch lines.",
+        "instructionNl": "Trek de mooiste lijnen wat donkerder over en gum alle hulplijntjes die je niet meer nodig hebt netjes weg."
+      },
+      {
+        "stepNumber": 6,
+        "titleEn": "Step 6: Final Line Art & Coloring!",
+        "titleNl": "Stap 6: Omlijnen & Inkleuren!",
+        "instructionEn": "Finish your masterpiece! Add crisp black outlines, then grab your pencils, markers, or use our Online Coloring Studio to color it in!",
+        "instructionNl": "Maak je meesterwerk af! Trek strakke zwarte contourlijnen en kleur alles prachtig in met viltstiften, potloden of in onze Online Kleurtool!"
+      }
+    ]
+  },
+  {
+    "slug": "how-to-draw-a-dump-truck",
+    "category": "vehicles",
+    "difficulty": "easy",
+    "timeMinutes": 10,
+    "icon": "🚛",
+    "titleEn": "How to Draw a Dump Truck",
+    "titleNl": "Hoe Teken Je een Kiepwagen",
+    "descEn": "Learn how to draw a fun, easy dump truck step-by-step in 6 simple illustrated stages! Perfect for kids, parents, and classrooms.",
+    "descNl": "Leer stap voor stap een vrolijke kiepwagen tekenen in 6 simpele, duidelijke stappen! Ideaal voor kinderen, thuis en in de klas.",
+    "relatedHubSlug": "vehicles-transportation",
+    "relatedThemeSlug": "construction-vehicles",
+    "steps": [
+      {
+        "stepNumber": 1,
+        "titleEn": "Step 1: Basic Guidelines for Dump Truck",
+        "titleNl": "Stap 1: Basisvormen voor Kiepwagen",
+        "instructionEn": "Start by lightly sketching simple oval and circular guide shapes for the body and structure of your dump truck.",
+        "instructionNl": "Begin met het zachtjes schetsen van eenvoudige cirkels en ovalen voor het lichaam en de basis van je kiepwagen.",
+        "tipEn": "Keep your pencil strokes light so they are easy to refine later.",
+        "tipNl": "Druk niet te hard op je potlood zodat je lijntjes straks makkelijk kunt uitgummen."
+      },
+      {
+        "stepNumber": 2,
+        "titleEn": "Step 2: Connecting Contours",
+        "titleNl": "Stap 2: Lijnen Verbinden",
+        "instructionEn": "Connect your initial guidelines with smooth, confident outer curves to give your dump truck its true silhouette.",
+        "instructionNl": "Verbind de basisvormen met soepele lijnen om de herkenbare omtrek van je kiepwagen te vormen.",
+        "tipEn": "Focus on clean flowing lines.",
+        "tipNl": "Let op mooie ronde en vloeiende lijnen."
+      },
+      {
+        "stepNumber": 3,
+        "titleEn": "Step 3: Key Features & Proportions",
+        "titleNl": "Stap 3: Belangrijkste Details",
+        "instructionEn": "Draw in the primary characteristic features such as limbs, facial outlines, wings, or wheels.",
+        "instructionNl": "Teken de belangrijkste herkenbare onderdelen zoals pootjes, wielen, vleugels of het gezicht."
+      },
+      {
+        "stepNumber": 4,
+        "titleEn": "Step 4: Expressive Details & Textures",
+        "titleNl": "Stap 4: Uitdrukking en Textuur",
+        "instructionEn": "Add friendly facial expressions, textures, patterns, and signature accessories to bring your drawing to life.",
+        "instructionNl": "Voeg vrolijke ogen, een lach, patronen en details toe om je tekening echt tot leven te wekken."
+      },
+      {
+        "stepNumber": 5,
+        "titleEn": "Step 5: Refine & Clean Up",
+        "titleNl": "Stap 5: Verfijnen & Gummen",
+        "instructionEn": "Trace over your best lines with a clean, confident darker pencil or marker and erase any overlapping sketch lines.",
+        "instructionNl": "Trek de mooiste lijnen wat donkerder over en gum alle hulplijntjes die je niet meer nodig hebt netjes weg."
+      },
+      {
+        "stepNumber": 6,
+        "titleEn": "Step 6: Final Line Art & Coloring!",
+        "titleNl": "Stap 6: Omlijnen & Inkleuren!",
+        "instructionEn": "Finish your masterpiece! Add crisp black outlines, then grab your pencils, markers, or use our Online Coloring Studio to color it in!",
+        "instructionNl": "Maak je meesterwerk af! Trek strakke zwarte contourlijnen en kleur alles prachtig in met viltstiften, potloden of in onze Online Kleurtool!"
+      }
+    ]
+  },
+  {
+    "slug": "how-to-draw-a-bulldozer",
+    "category": "vehicles",
+    "difficulty": "medium",
+    "timeMinutes": 12,
+    "icon": "🚜",
+    "titleEn": "How to Draw a Powerful Bulldozer",
+    "titleNl": "Hoe Teken Je een Sterke Bulldozer",
+    "descEn": "Learn how to draw a fun, easy powerful bulldozer step-by-step in 6 simple illustrated stages! Perfect for kids, parents, and classrooms.",
+    "descNl": "Leer stap voor stap een vrolijke sterke bulldozer tekenen in 6 simpele, duidelijke stappen! Ideaal voor kinderen, thuis en in de klas.",
+    "relatedHubSlug": "vehicles-transportation",
+    "relatedThemeSlug": "construction-vehicles",
+    "steps": [
+      {
+        "stepNumber": 1,
+        "titleEn": "Step 1: Basic Guidelines for Powerful Bulldozer",
+        "titleNl": "Stap 1: Basisvormen voor Sterke Bulldozer",
+        "instructionEn": "Start by lightly sketching simple oval and circular guide shapes for the body and structure of your powerful bulldozer.",
+        "instructionNl": "Begin met het zachtjes schetsen van eenvoudige cirkels en ovalen voor het lichaam en de basis van je sterke bulldozer.",
+        "tipEn": "Keep your pencil strokes light so they are easy to refine later.",
+        "tipNl": "Druk niet te hard op je potlood zodat je lijntjes straks makkelijk kunt uitgummen."
+      },
+      {
+        "stepNumber": 2,
+        "titleEn": "Step 2: Connecting Contours",
+        "titleNl": "Stap 2: Lijnen Verbinden",
+        "instructionEn": "Connect your initial guidelines with smooth, confident outer curves to give your powerful bulldozer its true silhouette.",
+        "instructionNl": "Verbind de basisvormen met soepele lijnen om de herkenbare omtrek van je sterke bulldozer te vormen.",
+        "tipEn": "Focus on clean flowing lines.",
+        "tipNl": "Let op mooie ronde en vloeiende lijnen."
+      },
+      {
+        "stepNumber": 3,
+        "titleEn": "Step 3: Key Features & Proportions",
+        "titleNl": "Stap 3: Belangrijkste Details",
+        "instructionEn": "Draw in the primary characteristic features such as limbs, facial outlines, wings, or wheels.",
+        "instructionNl": "Teken de belangrijkste herkenbare onderdelen zoals pootjes, wielen, vleugels of het gezicht."
+      },
+      {
+        "stepNumber": 4,
+        "titleEn": "Step 4: Expressive Details & Textures",
+        "titleNl": "Stap 4: Uitdrukking en Textuur",
+        "instructionEn": "Add friendly facial expressions, textures, patterns, and signature accessories to bring your drawing to life.",
+        "instructionNl": "Voeg vrolijke ogen, een lach, patronen en details toe om je tekening echt tot leven te wekken."
+      },
+      {
+        "stepNumber": 5,
+        "titleEn": "Step 5: Refine & Clean Up",
+        "titleNl": "Stap 5: Verfijnen & Gummen",
+        "instructionEn": "Trace over your best lines with a clean, confident darker pencil or marker and erase any overlapping sketch lines.",
+        "instructionNl": "Trek de mooiste lijnen wat donkerder over en gum alle hulplijntjes die je niet meer nodig hebt netjes weg."
+      },
+      {
+        "stepNumber": 6,
+        "titleEn": "Step 6: Final Line Art & Coloring!",
+        "titleNl": "Stap 6: Omlijnen & Inkleuren!",
+        "instructionEn": "Finish your masterpiece! Add crisp black outlines, then grab your pencils, markers, or use our Online Coloring Studio to color it in!",
+        "instructionNl": "Maak je meesterwerk af! Trek strakke zwarte contourlijnen en kleur alles prachtig in met viltstiften, potloden of in onze Online Kleurtool!"
+      }
+    ]
+  },
+  {
+    "slug": "how-to-draw-a-motorcycle",
+    "category": "vehicles",
+    "difficulty": "medium",
+    "timeMinutes": 12,
+    "icon": "🏍️",
+    "titleEn": "How to Draw a Sport Motorcycle",
+    "titleNl": "Hoe Teken Je een Snelle Motorfiets",
+    "descEn": "Learn how to draw a fun, easy sport motorcycle step-by-step in 6 simple illustrated stages! Perfect for kids, parents, and classrooms.",
+    "descNl": "Leer stap voor stap een vrolijke snelle motorfiets tekenen in 6 simpele, duidelijke stappen! Ideaal voor kinderen, thuis en in de klas.",
+    "relatedHubSlug": "vehicles-transportation",
+    "relatedThemeSlug": "cars-trucks",
+    "steps": [
+      {
+        "stepNumber": 1,
+        "titleEn": "Step 1: Basic Guidelines for Sport Motorcycle",
+        "titleNl": "Stap 1: Basisvormen voor Snelle Motorfiets",
+        "instructionEn": "Start by lightly sketching simple oval and circular guide shapes for the body and structure of your sport motorcycle.",
+        "instructionNl": "Begin met het zachtjes schetsen van eenvoudige cirkels en ovalen voor het lichaam en de basis van je snelle motorfiets.",
+        "tipEn": "Keep your pencil strokes light so they are easy to refine later.",
+        "tipNl": "Druk niet te hard op je potlood zodat je lijntjes straks makkelijk kunt uitgummen."
+      },
+      {
+        "stepNumber": 2,
+        "titleEn": "Step 2: Connecting Contours",
+        "titleNl": "Stap 2: Lijnen Verbinden",
+        "instructionEn": "Connect your initial guidelines with smooth, confident outer curves to give your sport motorcycle its true silhouette.",
+        "instructionNl": "Verbind de basisvormen met soepele lijnen om de herkenbare omtrek van je snelle motorfiets te vormen.",
+        "tipEn": "Focus on clean flowing lines.",
+        "tipNl": "Let op mooie ronde en vloeiende lijnen."
+      },
+      {
+        "stepNumber": 3,
+        "titleEn": "Step 3: Key Features & Proportions",
+        "titleNl": "Stap 3: Belangrijkste Details",
+        "instructionEn": "Draw in the primary characteristic features such as limbs, facial outlines, wings, or wheels.",
+        "instructionNl": "Teken de belangrijkste herkenbare onderdelen zoals pootjes, wielen, vleugels of het gezicht."
+      },
+      {
+        "stepNumber": 4,
+        "titleEn": "Step 4: Expressive Details & Textures",
+        "titleNl": "Stap 4: Uitdrukking en Textuur",
+        "instructionEn": "Add friendly facial expressions, textures, patterns, and signature accessories to bring your drawing to life.",
+        "instructionNl": "Voeg vrolijke ogen, een lach, patronen en details toe om je tekening echt tot leven te wekken."
+      },
+      {
+        "stepNumber": 5,
+        "titleEn": "Step 5: Refine & Clean Up",
+        "titleNl": "Stap 5: Verfijnen & Gummen",
+        "instructionEn": "Trace over your best lines with a clean, confident darker pencil or marker and erase any overlapping sketch lines.",
+        "instructionNl": "Trek de mooiste lijnen wat donkerder over en gum alle hulplijntjes die je niet meer nodig hebt netjes weg."
+      },
+      {
+        "stepNumber": 6,
+        "titleEn": "Step 6: Final Line Art & Coloring!",
+        "titleNl": "Stap 6: Omlijnen & Inkleuren!",
+        "instructionEn": "Finish your masterpiece! Add crisp black outlines, then grab your pencils, markers, or use our Online Coloring Studio to color it in!",
+        "instructionNl": "Maak je meesterwerk af! Trek strakke zwarte contourlijnen en kleur alles prachtig in met viltstiften, potloden of in onze Online Kleurtool!"
+      }
+    ]
+  },
+  {
+    "slug": "how-to-draw-a-bicycle",
+    "category": "vehicles",
+    "difficulty": "easy",
+    "timeMinutes": 10,
+    "icon": "🚲",
+    "titleEn": "How to Draw a City Bicycle with Basket",
+    "titleNl": "Hoe Teken Je een Stadsfiets met Mandje",
+    "descEn": "Learn how to draw a fun, easy city bicycle with basket step-by-step in 6 simple illustrated stages! Perfect for kids, parents, and classrooms.",
+    "descNl": "Leer stap voor stap een vrolijke stadsfiets met mandje tekenen in 6 simpele, duidelijke stappen! Ideaal voor kinderen, thuis en in de klas.",
+    "relatedHubSlug": "vehicles-transportation",
+    "relatedThemeSlug": "cars-trucks",
+    "steps": [
+      {
+        "stepNumber": 1,
+        "titleEn": "Step 1: Basic Guidelines for City Bicycle with Basket",
+        "titleNl": "Stap 1: Basisvormen voor Stadsfiets met Mandje",
+        "instructionEn": "Start by lightly sketching simple oval and circular guide shapes for the body and structure of your city bicycle with basket.",
+        "instructionNl": "Begin met het zachtjes schetsen van eenvoudige cirkels en ovalen voor het lichaam en de basis van je stadsfiets met mandje.",
+        "tipEn": "Keep your pencil strokes light so they are easy to refine later.",
+        "tipNl": "Druk niet te hard op je potlood zodat je lijntjes straks makkelijk kunt uitgummen."
+      },
+      {
+        "stepNumber": 2,
+        "titleEn": "Step 2: Connecting Contours",
+        "titleNl": "Stap 2: Lijnen Verbinden",
+        "instructionEn": "Connect your initial guidelines with smooth, confident outer curves to give your city bicycle with basket its true silhouette.",
+        "instructionNl": "Verbind de basisvormen met soepele lijnen om de herkenbare omtrek van je stadsfiets met mandje te vormen.",
+        "tipEn": "Focus on clean flowing lines.",
+        "tipNl": "Let op mooie ronde en vloeiende lijnen."
+      },
+      {
+        "stepNumber": 3,
+        "titleEn": "Step 3: Key Features & Proportions",
+        "titleNl": "Stap 3: Belangrijkste Details",
+        "instructionEn": "Draw in the primary characteristic features such as limbs, facial outlines, wings, or wheels.",
+        "instructionNl": "Teken de belangrijkste herkenbare onderdelen zoals pootjes, wielen, vleugels of het gezicht."
+      },
+      {
+        "stepNumber": 4,
+        "titleEn": "Step 4: Expressive Details & Textures",
+        "titleNl": "Stap 4: Uitdrukking en Textuur",
+        "instructionEn": "Add friendly facial expressions, textures, patterns, and signature accessories to bring your drawing to life.",
+        "instructionNl": "Voeg vrolijke ogen, een lach, patronen en details toe om je tekening echt tot leven te wekken."
+      },
+      {
+        "stepNumber": 5,
+        "titleEn": "Step 5: Refine & Clean Up",
+        "titleNl": "Stap 5: Verfijnen & Gummen",
+        "instructionEn": "Trace over your best lines with a clean, confident darker pencil or marker and erase any overlapping sketch lines.",
+        "instructionNl": "Trek de mooiste lijnen wat donkerder over en gum alle hulplijntjes die je niet meer nodig hebt netjes weg."
+      },
+      {
+        "stepNumber": 6,
+        "titleEn": "Step 6: Final Line Art & Coloring!",
+        "titleNl": "Stap 6: Omlijnen & Inkleuren!",
+        "instructionEn": "Finish your masterpiece! Add crisp black outlines, then grab your pencils, markers, or use our Online Coloring Studio to color it in!",
+        "instructionNl": "Maak je meesterwerk af! Trek strakke zwarte contourlijnen en kleur alles prachtig in met viltstiften, potloden of in onze Online Kleurtool!"
+      }
+    ]
+  },
+  {
+    "slug": "how-to-draw-a-sailboat",
+    "category": "vehicles",
+    "difficulty": "easy",
+    "timeMinutes": 8,
+    "icon": "⛵",
+    "titleEn": "How to Draw a Sailboat on Ocean",
+    "titleNl": "Hoe Teken Je een Zeilboot op het Water",
+    "descEn": "Learn how to draw a fun, easy sailboat on ocean step-by-step in 6 simple illustrated stages! Perfect for kids, parents, and classrooms.",
+    "descNl": "Leer stap voor stap een vrolijke zeilboot op het water tekenen in 6 simpele, duidelijke stappen! Ideaal voor kinderen, thuis en in de klas.",
+    "relatedHubSlug": "vehicles-transportation",
+    "relatedThemeSlug": "boats-ships",
+    "steps": [
+      {
+        "stepNumber": 1,
+        "titleEn": "Step 1: Basic Guidelines for Sailboat on Ocean",
+        "titleNl": "Stap 1: Basisvormen voor Zeilboot op het Water",
+        "instructionEn": "Start by lightly sketching simple oval and circular guide shapes for the body and structure of your sailboat on ocean.",
+        "instructionNl": "Begin met het zachtjes schetsen van eenvoudige cirkels en ovalen voor het lichaam en de basis van je zeilboot op het water.",
+        "tipEn": "Keep your pencil strokes light so they are easy to refine later.",
+        "tipNl": "Druk niet te hard op je potlood zodat je lijntjes straks makkelijk kunt uitgummen."
+      },
+      {
+        "stepNumber": 2,
+        "titleEn": "Step 2: Connecting Contours",
+        "titleNl": "Stap 2: Lijnen Verbinden",
+        "instructionEn": "Connect your initial guidelines with smooth, confident outer curves to give your sailboat on ocean its true silhouette.",
+        "instructionNl": "Verbind de basisvormen met soepele lijnen om de herkenbare omtrek van je zeilboot op het water te vormen.",
+        "tipEn": "Focus on clean flowing lines.",
+        "tipNl": "Let op mooie ronde en vloeiende lijnen."
+      },
+      {
+        "stepNumber": 3,
+        "titleEn": "Step 3: Key Features & Proportions",
+        "titleNl": "Stap 3: Belangrijkste Details",
+        "instructionEn": "Draw in the primary characteristic features such as limbs, facial outlines, wings, or wheels.",
+        "instructionNl": "Teken de belangrijkste herkenbare onderdelen zoals pootjes, wielen, vleugels of het gezicht."
+      },
+      {
+        "stepNumber": 4,
+        "titleEn": "Step 4: Expressive Details & Textures",
+        "titleNl": "Stap 4: Uitdrukking en Textuur",
+        "instructionEn": "Add friendly facial expressions, textures, patterns, and signature accessories to bring your drawing to life.",
+        "instructionNl": "Voeg vrolijke ogen, een lach, patronen en details toe om je tekening echt tot leven te wekken."
+      },
+      {
+        "stepNumber": 5,
+        "titleEn": "Step 5: Refine & Clean Up",
+        "titleNl": "Stap 5: Verfijnen & Gummen",
+        "instructionEn": "Trace over your best lines with a clean, confident darker pencil or marker and erase any overlapping sketch lines.",
+        "instructionNl": "Trek de mooiste lijnen wat donkerder over en gum alle hulplijntjes die je niet meer nodig hebt netjes weg."
+      },
+      {
+        "stepNumber": 6,
+        "titleEn": "Step 6: Final Line Art & Coloring!",
+        "titleNl": "Stap 6: Omlijnen & Inkleuren!",
+        "instructionEn": "Finish your masterpiece! Add crisp black outlines, then grab your pencils, markers, or use our Online Coloring Studio to color it in!",
+        "instructionNl": "Maak je meesterwerk af! Trek strakke zwarte contourlijnen en kleur alles prachtig in met viltstiften, potloden of in onze Online Kleurtool!"
+      }
+    ]
+  },
+  {
+    "slug": "how-to-draw-a-submarine",
+    "category": "vehicles",
+    "difficulty": "easy",
+    "timeMinutes": 8,
+    "icon": "🤿",
+    "titleEn": "How to Draw a Yellow Submarine",
+    "titleNl": "Hoe Teken Je een Gele Onderzeeër",
+    "descEn": "Learn how to draw a fun, easy yellow submarine step-by-step in 6 simple illustrated stages! Perfect for kids, parents, and classrooms.",
+    "descNl": "Leer stap voor stap een vrolijke gele onderzeeër tekenen in 6 simpele, duidelijke stappen! Ideaal voor kinderen, thuis en in de klas.",
+    "relatedHubSlug": "vehicles-transportation",
+    "relatedThemeSlug": "boats-ships",
+    "steps": [
+      {
+        "stepNumber": 1,
+        "titleEn": "Step 1: Basic Guidelines for Yellow Submarine",
+        "titleNl": "Stap 1: Basisvormen voor Gele Onderzeeër",
+        "instructionEn": "Start by lightly sketching simple oval and circular guide shapes for the body and structure of your yellow submarine.",
+        "instructionNl": "Begin met het zachtjes schetsen van eenvoudige cirkels en ovalen voor het lichaam en de basis van je gele onderzeeër.",
+        "tipEn": "Keep your pencil strokes light so they are easy to refine later.",
+        "tipNl": "Druk niet te hard op je potlood zodat je lijntjes straks makkelijk kunt uitgummen."
+      },
+      {
+        "stepNumber": 2,
+        "titleEn": "Step 2: Connecting Contours",
+        "titleNl": "Stap 2: Lijnen Verbinden",
+        "instructionEn": "Connect your initial guidelines with smooth, confident outer curves to give your yellow submarine its true silhouette.",
+        "instructionNl": "Verbind de basisvormen met soepele lijnen om de herkenbare omtrek van je gele onderzeeër te vormen.",
+        "tipEn": "Focus on clean flowing lines.",
+        "tipNl": "Let op mooie ronde en vloeiende lijnen."
+      },
+      {
+        "stepNumber": 3,
+        "titleEn": "Step 3: Key Features & Proportions",
+        "titleNl": "Stap 3: Belangrijkste Details",
+        "instructionEn": "Draw in the primary characteristic features such as limbs, facial outlines, wings, or wheels.",
+        "instructionNl": "Teken de belangrijkste herkenbare onderdelen zoals pootjes, wielen, vleugels of het gezicht."
+      },
+      {
+        "stepNumber": 4,
+        "titleEn": "Step 4: Expressive Details & Textures",
+        "titleNl": "Stap 4: Uitdrukking en Textuur",
+        "instructionEn": "Add friendly facial expressions, textures, patterns, and signature accessories to bring your drawing to life.",
+        "instructionNl": "Voeg vrolijke ogen, een lach, patronen en details toe om je tekening echt tot leven te wekken."
+      },
+      {
+        "stepNumber": 5,
+        "titleEn": "Step 5: Refine & Clean Up",
+        "titleNl": "Stap 5: Verfijnen & Gummen",
+        "instructionEn": "Trace over your best lines with a clean, confident darker pencil or marker and erase any overlapping sketch lines.",
+        "instructionNl": "Trek de mooiste lijnen wat donkerder over en gum alle hulplijntjes die je niet meer nodig hebt netjes weg."
+      },
+      {
+        "stepNumber": 6,
+        "titleEn": "Step 6: Final Line Art & Coloring!",
+        "titleNl": "Stap 6: Omlijnen & Inkleuren!",
+        "instructionEn": "Finish your masterpiece! Add crisp black outlines, then grab your pencils, markers, or use our Online Coloring Studio to color it in!",
+        "instructionNl": "Maak je meesterwerk af! Trek strakke zwarte contourlijnen en kleur alles prachtig in met viltstiften, potloden of in onze Online Kleurtool!"
+      }
+    ]
+  },
+  {
+    "slug": "how-to-draw-a-tractor",
+    "category": "vehicles",
+    "difficulty": "easy",
+    "timeMinutes": 10,
+    "icon": "🚜",
+    "titleEn": "How to Draw a Farm Tractor",
+    "titleNl": "Hoe Teken Je een Boerderij Tractor",
+    "descEn": "Learn how to draw a fun, easy farm tractor step-by-step in 6 simple illustrated stages! Perfect for kids, parents, and classrooms.",
+    "descNl": "Leer stap voor stap een vrolijke boerderij tractor tekenen in 6 simpele, duidelijke stappen! Ideaal voor kinderen, thuis en in de klas.",
+    "relatedHubSlug": "vehicles-transportation",
+    "relatedThemeSlug": "construction-vehicles",
+    "steps": [
+      {
+        "stepNumber": 1,
+        "titleEn": "Step 1: Basic Guidelines for Farm Tractor",
+        "titleNl": "Stap 1: Basisvormen voor Boerderij Tractor",
+        "instructionEn": "Start by lightly sketching simple oval and circular guide shapes for the body and structure of your farm tractor.",
+        "instructionNl": "Begin met het zachtjes schetsen van eenvoudige cirkels en ovalen voor het lichaam en de basis van je boerderij tractor.",
+        "tipEn": "Keep your pencil strokes light so they are easy to refine later.",
+        "tipNl": "Druk niet te hard op je potlood zodat je lijntjes straks makkelijk kunt uitgummen."
+      },
+      {
+        "stepNumber": 2,
+        "titleEn": "Step 2: Connecting Contours",
+        "titleNl": "Stap 2: Lijnen Verbinden",
+        "instructionEn": "Connect your initial guidelines with smooth, confident outer curves to give your farm tractor its true silhouette.",
+        "instructionNl": "Verbind de basisvormen met soepele lijnen om de herkenbare omtrek van je boerderij tractor te vormen.",
+        "tipEn": "Focus on clean flowing lines.",
+        "tipNl": "Let op mooie ronde en vloeiende lijnen."
+      },
+      {
+        "stepNumber": 3,
+        "titleEn": "Step 3: Key Features & Proportions",
+        "titleNl": "Stap 3: Belangrijkste Details",
+        "instructionEn": "Draw in the primary characteristic features such as limbs, facial outlines, wings, or wheels.",
+        "instructionNl": "Teken de belangrijkste herkenbare onderdelen zoals pootjes, wielen, vleugels of het gezicht."
+      },
+      {
+        "stepNumber": 4,
+        "titleEn": "Step 4: Expressive Details & Textures",
+        "titleNl": "Stap 4: Uitdrukking en Textuur",
+        "instructionEn": "Add friendly facial expressions, textures, patterns, and signature accessories to bring your drawing to life.",
+        "instructionNl": "Voeg vrolijke ogen, een lach, patronen en details toe om je tekening echt tot leven te wekken."
+      },
+      {
+        "stepNumber": 5,
+        "titleEn": "Step 5: Refine & Clean Up",
+        "titleNl": "Stap 5: Verfijnen & Gummen",
+        "instructionEn": "Trace over your best lines with a clean, confident darker pencil or marker and erase any overlapping sketch lines.",
+        "instructionNl": "Trek de mooiste lijnen wat donkerder over en gum alle hulplijntjes die je niet meer nodig hebt netjes weg."
+      },
+      {
+        "stepNumber": 6,
+        "titleEn": "Step 6: Final Line Art & Coloring!",
+        "titleNl": "Stap 6: Omlijnen & Inkleuren!",
+        "instructionEn": "Finish your masterpiece! Add crisp black outlines, then grab your pencils, markers, or use our Online Coloring Studio to color it in!",
+        "instructionNl": "Maak je meesterwerk af! Trek strakke zwarte contourlijnen en kleur alles prachtig in met viltstiften, potloden of in onze Online Kleurtool!"
+      }
+    ]
+  },
+  {
+    "slug": "how-to-draw-a-hot-air-balloon",
+    "category": "vehicles",
+    "difficulty": "easy",
+    "timeMinutes": 8,
+    "icon": "🎈",
+    "titleEn": "How to Draw a Hot Air Balloon",
+    "titleNl": "Hoe Teken Je een Kleurrijke Luchtballon",
+    "descEn": "Learn how to draw a fun, easy hot air balloon step-by-step in 6 simple illustrated stages! Perfect for kids, parents, and classrooms.",
+    "descNl": "Leer stap voor stap een vrolijke kleurrijke luchtballon tekenen in 6 simpele, duidelijke stappen! Ideaal voor kinderen, thuis en in de klas.",
+    "relatedHubSlug": "vehicles-transportation",
+    "relatedThemeSlug": "airplanes-helicopters",
+    "steps": [
+      {
+        "stepNumber": 1,
+        "titleEn": "Step 1: Basic Guidelines for Hot Air Balloon",
+        "titleNl": "Stap 1: Basisvormen voor Kleurrijke Luchtballon",
+        "instructionEn": "Start by lightly sketching simple oval and circular guide shapes for the body and structure of your hot air balloon.",
+        "instructionNl": "Begin met het zachtjes schetsen van eenvoudige cirkels en ovalen voor het lichaam en de basis van je kleurrijke luchtballon.",
+        "tipEn": "Keep your pencil strokes light so they are easy to refine later.",
+        "tipNl": "Druk niet te hard op je potlood zodat je lijntjes straks makkelijk kunt uitgummen."
+      },
+      {
+        "stepNumber": 2,
+        "titleEn": "Step 2: Connecting Contours",
+        "titleNl": "Stap 2: Lijnen Verbinden",
+        "instructionEn": "Connect your initial guidelines with smooth, confident outer curves to give your hot air balloon its true silhouette.",
+        "instructionNl": "Verbind de basisvormen met soepele lijnen om de herkenbare omtrek van je kleurrijke luchtballon te vormen.",
+        "tipEn": "Focus on clean flowing lines.",
+        "tipNl": "Let op mooie ronde en vloeiende lijnen."
+      },
+      {
+        "stepNumber": 3,
+        "titleEn": "Step 3: Key Features & Proportions",
+        "titleNl": "Stap 3: Belangrijkste Details",
+        "instructionEn": "Draw in the primary characteristic features such as limbs, facial outlines, wings, or wheels.",
+        "instructionNl": "Teken de belangrijkste herkenbare onderdelen zoals pootjes, wielen, vleugels of het gezicht."
+      },
+      {
+        "stepNumber": 4,
+        "titleEn": "Step 4: Expressive Details & Textures",
+        "titleNl": "Stap 4: Uitdrukking en Textuur",
+        "instructionEn": "Add friendly facial expressions, textures, patterns, and signature accessories to bring your drawing to life.",
+        "instructionNl": "Voeg vrolijke ogen, een lach, patronen en details toe om je tekening echt tot leven te wekken."
+      },
+      {
+        "stepNumber": 5,
+        "titleEn": "Step 5: Refine & Clean Up",
+        "titleNl": "Stap 5: Verfijnen & Gummen",
+        "instructionEn": "Trace over your best lines with a clean, confident darker pencil or marker and erase any overlapping sketch lines.",
+        "instructionNl": "Trek de mooiste lijnen wat donkerder over en gum alle hulplijntjes die je niet meer nodig hebt netjes weg."
+      },
+      {
+        "stepNumber": 6,
+        "titleEn": "Step 6: Final Line Art & Coloring!",
+        "titleNl": "Stap 6: Omlijnen & Inkleuren!",
+        "instructionEn": "Finish your masterpiece! Add crisp black outlines, then grab your pencils, markers, or use our Online Coloring Studio to color it in!",
+        "instructionNl": "Maak je meesterwerk af! Trek strakke zwarte contourlijnen en kleur alles prachtig in met viltstiften, potloden of in onze Online Kleurtool!"
+      }
+    ]
+  },
+  {
+    "slug": "how-to-draw-a-garbage-truck",
+    "category": "vehicles",
+    "difficulty": "easy",
+    "timeMinutes": 10,
+    "icon": "🚛",
+    "titleEn": "How to Draw a City Garbage Truck",
+    "titleNl": "Hoe Teken Je een Vuilniswagen",
+    "descEn": "Learn how to draw a fun, easy city garbage truck step-by-step in 6 simple illustrated stages! Perfect for kids, parents, and classrooms.",
+    "descNl": "Leer stap voor stap een vrolijke vuilniswagen tekenen in 6 simpele, duidelijke stappen! Ideaal voor kinderen, thuis en in de klas.",
+    "relatedHubSlug": "vehicles-transportation",
+    "relatedThemeSlug": "cars-trucks",
+    "steps": [
+      {
+        "stepNumber": 1,
+        "titleEn": "Step 1: Basic Guidelines for City Garbage Truck",
+        "titleNl": "Stap 1: Basisvormen voor Vuilniswagen",
+        "instructionEn": "Start by lightly sketching simple oval and circular guide shapes for the body and structure of your city garbage truck.",
+        "instructionNl": "Begin met het zachtjes schetsen van eenvoudige cirkels en ovalen voor het lichaam en de basis van je vuilniswagen.",
+        "tipEn": "Keep your pencil strokes light so they are easy to refine later.",
+        "tipNl": "Druk niet te hard op je potlood zodat je lijntjes straks makkelijk kunt uitgummen."
+      },
+      {
+        "stepNumber": 2,
+        "titleEn": "Step 2: Connecting Contours",
+        "titleNl": "Stap 2: Lijnen Verbinden",
+        "instructionEn": "Connect your initial guidelines with smooth, confident outer curves to give your city garbage truck its true silhouette.",
+        "instructionNl": "Verbind de basisvormen met soepele lijnen om de herkenbare omtrek van je vuilniswagen te vormen.",
+        "tipEn": "Focus on clean flowing lines.",
+        "tipNl": "Let op mooie ronde en vloeiende lijnen."
+      },
+      {
+        "stepNumber": 3,
+        "titleEn": "Step 3: Key Features & Proportions",
+        "titleNl": "Stap 3: Belangrijkste Details",
+        "instructionEn": "Draw in the primary characteristic features such as limbs, facial outlines, wings, or wheels.",
+        "instructionNl": "Teken de belangrijkste herkenbare onderdelen zoals pootjes, wielen, vleugels of het gezicht."
+      },
+      {
+        "stepNumber": 4,
+        "titleEn": "Step 4: Expressive Details & Textures",
+        "titleNl": "Stap 4: Uitdrukking en Textuur",
+        "instructionEn": "Add friendly facial expressions, textures, patterns, and signature accessories to bring your drawing to life.",
+        "instructionNl": "Voeg vrolijke ogen, een lach, patronen en details toe om je tekening echt tot leven te wekken."
+      },
+      {
+        "stepNumber": 5,
+        "titleEn": "Step 5: Refine & Clean Up",
+        "titleNl": "Stap 5: Verfijnen & Gummen",
+        "instructionEn": "Trace over your best lines with a clean, confident darker pencil or marker and erase any overlapping sketch lines.",
+        "instructionNl": "Trek de mooiste lijnen wat donkerder over en gum alle hulplijntjes die je niet meer nodig hebt netjes weg."
+      },
+      {
+        "stepNumber": 6,
+        "titleEn": "Step 6: Final Line Art & Coloring!",
+        "titleNl": "Stap 6: Omlijnen & Inkleuren!",
+        "instructionEn": "Finish your masterpiece! Add crisp black outlines, then grab your pencils, markers, or use our Online Coloring Studio to color it in!",
+        "instructionNl": "Maak je meesterwerk af! Trek strakke zwarte contourlijnen en kleur alles prachtig in met viltstiften, potloden of in onze Online Kleurtool!"
+      }
+    ]
+  },
+  {
+    "slug": "how-to-draw-an-ambulance",
+    "category": "vehicles",
+    "difficulty": "easy",
+    "timeMinutes": 10,
+    "icon": "🚑",
+    "titleEn": "How to Draw a Emergency Ambulance",
+    "titleNl": "Hoe Teken Je een Ambulance",
+    "descEn": "Learn how to draw a fun, easy emergency ambulance step-by-step in 6 simple illustrated stages! Perfect for kids, parents, and classrooms.",
+    "descNl": "Leer stap voor stap een vrolijke ambulance tekenen in 6 simpele, duidelijke stappen! Ideaal voor kinderen, thuis en in de klas.",
+    "relatedHubSlug": "vehicles-transportation",
+    "relatedThemeSlug": "cars-trucks",
+    "steps": [
+      {
+        "stepNumber": 1,
+        "titleEn": "Step 1: Basic Guidelines for Emergency Ambulance",
+        "titleNl": "Stap 1: Basisvormen voor Ambulance",
+        "instructionEn": "Start by lightly sketching simple oval and circular guide shapes for the body and structure of your emergency ambulance.",
+        "instructionNl": "Begin met het zachtjes schetsen van eenvoudige cirkels en ovalen voor het lichaam en de basis van je ambulance.",
+        "tipEn": "Keep your pencil strokes light so they are easy to refine later.",
+        "tipNl": "Druk niet te hard op je potlood zodat je lijntjes straks makkelijk kunt uitgummen."
+      },
+      {
+        "stepNumber": 2,
+        "titleEn": "Step 2: Connecting Contours",
+        "titleNl": "Stap 2: Lijnen Verbinden",
+        "instructionEn": "Connect your initial guidelines with smooth, confident outer curves to give your emergency ambulance its true silhouette.",
+        "instructionNl": "Verbind de basisvormen met soepele lijnen om de herkenbare omtrek van je ambulance te vormen.",
+        "tipEn": "Focus on clean flowing lines.",
+        "tipNl": "Let op mooie ronde en vloeiende lijnen."
+      },
+      {
+        "stepNumber": 3,
+        "titleEn": "Step 3: Key Features & Proportions",
+        "titleNl": "Stap 3: Belangrijkste Details",
+        "instructionEn": "Draw in the primary characteristic features such as limbs, facial outlines, wings, or wheels.",
+        "instructionNl": "Teken de belangrijkste herkenbare onderdelen zoals pootjes, wielen, vleugels of het gezicht."
+      },
+      {
+        "stepNumber": 4,
+        "titleEn": "Step 4: Expressive Details & Textures",
+        "titleNl": "Stap 4: Uitdrukking en Textuur",
+        "instructionEn": "Add friendly facial expressions, textures, patterns, and signature accessories to bring your drawing to life.",
+        "instructionNl": "Voeg vrolijke ogen, een lach, patronen en details toe om je tekening echt tot leven te wekken."
+      },
+      {
+        "stepNumber": 5,
+        "titleEn": "Step 5: Refine & Clean Up",
+        "titleNl": "Stap 5: Verfijnen & Gummen",
+        "instructionEn": "Trace over your best lines with a clean, confident darker pencil or marker and erase any overlapping sketch lines.",
+        "instructionNl": "Trek de mooiste lijnen wat donkerder over en gum alle hulplijntjes die je niet meer nodig hebt netjes weg."
+      },
+      {
+        "stepNumber": 6,
+        "titleEn": "Step 6: Final Line Art & Coloring!",
+        "titleNl": "Stap 6: Omlijnen & Inkleuren!",
+        "instructionEn": "Finish your masterpiece! Add crisp black outlines, then grab your pencils, markers, or use our Online Coloring Studio to color it in!",
+        "instructionNl": "Maak je meesterwerk af! Trek strakke zwarte contourlijnen en kleur alles prachtig in met viltstiften, potloden of in onze Online Kleurtool!"
+      }
+    ]
+  },
+  {
+    "slug": "how-to-draw-a-forklift",
+    "category": "vehicles",
+    "difficulty": "medium",
+    "timeMinutes": 12,
+    "icon": "🏗️",
+    "titleEn": "How to Draw a Warehouse Forklift",
+    "titleNl": "Hoe Teken Je een Heftruck",
+    "descEn": "Learn how to draw a fun, easy warehouse forklift step-by-step in 6 simple illustrated stages! Perfect for kids, parents, and classrooms.",
+    "descNl": "Leer stap voor stap een vrolijke heftruck tekenen in 6 simpele, duidelijke stappen! Ideaal voor kinderen, thuis en in de klas.",
+    "relatedHubSlug": "vehicles-transportation",
+    "relatedThemeSlug": "construction-vehicles",
+    "steps": [
+      {
+        "stepNumber": 1,
+        "titleEn": "Step 1: Basic Guidelines for Warehouse Forklift",
+        "titleNl": "Stap 1: Basisvormen voor Heftruck",
+        "instructionEn": "Start by lightly sketching simple oval and circular guide shapes for the body and structure of your warehouse forklift.",
+        "instructionNl": "Begin met het zachtjes schetsen van eenvoudige cirkels en ovalen voor het lichaam en de basis van je heftruck.",
+        "tipEn": "Keep your pencil strokes light so they are easy to refine later.",
+        "tipNl": "Druk niet te hard op je potlood zodat je lijntjes straks makkelijk kunt uitgummen."
+      },
+      {
+        "stepNumber": 2,
+        "titleEn": "Step 2: Connecting Contours",
+        "titleNl": "Stap 2: Lijnen Verbinden",
+        "instructionEn": "Connect your initial guidelines with smooth, confident outer curves to give your warehouse forklift its true silhouette.",
+        "instructionNl": "Verbind de basisvormen met soepele lijnen om de herkenbare omtrek van je heftruck te vormen.",
+        "tipEn": "Focus on clean flowing lines.",
+        "tipNl": "Let op mooie ronde en vloeiende lijnen."
+      },
+      {
+        "stepNumber": 3,
+        "titleEn": "Step 3: Key Features & Proportions",
+        "titleNl": "Stap 3: Belangrijkste Details",
+        "instructionEn": "Draw in the primary characteristic features such as limbs, facial outlines, wings, or wheels.",
+        "instructionNl": "Teken de belangrijkste herkenbare onderdelen zoals pootjes, wielen, vleugels of het gezicht."
+      },
+      {
+        "stepNumber": 4,
+        "titleEn": "Step 4: Expressive Details & Textures",
+        "titleNl": "Stap 4: Uitdrukking en Textuur",
+        "instructionEn": "Add friendly facial expressions, textures, patterns, and signature accessories to bring your drawing to life.",
+        "instructionNl": "Voeg vrolijke ogen, een lach, patronen en details toe om je tekening echt tot leven te wekken."
+      },
+      {
+        "stepNumber": 5,
+        "titleEn": "Step 5: Refine & Clean Up",
+        "titleNl": "Stap 5: Verfijnen & Gummen",
+        "instructionEn": "Trace over your best lines with a clean, confident darker pencil or marker and erase any overlapping sketch lines.",
+        "instructionNl": "Trek de mooiste lijnen wat donkerder over en gum alle hulplijntjes die je niet meer nodig hebt netjes weg."
+      },
+      {
+        "stepNumber": 6,
+        "titleEn": "Step 6: Final Line Art & Coloring!",
+        "titleNl": "Stap 6: Omlijnen & Inkleuren!",
+        "instructionEn": "Finish your masterpiece! Add crisp black outlines, then grab your pencils, markers, or use our Online Coloring Studio to color it in!",
+        "instructionNl": "Maak je meesterwerk af! Trek strakke zwarte contourlijnen en kleur alles prachtig in met viltstiften, potloden of in onze Online Kleurtool!"
+      }
+    ]
+  },
+  {
+    "slug": "how-to-draw-a-speedboat",
+    "category": "vehicles",
+    "difficulty": "easy",
+    "timeMinutes": 10,
+    "icon": "🚤",
+    "titleEn": "How to Draw a Fast Speedboat",
+    "titleNl": "Hoe Teken Je een Snelle Speedboot",
+    "descEn": "Learn how to draw a fun, easy fast speedboat step-by-step in 6 simple illustrated stages! Perfect for kids, parents, and classrooms.",
+    "descNl": "Leer stap voor stap een vrolijke snelle speedboot tekenen in 6 simpele, duidelijke stappen! Ideaal voor kinderen, thuis en in de klas.",
+    "relatedHubSlug": "vehicles-transportation",
+    "relatedThemeSlug": "boats-ships",
+    "steps": [
+      {
+        "stepNumber": 1,
+        "titleEn": "Step 1: Basic Guidelines for Fast Speedboat",
+        "titleNl": "Stap 1: Basisvormen voor Snelle Speedboot",
+        "instructionEn": "Start by lightly sketching simple oval and circular guide shapes for the body and structure of your fast speedboat.",
+        "instructionNl": "Begin met het zachtjes schetsen van eenvoudige cirkels en ovalen voor het lichaam en de basis van je snelle speedboot.",
+        "tipEn": "Keep your pencil strokes light so they are easy to refine later.",
+        "tipNl": "Druk niet te hard op je potlood zodat je lijntjes straks makkelijk kunt uitgummen."
+      },
+      {
+        "stepNumber": 2,
+        "titleEn": "Step 2: Connecting Contours",
+        "titleNl": "Stap 2: Lijnen Verbinden",
+        "instructionEn": "Connect your initial guidelines with smooth, confident outer curves to give your fast speedboat its true silhouette.",
+        "instructionNl": "Verbind de basisvormen met soepele lijnen om de herkenbare omtrek van je snelle speedboot te vormen.",
+        "tipEn": "Focus on clean flowing lines.",
+        "tipNl": "Let op mooie ronde en vloeiende lijnen."
+      },
+      {
+        "stepNumber": 3,
+        "titleEn": "Step 3: Key Features & Proportions",
+        "titleNl": "Stap 3: Belangrijkste Details",
+        "instructionEn": "Draw in the primary characteristic features such as limbs, facial outlines, wings, or wheels.",
+        "instructionNl": "Teken de belangrijkste herkenbare onderdelen zoals pootjes, wielen, vleugels of het gezicht."
+      },
+      {
+        "stepNumber": 4,
+        "titleEn": "Step 4: Expressive Details & Textures",
+        "titleNl": "Stap 4: Uitdrukking en Textuur",
+        "instructionEn": "Add friendly facial expressions, textures, patterns, and signature accessories to bring your drawing to life.",
+        "instructionNl": "Voeg vrolijke ogen, een lach, patronen en details toe om je tekening echt tot leven te wekken."
+      },
+      {
+        "stepNumber": 5,
+        "titleEn": "Step 5: Refine & Clean Up",
+        "titleNl": "Stap 5: Verfijnen & Gummen",
+        "instructionEn": "Trace over your best lines with a clean, confident darker pencil or marker and erase any overlapping sketch lines.",
+        "instructionNl": "Trek de mooiste lijnen wat donkerder over en gum alle hulplijntjes die je niet meer nodig hebt netjes weg."
+      },
+      {
+        "stepNumber": 6,
+        "titleEn": "Step 6: Final Line Art & Coloring!",
+        "titleNl": "Stap 6: Omlijnen & Inkleuren!",
+        "instructionEn": "Finish your masterpiece! Add crisp black outlines, then grab your pencils, markers, or use our Online Coloring Studio to color it in!",
+        "instructionNl": "Maak je meesterwerk af! Trek strakke zwarte contourlijnen en kleur alles prachtig in met viltstiften, potloden of in onze Online Kleurtool!"
+      }
+    ]
+  },
+  {
+    "slug": "how-to-draw-a-hovercraft",
+    "category": "vehicles",
+    "difficulty": "medium",
+    "timeMinutes": 12,
+    "icon": "🛸",
+    "titleEn": "How to Draw a Rescue Hovercraft",
+    "titleNl": "Hoe Teken Je een Luchtkussenboot",
+    "descEn": "Learn how to draw a fun, easy rescue hovercraft step-by-step in 6 simple illustrated stages! Perfect for kids, parents, and classrooms.",
+    "descNl": "Leer stap voor stap een vrolijke luchtkussenboot tekenen in 6 simpele, duidelijke stappen! Ideaal voor kinderen, thuis en in de klas.",
+    "relatedHubSlug": "vehicles-transportation",
+    "relatedThemeSlug": "boats-ships",
+    "steps": [
+      {
+        "stepNumber": 1,
+        "titleEn": "Step 1: Basic Guidelines for Rescue Hovercraft",
+        "titleNl": "Stap 1: Basisvormen voor Luchtkussenboot",
+        "instructionEn": "Start by lightly sketching simple oval and circular guide shapes for the body and structure of your rescue hovercraft.",
+        "instructionNl": "Begin met het zachtjes schetsen van eenvoudige cirkels en ovalen voor het lichaam en de basis van je luchtkussenboot.",
+        "tipEn": "Keep your pencil strokes light so they are easy to refine later.",
+        "tipNl": "Druk niet te hard op je potlood zodat je lijntjes straks makkelijk kunt uitgummen."
+      },
+      {
+        "stepNumber": 2,
+        "titleEn": "Step 2: Connecting Contours",
+        "titleNl": "Stap 2: Lijnen Verbinden",
+        "instructionEn": "Connect your initial guidelines with smooth, confident outer curves to give your rescue hovercraft its true silhouette.",
+        "instructionNl": "Verbind de basisvormen met soepele lijnen om de herkenbare omtrek van je luchtkussenboot te vormen.",
+        "tipEn": "Focus on clean flowing lines.",
+        "tipNl": "Let op mooie ronde en vloeiende lijnen."
+      },
+      {
+        "stepNumber": 3,
+        "titleEn": "Step 3: Key Features & Proportions",
+        "titleNl": "Stap 3: Belangrijkste Details",
+        "instructionEn": "Draw in the primary characteristic features such as limbs, facial outlines, wings, or wheels.",
+        "instructionNl": "Teken de belangrijkste herkenbare onderdelen zoals pootjes, wielen, vleugels of het gezicht."
+      },
+      {
+        "stepNumber": 4,
+        "titleEn": "Step 4: Expressive Details & Textures",
+        "titleNl": "Stap 4: Uitdrukking en Textuur",
+        "instructionEn": "Add friendly facial expressions, textures, patterns, and signature accessories to bring your drawing to life.",
+        "instructionNl": "Voeg vrolijke ogen, een lach, patronen en details toe om je tekening echt tot leven te wekken."
+      },
+      {
+        "stepNumber": 5,
+        "titleEn": "Step 5: Refine & Clean Up",
+        "titleNl": "Stap 5: Verfijnen & Gummen",
+        "instructionEn": "Trace over your best lines with a clean, confident darker pencil or marker and erase any overlapping sketch lines.",
+        "instructionNl": "Trek de mooiste lijnen wat donkerder over en gum alle hulplijntjes die je niet meer nodig hebt netjes weg."
+      },
+      {
+        "stepNumber": 6,
+        "titleEn": "Step 6: Final Line Art & Coloring!",
+        "titleNl": "Stap 6: Omlijnen & Inkleuren!",
+        "instructionEn": "Finish your masterpiece! Add crisp black outlines, then grab your pencils, markers, or use our Online Coloring Studio to color it in!",
+        "instructionNl": "Maak je meesterwerk af! Trek strakke zwarte contourlijnen en kleur alles prachtig in met viltstiften, potloden of in onze Online Kleurtool!"
+      }
+    ]
+  },
+  {
+    "slug": "how-to-draw-a-skateboard",
+    "category": "vehicles",
+    "difficulty": "easy",
+    "timeMinutes": 6,
+    "icon": "🛹",
+    "titleEn": "How to Draw a Street Skateboard",
+    "titleNl": "Hoe Teken Je een Stoer Skateboard",
+    "descEn": "Learn how to draw a fun, easy street skateboard step-by-step in 6 simple illustrated stages! Perfect for kids, parents, and classrooms.",
+    "descNl": "Leer stap voor stap een vrolijke stoer skateboard tekenen in 6 simpele, duidelijke stappen! Ideaal voor kinderen, thuis en in de klas.",
+    "relatedHubSlug": "vehicles-transportation",
+    "relatedThemeSlug": "cars-trucks",
+    "steps": [
+      {
+        "stepNumber": 1,
+        "titleEn": "Step 1: Basic Guidelines for Street Skateboard",
+        "titleNl": "Stap 1: Basisvormen voor Stoer Skateboard",
+        "instructionEn": "Start by lightly sketching simple oval and circular guide shapes for the body and structure of your street skateboard.",
+        "instructionNl": "Begin met het zachtjes schetsen van eenvoudige cirkels en ovalen voor het lichaam en de basis van je stoer skateboard.",
+        "tipEn": "Keep your pencil strokes light so they are easy to refine later.",
+        "tipNl": "Druk niet te hard op je potlood zodat je lijntjes straks makkelijk kunt uitgummen."
+      },
+      {
+        "stepNumber": 2,
+        "titleEn": "Step 2: Connecting Contours",
+        "titleNl": "Stap 2: Lijnen Verbinden",
+        "instructionEn": "Connect your initial guidelines with smooth, confident outer curves to give your street skateboard its true silhouette.",
+        "instructionNl": "Verbind de basisvormen met soepele lijnen om de herkenbare omtrek van je stoer skateboard te vormen.",
+        "tipEn": "Focus on clean flowing lines.",
+        "tipNl": "Let op mooie ronde en vloeiende lijnen."
+      },
+      {
+        "stepNumber": 3,
+        "titleEn": "Step 3: Key Features & Proportions",
+        "titleNl": "Stap 3: Belangrijkste Details",
+        "instructionEn": "Draw in the primary characteristic features such as limbs, facial outlines, wings, or wheels.",
+        "instructionNl": "Teken de belangrijkste herkenbare onderdelen zoals pootjes, wielen, vleugels of het gezicht."
+      },
+      {
+        "stepNumber": 4,
+        "titleEn": "Step 4: Expressive Details & Textures",
+        "titleNl": "Stap 4: Uitdrukking en Textuur",
+        "instructionEn": "Add friendly facial expressions, textures, patterns, and signature accessories to bring your drawing to life.",
+        "instructionNl": "Voeg vrolijke ogen, een lach, patronen en details toe om je tekening echt tot leven te wekken."
+      },
+      {
+        "stepNumber": 5,
+        "titleEn": "Step 5: Refine & Clean Up",
+        "titleNl": "Stap 5: Verfijnen & Gummen",
+        "instructionEn": "Trace over your best lines with a clean, confident darker pencil or marker and erase any overlapping sketch lines.",
+        "instructionNl": "Trek de mooiste lijnen wat donkerder over en gum alle hulplijntjes die je niet meer nodig hebt netjes weg."
+      },
+      {
+        "stepNumber": 6,
+        "titleEn": "Step 6: Final Line Art & Coloring!",
+        "titleNl": "Stap 6: Omlijnen & Inkleuren!",
+        "instructionEn": "Finish your masterpiece! Add crisp black outlines, then grab your pencils, markers, or use our Online Coloring Studio to color it in!",
+        "instructionNl": "Maak je meesterwerk af! Trek strakke zwarte contourlijnen en kleur alles prachtig in met viltstiften, potloden of in onze Online Kleurtool!"
+      }
+    ]
+  },
+  {
+    "slug": "how-to-draw-an-electric-scooter",
+    "category": "vehicles",
+    "difficulty": "easy",
+    "timeMinutes": 6,
+    "icon": "🛴",
+    "titleEn": "How to Draw a Electric Kick Scooter",
+    "titleNl": "Hoe Teken Je een Elektrische Step",
+    "descEn": "Learn how to draw a fun, easy electric kick scooter step-by-step in 6 simple illustrated stages! Perfect for kids, parents, and classrooms.",
+    "descNl": "Leer stap voor stap een vrolijke elektrische step tekenen in 6 simpele, duidelijke stappen! Ideaal voor kinderen, thuis en in de klas.",
+    "relatedHubSlug": "vehicles-transportation",
+    "relatedThemeSlug": "cars-trucks",
+    "steps": [
+      {
+        "stepNumber": 1,
+        "titleEn": "Step 1: Basic Guidelines for Electric Kick Scooter",
+        "titleNl": "Stap 1: Basisvormen voor Elektrische Step",
+        "instructionEn": "Start by lightly sketching simple oval and circular guide shapes for the body and structure of your electric kick scooter.",
+        "instructionNl": "Begin met het zachtjes schetsen van eenvoudige cirkels en ovalen voor het lichaam en de basis van je elektrische step.",
+        "tipEn": "Keep your pencil strokes light so they are easy to refine later.",
+        "tipNl": "Druk niet te hard op je potlood zodat je lijntjes straks makkelijk kunt uitgummen."
+      },
+      {
+        "stepNumber": 2,
+        "titleEn": "Step 2: Connecting Contours",
+        "titleNl": "Stap 2: Lijnen Verbinden",
+        "instructionEn": "Connect your initial guidelines with smooth, confident outer curves to give your electric kick scooter its true silhouette.",
+        "instructionNl": "Verbind de basisvormen met soepele lijnen om de herkenbare omtrek van je elektrische step te vormen.",
+        "tipEn": "Focus on clean flowing lines.",
+        "tipNl": "Let op mooie ronde en vloeiende lijnen."
+      },
+      {
+        "stepNumber": 3,
+        "titleEn": "Step 3: Key Features & Proportions",
+        "titleNl": "Stap 3: Belangrijkste Details",
+        "instructionEn": "Draw in the primary characteristic features such as limbs, facial outlines, wings, or wheels.",
+        "instructionNl": "Teken de belangrijkste herkenbare onderdelen zoals pootjes, wielen, vleugels of het gezicht."
+      },
+      {
+        "stepNumber": 4,
+        "titleEn": "Step 4: Expressive Details & Textures",
+        "titleNl": "Stap 4: Uitdrukking en Textuur",
+        "instructionEn": "Add friendly facial expressions, textures, patterns, and signature accessories to bring your drawing to life.",
+        "instructionNl": "Voeg vrolijke ogen, een lach, patronen en details toe om je tekening echt tot leven te wekken."
+      },
+      {
+        "stepNumber": 5,
+        "titleEn": "Step 5: Refine & Clean Up",
+        "titleNl": "Stap 5: Verfijnen & Gummen",
+        "instructionEn": "Trace over your best lines with a clean, confident darker pencil or marker and erase any overlapping sketch lines.",
+        "instructionNl": "Trek de mooiste lijnen wat donkerder over en gum alle hulplijntjes die je niet meer nodig hebt netjes weg."
+      },
+      {
+        "stepNumber": 6,
+        "titleEn": "Step 6: Final Line Art & Coloring!",
+        "titleNl": "Stap 6: Omlijnen & Inkleuren!",
+        "instructionEn": "Finish your masterpiece! Add crisp black outlines, then grab your pencils, markers, or use our Online Coloring Studio to color it in!",
+        "instructionNl": "Maak je meesterwerk af! Trek strakke zwarte contourlijnen en kleur alles prachtig in met viltstiften, potloden of in onze Online Kleurtool!"
+      }
+    ]
+  },
+  {
+    "slug": "how-to-draw-a-sunflower",
+    "category": "nature",
+    "difficulty": "easy",
+    "timeMinutes": 8,
+    "icon": "🌻",
+    "titleEn": "How to Draw a Blooming Sunflower",
+    "titleNl": "Hoe Teken Je een Bloeiende Zonnebloem",
+    "descEn": "Learn how to draw a fun, easy blooming sunflower step-by-step in 6 simple illustrated stages! Perfect for kids, parents, and classrooms.",
+    "descNl": "Leer stap voor stap een vrolijke bloeiende zonnebloem tekenen in 6 simpele, duidelijke stappen! Ideaal voor kinderen, thuis en in de klas.",
+    "relatedHubSlug": "art-aesthetic",
+    "relatedThemeSlug": "flowers-floral-patterns",
+    "steps": [
+      {
+        "stepNumber": 1,
+        "titleEn": "Step 1: Basic Guidelines for Blooming Sunflower",
+        "titleNl": "Stap 1: Basisvormen voor Bloeiende Zonnebloem",
+        "instructionEn": "Start by lightly sketching simple oval and circular guide shapes for the body and structure of your blooming sunflower.",
+        "instructionNl": "Begin met het zachtjes schetsen van eenvoudige cirkels en ovalen voor het lichaam en de basis van je bloeiende zonnebloem.",
+        "tipEn": "Keep your pencil strokes light so they are easy to refine later.",
+        "tipNl": "Druk niet te hard op je potlood zodat je lijntjes straks makkelijk kunt uitgummen."
+      },
+      {
+        "stepNumber": 2,
+        "titleEn": "Step 2: Connecting Contours",
+        "titleNl": "Stap 2: Lijnen Verbinden",
+        "instructionEn": "Connect your initial guidelines with smooth, confident outer curves to give your blooming sunflower its true silhouette.",
+        "instructionNl": "Verbind de basisvormen met soepele lijnen om de herkenbare omtrek van je bloeiende zonnebloem te vormen.",
+        "tipEn": "Focus on clean flowing lines.",
+        "tipNl": "Let op mooie ronde en vloeiende lijnen."
+      },
+      {
+        "stepNumber": 3,
+        "titleEn": "Step 3: Key Features & Proportions",
+        "titleNl": "Stap 3: Belangrijkste Details",
+        "instructionEn": "Draw in the primary characteristic features such as limbs, facial outlines, wings, or wheels.",
+        "instructionNl": "Teken de belangrijkste herkenbare onderdelen zoals pootjes, wielen, vleugels of het gezicht."
+      },
+      {
+        "stepNumber": 4,
+        "titleEn": "Step 4: Expressive Details & Textures",
+        "titleNl": "Stap 4: Uitdrukking en Textuur",
+        "instructionEn": "Add friendly facial expressions, textures, patterns, and signature accessories to bring your drawing to life.",
+        "instructionNl": "Voeg vrolijke ogen, een lach, patronen en details toe om je tekening echt tot leven te wekken."
+      },
+      {
+        "stepNumber": 5,
+        "titleEn": "Step 5: Refine & Clean Up",
+        "titleNl": "Stap 5: Verfijnen & Gummen",
+        "instructionEn": "Trace over your best lines with a clean, confident darker pencil or marker and erase any overlapping sketch lines.",
+        "instructionNl": "Trek de mooiste lijnen wat donkerder over en gum alle hulplijntjes die je niet meer nodig hebt netjes weg."
+      },
+      {
+        "stepNumber": 6,
+        "titleEn": "Step 6: Final Line Art & Coloring!",
+        "titleNl": "Stap 6: Omlijnen & Inkleuren!",
+        "instructionEn": "Finish your masterpiece! Add crisp black outlines, then grab your pencils, markers, or use our Online Coloring Studio to color it in!",
+        "instructionNl": "Maak je meesterwerk af! Trek strakke zwarte contourlijnen en kleur alles prachtig in met viltstiften, potloden of in onze Online Kleurtool!"
+      }
+    ]
+  },
+  {
+    "slug": "how-to-draw-a-rose",
+    "category": "nature",
+    "difficulty": "medium",
+    "timeMinutes": 10,
+    "icon": "🌹",
+    "titleEn": "How to Draw a Elegant Red Rose",
+    "titleNl": "Hoe Teken Je een Elegante Rode Roos",
+    "descEn": "Learn how to draw a fun, easy elegant red rose step-by-step in 6 simple illustrated stages! Perfect for kids, parents, and classrooms.",
+    "descNl": "Leer stap voor stap een vrolijke elegante rode roos tekenen in 6 simpele, duidelijke stappen! Ideaal voor kinderen, thuis en in de klas.",
+    "relatedHubSlug": "art-aesthetic",
+    "relatedThemeSlug": "flowers-floral-patterns",
+    "steps": [
+      {
+        "stepNumber": 1,
+        "titleEn": "Step 1: Basic Guidelines for Elegant Red Rose",
+        "titleNl": "Stap 1: Basisvormen voor Elegante Rode Roos",
+        "instructionEn": "Start by lightly sketching simple oval and circular guide shapes for the body and structure of your elegant red rose.",
+        "instructionNl": "Begin met het zachtjes schetsen van eenvoudige cirkels en ovalen voor het lichaam en de basis van je elegante rode roos.",
+        "tipEn": "Keep your pencil strokes light so they are easy to refine later.",
+        "tipNl": "Druk niet te hard op je potlood zodat je lijntjes straks makkelijk kunt uitgummen."
+      },
+      {
+        "stepNumber": 2,
+        "titleEn": "Step 2: Connecting Contours",
+        "titleNl": "Stap 2: Lijnen Verbinden",
+        "instructionEn": "Connect your initial guidelines with smooth, confident outer curves to give your elegant red rose its true silhouette.",
+        "instructionNl": "Verbind de basisvormen met soepele lijnen om de herkenbare omtrek van je elegante rode roos te vormen.",
+        "tipEn": "Focus on clean flowing lines.",
+        "tipNl": "Let op mooie ronde en vloeiende lijnen."
+      },
+      {
+        "stepNumber": 3,
+        "titleEn": "Step 3: Key Features & Proportions",
+        "titleNl": "Stap 3: Belangrijkste Details",
+        "instructionEn": "Draw in the primary characteristic features such as limbs, facial outlines, wings, or wheels.",
+        "instructionNl": "Teken de belangrijkste herkenbare onderdelen zoals pootjes, wielen, vleugels of het gezicht."
+      },
+      {
+        "stepNumber": 4,
+        "titleEn": "Step 4: Expressive Details & Textures",
+        "titleNl": "Stap 4: Uitdrukking en Textuur",
+        "instructionEn": "Add friendly facial expressions, textures, patterns, and signature accessories to bring your drawing to life.",
+        "instructionNl": "Voeg vrolijke ogen, een lach, patronen en details toe om je tekening echt tot leven te wekken."
+      },
+      {
+        "stepNumber": 5,
+        "titleEn": "Step 5: Refine & Clean Up",
+        "titleNl": "Stap 5: Verfijnen & Gummen",
+        "instructionEn": "Trace over your best lines with a clean, confident darker pencil or marker and erase any overlapping sketch lines.",
+        "instructionNl": "Trek de mooiste lijnen wat donkerder over en gum alle hulplijntjes die je niet meer nodig hebt netjes weg."
+      },
+      {
+        "stepNumber": 6,
+        "titleEn": "Step 6: Final Line Art & Coloring!",
+        "titleNl": "Stap 6: Omlijnen & Inkleuren!",
+        "instructionEn": "Finish your masterpiece! Add crisp black outlines, then grab your pencils, markers, or use our Online Coloring Studio to color it in!",
+        "instructionNl": "Maak je meesterwerk af! Trek strakke zwarte contourlijnen en kleur alles prachtig in met viltstiften, potloden of in onze Online Kleurtool!"
+      }
+    ]
+  },
+  {
+    "slug": "how-to-draw-a-tulip",
+    "category": "nature",
+    "difficulty": "easy",
+    "timeMinutes": 6,
+    "icon": "🌷",
+    "titleEn": "How to Draw a Spring Tulip in Pot",
+    "titleNl": "Hoe Teken Je een Lentetulp in Pot",
+    "descEn": "Learn how to draw a fun, easy spring tulip in pot step-by-step in 6 simple illustrated stages! Perfect for kids, parents, and classrooms.",
+    "descNl": "Leer stap voor stap een vrolijke lentetulp in pot tekenen in 6 simpele, duidelijke stappen! Ideaal voor kinderen, thuis en in de klas.",
+    "relatedHubSlug": "art-aesthetic",
+    "relatedThemeSlug": "flowers-floral-patterns",
+    "steps": [
+      {
+        "stepNumber": 1,
+        "titleEn": "Step 1: Basic Guidelines for Spring Tulip in Pot",
+        "titleNl": "Stap 1: Basisvormen voor Lentetulp in Pot",
+        "instructionEn": "Start by lightly sketching simple oval and circular guide shapes for the body and structure of your spring tulip in pot.",
+        "instructionNl": "Begin met het zachtjes schetsen van eenvoudige cirkels en ovalen voor het lichaam en de basis van je lentetulp in pot.",
+        "tipEn": "Keep your pencil strokes light so they are easy to refine later.",
+        "tipNl": "Druk niet te hard op je potlood zodat je lijntjes straks makkelijk kunt uitgummen."
+      },
+      {
+        "stepNumber": 2,
+        "titleEn": "Step 2: Connecting Contours",
+        "titleNl": "Stap 2: Lijnen Verbinden",
+        "instructionEn": "Connect your initial guidelines with smooth, confident outer curves to give your spring tulip in pot its true silhouette.",
+        "instructionNl": "Verbind de basisvormen met soepele lijnen om de herkenbare omtrek van je lentetulp in pot te vormen.",
+        "tipEn": "Focus on clean flowing lines.",
+        "tipNl": "Let op mooie ronde en vloeiende lijnen."
+      },
+      {
+        "stepNumber": 3,
+        "titleEn": "Step 3: Key Features & Proportions",
+        "titleNl": "Stap 3: Belangrijkste Details",
+        "instructionEn": "Draw in the primary characteristic features such as limbs, facial outlines, wings, or wheels.",
+        "instructionNl": "Teken de belangrijkste herkenbare onderdelen zoals pootjes, wielen, vleugels of het gezicht."
+      },
+      {
+        "stepNumber": 4,
+        "titleEn": "Step 4: Expressive Details & Textures",
+        "titleNl": "Stap 4: Uitdrukking en Textuur",
+        "instructionEn": "Add friendly facial expressions, textures, patterns, and signature accessories to bring your drawing to life.",
+        "instructionNl": "Voeg vrolijke ogen, een lach, patronen en details toe om je tekening echt tot leven te wekken."
+      },
+      {
+        "stepNumber": 5,
+        "titleEn": "Step 5: Refine & Clean Up",
+        "titleNl": "Stap 5: Verfijnen & Gummen",
+        "instructionEn": "Trace over your best lines with a clean, confident darker pencil or marker and erase any overlapping sketch lines.",
+        "instructionNl": "Trek de mooiste lijnen wat donkerder over en gum alle hulplijntjes die je niet meer nodig hebt netjes weg."
+      },
+      {
+        "stepNumber": 6,
+        "titleEn": "Step 6: Final Line Art & Coloring!",
+        "titleNl": "Stap 6: Omlijnen & Inkleuren!",
+        "instructionEn": "Finish your masterpiece! Add crisp black outlines, then grab your pencils, markers, or use our Online Coloring Studio to color it in!",
+        "instructionNl": "Maak je meesterwerk af! Trek strakke zwarte contourlijnen en kleur alles prachtig in met viltstiften, potloden of in onze Online Kleurtool!"
+      }
+    ]
+  },
+  {
+    "slug": "how-to-draw-a-cactus",
+    "category": "nature",
+    "difficulty": "easy",
+    "timeMinutes": 6,
+    "icon": "🌵",
+    "titleEn": "How to Draw a Desert Cactus",
+    "titleNl": "Hoe Teken Je een Woestijncactus",
+    "descEn": "Learn how to draw a fun, easy desert cactus step-by-step in 6 simple illustrated stages! Perfect for kids, parents, and classrooms.",
+    "descNl": "Leer stap voor stap een vrolijke woestijncactus tekenen in 6 simpele, duidelijke stappen! Ideaal voor kinderen, thuis en in de klas.",
+    "relatedHubSlug": "art-aesthetic",
+    "relatedThemeSlug": "flowers-floral-patterns",
+    "steps": [
+      {
+        "stepNumber": 1,
+        "titleEn": "Step 1: Basic Guidelines for Desert Cactus",
+        "titleNl": "Stap 1: Basisvormen voor Woestijncactus",
+        "instructionEn": "Start by lightly sketching simple oval and circular guide shapes for the body and structure of your desert cactus.",
+        "instructionNl": "Begin met het zachtjes schetsen van eenvoudige cirkels en ovalen voor het lichaam en de basis van je woestijncactus.",
+        "tipEn": "Keep your pencil strokes light so they are easy to refine later.",
+        "tipNl": "Druk niet te hard op je potlood zodat je lijntjes straks makkelijk kunt uitgummen."
+      },
+      {
+        "stepNumber": 2,
+        "titleEn": "Step 2: Connecting Contours",
+        "titleNl": "Stap 2: Lijnen Verbinden",
+        "instructionEn": "Connect your initial guidelines with smooth, confident outer curves to give your desert cactus its true silhouette.",
+        "instructionNl": "Verbind de basisvormen met soepele lijnen om de herkenbare omtrek van je woestijncactus te vormen.",
+        "tipEn": "Focus on clean flowing lines.",
+        "tipNl": "Let op mooie ronde en vloeiende lijnen."
+      },
+      {
+        "stepNumber": 3,
+        "titleEn": "Step 3: Key Features & Proportions",
+        "titleNl": "Stap 3: Belangrijkste Details",
+        "instructionEn": "Draw in the primary characteristic features such as limbs, facial outlines, wings, or wheels.",
+        "instructionNl": "Teken de belangrijkste herkenbare onderdelen zoals pootjes, wielen, vleugels of het gezicht."
+      },
+      {
+        "stepNumber": 4,
+        "titleEn": "Step 4: Expressive Details & Textures",
+        "titleNl": "Stap 4: Uitdrukking en Textuur",
+        "instructionEn": "Add friendly facial expressions, textures, patterns, and signature accessories to bring your drawing to life.",
+        "instructionNl": "Voeg vrolijke ogen, een lach, patronen en details toe om je tekening echt tot leven te wekken."
+      },
+      {
+        "stepNumber": 5,
+        "titleEn": "Step 5: Refine & Clean Up",
+        "titleNl": "Stap 5: Verfijnen & Gummen",
+        "instructionEn": "Trace over your best lines with a clean, confident darker pencil or marker and erase any overlapping sketch lines.",
+        "instructionNl": "Trek de mooiste lijnen wat donkerder over en gum alle hulplijntjes die je niet meer nodig hebt netjes weg."
+      },
+      {
+        "stepNumber": 6,
+        "titleEn": "Step 6: Final Line Art & Coloring!",
+        "titleNl": "Stap 6: Omlijnen & Inkleuren!",
+        "instructionEn": "Finish your masterpiece! Add crisp black outlines, then grab your pencils, markers, or use our Online Coloring Studio to color it in!",
+        "instructionNl": "Maak je meesterwerk af! Trek strakke zwarte contourlijnen en kleur alles prachtig in met viltstiften, potloden of in onze Online Kleurtool!"
+      }
+    ]
+  },
+  {
+    "slug": "how-to-draw-a-mushroom-house",
+    "category": "nature",
+    "difficulty": "easy",
+    "timeMinutes": 10,
+    "icon": "🍄",
+    "titleEn": "How to Draw a Fairytale Mushroom House",
+    "titleNl": "Hoe Teken Je een Sprookjes Paddestoelenhuisje",
+    "descEn": "Learn how to draw a fun, easy fairytale mushroom house step-by-step in 6 simple illustrated stages! Perfect for kids, parents, and classrooms.",
+    "descNl": "Leer stap voor stap een vrolijke sprookjes paddestoelenhuisje tekenen in 6 simpele, duidelijke stappen! Ideaal voor kinderen, thuis en in de klas.",
+    "relatedHubSlug": "fantasy-fairytales",
+    "relatedThemeSlug": "fairytale-kingdoms-castles",
+    "steps": [
+      {
+        "stepNumber": 1,
+        "titleEn": "Step 1: Basic Guidelines for Fairytale Mushroom House",
+        "titleNl": "Stap 1: Basisvormen voor Sprookjes Paddestoelenhuisje",
+        "instructionEn": "Start by lightly sketching simple oval and circular guide shapes for the body and structure of your fairytale mushroom house.",
+        "instructionNl": "Begin met het zachtjes schetsen van eenvoudige cirkels en ovalen voor het lichaam en de basis van je sprookjes paddestoelenhuisje.",
+        "tipEn": "Keep your pencil strokes light so they are easy to refine later.",
+        "tipNl": "Druk niet te hard op je potlood zodat je lijntjes straks makkelijk kunt uitgummen."
+      },
+      {
+        "stepNumber": 2,
+        "titleEn": "Step 2: Connecting Contours",
+        "titleNl": "Stap 2: Lijnen Verbinden",
+        "instructionEn": "Connect your initial guidelines with smooth, confident outer curves to give your fairytale mushroom house its true silhouette.",
+        "instructionNl": "Verbind de basisvormen met soepele lijnen om de herkenbare omtrek van je sprookjes paddestoelenhuisje te vormen.",
+        "tipEn": "Focus on clean flowing lines.",
+        "tipNl": "Let op mooie ronde en vloeiende lijnen."
+      },
+      {
+        "stepNumber": 3,
+        "titleEn": "Step 3: Key Features & Proportions",
+        "titleNl": "Stap 3: Belangrijkste Details",
+        "instructionEn": "Draw in the primary characteristic features such as limbs, facial outlines, wings, or wheels.",
+        "instructionNl": "Teken de belangrijkste herkenbare onderdelen zoals pootjes, wielen, vleugels of het gezicht."
+      },
+      {
+        "stepNumber": 4,
+        "titleEn": "Step 4: Expressive Details & Textures",
+        "titleNl": "Stap 4: Uitdrukking en Textuur",
+        "instructionEn": "Add friendly facial expressions, textures, patterns, and signature accessories to bring your drawing to life.",
+        "instructionNl": "Voeg vrolijke ogen, een lach, patronen en details toe om je tekening echt tot leven te wekken."
+      },
+      {
+        "stepNumber": 5,
+        "titleEn": "Step 5: Refine & Clean Up",
+        "titleNl": "Stap 5: Verfijnen & Gummen",
+        "instructionEn": "Trace over your best lines with a clean, confident darker pencil or marker and erase any overlapping sketch lines.",
+        "instructionNl": "Trek de mooiste lijnen wat donkerder over en gum alle hulplijntjes die je niet meer nodig hebt netjes weg."
+      },
+      {
+        "stepNumber": 6,
+        "titleEn": "Step 6: Final Line Art & Coloring!",
+        "titleNl": "Stap 6: Omlijnen & Inkleuren!",
+        "instructionEn": "Finish your masterpiece! Add crisp black outlines, then grab your pencils, markers, or use our Online Coloring Studio to color it in!",
+        "instructionNl": "Maak je meesterwerk af! Trek strakke zwarte contourlijnen en kleur alles prachtig in met viltstiften, potloden of in onze Online Kleurtool!"
+      }
+    ]
+  },
+  {
+    "slug": "how-to-draw-an-oak-tree",
+    "category": "nature",
+    "difficulty": "easy",
+    "timeMinutes": 10,
+    "icon": "🌳",
+    "titleEn": "How to Draw a Majestic Oak Tree",
+    "titleNl": "Hoe Teken Je een Grote Eikenboom",
+    "descEn": "Learn how to draw a fun, easy majestic oak tree step-by-step in 6 simple illustrated stages! Perfect for kids, parents, and classrooms.",
+    "descNl": "Leer stap voor stap een vrolijke grote eikenboom tekenen in 6 simpele, duidelijke stappen! Ideaal voor kinderen, thuis en in de klas.",
+    "relatedHubSlug": "art-aesthetic",
+    "relatedThemeSlug": "nature-landscapes",
+    "steps": [
+      {
+        "stepNumber": 1,
+        "titleEn": "Step 1: Basic Guidelines for Majestic Oak Tree",
+        "titleNl": "Stap 1: Basisvormen voor Grote Eikenboom",
+        "instructionEn": "Start by lightly sketching simple oval and circular guide shapes for the body and structure of your majestic oak tree.",
+        "instructionNl": "Begin met het zachtjes schetsen van eenvoudige cirkels en ovalen voor het lichaam en de basis van je grote eikenboom.",
+        "tipEn": "Keep your pencil strokes light so they are easy to refine later.",
+        "tipNl": "Druk niet te hard op je potlood zodat je lijntjes straks makkelijk kunt uitgummen."
+      },
+      {
+        "stepNumber": 2,
+        "titleEn": "Step 2: Connecting Contours",
+        "titleNl": "Stap 2: Lijnen Verbinden",
+        "instructionEn": "Connect your initial guidelines with smooth, confident outer curves to give your majestic oak tree its true silhouette.",
+        "instructionNl": "Verbind de basisvormen met soepele lijnen om de herkenbare omtrek van je grote eikenboom te vormen.",
+        "tipEn": "Focus on clean flowing lines.",
+        "tipNl": "Let op mooie ronde en vloeiende lijnen."
+      },
+      {
+        "stepNumber": 3,
+        "titleEn": "Step 3: Key Features & Proportions",
+        "titleNl": "Stap 3: Belangrijkste Details",
+        "instructionEn": "Draw in the primary characteristic features such as limbs, facial outlines, wings, or wheels.",
+        "instructionNl": "Teken de belangrijkste herkenbare onderdelen zoals pootjes, wielen, vleugels of het gezicht."
+      },
+      {
+        "stepNumber": 4,
+        "titleEn": "Step 4: Expressive Details & Textures",
+        "titleNl": "Stap 4: Uitdrukking en Textuur",
+        "instructionEn": "Add friendly facial expressions, textures, patterns, and signature accessories to bring your drawing to life.",
+        "instructionNl": "Voeg vrolijke ogen, een lach, patronen en details toe om je tekening echt tot leven te wekken."
+      },
+      {
+        "stepNumber": 5,
+        "titleEn": "Step 5: Refine & Clean Up",
+        "titleNl": "Stap 5: Verfijnen & Gummen",
+        "instructionEn": "Trace over your best lines with a clean, confident darker pencil or marker and erase any overlapping sketch lines.",
+        "instructionNl": "Trek de mooiste lijnen wat donkerder over en gum alle hulplijntjes die je niet meer nodig hebt netjes weg."
+      },
+      {
+        "stepNumber": 6,
+        "titleEn": "Step 6: Final Line Art & Coloring!",
+        "titleNl": "Stap 6: Omlijnen & Inkleuren!",
+        "instructionEn": "Finish your masterpiece! Add crisp black outlines, then grab your pencils, markers, or use our Online Coloring Studio to color it in!",
+        "instructionNl": "Maak je meesterwerk af! Trek strakke zwarte contourlijnen en kleur alles prachtig in met viltstiften, potloden of in onze Online Kleurtool!"
+      }
+    ]
+  },
+  {
+    "slug": "how-to-draw-a-palm-tree",
+    "category": "nature",
+    "difficulty": "easy",
+    "timeMinutes": 8,
+    "icon": "🌴",
+    "titleEn": "How to Draw a Tropical Beach Palm Tree",
+    "titleNl": "Hoe Teken Je een Tropische Palmboom",
+    "descEn": "Learn how to draw a fun, easy tropical beach palm tree step-by-step in 6 simple illustrated stages! Perfect for kids, parents, and classrooms.",
+    "descNl": "Leer stap voor stap een vrolijke tropische palmboom tekenen in 6 simpele, duidelijke stappen! Ideaal voor kinderen, thuis en in de klas.",
+    "relatedHubSlug": "art-aesthetic",
+    "relatedThemeSlug": "nature-landscapes",
+    "steps": [
+      {
+        "stepNumber": 1,
+        "titleEn": "Step 1: Basic Guidelines for Tropical Beach Palm Tree",
+        "titleNl": "Stap 1: Basisvormen voor Tropische Palmboom",
+        "instructionEn": "Start by lightly sketching simple oval and circular guide shapes for the body and structure of your tropical beach palm tree.",
+        "instructionNl": "Begin met het zachtjes schetsen van eenvoudige cirkels en ovalen voor het lichaam en de basis van je tropische palmboom.",
+        "tipEn": "Keep your pencil strokes light so they are easy to refine later.",
+        "tipNl": "Druk niet te hard op je potlood zodat je lijntjes straks makkelijk kunt uitgummen."
+      },
+      {
+        "stepNumber": 2,
+        "titleEn": "Step 2: Connecting Contours",
+        "titleNl": "Stap 2: Lijnen Verbinden",
+        "instructionEn": "Connect your initial guidelines with smooth, confident outer curves to give your tropical beach palm tree its true silhouette.",
+        "instructionNl": "Verbind de basisvormen met soepele lijnen om de herkenbare omtrek van je tropische palmboom te vormen.",
+        "tipEn": "Focus on clean flowing lines.",
+        "tipNl": "Let op mooie ronde en vloeiende lijnen."
+      },
+      {
+        "stepNumber": 3,
+        "titleEn": "Step 3: Key Features & Proportions",
+        "titleNl": "Stap 3: Belangrijkste Details",
+        "instructionEn": "Draw in the primary characteristic features such as limbs, facial outlines, wings, or wheels.",
+        "instructionNl": "Teken de belangrijkste herkenbare onderdelen zoals pootjes, wielen, vleugels of het gezicht."
+      },
+      {
+        "stepNumber": 4,
+        "titleEn": "Step 4: Expressive Details & Textures",
+        "titleNl": "Stap 4: Uitdrukking en Textuur",
+        "instructionEn": "Add friendly facial expressions, textures, patterns, and signature accessories to bring your drawing to life.",
+        "instructionNl": "Voeg vrolijke ogen, een lach, patronen en details toe om je tekening echt tot leven te wekken."
+      },
+      {
+        "stepNumber": 5,
+        "titleEn": "Step 5: Refine & Clean Up",
+        "titleNl": "Stap 5: Verfijnen & Gummen",
+        "instructionEn": "Trace over your best lines with a clean, confident darker pencil or marker and erase any overlapping sketch lines.",
+        "instructionNl": "Trek de mooiste lijnen wat donkerder over en gum alle hulplijntjes die je niet meer nodig hebt netjes weg."
+      },
+      {
+        "stepNumber": 6,
+        "titleEn": "Step 6: Final Line Art & Coloring!",
+        "titleNl": "Stap 6: Omlijnen & Inkleuren!",
+        "instructionEn": "Finish your masterpiece! Add crisp black outlines, then grab your pencils, markers, or use our Online Coloring Studio to color it in!",
+        "instructionNl": "Maak je meesterwerk af! Trek strakke zwarte contourlijnen en kleur alles prachtig in met viltstiften, potloden of in onze Online Kleurtool!"
+      }
+    ]
+  },
+  {
+    "slug": "how-to-draw-a-birthday-cake",
+    "category": "kids",
+    "difficulty": "easy",
+    "timeMinutes": 10,
+    "icon": "🎂",
+    "titleEn": "How to Draw a 3-Tier Birthday Cake",
+    "titleNl": "Hoe Teken Je een Verjaardagstaart met Kaarsjes",
+    "descEn": "Learn how to draw a fun, easy 3-tier birthday cake step-by-step in 6 simple illustrated stages! Perfect for kids, parents, and classrooms.",
+    "descNl": "Leer stap voor stap een vrolijke verjaardagstaart met kaarsjes tekenen in 6 simpele, duidelijke stappen! Ideaal voor kinderen, thuis en in de klas.",
+    "relatedHubSlug": "holidays-seasons",
+    "relatedThemeSlug": "birthday-celebrations",
+    "steps": [
+      {
+        "stepNumber": 1,
+        "titleEn": "Step 1: Basic Guidelines for 3-Tier Birthday Cake",
+        "titleNl": "Stap 1: Basisvormen voor Verjaardagstaart met Kaarsjes",
+        "instructionEn": "Start by lightly sketching simple oval and circular guide shapes for the body and structure of your 3-tier birthday cake.",
+        "instructionNl": "Begin met het zachtjes schetsen van eenvoudige cirkels en ovalen voor het lichaam en de basis van je verjaardagstaart met kaarsjes.",
+        "tipEn": "Keep your pencil strokes light so they are easy to refine later.",
+        "tipNl": "Druk niet te hard op je potlood zodat je lijntjes straks makkelijk kunt uitgummen."
+      },
+      {
+        "stepNumber": 2,
+        "titleEn": "Step 2: Connecting Contours",
+        "titleNl": "Stap 2: Lijnen Verbinden",
+        "instructionEn": "Connect your initial guidelines with smooth, confident outer curves to give your 3-tier birthday cake its true silhouette.",
+        "instructionNl": "Verbind de basisvormen met soepele lijnen om de herkenbare omtrek van je verjaardagstaart met kaarsjes te vormen.",
+        "tipEn": "Focus on clean flowing lines.",
+        "tipNl": "Let op mooie ronde en vloeiende lijnen."
+      },
+      {
+        "stepNumber": 3,
+        "titleEn": "Step 3: Key Features & Proportions",
+        "titleNl": "Stap 3: Belangrijkste Details",
+        "instructionEn": "Draw in the primary characteristic features such as limbs, facial outlines, wings, or wheels.",
+        "instructionNl": "Teken de belangrijkste herkenbare onderdelen zoals pootjes, wielen, vleugels of het gezicht."
+      },
+      {
+        "stepNumber": 4,
+        "titleEn": "Step 4: Expressive Details & Textures",
+        "titleNl": "Stap 4: Uitdrukking en Textuur",
+        "instructionEn": "Add friendly facial expressions, textures, patterns, and signature accessories to bring your drawing to life.",
+        "instructionNl": "Voeg vrolijke ogen, een lach, patronen en details toe om je tekening echt tot leven te wekken."
+      },
+      {
+        "stepNumber": 5,
+        "titleEn": "Step 5: Refine & Clean Up",
+        "titleNl": "Stap 5: Verfijnen & Gummen",
+        "instructionEn": "Trace over your best lines with a clean, confident darker pencil or marker and erase any overlapping sketch lines.",
+        "instructionNl": "Trek de mooiste lijnen wat donkerder over en gum alle hulplijntjes die je niet meer nodig hebt netjes weg."
+      },
+      {
+        "stepNumber": 6,
+        "titleEn": "Step 6: Final Line Art & Coloring!",
+        "titleNl": "Stap 6: Omlijnen & Inkleuren!",
+        "instructionEn": "Finish your masterpiece! Add crisp black outlines, then grab your pencils, markers, or use our Online Coloring Studio to color it in!",
+        "instructionNl": "Maak je meesterwerk af! Trek strakke zwarte contourlijnen en kleur alles prachtig in met viltstiften, potloden of in onze Online Kleurtool!"
+      }
+    ]
+  },
+  {
+    "slug": "how-to-draw-a-pizza-slice",
+    "category": "kids",
+    "difficulty": "easy",
+    "timeMinutes": 6,
+    "icon": "🍕",
+    "titleEn": "How to Draw a Cheesy Pizza Slice",
+    "titleNl": "Hoe Teken Je een Punt Pizza met Kaas",
+    "descEn": "Learn how to draw a fun, easy cheesy pizza slice step-by-step in 6 simple illustrated stages! Perfect for kids, parents, and classrooms.",
+    "descNl": "Leer stap voor stap een vrolijke punt pizza met kaas tekenen in 6 simpele, duidelijke stappen! Ideaal voor kinderen, thuis en in de klas.",
+    "relatedHubSlug": "art-aesthetic",
+    "relatedThemeSlug": "cute-food-drinks",
+    "steps": [
+      {
+        "stepNumber": 1,
+        "titleEn": "Step 1: Basic Guidelines for Cheesy Pizza Slice",
+        "titleNl": "Stap 1: Basisvormen voor Punt Pizza met Kaas",
+        "instructionEn": "Start by lightly sketching simple oval and circular guide shapes for the body and structure of your cheesy pizza slice.",
+        "instructionNl": "Begin met het zachtjes schetsen van eenvoudige cirkels en ovalen voor het lichaam en de basis van je punt pizza met kaas.",
+        "tipEn": "Keep your pencil strokes light so they are easy to refine later.",
+        "tipNl": "Druk niet te hard op je potlood zodat je lijntjes straks makkelijk kunt uitgummen."
+      },
+      {
+        "stepNumber": 2,
+        "titleEn": "Step 2: Connecting Contours",
+        "titleNl": "Stap 2: Lijnen Verbinden",
+        "instructionEn": "Connect your initial guidelines with smooth, confident outer curves to give your cheesy pizza slice its true silhouette.",
+        "instructionNl": "Verbind de basisvormen met soepele lijnen om de herkenbare omtrek van je punt pizza met kaas te vormen.",
+        "tipEn": "Focus on clean flowing lines.",
+        "tipNl": "Let op mooie ronde en vloeiende lijnen."
+      },
+      {
+        "stepNumber": 3,
+        "titleEn": "Step 3: Key Features & Proportions",
+        "titleNl": "Stap 3: Belangrijkste Details",
+        "instructionEn": "Draw in the primary characteristic features such as limbs, facial outlines, wings, or wheels.",
+        "instructionNl": "Teken de belangrijkste herkenbare onderdelen zoals pootjes, wielen, vleugels of het gezicht."
+      },
+      {
+        "stepNumber": 4,
+        "titleEn": "Step 4: Expressive Details & Textures",
+        "titleNl": "Stap 4: Uitdrukking en Textuur",
+        "instructionEn": "Add friendly facial expressions, textures, patterns, and signature accessories to bring your drawing to life.",
+        "instructionNl": "Voeg vrolijke ogen, een lach, patronen en details toe om je tekening echt tot leven te wekken."
+      },
+      {
+        "stepNumber": 5,
+        "titleEn": "Step 5: Refine & Clean Up",
+        "titleNl": "Stap 5: Verfijnen & Gummen",
+        "instructionEn": "Trace over your best lines with a clean, confident darker pencil or marker and erase any overlapping sketch lines.",
+        "instructionNl": "Trek de mooiste lijnen wat donkerder over en gum alle hulplijntjes die je niet meer nodig hebt netjes weg."
+      },
+      {
+        "stepNumber": 6,
+        "titleEn": "Step 6: Final Line Art & Coloring!",
+        "titleNl": "Stap 6: Omlijnen & Inkleuren!",
+        "instructionEn": "Finish your masterpiece! Add crisp black outlines, then grab your pencils, markers, or use our Online Coloring Studio to color it in!",
+        "instructionNl": "Maak je meesterwerk af! Trek strakke zwarte contourlijnen en kleur alles prachtig in met viltstiften, potloden of in onze Online Kleurtool!"
+      }
+    ]
+  },
+  {
+    "slug": "how-to-draw-a-cheeseburger",
+    "category": "kids",
+    "difficulty": "easy",
+    "timeMinutes": 8,
+    "icon": "🍔",
+    "titleEn": "How to Draw a Juicy Cheeseburger",
+    "titleNl": "Hoe Teken Je een Sappige Hamburger met Frietjes",
+    "descEn": "Learn how to draw a fun, easy juicy cheeseburger step-by-step in 6 simple illustrated stages! Perfect for kids, parents, and classrooms.",
+    "descNl": "Leer stap voor stap een vrolijke sappige hamburger met frietjes tekenen in 6 simpele, duidelijke stappen! Ideaal voor kinderen, thuis en in de klas.",
+    "relatedHubSlug": "art-aesthetic",
+    "relatedThemeSlug": "cute-food-drinks",
+    "steps": [
+      {
+        "stepNumber": 1,
+        "titleEn": "Step 1: Basic Guidelines for Juicy Cheeseburger",
+        "titleNl": "Stap 1: Basisvormen voor Sappige Hamburger met Frietjes",
+        "instructionEn": "Start by lightly sketching simple oval and circular guide shapes for the body and structure of your juicy cheeseburger.",
+        "instructionNl": "Begin met het zachtjes schetsen van eenvoudige cirkels en ovalen voor het lichaam en de basis van je sappige hamburger met frietjes.",
+        "tipEn": "Keep your pencil strokes light so they are easy to refine later.",
+        "tipNl": "Druk niet te hard op je potlood zodat je lijntjes straks makkelijk kunt uitgummen."
+      },
+      {
+        "stepNumber": 2,
+        "titleEn": "Step 2: Connecting Contours",
+        "titleNl": "Stap 2: Lijnen Verbinden",
+        "instructionEn": "Connect your initial guidelines with smooth, confident outer curves to give your juicy cheeseburger its true silhouette.",
+        "instructionNl": "Verbind de basisvormen met soepele lijnen om de herkenbare omtrek van je sappige hamburger met frietjes te vormen.",
+        "tipEn": "Focus on clean flowing lines.",
+        "tipNl": "Let op mooie ronde en vloeiende lijnen."
+      },
+      {
+        "stepNumber": 3,
+        "titleEn": "Step 3: Key Features & Proportions",
+        "titleNl": "Stap 3: Belangrijkste Details",
+        "instructionEn": "Draw in the primary characteristic features such as limbs, facial outlines, wings, or wheels.",
+        "instructionNl": "Teken de belangrijkste herkenbare onderdelen zoals pootjes, wielen, vleugels of het gezicht."
+      },
+      {
+        "stepNumber": 4,
+        "titleEn": "Step 4: Expressive Details & Textures",
+        "titleNl": "Stap 4: Uitdrukking en Textuur",
+        "instructionEn": "Add friendly facial expressions, textures, patterns, and signature accessories to bring your drawing to life.",
+        "instructionNl": "Voeg vrolijke ogen, een lach, patronen en details toe om je tekening echt tot leven te wekken."
+      },
+      {
+        "stepNumber": 5,
+        "titleEn": "Step 5: Refine & Clean Up",
+        "titleNl": "Stap 5: Verfijnen & Gummen",
+        "instructionEn": "Trace over your best lines with a clean, confident darker pencil or marker and erase any overlapping sketch lines.",
+        "instructionNl": "Trek de mooiste lijnen wat donkerder over en gum alle hulplijntjes die je niet meer nodig hebt netjes weg."
+      },
+      {
+        "stepNumber": 6,
+        "titleEn": "Step 6: Final Line Art & Coloring!",
+        "titleNl": "Stap 6: Omlijnen & Inkleuren!",
+        "instructionEn": "Finish your masterpiece! Add crisp black outlines, then grab your pencils, markers, or use our Online Coloring Studio to color it in!",
+        "instructionNl": "Maak je meesterwerk af! Trek strakke zwarte contourlijnen en kleur alles prachtig in met viltstiften, potloden of in onze Online Kleurtool!"
+      }
+    ]
+  },
+  {
+    "slug": "how-to-draw-an-ice-cream",
+    "category": "kids",
+    "difficulty": "easy",
+    "timeMinutes": 8,
+    "icon": "🍦",
+    "titleEn": "How to Draw a Triple Scoop Ice Cream Cone",
+    "titleNl": "Hoe Teken Je een IJsje met Drie Bollen",
+    "descEn": "Learn how to draw a fun, easy triple scoop ice cream cone step-by-step in 6 simple illustrated stages! Perfect for kids, parents, and classrooms.",
+    "descNl": "Leer stap voor stap een vrolijke ijsje met drie bollen tekenen in 6 simpele, duidelijke stappen! Ideaal voor kinderen, thuis en in de klas.",
+    "relatedHubSlug": "art-aesthetic",
+    "relatedThemeSlug": "cute-food-drinks",
+    "steps": [
+      {
+        "stepNumber": 1,
+        "titleEn": "Step 1: Basic Guidelines for Triple Scoop Ice Cream Cone",
+        "titleNl": "Stap 1: Basisvormen voor IJsje met Drie Bollen",
+        "instructionEn": "Start by lightly sketching simple oval and circular guide shapes for the body and structure of your triple scoop ice cream cone.",
+        "instructionNl": "Begin met het zachtjes schetsen van eenvoudige cirkels en ovalen voor het lichaam en de basis van je ijsje met drie bollen.",
+        "tipEn": "Keep your pencil strokes light so they are easy to refine later.",
+        "tipNl": "Druk niet te hard op je potlood zodat je lijntjes straks makkelijk kunt uitgummen."
+      },
+      {
+        "stepNumber": 2,
+        "titleEn": "Step 2: Connecting Contours",
+        "titleNl": "Stap 2: Lijnen Verbinden",
+        "instructionEn": "Connect your initial guidelines with smooth, confident outer curves to give your triple scoop ice cream cone its true silhouette.",
+        "instructionNl": "Verbind de basisvormen met soepele lijnen om de herkenbare omtrek van je ijsje met drie bollen te vormen.",
+        "tipEn": "Focus on clean flowing lines.",
+        "tipNl": "Let op mooie ronde en vloeiende lijnen."
+      },
+      {
+        "stepNumber": 3,
+        "titleEn": "Step 3: Key Features & Proportions",
+        "titleNl": "Stap 3: Belangrijkste Details",
+        "instructionEn": "Draw in the primary characteristic features such as limbs, facial outlines, wings, or wheels.",
+        "instructionNl": "Teken de belangrijkste herkenbare onderdelen zoals pootjes, wielen, vleugels of het gezicht."
+      },
+      {
+        "stepNumber": 4,
+        "titleEn": "Step 4: Expressive Details & Textures",
+        "titleNl": "Stap 4: Uitdrukking en Textuur",
+        "instructionEn": "Add friendly facial expressions, textures, patterns, and signature accessories to bring your drawing to life.",
+        "instructionNl": "Voeg vrolijke ogen, een lach, patronen en details toe om je tekening echt tot leven te wekken."
+      },
+      {
+        "stepNumber": 5,
+        "titleEn": "Step 5: Refine & Clean Up",
+        "titleNl": "Stap 5: Verfijnen & Gummen",
+        "instructionEn": "Trace over your best lines with a clean, confident darker pencil or marker and erase any overlapping sketch lines.",
+        "instructionNl": "Trek de mooiste lijnen wat donkerder over en gum alle hulplijntjes die je niet meer nodig hebt netjes weg."
+      },
+      {
+        "stepNumber": 6,
+        "titleEn": "Step 6: Final Line Art & Coloring!",
+        "titleNl": "Stap 6: Omlijnen & Inkleuren!",
+        "instructionEn": "Finish your masterpiece! Add crisp black outlines, then grab your pencils, markers, or use our Online Coloring Studio to color it in!",
+        "instructionNl": "Maak je meesterwerk af! Trek strakke zwarte contourlijnen en kleur alles prachtig in met viltstiften, potloden of in onze Online Kleurtool!"
+      }
+    ]
+  },
+  {
+    "slug": "how-to-draw-a-donut",
+    "category": "kids",
+    "difficulty": "easy",
+    "timeMinutes": 6,
+    "icon": "🍩",
+    "titleEn": "How to Draw a Sweet Glazed Donut",
+    "titleNl": "Hoe Teken Je een Geglazuurde Donut met Spikkels",
+    "descEn": "Learn how to draw a fun, easy sweet glazed donut step-by-step in 6 simple illustrated stages! Perfect for kids, parents, and classrooms.",
+    "descNl": "Leer stap voor stap een vrolijke geglazuurde donut met spikkels tekenen in 6 simpele, duidelijke stappen! Ideaal voor kinderen, thuis en in de klas.",
+    "relatedHubSlug": "art-aesthetic",
+    "relatedThemeSlug": "cute-food-drinks",
+    "steps": [
+      {
+        "stepNumber": 1,
+        "titleEn": "Step 1: Basic Guidelines for Sweet Glazed Donut",
+        "titleNl": "Stap 1: Basisvormen voor Geglazuurde Donut met Spikkels",
+        "instructionEn": "Start by lightly sketching simple oval and circular guide shapes for the body and structure of your sweet glazed donut.",
+        "instructionNl": "Begin met het zachtjes schetsen van eenvoudige cirkels en ovalen voor het lichaam en de basis van je geglazuurde donut met spikkels.",
+        "tipEn": "Keep your pencil strokes light so they are easy to refine later.",
+        "tipNl": "Druk niet te hard op je potlood zodat je lijntjes straks makkelijk kunt uitgummen."
+      },
+      {
+        "stepNumber": 2,
+        "titleEn": "Step 2: Connecting Contours",
+        "titleNl": "Stap 2: Lijnen Verbinden",
+        "instructionEn": "Connect your initial guidelines with smooth, confident outer curves to give your sweet glazed donut its true silhouette.",
+        "instructionNl": "Verbind de basisvormen met soepele lijnen om de herkenbare omtrek van je geglazuurde donut met spikkels te vormen.",
+        "tipEn": "Focus on clean flowing lines.",
+        "tipNl": "Let op mooie ronde en vloeiende lijnen."
+      },
+      {
+        "stepNumber": 3,
+        "titleEn": "Step 3: Key Features & Proportions",
+        "titleNl": "Stap 3: Belangrijkste Details",
+        "instructionEn": "Draw in the primary characteristic features such as limbs, facial outlines, wings, or wheels.",
+        "instructionNl": "Teken de belangrijkste herkenbare onderdelen zoals pootjes, wielen, vleugels of het gezicht."
+      },
+      {
+        "stepNumber": 4,
+        "titleEn": "Step 4: Expressive Details & Textures",
+        "titleNl": "Stap 4: Uitdrukking en Textuur",
+        "instructionEn": "Add friendly facial expressions, textures, patterns, and signature accessories to bring your drawing to life.",
+        "instructionNl": "Voeg vrolijke ogen, een lach, patronen en details toe om je tekening echt tot leven te wekken."
+      },
+      {
+        "stepNumber": 5,
+        "titleEn": "Step 5: Refine & Clean Up",
+        "titleNl": "Stap 5: Verfijnen & Gummen",
+        "instructionEn": "Trace over your best lines with a clean, confident darker pencil or marker and erase any overlapping sketch lines.",
+        "instructionNl": "Trek de mooiste lijnen wat donkerder over en gum alle hulplijntjes die je niet meer nodig hebt netjes weg."
+      },
+      {
+        "stepNumber": 6,
+        "titleEn": "Step 6: Final Line Art & Coloring!",
+        "titleNl": "Stap 6: Omlijnen & Inkleuren!",
+        "instructionEn": "Finish your masterpiece! Add crisp black outlines, then grab your pencils, markers, or use our Online Coloring Studio to color it in!",
+        "instructionNl": "Maak je meesterwerk af! Trek strakke zwarte contourlijnen en kleur alles prachtig in met viltstiften, potloden of in onze Online Kleurtool!"
+      }
+    ]
+  },
+  {
+    "slug": "how-to-draw-an-apple",
+    "category": "kids",
+    "difficulty": "easy",
+    "timeMinutes": 6,
+    "icon": "🍎",
+    "titleEn": "How to Draw a Crisp Red Apple",
+    "titleNl": "Hoe Teken Je een Rode Appel met Blaadje",
+    "descEn": "Learn how to draw a fun, easy crisp red apple step-by-step in 6 simple illustrated stages! Perfect for kids, parents, and classrooms.",
+    "descNl": "Leer stap voor stap een vrolijke rode appel met blaadje tekenen in 6 simpele, duidelijke stappen! Ideaal voor kinderen, thuis en in de klas.",
+    "relatedHubSlug": "art-aesthetic",
+    "relatedThemeSlug": "cute-food-drinks",
+    "steps": [
+      {
+        "stepNumber": 1,
+        "titleEn": "Step 1: Basic Guidelines for Crisp Red Apple",
+        "titleNl": "Stap 1: Basisvormen voor Rode Appel met Blaadje",
+        "instructionEn": "Start by lightly sketching simple oval and circular guide shapes for the body and structure of your crisp red apple.",
+        "instructionNl": "Begin met het zachtjes schetsen van eenvoudige cirkels en ovalen voor het lichaam en de basis van je rode appel met blaadje.",
+        "tipEn": "Keep your pencil strokes light so they are easy to refine later.",
+        "tipNl": "Druk niet te hard op je potlood zodat je lijntjes straks makkelijk kunt uitgummen."
+      },
+      {
+        "stepNumber": 2,
+        "titleEn": "Step 2: Connecting Contours",
+        "titleNl": "Stap 2: Lijnen Verbinden",
+        "instructionEn": "Connect your initial guidelines with smooth, confident outer curves to give your crisp red apple its true silhouette.",
+        "instructionNl": "Verbind de basisvormen met soepele lijnen om de herkenbare omtrek van je rode appel met blaadje te vormen.",
+        "tipEn": "Focus on clean flowing lines.",
+        "tipNl": "Let op mooie ronde en vloeiende lijnen."
+      },
+      {
+        "stepNumber": 3,
+        "titleEn": "Step 3: Key Features & Proportions",
+        "titleNl": "Stap 3: Belangrijkste Details",
+        "instructionEn": "Draw in the primary characteristic features such as limbs, facial outlines, wings, or wheels.",
+        "instructionNl": "Teken de belangrijkste herkenbare onderdelen zoals pootjes, wielen, vleugels of het gezicht."
+      },
+      {
+        "stepNumber": 4,
+        "titleEn": "Step 4: Expressive Details & Textures",
+        "titleNl": "Stap 4: Uitdrukking en Textuur",
+        "instructionEn": "Add friendly facial expressions, textures, patterns, and signature accessories to bring your drawing to life.",
+        "instructionNl": "Voeg vrolijke ogen, een lach, patronen en details toe om je tekening echt tot leven te wekken."
+      },
+      {
+        "stepNumber": 5,
+        "titleEn": "Step 5: Refine & Clean Up",
+        "titleNl": "Stap 5: Verfijnen & Gummen",
+        "instructionEn": "Trace over your best lines with a clean, confident darker pencil or marker and erase any overlapping sketch lines.",
+        "instructionNl": "Trek de mooiste lijnen wat donkerder over en gum alle hulplijntjes die je niet meer nodig hebt netjes weg."
+      },
+      {
+        "stepNumber": 6,
+        "titleEn": "Step 6: Final Line Art & Coloring!",
+        "titleNl": "Stap 6: Omlijnen & Inkleuren!",
+        "instructionEn": "Finish your masterpiece! Add crisp black outlines, then grab your pencils, markers, or use our Online Coloring Studio to color it in!",
+        "instructionNl": "Maak je meesterwerk af! Trek strakke zwarte contourlijnen en kleur alles prachtig in met viltstiften, potloden of in onze Online Kleurtool!"
+      }
+    ]
+  },
+  {
+    "slug": "how-to-draw-a-pineapple",
+    "category": "nature",
+    "difficulty": "easy",
+    "timeMinutes": 8,
+    "icon": "🍍",
+    "titleEn": "How to Draw a Tropical Pineapple",
+    "titleNl": "Hoe Teken Je een Tropische Ananas",
+    "descEn": "Learn how to draw a fun, easy tropical pineapple step-by-step in 6 simple illustrated stages! Perfect for kids, parents, and classrooms.",
+    "descNl": "Leer stap voor stap een vrolijke tropische ananas tekenen in 6 simpele, duidelijke stappen! Ideaal voor kinderen, thuis en in de klas.",
+    "relatedHubSlug": "art-aesthetic",
+    "relatedThemeSlug": "cute-food-drinks",
+    "steps": [
+      {
+        "stepNumber": 1,
+        "titleEn": "Step 1: Basic Guidelines for Tropical Pineapple",
+        "titleNl": "Stap 1: Basisvormen voor Tropische Ananas",
+        "instructionEn": "Start by lightly sketching simple oval and circular guide shapes for the body and structure of your tropical pineapple.",
+        "instructionNl": "Begin met het zachtjes schetsen van eenvoudige cirkels en ovalen voor het lichaam en de basis van je tropische ananas.",
+        "tipEn": "Keep your pencil strokes light so they are easy to refine later.",
+        "tipNl": "Druk niet te hard op je potlood zodat je lijntjes straks makkelijk kunt uitgummen."
+      },
+      {
+        "stepNumber": 2,
+        "titleEn": "Step 2: Connecting Contours",
+        "titleNl": "Stap 2: Lijnen Verbinden",
+        "instructionEn": "Connect your initial guidelines with smooth, confident outer curves to give your tropical pineapple its true silhouette.",
+        "instructionNl": "Verbind de basisvormen met soepele lijnen om de herkenbare omtrek van je tropische ananas te vormen.",
+        "tipEn": "Focus on clean flowing lines.",
+        "tipNl": "Let op mooie ronde en vloeiende lijnen."
+      },
+      {
+        "stepNumber": 3,
+        "titleEn": "Step 3: Key Features & Proportions",
+        "titleNl": "Stap 3: Belangrijkste Details",
+        "instructionEn": "Draw in the primary characteristic features such as limbs, facial outlines, wings, or wheels.",
+        "instructionNl": "Teken de belangrijkste herkenbare onderdelen zoals pootjes, wielen, vleugels of het gezicht."
+      },
+      {
+        "stepNumber": 4,
+        "titleEn": "Step 4: Expressive Details & Textures",
+        "titleNl": "Stap 4: Uitdrukking en Textuur",
+        "instructionEn": "Add friendly facial expressions, textures, patterns, and signature accessories to bring your drawing to life.",
+        "instructionNl": "Voeg vrolijke ogen, een lach, patronen en details toe om je tekening echt tot leven te wekken."
+      },
+      {
+        "stepNumber": 5,
+        "titleEn": "Step 5: Refine & Clean Up",
+        "titleNl": "Stap 5: Verfijnen & Gummen",
+        "instructionEn": "Trace over your best lines with a clean, confident darker pencil or marker and erase any overlapping sketch lines.",
+        "instructionNl": "Trek de mooiste lijnen wat donkerder over en gum alle hulplijntjes die je niet meer nodig hebt netjes weg."
+      },
+      {
+        "stepNumber": 6,
+        "titleEn": "Step 6: Final Line Art & Coloring!",
+        "titleNl": "Stap 6: Omlijnen & Inkleuren!",
+        "instructionEn": "Finish your masterpiece! Add crisp black outlines, then grab your pencils, markers, or use our Online Coloring Studio to color it in!",
+        "instructionNl": "Maak je meesterwerk af! Trek strakke zwarte contourlijnen en kleur alles prachtig in met viltstiften, potloden of in onze Online Kleurtool!"
+      }
+    ]
+  },
+  {
+    "slug": "how-to-draw-a-cupcake",
+    "category": "kids",
+    "difficulty": "easy",
+    "timeMinutes": 8,
+    "icon": "🧁",
+    "titleEn": "How to Draw a Party Cupcake",
+    "titleNl": "Hoe Teken Je een Feestelijke Cupcake",
+    "descEn": "Learn how to draw a fun, easy party cupcake step-by-step in 6 simple illustrated stages! Perfect for kids, parents, and classrooms.",
+    "descNl": "Leer stap voor stap een vrolijke feestelijke cupcake tekenen in 6 simpele, duidelijke stappen! Ideaal voor kinderen, thuis en in de klas.",
+    "relatedHubSlug": "art-aesthetic",
+    "relatedThemeSlug": "cute-food-drinks",
+    "steps": [
+      {
+        "stepNumber": 1,
+        "titleEn": "Step 1: Basic Guidelines for Party Cupcake",
+        "titleNl": "Stap 1: Basisvormen voor Feestelijke Cupcake",
+        "instructionEn": "Start by lightly sketching simple oval and circular guide shapes for the body and structure of your party cupcake.",
+        "instructionNl": "Begin met het zachtjes schetsen van eenvoudige cirkels en ovalen voor het lichaam en de basis van je feestelijke cupcake.",
+        "tipEn": "Keep your pencil strokes light so they are easy to refine later.",
+        "tipNl": "Druk niet te hard op je potlood zodat je lijntjes straks makkelijk kunt uitgummen."
+      },
+      {
+        "stepNumber": 2,
+        "titleEn": "Step 2: Connecting Contours",
+        "titleNl": "Stap 2: Lijnen Verbinden",
+        "instructionEn": "Connect your initial guidelines with smooth, confident outer curves to give your party cupcake its true silhouette.",
+        "instructionNl": "Verbind de basisvormen met soepele lijnen om de herkenbare omtrek van je feestelijke cupcake te vormen.",
+        "tipEn": "Focus on clean flowing lines.",
+        "tipNl": "Let op mooie ronde en vloeiende lijnen."
+      },
+      {
+        "stepNumber": 3,
+        "titleEn": "Step 3: Key Features & Proportions",
+        "titleNl": "Stap 3: Belangrijkste Details",
+        "instructionEn": "Draw in the primary characteristic features such as limbs, facial outlines, wings, or wheels.",
+        "instructionNl": "Teken de belangrijkste herkenbare onderdelen zoals pootjes, wielen, vleugels of het gezicht."
+      },
+      {
+        "stepNumber": 4,
+        "titleEn": "Step 4: Expressive Details & Textures",
+        "titleNl": "Stap 4: Uitdrukking en Textuur",
+        "instructionEn": "Add friendly facial expressions, textures, patterns, and signature accessories to bring your drawing to life.",
+        "instructionNl": "Voeg vrolijke ogen, een lach, patronen en details toe om je tekening echt tot leven te wekken."
+      },
+      {
+        "stepNumber": 5,
+        "titleEn": "Step 5: Refine & Clean Up",
+        "titleNl": "Stap 5: Verfijnen & Gummen",
+        "instructionEn": "Trace over your best lines with a clean, confident darker pencil or marker and erase any overlapping sketch lines.",
+        "instructionNl": "Trek de mooiste lijnen wat donkerder over en gum alle hulplijntjes die je niet meer nodig hebt netjes weg."
+      },
+      {
+        "stepNumber": 6,
+        "titleEn": "Step 6: Final Line Art & Coloring!",
+        "titleNl": "Stap 6: Omlijnen & Inkleuren!",
+        "instructionEn": "Finish your masterpiece! Add crisp black outlines, then grab your pencils, markers, or use our Online Coloring Studio to color it in!",
+        "instructionNl": "Maak je meesterwerk af! Trek strakke zwarte contourlijnen en kleur alles prachtig in met viltstiften, potloden of in onze Online Kleurtool!"
+      }
+    ]
+  },
+  {
+    "slug": "how-to-draw-a-diamond",
+    "category": "kids",
+    "difficulty": "easy",
+    "timeMinutes": 6,
+    "icon": "💎",
+    "titleEn": "How to Draw a Sparkling Cut Diamond",
+    "titleNl": "Hoe Teken Je een Fonkelende Diamant",
+    "descEn": "Learn how to draw a fun, easy sparkling cut diamond step-by-step in 6 simple illustrated stages! Perfect for kids, parents, and classrooms.",
+    "descNl": "Leer stap voor stap een vrolijke fonkelende diamant tekenen in 6 simpele, duidelijke stappen! Ideaal voor kinderen, thuis en in de klas.",
+    "relatedHubSlug": "art-aesthetic",
+    "relatedThemeSlug": "geometric-patterns",
+    "steps": [
+      {
+        "stepNumber": 1,
+        "titleEn": "Step 1: Basic Guidelines for Sparkling Cut Diamond",
+        "titleNl": "Stap 1: Basisvormen voor Fonkelende Diamant",
+        "instructionEn": "Start by lightly sketching simple oval and circular guide shapes for the body and structure of your sparkling cut diamond.",
+        "instructionNl": "Begin met het zachtjes schetsen van eenvoudige cirkels en ovalen voor het lichaam en de basis van je fonkelende diamant.",
+        "tipEn": "Keep your pencil strokes light so they are easy to refine later.",
+        "tipNl": "Druk niet te hard op je potlood zodat je lijntjes straks makkelijk kunt uitgummen."
+      },
+      {
+        "stepNumber": 2,
+        "titleEn": "Step 2: Connecting Contours",
+        "titleNl": "Stap 2: Lijnen Verbinden",
+        "instructionEn": "Connect your initial guidelines with smooth, confident outer curves to give your sparkling cut diamond its true silhouette.",
+        "instructionNl": "Verbind de basisvormen met soepele lijnen om de herkenbare omtrek van je fonkelende diamant te vormen.",
+        "tipEn": "Focus on clean flowing lines.",
+        "tipNl": "Let op mooie ronde en vloeiende lijnen."
+      },
+      {
+        "stepNumber": 3,
+        "titleEn": "Step 3: Key Features & Proportions",
+        "titleNl": "Stap 3: Belangrijkste Details",
+        "instructionEn": "Draw in the primary characteristic features such as limbs, facial outlines, wings, or wheels.",
+        "instructionNl": "Teken de belangrijkste herkenbare onderdelen zoals pootjes, wielen, vleugels of het gezicht."
+      },
+      {
+        "stepNumber": 4,
+        "titleEn": "Step 4: Expressive Details & Textures",
+        "titleNl": "Stap 4: Uitdrukking en Textuur",
+        "instructionEn": "Add friendly facial expressions, textures, patterns, and signature accessories to bring your drawing to life.",
+        "instructionNl": "Voeg vrolijke ogen, een lach, patronen en details toe om je tekening echt tot leven te wekken."
+      },
+      {
+        "stepNumber": 5,
+        "titleEn": "Step 5: Refine & Clean Up",
+        "titleNl": "Stap 5: Verfijnen & Gummen",
+        "instructionEn": "Trace over your best lines with a clean, confident darker pencil or marker and erase any overlapping sketch lines.",
+        "instructionNl": "Trek de mooiste lijnen wat donkerder over en gum alle hulplijntjes die je niet meer nodig hebt netjes weg."
+      },
+      {
+        "stepNumber": 6,
+        "titleEn": "Step 6: Final Line Art & Coloring!",
+        "titleNl": "Stap 6: Omlijnen & Inkleuren!",
+        "instructionEn": "Finish your masterpiece! Add crisp black outlines, then grab your pencils, markers, or use our Online Coloring Studio to color it in!",
+        "instructionNl": "Maak je meesterwerk af! Trek strakke zwarte contourlijnen en kleur alles prachtig in met viltstiften, potloden of in onze Online Kleurtool!"
+      }
+    ]
+  },
+  {
+    "slug": "how-to-draw-a-guitar",
+    "category": "kids",
+    "difficulty": "medium",
+    "timeMinutes": 12,
+    "icon": "🎸",
+    "titleEn": "How to Draw a Rockstar Electric Guitar",
+    "titleNl": "Hoe Teken Je een Elektrische Gitaar",
+    "descEn": "Learn how to draw a fun, easy rockstar electric guitar step-by-step in 6 simple illustrated stages! Perfect for kids, parents, and classrooms.",
+    "descNl": "Leer stap voor stap een vrolijke elektrische gitaar tekenen in 6 simpele, duidelijke stappen! Ideaal voor kinderen, thuis en in de klas.",
+    "relatedHubSlug": "art-aesthetic",
+    "relatedThemeSlug": "music-instruments",
+    "steps": [
+      {
+        "stepNumber": 1,
+        "titleEn": "Step 1: Basic Guidelines for Rockstar Electric Guitar",
+        "titleNl": "Stap 1: Basisvormen voor Elektrische Gitaar",
+        "instructionEn": "Start by lightly sketching simple oval and circular guide shapes for the body and structure of your rockstar electric guitar.",
+        "instructionNl": "Begin met het zachtjes schetsen van eenvoudige cirkels en ovalen voor het lichaam en de basis van je elektrische gitaar.",
+        "tipEn": "Keep your pencil strokes light so they are easy to refine later.",
+        "tipNl": "Druk niet te hard op je potlood zodat je lijntjes straks makkelijk kunt uitgummen."
+      },
+      {
+        "stepNumber": 2,
+        "titleEn": "Step 2: Connecting Contours",
+        "titleNl": "Stap 2: Lijnen Verbinden",
+        "instructionEn": "Connect your initial guidelines with smooth, confident outer curves to give your rockstar electric guitar its true silhouette.",
+        "instructionNl": "Verbind de basisvormen met soepele lijnen om de herkenbare omtrek van je elektrische gitaar te vormen.",
+        "tipEn": "Focus on clean flowing lines.",
+        "tipNl": "Let op mooie ronde en vloeiende lijnen."
+      },
+      {
+        "stepNumber": 3,
+        "titleEn": "Step 3: Key Features & Proportions",
+        "titleNl": "Stap 3: Belangrijkste Details",
+        "instructionEn": "Draw in the primary characteristic features such as limbs, facial outlines, wings, or wheels.",
+        "instructionNl": "Teken de belangrijkste herkenbare onderdelen zoals pootjes, wielen, vleugels of het gezicht."
+      },
+      {
+        "stepNumber": 4,
+        "titleEn": "Step 4: Expressive Details & Textures",
+        "titleNl": "Stap 4: Uitdrukking en Textuur",
+        "instructionEn": "Add friendly facial expressions, textures, patterns, and signature accessories to bring your drawing to life.",
+        "instructionNl": "Voeg vrolijke ogen, een lach, patronen en details toe om je tekening echt tot leven te wekken."
+      },
+      {
+        "stepNumber": 5,
+        "titleEn": "Step 5: Refine & Clean Up",
+        "titleNl": "Stap 5: Verfijnen & Gummen",
+        "instructionEn": "Trace over your best lines with a clean, confident darker pencil or marker and erase any overlapping sketch lines.",
+        "instructionNl": "Trek de mooiste lijnen wat donkerder over en gum alle hulplijntjes die je niet meer nodig hebt netjes weg."
+      },
+      {
+        "stepNumber": 6,
+        "titleEn": "Step 6: Final Line Art & Coloring!",
+        "titleNl": "Stap 6: Omlijnen & Inkleuren!",
+        "instructionEn": "Finish your masterpiece! Add crisp black outlines, then grab your pencils, markers, or use our Online Coloring Studio to color it in!",
+        "instructionNl": "Maak je meesterwerk af! Trek strakke zwarte contourlijnen en kleur alles prachtig in met viltstiften, potloden of in onze Online Kleurtool!"
+      }
+    ]
+  },
+  {
+    "slug": "how-to-draw-a-grand-piano",
+    "category": "kids",
+    "difficulty": "medium",
+    "timeMinutes": 14,
+    "icon": "🎹",
+    "titleEn": "How to Draw a Grand Piano",
+    "titleNl": "Hoe Teken Je een Klassieke Vleugelpiano",
+    "descEn": "Learn how to draw a fun, easy grand piano step-by-step in 6 simple illustrated stages! Perfect for kids, parents, and classrooms.",
+    "descNl": "Leer stap voor stap een vrolijke klassieke vleugelpiano tekenen in 6 simpele, duidelijke stappen! Ideaal voor kinderen, thuis en in de klas.",
+    "relatedHubSlug": "art-aesthetic",
+    "relatedThemeSlug": "music-instruments",
+    "steps": [
+      {
+        "stepNumber": 1,
+        "titleEn": "Step 1: Basic Guidelines for Grand Piano",
+        "titleNl": "Stap 1: Basisvormen voor Klassieke Vleugelpiano",
+        "instructionEn": "Start by lightly sketching simple oval and circular guide shapes for the body and structure of your grand piano.",
+        "instructionNl": "Begin met het zachtjes schetsen van eenvoudige cirkels en ovalen voor het lichaam en de basis van je klassieke vleugelpiano.",
+        "tipEn": "Keep your pencil strokes light so they are easy to refine later.",
+        "tipNl": "Druk niet te hard op je potlood zodat je lijntjes straks makkelijk kunt uitgummen."
+      },
+      {
+        "stepNumber": 2,
+        "titleEn": "Step 2: Connecting Contours",
+        "titleNl": "Stap 2: Lijnen Verbinden",
+        "instructionEn": "Connect your initial guidelines with smooth, confident outer curves to give your grand piano its true silhouette.",
+        "instructionNl": "Verbind de basisvormen met soepele lijnen om de herkenbare omtrek van je klassieke vleugelpiano te vormen.",
+        "tipEn": "Focus on clean flowing lines.",
+        "tipNl": "Let op mooie ronde en vloeiende lijnen."
+      },
+      {
+        "stepNumber": 3,
+        "titleEn": "Step 3: Key Features & Proportions",
+        "titleNl": "Stap 3: Belangrijkste Details",
+        "instructionEn": "Draw in the primary characteristic features such as limbs, facial outlines, wings, or wheels.",
+        "instructionNl": "Teken de belangrijkste herkenbare onderdelen zoals pootjes, wielen, vleugels of het gezicht."
+      },
+      {
+        "stepNumber": 4,
+        "titleEn": "Step 4: Expressive Details & Textures",
+        "titleNl": "Stap 4: Uitdrukking en Textuur",
+        "instructionEn": "Add friendly facial expressions, textures, patterns, and signature accessories to bring your drawing to life.",
+        "instructionNl": "Voeg vrolijke ogen, een lach, patronen en details toe om je tekening echt tot leven te wekken."
+      },
+      {
+        "stepNumber": 5,
+        "titleEn": "Step 5: Refine & Clean Up",
+        "titleNl": "Stap 5: Verfijnen & Gummen",
+        "instructionEn": "Trace over your best lines with a clean, confident darker pencil or marker and erase any overlapping sketch lines.",
+        "instructionNl": "Trek de mooiste lijnen wat donkerder over en gum alle hulplijntjes die je niet meer nodig hebt netjes weg."
+      },
+      {
+        "stepNumber": 6,
+        "titleEn": "Step 6: Final Line Art & Coloring!",
+        "titleNl": "Stap 6: Omlijnen & Inkleuren!",
+        "instructionEn": "Finish your masterpiece! Add crisp black outlines, then grab your pencils, markers, or use our Online Coloring Studio to color it in!",
+        "instructionNl": "Maak je meesterwerk af! Trek strakke zwarte contourlijnen en kleur alles prachtig in met viltstiften, potloden of in onze Online Kleurtool!"
+      }
+    ]
+  },
+  {
+    "slug": "how-to-draw-an-art-palette",
+    "category": "kids",
+    "difficulty": "easy",
+    "timeMinutes": 8,
+    "icon": "🎨",
+    "titleEn": "How to Draw a Artist Palette & Paintbrush",
+    "titleNl": "Hoe Teken Je een Schilderspalet en Penseel",
+    "descEn": "Learn how to draw a fun, easy artist palette & paintbrush step-by-step in 6 simple illustrated stages! Perfect for kids, parents, and classrooms.",
+    "descNl": "Leer stap voor stap een vrolijke schilderspalet en penseel tekenen in 6 simpele, duidelijke stappen! Ideaal voor kinderen, thuis en in de klas.",
+    "relatedHubSlug": "art-aesthetic",
+    "relatedThemeSlug": "art-studios",
+    "steps": [
+      {
+        "stepNumber": 1,
+        "titleEn": "Step 1: Basic Guidelines for Artist Palette & Paintbrush",
+        "titleNl": "Stap 1: Basisvormen voor Schilderspalet en Penseel",
+        "instructionEn": "Start by lightly sketching simple oval and circular guide shapes for the body and structure of your artist palette & paintbrush.",
+        "instructionNl": "Begin met het zachtjes schetsen van eenvoudige cirkels en ovalen voor het lichaam en de basis van je schilderspalet en penseel.",
+        "tipEn": "Keep your pencil strokes light so they are easy to refine later.",
+        "tipNl": "Druk niet te hard op je potlood zodat je lijntjes straks makkelijk kunt uitgummen."
+      },
+      {
+        "stepNumber": 2,
+        "titleEn": "Step 2: Connecting Contours",
+        "titleNl": "Stap 2: Lijnen Verbinden",
+        "instructionEn": "Connect your initial guidelines with smooth, confident outer curves to give your artist palette & paintbrush its true silhouette.",
+        "instructionNl": "Verbind de basisvormen met soepele lijnen om de herkenbare omtrek van je schilderspalet en penseel te vormen.",
+        "tipEn": "Focus on clean flowing lines.",
+        "tipNl": "Let op mooie ronde en vloeiende lijnen."
+      },
+      {
+        "stepNumber": 3,
+        "titleEn": "Step 3: Key Features & Proportions",
+        "titleNl": "Stap 3: Belangrijkste Details",
+        "instructionEn": "Draw in the primary characteristic features such as limbs, facial outlines, wings, or wheels.",
+        "instructionNl": "Teken de belangrijkste herkenbare onderdelen zoals pootjes, wielen, vleugels of het gezicht."
+      },
+      {
+        "stepNumber": 4,
+        "titleEn": "Step 4: Expressive Details & Textures",
+        "titleNl": "Stap 4: Uitdrukking en Textuur",
+        "instructionEn": "Add friendly facial expressions, textures, patterns, and signature accessories to bring your drawing to life.",
+        "instructionNl": "Voeg vrolijke ogen, een lach, patronen en details toe om je tekening echt tot leven te wekken."
+      },
+      {
+        "stepNumber": 5,
+        "titleEn": "Step 5: Refine & Clean Up",
+        "titleNl": "Stap 5: Verfijnen & Gummen",
+        "instructionEn": "Trace over your best lines with a clean, confident darker pencil or marker and erase any overlapping sketch lines.",
+        "instructionNl": "Trek de mooiste lijnen wat donkerder over en gum alle hulplijntjes die je niet meer nodig hebt netjes weg."
+      },
+      {
+        "stepNumber": 6,
+        "titleEn": "Step 6: Final Line Art & Coloring!",
+        "titleNl": "Stap 6: Omlijnen & Inkleuren!",
+        "instructionEn": "Finish your masterpiece! Add crisp black outlines, then grab your pencils, markers, or use our Online Coloring Studio to color it in!",
+        "instructionNl": "Maak je meesterwerk af! Trek strakke zwarte contourlijnen en kleur alles prachtig in met viltstiften, potloden of in onze Online Kleurtool!"
+      }
+    ]
+  },
+  {
+    "slug": "how-to-draw-a-camera",
+    "category": "kids",
+    "difficulty": "easy",
+    "timeMinutes": 8,
+    "icon": "📷",
+    "titleEn": "How to Draw a Vintage Photo Camera",
+    "titleNl": "Hoe Teken Je een Fotocamera",
+    "descEn": "Learn how to draw a fun, easy vintage photo camera step-by-step in 6 simple illustrated stages! Perfect for kids, parents, and classrooms.",
+    "descNl": "Leer stap voor stap een vrolijke fotocamera tekenen in 6 simpele, duidelijke stappen! Ideaal voor kinderen, thuis en in de klas.",
+    "relatedHubSlug": "art-aesthetic",
+    "relatedThemeSlug": "retro-vintage",
+    "steps": [
+      {
+        "stepNumber": 1,
+        "titleEn": "Step 1: Basic Guidelines for Vintage Photo Camera",
+        "titleNl": "Stap 1: Basisvormen voor Fotocamera",
+        "instructionEn": "Start by lightly sketching simple oval and circular guide shapes for the body and structure of your vintage photo camera.",
+        "instructionNl": "Begin met het zachtjes schetsen van eenvoudige cirkels en ovalen voor het lichaam en de basis van je fotocamera.",
+        "tipEn": "Keep your pencil strokes light so they are easy to refine later.",
+        "tipNl": "Druk niet te hard op je potlood zodat je lijntjes straks makkelijk kunt uitgummen."
+      },
+      {
+        "stepNumber": 2,
+        "titleEn": "Step 2: Connecting Contours",
+        "titleNl": "Stap 2: Lijnen Verbinden",
+        "instructionEn": "Connect your initial guidelines with smooth, confident outer curves to give your vintage photo camera its true silhouette.",
+        "instructionNl": "Verbind de basisvormen met soepele lijnen om de herkenbare omtrek van je fotocamera te vormen.",
+        "tipEn": "Focus on clean flowing lines.",
+        "tipNl": "Let op mooie ronde en vloeiende lijnen."
+      },
+      {
+        "stepNumber": 3,
+        "titleEn": "Step 3: Key Features & Proportions",
+        "titleNl": "Stap 3: Belangrijkste Details",
+        "instructionEn": "Draw in the primary characteristic features such as limbs, facial outlines, wings, or wheels.",
+        "instructionNl": "Teken de belangrijkste herkenbare onderdelen zoals pootjes, wielen, vleugels of het gezicht."
+      },
+      {
+        "stepNumber": 4,
+        "titleEn": "Step 4: Expressive Details & Textures",
+        "titleNl": "Stap 4: Uitdrukking en Textuur",
+        "instructionEn": "Add friendly facial expressions, textures, patterns, and signature accessories to bring your drawing to life.",
+        "instructionNl": "Voeg vrolijke ogen, een lach, patronen en details toe om je tekening echt tot leven te wekken."
+      },
+      {
+        "stepNumber": 5,
+        "titleEn": "Step 5: Refine & Clean Up",
+        "titleNl": "Stap 5: Verfijnen & Gummen",
+        "instructionEn": "Trace over your best lines with a clean, confident darker pencil or marker and erase any overlapping sketch lines.",
+        "instructionNl": "Trek de mooiste lijnen wat donkerder over en gum alle hulplijntjes die je niet meer nodig hebt netjes weg."
+      },
+      {
+        "stepNumber": 6,
+        "titleEn": "Step 6: Final Line Art & Coloring!",
+        "titleNl": "Stap 6: Omlijnen & Inkleuren!",
+        "instructionEn": "Finish your masterpiece! Add crisp black outlines, then grab your pencils, markers, or use our Online Coloring Studio to color it in!",
+        "instructionNl": "Maak je meesterwerk af! Trek strakke zwarte contourlijnen en kleur alles prachtig in met viltstiften, potloden of in onze Online Kleurtool!"
+      }
+    ]
+  },
+  {
+    "slug": "how-to-draw-an-hourglass",
+    "category": "kids",
+    "difficulty": "easy",
+    "timeMinutes": 8,
+    "icon": "⏳",
+    "titleEn": "How to Draw a Hourglass of Time",
+    "titleNl": "Hoe Teken Je een Zandloper",
+    "descEn": "Learn how to draw a fun, easy hourglass of time step-by-step in 6 simple illustrated stages! Perfect for kids, parents, and classrooms.",
+    "descNl": "Leer stap voor stap een vrolijke zandloper tekenen in 6 simpele, duidelijke stappen! Ideaal voor kinderen, thuis en in de klas.",
+    "relatedHubSlug": "art-aesthetic",
+    "relatedThemeSlug": "geometric-patterns",
+    "steps": [
+      {
+        "stepNumber": 1,
+        "titleEn": "Step 1: Basic Guidelines for Hourglass of Time",
+        "titleNl": "Stap 1: Basisvormen voor Zandloper",
+        "instructionEn": "Start by lightly sketching simple oval and circular guide shapes for the body and structure of your hourglass of time.",
+        "instructionNl": "Begin met het zachtjes schetsen van eenvoudige cirkels en ovalen voor het lichaam en de basis van je zandloper.",
+        "tipEn": "Keep your pencil strokes light so they are easy to refine later.",
+        "tipNl": "Druk niet te hard op je potlood zodat je lijntjes straks makkelijk kunt uitgummen."
+      },
+      {
+        "stepNumber": 2,
+        "titleEn": "Step 2: Connecting Contours",
+        "titleNl": "Stap 2: Lijnen Verbinden",
+        "instructionEn": "Connect your initial guidelines with smooth, confident outer curves to give your hourglass of time its true silhouette.",
+        "instructionNl": "Verbind de basisvormen met soepele lijnen om de herkenbare omtrek van je zandloper te vormen.",
+        "tipEn": "Focus on clean flowing lines.",
+        "tipNl": "Let op mooie ronde en vloeiende lijnen."
+      },
+      {
+        "stepNumber": 3,
+        "titleEn": "Step 3: Key Features & Proportions",
+        "titleNl": "Stap 3: Belangrijkste Details",
+        "instructionEn": "Draw in the primary characteristic features such as limbs, facial outlines, wings, or wheels.",
+        "instructionNl": "Teken de belangrijkste herkenbare onderdelen zoals pootjes, wielen, vleugels of het gezicht."
+      },
+      {
+        "stepNumber": 4,
+        "titleEn": "Step 4: Expressive Details & Textures",
+        "titleNl": "Stap 4: Uitdrukking en Textuur",
+        "instructionEn": "Add friendly facial expressions, textures, patterns, and signature accessories to bring your drawing to life.",
+        "instructionNl": "Voeg vrolijke ogen, een lach, patronen en details toe om je tekening echt tot leven te wekken."
+      },
+      {
+        "stepNumber": 5,
+        "titleEn": "Step 5: Refine & Clean Up",
+        "titleNl": "Stap 5: Verfijnen & Gummen",
+        "instructionEn": "Trace over your best lines with a clean, confident darker pencil or marker and erase any overlapping sketch lines.",
+        "instructionNl": "Trek de mooiste lijnen wat donkerder over en gum alle hulplijntjes die je niet meer nodig hebt netjes weg."
+      },
+      {
+        "stepNumber": 6,
+        "titleEn": "Step 6: Final Line Art & Coloring!",
+        "titleNl": "Stap 6: Omlijnen & Inkleuren!",
+        "instructionEn": "Finish your masterpiece! Add crisp black outlines, then grab your pencils, markers, or use our Online Coloring Studio to color it in!",
+        "instructionNl": "Maak je meesterwerk af! Trek strakke zwarte contourlijnen en kleur alles prachtig in met viltstiften, potloden of in onze Online Kleurtool!"
+      }
+    ]
+  },
+  {
+    "slug": "how-to-draw-a-lighthouse",
+    "category": "nature",
+    "difficulty": "easy",
+    "timeMinutes": 10,
+    "icon": "🗼",
+    "titleEn": "How to Draw a Coastal Lighthouse",
+    "titleNl": "Hoe Teken Je een Vuurtoren aan Zee",
+    "descEn": "Learn how to draw a fun, easy coastal lighthouse step-by-step in 6 simple illustrated stages! Perfect for kids, parents, and classrooms.",
+    "descNl": "Leer stap voor stap een vrolijke vuurtoren aan zee tekenen in 6 simpele, duidelijke stappen! Ideaal voor kinderen, thuis en in de klas.",
+    "relatedHubSlug": "art-aesthetic",
+    "relatedThemeSlug": "nature-landscapes",
+    "steps": [
+      {
+        "stepNumber": 1,
+        "titleEn": "Step 1: Basic Guidelines for Coastal Lighthouse",
+        "titleNl": "Stap 1: Basisvormen voor Vuurtoren aan Zee",
+        "instructionEn": "Start by lightly sketching simple oval and circular guide shapes for the body and structure of your coastal lighthouse.",
+        "instructionNl": "Begin met het zachtjes schetsen van eenvoudige cirkels en ovalen voor het lichaam en de basis van je vuurtoren aan zee.",
+        "tipEn": "Keep your pencil strokes light so they are easy to refine later.",
+        "tipNl": "Druk niet te hard op je potlood zodat je lijntjes straks makkelijk kunt uitgummen."
+      },
+      {
+        "stepNumber": 2,
+        "titleEn": "Step 2: Connecting Contours",
+        "titleNl": "Stap 2: Lijnen Verbinden",
+        "instructionEn": "Connect your initial guidelines with smooth, confident outer curves to give your coastal lighthouse its true silhouette.",
+        "instructionNl": "Verbind de basisvormen met soepele lijnen om de herkenbare omtrek van je vuurtoren aan zee te vormen.",
+        "tipEn": "Focus on clean flowing lines.",
+        "tipNl": "Let op mooie ronde en vloeiende lijnen."
+      },
+      {
+        "stepNumber": 3,
+        "titleEn": "Step 3: Key Features & Proportions",
+        "titleNl": "Stap 3: Belangrijkste Details",
+        "instructionEn": "Draw in the primary characteristic features such as limbs, facial outlines, wings, or wheels.",
+        "instructionNl": "Teken de belangrijkste herkenbare onderdelen zoals pootjes, wielen, vleugels of het gezicht."
+      },
+      {
+        "stepNumber": 4,
+        "titleEn": "Step 4: Expressive Details & Textures",
+        "titleNl": "Stap 4: Uitdrukking en Textuur",
+        "instructionEn": "Add friendly facial expressions, textures, patterns, and signature accessories to bring your drawing to life.",
+        "instructionNl": "Voeg vrolijke ogen, een lach, patronen en details toe om je tekening echt tot leven te wekken."
+      },
+      {
+        "stepNumber": 5,
+        "titleEn": "Step 5: Refine & Clean Up",
+        "titleNl": "Stap 5: Verfijnen & Gummen",
+        "instructionEn": "Trace over your best lines with a clean, confident darker pencil or marker and erase any overlapping sketch lines.",
+        "instructionNl": "Trek de mooiste lijnen wat donkerder over en gum alle hulplijntjes die je niet meer nodig hebt netjes weg."
+      },
+      {
+        "stepNumber": 6,
+        "titleEn": "Step 6: Final Line Art & Coloring!",
+        "titleNl": "Stap 6: Omlijnen & Inkleuren!",
+        "instructionEn": "Finish your masterpiece! Add crisp black outlines, then grab your pencils, markers, or use our Online Coloring Studio to color it in!",
+        "instructionNl": "Maak je meesterwerk af! Trek strakke zwarte contourlijnen en kleur alles prachtig in met viltstiften, potloden of in onze Online Kleurtool!"
+      }
+    ]
+  },
+  {
+    "slug": "how-to-draw-a-campfire-tent",
+    "category": "nature",
+    "difficulty": "easy",
+    "timeMinutes": 10,
+    "icon": "⛺",
+    "titleEn": "How to Draw a Camping Tent & Campfire",
+    "titleNl": "Hoe Teken Je een Kampeertent en Kampvuur",
+    "descEn": "Learn how to draw a fun, easy camping tent & campfire step-by-step in 6 simple illustrated stages! Perfect for kids, parents, and classrooms.",
+    "descNl": "Leer stap voor stap een vrolijke kampeertent en kampvuur tekenen in 6 simpele, duidelijke stappen! Ideaal voor kinderen, thuis en in de klas.",
+    "relatedHubSlug": "art-aesthetic",
+    "relatedThemeSlug": "nature-landscapes",
+    "steps": [
+      {
+        "stepNumber": 1,
+        "titleEn": "Step 1: Basic Guidelines for Camping Tent & Campfire",
+        "titleNl": "Stap 1: Basisvormen voor Kampeertent en Kampvuur",
+        "instructionEn": "Start by lightly sketching simple oval and circular guide shapes for the body and structure of your camping tent & campfire.",
+        "instructionNl": "Begin met het zachtjes schetsen van eenvoudige cirkels en ovalen voor het lichaam en de basis van je kampeertent en kampvuur.",
+        "tipEn": "Keep your pencil strokes light so they are easy to refine later.",
+        "tipNl": "Druk niet te hard op je potlood zodat je lijntjes straks makkelijk kunt uitgummen."
+      },
+      {
+        "stepNumber": 2,
+        "titleEn": "Step 2: Connecting Contours",
+        "titleNl": "Stap 2: Lijnen Verbinden",
+        "instructionEn": "Connect your initial guidelines with smooth, confident outer curves to give your camping tent & campfire its true silhouette.",
+        "instructionNl": "Verbind de basisvormen met soepele lijnen om de herkenbare omtrek van je kampeertent en kampvuur te vormen.",
+        "tipEn": "Focus on clean flowing lines.",
+        "tipNl": "Let op mooie ronde en vloeiende lijnen."
+      },
+      {
+        "stepNumber": 3,
+        "titleEn": "Step 3: Key Features & Proportions",
+        "titleNl": "Stap 3: Belangrijkste Details",
+        "instructionEn": "Draw in the primary characteristic features such as limbs, facial outlines, wings, or wheels.",
+        "instructionNl": "Teken de belangrijkste herkenbare onderdelen zoals pootjes, wielen, vleugels of het gezicht."
+      },
+      {
+        "stepNumber": 4,
+        "titleEn": "Step 4: Expressive Details & Textures",
+        "titleNl": "Stap 4: Uitdrukking en Textuur",
+        "instructionEn": "Add friendly facial expressions, textures, patterns, and signature accessories to bring your drawing to life.",
+        "instructionNl": "Voeg vrolijke ogen, een lach, patronen en details toe om je tekening echt tot leven te wekken."
+      },
+      {
+        "stepNumber": 5,
+        "titleEn": "Step 5: Refine & Clean Up",
+        "titleNl": "Stap 5: Verfijnen & Gummen",
+        "instructionEn": "Trace over your best lines with a clean, confident darker pencil or marker and erase any overlapping sketch lines.",
+        "instructionNl": "Trek de mooiste lijnen wat donkerder over en gum alle hulplijntjes die je niet meer nodig hebt netjes weg."
+      },
+      {
+        "stepNumber": 6,
+        "titleEn": "Step 6: Final Line Art & Coloring!",
+        "titleNl": "Stap 6: Omlijnen & Inkleuren!",
+        "instructionEn": "Finish your masterpiece! Add crisp black outlines, then grab your pencils, markers, or use our Online Coloring Studio to color it in!",
+        "instructionNl": "Maak je meesterwerk af! Trek strakke zwarte contourlijnen en kleur alles prachtig in met viltstiften, potloden of in onze Online Kleurtool!"
+      }
+    ]
+  },
+  {
+    "slug": "how-to-draw-a-snowflake",
+    "category": "nature",
+    "difficulty": "easy",
+    "timeMinutes": 8,
+    "icon": "❄️",
+    "titleEn": "How to Draw a Symmetrical Ice Snowflake",
+    "titleNl": "Hoe Teken Je een Symmetrische Sneeuwvlok",
+    "descEn": "Learn how to draw a fun, easy symmetrical ice snowflake step-by-step in 6 simple illustrated stages! Perfect for kids, parents, and classrooms.",
+    "descNl": "Leer stap voor stap een vrolijke symmetrische sneeuwvlok tekenen in 6 simpele, duidelijke stappen! Ideaal voor kinderen, thuis en in de klas.",
+    "relatedHubSlug": "holidays-seasons",
+    "relatedThemeSlug": "christmas-winter",
+    "steps": [
+      {
+        "stepNumber": 1,
+        "titleEn": "Step 1: Basic Guidelines for Symmetrical Ice Snowflake",
+        "titleNl": "Stap 1: Basisvormen voor Symmetrische Sneeuwvlok",
+        "instructionEn": "Start by lightly sketching simple oval and circular guide shapes for the body and structure of your symmetrical ice snowflake.",
+        "instructionNl": "Begin met het zachtjes schetsen van eenvoudige cirkels en ovalen voor het lichaam en de basis van je symmetrische sneeuwvlok.",
+        "tipEn": "Keep your pencil strokes light so they are easy to refine later.",
+        "tipNl": "Druk niet te hard op je potlood zodat je lijntjes straks makkelijk kunt uitgummen."
+      },
+      {
+        "stepNumber": 2,
+        "titleEn": "Step 2: Connecting Contours",
+        "titleNl": "Stap 2: Lijnen Verbinden",
+        "instructionEn": "Connect your initial guidelines with smooth, confident outer curves to give your symmetrical ice snowflake its true silhouette.",
+        "instructionNl": "Verbind de basisvormen met soepele lijnen om de herkenbare omtrek van je symmetrische sneeuwvlok te vormen.",
+        "tipEn": "Focus on clean flowing lines.",
+        "tipNl": "Let op mooie ronde en vloeiende lijnen."
+      },
+      {
+        "stepNumber": 3,
+        "titleEn": "Step 3: Key Features & Proportions",
+        "titleNl": "Stap 3: Belangrijkste Details",
+        "instructionEn": "Draw in the primary characteristic features such as limbs, facial outlines, wings, or wheels.",
+        "instructionNl": "Teken de belangrijkste herkenbare onderdelen zoals pootjes, wielen, vleugels of het gezicht."
+      },
+      {
+        "stepNumber": 4,
+        "titleEn": "Step 4: Expressive Details & Textures",
+        "titleNl": "Stap 4: Uitdrukking en Textuur",
+        "instructionEn": "Add friendly facial expressions, textures, patterns, and signature accessories to bring your drawing to life.",
+        "instructionNl": "Voeg vrolijke ogen, een lach, patronen en details toe om je tekening echt tot leven te wekken."
+      },
+      {
+        "stepNumber": 5,
+        "titleEn": "Step 5: Refine & Clean Up",
+        "titleNl": "Stap 5: Verfijnen & Gummen",
+        "instructionEn": "Trace over your best lines with a clean, confident darker pencil or marker and erase any overlapping sketch lines.",
+        "instructionNl": "Trek de mooiste lijnen wat donkerder over en gum alle hulplijntjes die je niet meer nodig hebt netjes weg."
+      },
+      {
+        "stepNumber": 6,
+        "titleEn": "Step 6: Final Line Art & Coloring!",
+        "titleNl": "Stap 6: Omlijnen & Inkleuren!",
+        "instructionEn": "Finish your masterpiece! Add crisp black outlines, then grab your pencils, markers, or use our Online Coloring Studio to color it in!",
+        "instructionNl": "Maak je meesterwerk af! Trek strakke zwarte contourlijnen en kleur alles prachtig in met viltstiften, potloden of in onze Online Kleurtool!"
+      }
+    ]
+  },
+  {
+    "slug": "how-to-draw-a-cup-of-cocoa",
+    "category": "kids",
+    "difficulty": "easy",
+    "timeMinutes": 8,
+    "icon": "☕",
+    "titleEn": "How to Draw a Hot Chocolate Mug with Marshmallows",
+    "titleNl": "Hoe Teken Je een Warme Chocolademelk met Marshmallows",
+    "descEn": "Learn how to draw a fun, easy hot chocolate mug with marshmallows step-by-step in 6 simple illustrated stages! Perfect for kids, parents, and classrooms.",
+    "descNl": "Leer stap voor stap een vrolijke warme chocolademelk met marshmallows tekenen in 6 simpele, duidelijke stappen! Ideaal voor kinderen, thuis en in de klas.",
+    "relatedHubSlug": "holidays-seasons",
+    "relatedThemeSlug": "christmas-winter",
+    "steps": [
+      {
+        "stepNumber": 1,
+        "titleEn": "Step 1: Basic Guidelines for Hot Chocolate Mug with Marshmallows",
+        "titleNl": "Stap 1: Basisvormen voor Warme Chocolademelk met Marshmallows",
+        "instructionEn": "Start by lightly sketching simple oval and circular guide shapes for the body and structure of your hot chocolate mug with marshmallows.",
+        "instructionNl": "Begin met het zachtjes schetsen van eenvoudige cirkels en ovalen voor het lichaam en de basis van je warme chocolademelk met marshmallows.",
+        "tipEn": "Keep your pencil strokes light so they are easy to refine later.",
+        "tipNl": "Druk niet te hard op je potlood zodat je lijntjes straks makkelijk kunt uitgummen."
+      },
+      {
+        "stepNumber": 2,
+        "titleEn": "Step 2: Connecting Contours",
+        "titleNl": "Stap 2: Lijnen Verbinden",
+        "instructionEn": "Connect your initial guidelines with smooth, confident outer curves to give your hot chocolate mug with marshmallows its true silhouette.",
+        "instructionNl": "Verbind de basisvormen met soepele lijnen om de herkenbare omtrek van je warme chocolademelk met marshmallows te vormen.",
+        "tipEn": "Focus on clean flowing lines.",
+        "tipNl": "Let op mooie ronde en vloeiende lijnen."
+      },
+      {
+        "stepNumber": 3,
+        "titleEn": "Step 3: Key Features & Proportions",
+        "titleNl": "Stap 3: Belangrijkste Details",
+        "instructionEn": "Draw in the primary characteristic features such as limbs, facial outlines, wings, or wheels.",
+        "instructionNl": "Teken de belangrijkste herkenbare onderdelen zoals pootjes, wielen, vleugels of het gezicht."
+      },
+      {
+        "stepNumber": 4,
+        "titleEn": "Step 4: Expressive Details & Textures",
+        "titleNl": "Stap 4: Uitdrukking en Textuur",
+        "instructionEn": "Add friendly facial expressions, textures, patterns, and signature accessories to bring your drawing to life.",
+        "instructionNl": "Voeg vrolijke ogen, een lach, patronen en details toe om je tekening echt tot leven te wekken."
+      },
+      {
+        "stepNumber": 5,
+        "titleEn": "Step 5: Refine & Clean Up",
+        "titleNl": "Stap 5: Verfijnen & Gummen",
+        "instructionEn": "Trace over your best lines with a clean, confident darker pencil or marker and erase any overlapping sketch lines.",
+        "instructionNl": "Trek de mooiste lijnen wat donkerder over en gum alle hulplijntjes die je niet meer nodig hebt netjes weg."
+      },
+      {
+        "stepNumber": 6,
+        "titleEn": "Step 6: Final Line Art & Coloring!",
+        "titleNl": "Stap 6: Omlijnen & Inkleuren!",
+        "instructionEn": "Finish your masterpiece! Add crisp black outlines, then grab your pencils, markers, or use our Online Coloring Studio to color it in!",
+        "instructionNl": "Maak je meesterwerk af! Trek strakke zwarte contourlijnen en kleur alles prachtig in met viltstiften, potloden of in onze Online Kleurtool!"
       }
     ]
   }
 ];
 
-export function getHowToDrawLessons(lang: string) {
-  return HOW_TO_DRAW_LESSONS;
+export function getLessonBySlug(slug: string): HowToDrawLesson | undefined {
+  return HOW_TO_DRAW_LESSONS.find(l => l.slug === slug);
 }
 
-export function getLessonBySlug(slug: string) {
-  return HOW_TO_DRAW_LESSONS.find(l => l.slug === slug);
+export function getLessonsByCategory(category: string): HowToDrawLesson[] {
+  return HOW_TO_DRAW_LESSONS.filter(l => l.category === category);
 }

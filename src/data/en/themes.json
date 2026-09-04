@@ -364,20 +364,6 @@
     "pageCount": 0
   },
   {
-    "title": "Attack on Titan",
-    "slug": "attack-on-titan",
-    "parentHub": "anime-manga",
-    "description": "Free printable Attack on Titan coloring pages for kids, teens, and adults. Download high-resolution PDF and image templates ready to print.",
-    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/banner/theme_attack-on-titan.webp",
-    "availableAges": [
-      "kids",
-      "teens",
-      "adults"
-    ],
-    "language": "en",
-    "pageCount": 0
-  },
-  {
     "title": "Jujutsu Kaisen",
     "slug": "jujutsu-kaisen",
     "parentHub": "anime-manga",

@@ -364,20 +364,6 @@
     "pageCount": 0
   },
   {
-    "title": "Attack on Titan",
-    "slug": "attack-on-titan",
-    "parentHub": "anime-manga",
-    "description": "Gratis printbare Attack on Titan kleurplaten voor peuters, kinderen, tieners en volwassenen. Download direct gratis in hoge resolutie A4.",
-    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/banner/theme_attack-on-titan.webp",
-    "availableAges": [
-      "kids",
-      "teens",
-      "adults"
-    ],
-    "language": "nl",
-    "pageCount": 0
-  },
-  {
     "title": "Jujutsu Kaisen",
     "slug": "jujutsu-kaisen",
     "parentHub": "anime-manga",

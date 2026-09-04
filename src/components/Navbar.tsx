@@ -104,6 +104,7 @@ export default function Navbar({ lang }: { lang: string }) {
     { label: isEn ?'Search':'Zoeken', icon: '🔍', href:`/${lang}/search`},
     { label: isEn ?'Favorites':'Favorieten', icon: '❤️', href:`/${lang}/favorites`},
     { label: isEn ?'How to Draw':'Leren Tekenen', icon: '✏️', href:`/${lang}/how-to-draw`},
+    { label: isEn ?'School & Math':'School & Rekenen', icon: '🎓', href:`/${lang}/school`},
     { label: isEn ?'Calendars':'Kalenders', icon: '📅', href:`/${lang}/calendars`},
     { label: isEn ?'Blog & Tips':'Tips & Blog', icon: '💡', href:`/${lang}/blog`},
     {

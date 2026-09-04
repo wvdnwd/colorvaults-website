@@ -15,6 +15,7 @@ const NAV = [
   { href: '/admin/dashboard',      icon: '📊', label: 'Dashboard' },
   { href: '/admin/coloring-pages', icon: '🎨', label: 'Coloring Pages' },
   { href: '/admin/categories',     icon: '🗂️', label: 'Categories' },
+  { href: '/admin/unmatched',      icon: '❓', label: 'Quarantaine' },
   { href: '/admin/reports',        icon: '🚩', label: 'Reports', badge: true },
   { href: '/admin/messages',       icon: '✉️',  label: 'Messages' },
 ];
