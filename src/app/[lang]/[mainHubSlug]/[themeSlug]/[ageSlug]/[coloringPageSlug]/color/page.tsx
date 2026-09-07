@@ -1,37 +1,37 @@
-import { getColoringPages, getPageBySlug, getMainHubs, getThemes, getAgePageBySlug, safeJsonLd } from'@/lib/api';
-import { notFound } from'next/navigation';
-import Breadcrumbs from'@/components/Breadcrumbs';
-import Link from'next/link';
-import MotionCard from'@/components/MotionCard';
-import AdSlot from'@/components/AdSlot';
-import InteractiveColoringStudio from'@/components/InteractiveColoringStudio';
-import React from'react';
+import { getPageBySlug, getFeaturedPages, getMainHubs, getThemes, getAgePageBySlug, getColoringPagesForTheme, safeJsonLd } from '@/lib/api';
+import { notFound } from 'next/navigation';
+import Breadcrumbs from '@/components/Breadcrumbs';
+import Link from 'next/link';
+import MotionCard from '@/components/MotionCard';
+import AdSlot from '@/components/AdSlot';
+import InteractiveColoringStudio from '@/components/InteractiveColoringStudio';
+import React from 'react';
 
 export const dynamicParams = true;
 
 export async function generateStaticParams() {
-  const pagesEn = getColoringPages('en').slice(0, 20).map(p => ({ lang:'en', mainHubSlug: p.parentHub, themeSlug: p.parentTheme, ageSlug: p.ageGroup, coloringPageSlug: p.slug }));
-  const pagesNl = getColoringPages('nl').slice(0, 20).map(p => ({ lang:'nl', mainHubSlug: p.parentHub, themeSlug: p.parentTheme, ageSlug: p.ageGroup, coloringPageSlug: p.slug }));
+  const pagesEn = getFeaturedPages('en', 20).map(p => ({ lang: 'en', mainHubSlug: p.parentHub, themeSlug: p.parentTheme, ageSlug: p.ageGroup, coloringPageSlug: p.slug }));
+  const pagesNl = getFeaturedPages('nl', 20).map(p => ({ lang: 'nl', mainHubSlug: p.parentHub, themeSlug: p.parentTheme, ageSlug: p.ageGroup, coloringPageSlug: p.slug }));
   return [...pagesEn, ...pagesNl];
 }
 
 export async function generateMetadata({ params }: { params: Promise<{ lang: string, mainHubSlug: string, themeSlug: string, ageSlug: string, coloringPageSlug: string }> }) {
   const { lang, mainHubSlug, themeSlug, ageSlug, coloringPageSlug } = await params;
-  const page = getColoringPages(lang).find(p => p.slug === coloringPageSlug && p.parentHub === mainHubSlug && p.parentTheme === themeSlug && p.ageGroup === ageSlug);
+  const page = getPageBySlug(lang, mainHubSlug, themeSlug, ageSlug, coloringPageSlug);
   if (!page) return {};
   
-  const isEn = lang ==='en';
+  const isEn = lang === 'en';
   const title = isEn 
-    ?`Color ${page.title} Online for Free | ColorVaults`:`${page.title} Gratis Online Inkleuren | ColorVaults`;
+    ? `Color ${page.title} Online for Free | ColorVaults` : `${page.title} Gratis Online Inkleuren | ColorVaults`;
   const description = isEn
-    ?`Color the ${page.title} coloring page online for free! Interactive in-browser painting studio with fill bucket, custom brush tools, and instant download.`:`Kleur de ${page.title} kleurplaat gratis online in! Interactieve online kleurstudio met verfemmer, kwasten en direct opslaan als kunstwerk.`;
+    ? `Color the ${page.title} coloring page online for free! Interactive in-browser painting studio with fill bucket, custom brush tools, and instant download.` : `Kleur de ${page.title} kleurplaat gratis online in! Interactieve online kleurstudio met verfemmer, kwasten en direct opslaan als kunstwerk.`;
   
   return {
     title,
     description,
     alternates: {
-      canonical:`/${lang}/${mainHubSlug}/${themeSlug}/${ageSlug}/${page.slug}/color`,
-      languages: {'en':`/en/${mainHubSlug}/${themeSlug}/${ageSlug}/${page.slug}/color`,'nl':`/nl/${mainHubSlug}/${themeSlug}/${ageSlug}/${page.slug}/color`,'x-default':`/en/${mainHubSlug}/${themeSlug}/${ageSlug}/${page.slug}/color`}
+      canonical: `/${lang}/${mainHubSlug}/${themeSlug}/${ageSlug}/${page.slug}/color`,
+      languages: { 'en': `/${lang}/${mainHubSlug}/${themeSlug}/${ageSlug}/${page.slug}/color`, 'nl': `/${lang}/${mainHubSlug}/${themeSlug}/${ageSlug}/${page.slug}/color`, 'x-default': `/en/${mainHubSlug}/${themeSlug}/${ageSlug}/${page.slug}/color` }
     },
     openGraph: {
       title,
@@ -39,7 +39,7 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
       images: [{ url: page.image, width: 832, height: 1184, alt: page.title }]
     },
     twitter: {
-      card:'summary_large_image',
+      card: 'summary_large_image',
       title,
       description,
       images: [page.image]
@@ -58,12 +58,12 @@ export default async function ColoringPageDetail({ params }: { params: Promise<{
   const agePage = getAgePageBySlug(lang, mainHubSlug, themeSlug, ageSlug);
   if (!hub || !theme || !agePage) return notFound();
 
-  const isEn = lang ==='en';
-  const backUrl =`/${lang}/${mainHubSlug}/${themeSlug}/${ageSlug}/${page.slug}`;
+  const isEn = lang === 'en';
+  const backUrl = `/${lang}/${mainHubSlug}/${themeSlug}/${ageSlug}/${page.slug}`;
 
   // Related pages: get all pages from the same theme (excluding current page)
-  const allThemePages = getColoringPages(lang).filter(
-    p => p.parentTheme === themeSlug && p.slug !== page.slug
+  const allThemePages = getColoringPagesForTheme(lang, mainHubSlug, themeSlug).filter(
+    p => p.slug !== page.slug
   );
   
   // Prioritize same age group first, then other age groups in same theme
@@ -73,17 +73,8 @@ export default async function ColoringPageDetail({ params }: { params: Promise<{
     return 0;
   });
 
-  // If theme has fewer than 16 pages, also grab pages from same main hub
-  let relatedPool = allThemePages;
-  if (relatedPool.length < 16) {
-    const hubPages = getColoringPages(lang).filter(
-      p => p.parentHub === mainHubSlug && p.parentTheme !== themeSlug && p.slug !== page.slug
-    );
-    relatedPool = [...relatedPool, ...hubPages];
-  }
-  
   // Show up to 24 related pages
-  const displayPages = relatedPool.slice(0, 24);
+  const displayPages = allThemePages.slice(0, 24);
 
   // Split into chunks of 8 to insert AdSlot in between rows
   const pageChunks = [];

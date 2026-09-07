@@ -7,6 +7,7 @@ export interface MainHub {
   description: string;
   image?: string;
   themeCount?: number;
+  pageCount?: number;
 }
 
 export interface Theme {
@@ -48,7 +49,7 @@ export interface ColoringPage {
   faq?: Array<{ question: string; answer: string }>;
 }
 
-const dataDir = path.join(process.cwd(),'src/data');
+const dataDir = path.join(process.cwd(), 'src/data');
 
 function readJson<T>(lang: string, filename: string): T[] {
   let filePath = path.join(dataDir, lang, filename);
@@ -66,11 +67,27 @@ function readJson<T>(lang: string, filename: string): T[] {
   }
 }
 
+function readThemePages(lang: string, themeSlug: string): ColoringPage[] {
+  let filePath = path.join(dataDir, lang, 'themes-data', `${themeSlug}.json`);
+  if (!fs.existsSync(filePath)) {
+    // Fall back to en data
+    filePath = path.join(dataDir, 'en', 'themes-data', `${themeSlug}.json`);
+  }
+  if (!fs.existsSync(filePath)) return [];
+  try {
+    const fileContents = fs.readFileSync(filePath, 'utf8');
+    return JSON.parse(fileContents) as ColoringPage[];
+  } catch (e) {
+    console.error(`[ColorVaults] Failed to parse theme JSON at ${filePath}:`, e);
+    return [];
+  }
+}
+
 // Cached memory so we don't read JSONs thousands of times during build
 let cache: Record<string, unknown[]> = {};
 
 function getCached<T>(lang: string, key: string, filename: string): T[] {
-  const cacheKey =`${lang}_${key}`;
+  const cacheKey = `${lang}_${key}`;
   if (!cache[cacheKey]) {
     cache[cacheKey] = readJson<T>(lang, filename);
   }
@@ -78,7 +95,7 @@ function getCached<T>(lang: string, key: string, filename: string): T[] {
 }
 
 export function safeJsonLd(data: object): string {
-  return JSON.stringify(data).replace(/<\/script>/gi,'<\\/script>');
+  return JSON.stringify(data).replace(/<\/script>/gi, '<\\/script>');
 }
 
 const hubTranslations: Record<string, Record<string, { title: string; description: string }>> = {
@@ -114,18 +131,12 @@ const themesCache: Record<string, Theme[]> = {};
 const themeBySlugCache: Record<string, Map<string, Theme>> = {};
 const pagesByThemeCache: Record<string, Map<string, ColoringPage[]>> = {};
 const pageBySlugCache: Record<string, Map<string, ColoringPage>> = {};
+const featuredPagesCache: Record<string, ColoringPage[]> = {};
 
 export function getMainHubs(lang: string): MainHub[] {
   if (mainHubsCache[lang]) return mainHubsCache[lang];
 
   const hubs = getCached<MainHub>(lang, 'hubs', 'main-hubs.json');
-  const pages = getColoringPages(lang);
-
-  const countByHub: Record<string, number> = {};
-  for (const p of pages) {
-    countByHub[p.parentHub] = (countByHub[p.parentHub] || 0) + 1;
-  }
-
   const result = hubs.map(h => {
     const tr = hubTranslations[lang]?.[h.slug];
     return {
@@ -133,7 +144,8 @@ export function getMainHubs(lang: string): MainHub[] {
       title: tr?.title || h.title,
       description: tr?.description || h.description,
       language: lang,
-      pageCount: countByHub[h.slug] || h.themeCount || 0,
+      pageCount: h.pageCount || 0,
+      themeCount: h.themeCount || 0,
     };
   });
 
@@ -145,29 +157,16 @@ export function getThemes(lang: string): Theme[] {
   if (themesCache[lang]) return themesCache[lang];
 
   const themes = getCached<Theme>(lang, 'themes', 'themes.json');
-  const pages = getColoringPages(lang);
-
-  const countByTheme: Record<string, number> = {};
-  for (const p of pages) {
-    const key = `${p.parentHub}/${p.parentTheme}`;
-    countByTheme[key] = (countByTheme[key] || 0) + 1;
-  }
-
-  const result = themes.map(t => ({
-    ...t,
-    pageCount: countByTheme[`${t.parentHub}/${t.slug}`] || t.pageCount || 0,
-  }));
-
-  themesCache[lang] = result;
+  themesCache[lang] = themes;
 
   const map = new Map<string, Theme>();
-  for (const t of result) {
+  for (const t of themes) {
     map.set(`${t.parentHub}/${t.slug}`, t);
     map.set(t.slug, t);
   }
   themeBySlugCache[lang] = map;
 
-  return result;
+  return themes;
 }
 
 export function getThemeBySlug(lang: string, parentHubSlug: string, themeSlug: string): Theme | undefined {
@@ -186,26 +185,22 @@ export function getAgePageBySlug(lang: string, parentHubSlug: string, themeSlug:
   return agePages.find(a => a.parentHub === parentHubSlug && a.parentTheme === themeSlug && a.ageGroup === ageGroupSlug);
 }
 
-export function getColoringPages(lang: string): ColoringPage[] {
-  return getCached<ColoringPage>(lang, 'coloringPages', 'coloring-pages.json');
-}
-
 export function getColoringPagesForTheme(lang: string, parentHubSlug: string, themeSlug: string): ColoringPage[] {
   if (!pagesByThemeCache[lang]) {
-    const map = new Map<string, ColoringPage[]>();
-    const pages = getColoringPages(lang);
-    for (const p of pages) {
-      const k = `${p.parentHub}/${p.parentTheme}`;
-      let list = map.get(k);
-      if (!list) {
-        list = [];
-        map.set(k, list);
-      }
-      list.push(p);
-    }
-    pagesByThemeCache[lang] = map;
+    pagesByThemeCache[lang] = new Map<string, ColoringPage[]>();
   }
-  return pagesByThemeCache[lang].get(`${parentHubSlug}/${themeSlug}`) || [];
+  const key = `${parentHubSlug}/${themeSlug}`;
+  if (pagesByThemeCache[lang].has(key)) {
+    return pagesByThemeCache[lang].get(key)!;
+  }
+  if (pagesByThemeCache[lang].has(themeSlug)) {
+    return pagesByThemeCache[lang].get(themeSlug)!;
+  }
+
+  const pages = readThemePages(lang, themeSlug);
+  pagesByThemeCache[lang].set(key, pages);
+  pagesByThemeCache[lang].set(themeSlug, pages);
+  return pages;
 }
 
 export function getPagesByAgeGroup(lang: string, parentHubSlug: string, themeSlug: string, ageGroupSlug: string): ColoringPage[] {
@@ -214,16 +209,25 @@ export function getPagesByAgeGroup(lang: string, parentHubSlug: string, themeSlu
 }
 
 export function getPageBySlug(lang: string, parentHubSlug: string, themeSlug: string, ageGroupSlug: string, pageSlug: string): ColoringPage | undefined {
-  if (!pageBySlugCache[lang]) {
-    const map = new Map<string, ColoringPage>();
-    const pages = getColoringPages(lang);
-    for (const p of pages) {
-      map.set(`${p.parentHub}/${p.parentTheme}/${p.ageGroup}/${p.slug}`, p);
-      map.set(p.slug, p);
-    }
-    pageBySlugCache[lang] = map;
+  const pages = getColoringPagesForTheme(lang, parentHubSlug, themeSlug);
+  return pages.find(p => p.slug === pageSlug && (!ageGroupSlug || p.ageGroup === ageGroupSlug));
+}
+
+export function getFeaturedPages(lang: string, count = 24): ColoringPage[] {
+  if (!featuredPagesCache[lang]) {
+    const pages = getCached<ColoringPage>(lang, 'featured', 'featured-pages.json');
+    featuredPagesCache[lang] = pages && pages.length > 0 ? pages : [];
   }
-  return pageBySlugCache[lang].get(`${parentHubSlug}/${themeSlug}/${ageGroupSlug}/${pageSlug}`) || pageBySlugCache[lang].get(pageSlug);
+  return featuredPagesCache[lang].slice(0, count);
+}
+
+export function getColoringPages(lang: string): ColoringPage[] {
+  const themes = getThemes(lang);
+  const all: ColoringPage[] = [];
+  for (const t of themes) {
+    all.push(...getColoringPagesForTheme(lang, t.parentHub, t.slug));
+  }
+  return all;
 }
 
 export function getSampleImagesForTheme(lang: string, parentHubSlug: string, themeSlug: string, defaultImage: string, count = 3): string[] {

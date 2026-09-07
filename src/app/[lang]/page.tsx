@@ -3,7 +3,7 @@ import DailyColoringChallenge from'@/components/DailyColoringChallenge';
 import DailyFeaturedCard from'@/components/DailyFeaturedCard';
 import SeasonalEventBanner from'@/components/SeasonalEventBanner';
 import NewsletterBox from'@/components/NewsletterBox';
-import { getThemes, getColoringPages, getMainHubs, getSampleImagesForTheme } from'@/lib/api';
+import { getThemes, getFeaturedPages, getMainHubs, getSampleImagesForTheme } from'@/lib/api';
 import ThemeCard from'@/components/ThemeCard';
 import { blogPosts } from'@/data/blogs';
 import styles from'./page.module.css';
@@ -86,9 +86,9 @@ export default async function HomePage({ params }: { params: Promise<{ lang: str
 
   const allThemes = getThemes(lang);
   const mainHubs = getMainHubs(lang);
-  const allPagesList = getColoringPages(lang).filter(p => p.image && !p.image.includes('default.jpg'));
+  const featuredPool = getFeaturedPages(lang, 50);
   const dayOfYear = Math.floor((Date.now() - new Date(new Date().getFullYear(), 0, 0).getTime()) / (1000 * 60 * 60 * 24));
-  const dailyPage = allPagesList[dayOfYear % (allPagesList.length || 1)] || allPagesList[0];
+  const dailyPage = featuredPool[dayOfYear % (featuredPool.length || 1)] || featuredPool[0];
   const dailyTheme = allThemes.find(t => t.slug === dailyPage?.parentTheme);
 
   // Popular character theme slugs
@@ -105,7 +105,7 @@ export default async function HomePage({ params }: { params: Promise<{ lang: str
     .filter(t => animalSlugs.some(s => t.slug.includes(s)))
     .slice(0, 4);
 
-  const featuredPages = getColoringPages(lang).filter(p => !p.title.startsWith('A')).slice(0, 8);
+  const featuredPages = featuredPool.slice(0, 8);
 
   const difficultyCards = [
     {

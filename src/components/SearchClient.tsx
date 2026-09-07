@@ -21,7 +21,7 @@ interface SearchClientProps {
  initialAge: string;
  initialTheme: string;
  allThemes: ThemeOption[];
- allPages: ColoringPage[];
+ initialPages: ColoringPage[];
 }
 
 const PER_PAGE = 40;
@@ -33,7 +33,7 @@ export default function SearchClient({
  initialAge,
  initialTheme,
  allThemes,
- allPages,
+ initialPages,
 }: SearchClientProps) {
  const router = useRouter();
  const pathname = usePathname();
@@ -45,6 +45,8 @@ export default function SearchClient({
  const [age, setAge] = useState(initialAge);
  const [theme, setTheme] = useState(initialTheme);
  const [currentPage, setCurrentPage] = useState(1);
+ const [pages, setPages] = useState<ColoringPage[]>(initialPages);
+ const [loading, setLoading] = useState(false);
 
  const isEn = lang ==='en';
 
@@ -57,6 +59,50 @@ export default function SearchClient({
  const p = parseInt(searchParams.get('page') ||'1', 10);
  setCurrentPage(isNaN(p) || p < 1 ? 1 : p);
  }, [searchParams]);
+
+ // Fetch results dynamically from /api/search when filters or query change
+ useEffect(() => {
+ if (!query.trim() && !difficulty && !age && !theme) {
+ setPages(initialPages);
+ return;
+ }
+
+ const timer = setTimeout(async () => {
+ setLoading(true);
+ try {
+ const params = new URLSearchParams();
+ if (query.trim()) params.set('q', query.trim());
+ if (difficulty) params.set('difficulty', difficulty);
+ if (age) params.set('age', age);
+ if (theme) params.set('theme', theme);
+ params.set('lang', lang);
+
+ const res = await fetch(`/api/search?${params.toString()}`);
+ if (res.ok) {
+ const results = await res.json();
+ const pageResults: ColoringPage[] = results
+ .filter((r: { type?: string }) => !r.type || r.type === 'page')
+ .map((r: { url: string; parentHub?: string; parentTheme?: string; ageGroup?: string; title: string; description?: string; image?: string; tags?: string[] }) => ({
+ slug: r.url.split('/').pop() || '',
+ parentHub: r.parentHub || '',
+ parentTheme: r.parentTheme || '',
+ ageGroup: r.ageGroup || '',
+ title: r.title,
+ shortDescription: r.description || '',
+ image: r.image || '',
+ tags: r.tags || [],
+ }));
+ setPages(pageResults);
+ }
+ } catch (err) {
+ console.error('Search fetch error:', err);
+ } finally {
+ setLoading(false);
+ }
+ }, 200);
+
+ return () => clearTimeout(timer);
+ }, [query, difficulty, age, theme, lang, initialPages]);
 
  // Update URL helper
  const updateUrl = (newQuery: string, newDiff: string, newAge: string, newTheme: string, pageNum = 1) => {
@@ -95,40 +141,7 @@ export default function SearchClient({
  updateUrl(nextQuery, nextDiff, nextAge, nextTheme, 1);
  };
 
- // Perform filtering locally for instant responsive grid rendering
- const filteredPages = allPages.filter(page => {
- // Search query filter (matches title or tags)
- if (query.trim()) {
- const qLower = query.toLowerCase();
- const titleMatch = page.title.toLowerCase().includes(qLower);
- const tagMatch = page.tags && page.tags.some(t => t.toLowerCase().includes(qLower));
- if (!titleMatch && !tagMatch) return false;
- }
-
- // Difficulty filter
- if (difficulty) {
- const diffMap: Record<string, string[]> = {
- easy: ['kids','kinderen','toddlers','peuters'],
- medium: ['teens','tieners'],
- hard: ['adults','volwassenen'],
- };
- const validAges = diffMap[difficulty] || [difficulty];
- if (!validAges.includes(page.ageGroup.toLowerCase())) return false;
- }
-
- // Age filter
- if (age) {
- if (page.ageGroup.toLowerCase() !== age.toLowerCase()) return false;
- }
-
- // Theme filter
- if (theme) {
- if (page.parentTheme !== theme) return false;
- }
-
- return true;
- });
-
+ const filteredPages = pages;
  const totalPages = Math.ceil(filteredPages.length / PER_PAGE);
  const displayedPages = filteredPages.slice(
  (currentPage - 1) * PER_PAGE,

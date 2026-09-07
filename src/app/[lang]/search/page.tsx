@@ -1,5 +1,5 @@
 import SearchClient from'@/components/SearchClient';
-import { getThemes, getColoringPages } from'@/lib/api';
+import { getThemes, getFeaturedPages, getColoringPagesForTheme, ColoringPage } from'@/lib/api';
 import Breadcrumbs from'@/components/Breadcrumbs';
 
 export async function generateStaticParams() {
@@ -42,7 +42,7 @@ export async function generateMetadata({
   }
 
   const mainTitle = titleParts.length > 0
-    ?`${titleParts.join('•')} ${isEn ?'Coloring Pages':'Kleurplaten'}`: (isEn ?'Search Free Coloring Pages':'Zoek Gratis Kleurplaten');
+    ?`${titleParts.join(' • ')} ${isEn ?'Coloring Pages':'Kleurplaten'}`: (isEn ?'Search Free Coloring Pages':'Zoek Gratis Kleurplaten');
 
   // Build canonical URL query string
   const urlParams = new URLSearchParams();
@@ -54,14 +54,16 @@ export async function generateMetadata({
   const canonicalPath = qString ?`/${lang}/search?${qString}`:`/${lang}/search`;
 
   return {
-    title:`${mainTitle} | ColorVaults`,
+    title: `${mainTitle} | ColorVaults`,
     description: isEn
-      ?`Search and filter thousands of free printable coloring pages by theme, difficulty, and age group.`:`Zoek en filter door duizenden gratis printbare kleurplaten op thema, moeilijkheidsgraad en leeftijd.`,
+      ? `Search and filter thousands of free printable coloring pages by theme, difficulty, and age group.`
+      : `Zoek en filter door duizenden gratis printbare kleurplaten op onderwerp, moeilijkheidsgraad en leeftijd.`,
     alternates: {
       canonical: canonicalPath,
       languages: {
-        en:`/en/search${qString ?`?${qString}`:''}`,
-        nl:`/nl/search${qString ?`?${qString}`:''}`,'x-default':`/en/search${qString ?`?${qString}`:''}`,
+        en: `/en/search${qString ? `?${qString}` : ''}`,
+        nl: `/nl/search${qString ? `?${qString}` : ''}`,
+        'x-default': `/en/search${qString ? `?${qString}` : ''}`,
       },
     },
   };
@@ -75,18 +77,28 @@ export default async function SearchPage({
   searchParams: Promise<{ q?: string; difficulty?: string; age?: string; theme?: string; page?: string }>;
 }) {
   const { lang } = await params;
-  const { q ='', difficulty ='', age ='', theme =''} = await searchParams;
-  const isEn = lang ==='en';
+  const { q = '', difficulty = '', age = '', theme = '' } = await searchParams;
+  const isEn = lang === 'en';
 
   const allThemes = getThemes(lang).map(t => ({ slug: t.slug, title: t.title }));
-  const allPages = getColoringPages(lang);
+
+  // Lightweight initial pages load (no 39MB payload!)
+  let initialPages: ColoringPage[] = [];
+  if (theme) {
+    const foundTheme = getThemes(lang).find(t => t.slug === theme);
+    if (foundTheme) {
+      initialPages = getColoringPagesForTheme(lang, foundTheme.parentHub, theme);
+    }
+  } else {
+    initialPages = getFeaturedPages(lang, 48);
+  }
 
   return (
     <>
       <div className="page-hero">
         <div className="container">
           <Breadcrumbs
-            items={[{ label: isEn ?'Search':'Zoeken'}]}
+            items={[{ label: isEn ? 'Search' : 'Zoeken' }]}
             lang={lang}
           />
           <h1 className="title-h1" style={{ marginTop: '1rem' }}>
@@ -108,7 +120,7 @@ export default async function SearchPage({
           initialAge={age}
           initialTheme={theme}
           allThemes={allThemes}
-          allPages={allPages}
+          initialPages={initialPages}
         />
       </div>
     </>

@@ -15,9 +15,8 @@ interface ColoringPageItem {
   [key: string]: unknown;
 }
 
-const dataDir = path.join(process.cwd(), 'src/data');
-const enFile = path.join(dataDir, 'en/coloring-pages.json');
-const nlFile = path.join(dataDir, 'nl/coloring-pages.json');
+const enFile = path.join(process.cwd(), 'src', 'data', 'en', 'coloring-pages.json');
+const nlFile = path.join(process.cwd(), 'src', 'data', 'nl', 'coloring-pages.json');
 const dataPaths = [enFile, nlFile];
 
 function readPages(filePath: string): ColoringPageItem[] {

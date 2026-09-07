@@ -1,44 +1,44 @@
-import { getColoringPages, getPageBySlug, getMainHubs, getThemes, getAgePageBySlug, getPagesByAgeGroup, safeJsonLd } from'@/lib/api';
-import { notFound } from'next/navigation';
-import Breadcrumbs from'@/components/Breadcrumbs';
-import Link from'next/link';
-import Image from'next/image';
-import SafeImage from'@/components/SafeImage';
-import PrintDownloadButtons from'@/components/PrintDownloadButtons';
-import SocialShareButtons from'@/components/SocialShareButtons';
-import FavoriteButton from'@/components/FavoriteButton';
-import MotionCard from'@/components/MotionCard';
-import CharacterIpDisclaimer from'@/components/CharacterIpDisclaimer';
-import AdSlot from'@/components/AdSlot';
-import ReportButton from'@/components/ReportButton';
+import { getPageBySlug, getFeaturedPages, getMainHubs, getThemes, getAgePageBySlug, getColoringPagesForTheme, safeJsonLd } from '@/lib/api';
+import { notFound } from 'next/navigation';
+import Breadcrumbs from '@/components/Breadcrumbs';
+import Link from 'next/link';
+import Image from 'next/image';
+import SafeImage from '@/components/SafeImage';
+import PrintDownloadButtons from '@/components/PrintDownloadButtons';
+import SocialShareButtons from '@/components/SocialShareButtons';
+import FavoriteButton from '@/components/FavoriteButton';
+import MotionCard from '@/components/MotionCard';
+import CharacterIpDisclaimer from '@/components/CharacterIpDisclaimer';
+import AdSlot from '@/components/AdSlot';
+import ReportButton from '@/components/ReportButton';
 import CraftIdeasSection from '@/components/CraftIdeasSection';
 import ThemeFaqSection from '@/components/ThemeFaqSection';
 import NewsletterBox from '@/components/NewsletterBox';
-import React from'react';
+import React from 'react';
 
 export const dynamicParams = true;
 
 export async function generateStaticParams() {
   // Pre-render top 30 sample pages at build time to keep build memory low (<120MB).
   // All other pages render dynamically on-demand (ISR) and cache permanently!
-  const pagesEn = getColoringPages('en').slice(0, 30).map(p => ({ lang:'en', mainHubSlug: p.parentHub, themeSlug: p.parentTheme, ageSlug: p.ageGroup, coloringPageSlug: p.slug }));
-  const pagesNl = getColoringPages('nl').slice(0, 30).map(p => ({ lang:'nl', mainHubSlug: p.parentHub, themeSlug: p.parentTheme, ageSlug: p.ageGroup, coloringPageSlug: p.slug }));
+  const pagesEn = getFeaturedPages('en', 30).map(p => ({ lang: 'en', mainHubSlug: p.parentHub, themeSlug: p.parentTheme, ageSlug: p.ageGroup, coloringPageSlug: p.slug }));
+  const pagesNl = getFeaturedPages('nl', 30).map(p => ({ lang: 'nl', mainHubSlug: p.parentHub, themeSlug: p.parentTheme, ageSlug: p.ageGroup, coloringPageSlug: p.slug }));
   return [...pagesEn, ...pagesNl];
 }
 
 export async function generateMetadata({ params }: { params: Promise<{ lang: string, mainHubSlug: string, themeSlug: string, ageSlug: string, coloringPageSlug: string }> }) {
   const { lang, mainHubSlug, themeSlug, ageSlug, coloringPageSlug } = await params;
-  const page = getColoringPages(lang).find(p => p.slug === coloringPageSlug && p.parentHub === mainHubSlug && p.parentTheme === themeSlug && p.ageGroup === ageSlug);
+  const page = getPageBySlug(lang, mainHubSlug, themeSlug, ageSlug, coloringPageSlug);
   if (!page) return {};
   
-  const ogImageUrl =`/api/og?title=${encodeURIComponent(page.title)}&image=${encodeURIComponent(page.image)}`;
+  const ogImageUrl = `/api/og?title=${encodeURIComponent(page.title)}&image=${encodeURIComponent(page.image)}`;
   
   return {
     title: page.metaTitle || page.title,
     description: page.metaDescription || page.shortDescription,
     alternates: {
-      canonical:`/${lang}/${mainHubSlug}/${themeSlug}/${ageSlug}/${page.slug}`,
-      languages: {'en':`/en/${mainHubSlug}/${themeSlug}/${ageSlug}/${page.slug}`,'nl':`/nl/${mainHubSlug}/${themeSlug}/${ageSlug}/${page.slug}`,'x-default':`/en/${mainHubSlug}/${themeSlug}/${ageSlug}/${page.slug}`}
+      canonical: `/${lang}/${mainHubSlug}/${themeSlug}/${ageSlug}/${page.slug}`,
+      languages: { 'en': `/${lang}/${mainHubSlug}/${themeSlug}/${ageSlug}/${page.slug}`, 'nl': `/${lang}/${mainHubSlug}/${themeSlug}/${ageSlug}/${page.slug}`, 'x-default': `/en/${mainHubSlug}/${themeSlug}/${ageSlug}/${page.slug}` }
     },
     openGraph: {
       title: page.metaTitle || page.title,
@@ -53,7 +53,7 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
       ]
     },
     twitter: {
-      card:'summary_large_image',
+      card: 'summary_large_image',
       title: page.metaTitle || page.title,
       description: page.metaDescription || page.shortDescription,
       images: [ogImageUrl]
@@ -75,8 +75,8 @@ export default async function ColoringPageDetail({ params }: { params: Promise<{
   const isEn = lang !== 'nl';
 
   // Related pages: get all pages from the same theme (excluding current page)
-  const allThemePages = getColoringPages(lang).filter(
-    p => p.parentTheme === themeSlug && p.slug !== page.slug
+  const allThemePages = getColoringPagesForTheme(lang, mainHubSlug, themeSlug).filter(
+    p => p.slug !== page.slug
   );
   
   // Prioritize same age group first, then other age groups in same theme
@@ -86,17 +86,8 @@ export default async function ColoringPageDetail({ params }: { params: Promise<{
     return 0;
   });
 
-  // If theme has fewer than 16 pages, also grab pages from same main hub
-  let relatedPool = allThemePages;
-  if (relatedPool.length < 16) {
-    const hubPages = getColoringPages(lang).filter(
-      p => p.parentHub === mainHubSlug && p.parentTheme !== themeSlug && p.slug !== page.slug
-    );
-    relatedPool = [...relatedPool, ...hubPages];
-  }
-  
   // Show up to 24 related pages
-  const displayPages = relatedPool.slice(0, 24);
+  const displayPages = allThemePages.slice(0, 24);
 
   // Split into chunks of 8 to insert AdSlot in between rows
   const pageChunks = [];
