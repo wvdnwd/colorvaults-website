@@ -13,9 +13,10 @@ interface AdminShellProps {
 
 const NAV = [
   { href: '/admin/dashboard',      icon: '📊', label: 'Dashboard' },
+  { href: '/admin/theme',          icon: '🎨', label: 'Thema & Feestdagen' },
   { href: '/admin/calendar',       icon: '📅', label: 'Feestdagen Kalender' },
   { href: '/admin/reviewer',       icon: '🔥', label: 'Tinder Keuring' },
-  { href: '/admin/coloring-pages', icon: '🎨', label: 'Coloring Pages' },
+  { href: '/admin/coloring-pages', icon: '🖼️', label: 'Coloring Pages' },
   { href: '/admin/categories',     icon: '🗂️', label: 'Categories' },
   { href: '/admin/unmatched',      icon: '❓', label: 'Quarantaine' },
   { href: '/admin/reports',        icon: '🚩', label: 'Reports', badge: true },

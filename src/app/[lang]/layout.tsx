@@ -13,6 +13,7 @@ import { safeJsonLd } from "@/lib/api";
 import PageTransition from "@/components/PageTransition";
 import StickyBottomAd from "@/components/StickyBottomAd";
 import GoogleTranslator from "@/components/GoogleTranslator";
+import HolidayDecorationOverlay from "@/components/HolidayDecorationOverlay";
 
 export const viewport: Viewport = {
   width:"device-width",
@@ -139,6 +140,7 @@ export default async function RootLayout({
           <FavoritesProvider>
             <ColoringBookProvider>
               <div className="layout-container">
+                <HolidayDecorationOverlay lang={lang} />
                 <Navbar lang={lang} />
                 <main id="main-content"><PageTransition>{children}</PageTransition></main>
                 <Footer lang={lang} />
