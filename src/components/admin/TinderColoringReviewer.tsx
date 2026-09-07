@@ -111,11 +111,14 @@ export default function TinderColoringReviewer({ initialPages, themes }: TinderR
 
   const currentPage = activeQueue[currentIndex] || null;
 
-  // Sync title inputs when current page changes
+  const [editAgeGroup, setEditAgeGroup] = useState<string>('kids');
+
+  // Sync title and age inputs when current page changes
   useEffect(() => {
     if (currentPage) {
       setEditTitleEn(currentPage.title || '');
       setEditTitleNl(currentPage.titleNl || currentPage.title || '');
+      setEditAgeGroup(currentPage.ageGroup || 'kids');
     }
   }, [currentPage]);
 
@@ -128,6 +131,16 @@ export default function TinderColoringReviewer({ initialPages, themes }: TinderR
     setNotification(msg);
     setTimeout(() => setNotification(null), 2500);
   };
+
+  const handleSkip = useCallback(() => {
+    if (isProcessing) return;
+    if (currentIndex < activeQueue.length - 1) {
+      setCurrentIndex(prev => prev + 1);
+      showNotification('⏭️ Kleurplaat overgeslagen');
+    } else {
+      showNotification('🏁 Einde van de lijst bereikt');
+    }
+  }, [activeQueue.length, currentIndex, isProcessing]);
 
   const cleanTitle = (raw: string) => {
     return raw
@@ -180,6 +193,7 @@ export default function TinderColoringReviewer({ initialPages, themes }: TinderR
           parentTheme: currentPage.parentTheme,
           title: updatedPage.title,
           titleNl: updatedPage.titleNl,
+          ageGroup: editAgeGroup || currentPage.ageGroup,
           reviewed: true,
         }),
       });
@@ -361,6 +375,25 @@ export default function TinderColoringReviewer({ initialPages, themes }: TinderR
       } else if (e.key === 'ArrowUp' || e.key === 'm' || e.key === 'M') {
         e.preventDefault();
         setIsMoveModalOpen(true);
+      } else if (e.key === 'ArrowDown' || e.key === 's' || e.key === 'S') {
+        e.preventDefault();
+        handleSkip();
+      } else if (e.key === '1') {
+        e.preventDefault();
+        setEditAgeGroup('toddlers');
+        showNotification('👶 Leeftijd gezet op: Peuters (1-3 Jaar)');
+      } else if (e.key === '2') {
+        e.preventDefault();
+        setEditAgeGroup('kids');
+        showNotification('🧒 Leeftijd gezet op: Kinderen (4-8 Jaar)');
+      } else if (e.key === '3') {
+        e.preventDefault();
+        setEditAgeGroup('teens');
+        showNotification('🧑 Leeftijd gezet op: Tieners (9-12 Jaar)');
+      } else if (e.key === '4') {
+        e.preventDefault();
+        setEditAgeGroup('adults');
+        showNotification('🎨 Leeftijd gezet op: Volwassenen (13+)');
       } else if (e.key === ' ' || e.key === 'Spacebar') {
         e.preventDefault();
         setIsZoomed(prev => !prev);
@@ -372,7 +405,7 @@ export default function TinderColoringReviewer({ initialPages, themes }: TinderR
 
     window.addEventListener('keydown', handleKeyDown);
     return () => window.removeEventListener('keydown', handleKeyDown);
-  }, [handleApprove, handleReject, handleUndo]);
+  }, [handleApprove, handleReject, handleUndo, handleSkip]);
 
   const currentThemeTitle = currentPage 
     ? (themeMap.get(currentPage.parentTheme)?.title || currentPage.parentTheme)
@@ -713,7 +746,45 @@ export default function TinderColoringReviewer({ initialPages, themes }: TinderR
 
               {/* Editable Details & Actions */}
               <div style={{ padding: '1.5rem', background: '#071417' }} onPointerDown={e => e.stopPropagation()}>
-                
+
+                {/* Quick Age Group Selector (1, 2, 3, 4) */}
+                <div style={{ marginBottom: '1rem', display: 'flex', alignItems: 'center', gap: '0.5rem', flexWrap: 'wrap' }}>
+                  <span style={{ fontSize: '0.75rem', color: 'rgba(253, 246, 233, 0.6)', fontWeight: 600 }}>
+                    🎯 Doelgroep (toets 1-4):
+                  </span>
+                  {[
+                    { id: 'toddlers', label: '👶 Peuters (1)', num: '1' },
+                    { id: 'kids', label: '🧒 Kinderen (2)', num: '2' },
+                    { id: 'teens', label: '🧑 Tieners (3)', num: '3' },
+                    { id: 'adults', label: '🎨 Volwassenen (4)', num: '4' },
+                  ].map(age => {
+                    const isSelected = editAgeGroup === age.id;
+                    return (
+                      <button
+                        key={age.id}
+                        type="button"
+                        onClick={() => {
+                          setEditAgeGroup(age.id);
+                          showNotification(`Leeftijdsgroep gezet op: ${age.label}`);
+                        }}
+                        style={{
+                          background: isSelected ? '#FF6B4A' : 'rgba(253, 246, 233, 0.06)',
+                          border: `1px solid ${isSelected ? '#FF6B4A' : 'rgba(253, 246, 233, 0.15)'}`,
+                          color: isSelected ? '#ffffff' : 'rgba(253, 246, 233, 0.8)',
+                          padding: '0.35rem 0.75rem',
+                          borderRadius: '8px',
+                          fontSize: '0.8rem',
+                          fontWeight: 700,
+                          cursor: 'pointer',
+                          transition: 'all 0.15s ease',
+                        }}
+                      >
+                        {age.label}
+                      </button>
+                    );
+                  })}
+                </div>
+
                 <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem', marginBottom: '1.2rem' }}>
                   
                   {/* Dutch Title Input */}
@@ -784,12 +855,12 @@ export default function TinderColoringReviewer({ initialPages, themes }: TinderR
 
                 </div>
 
-                {/* 3 BIG CIRCULAR TINDER ACTION BUTTONS */}
+                {/* 4 ACTION BUTTONS: REJECT, MOVE, SKIP, APPROVE */}
                 <div style={{
                   display: 'flex',
                   alignItems: 'center',
                   justifyContent: 'center',
-                  gap: '2.5rem',
+                  gap: '1.8rem',
                   paddingTop: '0.5rem',
                 }}>
                   
@@ -797,15 +868,15 @@ export default function TinderColoringReviewer({ initialPages, themes }: TinderR
                   <button
                     onClick={handleReject}
                     disabled={isProcessing}
-                    title="Afkeuren (Swipe Links / Pijltje Links)"
+                    title="Afkeuren & Verwijderen (Swipe Links / Pijltje Links / Backspace)"
                     style={{
-                      width: '74px',
-                      height: '74px',
+                      width: '70px',
+                      height: '70px',
                       borderRadius: '50%',
                       background: 'linear-gradient(135deg, #e74c3c, #c0392b)',
                       border: '3px solid rgba(231, 76, 60, 0.4)',
                       color: '#ffffff',
-                      fontSize: '2rem',
+                      fontSize: '1.9rem',
                       display: 'flex',
                       alignItems: 'center',
                       justifyContent: 'center',
@@ -825,13 +896,13 @@ export default function TinderColoringReviewer({ initialPages, themes }: TinderR
                     disabled={isProcessing}
                     title="Verplaats naar ander thema (Swipe Omhoog / Pijltje Omhoog)"
                     style={{
-                      width: '60px',
-                      height: '60px',
+                      width: '58px',
+                      height: '58px',
                       borderRadius: '50%',
                       background: 'linear-gradient(135deg, #3498db, #2980b9)',
                       border: '3px solid rgba(52, 152, 219, 0.4)',
                       color: '#ffffff',
-                      fontSize: '1.6rem',
+                      fontSize: '1.5rem',
                       display: 'flex',
                       alignItems: 'center',
                       justifyContent: 'center',
@@ -845,19 +916,45 @@ export default function TinderColoringReviewer({ initialPages, themes }: TinderR
                     📁
                   </button>
 
+                  {/* ⏭️ GREY/AMBER SKIP BUTTON */}
+                  <button
+                    onClick={handleSkip}
+                    disabled={isProcessing}
+                    title="Overslaan naar volgende (Pijltje Omlaag / S)"
+                    style={{
+                      width: '58px',
+                      height: '58px',
+                      borderRadius: '50%',
+                      background: 'linear-gradient(135deg, #7f8c8d, #34495e)',
+                      border: '3px solid rgba(127, 140, 141, 0.4)',
+                      color: '#ffffff',
+                      fontSize: '1.4rem',
+                      display: 'flex',
+                      alignItems: 'center',
+                      justifyContent: 'center',
+                      cursor: 'pointer',
+                      boxShadow: '0 6px 20px rgba(0,0,0,0.3)',
+                      transition: 'transform 0.15s ease',
+                    }}
+                    onMouseEnter={e => e.currentTarget.style.transform = 'scale(1.1)'}
+                    onMouseLeave={e => e.currentTarget.style.transform = 'scale(1.0)'}
+                  >
+                    ⏭️
+                  </button>
+
                   {/* 🟢 GREEN APPROVE BUTTON */}
                   <button
                     onClick={handleApprove}
                     disabled={isProcessing}
-                    title="Goedkeuren (Swipe Rechts / Pijltje Rechts)"
+                    title="Goedkeuren & Opslaan (Swipe Rechts / Pijltje Rechts / Enter)"
                     style={{
-                      width: '74px',
-                      height: '74px',
+                      width: '70px',
+                      height: '70px',
                       borderRadius: '50%',
                       background: 'linear-gradient(135deg, #2ecc71, #27ae60)',
                       border: '3px solid rgba(46, 204, 113, 0.4)',
                       color: '#ffffff',
-                      fontSize: '2.2rem',
+                      fontSize: '2.1rem',
                       display: 'flex',
                       alignItems: 'center',
                       justifyContent: 'center',
@@ -870,25 +967,29 @@ export default function TinderColoringReviewer({ initialPages, themes }: TinderR
                   >
                     ✓
                   </button>
-
                 </div>
 
-                {/* Sneltoetsen info */}
+                {/* Keyboard Shortcut Legend Bar */}
                 <div style={{
+                  marginTop: '1.25rem',
+                  paddingTop: '0.8rem',
+                  borderTop: '1px solid rgba(253, 246, 233, 0.08)',
                   display: 'flex',
                   justifyContent: 'center',
-                  gap: '1.5rem',
-                  marginTop: '1.2rem',
+                  alignItems: 'center',
+                  gap: '1rem',
+                  flexWrap: 'wrap',
                   fontSize: '0.75rem',
-                  color: 'rgba(253, 246, 233, 0.4)',
+                  color: 'rgba(253, 246, 233, 0.5)',
                 }}>
-                  <span>🔴 <b>Swipe ←</b> Afkeuren</span>
-                  <span>📁 <b>Swipe ↑</b> Verplaatsen</span>
-                  <span>🟢 <b>Swipe →</b> Goedkeuren</span>
-                  <span>🔍 <b>Klik</b> Zoom</span>
-                  <span>↩️ <b>[Ctrl+Z]</b> Undo</span>
+                  <span>⌨️ <strong>←</strong> Afkeuren</span>
+                  <span><strong>→ / Enter</strong> Goedkeuren</span>
+                  <span><strong>↑</strong> Verplaatsen</span>
+                  <span><strong>↓ / S</strong> Overslaan</span>
+                  <span><strong>1-4</strong> Leeftijd</span>
+                  <span><strong>Space</strong> Zoom</span>
+                  <span><strong>Ctrl+Z</strong> Herstellen</span>
                 </div>
-
               </div>
 
             </motion.div>

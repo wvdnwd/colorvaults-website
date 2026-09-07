@@ -1,0 +1,36 @@
+[
+  {
+    "id": "animals",
+    "slug": "animals",
+    "title": "Animal Coloring Pages",
+    "meta_title": "Free Printable Animal Coloring Pages | ColorVaults",
+    "meta_description": "Download free, high-quality animal coloring pages. Perfect for kids and adults to enjoy coloring their favorite animals.",
+    "intro_text": "Explore our vast collection of animal coloring pages. From cute kittens to wild jungle animals, we have something for everyone.",
+    "seo_body": "Coloring animals helps develop fine motor skills and teaches children about wildlife. Our premium printable pages are designed to provide hours of fun and relaxation.",
+    "faq": [
+      {
+        "question": "Are these animal coloring pages free?",
+        "answer": "Yes, all our coloring pages are completely free to download and print for personal use."
+      }
+    ],
+    "featured_image": "/images/categories/animals.jpg",
+    "related_categories": ["nature"]
+  },
+  {
+    "id": "nature",
+    "slug": "nature",
+    "title": "Nature Coloring Pages",
+    "meta_title": "Nature & Scenery Coloring Pages | ColorVaults",
+    "meta_description": "Beautiful nature scenes and landscapes to color. Download our free printable nature coloring pages.",
+    "intro_text": "Relax and unwind with our beautiful nature coloring pages, featuring forests, flowers, and landscapes.",
+    "seo_body": "Nature coloring pages are perfect for adults seeking stress relief and mindfulness. Each printable page offers intricate details of trees, flowers, and mountains.",
+    "faq": [
+      {
+        "question": "What is the best paper to print on?",
+        "answer": "We recommend using thick cardstock if you plan to use markers or watercolors."
+      }
+    ],
+    "featured_image": "/images/categories/nature.jpg",
+    "related_categories": ["animals"]
+  }
+]

@@ -1,0 +1,92 @@
+[
+  {
+    "title": "Disney & Pixar",
+    "slug": "disney-pixar",
+    "description": "Découvrez des coloriages magiques de vos classiques Disney et Pixar préférés, notamment La Reine des Neiges, Le Roi Lion, Toy Story, Cars, Vaiana et les Princesses.",
+    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/banner/hub_disney-pixar.webp",
+    "language": "fr",
+    "pageCount": 6156,
+    "themeCount": 22
+  },
+  {
+    "title": "Anime & Manga",
+    "slug": "anime-manga",
+    "description": "Coloriages captivants d'anime et manga avec Dragon Ball, Naruto, One Piece, Demon Slayer, L'Attaque des Titans, Jujutsu Kaisen et Studio Ghibli.",
+    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/banner/hub_anime-manga.webp",
+    "language": "fr",
+    "pageCount": 2142,
+    "themeCount": 17
+  },
+  {
+    "title": "Jeux Vidéo & Mondes Virtuels",
+    "slug": "gaming-virtual-worlds",
+    "description": "Coloriages épiques de jeux vidéo avec Fortnite, Minecraft, Roblox, Zelda, Pokémon, Super Mario, Sonic, Kirby et Brawl Stars.",
+    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/banner/hub_gaming-virtual-worlds.webp",
+    "language": "fr",
+    "pageCount": 1781,
+    "themeCount": 15
+  },
+  {
+    "title": "Super-héros & Comics",
+    "slug": "superheroes-comic-universes",
+    "description": "Coloriages de super-héros pleins d'action mettant en vedette Spider-Man, Les Avengers, Batman, Superman et des héros légendaires.",
+    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/banner/hub_superheroes-comic-universes.webp",
+    "language": "fr",
+    "pageCount": 376,
+    "themeCount": 4
+  },
+  {
+    "title": "Enfants & Dessins Animés TV",
+    "slug": "kids-tv-shows",
+    "description": "Coloriages joyeux pour tout-petits et enfants avec Bluey, Pat' Patrouille, Peppa Pig, Gabby et la Maison Magique, Blippi et Bob l'Éponge.",
+    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/banner/hub_kids-tv-shows.webp",
+    "language": "fr",
+    "pageCount": 2288,
+    "themeCount": 13
+  },
+  {
+    "title": "Animaux & Nature",
+    "slug": "animals-wildlife",
+    "description": "Explorez le règne animal avec des coloriages à imprimer de dinosaures, chevaux, adorables chiots, chatons, faune sauvage et oiseaux.",
+    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/banner/hub_animals-wildlife.webp",
+    "language": "fr",
+    "pageCount": 4174,
+    "themeCount": 18
+  },
+  {
+    "title": "Fantaisie & Contes de Fées",
+    "slug": "fantasy-fairytales",
+    "description": "Plongez dans des univers fantastiques avec des dragons, licornes, fées, sirènes, sorciers, châteaux enchantés et chevaliers.",
+    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/banner/hub_fantasy-fairytales.webp",
+    "language": "fr",
+    "pageCount": 2920,
+    "themeCount": 13
+  },
+  {
+    "title": "Véhicules & Transports",
+    "slug": "vehicles-transportation",
+    "description": "Coloriages dynamiques de monster trucks, voitures de course Formule 1, camions de pompiers, engins de chantier et fusées.",
+    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/banner/hub_vehicles-transportation.webp",
+    "language": "fr",
+    "pageCount": 1432,
+    "themeCount": 8
+  },
+  {
+    "title": "Art & Mandalas",
+    "slug": "art-aesthetic",
+    "description": "Coloriages apaisants et détaillés mettant en valeur l'Art Nouveau, des mandalas complexes, des motifs bohèmes et la mode.",
+    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/banner/hub_art-aesthetic.webp",
+    "language": "fr",
+    "pageCount": 2039,
+    "themeCount": 9
+  },
+  {
+    "title": "Fêtes & Saisons",
+    "slug": "holidays-seasons",
+    "description": "Coloriages festifs et saisonniers célébrant Noël, Halloween, Pâques, l'automne et les beaux jours d'hiver.",
+    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/banner/hub_holidays-seasons.webp",
+    "language": "fr",
+    "pageCount": 3216,
+    "themeCount": 13
+  }
+]

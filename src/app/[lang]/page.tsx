@@ -12,6 +12,7 @@ import MotionCard from'@/components/MotionCard';
 import AdSlot from'@/components/AdSlot';
 import ScrollReveal from '@/components/ScrollReveal';
 import HeroCarousel from '@/components/HeroCarousel';
+import TrendingCarousel from '@/components/TrendingCarousel';
 import HeaderSearchBar from '@/components/HeaderSearchBar';
 import CategoryExplorerTabs from '@/components/CategoryExplorerTabs';
 import FaqSection from '@/components/FaqSection';
@@ -409,6 +410,13 @@ export default async function HomePage({ params }: { params: Promise<{ lang: str
               themeTitle={dailyTheme?.title}
             />
           )}
+
+          {/* Trending Carousel */}
+          <TrendingCarousel
+            items={featuredPool.slice(0, 15)}
+            lang={lang}
+            isEn={isEn}
+          />
 
           <SeasonalEventBanner isEn={isEn} lang={lang} />
         </div>
