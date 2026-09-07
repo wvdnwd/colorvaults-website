@@ -36,10 +36,11 @@ interface HistoryAction {
 
 export default function TinderColoringReviewer({ initialPages, themes }: TinderReviewerProps) {
   const [pages, setPages] = useState<ReviewColoringPage[]>(initialPages);
-  const [selectedTheme, setSelectedTheme] = useState<string>('all');
+  const [selectedTheme, setSelectedTheme] = useState<string>(themes[0]?.slug || 'all');
   const [selectedAge, setSelectedAge] = useState<string>('all');
   const [hideReviewed, setHideReviewed] = useState<boolean>(true);
   const [currentIndex, setCurrentIndex] = useState<number>(0);
+  const [loadingTheme, setLoadingTheme] = useState<boolean>(false);
 
   // Editable titles
   const [editTitleEn, setEditTitleEn] = useState<string>('');
@@ -65,6 +66,31 @@ export default function TinderColoringReviewer({ initialPages, themes }: TinderR
   const approveOpacity = useTransform(x, [40, 150], [0, 1]);
   const rejectOpacity = useTransform(x, [-40, -150], [0, 1]);
   const moveOpacity = useTransform(y, [-40, -150], [0, 1]);
+
+  // Dynamic theme loader
+  useEffect(() => {
+    let active = true;
+    async function loadTheme() {
+      setLoadingTheme(true);
+      try {
+        const url = `/api/admin/coloring-pages?theme=${encodeURIComponent(selectedTheme)}&withNl=true`;
+        const res = await fetch(url);
+        if (res.ok) {
+          const data = await res.json();
+          if (active && Array.isArray(data.pages)) {
+            setPages(data.pages);
+            setCurrentIndex(0);
+          }
+        }
+      } catch (err) {
+        console.error('Failed to load theme for review:', err);
+      } finally {
+        if (active) setLoadingTheme(false);
+      }
+    }
+    loadTheme();
+    return () => { active = false; };
+  }, [selectedTheme]);
 
   // Themes lookup
   const themeMap = useMemo(() => {
@@ -416,15 +442,12 @@ export default function TinderColoringReviewer({ initialPages, themes }: TinderR
                 outline: 'none',
               }}
             >
-              <option value="all">🌟 Alle Albums & Thema&apos;s ({pages.length} platen)</option>
-              {themes.map(t => {
-                const count = pages.filter(p => p.parentTheme === t.slug).length;
-                return (
-                  <option key={t.slug} value={t.slug}>
-                    {t.title} ({count} platen)
-                  </option>
-                );
-              })}
+              <option value="all">🌟 Alle Albums & Thema&apos;s</option>
+              {themes.map(t => (
+                <option key={t.slug} value={t.slug}>
+                  {t.title}
+                </option>
+              ))}
             </select>
           </div>
 

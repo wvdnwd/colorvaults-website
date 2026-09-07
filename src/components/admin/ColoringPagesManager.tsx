@@ -64,10 +64,34 @@ export default function ColoringPagesManager({
   }, [searchQuery, selectedTheme, selectedAge, showDuplicatesOnly, sortBy, pageSize]);
 
   const [pagesList, setPagesList] = useState<AdminColoringPage[]>(initialPages);
+  const [loadingPages, setLoadingPages] = useState(false);
   const [editingPage, setEditingPage] = useState<AdminColoringPage | null>(null);
   const [editTitle, setEditTitle] = useState('');
   const [editAgeGroup, setEditAgeGroup] = useState('kids');
   const [isSaving, setIsSaving] = useState(false);
+
+  useEffect(() => {
+    let active = true;
+    async function loadPages() {
+      setLoadingPages(true);
+      try {
+        const url = `/api/admin/coloring-pages?theme=${encodeURIComponent(selectedTheme)}`;
+        const res = await fetch(url);
+        if (res.ok) {
+          const data = await res.json();
+          if (active && Array.isArray(data.pages)) {
+            setPagesList(data.pages);
+          }
+        }
+      } catch (err) {
+        console.error('Failed to load coloring pages:', err);
+      } finally {
+        if (active) setLoadingPages(false);
+      }
+    }
+    loadPages();
+    return () => { active = false; };
+  }, [selectedTheme]);
 
   const handleStartEdit = (page: AdminColoringPage) => {
     setEditingPage(page);

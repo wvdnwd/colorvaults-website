@@ -1,25 +1,25 @@
-import { requireAdmin } from'@/lib/adminAuth';
-import { getThemes, getColoringPages } from'@/lib/api';
-import AdminShell from'../AdminShell';
-import Link from'next/link';
-import fs from'fs';
-import path from'path';
-import styles from'../admin.module.css';
+import { requireAdmin } from '@/lib/adminAuth';
+import { getThemes } from '@/lib/api';
+import AdminShell from '../AdminShell';
+import Link from 'next/link';
+import fs from 'fs';
+import path from 'path';
+import styles from '../admin.module.css';
 
 function getReportCount() {
-  const file = path.join(process.cwd(),'src','data','reports.json');
+  const file = path.join(process.cwd(), 'src', 'data', 'reports.json');
   if (!fs.existsSync(file)) return 0;
   try {
-    const reports = JSON.parse(fs.readFileSync(file,'utf-8'));
-    return reports.filter((r: { status: string }) => r.status ==='open').length;
+    const reports = JSON.parse(fs.readFileSync(file, 'utf-8'));
+    return reports.filter((r: { status: string }) => r.status === 'open').length;
   } catch { return 0; }
 }
 
 function getMessageCount() {
-  const file = path.join(process.cwd(),'src','data','messages.json');
+  const file = path.join(process.cwd(), 'src', 'data', 'messages.json');
   if (!fs.existsSync(file)) return 0;
   try {
-    const messages = JSON.parse(fs.readFileSync(file,'utf-8'));
+    const messages = JSON.parse(fs.readFileSync(file, 'utf-8'));
     return messages.length;
   } catch { return 0; }
 }
@@ -28,21 +28,15 @@ export default async function DashboardPage() {
   await requireAdmin();
 
   const themes = getThemes('en');
-  const pages  = getColoringPages('en');
+  const totalPages = themes.reduce((sum, t) => sum + (t.pageCount || 0), 0);
   const reportCount = getReportCount();
   const messageCount = getMessageCount();
 
-  // Count pages per theme slug
-  const countByTheme: Record<string, number> = {};
-  for (const p of pages) {
-    countByTheme[p.parentTheme] = (countByTheme[p.parentTheme] || 0) + 1;
-  }
-
   const stats = [
-    { value: themes.length,  label:'Categories (Thema\'s)', href:'/admin/categories'},
-    { value: pages.length.toLocaleString(),   label:'Kleurplaten (Totaal)', href:'/admin/coloring-pages'},
-    { value: reportCount,    label:'Open Meldingen', href:'/admin/reports', highlight: reportCount > 0 },
-    { value: messageCount,   label:'Berichten', href:'/admin/messages'},
+    { value: themes.length, label: "Categories (Thema's)", href: '/admin/categories' },
+    { value: totalPages.toLocaleString(), label: 'Kleurplaten (Totaal)', href: '/admin/coloring-pages' },
+    { value: reportCount, label: 'Open Meldingen', href: '/admin/reports', highlight: reportCount > 0 },
+    { value: messageCount, label: 'Berichten', href: '/admin/messages' },
   ];
 
   return (
@@ -85,7 +79,7 @@ export default async function DashboardPage() {
               Kleurplaten Beheer
             </h3>
             <p style={{ margin: 0, color: 'rgba(253,246,233,0.55)', fontSize: '0.8rem' }}>
-              Zoek, filter op dubbele namen, bekijk previews en inspecteer alle {pages.length.toLocaleString()} kleurplaten.
+              Zoek, filter op dubbele namen, bekijk previews en inspecteer alle {totalPages.toLocaleString()} kleurplaten.
             </p>
           </div>
         </Link>
@@ -162,7 +156,7 @@ export default async function DashboardPage() {
           </thead>
           <tbody>
             {themes.slice(0, 40).map((t, i) => {
-              const count = countByTheme[t.slug] || 0;
+              const count = t.pageCount || 0;
               return (
                 <tr key={i}>
                   <td>
