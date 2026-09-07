@@ -34,7 +34,7 @@ OUTPUT_CSV = os.path.join(os.path.dirname(__file__), 'bad_images_report.csv')
 # Thresholds
 MIN_FILE_SIZE_KB = 15         # WebP images can be 20-35KB and still be great quality
 MAX_DARK_RATIO = 0.80         # >80% dark pixels = problematic
-MAX_WHITE_RATIO = 0.985       # >98.5% white pixels = completely blank
+MAX_WHITE_RATIO = 0.998       # >99.8% white pixels = completely empty blank sheet
 
 
 def analyze_image_quality(filepath):
