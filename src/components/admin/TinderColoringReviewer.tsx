@@ -43,6 +43,7 @@ export default function TinderColoringReviewer({ initialPages, themes }: TinderR
   const [loadingTheme, setLoadingTheme] = useState<boolean>(false);
 
   // Editable titles
+  const [singleLanguageMode, setSingleLanguageMode] = useState<boolean>(true);
   const [editTitleEn, setEditTitleEn] = useState<string>('');
   const [editTitleNl, setEditTitleNl] = useState<string>('');
   const [isProcessing, setIsProcessing] = useState<boolean>(false);
@@ -785,75 +786,144 @@ export default function TinderColoringReviewer({ initialPages, themes }: TinderR
                   })}
                 </div>
 
-                <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem', marginBottom: '1.2rem' }}>
-                  
-                  {/* Dutch Title Input */}
-                  <div>
+                {singleLanguageMode ? (
+                  /* ── 1-Taal Turbo Modus (Auto-Sync) ── */
+                  <div style={{ marginBottom: '1.2rem' }}>
                     <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '0.3rem' }}>
-                      <label style={{ fontSize: '0.75rem', color: 'rgba(253, 246, 233, 0.6)', fontWeight: 600 }}>
-                        🇳🇱 Nederlandse Titel
-                      </label>
-                      <button
-                        type="button"
-                        onClick={() => setEditTitleNl(cleanTitle(editTitleNl))}
-                        style={{ background: 'none', border: 'none', color: '#FF6B4A', fontSize: '0.7rem', cursor: 'pointer' }}
-                      >
-                        🪄 Schoonmaken
-                      </button>
+                      <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+                        <label style={{ fontSize: '0.75rem', color: '#FF6B4A', fontWeight: 700 }}>
+                          ⚡ Titel (Auto-Sync naar alle talen & partitions)
+                        </label>
+                        <span style={{ fontSize: '0.7rem', color: 'rgba(253, 246, 233, 0.4)' }}>
+                          • 1x aanpassen = overal live geüpdatet
+                        </span>
+                      </div>
+                      <div style={{ display: 'flex', gap: '0.6rem', alignItems: 'center' }}>
+                        <button
+                          type="button"
+                          onClick={() => {
+                            const cleaned = cleanTitle(editTitleNl || editTitleEn);
+                            setEditTitleNl(cleaned);
+                            setEditTitleEn(cleaned);
+                            showNotification('🪄 Titel opgeschoond!');
+                          }}
+                          style={{ background: 'rgba(255, 107, 74, 0.1)', border: '1px solid rgba(255, 107, 74, 0.3)', color: '#FF6B4A', fontSize: '0.75rem', padding: '0.2rem 0.6rem', borderRadius: '6px', cursor: 'pointer', fontWeight: 600 }}
+                        >
+                          🪄 Schoonmaken
+                        </button>
+                        <button
+                          type="button"
+                          onClick={() => setSingleLanguageMode(false)}
+                          style={{ background: 'none', border: 'none', color: 'rgba(253, 246, 233, 0.5)', fontSize: '0.75rem', cursor: 'pointer', textDecoration: 'underline' }}
+                        >
+                          🌐 2 Talen apart tonen
+                        </button>
+                      </div>
                     </div>
                     <input
                       type="text"
-                      value={editTitleNl}
-                      onChange={e => setEditTitleNl(e.target.value)}
-                      placeholder="Bijv. Beerus laadt een energiebol..."
+                      value={editTitleNl || editTitleEn}
+                      onChange={e => {
+                        const val = e.target.value;
+                        setEditTitleNl(val);
+                        setEditTitleEn(val);
+                      }}
+                      placeholder="Bijv. Pikachu met heksenhoed..."
                       style={{
                         width: '100%',
                         background: '#0a1b1c',
-                        border: '1px solid rgba(253, 246, 233, 0.15)',
+                        border: '1px solid rgba(255, 107, 74, 0.3)',
                         color: '#FDF6E9',
-                        padding: '0.7rem 0.9rem',
-                        borderRadius: '8px',
-                        fontSize: '0.95rem',
+                        padding: '0.75rem 1rem',
+                        borderRadius: '10px',
+                        fontSize: '1rem',
                         fontWeight: 600,
                         outline: 'none',
+                        boxShadow: '0 2px 8px rgba(0,0,0,0.2)',
                       }}
                     />
                   </div>
-
-                  {/* English Title Input */}
-                  <div>
-                    <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '0.3rem' }}>
-                      <label style={{ fontSize: '0.75rem', color: 'rgba(253, 246, 233, 0.6)', fontWeight: 600 }}>
-                        🇬🇧 English Title
-                      </label>
+                ) : (
+                  /* ── Geavanceerd: 2 Talen Apart ── */
+                  <div style={{ marginBottom: '1.2rem' }}>
+                    <div style={{ display: 'flex', justifyContent: 'flex-end', marginBottom: '0.3rem' }}>
                       <button
                         type="button"
-                        onClick={() => setEditTitleEn(cleanTitle(editTitleEn))}
-                        style={{ background: 'none', border: 'none', color: '#FF6B4A', fontSize: '0.7rem', cursor: 'pointer' }}
+                        onClick={() => setSingleLanguageMode(true)}
+                        style={{ background: 'none', border: 'none', color: '#FF6B4A', fontSize: '0.75rem', cursor: 'pointer', fontWeight: 600 }}
                       >
-                        🪄 Clean up
+                        ⚡ Terug naar 1-Taal Turbo Modus
                       </button>
                     </div>
-                    <input
-                      type="text"
-                      value={editTitleEn}
-                      onChange={e => setEditTitleEn(e.target.value)}
-                      placeholder="E.g. Beerus charges energy sphere..."
-                      style={{
-                        width: '100%',
-                        background: '#0a1b1c',
-                        border: '1px solid rgba(253, 246, 233, 0.15)',
-                        color: '#FDF6E9',
-                        padding: '0.7rem 0.9rem',
-                        borderRadius: '8px',
-                        fontSize: '0.95rem',
-                        fontWeight: 600,
-                        outline: 'none',
-                      }}
-                    />
-                  </div>
+                    <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem' }}>
+                      {/* Dutch Title Input */}
+                      <div>
+                        <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '0.3rem' }}>
+                          <label style={{ fontSize: '0.75rem', color: 'rgba(253, 246, 233, 0.6)', fontWeight: 600 }}>
+                            🇳🇱 Nederlandse Titel
+                          </label>
+                          <button
+                            type="button"
+                            onClick={() => setEditTitleNl(cleanTitle(editTitleNl))}
+                            style={{ background: 'none', border: 'none', color: '#FF6B4A', fontSize: '0.7rem', cursor: 'pointer' }}
+                          >
+                            🪄 Schoonmaken
+                          </button>
+                        </div>
+                        <input
+                          type="text"
+                          value={editTitleNl}
+                          onChange={e => setEditTitleNl(e.target.value)}
+                          placeholder="Bijv. Beerus laadt een energiebol..."
+                          style={{
+                            width: '100%',
+                            background: '#0a1b1c',
+                            border: '1px solid rgba(253, 246, 233, 0.15)',
+                            color: '#FDF6E9',
+                            padding: '0.7rem 0.9rem',
+                            borderRadius: '8px',
+                            fontSize: '0.95rem',
+                            fontWeight: 600,
+                            outline: 'none',
+                          }}
+                        />
+                      </div>
 
-                </div>
+                      {/* English Title Input */}
+                      <div>
+                        <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '0.3rem' }}>
+                          <label style={{ fontSize: '0.75rem', color: 'rgba(253, 246, 233, 0.6)', fontWeight: 600 }}>
+                            🇬🇧 English Title
+                          </label>
+                          <button
+                            type="button"
+                            onClick={() => setEditTitleEn(cleanTitle(editTitleEn))}
+                            style={{ background: 'none', border: 'none', color: '#FF6B4A', fontSize: '0.7rem', cursor: 'pointer' }}
+                          >
+                            🪄 Clean up
+                          </button>
+                        </div>
+                        <input
+                          type="text"
+                          value={editTitleEn}
+                          onChange={e => setEditTitleEn(e.target.value)}
+                          placeholder="E.g. Beerus charges energy sphere..."
+                          style={{
+                            width: '100%',
+                            background: '#0a1b1c',
+                            border: '1px solid rgba(253, 246, 233, 0.15)',
+                            color: '#FDF6E9',
+                            padding: '0.7rem 0.9rem',
+                            borderRadius: '8px',
+                            fontSize: '0.95rem',
+                            fontWeight: 600,
+                            outline: 'none',
+                          }}
+                        />
+                      </div>
+                    </div>
+                  </div>
+                )}
 
                 {/* 4 ACTION BUTTONS: REJECT, MOVE, SKIP, APPROVE */}
                 <div style={{
