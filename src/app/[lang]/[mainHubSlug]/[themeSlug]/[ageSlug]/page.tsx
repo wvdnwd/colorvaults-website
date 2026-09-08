@@ -14,9 +14,11 @@ import SafeImage from'@/components/SafeImage';
 import React from'react';
 
 export async function generateStaticParams() {
-  const agesEn = getAgePages('en').map(a => ({ lang:'en', mainHubSlug: a.parentHub, themeSlug: a.parentTheme, ageSlug: a.ageGroup }));
-  const agesNl = getAgePages('nl').map(a => ({ lang:'nl', mainHubSlug: a.parentHub, themeSlug: a.parentTheme, ageSlug: a.ageGroup }));
-  return [...agesEn, ...agesNl];
+  const agesEn = getAgePages('en').map(a => ({ lang: 'en', mainHubSlug: a.parentHub, themeSlug: a.parentTheme, ageSlug: a.ageGroup }));
+  const agesNl = getAgePages('nl').map(a => ({ lang: 'nl', mainHubSlug: a.parentHub, themeSlug: a.parentTheme, ageSlug: a.ageGroup }));
+  const agesDe = getAgePages('de').map(a => ({ lang: 'de', mainHubSlug: a.parentHub, themeSlug: a.parentTheme, ageSlug: a.ageGroup }));
+  const agesFr = getAgePages('fr').map(a => ({ lang: 'fr', mainHubSlug: a.parentHub, themeSlug: a.parentTheme, ageSlug: a.ageGroup }));
+  return [...agesEn, ...agesNl, ...agesDe, ...agesFr];
 }
 
 export async function generateMetadata({ params }: { params: Promise<{ lang: string, mainHubSlug: string, themeSlug: string, ageSlug: string }> }) {
@@ -25,9 +27,20 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
   if (!agePage) return {};
   const theme = getThemes(lang).find(t => t.parentHub === mainHubSlug && t.slug === themeSlug);
   const ogImageUrl = theme?.image
-    ?`/api/og?title=${encodeURIComponent(agePage.title)}&image=${encodeURIComponent(theme.image)}`:'/images/banner.jpg';
+    ? `/api/og?title=${encodeURIComponent(agePage.title)}&image=${encodeURIComponent(theme.image)}`
+    : '/images/banner.jpg';
+
+  let title = `${agePage.title} (Free Printable PDF Coloring Pages) | ColorVaults`;
+  if (lang === 'nl') {
+    title = `${agePage.title} (Gratis Printbare Kleurplaten PDF) | ColorVaults`;
+  } else if (lang === 'de') {
+    title = `${agePage.title} (Kostenlose Malvorlagen PDF zum Drucken) | ColorVaults`;
+  } else if (lang === 'fr') {
+    title = `${agePage.title} (Coloriages Gratuits à Imprimer PDF) | ColorVaults`;
+  }
+
   return {
-    title:`${agePage.title} (Free PDF Printables) | ColorVaults`,
+    title,
     description: agePage.seoText,
     alternates: {
       canonical: `/${lang}/${mainHubSlug}/${themeSlug}/${ageSlug}`,
@@ -40,12 +53,12 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
       },
     },
     openGraph: {
-      title:`${agePage.title} (Free PDF Printables) | ColorVaults`,
+      title,
       description: agePage.seoText,
       images: [{ url: ogImageUrl, width: 1200, height: 630, alt: agePage.title }],
     },
     twitter: {
-      card:'summary_large_image',
+      card: 'summary_large_image',
       images: [ogImageUrl],
     },
   };

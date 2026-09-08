@@ -20,11 +20,11 @@ import React from 'react';
 export const dynamicParams = true;
 
 export async function generateStaticParams() {
-  // Pre-render top 30 sample pages at build time to keep build memory low (<120MB).
-  // All other pages render dynamically on-demand (ISR) and cache permanently!
   const pagesEn = getFeaturedPages('en', 30).map(p => ({ lang: 'en', mainHubSlug: p.parentHub, themeSlug: p.parentTheme, ageSlug: p.ageGroup, coloringPageSlug: p.slug }));
   const pagesNl = getFeaturedPages('nl', 30).map(p => ({ lang: 'nl', mainHubSlug: p.parentHub, themeSlug: p.parentTheme, ageSlug: p.ageGroup, coloringPageSlug: p.slug }));
-  return [...pagesEn, ...pagesNl];
+  const pagesDe = getFeaturedPages('de', 30).map(p => ({ lang: 'de', mainHubSlug: p.parentHub, themeSlug: p.parentTheme, ageSlug: p.ageGroup, coloringPageSlug: p.slug }));
+  const pagesFr = getFeaturedPages('fr', 30).map(p => ({ lang: 'fr', mainHubSlug: p.parentHub, themeSlug: p.parentTheme, ageSlug: p.ageGroup, coloringPageSlug: p.slug }));
+  return [...pagesEn, ...pagesNl, ...pagesDe, ...pagesFr];
 }
 
 export async function generateMetadata({ params }: { params: Promise<{ lang: string, mainHubSlug: string, themeSlug: string, ageSlug: string, coloringPageSlug: string }> }) {
