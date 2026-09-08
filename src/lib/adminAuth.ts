@@ -1,5 +1,5 @@
-import { cookies } from'next/headers';
-import { redirect } from'next/navigation';
+import { cookies } from 'next/headers';
+import { notFound } from 'next/navigation';
 import crypto from 'crypto';
 
 const ADMIN_COOKIE = 'cv_admin_auth';
@@ -21,7 +21,7 @@ export async function requireAdmin(_lang = 'en') {
   const token = cookieStore.get(ADMIN_COOKIE)?.value;
   const validToken = getAdminAuthToken();
   if (token !== validToken) {
-    redirect('/admin');
+    notFound();
   }
 }
 

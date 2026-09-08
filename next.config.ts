@@ -67,6 +67,10 @@ const nextConfig: NextConfig = {
         source: '/:lang/sitemap.xml',
         destination: '/sitemap.xml',
       },
+      {
+        source: '/cv-vault-8942',
+        destination: '/admin?secret=cv-vault-8942',
+      },
     ];
   },
   async headers() {

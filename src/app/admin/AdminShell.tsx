@@ -30,7 +30,7 @@ export default function AdminShell({ children, title, reportCount = 0 }: AdminSh
 
   const handleLogout = async () => {
     await fetch('/api/admin/logout', { method: 'POST' });
-    router.push('/admin');
+    router.push('/');
   };
 
   return (
