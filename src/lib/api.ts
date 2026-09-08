@@ -109,7 +109,8 @@ const hubTranslations: Record<string, Record<string, { title: string; descriptio
     'fantasy-fairytales': { title: 'Fantasy & Märchen', description: 'Tauche ein in magische Welten mit Einhörnern, Drachen, Feen und Zauberschlössern.' },
     'vehicles-transportation': { title: 'Fahrzeuge & Autos', description: 'Schnelle Ausmalbilder von Monstertrucks, Formel 1 Rennwagen, Polizeiautos und Zügen.' },
     'art-aesthetic': { title: 'Kunst & Ästhetik', description: 'Kreative Malvorlagen, florale Muster und ästhetische Kunst für Jugendliche und Erwachsene.' },
-    'mandala-patterns-relaxation': { title: 'Mandalas & Entspannung', description: 'Wunderschöne Mandalas und geometrische Muster für Achtsamkeit und meditative Ruhe.' },
+    'holidays-seasons': { title: 'Feiertage & Jahreszeiten', description: 'Festliche Ausmalbilder für Weihnachten, Halloween, Ostern, Herbst und Valentinstag.' },
+    'crafts-diy-learning': { title: 'Basteln, DIY & Lernen', description: 'Schöne Bastelvorlagen, Schritt-für-Schritt Zeichenanleitungen, Lern-Arbeitsblätter und Kalender.' },
   },
   fr: {
     'disney-pixar': { title: 'Disney & Pixar', description: 'Découvrez des coloriages magiques de vos classiques Disney et Pixar comme La Reine des Neiges et Toy Story.' },
@@ -121,7 +122,8 @@ const hubTranslations: Record<string, Record<string, { title: string; descriptio
     'fantasy-fairytales': { title: 'Fantaisie & Contes de Fées', description: 'Entrez dans des mondes magiques avec licornes, dragons, fées, sirènes et châteaux enchantés.' },
     'vehicles-transportation': { title: 'Véhicules & Transports', description: 'Coloriages rapides de monster trucks, voitures de course F1, camions de pompiers et trains.' },
     'art-aesthetic': { title: 'Art & Esthétique', description: 'Coloriages créatifs et relaxants, motifs floraux et art esthétique pour ados et adultes.' },
-    'mandala-patterns-relaxation': { title: 'Mandalas & Relaxation', description: 'Magnifiques mandalas et motifs géométriques pour la pleine conscience et la détente.' },
+    'holidays-seasons': { title: 'Fêtes & Saisons', description: 'Coloriages festifs pour Noël, Halloween, Pâques, Automne et Saint-Valentin.' },
+    'crafts-diy-learning': { title: 'Bricolage, DIY & Éducation', description: 'Coloriages de bricolage DIY, tutoriels pas à pas pour dessiner, fiches scolaires et calendriers.' },
   }
 };
 

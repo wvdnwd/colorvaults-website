@@ -16,7 +16,7 @@ function readJson(lang, filename) {
 
 const index = [];
 
-for (const lang of ['en', 'nl']) {
+for (const lang of ['en', 'nl', 'de', 'fr']) {
   const hubs = readJson(lang, 'main-hubs.json');
   const themes = readJson(lang, 'themes.json');
 
@@ -71,7 +71,7 @@ const stats = fs.statSync(outputPath);
 console.log(`Search index generated: ${index.length} entries → ${outputPath} (${(stats.size / (1024 * 1024)).toFixed(2)} MB)`);
 
 // Also generate language-specific lightweight indexes
-for (const lang of ['en', 'nl']) {
+for (const lang of ['en', 'nl', 'de', 'fr']) {
   const langIndex = index.filter(e => e.lang === lang);
   const langPath = path.join(__dirname, '..', 'public', `search-index-${lang}.json`);
   fs.writeFileSync(langPath, JSON.stringify(langIndex));
