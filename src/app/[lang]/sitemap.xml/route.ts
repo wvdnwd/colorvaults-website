@@ -22,10 +22,10 @@ export async function GET(
   const buildDate = new Date().toISOString().split('T')[0]; // YYYY-MM-DD
 
   const urls: { loc: string; priority: string; changefreq: string }[] = [
-    ...hubs.map(h => ({ loc:`https://colorvaults.com/${lang}/${h.slug}`, priority:'0.9', changefreq:'weekly'})),
-    ...themes.map(t => ({ loc:`https://colorvaults.com/${lang}/${t.parentHub}/${t.slug}`, priority:'0.8', changefreq:'weekly'})),
-    ...agePages.map(a => ({ loc:`https://colorvaults.com/${lang}/${a.parentHub}/${a.parentTheme}/${a.ageGroup}`, priority:'0.7', changefreq:'weekly'})),
-    ...pages.map(p => ({ loc:`https://colorvaults.com/${lang}/${p.parentHub}/${p.parentTheme}/${p.ageGroup}/${p.slug}`, priority:'0.6', changefreq:'monthly'})),
+    ...hubs.map(h => ({ loc: `https://www.colorvaults.com/${lang}/${h.slug}`, priority: '0.9', changefreq: 'weekly' })),
+    ...themes.map(t => ({ loc: `https://www.colorvaults.com/${lang}/${t.parentHub}/${t.slug}`, priority: '0.8', changefreq: 'weekly' })),
+    ...agePages.map(a => ({ loc: `https://www.colorvaults.com/${lang}/${a.parentHub}/${a.parentTheme}/${a.ageGroup}`, priority: '0.7', changefreq: 'weekly' })),
+    ...pages.map(p => ({ loc: `https://www.colorvaults.com/${lang}/${p.parentHub}/${p.parentTheme}/${p.ageGroup}/${p.slug}`, priority: '0.6', changefreq: 'monthly' })),
   ];
 
   const xml =`<?xml version="1.0"encoding="UTF-8"?>

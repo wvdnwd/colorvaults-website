@@ -8,25 +8,25 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const entries: MetadataRoute.Sitemap = [
     // Homepages
     {
-      url: 'https://colorvaults.com/en',
+      url: 'https://www.colorvaults.com/en',
       lastModified: new Date(),
       changeFrequency: 'daily',
       priority: 1.0,
     },
     {
-      url: 'https://colorvaults.com/nl',
+      url: 'https://www.colorvaults.com/nl',
       lastModified: new Date(),
       changeFrequency: 'daily',
       priority: 1.0,
     },
     {
-      url: 'https://colorvaults.com/de',
+      url: 'https://www.colorvaults.com/de',
       lastModified: new Date(),
       changeFrequency: 'daily',
       priority: 1.0,
     },
     {
-      url: 'https://colorvaults.com/fr',
+      url: 'https://www.colorvaults.com/fr',
       lastModified: new Date(),
       changeFrequency: 'daily',
       priority: 1.0,
@@ -42,7 +42,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     // Hub pages
     for (const hub of hubs) {
       entries.push({
-        url: `https://colorvaults.com/${lang}/${hub.slug}`,
+        url: `https://www.colorvaults.com/${lang}/${hub.slug}`,
         lastModified: new Date(),
         changeFrequency: 'weekly',
         priority: 0.9,
@@ -52,7 +52,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     // Theme pages
     for (const theme of themes) {
       entries.push({
-        url: `https://colorvaults.com/${lang}/${theme.parentHub}/${theme.slug}`,
+        url: `https://www.colorvaults.com/${lang}/${theme.parentHub}/${theme.slug}`,
         lastModified: new Date(),
         changeFrequency: 'weekly',
         priority: 0.8,
@@ -62,7 +62,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     // Age-group listing pages
     for (const agePage of agePages) {
       entries.push({
-        url: `https://colorvaults.com/${lang}/${agePage.parentHub}/${agePage.parentTheme}/${agePage.ageGroup}`,
+        url: `https://www.colorvaults.com/${lang}/${agePage.parentHub}/${agePage.parentTheme}/${agePage.ageGroup}`,
         lastModified: new Date(),
         changeFrequency: 'weekly',
         priority: 0.7,
@@ -72,7 +72,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     // Featured coloring pages
     for (const page of featuredPages) {
       entries.push({
-        url: `https://colorvaults.com/${lang}/${page.parentHub}/${page.parentTheme}/${page.ageGroup}/${page.slug}`,
+        url: `https://www.colorvaults.com/${lang}/${page.parentHub}/${page.parentTheme}/${page.ageGroup}/${page.slug}`,
         lastModified: new Date(),
         changeFrequency: 'monthly',
         priority: 0.6,
