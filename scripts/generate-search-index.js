@@ -70,3 +70,12 @@ fs.writeFileSync(outputPath, JSON.stringify(index));
 const stats = fs.statSync(outputPath);
 console.log(`Search index generated: ${index.length} entries → ${outputPath} (${(stats.size / (1024 * 1024)).toFixed(2)} MB)`);
 
+// Also generate language-specific lightweight indexes
+for (const lang of ['en', 'nl']) {
+  const langIndex = index.filter(e => e.lang === lang);
+  const langPath = path.join(__dirname, '..', 'public', `search-index-${lang}.json`);
+  fs.writeFileSync(langPath, JSON.stringify(langIndex));
+  const langStats = fs.statSync(langPath);
+  console.log(`Language search index (${lang}): ${langIndex.length} entries → ${langPath} (${(langStats.size / (1024 * 1024)).toFixed(2)} MB)`);
+}
+

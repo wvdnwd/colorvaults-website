@@ -14,20 +14,26 @@ interface SearchEntry {
   tags?: string[];
 }
 
-let cachedIndex: SearchEntry[] | null = null;
+const cachedIndices: Record<string, SearchEntry[]> = {};
 
-function getSearchIndex(): SearchEntry[] {
-  if (!cachedIndex) {
+function getSearchIndex(lang: string): SearchEntry[] {
+  const targetLang = lang === 'nl' ? 'nl' : 'en';
+  if (!cachedIndices[targetLang]) {
     try {
-      const filePath = path.join(process.cwd(), 'public', 'search-index.json');
-      const fileContents = fs.readFileSync(filePath, 'utf8');
-      cachedIndex = JSON.parse(fileContents);
+      const langPath = path.join(process.cwd(), 'public', `search-index-${targetLang}.json`);
+      if (fs.existsSync(langPath)) {
+        cachedIndices[targetLang] = JSON.parse(fs.readFileSync(langPath, 'utf8'));
+      } else {
+        const fullPath = path.join(process.cwd(), 'public', 'search-index.json');
+        const all = JSON.parse(fs.readFileSync(fullPath, 'utf8')) as SearchEntry[];
+        cachedIndices[targetLang] = all.filter(e => e.lang === targetLang);
+      }
     } catch (e) {
-      console.error('Failed to load search index', e);
+      console.error(`Failed to load search index for ${targetLang}`, e);
       return [];
     }
   }
-  return cachedIndex!;
+  return cachedIndices[targetLang];
 }
 
 export async function GET(request: Request) {
@@ -38,7 +44,7 @@ export async function GET(request: Request) {
   const age = searchParams.get('age');
   const theme = searchParams.get('theme');
 
-  const index = getSearchIndex();
+  const index = getSearchIndex(lang);
 
   let matched = index.filter(e => e.lang === lang);
 
