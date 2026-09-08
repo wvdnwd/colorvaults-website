@@ -263,7 +263,7 @@
       "teens"
     ],
     "language": "nl",
-    "pageCount": 101,
+    "pageCount": 151,
     "totalCount": 101,
     "itemCount": 101,
     "coloringPageCount": 101,
@@ -281,7 +281,7 @@
       "teens"
     ],
     "language": "nl",
-    "pageCount": 99,
+    "pageCount": 149,
     "totalCount": 99,
     "itemCount": 99,
     "coloringPageCount": 99,
@@ -389,7 +389,7 @@
       "teens"
     ],
     "language": "nl",
-    "pageCount": 240,
+    "pageCount": 272,
     "totalCount": 240,
     "itemCount": 240,
     "coloringPageCount": 240,
@@ -530,10 +530,11 @@
     "availableAges": [
       "toddlers",
       "kids",
-      "teens"
+      "teens",
+      "adults"
     ],
     "language": "nl",
-    "pageCount": 120,
+    "pageCount": 170,
     "totalCount": 120,
     "itemCount": 120,
     "coloringPageCount": 120,
@@ -749,7 +750,7 @@
       "teens"
     ],
     "language": "nl",
-    "pageCount": 50,
+    "pageCount": 99,
     "totalCount": 50,
     "itemCount": 50,
     "coloringPageCount": 50,
@@ -785,7 +786,7 @@
       "teens"
     ],
     "language": "nl",
-    "pageCount": 210,
+    "pageCount": 248,
     "totalCount": 210,
     "itemCount": 210,
     "coloringPageCount": 210,
@@ -821,7 +822,7 @@
       "teens"
     ],
     "language": "nl",
-    "pageCount": 121,
+    "pageCount": 147,
     "totalCount": 121,
     "itemCount": 121,
     "coloringPageCount": 121,
@@ -947,7 +948,7 @@
       "teens"
     ],
     "language": "nl",
-    "pageCount": 122,
+    "pageCount": 165,
     "totalCount": 122,
     "itemCount": 122,
     "coloringPageCount": 122,
@@ -1001,7 +1002,7 @@
       "teens"
     ],
     "language": "nl",
-    "pageCount": 50,
+    "pageCount": 65,
     "totalCount": 50,
     "itemCount": 50,
     "coloringPageCount": 50,
@@ -1091,7 +1092,7 @@
       "teens"
     ],
     "language": "nl",
-    "pageCount": 120,
+    "pageCount": 141,
     "totalCount": 120,
     "itemCount": 120,
     "coloringPageCount": 120,
@@ -1181,7 +1182,7 @@
       "teens"
     ],
     "language": "nl",
-    "pageCount": 128,
+    "pageCount": 144,
     "totalCount": 128,
     "itemCount": 128,
     "coloringPageCount": 128,
@@ -1253,7 +1254,7 @@
       "teens"
     ],
     "language": "nl",
-    "pageCount": 120,
+    "pageCount": 138,
     "totalCount": 120,
     "itemCount": 120,
     "coloringPageCount": 120,
@@ -1271,7 +1272,7 @@
       "teens"
     ],
     "language": "nl",
-    "pageCount": 120,
+    "pageCount": 162,
     "totalCount": 120,
     "itemCount": 120,
     "coloringPageCount": 120,
@@ -1559,7 +1560,7 @@
       "teens"
     ],
     "language": "nl",
-    "pageCount": 449,
+    "pageCount": 461,
     "totalCount": 449,
     "itemCount": 449,
     "coloringPageCount": 449,
@@ -1700,10 +1701,11 @@
     "availableAges": [
       "toddlers",
       "kids",
-      "teens"
+      "teens",
+      "adults"
     ],
     "language": "nl",
-    "pageCount": 121,
+    "pageCount": 135,
     "totalCount": 121,
     "itemCount": 121,
     "coloringPageCount": 121,
@@ -1808,10 +1810,11 @@
     "availableAges": [
       "toddlers",
       "kids",
-      "teens"
+      "teens",
+      "adults"
     ],
     "language": "nl",
-    "pageCount": 120,
+    "pageCount": 144,
     "totalCount": 120,
     "itemCount": 120,
     "coloringPageCount": 120,
@@ -2027,7 +2030,7 @@
       "adults"
     ],
     "language": "nl",
-    "pageCount": 132,
+    "pageCount": 150,
     "totalCount": 132,
     "itemCount": 132,
     "coloringPageCount": 132,
@@ -2099,7 +2102,7 @@
       "teens"
     ],
     "language": "nl",
-    "pageCount": 121,
+    "pageCount": 134,
     "totalCount": 121,
     "itemCount": 121,
     "coloringPageCount": 121,
@@ -2153,7 +2156,7 @@
       "teens"
     ],
     "language": "nl",
-    "pageCount": 158,
+    "pageCount": 202,
     "totalCount": 158,
     "itemCount": 158,
     "coloringPageCount": 158,
@@ -2315,7 +2318,7 @@
       "teens"
     ],
     "language": "nl",
-    "pageCount": 56,
+    "pageCount": 103,
     "totalCount": 56,
     "itemCount": 56,
     "coloringPageCount": 56,
@@ -2374,5 +2377,387 @@
     "itemCount": 185,
     "coloringPageCount": 185,
     "coverImage": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Coloring%20Calendars/A_printable_coloring_calendar_page_featu_1788519603054_1.webp"
+  },
+  {
+    "title": "Stap voor Stap Leren Tekenen",
+    "slug": "how-to-draw-step-by-step",
+    "parentHub": "crafts-diy-learning",
+    "description": "Eenvoudige stap-voor-stap tekenlessen en tekengidsen voor kinderen, tieners en beginnende tekenaars.",
+    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Crafts%20-%20How%20to%20Draw/Step-by-step_drawing_tutori_1788630907415.webp",
+    "availableAges": [
+      "toddlers",
+      "kids",
+      "teens"
+    ],
+    "pageCount": 100,
+    "featured": true,
+    "popularity": 100,
+    "language": "nl"
+  },
+  {
+    "title": "Educatieve Werkbladen & School",
+    "slug": "school-worksheets-educational",
+    "parentHub": "crafts-diy-learning",
+    "description": "Printbare educatieve werkbladen met letters overtrekken, rekenpuzzels, cijfers en leuke leeractiviteiten voor de basisschool.",
+    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/School%20Worksheets/Educational_printable_coloring_worksheet_1788710045500.webp",
+    "availableAges": [
+      "toddlers",
+      "kids",
+      "teens"
+    ],
+    "pageCount": 100,
+    "featured": true,
+    "popularity": 100,
+    "language": "nl"
+  },
+  {
+    "title": "Printbare Kalenders & Planners",
+    "slug": "printable-calendars",
+    "parentHub": "crafts-diy-learning",
+    "description": "Mooie printbare maandkalenders en jaarplanners met leuke thema-illustraties om in te kleuren en je jaar te plannen.",
+    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Printable%20Calendars/Printable_monthly_c_1788641417597.webp",
+    "availableAges": [
+      "toddlers",
+      "kids",
+      "teens",
+      "adults"
+    ],
+    "pageCount": 120,
+    "featured": true,
+    "popularity": 100,
+    "language": "nl"
+  },
+  {
+    "title": "Feestdecoraties & DIY Knutselen",
+    "slug": "party-decorations-diy",
+    "parentHub": "crafts-diy-learning",
+    "description": "Printbare feestslingers, feesthoedjes, vlaggenlijnen en knutselversieringen voor verjaardagen en feestjes.",
+    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Party%20Decorations/A_festive_party_layout_showing_a_large_h_1788636990786.webp",
+    "availableAges": [
+      "kids",
+      "teens"
+    ],
+    "pageCount": 50,
+    "featured": true,
+    "popularity": 50,
+    "language": "nl"
+  },
+  {
+    "title": "Halloween 3D Bouwplaten & Knutselen",
+    "slug": "halloween-3d-paper-crafts",
+    "parentHub": "crafts-diy-learning",
+    "description": "Griezelige 3D papieren bouwplaten, traktatiedoosjes, vouwfiguren en spookhuisjes om zelf te knippen en in elkaar te zetten.",
+    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Halloween%20-%203D%20Paper%20Crafts/3D_Halloween_Treat_Box_1788624688295.webp",
+    "availableAges": [
+      "kids",
+      "teens"
+    ],
+    "pageCount": 53,
+    "featured": true,
+    "popularity": 53,
+    "language": "nl"
+  },
+  {
+    "title": "Halloween Maskers & Verkleedattributen",
+    "slug": "halloween-masks-props",
+    "parentHub": "crafts-diy-learning",
+    "description": "Leuke printbare Halloween maskers, monstergezichten, heksenhoeden en fotoprops voor kinderen en griezelfeestjes.",
+    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Halloween%20-%20Masks%20and%20Props/1788794311042.webp",
+    "availableAges": [
+      "kids",
+      "teens"
+    ],
+    "pageCount": 17,
+    "featured": false,
+    "popularity": 17,
+    "language": "nl"
+  },
+  {
+    "title": "Sjablonen & Silhouetten",
+    "slug": "stencils-silhouettes",
+    "parentHub": "crafts-diy-learning",
+    "description": "Sjablonen, silhouetten en knipvormen met scherpe contouren voor knutselen, pompoen snijden en schilderen.",
+    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Stencils%20and%20Silhouettes/A_bold_stencil_style_design_of_1788711371399.webp",
+    "availableAges": [
+      "kids",
+      "teens",
+      "adults"
+    ],
+    "pageCount": 24,
+    "featured": false,
+    "popularity": 24,
+    "language": "nl"
+  },
+  {
+    "title": "Smileys & Emoji's",
+    "slug": "smiley-faces-emojis",
+    "parentHub": "crafts-diy-learning",
+    "description": "Vrolijke smileys, emoji's, grappige gezichtsuitdrukkingen en positieve kleurplaten vol vrolijkheid.",
+    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Smiley%20Faces/A_fun_smiley_design_of_a_c_1788711132947.webp",
+    "availableAges": [
+      "toddlers",
+      "kids"
+    ],
+    "pageCount": 30,
+    "featured": false,
+    "popularity": 30,
+    "language": "nl"
+  },
+  {
+    "title": "Nijntje Pluis & Vriendjes",
+    "slug": "nijntje-miffy",
+    "parentHub": "kids-tv-shows",
+    "description": "Klassieke, lieve Dick Bruna stijl kleurplaten van Nijntje Pluis, Boris Beer, Snuffie en gezellige peuteravonturen.",
+    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Nijntje%20Miffy/Dick_Bruna_style_illustra_1788636062367.webp",
+    "availableAges": [
+      "toddlers",
+      "kids"
+    ],
+    "pageCount": 50,
+    "featured": true,
+    "popularity": 50,
+    "language": "nl"
+  },
+  {
+    "title": "Woezel en Pip",
+    "slug": "woezel-and-pip",
+    "parentHub": "kids-tv-shows",
+    "description": "Schattige kleurplaten van de twee allerbeste hondenvriendjes Woezel en Pip in de magische Tovertuin met Tante Perenboom.",
+    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Woezel%20and%20Pip/Woezel_and_Pip_chasing_a_1788713889129.webp",
+    "availableAges": [
+      "toddlers",
+      "kids"
+    ],
+    "pageCount": 36,
+    "featured": false,
+    "popularity": 36,
+    "language": "nl"
+  },
+  {
+    "title": "Politie & Hulpverleners",
+    "slug": "police-rescue-heroes",
+    "parentHub": "kids-tv-shows",
+    "description": "Dappere politieagenten, politiewagens, politiehonden en hulpverleners die waken over de stad.",
+    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Police%20and%20Rescue/A_friendly_community_police_scen_1788638696457.webp",
+    "availableAges": [
+      "kids",
+      "teens"
+    ],
+    "pageCount": 50,
+    "featured": true,
+    "popularity": 50,
+    "language": "nl"
+  },
+  {
+    "title": "Brandweer & Brandweerwagens",
+    "slug": "firefighters-emergency",
+    "parentHub": "kids-tv-shows",
+    "description": "Heldhaftige brandweer kleurplaten met brandweerauto's, blusladders, brandweermannen en reddingsacties.",
+    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Firefighters/An_exciting_fire_rescue_sc_1788623378777.webp",
+    "availableAges": [
+      "kids",
+      "teens"
+    ],
+    "pageCount": 55,
+    "featured": true,
+    "popularity": 55,
+    "language": "nl"
+  },
+  {
+    "title": "Binnenstebuiten 2 (Inside Out 2)",
+    "slug": "inside-out-2",
+    "parentHub": "disney-pixar",
+    "description": "Kleur alle emoties uit Disney Pixar Binnenstebuiten 2: Plezier, Verdriet, Woede, Onzekerheid (Anxiety), Jaloezie, Ennui en Schaamte.",
+    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Inside%20Out%202/Anger_with_flame_sparks_ri_1788631578576.webp",
+    "availableAges": [
+      "kids",
+      "teens"
+    ],
+    "pageCount": 50,
+    "featured": true,
+    "popularity": 50,
+    "language": "nl"
+  },
+  {
+    "title": "Encanto",
+    "slug": "encanto",
+    "parentHub": "disney-pixar",
+    "description": "Magische Encanto kleurplaten van de bijzondere familie Madrigal: Mirabel, Isabela, Luisa, Antonio en Bruno in de Casita.",
+    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Encanto/Bruno_Madrigal_wearing_his_patt_1788621278018.webp",
+    "availableAges": [
+      "kids",
+      "teens"
+    ],
+    "pageCount": 46,
+    "featured": false,
+    "popularity": 46,
+    "language": "nl"
+  },
+  {
+    "title": "Miraculous: Ladybug & Cat Noir",
+    "slug": "miraculous-ladybug",
+    "parentHub": "superheroes-comic-universes",
+    "description": "Spannende kleurplaten van Marinette als Ladybug, Adrien als Cat Noir, Tikki, Plagg en de superhelden van Parijs.",
+    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Miraculous%20Ladybug/Adrien_Agreste_as_Ca_1788634980499.webp",
+    "availableAges": [
+      "kids",
+      "teens"
+    ],
+    "pageCount": 50,
+    "featured": true,
+    "popularity": 50,
+    "language": "nl"
+  },
+  {
+    "title": "Harry Potter & De Tovenaarswereld",
+    "slug": "harry-potter",
+    "parentHub": "superheroes-comic-universes",
+    "description": "Betoverende tovenaarswereld kleurplaten van Harry Potter, Hermelien Griffel, Ron Wemel, kasteel Zweinstein en toverspreuken.",
+    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Harry%20Potter/Hermione_Granger_holding_a_1788630360075.webp",
+    "availableAges": [
+      "kids",
+      "teens",
+      "adults"
+    ],
+    "pageCount": 4,
+    "featured": false,
+    "popularity": 4,
+    "language": "nl"
+  },
+  {
+    "title": "Koningsdag & Hollands Feest",
+    "slug": "kings-day-koningsdag",
+    "parentHub": "holidays-seasons",
+    "description": "Gezellige Koningsdag kleurplaten met oranje vlaggen, kronen, rommelmarkten, tompoucen en Hollandse feestelijke taferelen.",
+    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Kings%20Day/Een_gezellige_Koningsdag_sce_1788632606212.webp",
+    "availableAges": [
+      "kids",
+      "teens"
+    ],
+    "pageCount": 50,
+    "featured": true,
+    "popularity": 50,
+    "language": "nl"
+  },
+  {
+    "title": "Valentijnsdag & Liefde",
+    "slug": "valentines-day",
+    "parentHub": "holidays-seasons",
+    "description": "Liefdevolle Valentijnsdag kleurplaten met harten, cupido, schattige tortelduifjes, beertjes, rozen en liefdesbrieven.",
+    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Valentines%20Day/1788712936779.webp",
+    "availableAges": [
+      "kids",
+      "teens",
+      "adults"
+    ],
+    "pageCount": 50,
+    "featured": true,
+    "popularity": 50,
+    "language": "nl"
+  },
+  {
+    "title": "Zentangle Patronen & Mindfulness",
+    "slug": "zentangle-patterns",
+    "parentHub": "art-aesthetic",
+    "description": "Gedetailleerde Zentangle diersilhouetten, meditatieve patronen en rustgevende mindfulness kunst om ontspannen in te kleuren.",
+    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Zentangle/A_Zentangle_silhouette_of_a_d_1788714197216.webp",
+    "availableAges": [
+      "teens",
+      "adults"
+    ],
+    "pageCount": 50,
+    "featured": true,
+    "popularity": 50,
+    "language": "nl"
+  },
+  {
+    "title": "Dark Academia & Vintage Bibliotheken",
+    "slug": "dark-academia-aesthetic",
+    "parentHub": "art-aesthetic",
+    "description": "Sfeervolle Dark Academia kleurplaten met klassieke bibliotheken, antieke boeken, kaarslicht, studies en gotische architectuur.",
+    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Dark%20Academia/A_gothic_Dark_Academia_st_1788618551231.webp",
+    "availableAges": [
+      "teens",
+      "adults"
+    ],
+    "pageCount": 49,
+    "featured": false,
+    "popularity": 49,
+    "language": "nl"
+  },
+  {
+    "title": "Keltische Patronen & Knopen",
+    "slug": "celtic-patterns",
+    "parentHub": "art-aesthetic",
+    "description": "Historische Keltische vlechtwerken, oneindige knopen, oude symbolen en traditionele mystieke patronen.",
+    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Celtic%20Patterns/Celtic_Knotwork_Mandala.webp",
+    "availableAges": [
+      "teens",
+      "adults"
+    ],
+    "pageCount": 76,
+    "featured": true,
+    "popularity": 76,
+    "language": "nl"
+  },
+  {
+    "title": "Lifestyle & Gezellig Leven",
+    "slug": "lifestyle-cozy-aesthetics",
+    "parentHub": "art-aesthetic",
+    "description": "Sfeervolle interieurs, koffiehoekjes, knusse slaapkamers, plantenhoeken en moderne lifestyle taferelen.",
+    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Lifestyle%20and%20Aesthetics/An_aesthetic_l_1788634206075.webp",
+    "availableAges": [
+      "teens",
+      "adults"
+    ],
+    "pageCount": 50,
+    "featured": true,
+    "popularity": 50,
+    "language": "nl"
+  },
+  {
+    "title": "Trendy Meiden & Mode",
+    "slug": "popular-girls-trendy-styles",
+    "parentHub": "art-aesthetic",
+    "description": "Trendy meidenmode, stijlvolle kapsels, accessoires, vriendinnen en hippe outfits om vrolijk in te kleuren.",
+    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Popular%20Girls%20Themes/A_cute_stylish_col_1788639829408.webp",
+    "availableAges": [
+      "kids",
+      "teens"
+    ],
+    "pageCount": 50,
+    "featured": true,
+    "popularity": 50,
+    "language": "nl"
+  },
+  {
+    "title": "Popcultuur & Fandoms",
+    "slug": "pop-culture-fandoms",
+    "parentHub": "art-aesthetic",
+    "description": "Iconische popcultuur taferelen, muziek, filmklassiekers en trendy retro illustraties.",
+    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Pop%20Culture%20and%20Fandoms/A_pop_culture_t_1788639261978.webp",
+    "availableAges": [
+      "teens",
+      "adults"
+    ],
+    "pageCount": 50,
+    "featured": true,
+    "popularity": 50,
+    "language": "nl"
+  },
+  {
+    "title": "Anti-Stress & Ontspanning",
+    "slug": "stress-relief-mindful",
+    "parentHub": "art-aesthetic",
+    "description": "Rustgevende, therapeutische kleurplaten speciaal ontworpen om stress te verlagen met zachte lijnen en ontspannende composities.",
+    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Stress%20Relief/A_relaxing_coloring_sheet_1788711575881.webp",
+    "availableAges": [
+      "teens",
+      "adults"
+    ],
+    "pageCount": 12,
+    "featured": false,
+    "popularity": 12,
+    "language": "nl"
   }
 ]

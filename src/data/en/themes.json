@@ -263,7 +263,7 @@
       "teens"
     ],
     "language": "en",
-    "pageCount": 101,
+    "pageCount": 151,
     "totalCount": 101,
     "itemCount": 101,
     "coloringPageCount": 101,
@@ -281,7 +281,7 @@
       "teens"
     ],
     "language": "en",
-    "pageCount": 99,
+    "pageCount": 149,
     "totalCount": 99,
     "itemCount": 99,
     "coloringPageCount": 99,
@@ -389,7 +389,7 @@
       "teens"
     ],
     "language": "en",
-    "pageCount": 240,
+    "pageCount": 272,
     "totalCount": 240,
     "itemCount": 240,
     "coloringPageCount": 240,
@@ -530,10 +530,11 @@
     "availableAges": [
       "toddlers",
       "kids",
-      "teens"
+      "teens",
+      "adults"
     ],
     "language": "en",
-    "pageCount": 120,
+    "pageCount": 170,
     "totalCount": 120,
     "itemCount": 120,
     "coloringPageCount": 120,
@@ -749,7 +750,7 @@
       "teens"
     ],
     "language": "en",
-    "pageCount": 50,
+    "pageCount": 99,
     "totalCount": 50,
     "itemCount": 50,
     "coloringPageCount": 50,
@@ -785,7 +786,7 @@
       "teens"
     ],
     "language": "en",
-    "pageCount": 210,
+    "pageCount": 248,
     "totalCount": 210,
     "itemCount": 210,
     "coloringPageCount": 210,
@@ -821,7 +822,7 @@
       "teens"
     ],
     "language": "en",
-    "pageCount": 121,
+    "pageCount": 147,
     "totalCount": 121,
     "itemCount": 121,
     "coloringPageCount": 121,
@@ -947,7 +948,7 @@
       "teens"
     ],
     "language": "en",
-    "pageCount": 122,
+    "pageCount": 165,
     "totalCount": 122,
     "itemCount": 122,
     "coloringPageCount": 122,
@@ -1001,7 +1002,7 @@
       "teens"
     ],
     "language": "en",
-    "pageCount": 50,
+    "pageCount": 65,
     "totalCount": 50,
     "itemCount": 50,
     "coloringPageCount": 50,
@@ -1091,7 +1092,7 @@
       "teens"
     ],
     "language": "en",
-    "pageCount": 120,
+    "pageCount": 141,
     "totalCount": 120,
     "itemCount": 120,
     "coloringPageCount": 120,
@@ -1181,7 +1182,7 @@
       "teens"
     ],
     "language": "en",
-    "pageCount": 128,
+    "pageCount": 144,
     "totalCount": 128,
     "itemCount": 128,
     "coloringPageCount": 128,
@@ -1253,7 +1254,7 @@
       "teens"
     ],
     "language": "en",
-    "pageCount": 120,
+    "pageCount": 138,
     "totalCount": 120,
     "itemCount": 120,
     "coloringPageCount": 120,
@@ -1271,7 +1272,7 @@
       "teens"
     ],
     "language": "en",
-    "pageCount": 120,
+    "pageCount": 162,
     "totalCount": 120,
     "itemCount": 120,
     "coloringPageCount": 120,
@@ -1559,7 +1560,7 @@
       "teens"
     ],
     "language": "en",
-    "pageCount": 450,
+    "pageCount": 462,
     "totalCount": 450,
     "itemCount": 450,
     "coloringPageCount": 450,
@@ -1700,10 +1701,11 @@
     "availableAges": [
       "toddlers",
       "kids",
-      "teens"
+      "teens",
+      "adults"
     ],
     "language": "en",
-    "pageCount": 121,
+    "pageCount": 135,
     "totalCount": 121,
     "itemCount": 121,
     "coloringPageCount": 121,
@@ -1808,10 +1810,11 @@
     "availableAges": [
       "toddlers",
       "kids",
-      "teens"
+      "teens",
+      "adults"
     ],
     "language": "en",
-    "pageCount": 120,
+    "pageCount": 144,
     "totalCount": 120,
     "itemCount": 120,
     "coloringPageCount": 120,
@@ -2027,7 +2030,7 @@
       "adults"
     ],
     "language": "en",
-    "pageCount": 132,
+    "pageCount": 150,
     "totalCount": 132,
     "itemCount": 132,
     "coloringPageCount": 132,
@@ -2099,7 +2102,7 @@
       "teens"
     ],
     "language": "en",
-    "pageCount": 124,
+    "pageCount": 137,
     "totalCount": 124,
     "itemCount": 124,
     "coloringPageCount": 124,
@@ -2153,7 +2156,7 @@
       "teens"
     ],
     "language": "en",
-    "pageCount": 158,
+    "pageCount": 202,
     "totalCount": 158,
     "itemCount": 158,
     "coloringPageCount": 158,
@@ -2315,7 +2318,7 @@
       "teens"
     ],
     "language": "en",
-    "pageCount": 56,
+    "pageCount": 103,
     "totalCount": 56,
     "itemCount": 56,
     "coloringPageCount": 56,
@@ -2374,5 +2377,387 @@
     "itemCount": 185,
     "coloringPageCount": 185,
     "coverImage": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Coloring%20Calendars/A_printable_coloring_calendar_page_featu_1788519603054_1.webp"
+  },
+  {
+    "title": "How to Draw Step by Step",
+    "slug": "how-to-draw-step-by-step",
+    "parentHub": "crafts-diy-learning",
+    "description": "Easy step-by-step drawing tutorials and guided sketch templates for kids, teens, and beginner artists.",
+    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Crafts%20-%20How%20to%20Draw/Step-by-step_drawing_tutori_1788630907415.webp",
+    "availableAges": [
+      "toddlers",
+      "kids",
+      "teens"
+    ],
+    "pageCount": 100,
+    "featured": true,
+    "popularity": 100,
+    "language": "en"
+  },
+  {
+    "title": "School Worksheets & Educational",
+    "slug": "school-worksheets-educational",
+    "parentHub": "crafts-diy-learning",
+    "description": "Printable educational coloring worksheets featuring alphabet tracing, math puzzles, numbers, and preschool learning activities.",
+    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/School%20Worksheets/Educational_printable_coloring_worksheet_1788710045500.webp",
+    "availableAges": [
+      "toddlers",
+      "kids",
+      "teens"
+    ],
+    "pageCount": 100,
+    "featured": true,
+    "popularity": 100,
+    "language": "en"
+  },
+  {
+    "title": "Printable Calendars & Planners",
+    "slug": "printable-calendars",
+    "parentHub": "crafts-diy-learning",
+    "description": "Beautiful printable monthly calendars and yearly planners with fun themed illustrations to color and organize your year.",
+    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Printable%20Calendars/Printable_monthly_c_1788641417597.webp",
+    "availableAges": [
+      "toddlers",
+      "kids",
+      "teens",
+      "adults"
+    ],
+    "pageCount": 120,
+    "featured": true,
+    "popularity": 100,
+    "language": "en"
+  },
+  {
+    "title": "Party Decorations & DIY Crafts",
+    "slug": "party-decorations-diy",
+    "parentHub": "crafts-diy-learning",
+    "description": "Printable party banners, festive garland decorations, party hats, and DIY craft cutouts for birthdays and celebrations.",
+    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Party%20Decorations/A_festive_party_layout_showing_a_large_h_1788636990786.webp",
+    "availableAges": [
+      "kids",
+      "teens"
+    ],
+    "pageCount": 50,
+    "featured": true,
+    "popularity": 50,
+    "language": "en"
+  },
+  {
+    "title": "Halloween 3D Paper Crafts",
+    "slug": "halloween-3d-paper-crafts",
+    "parentHub": "crafts-diy-learning",
+    "description": "Spooky 3D paper craft cutouts, foldables, treat boxes, and miniature haunted houses ready to print, cut, and assemble.",
+    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Halloween%20-%203D%20Paper%20Crafts/3D_Halloween_Treat_Box_1788624688295.webp",
+    "availableAges": [
+      "kids",
+      "teens"
+    ],
+    "pageCount": 53,
+    "featured": true,
+    "popularity": 53,
+    "language": "en"
+  },
+  {
+    "title": "Halloween Masks & Photo Props",
+    "slug": "halloween-masks-props",
+    "parentHub": "crafts-diy-learning",
+    "description": "Fun printable Halloween masks, monster faces, witch hats, and spooky photo booth props for kids and parties.",
+    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Halloween%20-%20Masks%20and%20Props/1788794311042.webp",
+    "availableAges": [
+      "kids",
+      "teens"
+    ],
+    "pageCount": 17,
+    "featured": false,
+    "popularity": 17,
+    "language": "en"
+  },
+  {
+    "title": "Stencils & Bold Silhouettes",
+    "slug": "stencils-silhouettes",
+    "parentHub": "crafts-diy-learning",
+    "description": "High-contrast printable stencils, silhouettes, and cut-out templates for crafts, pumpkin carving, and painting.",
+    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Stencils%20and%20Silhouettes/A_bold_stencil_style_design_of_1788711371399.webp",
+    "availableAges": [
+      "kids",
+      "teens",
+      "adults"
+    ],
+    "pageCount": 24,
+    "featured": false,
+    "popularity": 24,
+    "language": "en"
+  },
+  {
+    "title": "Smiley Faces & Emojis",
+    "slug": "smiley-faces-emojis",
+    "parentHub": "crafts-diy-learning",
+    "description": "Cheerful smiley faces, emojis, expressive cartoon emotions, and positive vibe coloring pages.",
+    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Smiley%20Faces/A_fun_smiley_design_of_a_c_1788711132947.webp",
+    "availableAges": [
+      "toddlers",
+      "kids"
+    ],
+    "pageCount": 30,
+    "featured": false,
+    "popularity": 30,
+    "language": "en"
+  },
+  {
+    "title": "Miffy & Friends (Nijntje)",
+    "slug": "nijntje-miffy",
+    "parentHub": "kids-tv-shows",
+    "description": "Classic, gentle Dick Bruna style coloring pages of Miffy the bunny, Boris Bear, and sweet toddler adventures.",
+    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Nijntje%20Miffy/Dick_Bruna_style_illustra_1788636062367.webp",
+    "availableAges": [
+      "toddlers",
+      "kids"
+    ],
+    "pageCount": 50,
+    "featured": true,
+    "popularity": 50,
+    "language": "en"
+  },
+  {
+    "title": "Woezel & Pip",
+    "slug": "woezel-and-pip",
+    "parentHub": "kids-tv-shows",
+    "description": "Adorable coloring pages of the two best dog friends Woezel and Pip playing in the Magic Garden (Tovertuin).",
+    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Woezel%20and%20Pip/Woezel_and_Pip_chasing_a_1788713889129.webp",
+    "availableAges": [
+      "toddlers",
+      "kids"
+    ],
+    "pageCount": 36,
+    "featured": false,
+    "popularity": 36,
+    "language": "en"
+  },
+  {
+    "title": "Police & Rescue Heroes",
+    "slug": "police-rescue-heroes",
+    "parentHub": "kids-tv-shows",
+    "description": "Brave police officers, patrol cars, police dogs, and emergency rescue heroes keeping the city safe.",
+    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Police%20and%20Rescue/A_friendly_community_police_scen_1788638696457.webp",
+    "availableAges": [
+      "kids",
+      "teens"
+    ],
+    "pageCount": 50,
+    "featured": true,
+    "popularity": 50,
+    "language": "en"
+  },
+  {
+    "title": "Firefighters & Fire Trucks",
+    "slug": "firefighters-emergency",
+    "parentHub": "kids-tv-shows",
+    "description": "Heroic firefighter coloring pages featuring fire engines, rescue ladders, hydrants, and courageous fire station heroes.",
+    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Firefighters/An_exciting_fire_rescue_sc_1788623378777.webp",
+    "availableAges": [
+      "kids",
+      "teens"
+    ],
+    "pageCount": 55,
+    "featured": true,
+    "popularity": 55,
+    "language": "en"
+  },
+  {
+    "title": "Inside Out 2",
+    "slug": "inside-out-2",
+    "parentHub": "disney-pixar",
+    "description": "Color all the emotions from Disney Pixar Inside Out 2: Joy, Sadness, Anger, Anxiety, Envy, Ennui, and Embarrassment.",
+    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Inside%20Out%202/Anger_with_flame_sparks_ri_1788631578576.webp",
+    "availableAges": [
+      "kids",
+      "teens"
+    ],
+    "pageCount": 50,
+    "featured": true,
+    "popularity": 50,
+    "language": "en"
+  },
+  {
+    "title": "Encanto",
+    "slug": "encanto",
+    "parentHub": "disney-pixar",
+    "description": "Magical Encanto coloring pages featuring the amazing Madrigal family: Mirabel, Isabela, Luisa, Antonio, and Bruno.",
+    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Encanto/Bruno_Madrigal_wearing_his_patt_1788621278018.webp",
+    "availableAges": [
+      "kids",
+      "teens"
+    ],
+    "pageCount": 46,
+    "featured": false,
+    "popularity": 46,
+    "language": "en"
+  },
+  {
+    "title": "Miraculous: Ladybug & Cat Noir",
+    "slug": "miraculous-ladybug",
+    "parentHub": "superheroes-comic-universes",
+    "description": "Action-packed coloring pages of Marinette as Ladybug, Adrien as Cat Noir, Tikki, Plagg, and Paris superheroes.",
+    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Miraculous%20Ladybug/Adrien_Agreste_as_Ca_1788634980499.webp",
+    "availableAges": [
+      "kids",
+      "teens"
+    ],
+    "pageCount": 50,
+    "featured": true,
+    "popularity": 50,
+    "language": "en"
+  },
+  {
+    "title": "Harry Potter & Wizarding World",
+    "slug": "harry-potter",
+    "parentHub": "superheroes-comic-universes",
+    "description": "Enchanting Wizarding World coloring pages of Harry Potter, Hermione Granger, Ron Weasley, Hogwarts castle, and magic spells.",
+    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Harry%20Potter/Hermione_Granger_holding_a_1788630360075.webp",
+    "availableAges": [
+      "kids",
+      "teens",
+      "adults"
+    ],
+    "pageCount": 4,
+    "featured": false,
+    "popularity": 4,
+    "language": "en"
+  },
+  {
+    "title": "King's Day (Koningsdag)",
+    "slug": "kings-day-koningsdag",
+    "parentHub": "holidays-seasons",
+    "description": "Festive Dutch King's Day coloring pages featuring royal crowns, orange street festivals, flea markets, and celebrations.",
+    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Kings%20Day/Een_gezellige_Koningsdag_sce_1788632606212.webp",
+    "availableAges": [
+      "kids",
+      "teens"
+    ],
+    "pageCount": 50,
+    "featured": true,
+    "popularity": 50,
+    "language": "en"
+  },
+  {
+    "title": "Valentine's Day & Love",
+    "slug": "valentines-day",
+    "parentHub": "holidays-seasons",
+    "description": "Heartwarming Valentine's Day coloring pages with hearts, cute lovebirds, teddy bears, roses, and love letters.",
+    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Valentines%20Day/1788712936779.webp",
+    "availableAges": [
+      "kids",
+      "teens",
+      "adults"
+    ],
+    "pageCount": 50,
+    "featured": true,
+    "popularity": 50,
+    "language": "en"
+  },
+  {
+    "title": "Zentangle Patterns & Mindful Art",
+    "slug": "zentangle-patterns",
+    "parentHub": "art-aesthetic",
+    "description": "Intricate Zentangle animal silhouettes, structured meditative patterns, and relaxing mindfulness coloring designs.",
+    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Zentangle/A_Zentangle_silhouette_of_a_d_1788714197216.webp",
+    "availableAges": [
+      "teens",
+      "adults"
+    ],
+    "pageCount": 50,
+    "featured": true,
+    "popularity": 50,
+    "language": "en"
+  },
+  {
+    "title": "Dark Academia Aesthetic",
+    "slug": "dark-academia-aesthetic",
+    "parentHub": "art-aesthetic",
+    "description": "Atmospheric Dark Academia coloring sheets with gothic libraries, vintage books, candlelit studies, and classical architecture.",
+    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Dark%20Academia/A_gothic_Dark_Academia_st_1788618551231.webp",
+    "availableAges": [
+      "teens",
+      "adults"
+    ],
+    "pageCount": 49,
+    "featured": false,
+    "popularity": 49,
+    "language": "en"
+  },
+  {
+    "title": "Celtic Knots & Ancient Patterns",
+    "slug": "celtic-patterns",
+    "parentHub": "art-aesthetic",
+    "description": "Historical Celtic knotwork, spiraling interlaced patterns, ancient runes, and traditional mythical knot designs.",
+    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Celtic%20Patterns/Celtic_Knotwork_Mandala.webp",
+    "availableAges": [
+      "teens",
+      "adults"
+    ],
+    "pageCount": 76,
+    "featured": true,
+    "popularity": 76,
+    "language": "en"
+  },
+  {
+    "title": "Lifestyle & Cozy Aesthetics",
+    "slug": "lifestyle-cozy-aesthetics",
+    "parentHub": "art-aesthetic",
+    "description": "Chic aesthetic room interiors, coffee corners, cozy bedroom setups, urban fashion, and modern living scenes.",
+    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Lifestyle%20and%20Aesthetics/An_aesthetic_l_1788634206075.webp",
+    "availableAges": [
+      "teens",
+      "adults"
+    ],
+    "pageCount": 50,
+    "featured": true,
+    "popularity": 50,
+    "language": "en"
+  },
+  {
+    "title": "Trendy Girls & Fashion Styles",
+    "slug": "popular-girls-trendy-styles",
+    "parentHub": "art-aesthetic",
+    "description": "Trendy teenage fashion sketches, aesthetic hairstyles, stylish accessories, best friends, and cute outfits to color.",
+    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Popular%20Girls%20Themes/A_cute_stylish_col_1788639829408.webp",
+    "availableAges": [
+      "kids",
+      "teens"
+    ],
+    "pageCount": 50,
+    "featured": true,
+    "popularity": 50,
+    "language": "en"
+  },
+  {
+    "title": "Pop Culture & Fandoms",
+    "slug": "pop-culture-fandoms",
+    "parentHub": "art-aesthetic",
+    "description": "Iconic pop culture references, music fandoms, movie tropes, and trendy retro aesthetics.",
+    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Pop%20Culture%20and%20Fandoms/A_pop_culture_t_1788639261978.webp",
+    "availableAges": [
+      "teens",
+      "adults"
+    ],
+    "pageCount": 50,
+    "featured": true,
+    "popularity": 50,
+    "language": "en"
+  },
+  {
+    "title": "Stress Relief & Relaxation",
+    "slug": "stress-relief-mindful",
+    "parentHub": "art-aesthetic",
+    "description": "Calming, therapeutic coloring pages designed to melt stress away with gentle flow lines and relaxing compositions.",
+    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Stress%20Relief/A_relaxing_coloring_sheet_1788711575881.webp",
+    "availableAges": [
+      "teens",
+      "adults"
+    ],
+    "pageCount": 12,
+    "featured": false,
+    "popularity": 12,
+    "language": "en"
   }
 ]

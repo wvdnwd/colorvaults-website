@@ -5,8 +5,8 @@
     "description": "Discover magical coloring pages from your favorite Disney and Pixar classics including Frozen, Lion King, Toy Story, Cars, Moana, Aladdin, and iconic princesses.",
     "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/banner/hub_disney-pixar.webp",
     "language": "en",
-    "pageCount": 6156,
-    "themeCount": 22
+    "pageCount": 3636,
+    "themeCount": 24
   },
   {
     "title": "Anime & Manga",
@@ -14,7 +14,7 @@
     "description": "High-octane anime and manga coloring pages featuring Dragonball, Naruto, One Piece, Demon Slayer, Attack on Titan, Jujutsu Kaisen, Studio Ghibli, and epic samurais.",
     "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/banner/hub_anime-manga.webp",
     "language": "en",
-    "pageCount": 2142,
+    "pageCount": 1869,
     "themeCount": 17
   },
   {
@@ -23,7 +23,7 @@
     "description": "Epic video game coloring pages featuring Fortnite, Minecraft, Roblox, Zelda, Pokémon, Super Mario, Sonic, Kirby, Brawl Stars, and arcade legends.",
     "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/banner/hub_gaming-virtual-worlds.webp",
     "language": "en",
-    "pageCount": 1781,
+    "pageCount": 1301,
     "themeCount": 15
   },
   {
@@ -32,8 +32,8 @@
     "description": "Action-packed superhero coloring pages featuring Spider-Man, The Avengers, Batman, Superman, and iconic comic book heroes.",
     "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/banner/hub_superheroes-comic-universes.webp",
     "language": "en",
-    "pageCount": 376,
-    "themeCount": 4
+    "pageCount": 269,
+    "themeCount": 6
   },
   {
     "title": "Kids & TV Shows",
@@ -41,8 +41,8 @@
     "description": "Fun, cheerful coloring pages designed for toddlers and kids featuring Bluey, Paw Patrol, Peppa Pig, Gabby Dollhouse, Blippi, Cocomelon, and SpongeBob.",
     "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/banner/hub_kids-tv-shows.webp",
     "language": "en",
-    "pageCount": 2288,
-    "themeCount": 13
+    "pageCount": 2013,
+    "themeCount": 17
   },
   {
     "title": "Animals & Wildlife",
@@ -50,7 +50,7 @@
     "description": "Explore the animal kingdom with printable coloring pages of dinosaurs, horses, cute puppies, kittens, safari wildlife, sea creatures, and birds.",
     "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/banner/hub_animals-wildlife.webp",
     "language": "en",
-    "pageCount": 4174,
+    "pageCount": 3032,
     "themeCount": 18
   },
   {
@@ -59,7 +59,7 @@
     "description": "Step into fantasy worlds with magical dragons, unicorns, fairies, mermaids, wizards, fairytale castles, knights, and enchanted forests.",
     "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/banner/hub_fantasy-fairytales.webp",
     "language": "en",
-    "pageCount": 2920,
+    "pageCount": 1801,
     "themeCount": 13
   },
   {
@@ -68,7 +68,7 @@
     "description": "Fast-paced coloring pages of monster trucks, Formula 1 racecars, emergency vehicles, construction machines, rockets, and cyberpunk hovercars.",
     "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/banner/hub_vehicles-transportation.webp",
     "language": "en",
-    "pageCount": 1432,
+    "pageCount": 780,
     "themeCount": 8
   },
   {
@@ -77,8 +77,8 @@
     "description": "Mindful, detailed coloring pages featuring Art Nouveau, intricate mandalas, bohemian patterns, creepy kawaii, fashion, and musical instruments.",
     "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/banner/hub_art-aesthetic.webp",
     "language": "en",
-    "pageCount": 2039,
-    "themeCount": 9
+    "pageCount": 1614,
+    "themeCount": 16
   },
   {
     "title": "Holidays & Seasons",
@@ -86,7 +86,16 @@
     "description": "Seasonal and festive coloring pages celebrating Sinterklaas, Christmas, Halloween, Easter, Autumn harvest, cozy hygge life, and cute kawaii food.",
     "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/banner/hub_holidays-seasons.webp",
     "language": "en",
-    "pageCount": 3216,
-    "themeCount": 13
+    "pageCount": 1904,
+    "themeCount": 15
+  },
+  {
+    "title": "Crafts, DIY & Learning",
+    "slug": "crafts-diy-learning",
+    "description": "Fun printable DIY paper crafts, step-by-step drawing tutorials, educational school worksheets, party decorations, stencils, and printable calendars for all ages.",
+    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/banner/hub_art-aesthetic.webp",
+    "language": "en",
+    "pageCount": 494,
+    "themeCount": 8
   }
 ]

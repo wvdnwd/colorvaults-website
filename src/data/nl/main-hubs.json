@@ -5,8 +5,8 @@
     "description": "Ontdek magische kleurplaten van je favoriete Disney en Pixar klassiekers zoals Frozen, Lion King, Toy Story, Cars, Moana, Aladdin en iconische prinsessen.",
     "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/banner/hub_disney-pixar.webp",
     "language": "nl",
-    "pageCount": 6156,
-    "themeCount": 22
+    "pageCount": 3636,
+    "themeCount": 24
   },
   {
     "title": "Anime & Manga",
@@ -14,7 +14,7 @@
     "description": "Spectaculaire anime en manga kleurplaten met Dragonball, Naruto, One Piece, Demon Slayer, Attack on Titan, Jujutsu Kaisen, Studio Ghibli en dappere samurai.",
     "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/banner/hub_anime-manga.webp",
     "language": "nl",
-    "pageCount": 2142,
+    "pageCount": 1868,
     "themeCount": 17
   },
   {
@@ -23,7 +23,7 @@
     "description": "Epische videogame kleurplaten van Fortnite, Minecraft, Roblox, Zelda, Pokémon, Super Mario, Sonic, Kirby, Brawl Stars en arcade legendes.",
     "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/banner/hub_gaming-virtual-worlds.webp",
     "language": "nl",
-    "pageCount": 1781,
+    "pageCount": 1301,
     "themeCount": 15
   },
   {
@@ -32,8 +32,8 @@
     "description": "Actievolle superhelden kleurplaten met Spider-Man, The Avengers, Batman, Superman en iconische striphelden.",
     "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/banner/hub_superheroes-comic-universes.webp",
     "language": "nl",
-    "pageCount": 376,
-    "themeCount": 4
+    "pageCount": 269,
+    "themeCount": 6
   },
   {
     "title": "Kinderen & TV Series",
@@ -41,8 +41,8 @@
     "description": "Vrolijke kleurplaten speciaal voor peuters en jonge kinderen met Bluey, Paw Patrol, Peppa Pig, Gabby Poppenhuis, Blippi, Cocomelon en SpongeBob.",
     "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/banner/hub_kids-tv-shows.webp",
     "language": "nl",
-    "pageCount": 2288,
-    "themeCount": 13
+    "pageCount": 2013,
+    "themeCount": 17
   },
   {
     "title": "Dieren & Natuur",
@@ -50,7 +50,7 @@
     "description": "Ontdek het dierenrijk met printbare kleurplaten van dinosaurussen, paarden, schattige puppy’s, kittens, safari wilde dieren, zeedieren en vogels.",
     "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/banner/hub_animals-wildlife.webp",
     "language": "nl",
-    "pageCount": 4174,
+    "pageCount": 3058,
     "themeCount": 18
   },
   {
@@ -59,7 +59,7 @@
     "description": "Betreed fantasiewerelden vol magische draken, eenhoorns, elfjes, zeemeerminnen, tovenaars, sprookjeskastelen, ridders en betoverde bossen.",
     "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/banner/hub_fantasy-fairytales.webp",
     "language": "nl",
-    "pageCount": 2920,
+    "pageCount": 1779,
     "themeCount": 13
   },
   {
@@ -68,7 +68,7 @@
     "description": "Snelle en stoere voertuigen kleurplaten met monstertrucks, Formule 1 racewagens, brandweerwagens, graafmachines, raketten en cyberpunk auto’s.",
     "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/banner/hub_vehicles-transportation.webp",
     "language": "nl",
-    "pageCount": 1432,
+    "pageCount": 780,
     "themeCount": 8
   },
   {
@@ -77,8 +77,8 @@
     "description": "Rustgevende, gedetailleerde kleurplaten met Art Nouveau, ingewikkelde mandala’s, bohemian patronen, creepy kawaii, mode en muziekinstrumenten.",
     "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/banner/hub_art-aesthetic.webp",
     "language": "nl",
-    "pageCount": 2039,
-    "themeCount": 9
+    "pageCount": 1611,
+    "themeCount": 16
   },
   {
     "title": "Feestdagen & Seizoenen",
@@ -86,7 +86,16 @@
     "description": "Gezellige seizoens- en feestdagen kleurplaten voor Sinterklaas, Kerstmis, Halloween, Pasen, herfstoogst, knus hygge leven en schattig kawaii eten.",
     "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/banner/hub_holidays-seasons.webp",
     "language": "nl",
-    "pageCount": 3216,
-    "themeCount": 13
+    "pageCount": 1904,
+    "themeCount": 15
+  },
+  {
+    "title": "Knutselen, DIY & Educatie",
+    "slug": "crafts-diy-learning",
+    "description": "Leuke printbare knutselprojecten, stap-voor-stap leren tekenen gidsen, educatieve werkbladen, feestdecoraties, sjablonen en handige jaarkalenders voor jong en oud.",
+    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/banner/hub_art-aesthetic.webp",
+    "language": "nl",
+    "pageCount": 494,
+    "themeCount": 8
   }
 ]
