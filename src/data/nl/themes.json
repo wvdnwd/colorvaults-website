@@ -11,7 +11,11 @@
       "teens"
     ],
     "language": "nl",
-    "pageCount": 312
+    "pageCount": 301,
+    "totalCount": 301,
+    "itemCount": 301,
+    "coloringPageCount": 301,
+    "coverImage": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Disney%20-%20Frozen/Belle_and_Elsa_Tea_Time_1788344032298.webp"
   },
   {
     "title": "The Lion King",
@@ -25,7 +29,11 @@
       "teens"
     ],
     "language": "nl",
-    "pageCount": 146
+    "pageCount": 146,
+    "totalCount": 146,
+    "itemCount": 146,
+    "coloringPageCount": 146,
+    "coverImage": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/The%20Lion%20King/ComfyUI_15204_.webp"
   },
   {
     "title": "Aladdin & Jasmine",
@@ -39,7 +47,11 @@
       "teens"
     ],
     "language": "nl",
-    "pageCount": 109
+    "pageCount": 101,
+    "totalCount": 101,
+    "itemCount": 101,
+    "coloringPageCount": 101,
+    "coverImage": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Safari%20Wildlife/Aladdin_on_Elephant_1788338688421.webp"
   },
   {
     "title": "Tangled & Rapunzel",
@@ -53,7 +65,11 @@
       "teens"
     ],
     "language": "nl",
-    "pageCount": 100
+    "pageCount": 100,
+    "totalCount": 100,
+    "itemCount": 100,
+    "coloringPageCount": 100,
+    "coverImage": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Tangled%20%26%20Rapunzel/A_clean_printable_coloring_page_showing__1788339464313_1.webp"
   },
   {
     "title": "The Little Mermaid (Ariel)",
@@ -67,7 +83,11 @@
       "teens"
     ],
     "language": "nl",
-    "pageCount": 264
+    "pageCount": 264,
+    "totalCount": 264,
+    "itemCount": 264,
+    "coloringPageCount": 264,
+    "coverImage": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Disney%20-%20Ariel/Amusement_Park_Scene.webp"
   },
   {
     "title": "Beauty and the Beast (Belle)",
@@ -81,7 +101,11 @@
       "teens"
     ],
     "language": "nl",
-    "pageCount": 306
+    "pageCount": 309,
+    "totalCount": 309,
+    "itemCount": 309,
+    "coloringPageCount": 309,
+    "coverImage": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Cinderella/Belle_dances_with_the_Beast_1788345707002.webp"
   },
   {
     "title": "Cinderella",
@@ -95,7 +119,11 @@
       "teens"
     ],
     "language": "nl",
-    "pageCount": 165
+    "pageCount": 146,
+    "totalCount": 146,
+    "itemCount": 146,
+    "coloringPageCount": 146,
+    "coverImage": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Cinderella/A_Street_Scene_with_Carriage_Ride_1788345336447.webp"
   },
   {
     "title": "Snow White",
@@ -109,7 +137,11 @@
       "teens"
     ],
     "language": "nl",
-    "pageCount": 395
+    "pageCount": 394,
+    "totalCount": 394,
+    "itemCount": 394,
+    "coloringPageCount": 394,
+    "coverImage": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Disney%20-%20Snow%20White/Ancient_Egyptian_Woman.webp"
   },
   {
     "title": "Princess and the Frog (Tiana)",
@@ -123,7 +155,11 @@
       "teens"
     ],
     "language": "nl",
-    "pageCount": 100
+    "pageCount": 100,
+    "totalCount": 100,
+    "itemCount": 100,
+    "coloringPageCount": 100,
+    "coverImage": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Disney%20Princesses/Princess_and_the_Frog__Tiana___A_clean_p_1788349272577_1.webp"
   },
   {
     "title": "Moana",
@@ -137,7 +173,11 @@
       "teens"
     ],
     "language": "nl",
-    "pageCount": 100
+    "pageCount": 100,
+    "totalCount": 100,
+    "itemCount": 100,
+    "coloringPageCount": 100,
+    "coverImage": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Disney%20Princesses/Moana__A_clean_printable_coloring_page_s_1788350127835_1.webp"
   },
   {
     "title": "Brave (Merida)",
@@ -151,7 +191,11 @@
       "teens"
     ],
     "language": "nl",
-    "pageCount": 75
+    "pageCount": 75,
+    "totalCount": 75,
+    "itemCount": 75,
+    "coloringPageCount": 75,
+    "coverImage": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Brave%20%28Merida%29/ComfyUI_16664_.webp"
   },
   {
     "title": "Mulan",
@@ -165,7 +209,11 @@
       "teens"
     ],
     "language": "nl",
-    "pageCount": 100
+    "pageCount": 100,
+    "totalCount": 100,
+    "itemCount": 100,
+    "coloringPageCount": 100,
+    "coverImage": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Mulan/A_clean_printable_coloring_page_showing__1788352558594_1.webp"
   },
   {
     "title": "Pocahontas",
@@ -179,7 +227,11 @@
       "teens"
     ],
     "language": "nl",
-    "pageCount": 100
+    "pageCount": 100,
+    "totalCount": 100,
+    "itemCount": 100,
+    "coloringPageCount": 100,
+    "coverImage": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Disney%20Princesses/Pocahontas__A_clean_printable_coloring_p_1788353813773_1.webp"
   },
   {
     "title": "Sleeping Beauty (Aurora)",
@@ -193,7 +245,11 @@
       "teens"
     ],
     "language": "nl",
-    "pageCount": 119
+    "pageCount": 119,
+    "totalCount": 119,
+    "itemCount": 119,
+    "coloringPageCount": 119,
+    "coverImage": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Sleeping%20Beauty%20%28Aurora%29/ComfyUI_16962_.webp"
   },
   {
     "title": "Winnie the Pooh",
@@ -207,7 +263,11 @@
       "teens"
     ],
     "language": "nl",
-    "pageCount": 101
+    "pageCount": 101,
+    "totalCount": 101,
+    "itemCount": 101,
+    "coloringPageCount": 101,
+    "coverImage": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Unsorted%20Coloring%20Pages/Winnie_the_Pooh__A_clean_printable_color_1788355558914_1.webp"
   },
   {
     "title": "Toy Story",
@@ -221,7 +281,11 @@
       "teens"
     ],
     "language": "nl",
-    "pageCount": 99
+    "pageCount": 99,
+    "totalCount": 99,
+    "itemCount": 99,
+    "coloringPageCount": 99,
+    "coverImage": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Toy%20Story/Toy_Story__A_clean_printable_coloring_pa_1788356434946_1.webp"
   },
   {
     "title": "Cars (Lightning McQueen)",
@@ -235,7 +299,11 @@
       "teens"
     ],
     "language": "nl",
-    "pageCount": 167
+    "pageCount": 117,
+    "totalCount": 117,
+    "itemCount": 117,
+    "coloringPageCount": 117,
+    "coverImage": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Cars%20%28Lightning%20McQueen%29/Cars_Birthday_Celebration_1788358408346.webp"
   },
   {
     "title": "Finding Nemo & Dory",
@@ -249,7 +317,11 @@
       "teens"
     ],
     "language": "nl",
-    "pageCount": 56
+    "pageCount": 56,
+    "totalCount": 56,
+    "itemCount": 56,
+    "coloringPageCount": 56,
+    "coverImage": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Finding%20Nemo%20%26%20Dory/Coloring_Page_1788358935785.webp"
   },
   {
     "title": "Monsters Inc",
@@ -263,7 +335,11 @@
       "teens"
     ],
     "language": "nl",
-    "pageCount": 100
+    "pageCount": 100,
+    "totalCount": 100,
+    "itemCount": 100,
+    "coloringPageCount": 100,
+    "coverImage": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Monsters%20Inc/Monsters_Inc__A_clean_printable_coloring_1788359634783_1.webp"
   },
   {
     "title": "Lilo & Stitch",
@@ -277,7 +353,11 @@
       "teens"
     ],
     "language": "nl",
-    "pageCount": 240
+    "pageCount": 240,
+    "totalCount": 240,
+    "itemCount": 240,
+    "coloringPageCount": 240,
+    "coverImage": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Lilo%20%26%20Stitch/Lilo___Stitch__Dr__Jumba_Jookiba_from_Di_1788360556568_1.webp"
   },
   {
     "title": "Mickey Mouse & Friends",
@@ -291,7 +371,11 @@
       "teens"
     ],
     "language": "nl",
-    "pageCount": 239
+    "pageCount": 238,
+    "totalCount": 238,
+    "itemCount": 238,
+    "coloringPageCount": 238,
+    "coverImage": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Mickey%20Mouse%20%26%20Friends/Goofy_from_Disney_Mickey_and_Friends__ta_1788363317185_1.webp"
   },
   {
     "title": "Minnie Mouse & Daisy",
@@ -305,7 +389,11 @@
       "teens"
     ],
     "language": "nl",
-    "pageCount": 240
+    "pageCount": 240,
+    "totalCount": 240,
+    "itemCount": 240,
+    "coloringPageCount": 240,
+    "coverImage": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Minnie%20Mouse%20%26%20Daisy/Minnie_Mouse___Daisy__Daisy_Duck_from_Di_1788365646536_1.webp"
   },
   {
     "title": "Dragonball",
@@ -319,7 +407,11 @@
       "teens"
     ],
     "language": "nl",
-    "pageCount": 71
+    "pageCount": 70,
+    "totalCount": 70,
+    "itemCount": 70,
+    "coloringPageCount": 70,
+    "coverImage": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Dragonball/Anime_Character_in_Super_Saiyan_Form_1788369283551.webp"
   },
   {
     "title": "Naruto",
@@ -333,7 +425,11 @@
       "teens"
     ],
     "language": "nl",
-    "pageCount": 267
+    "pageCount": 265,
+    "totalCount": 265,
+    "itemCount": 265,
+    "coloringPageCount": 265,
+    "coverImage": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Naruto/Character_with_Spiky_Hair_Holding_Star_1788275820614.webp"
   },
   {
     "title": "One Piece",
@@ -347,7 +443,11 @@
       "teens"
     ],
     "language": "nl",
-    "pageCount": 167
+    "pageCount": 165,
+    "totalCount": 165,
+    "itemCount": 165,
+    "coloringPageCount": 165,
+    "coverImage": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/One%20Piece/Chibi-Luffy_Adventure_1788276743976.webp"
   },
   {
     "title": "Demon Slayer",
@@ -361,7 +461,11 @@
       "teens"
     ],
     "language": "nl",
-    "pageCount": 108
+    "pageCount": 107,
+    "totalCount": 107,
+    "itemCount": 107,
+    "coloringPageCount": 107,
+    "coverImage": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Demon%20Slayer/Beerus_Ascending_into_Battle.webp"
   },
   {
     "title": "Jujutsu Kaisen",
@@ -375,7 +479,11 @@
       "teens"
     ],
     "language": "nl",
-    "pageCount": 120
+    "pageCount": 120,
+    "totalCount": 120,
+    "itemCount": 120,
+    "coloringPageCount": 120,
+    "coverImage": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Jujutsu%20Kaisen/Jujutsu_Kaisen__A_clean_printable_colori_1788374733534.webp"
   },
   {
     "title": "Bleach",
@@ -389,7 +497,11 @@
       "teens"
     ],
     "language": "nl",
-    "pageCount": 116
+    "pageCount": 115,
+    "totalCount": 115,
+    "itemCount": 115,
+    "coloringPageCount": 115,
+    "coverImage": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Bleach/Anime_artist_painting_outdoors.webp"
   },
   {
     "title": "Hunter x Hunter",
@@ -403,7 +515,11 @@
       "teens"
     ],
     "language": "nl",
-    "pageCount": 120
+    "pageCount": 120,
+    "totalCount": 120,
+    "itemCount": 120,
+    "coloringPageCount": 120,
+    "coverImage": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Hunter%20x%20Hunter/Hunter_x_Hunter__A_clean_printable_color_1788377262568.webp"
   },
   {
     "title": "My Hero Academia",
@@ -417,7 +533,11 @@
       "teens"
     ],
     "language": "nl",
-    "pageCount": 120
+    "pageCount": 120,
+    "totalCount": 120,
+    "itemCount": 120,
+    "coloringPageCount": 120,
+    "coverImage": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/My%20Hero%20Academia/My_Hero_Academia__A_clean_printable_colo_1788378491357.webp"
   },
   {
     "title": "Sailor Moon",
@@ -431,7 +551,11 @@
       "teens"
     ],
     "language": "nl",
-    "pageCount": 120
+    "pageCount": 120,
+    "totalCount": 120,
+    "itemCount": 120,
+    "coloringPageCount": 120,
+    "coverImage": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Sailor%20Moon/Sailor_Moon__A_clean_printable_coloring__1788379720042.webp"
   },
   {
     "title": "Spy x Family",
@@ -445,7 +569,11 @@
       "teens"
     ],
     "language": "nl",
-    "pageCount": 120
+    "pageCount": 120,
+    "totalCount": 120,
+    "itemCount": 120,
+    "coloringPageCount": 120,
+    "coverImage": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Spy%20x%20Family/Spy_x_Family__A_clean_printable_coloring_1788380950820.webp"
   },
   {
     "title": "Fullmetal Alchemist",
@@ -459,7 +587,11 @@
       "teens"
     ],
     "language": "nl",
-    "pageCount": 120
+    "pageCount": 120,
+    "totalCount": 120,
+    "itemCount": 120,
+    "coloringPageCount": 120,
+    "coverImage": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Fullmetal%20Alchemist/Fullmetal_Alchemist__Alphonse_Elric_from_1788382192712.webp"
   },
   {
     "title": "Studio Ghibli - Totoro",
@@ -473,7 +605,11 @@
       "teens"
     ],
     "language": "nl",
-    "pageCount": 207
+    "pageCount": 50,
+    "totalCount": 50,
+    "itemCount": 50,
+    "coloringPageCount": 50,
+    "coverImage": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Studio%20Ghibli%20-%20Totoro/Studio_Ghibli__A_clean_printable_colorin_1788383416104.webp"
   },
   {
     "title": "Studio Ghibli - Spirited Away",
@@ -487,7 +623,11 @@
       "teens"
     ],
     "language": "nl",
-    "pageCount": 50
+    "pageCount": 50,
+    "totalCount": 50,
+    "itemCount": 50,
+    "coloringPageCount": 50,
+    "coverImage": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Studio%20Ghibli%20-%20Spirited%20Away/Studio_Ghibli__A_clean_printable_colorin_1788383921190.webp"
   },
   {
     "title": "Studio Ghibli - Howl Moving Castle",
@@ -501,7 +641,11 @@
       "teens"
     ],
     "language": "nl",
-    "pageCount": 50
+    "pageCount": 50,
+    "totalCount": 50,
+    "itemCount": 50,
+    "coloringPageCount": 50,
+    "coverImage": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Studio%20Ghibli%20-%20Howl%20Moving%20Castle/Studio_Ghibli__A_clean_printable_colorin_1788384437438.webp"
   },
   {
     "title": "Studio Ghibli - Kiki Delivery Service",
@@ -515,7 +659,11 @@
       "teens"
     ],
     "language": "nl",
-    "pageCount": 50
+    "pageCount": 50,
+    "totalCount": 50,
+    "itemCount": 50,
+    "coloringPageCount": 50,
+    "coverImage": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Studio%20Ghibli%20-%20Kiki%20Delivery%20Service/Studio_Ghibli__A_clean_printable_colorin_1788384941115.webp"
   },
   {
     "title": "Studio Ghibli - Princess Mononoke",
@@ -529,7 +677,11 @@
       "teens"
     ],
     "language": "nl",
-    "pageCount": 50
+    "pageCount": 50,
+    "totalCount": 50,
+    "itemCount": 50,
+    "coloringPageCount": 50,
+    "coverImage": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Studio%20Ghibli%20-%20Princess%20Mononoke/Studio_Ghibli__A_clean_printable_colorin_1788385449476.webp"
   },
   {
     "title": "Ninjas & Samurais",
@@ -543,7 +695,11 @@
       "teens"
     ],
     "language": "nl",
-    "pageCount": 128
+    "pageCount": 126,
+    "totalCount": 126,
+    "itemCount": 126,
+    "coloringPageCount": 126,
+    "coverImage": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Ninjas%20%26%20Samurais/A_masterfully_drawn_Japanese_martial_sce_1788406571590_1.webp"
   },
   {
     "title": "Fortnite",
@@ -557,7 +713,11 @@
       "teens"
     ],
     "language": "nl",
-    "pageCount": 57
+    "pageCount": 57,
+    "totalCount": 57,
+    "itemCount": 57,
+    "coloringPageCount": 57,
+    "coverImage": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Fortnite/A_clean_printable_coloring_page_showing__1788408106321_1.webp"
   },
   {
     "title": "Minecraft & Voxel Worlds",
@@ -571,7 +731,11 @@
       "teens"
     ],
     "language": "nl",
-    "pageCount": 51
+    "pageCount": 51,
+    "totalCount": 51,
+    "itemCount": 51,
+    "coloringPageCount": 51,
+    "coverImage": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Minecraft%20%26%20Voxel%20Worlds/Minecraft___Voxel_Worlds__A_clean_printa_1788409202102.webp"
   },
   {
     "title": "Roblox",
@@ -585,7 +749,11 @@
       "teens"
     ],
     "language": "nl",
-    "pageCount": 50
+    "pageCount": 50,
+    "totalCount": 50,
+    "itemCount": 50,
+    "coloringPageCount": 50,
+    "coverImage": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Roblox/Roblox__A_clean_printable_coloring_page__1788409657143.webp"
   },
   {
     "title": "The Legend of Zelda",
@@ -599,7 +767,11 @@
       "teens"
     ],
     "language": "nl",
-    "pageCount": 50
+    "pageCount": 50,
+    "totalCount": 50,
+    "itemCount": 50,
+    "coloringPageCount": 50,
+    "coverImage": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/The%20Legend%20of%20Zelda/The_Legend_of_Zelda__A_clean_printable_c_1788410129538.webp"
   },
   {
     "title": "Pokemon",
@@ -613,7 +785,11 @@
       "teens"
     ],
     "language": "nl",
-    "pageCount": 281
+    "pageCount": 210,
+    "totalCount": 210,
+    "itemCount": 210,
+    "coloringPageCount": 210,
+    "coverImage": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Pokemon/Alligator_Splash_1787900152435.webp"
   },
   {
     "title": "Pokemon - Eevee Evolutions",
@@ -627,7 +803,11 @@
       "teens"
     ],
     "language": "nl",
-    "pageCount": 50
+    "pageCount": 50,
+    "totalCount": 50,
+    "itemCount": 50,
+    "coloringPageCount": 50,
+    "coverImage": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Pokemon%20-%20Eevee%20Evolutions/Pokemon__A_clean_printable_coloring_page_1788411725853.webp"
   },
   {
     "title": "Super Mario",
@@ -641,7 +821,11 @@
       "teens"
     ],
     "language": "nl",
-    "pageCount": 121
+    "pageCount": 121,
+    "totalCount": 121,
+    "itemCount": 121,
+    "coloringPageCount": 121,
+    "coverImage": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Super%20Mario/Mario_in_action_1788295082908.webp"
   },
   {
     "title": "Sonic the Hedgehog",
@@ -655,7 +839,11 @@
       "teens"
     ],
     "language": "nl",
-    "pageCount": 120
+    "pageCount": 120,
+    "totalCount": 120,
+    "itemCount": 120,
+    "coloringPageCount": 120,
+    "coverImage": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Sonic%20the%20Hedgehog/Sonic_The_Hedgehog_1788295103115.webp"
   },
   {
     "title": "Kirby",
@@ -669,7 +857,11 @@
       "teens"
     ],
     "language": "nl",
-    "pageCount": 50
+    "pageCount": 50,
+    "totalCount": 50,
+    "itemCount": 50,
+    "coloringPageCount": 50,
+    "coverImage": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Kirby/Kirby__A_clean_printable_coloring_page_s_1788414542226.webp"
   },
   {
     "title": "Brawl Stars",
@@ -683,7 +875,11 @@
       "teens"
     ],
     "language": "nl",
-    "pageCount": 50
+    "pageCount": 50,
+    "totalCount": 50,
+    "itemCount": 50,
+    "coloringPageCount": 50,
+    "coverImage": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Brawl%20Stars/Brawl_Stars__A_clean_printable_coloring__1788415004987.webp"
   },
   {
     "title": "Animal Crossing",
@@ -697,7 +893,11 @@
       "teens"
     ],
     "language": "nl",
-    "pageCount": 55
+    "pageCount": 55,
+    "totalCount": 55,
+    "itemCount": 55,
+    "coloringPageCount": 55,
+    "coverImage": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Animal%20Crossing/Animal_Crossing_Adventure.webp"
   },
   {
     "title": "Five Nights at Freddys",
@@ -711,7 +911,11 @@
       "teens"
     ],
     "language": "nl",
-    "pageCount": 59
+    "pageCount": 59,
+    "totalCount": 59,
+    "itemCount": 59,
+    "coloringPageCount": 59,
+    "coverImage": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Five%20Nights%20at%20Freddys/A_clean_printable_coloring_page_showing__1788416006434_1.webp"
   },
   {
     "title": "Among Us",
@@ -725,7 +929,11 @@
       "teens"
     ],
     "language": "nl",
-    "pageCount": 50
+    "pageCount": 50,
+    "totalCount": 50,
+    "itemCount": 50,
+    "coloringPageCount": 50,
+    "coverImage": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Among%20Us/Among_Us__A_clean_printable_coloring_pag_1788416633464.webp"
   },
   {
     "title": "Lego Ninjago",
@@ -739,7 +947,11 @@
       "teens"
     ],
     "language": "nl",
-    "pageCount": 122
+    "pageCount": 122,
+    "totalCount": 122,
+    "itemCount": 122,
+    "coloringPageCount": 122,
+    "coverImage": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Lego%20Ninjago/Coloring_Page_1787926642865.webp"
   },
   {
     "title": "Retro Arcade & Esports",
@@ -753,7 +965,11 @@
       "teens"
     ],
     "language": "nl",
-    "pageCount": 50
+    "pageCount": 50,
+    "totalCount": 50,
+    "itemCount": 50,
+    "coloringPageCount": 50,
+    "coverImage": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Gaming/Retro_Arcade___Esports__A_clean_printabl_1788418143158.webp"
   },
   {
     "title": "Marvel - Spider-Man",
@@ -767,7 +983,11 @@
       "teens"
     ],
     "language": "nl",
-    "pageCount": 50
+    "pageCount": 50,
+    "totalCount": 50,
+    "itemCount": 50,
+    "coloringPageCount": 50,
+    "coverImage": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Marvel%20-%20Spider-Man/Marvel__A_clean_printable_coloring_page__1788418580858.webp"
   },
   {
     "title": "Marvel - Avengers",
@@ -781,7 +1001,11 @@
       "teens"
     ],
     "language": "nl",
-    "pageCount": 96
+    "pageCount": 50,
+    "totalCount": 50,
+    "itemCount": 50,
+    "coloringPageCount": 50,
+    "coverImage": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Marvel%20-%20Avengers/Marvel__A_clean_printable_coloring_page__1788419018975.webp"
   },
   {
     "title": "DC - Batman",
@@ -795,7 +1019,11 @@
       "teens"
     ],
     "language": "nl",
-    "pageCount": 89
+    "pageCount": 50,
+    "totalCount": 50,
+    "itemCount": 50,
+    "coloringPageCount": 50,
+    "coverImage": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/DC%20-%20Batman/DC__A_clean_printable_coloring_page_show_1788419451051.webp"
   },
   {
     "title": "DC - Superman",
@@ -809,7 +1037,11 @@
       "teens"
     ],
     "language": "nl",
-    "pageCount": 50
+    "pageCount": 50,
+    "totalCount": 50,
+    "itemCount": 50,
+    "coloringPageCount": 50,
+    "coverImage": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/DC%20-%20Superman/DC__A_clean_printable_coloring_page_show_1788419889103.webp"
   },
   {
     "title": "Bluey",
@@ -823,7 +1055,11 @@
       "teens"
     ],
     "language": "nl",
-    "pageCount": 234
+    "pageCount": 223,
+    "totalCount": 223,
+    "itemCount": 223,
+    "coloringPageCount": 223,
+    "coverImage": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Bluey/A_joyful_puppy_with_a_balloon_1787914404983.webp"
   },
   {
     "title": "Paw Patrol",
@@ -837,7 +1073,11 @@
       "teens"
     ],
     "language": "nl",
-    "pageCount": 153
+    "pageCount": 123,
+    "totalCount": 123,
+    "itemCount": 123,
+    "coloringPageCount": 123,
+    "coverImage": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Anime%20-%20Dragonball/Anime_Superhero_on_Rocky_Terrain_1788560300617.webp"
   },
   {
     "title": "Peppa Pig",
@@ -851,7 +1091,11 @@
       "teens"
     ],
     "language": "nl",
-    "pageCount": 120
+    "pageCount": 120,
+    "totalCount": 120,
+    "itemCount": 120,
+    "coloringPageCount": 120,
+    "coverImage": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Peppa%20Pig/Peppa_Pig__A_clean_printable_coloring_pa_1788422458629.webp"
   },
   {
     "title": "Gabby Dollhouse",
@@ -865,7 +1109,11 @@
       "teens"
     ],
     "language": "nl",
-    "pageCount": 50
+    "pageCount": 50,
+    "totalCount": 50,
+    "itemCount": 50,
+    "coloringPageCount": 50,
+    "coverImage": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Gabby%20Dollhouse/Gabby_Dollhouse__A_clean_printable_color_1788423528440.webp"
   },
   {
     "title": "Blippi",
@@ -879,7 +1127,11 @@
       "teens"
     ],
     "language": "nl",
-    "pageCount": 199
+    "pageCount": 168,
+    "totalCount": 168,
+    "itemCount": 168,
+    "coloringPageCount": 168,
+    "coverImage": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Blippi/Antenna-wielding_cartoon_character.webp"
   },
   {
     "title": "Bumba",
@@ -893,7 +1145,11 @@
       "teens"
     ],
     "language": "nl",
-    "pageCount": 127
+    "pageCount": 127,
+    "totalCount": 127,
+    "itemCount": 127,
+    "coloringPageCount": 127,
+    "coverImage": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Bumba/Blueys_circus_fun.webp"
   },
   {
     "title": "Cocomelon",
@@ -907,7 +1163,11 @@
       "teens"
     ],
     "language": "nl",
-    "pageCount": 175
+    "pageCount": 175,
+    "totalCount": 175,
+    "itemCount": 175,
+    "coloringPageCount": 175,
+    "coverImage": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Cocomelon/Baby_with_Teddy_Bear.webp"
   },
   {
     "title": "Thomas the Tank Engine",
@@ -921,7 +1181,11 @@
       "teens"
     ],
     "language": "nl",
-    "pageCount": 135
+    "pageCount": 128,
+    "totalCount": 128,
+    "itemCount": 128,
+    "coloringPageCount": 128,
+    "coverImage": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Thomas%20the%20Tank%20Engine/Cat-eared_Girl_on_a_Train_1788273468017.webp"
   },
   {
     "title": "SpongeBob SquarePants",
@@ -935,7 +1199,11 @@
       "teens"
     ],
     "language": "nl",
-    "pageCount": 120
+    "pageCount": 120,
+    "totalCount": 120,
+    "itemCount": 120,
+    "coloringPageCount": 120,
+    "coverImage": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/SpongeBob%20SquarePants/SpongeBob_SquarePants__Mr__Eugene_Krabs__1788428277693.webp"
   },
   {
     "title": "Minions & Despicable Me",
@@ -949,7 +1217,11 @@
       "teens"
     ],
     "language": "nl",
-    "pageCount": 50
+    "pageCount": 50,
+    "totalCount": 50,
+    "itemCount": 50,
+    "coloringPageCount": 50,
+    "coverImage": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Minions%20%26%20Despicable%20Me/Minions___Despicable_Me__A_clean_printab_1788429324014.webp"
   },
   {
     "title": "Bold & Easy (Toddlers)",
@@ -963,7 +1235,11 @@
       "teens"
     ],
     "language": "nl",
-    "pageCount": 199
+    "pageCount": 197,
+    "totalCount": 197,
+    "itemCount": 197,
+    "coloringPageCount": 197,
+    "coverImage": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Bold%20And%20Easy/Adorable_sushi_friends.webp"
   },
   {
     "title": "Large Shapes & Play",
@@ -977,7 +1253,11 @@
       "teens"
     ],
     "language": "nl",
-    "pageCount": 120
+    "pageCount": 120,
+    "totalCount": 120,
+    "itemCount": 120,
+    "coloringPageCount": 120,
+    "coverImage": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Large%20Shapes%20%26%20Play/Large_Shapes___Play__A_giant_a_giant_blo_1788430862763.webp"
   },
   {
     "title": "Rainbows & Sunshine",
@@ -991,7 +1271,11 @@
       "teens"
     ],
     "language": "nl",
-    "pageCount": 120
+    "pageCount": 120,
+    "totalCount": 120,
+    "itemCount": 120,
+    "coloringPageCount": 120,
+    "coverImage": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Rainbows%20%26%20Sunshine/Rainbows___Sunshine__a_cheerful_smiling__1788431977525.webp"
   },
   {
     "title": "Dinosaur Adventures",
@@ -1005,7 +1289,11 @@
       "teens"
     ],
     "language": "nl",
-    "pageCount": 158
+    "pageCount": 156,
+    "totalCount": 156,
+    "itemCount": 156,
+    "coloringPageCount": 156,
+    "coverImage": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Dinosaur%20Adventures/A_Friendly_Spiky_Dinosaur_1788433082694.webp"
   },
   {
     "title": "Horses & Ponies",
@@ -1019,7 +1307,11 @@
       "teens"
     ],
     "language": "nl",
-    "pageCount": 282
+    "pageCount": 274,
+    "totalCount": 274,
+    "itemCount": 274,
+    "coloringPageCount": 274,
+    "coverImage": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Horses%20%26%20Ponies/ComfyUI_12485_.webp"
   },
   {
     "title": "Cute Puppies & Dogs",
@@ -1033,7 +1325,11 @@
       "teens"
     ],
     "language": "nl",
-    "pageCount": 132
+    "pageCount": 109,
+    "totalCount": 109,
+    "itemCount": 109,
+    "coloringPageCount": 109,
+    "coverImage": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Cute%20Puppies%20%26%20Dogs/ComfyUI_07476_.webp"
   },
   {
     "title": "Cute Kittens & Cats",
@@ -1047,7 +1343,11 @@
       "teens"
     ],
     "language": "nl",
-    "pageCount": 346
+    "pageCount": 336,
+    "totalCount": 336,
+    "itemCount": 336,
+    "coloringPageCount": 336,
+    "coverImage": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Animals/Autumn_kitten_among_Ferris_wheel_and_foliage.webp"
   },
   {
     "title": "Cute Bunnies & Small Pets",
@@ -1061,7 +1361,11 @@
       "teens"
     ],
     "language": "nl",
-    "pageCount": 278
+    "pageCount": 271,
+    "totalCount": 271,
+    "itemCount": 271,
+    "coloringPageCount": 271,
+    "coverImage": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Cute%20Bunnies%20%26%20Small%20Pets/A_Bunny-Eared_Character_Reading_1788272560398.webp"
   },
   {
     "title": "Cute Pandas & Koalas",
@@ -1075,7 +1379,11 @@
       "teens"
     ],
     "language": "nl",
-    "pageCount": 80
+    "pageCount": 78,
+    "totalCount": 78,
+    "itemCount": 78,
+    "coloringPageCount": 78,
+    "coverImage": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Cute%20Pandas%20%26%20Koalas/ComfyUI_12792_.webp"
   },
   {
     "title": "Safari - Lions & Big Cats",
@@ -1089,7 +1397,11 @@
       "teens"
     ],
     "language": "nl",
-    "pageCount": 92
+    "pageCount": 89,
+    "totalCount": 89,
+    "itemCount": 89,
+    "coloringPageCount": 89,
+    "coverImage": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Animals/A_Laughing_Lion_1788270784404.webp"
   },
   {
     "title": "Safari - Elephants & Giants",
@@ -1103,7 +1415,11 @@
       "teens"
     ],
     "language": "nl",
-    "pageCount": 61
+    "pageCount": 58,
+    "totalCount": 58,
+    "itemCount": 58,
+    "coloringPageCount": 58,
+    "coverImage": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Safari%20-%20Elephants%20%26%20Giants/A_Baby_Elephants_Water_Play_1788437147742.webp"
   },
   {
     "title": "Safari - Giraffes & Zebras",
@@ -1117,7 +1433,11 @@
       "teens"
     ],
     "language": "nl",
-    "pageCount": 87
+    "pageCount": 79,
+    "totalCount": 79,
+    "itemCount": 79,
+    "coloringPageCount": 79,
+    "coverImage": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Safari%20-%20Giraffes%20%26%20Zebras/ComfyUI_14620_.webp"
   },
   {
     "title": "Jungle Wildlife (Tigers & Monkeys)",
@@ -1131,7 +1451,11 @@
       "teens"
     ],
     "language": "nl",
-    "pageCount": 126
+    "pageCount": 104,
+    "totalCount": 104,
+    "itemCount": 104,
+    "coloringPageCount": 104,
+    "coverImage": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Jungle%20Wildlife%20%28Tigers%20%26%20Monkeys%29/A_Woman_and_Tiger_in_an_Ancient_Palace_1788338288752.webp"
   },
   {
     "title": "Birds of the World",
@@ -1145,7 +1469,11 @@
       "teens"
     ],
     "language": "nl",
-    "pageCount": 207
+    "pageCount": 167,
+    "totalCount": 167,
+    "itemCount": 167,
+    "coloringPageCount": 167,
+    "coverImage": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Birds%20Of%20The%20World/A_festive_gathering_featuring_a_large_bird_1787903009634.webp"
   },
   {
     "title": "Butterflies & Garden Insects",
@@ -1159,7 +1487,11 @@
       "teens"
     ],
     "language": "nl",
-    "pageCount": 138
+    "pageCount": 110,
+    "totalCount": 110,
+    "itemCount": 110,
+    "coloringPageCount": 110,
+    "coverImage": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Butterflies%20Insects/A_Ladybug_Spotted_Cow_1788559967126.webp"
   },
   {
     "title": "Farm Animals",
@@ -1173,7 +1505,11 @@
       "teens"
     ],
     "language": "nl",
-    "pageCount": 117
+    "pageCount": 93,
+    "totalCount": 93,
+    "itemCount": 93,
+    "coloringPageCount": 93,
+    "coverImage": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Farm%20Animals/A_Cow_Family_in_the_Farmyard_1788441090739.webp"
   },
   {
     "title": "Ocean Life & Whales",
@@ -1187,7 +1523,11 @@
       "teens"
     ],
     "language": "nl",
-    "pageCount": 79
+    "pageCount": 61,
+    "totalCount": 61,
+    "itemCount": 61,
+    "coloringPageCount": 61,
+    "coverImage": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Ocean%20Life%20%26%20Whales/A_Salamence_in_the_ocean_1787900022492.webp"
   },
   {
     "title": "Dolphins & Coral Reefs",
@@ -1201,7 +1541,11 @@
       "teens"
     ],
     "language": "nl",
-    "pageCount": 116
+    "pageCount": 116,
+    "totalCount": 116,
+    "itemCount": 116,
+    "coloringPageCount": 116,
+    "coverImage": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Dolphins%20%26%20Coral%20Reefs/A_painter_captures_the_oceans_beauty_1788442892444.webp"
   },
   {
     "title": "Flowers & Botanicals",
@@ -1215,7 +1559,11 @@
       "teens"
     ],
     "language": "nl",
-    "pageCount": 537
+    "pageCount": 447,
+    "totalCount": 447,
+    "itemCount": 447,
+    "coloringPageCount": 447,
+    "coverImage": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Flowers%20%26%20Botanicals/A_Child_Reading_in_the_Garden_1788444679741.webp"
   },
   {
     "title": "Botanical Gardens & Greenhouses",
@@ -1229,7 +1577,11 @@
       "teens"
     ],
     "language": "nl",
-    "pageCount": 115
+    "pageCount": 113,
+    "totalCount": 113,
+    "itemCount": 113,
+    "coloringPageCount": 113,
+    "coverImage": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Botanical%20Gardens%20%26%20Greenhouses/A_Greenhouse_Oasis_1785057746831.webp"
   },
   {
     "title": "World Landscapes & Mountains",
@@ -1243,7 +1595,11 @@
       "teens"
     ],
     "language": "nl",
-    "pageCount": 297
+    "pageCount": 256,
+    "totalCount": 256,
+    "itemCount": 256,
+    "coloringPageCount": 256,
+    "coverImage": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/World%20Landscapes%20%26%20Mountains/A_Night_Sky_Observation_1788445953836.webp"
   },
   {
     "title": "Dragons",
@@ -1257,7 +1613,11 @@
       "teens"
     ],
     "language": "nl",
-    "pageCount": 175
+    "pageCount": 129,
+    "totalCount": 129,
+    "itemCount": 129,
+    "coloringPageCount": 129,
+    "coverImage": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Dragons/Dragon_Over_Coral_Reefs_1787900817089.webp"
   },
   {
     "title": "Unicorns & Pegasus",
@@ -1271,7 +1631,11 @@
       "teens"
     ],
     "language": "nl",
-    "pageCount": 146
+    "pageCount": 143,
+    "totalCount": 143,
+    "itemCount": 143,
+    "coloringPageCount": 143,
+    "coverImage": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Ancient%20Mythology/Pegasus_Ascending_1788269130914.webp"
   },
   {
     "title": "Fairies & Pixies",
@@ -1285,7 +1649,11 @@
       "teens"
     ],
     "language": "nl",
-    "pageCount": 274
+    "pageCount": 154,
+    "totalCount": 154,
+    "itemCount": 154,
+    "coloringPageCount": 154,
+    "coverImage": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Fairies/Butterfly-winged_Fairy_1788373655092.webp"
   },
   {
     "title": "Mermaids of the Deep",
@@ -1299,7 +1667,11 @@
       "teens"
     ],
     "language": "nl",
-    "pageCount": 122
+    "pageCount": 120,
+    "totalCount": 120,
+    "itemCount": 120,
+    "coloringPageCount": 120,
+    "coverImage": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Mermaids%20of%20the%20Deep/Mermaids_of_the_Deep__A_clean_printable__1788450077391.webp"
   },
   {
     "title": "Magic Wizards & Spells",
@@ -1313,7 +1685,11 @@
       "teens"
     ],
     "language": "nl",
-    "pageCount": 138
+    "pageCount": 137,
+    "totalCount": 137,
+    "itemCount": 137,
+    "coloringPageCount": 137,
+    "coverImage": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Magic%20Wizards%20%26%20Spells/Fantasy_Warrior_Casting_Spell_1788274557552.webp"
   },
   {
     "title": "Magical Forest",
@@ -1327,7 +1703,11 @@
       "teens"
     ],
     "language": "nl",
-    "pageCount": 121
+    "pageCount": 121,
+    "totalCount": 121,
+    "itemCount": 121,
+    "coloringPageCount": 121,
+    "coverImage": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Magical%20Forest/Magical_Forest__An_enchanted_magical_for_1788452264564.webp"
   },
   {
     "title": "Enchanted Forest",
@@ -1341,7 +1721,11 @@
       "teens"
     ],
     "language": "nl",
-    "pageCount": 120
+    "pageCount": 120,
+    "totalCount": 120,
+    "itemCount": 120,
+    "coloringPageCount": 120,
+    "coverImage": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Enchanted%20Forest/Enchanted_Forest__A_fantasy_enchanted_fo_1788453380081.webp"
   },
   {
     "title": "Fairytale Kingdoms & Castles",
@@ -1355,7 +1739,11 @@
       "teens"
     ],
     "language": "nl",
-    "pageCount": 120
+    "pageCount": 120,
+    "totalCount": 120,
+    "itemCount": 120,
+    "coloringPageCount": 120,
+    "coverImage": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Fairytale%20Kingdoms%20%26%20Castles/Fairytale_Kingdoms___Castles__A_magical__1788454486928.webp"
   },
   {
     "title": "Princesses & Castles",
@@ -1369,7 +1757,11 @@
       "teens"
     ],
     "language": "nl",
-    "pageCount": 252
+    "pageCount": 205,
+    "totalCount": 205,
+    "itemCount": 205,
+    "coloringPageCount": 205,
+    "coverImage": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Princesses%20%26%20Castles/Castle_Bears_Eating_Cookies_1788351327039.webp"
   },
   {
     "title": "Knights & Medieval Castles",
@@ -1383,7 +1775,11 @@
       "teens"
     ],
     "language": "nl",
-    "pageCount": 134
+    "pageCount": 132,
+    "totalCount": 132,
+    "itemCount": 132,
+    "coloringPageCount": 132,
+    "coverImage": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Knights%20%26%20Medieval%20Castles/A_Man_With_Sword_1788376918800.webp"
   },
   {
     "title": "Fantasy Creatures & Beasts",
@@ -1397,7 +1793,11 @@
       "teens"
     ],
     "language": "nl",
-    "pageCount": 120
+    "pageCount": 120,
+    "totalCount": 120,
+    "itemCount": 120,
+    "coloringPageCount": 120,
+    "coverImage": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Fantasy%20Creatures%20%26%20Beasts/Fantasy_Creatures___Beasts__A_mythical_f_1788457624756.webp"
   },
   {
     "title": "Underwater Lost Cities (Atlantis)",
@@ -1411,7 +1811,11 @@
       "teens"
     ],
     "language": "nl",
-    "pageCount": 120
+    "pageCount": 120,
+    "totalCount": 120,
+    "itemCount": 120,
+    "coloringPageCount": 120,
+    "coverImage": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Underwater%20Lost%20Cities%20%28Atlantis%29/Underwater_Lost_Cities__Atlantis___A_cle_1788458907141.webp"
   },
   {
     "title": "Friendly & Cool Monsters",
@@ -1425,7 +1829,11 @@
       "teens"
     ],
     "language": "nl",
-    "pageCount": 120
+    "pageCount": 120,
+    "totalCount": 120,
+    "itemCount": 120,
+    "coloringPageCount": 120,
+    "coverImage": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Friendly%20%26%20Cool%20Monsters/Friendly___Cool_Monsters__A_dramatic_fan_1788460010855.webp"
   },
   {
     "title": "Monster Trucks",
@@ -1439,7 +1847,11 @@
       "teens"
     ],
     "language": "nl",
-    "pageCount": 50
+    "pageCount": 50,
+    "totalCount": 50,
+    "itemCount": 50,
+    "coloringPageCount": 50,
+    "coverImage": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Monster%20Trucks/Monster_Trucks__A_clean_printable_colori_1788461169486.webp"
   },
   {
     "title": "Formula 1 & Race Cars",
@@ -1453,7 +1865,11 @@
       "teens"
     ],
     "language": "nl",
-    "pageCount": 56
+    "pageCount": 54,
+    "totalCount": 54,
+    "itemCount": 54,
+    "coloringPageCount": 54,
+    "coverImage": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Unsorted%20Coloring%20Pages/A_smiling_animated_racecar_in_a_desert_scene_1788358584016.webp"
   },
   {
     "title": "Construction & Heavy Vehicles",
@@ -1467,7 +1883,11 @@
       "teens"
     ],
     "language": "nl",
-    "pageCount": 93
+    "pageCount": 92,
+    "totalCount": 92,
+    "itemCount": 92,
+    "coloringPageCount": 92,
+    "coverImage": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Construction%20%26%20Heavy%20Vehicles/Bulldozer_Adventure_1786116330722.webp"
   },
   {
     "title": "Emergency Vehicles (Fire & Police)",
@@ -1481,7 +1901,11 @@
       "teens"
     ],
     "language": "nl",
-    "pageCount": 50
+    "pageCount": 50,
+    "totalCount": 50,
+    "itemCount": 50,
+    "coloringPageCount": 50,
+    "coverImage": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Emergency%20Vehicles%20%28Fire%20%26%20Police%29/Emergency_Vehicles__Fire___Police___A_cl_1788463185129.webp"
   },
   {
     "title": "Space, Rockets & Astronauts",
@@ -1495,7 +1919,11 @@
       "teens"
     ],
     "language": "nl",
-    "pageCount": 163
+    "pageCount": 157,
+    "totalCount": 157,
+    "itemCount": 157,
+    "coloringPageCount": 157,
+    "coverImage": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Space%2C%20Rockets%20%26%20Astronauts/A_Young_Character_Reads_in_Space_1788272317789.webp"
   },
   {
     "title": "Steampunk & Clockwork Machines",
@@ -1509,7 +1937,11 @@
       "teens"
     ],
     "language": "nl",
-    "pageCount": 121
+    "pageCount": 121,
+    "totalCount": 121,
+    "itemCount": 121,
+    "coloringPageCount": 121,
+    "coverImage": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Steampunk%20%26%20Clockwork%20Machines/Steampunk_Female_Explorer_1788276382358.webp"
   },
   {
     "title": "Cyberpunk & Flying Hovercars",
@@ -1523,7 +1955,11 @@
       "teens"
     ],
     "language": "nl",
-    "pageCount": 130
+    "pageCount": 130,
+    "totalCount": 130,
+    "itemCount": 130,
+    "coloringPageCount": 130,
+    "coverImage": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Cyberpunk%20City/Anime_adventure_in_the_mountains.webp"
   },
   {
     "title": "Pirate Ships & High Seas",
@@ -1537,7 +1973,11 @@
       "teens"
     ],
     "language": "nl",
-    "pageCount": 124
+    "pageCount": 122,
+    "totalCount": 122,
+    "itemCount": 122,
+    "coloringPageCount": 122,
+    "coverImage": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Pirates/Coloring_Page_of_Pirate_Character_1788277006713.webp"
   },
   {
     "title": "Art Nouveau (Mucha Style)",
@@ -1551,7 +1991,11 @@
       "adults"
     ],
     "language": "nl",
-    "pageCount": 213
+    "pageCount": 190,
+    "totalCount": 190,
+    "itemCount": 190,
+    "coloringPageCount": 190,
+    "coverImage": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Art%20Nouveau%20%28Mucha%20Style%29/A_clean_printable_coloring_page_showing__1788492321567_1.webp"
   },
   {
     "title": "Mandalas & Sacred Geometry",
@@ -1565,7 +2009,11 @@
       "adults"
     ],
     "language": "nl",
-    "pageCount": 189
+    "pageCount": 172,
+    "totalCount": 172,
+    "itemCount": 172,
+    "coloringPageCount": 172,
+    "coverImage": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Mandalas%20%26%20Sacred%20Geometry/Anime_Character_Running_in_Front_of_Mandala_1787906173950.webp"
   },
   {
     "title": "Intricate Patterns & Mosaics",
@@ -1579,7 +2027,11 @@
       "adults"
     ],
     "language": "nl",
-    "pageCount": 132
+    "pageCount": 132,
+    "totalCount": 132,
+    "itemCount": 132,
+    "coloringPageCount": 132,
+    "coverImage": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Intricate%20Patterns%20%26%20Mosaics/Intricate_Patterns___Mosaics__A_complex__1788495488675.webp"
   },
   {
     "title": "Creepy Kawaii",
@@ -1593,7 +2045,11 @@
       "teens"
     ],
     "language": "nl",
-    "pageCount": 120
+    "pageCount": 120,
+    "totalCount": 120,
+    "itemCount": 120,
+    "coloringPageCount": 120,
+    "coverImage": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Creepy%20Kawaii/Creepy_Kawaii__A_charming_creepy_kawaii__1788497652252.webp"
   },
   {
     "title": "Fashion & Runway Styles",
@@ -1607,7 +2063,11 @@
       "teens"
     ],
     "language": "nl",
-    "pageCount": 120
+    "pageCount": 120,
+    "totalCount": 120,
+    "itemCount": 120,
+    "coloringPageCount": 120,
+    "coverImage": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Fashion%20%26%20Runway%20Styles/Fashion___Runway_Styles__A_stylish_high-_1788498770299.webp"
   },
   {
     "title": "Music & Musical Instruments",
@@ -1621,7 +2081,11 @@
       "teens"
     ],
     "language": "nl",
-    "pageCount": 121
+    "pageCount": 120,
+    "totalCount": 120,
+    "itemCount": 120,
+    "coloringPageCount": 120,
+    "coverImage": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Music%20%26%20Musical%20Instruments/Music___Musical_Instruments__A_musical_l_1788499883390.webp"
   },
   {
     "title": "Sports & Outdoor Action",
@@ -1635,7 +2099,11 @@
       "teens"
     ],
     "language": "nl",
-    "pageCount": 120
+    "pageCount": 120,
+    "totalCount": 120,
+    "itemCount": 120,
+    "coloringPageCount": 120,
+    "coverImage": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Sports%20%26%20Outdoor%20Action/Sports___Outdoor_Action__An_action-packe_1788500995206.webp"
   },
   {
     "title": "Craft Sketches - Animals",
@@ -1649,7 +2117,11 @@
       "teens"
     ],
     "language": "nl",
-    "pageCount": 113
+    "pageCount": 120,
+    "totalCount": 120,
+    "itemCount": 120,
+    "coloringPageCount": 120,
+    "coverImage": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Craft%20Sketches%20-%20Animals/Craft_Sketches__A_charming_craft_sketch__1788503041459.webp"
   },
   {
     "title": "Craft Sketches - Food & Sweets",
@@ -1663,7 +2135,11 @@
       "teens"
     ],
     "language": "nl",
-    "pageCount": 248
+    "pageCount": 148,
+    "totalCount": 148,
+    "itemCount": 148,
+    "coloringPageCount": 148,
+    "coverImage": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Craft%20Sketches%20-%20Food%20%26%20Sweets/Craft_Sketches__A_delightful_craft_sketc_1788503227071.webp"
   },
   {
     "title": "Sinterklaas & Pieten",
@@ -1677,7 +2153,11 @@
       "teens"
     ],
     "language": "nl",
-    "pageCount": 158
+    "pageCount": 158,
+    "totalCount": 158,
+    "itemCount": 158,
+    "coloringPageCount": 158,
+    "coverImage": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Sinterklaas%20%26%20Pieten/A_clean_printable_coloring_page_showing__1788504366261_1.webp"
   },
   {
     "title": "Christmas & Winter Holidays",
@@ -1691,7 +2171,11 @@
       "teens"
     ],
     "language": "nl",
-    "pageCount": 167
+    "pageCount": 160,
+    "totalCount": 160,
+    "itemCount": 160,
+    "coloringPageCount": 160,
+    "coverImage": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Christmas%20%26%20Winter%20Holidays/A_cheerful_Christmas_tree_with_a_broom_1787924646893.webp"
   },
   {
     "title": "Halloween & Spooky Nights",
@@ -1705,7 +2189,11 @@
       "teens"
     ],
     "language": "nl",
-    "pageCount": 382
+    "pageCount": 146,
+    "totalCount": 146,
+    "itemCount": 146,
+    "coloringPageCount": 146,
+    "coverImage": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Halloween%20%26%20Spooky%20Nights/Bat_Creature_Halloween_Coloring_Page_1787926343620.webp"
   },
   {
     "title": "Halloween Spooky Creatures",
@@ -1719,7 +2207,11 @@
       "teens"
     ],
     "language": "nl",
-    "pageCount": 257
+    "pageCount": 137,
+    "totalCount": 137,
+    "itemCount": 137,
+    "coloringPageCount": 137,
+    "coverImage": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Halloween%20Spooky%20Creatures/A_Cute_Creature_Performing_for_an_Audience_1787901247288.webp"
   },
   {
     "title": "Easter & Spring Bloom",
@@ -1733,7 +2225,11 @@
       "teens"
     ],
     "language": "nl",
-    "pageCount": 125
+    "pageCount": 125,
+    "totalCount": 125,
+    "itemCount": 125,
+    "coloringPageCount": 125,
+    "coverImage": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Easter%20%26%20Spring%20Bloom/Dragon-Tailed_Female_Character_in_Hot_Spring_1788374691943.webp"
   },
   {
     "title": "Autumn Harvest & Pumpkins",
@@ -1747,7 +2243,11 @@
       "teens"
     ],
     "language": "nl",
-    "pageCount": 147
+    "pageCount": 130,
+    "totalCount": 130,
+    "itemCount": 130,
+    "coloringPageCount": 130,
+    "coverImage": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Autumn/Autumn_Calendar_1787915670807.webp"
   },
   {
     "title": "Cozy Life & Hygge",
@@ -1761,7 +2261,11 @@
       "teens"
     ],
     "language": "nl",
-    "pageCount": 122
+    "pageCount": 121,
+    "totalCount": 121,
+    "itemCount": 121,
+    "coloringPageCount": 121,
+    "coverImage": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Cozy%20Life%20%26%20Hygge/Cozy_Life___Hygge__A_clean_printable_col_1788514164681.webp"
   },
   {
     "title": "Cottagecore & Rural Living",
@@ -1775,7 +2279,11 @@
       "teens"
     ],
     "language": "nl",
-    "pageCount": 121
+    "pageCount": 120,
+    "totalCount": 120,
+    "itemCount": 120,
+    "coloringPageCount": 120,
+    "coverImage": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Cottagecore%20%26%20Rural%20Living/Cottagecore___Rural_Living__A_clean_prin_1788515280348.webp"
   },
   {
     "title": "Cozy Winter Wonderland",
@@ -1789,7 +2297,11 @@
       "teens"
     ],
     "language": "nl",
-    "pageCount": 129
+    "pageCount": 129,
+    "totalCount": 129,
+    "itemCount": 129,
+    "coloringPageCount": 129,
+    "coverImage": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Unsorted%20Coloring%20Pages/A_cozy_winter_scene_1787921654703.webp"
   },
   {
     "title": "Cute Kawaii Food & Sushi",
@@ -1803,7 +2315,11 @@
       "teens"
     ],
     "language": "nl",
-    "pageCount": 57
+    "pageCount": 56,
+    "totalCount": 56,
+    "itemCount": 56,
+    "coloringPageCount": 56,
+    "coverImage": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Cute%20Kawaii%20Food%20%26%20Sushi/Cartoon_Sushi_Characters_1788296508411.webp"
   },
   {
     "title": "Sweet Treats & Bakery Desserts",
@@ -1817,7 +2333,11 @@
       "teens"
     ],
     "language": "nl",
-    "pageCount": 167
+    "pageCount": 148,
+    "totalCount": 148,
+    "itemCount": 148,
+    "coloringPageCount": 148,
+    "coverImage": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Sweet%20Treats%20%26%20Bakery%20Desserts/A_Slice_of_Bread_1787907143312.webp"
   },
   {
     "title": "School & Education",
@@ -1831,7 +2351,11 @@
       "teens"
     ],
     "language": "nl",
-    "pageCount": 99
+    "pageCount": 98,
+    "totalCount": 98,
+    "itemCount": 98,
+    "coloringPageCount": 98,
+    "coverImage": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/School%20%26%20Education/ABC_School_in_Clouds_1787910534280.webp"
   },
   {
     "title": "Coloring Calendars",
@@ -1845,6 +2369,10 @@
       "teens"
     ],
     "language": "nl",
-    "pageCount": 202
+    "pageCount": 185,
+    "totalCount": 185,
+    "itemCount": 185,
+    "coloringPageCount": 185,
+    "coverImage": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Coloring%20Calendars/A_printable_coloring_calendar_page_featu_1788519603054_1.webp"
   }
 ]

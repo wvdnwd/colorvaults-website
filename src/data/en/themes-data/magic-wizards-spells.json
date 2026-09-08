@@ -1,31 +1,8 @@
 [
   {
     "id": "page-magic-wizards-spells-1",
-    "title": "Evil Sorcerer Throws Coins",
-    "slug": "magic-wizards-spells-1",
-    "parentHub": "fantasy-fairytales",
-    "parentTheme": "magic-wizards-spells",
-    "ageGroup": "kids",
-    "difficulty": "medium",
-    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Magic%20Wizards/Evil_Sorcerer_Throws_Coins_1788338323043.webp",
-    "preview": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Magic%20Wizards/Evil_Sorcerer_Throws_Coins_1788338323043.webp",
-    "downloadableFile": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Magic%20Wizards/Evil_Sorcerer_Throws_Coins_1788338323043.webp",
-    "metaTitle": "Evil Sorcerer Throws Coins - Free Printable Coloring Page | ColorVaults",
-    "metaDescription": "Download and print this free Evil Sorcerer Throws Coins coloring page from the Magic Wizards & Spells collection. High-resolution in A4 & Letter size!",
-    "shortDescription": "Free printable Evil Sorcerer Throws Coins coloring page from our Magic Wizards & Spells collection.",
-    "longDescription": "Enjoy this high-quality Evil Sorcerer Throws Coins coloring page from the Magic Wizards & Spells category. Designed with crisp black outlines, download or print directly in A4/Letter size for free!",
-    "altText": "Evil Sorcerer Throws Coins coloring page - free printable",
-    "tags": [
-      "magic-wizards-spells",
-      "kids"
-    ],
-    "relatedPages": [],
-    "language": "en"
-  },
-  {
-    "id": "page-magic-wizards-spells-2",
     "title": "Fantasy Warrior Casting Spell",
-    "slug": "magic-wizards-spells-2",
+    "slug": "magic-wizards-spells-1",
     "parentHub": "fantasy-fairytales",
     "parentTheme": "magic-wizards-spells",
     "ageGroup": "teens",
@@ -46,9 +23,9 @@
     "language": "en"
   },
   {
-    "id": "page-magic-wizards-spells-3",
+    "id": "page-magic-wizards-spells-2",
     "title": "Magic Broomstick Adventure",
-    "slug": "magic-wizards-spells-3",
+    "slug": "magic-wizards-spells-2",
     "parentHub": "fantasy-fairytales",
     "parentTheme": "magic-wizards-spells",
     "ageGroup": "toddlers",
@@ -69,9 +46,9 @@
     "language": "en"
   },
   {
-    "id": "page-magic-wizards-spells-4",
+    "id": "page-magic-wizards-spells-3",
     "title": "Magic Carpet Ride",
-    "slug": "magic-wizards-spells-4",
+    "slug": "magic-wizards-spells-3",
     "parentHub": "fantasy-fairytales",
     "parentTheme": "magic-wizards-spells",
     "ageGroup": "kids",
@@ -92,9 +69,9 @@
     "language": "en"
   },
   {
-    "id": "page-magic-wizards-spells-5",
+    "id": "page-magic-wizards-spells-4",
     "title": "Magic Carpet Ride (Scene 2)",
-    "slug": "magic-wizards-spells-5",
+    "slug": "magic-wizards-spells-4",
     "parentHub": "fantasy-fairytales",
     "parentTheme": "magic-wizards-spells",
     "ageGroup": "teens",
@@ -115,9 +92,9 @@
     "language": "en"
   },
   {
-    "id": "page-magic-wizards-spells-6",
+    "id": "page-magic-wizards-spells-5",
     "title": "A Magical Wizard",
-    "slug": "magic-wizards-spells-6",
+    "slug": "magic-wizards-spells-5",
     "parentHub": "fantasy-fairytales",
     "parentTheme": "magic-wizards-spells",
     "ageGroup": "toddlers",
@@ -138,9 +115,9 @@
     "language": "en"
   },
   {
-    "id": "page-magic-wizards-spells-8",
+    "id": "page-magic-wizards-spells-6",
     "title": "A Magical Wizard (Scene 3)",
-    "slug": "magic-wizards-spells-8",
+    "slug": "magic-wizards-spells-6",
     "parentHub": "fantasy-fairytales",
     "parentTheme": "magic-wizards-spells",
     "ageGroup": "teens",
@@ -161,9 +138,9 @@
     "language": "en"
   },
   {
-    "id": "page-magic-wizards-spells-10",
+    "id": "page-magic-wizards-spells-7",
     "title": "A Magical Wizard (Scene 5)",
-    "slug": "magic-wizards-spells-10",
+    "slug": "magic-wizards-spells-7",
     "parentHub": "fantasy-fairytales",
     "parentTheme": "magic-wizards-spells",
     "ageGroup": "kids",
@@ -184,9 +161,9 @@
     "language": "en"
   },
   {
-    "id": "page-magic-wizards-spells-12",
+    "id": "page-magic-wizards-spells-8",
     "title": "A Magical Wizard (Scene 7)",
-    "slug": "magic-wizards-spells-12",
+    "slug": "magic-wizards-spells-8",
     "parentHub": "fantasy-fairytales",
     "parentTheme": "magic-wizards-spells",
     "ageGroup": "toddlers",
@@ -207,9 +184,9 @@
     "language": "en"
   },
   {
-    "id": "page-magic-wizards-spells-14",
+    "id": "page-magic-wizards-spells-9",
     "title": "A Magical Wizard (Scene 9)",
-    "slug": "magic-wizards-spells-14",
+    "slug": "magic-wizards-spells-9",
     "parentHub": "fantasy-fairytales",
     "parentTheme": "magic-wizards-spells",
     "ageGroup": "teens",
@@ -230,9 +207,9 @@
     "language": "en"
   },
   {
-    "id": "page-magic-wizards-spells-16",
+    "id": "page-magic-wizards-spells-10",
     "title": "A Magical Wizard (Scene 11)",
-    "slug": "magic-wizards-spells-16",
+    "slug": "magic-wizards-spells-10",
     "parentHub": "fantasy-fairytales",
     "parentTheme": "magic-wizards-spells",
     "ageGroup": "kids",
@@ -253,9 +230,9 @@
     "language": "en"
   },
   {
-    "id": "page-magic-wizards-spells-18",
+    "id": "page-magic-wizards-spells-11",
     "title": "A Magical Wizard (Scene 13)",
-    "slug": "magic-wizards-spells-18",
+    "slug": "magic-wizards-spells-11",
     "parentHub": "fantasy-fairytales",
     "parentTheme": "magic-wizards-spells",
     "ageGroup": "toddlers",
@@ -276,9 +253,9 @@
     "language": "en"
   },
   {
-    "id": "page-magic-wizards-spells-20",
+    "id": "page-magic-wizards-spells-12",
     "title": "A Magical Wizard (Scene 15)",
-    "slug": "magic-wizards-spells-20",
+    "slug": "magic-wizards-spells-12",
     "parentHub": "fantasy-fairytales",
     "parentTheme": "magic-wizards-spells",
     "ageGroup": "teens",
@@ -299,9 +276,9 @@
     "language": "en"
   },
   {
-    "id": "page-magic-wizards-spells-22",
+    "id": "page-magic-wizards-spells-13",
     "title": "A Magical Wizard (Scene 17)",
-    "slug": "magic-wizards-spells-22",
+    "slug": "magic-wizards-spells-13",
     "parentHub": "fantasy-fairytales",
     "parentTheme": "magic-wizards-spells",
     "ageGroup": "kids",
@@ -322,9 +299,9 @@
     "language": "en"
   },
   {
-    "id": "page-magic-wizards-spells-24",
+    "id": "page-magic-wizards-spells-14",
     "title": "A Magical Wizard (Scene 19)",
-    "slug": "magic-wizards-spells-24",
+    "slug": "magic-wizards-spells-14",
     "parentHub": "fantasy-fairytales",
     "parentTheme": "magic-wizards-spells",
     "ageGroup": "toddlers",
@@ -345,9 +322,9 @@
     "language": "en"
   },
   {
-    "id": "page-magic-wizards-spells-26",
+    "id": "page-magic-wizards-spells-15",
     "title": "A Magical Wizard (Scene 21)",
-    "slug": "magic-wizards-spells-26",
+    "slug": "magic-wizards-spells-15",
     "parentHub": "fantasy-fairytales",
     "parentTheme": "magic-wizards-spells",
     "ageGroup": "teens",
@@ -368,9 +345,9 @@
     "language": "en"
   },
   {
-    "id": "page-magic-wizards-spells-28",
+    "id": "page-magic-wizards-spells-16",
     "title": "A Magical Wizard (Scene 23)",
-    "slug": "magic-wizards-spells-28",
+    "slug": "magic-wizards-spells-16",
     "parentHub": "fantasy-fairytales",
     "parentTheme": "magic-wizards-spells",
     "ageGroup": "kids",
@@ -391,9 +368,9 @@
     "language": "en"
   },
   {
-    "id": "page-magic-wizards-spells-30",
+    "id": "page-magic-wizards-spells-17",
     "title": "A Magical Wizard (Scene 25)",
-    "slug": "magic-wizards-spells-30",
+    "slug": "magic-wizards-spells-17",
     "parentHub": "fantasy-fairytales",
     "parentTheme": "magic-wizards-spells",
     "ageGroup": "toddlers",
@@ -414,9 +391,9 @@
     "language": "en"
   },
   {
-    "id": "page-magic-wizards-spells-32",
+    "id": "page-magic-wizards-spells-18",
     "title": "A Magical Wizard (Scene 27)",
-    "slug": "magic-wizards-spells-32",
+    "slug": "magic-wizards-spells-18",
     "parentHub": "fantasy-fairytales",
     "parentTheme": "magic-wizards-spells",
     "ageGroup": "teens",
@@ -437,9 +414,9 @@
     "language": "en"
   },
   {
-    "id": "page-magic-wizards-spells-34",
+    "id": "page-magic-wizards-spells-19",
     "title": "A Magical Wizard (Scene 29)",
-    "slug": "magic-wizards-spells-34",
+    "slug": "magic-wizards-spells-19",
     "parentHub": "fantasy-fairytales",
     "parentTheme": "magic-wizards-spells",
     "ageGroup": "kids",
@@ -460,9 +437,9 @@
     "language": "en"
   },
   {
-    "id": "page-magic-wizards-spells-36",
+    "id": "page-magic-wizards-spells-20",
     "title": "A Magical Wizard (Scene 31)",
-    "slug": "magic-wizards-spells-36",
+    "slug": "magic-wizards-spells-20",
     "parentHub": "fantasy-fairytales",
     "parentTheme": "magic-wizards-spells",
     "ageGroup": "toddlers",
@@ -483,9 +460,9 @@
     "language": "en"
   },
   {
-    "id": "page-magic-wizards-spells-38",
+    "id": "page-magic-wizards-spells-21",
     "title": "A Magical Wizard (Scene 33)",
-    "slug": "magic-wizards-spells-38",
+    "slug": "magic-wizards-spells-21",
     "parentHub": "fantasy-fairytales",
     "parentTheme": "magic-wizards-spells",
     "ageGroup": "teens",
@@ -506,9 +483,9 @@
     "language": "en"
   },
   {
-    "id": "page-magic-wizards-spells-40",
+    "id": "page-magic-wizards-spells-22",
     "title": "A Magical Wizard (Scene 35)",
-    "slug": "magic-wizards-spells-40",
+    "slug": "magic-wizards-spells-22",
     "parentHub": "fantasy-fairytales",
     "parentTheme": "magic-wizards-spells",
     "ageGroup": "kids",
@@ -529,9 +506,9 @@
     "language": "en"
   },
   {
-    "id": "page-magic-wizards-spells-42",
+    "id": "page-magic-wizards-spells-23",
     "title": "A Magical Wizard (Scene 37)",
-    "slug": "magic-wizards-spells-42",
+    "slug": "magic-wizards-spells-23",
     "parentHub": "fantasy-fairytales",
     "parentTheme": "magic-wizards-spells",
     "ageGroup": "toddlers",
@@ -552,9 +529,9 @@
     "language": "en"
   },
   {
-    "id": "page-magic-wizards-spells-44",
+    "id": "page-magic-wizards-spells-24",
     "title": "A Magical Wizard (Scene 39)",
-    "slug": "magic-wizards-spells-44",
+    "slug": "magic-wizards-spells-24",
     "parentHub": "fantasy-fairytales",
     "parentTheme": "magic-wizards-spells",
     "ageGroup": "teens",
@@ -575,9 +552,9 @@
     "language": "en"
   },
   {
-    "id": "page-magic-wizards-spells-46",
+    "id": "page-magic-wizards-spells-25",
     "title": "A Magical Wizard (Scene 41)",
-    "slug": "magic-wizards-spells-46",
+    "slug": "magic-wizards-spells-25",
     "parentHub": "fantasy-fairytales",
     "parentTheme": "magic-wizards-spells",
     "ageGroup": "kids",
@@ -598,9 +575,9 @@
     "language": "en"
   },
   {
-    "id": "page-magic-wizards-spells-48",
+    "id": "page-magic-wizards-spells-26",
     "title": "A Magical Wizard (Scene 43)",
-    "slug": "magic-wizards-spells-48",
+    "slug": "magic-wizards-spells-26",
     "parentHub": "fantasy-fairytales",
     "parentTheme": "magic-wizards-spells",
     "ageGroup": "toddlers",
@@ -621,9 +598,9 @@
     "language": "en"
   },
   {
-    "id": "page-magic-wizards-spells-50",
+    "id": "page-magic-wizards-spells-27",
     "title": "A Magical Wizard (Scene 45)",
-    "slug": "magic-wizards-spells-50",
+    "slug": "magic-wizards-spells-27",
     "parentHub": "fantasy-fairytales",
     "parentTheme": "magic-wizards-spells",
     "ageGroup": "teens",
@@ -644,9 +621,9 @@
     "language": "en"
   },
   {
-    "id": "page-magic-wizards-spells-52",
+    "id": "page-magic-wizards-spells-28",
     "title": "A Magical Wizard (Scene 47)",
-    "slug": "magic-wizards-spells-52",
+    "slug": "magic-wizards-spells-28",
     "parentHub": "fantasy-fairytales",
     "parentTheme": "magic-wizards-spells",
     "ageGroup": "kids",
@@ -667,9 +644,9 @@
     "language": "en"
   },
   {
-    "id": "page-magic-wizards-spells-54",
+    "id": "page-magic-wizards-spells-29",
     "title": "A Magical Wizard (Scene 49)",
-    "slug": "magic-wizards-spells-54",
+    "slug": "magic-wizards-spells-29",
     "parentHub": "fantasy-fairytales",
     "parentTheme": "magic-wizards-spells",
     "ageGroup": "toddlers",
@@ -690,9 +667,9 @@
     "language": "en"
   },
   {
-    "id": "page-magic-wizards-spells-56",
+    "id": "page-magic-wizards-spells-30",
     "title": "A Magical Wizard (Scene 51)",
-    "slug": "magic-wizards-spells-56",
+    "slug": "magic-wizards-spells-30",
     "parentHub": "fantasy-fairytales",
     "parentTheme": "magic-wizards-spells",
     "ageGroup": "teens",
@@ -713,9 +690,9 @@
     "language": "en"
   },
   {
-    "id": "page-magic-wizards-spells-58",
+    "id": "page-magic-wizards-spells-31",
     "title": "A Magical Wizard (Scene 53)",
-    "slug": "magic-wizards-spells-58",
+    "slug": "magic-wizards-spells-31",
     "parentHub": "fantasy-fairytales",
     "parentTheme": "magic-wizards-spells",
     "ageGroup": "kids",
@@ -736,9 +713,9 @@
     "language": "en"
   },
   {
-    "id": "page-magic-wizards-spells-60",
+    "id": "page-magic-wizards-spells-32",
     "title": "A Magical Wizard (Scene 55)",
-    "slug": "magic-wizards-spells-60",
+    "slug": "magic-wizards-spells-32",
     "parentHub": "fantasy-fairytales",
     "parentTheme": "magic-wizards-spells",
     "ageGroup": "toddlers",
@@ -759,9 +736,9 @@
     "language": "en"
   },
   {
-    "id": "page-magic-wizards-spells-62",
+    "id": "page-magic-wizards-spells-33",
     "title": "A Magical Wizard (Scene 57)",
-    "slug": "magic-wizards-spells-62",
+    "slug": "magic-wizards-spells-33",
     "parentHub": "fantasy-fairytales",
     "parentTheme": "magic-wizards-spells",
     "ageGroup": "teens",
@@ -782,9 +759,9 @@
     "language": "en"
   },
   {
-    "id": "page-magic-wizards-spells-64",
+    "id": "page-magic-wizards-spells-34",
     "title": "A Magical Wizard (Scene 59)",
-    "slug": "magic-wizards-spells-64",
+    "slug": "magic-wizards-spells-34",
     "parentHub": "fantasy-fairytales",
     "parentTheme": "magic-wizards-spells",
     "ageGroup": "kids",
@@ -805,9 +782,9 @@
     "language": "en"
   },
   {
-    "id": "page-magic-wizards-spells-66",
+    "id": "page-magic-wizards-spells-35",
     "title": "A Magical Wizard (Scene 61)",
-    "slug": "magic-wizards-spells-66",
+    "slug": "magic-wizards-spells-35",
     "parentHub": "fantasy-fairytales",
     "parentTheme": "magic-wizards-spells",
     "ageGroup": "toddlers",
@@ -828,9 +805,9 @@
     "language": "en"
   },
   {
-    "id": "page-magic-wizards-spells-68",
+    "id": "page-magic-wizards-spells-36",
     "title": "A Magical Wizard (Scene 63)",
-    "slug": "magic-wizards-spells-68",
+    "slug": "magic-wizards-spells-36",
     "parentHub": "fantasy-fairytales",
     "parentTheme": "magic-wizards-spells",
     "ageGroup": "teens",
@@ -851,9 +828,9 @@
     "language": "en"
   },
   {
-    "id": "page-magic-wizards-spells-70",
+    "id": "page-magic-wizards-spells-37",
     "title": "A Magical Wizard (Scene 65)",
-    "slug": "magic-wizards-spells-70",
+    "slug": "magic-wizards-spells-37",
     "parentHub": "fantasy-fairytales",
     "parentTheme": "magic-wizards-spells",
     "ageGroup": "kids",
@@ -874,9 +851,9 @@
     "language": "en"
   },
   {
-    "id": "page-magic-wizards-spells-72",
+    "id": "page-magic-wizards-spells-38",
     "title": "A Magical Wizard (Scene 67)",
-    "slug": "magic-wizards-spells-72",
+    "slug": "magic-wizards-spells-38",
     "parentHub": "fantasy-fairytales",
     "parentTheme": "magic-wizards-spells",
     "ageGroup": "toddlers",
@@ -897,9 +874,9 @@
     "language": "en"
   },
   {
-    "id": "page-magic-wizards-spells-74",
+    "id": "page-magic-wizards-spells-39",
     "title": "A Magical Wizard (Scene 69)",
-    "slug": "magic-wizards-spells-74",
+    "slug": "magic-wizards-spells-39",
     "parentHub": "fantasy-fairytales",
     "parentTheme": "magic-wizards-spells",
     "ageGroup": "teens",
@@ -920,9 +897,9 @@
     "language": "en"
   },
   {
-    "id": "page-magic-wizards-spells-76",
+    "id": "page-magic-wizards-spells-40",
     "title": "A Magical Wizard (Scene 71)",
-    "slug": "magic-wizards-spells-76",
+    "slug": "magic-wizards-spells-40",
     "parentHub": "fantasy-fairytales",
     "parentTheme": "magic-wizards-spells",
     "ageGroup": "kids",
@@ -943,9 +920,9 @@
     "language": "en"
   },
   {
-    "id": "page-magic-wizards-spells-78",
+    "id": "page-magic-wizards-spells-41",
     "title": "A Magical Wizard (Scene 73)",
-    "slug": "magic-wizards-spells-78",
+    "slug": "magic-wizards-spells-41",
     "parentHub": "fantasy-fairytales",
     "parentTheme": "magic-wizards-spells",
     "ageGroup": "toddlers",
@@ -966,9 +943,9 @@
     "language": "en"
   },
   {
-    "id": "page-magic-wizards-spells-80",
+    "id": "page-magic-wizards-spells-42",
     "title": "A Magical Wizard (Scene 75)",
-    "slug": "magic-wizards-spells-80",
+    "slug": "magic-wizards-spells-42",
     "parentHub": "fantasy-fairytales",
     "parentTheme": "magic-wizards-spells",
     "ageGroup": "teens",
@@ -989,9 +966,9 @@
     "language": "en"
   },
   {
-    "id": "page-magic-wizards-spells-82",
+    "id": "page-magic-wizards-spells-43",
     "title": "A Magical Wizard (Scene 77)",
-    "slug": "magic-wizards-spells-82",
+    "slug": "magic-wizards-spells-43",
     "parentHub": "fantasy-fairytales",
     "parentTheme": "magic-wizards-spells",
     "ageGroup": "kids",
@@ -1012,9 +989,9 @@
     "language": "en"
   },
   {
-    "id": "page-magic-wizards-spells-84",
+    "id": "page-magic-wizards-spells-44",
     "title": "A Magical Wizard (Scene 79)",
-    "slug": "magic-wizards-spells-84",
+    "slug": "magic-wizards-spells-44",
     "parentHub": "fantasy-fairytales",
     "parentTheme": "magic-wizards-spells",
     "ageGroup": "toddlers",
@@ -1035,9 +1012,9 @@
     "language": "en"
   },
   {
-    "id": "page-magic-wizards-spells-86",
+    "id": "page-magic-wizards-spells-45",
     "title": "A Magical Wizard (Scene 81)",
-    "slug": "magic-wizards-spells-86",
+    "slug": "magic-wizards-spells-45",
     "parentHub": "fantasy-fairytales",
     "parentTheme": "magic-wizards-spells",
     "ageGroup": "teens",
@@ -1058,9 +1035,9 @@
     "language": "en"
   },
   {
-    "id": "page-magic-wizards-spells-88",
+    "id": "page-magic-wizards-spells-46",
     "title": "A Magical Wizard (Scene 83)",
-    "slug": "magic-wizards-spells-88",
+    "slug": "magic-wizards-spells-46",
     "parentHub": "fantasy-fairytales",
     "parentTheme": "magic-wizards-spells",
     "ageGroup": "kids",
@@ -1081,9 +1058,9 @@
     "language": "en"
   },
   {
-    "id": "page-magic-wizards-spells-90",
+    "id": "page-magic-wizards-spells-47",
     "title": "A Magical Wizard (Scene 85)",
-    "slug": "magic-wizards-spells-90",
+    "slug": "magic-wizards-spells-47",
     "parentHub": "fantasy-fairytales",
     "parentTheme": "magic-wizards-spells",
     "ageGroup": "toddlers",
@@ -1104,9 +1081,9 @@
     "language": "en"
   },
   {
-    "id": "page-magic-wizards-spells-92",
+    "id": "page-magic-wizards-spells-48",
     "title": "A Magical Wizard (Scene 87)",
-    "slug": "magic-wizards-spells-92",
+    "slug": "magic-wizards-spells-48",
     "parentHub": "fantasy-fairytales",
     "parentTheme": "magic-wizards-spells",
     "ageGroup": "teens",
@@ -1127,9 +1104,9 @@
     "language": "en"
   },
   {
-    "id": "page-magic-wizards-spells-94",
+    "id": "page-magic-wizards-spells-49",
     "title": "A Magical Wizard (Scene 89)",
-    "slug": "magic-wizards-spells-94",
+    "slug": "magic-wizards-spells-49",
     "parentHub": "fantasy-fairytales",
     "parentTheme": "magic-wizards-spells",
     "ageGroup": "kids",
@@ -1150,9 +1127,9 @@
     "language": "en"
   },
   {
-    "id": "page-magic-wizards-spells-96",
+    "id": "page-magic-wizards-spells-50",
     "title": "A Magical Wizard (Scene 91)",
-    "slug": "magic-wizards-spells-96",
+    "slug": "magic-wizards-spells-50",
     "parentHub": "fantasy-fairytales",
     "parentTheme": "magic-wizards-spells",
     "ageGroup": "toddlers",
@@ -1173,9 +1150,9 @@
     "language": "en"
   },
   {
-    "id": "page-magic-wizards-spells-98",
+    "id": "page-magic-wizards-spells-51",
     "title": "A Magical Wizard (Scene 93)",
-    "slug": "magic-wizards-spells-98",
+    "slug": "magic-wizards-spells-51",
     "parentHub": "fantasy-fairytales",
     "parentTheme": "magic-wizards-spells",
     "ageGroup": "teens",
@@ -1196,9 +1173,9 @@
     "language": "en"
   },
   {
-    "id": "page-magic-wizards-spells-100",
+    "id": "page-magic-wizards-spells-52",
     "title": "A Magical Wizard (Scene 95)",
-    "slug": "magic-wizards-spells-100",
+    "slug": "magic-wizards-spells-52",
     "parentHub": "fantasy-fairytales",
     "parentTheme": "magic-wizards-spells",
     "ageGroup": "kids",
@@ -1219,9 +1196,9 @@
     "language": "en"
   },
   {
-    "id": "page-magic-wizards-spells-102",
+    "id": "page-magic-wizards-spells-53",
     "title": "A Magical Wizard (Scene 97)",
-    "slug": "magic-wizards-spells-102",
+    "slug": "magic-wizards-spells-53",
     "parentHub": "fantasy-fairytales",
     "parentTheme": "magic-wizards-spells",
     "ageGroup": "toddlers",
@@ -1242,9 +1219,9 @@
     "language": "en"
   },
   {
-    "id": "page-magic-wizards-spells-104",
+    "id": "page-magic-wizards-spells-54",
     "title": "A Magical Wizard (Scene 99)",
-    "slug": "magic-wizards-spells-104",
+    "slug": "magic-wizards-spells-54",
     "parentHub": "fantasy-fairytales",
     "parentTheme": "magic-wizards-spells",
     "ageGroup": "teens",
@@ -1265,9 +1242,9 @@
     "language": "en"
   },
   {
-    "id": "page-magic-wizards-spells-106",
+    "id": "page-magic-wizards-spells-55",
     "title": "A Magical Wizard (Scene 101)",
-    "slug": "magic-wizards-spells-106",
+    "slug": "magic-wizards-spells-55",
     "parentHub": "fantasy-fairytales",
     "parentTheme": "magic-wizards-spells",
     "ageGroup": "kids",
@@ -1288,9 +1265,9 @@
     "language": "en"
   },
   {
-    "id": "page-magic-wizards-spells-108",
+    "id": "page-magic-wizards-spells-56",
     "title": "A Magical Wizard (Scene 103)",
-    "slug": "magic-wizards-spells-108",
+    "slug": "magic-wizards-spells-56",
     "parentHub": "fantasy-fairytales",
     "parentTheme": "magic-wizards-spells",
     "ageGroup": "toddlers",
@@ -1311,9 +1288,9 @@
     "language": "en"
   },
   {
-    "id": "page-magic-wizards-spells-110",
+    "id": "page-magic-wizards-spells-57",
     "title": "A Magical Wizard (Scene 105)",
-    "slug": "magic-wizards-spells-110",
+    "slug": "magic-wizards-spells-57",
     "parentHub": "fantasy-fairytales",
     "parentTheme": "magic-wizards-spells",
     "ageGroup": "teens",
@@ -1334,9 +1311,9 @@
     "language": "en"
   },
   {
-    "id": "page-magic-wizards-spells-112",
+    "id": "page-magic-wizards-spells-58",
     "title": "A Magical Wizard (Scene 107)",
-    "slug": "magic-wizards-spells-112",
+    "slug": "magic-wizards-spells-58",
     "parentHub": "fantasy-fairytales",
     "parentTheme": "magic-wizards-spells",
     "ageGroup": "kids",
@@ -1357,9 +1334,9 @@
     "language": "en"
   },
   {
-    "id": "page-magic-wizards-spells-114",
+    "id": "page-magic-wizards-spells-59",
     "title": "A Magical Wizard (Scene 109)",
-    "slug": "magic-wizards-spells-114",
+    "slug": "magic-wizards-spells-59",
     "parentHub": "fantasy-fairytales",
     "parentTheme": "magic-wizards-spells",
     "ageGroup": "toddlers",
@@ -1380,9 +1357,9 @@
     "language": "en"
   },
   {
-    "id": "page-magic-wizards-spells-116",
+    "id": "page-magic-wizards-spells-60",
     "title": "A Magical Wizard (Scene 111)",
-    "slug": "magic-wizards-spells-116",
+    "slug": "magic-wizards-spells-60",
     "parentHub": "fantasy-fairytales",
     "parentTheme": "magic-wizards-spells",
     "ageGroup": "teens",
@@ -1403,9 +1380,9 @@
     "language": "en"
   },
   {
-    "id": "page-magic-wizards-spells-118",
+    "id": "page-magic-wizards-spells-61",
     "title": "A Magical Wizard (Scene 113)",
-    "slug": "magic-wizards-spells-118",
+    "slug": "magic-wizards-spells-61",
     "parentHub": "fantasy-fairytales",
     "parentTheme": "magic-wizards-spells",
     "ageGroup": "kids",
@@ -1426,9 +1403,9 @@
     "language": "en"
   },
   {
-    "id": "page-magic-wizards-spells-120",
+    "id": "page-magic-wizards-spells-62",
     "title": "A Magical Wizard (Scene 115)",
-    "slug": "magic-wizards-spells-120",
+    "slug": "magic-wizards-spells-62",
     "parentHub": "fantasy-fairytales",
     "parentTheme": "magic-wizards-spells",
     "ageGroup": "toddlers",
@@ -1449,9 +1426,9 @@
     "language": "en"
   },
   {
-    "id": "page-magic-wizards-spells-122",
+    "id": "page-magic-wizards-spells-63",
     "title": "A Magical Wizard (Scene 117)",
-    "slug": "magic-wizards-spells-122",
+    "slug": "magic-wizards-spells-63",
     "parentHub": "fantasy-fairytales",
     "parentTheme": "magic-wizards-spells",
     "ageGroup": "teens",
@@ -1472,9 +1449,9 @@
     "language": "en"
   },
   {
-    "id": "page-magic-wizards-spells-124",
+    "id": "page-magic-wizards-spells-64",
     "title": "A Magical Wizard (Scene 119)",
-    "slug": "magic-wizards-spells-124",
+    "slug": "magic-wizards-spells-64",
     "parentHub": "fantasy-fairytales",
     "parentTheme": "magic-wizards-spells",
     "ageGroup": "kids",
@@ -1495,9 +1472,9 @@
     "language": "en"
   },
   {
-    "id": "page-magic-wizards-spells-126",
+    "id": "page-magic-wizards-spells-65",
     "title": "A Magical Wizard (Scene 121)",
-    "slug": "magic-wizards-spells-126",
+    "slug": "magic-wizards-spells-65",
     "parentHub": "fantasy-fairytales",
     "parentTheme": "magic-wizards-spells",
     "ageGroup": "toddlers",
@@ -1518,9 +1495,9 @@
     "language": "en"
   },
   {
-    "id": "page-magic-wizards-spells-128",
+    "id": "page-magic-wizards-spells-66",
     "title": "A Magical Wizard (Scene 123)",
-    "slug": "magic-wizards-spells-128",
+    "slug": "magic-wizards-spells-66",
     "parentHub": "fantasy-fairytales",
     "parentTheme": "magic-wizards-spells",
     "ageGroup": "teens",
@@ -1541,9 +1518,9 @@
     "language": "en"
   },
   {
-    "id": "page-magic-wizards-spells-130",
+    "id": "page-magic-wizards-spells-67",
     "title": "A Magical Wizard (Scene 125)",
-    "slug": "magic-wizards-spells-130",
+    "slug": "magic-wizards-spells-67",
     "parentHub": "fantasy-fairytales",
     "parentTheme": "magic-wizards-spells",
     "ageGroup": "kids",
@@ -1564,9 +1541,9 @@
     "language": "en"
   },
   {
-    "id": "page-magic-wizards-spells-132",
+    "id": "page-magic-wizards-spells-68",
     "title": "A Magical Wizard (Scene 127)",
-    "slug": "magic-wizards-spells-132",
+    "slug": "magic-wizards-spells-68",
     "parentHub": "fantasy-fairytales",
     "parentTheme": "magic-wizards-spells",
     "ageGroup": "toddlers",
@@ -1587,9 +1564,9 @@
     "language": "en"
   },
   {
-    "id": "page-magic-wizards-spells-134",
+    "id": "page-magic-wizards-spells-69",
     "title": "A Magical Wizard (Scene 129)",
-    "slug": "magic-wizards-spells-134",
+    "slug": "magic-wizards-spells-69",
     "parentHub": "fantasy-fairytales",
     "parentTheme": "magic-wizards-spells",
     "ageGroup": "teens",
@@ -1610,9 +1587,9 @@
     "language": "en"
   },
   {
-    "id": "page-magic-wizards-spells-135",
+    "id": "page-magic-wizards-spells-70",
     "title": "A Magical Wizard (Scene 130)",
-    "slug": "magic-wizards-spells-135",
+    "slug": "magic-wizards-spells-70",
     "parentHub": "fantasy-fairytales",
     "parentTheme": "magic-wizards-spells",
     "ageGroup": "toddlers",
@@ -1633,9 +1610,9 @@
     "language": "en"
   },
   {
-    "id": "page-magic-wizards-spells-137",
+    "id": "page-magic-wizards-spells-71",
     "title": "A Magical Wizard (Scene 132)",
-    "slug": "magic-wizards-spells-137",
+    "slug": "magic-wizards-spells-71",
     "parentHub": "fantasy-fairytales",
     "parentTheme": "magic-wizards-spells",
     "ageGroup": "teens",
@@ -1656,9 +1633,9 @@
     "language": "en"
   },
   {
-    "id": "page-magic-wizards-spells-139",
+    "id": "page-magic-wizards-spells-72",
     "title": "A Magical Wizard (Scene 134)",
-    "slug": "magic-wizards-spells-139",
+    "slug": "magic-wizards-spells-72",
     "parentHub": "fantasy-fairytales",
     "parentTheme": "magic-wizards-spells",
     "ageGroup": "kids",
@@ -1679,9 +1656,9 @@
     "language": "en"
   },
   {
-    "id": "page-magic-wizards-spells-141",
+    "id": "page-magic-wizards-spells-73",
     "title": "A Magical Wizard (Scene 136)",
-    "slug": "magic-wizards-spells-141",
+    "slug": "magic-wizards-spells-73",
     "parentHub": "fantasy-fairytales",
     "parentTheme": "magic-wizards-spells",
     "ageGroup": "toddlers",
@@ -1702,9 +1679,9 @@
     "language": "en"
   },
   {
-    "id": "page-magic-wizards-spells-143",
+    "id": "page-magic-wizards-spells-74",
     "title": "A Magical Wizard (Scene 138)",
-    "slug": "magic-wizards-spells-143",
+    "slug": "magic-wizards-spells-74",
     "parentHub": "fantasy-fairytales",
     "parentTheme": "magic-wizards-spells",
     "ageGroup": "teens",
@@ -1725,9 +1702,9 @@
     "language": "en"
   },
   {
-    "id": "page-magic-wizards-spells-145",
+    "id": "page-magic-wizards-spells-75",
     "title": "A Magical Wizard (Scene 140)",
-    "slug": "magic-wizards-spells-145",
+    "slug": "magic-wizards-spells-75",
     "parentHub": "fantasy-fairytales",
     "parentTheme": "magic-wizards-spells",
     "ageGroup": "kids",
@@ -1748,9 +1725,9 @@
     "language": "en"
   },
   {
-    "id": "page-magic-wizards-spells-147",
+    "id": "page-magic-wizards-spells-76",
     "title": "A Magical Wizard (Scene 142)",
-    "slug": "magic-wizards-spells-147",
+    "slug": "magic-wizards-spells-76",
     "parentHub": "fantasy-fairytales",
     "parentTheme": "magic-wizards-spells",
     "ageGroup": "toddlers",
@@ -1771,9 +1748,9 @@
     "language": "en"
   },
   {
-    "id": "page-magic-wizards-spells-149",
+    "id": "page-magic-wizards-spells-77",
     "title": "A Magical Wizard (Scene 144)",
-    "slug": "magic-wizards-spells-149",
+    "slug": "magic-wizards-spells-77",
     "parentHub": "fantasy-fairytales",
     "parentTheme": "magic-wizards-spells",
     "ageGroup": "teens",
@@ -1794,9 +1771,9 @@
     "language": "en"
   },
   {
-    "id": "page-magic-wizards-spells-151",
+    "id": "page-magic-wizards-spells-78",
     "title": "A Magical Wizard (Scene 146)",
-    "slug": "magic-wizards-spells-151",
+    "slug": "magic-wizards-spells-78",
     "parentHub": "fantasy-fairytales",
     "parentTheme": "magic-wizards-spells",
     "ageGroup": "kids",
@@ -1817,9 +1794,9 @@
     "language": "en"
   },
   {
-    "id": "page-magic-wizards-spells-153",
+    "id": "page-magic-wizards-spells-79",
     "title": "A Magical Wizard (Scene 148)",
-    "slug": "magic-wizards-spells-153",
+    "slug": "magic-wizards-spells-79",
     "parentHub": "fantasy-fairytales",
     "parentTheme": "magic-wizards-spells",
     "ageGroup": "toddlers",
@@ -1840,9 +1817,9 @@
     "language": "en"
   },
   {
-    "id": "page-magic-wizards-spells-155",
+    "id": "page-magic-wizards-spells-80",
     "title": "A Magical Wizard (Scene 150)",
-    "slug": "magic-wizards-spells-155",
+    "slug": "magic-wizards-spells-80",
     "parentHub": "fantasy-fairytales",
     "parentTheme": "magic-wizards-spells",
     "ageGroup": "teens",
@@ -1863,9 +1840,9 @@
     "language": "en"
   },
   {
-    "id": "page-magic-wizards-spells-157",
+    "id": "page-magic-wizards-spells-81",
     "title": "A Magical Wizard (Scene 152)",
-    "slug": "magic-wizards-spells-157",
+    "slug": "magic-wizards-spells-81",
     "parentHub": "fantasy-fairytales",
     "parentTheme": "magic-wizards-spells",
     "ageGroup": "kids",
@@ -1886,9 +1863,9 @@
     "language": "en"
   },
   {
-    "id": "page-magic-wizards-spells-159",
+    "id": "page-magic-wizards-spells-82",
     "title": "A Magical Wizard (Scene 154)",
-    "slug": "magic-wizards-spells-159",
+    "slug": "magic-wizards-spells-82",
     "parentHub": "fantasy-fairytales",
     "parentTheme": "magic-wizards-spells",
     "ageGroup": "toddlers",
@@ -1909,9 +1886,9 @@
     "language": "en"
   },
   {
-    "id": "page-magic-wizards-spells-160",
+    "id": "page-magic-wizards-spells-83",
     "title": "A Magical Wizard (Scene 155)",
-    "slug": "magic-wizards-spells-160",
+    "slug": "magic-wizards-spells-83",
     "parentHub": "fantasy-fairytales",
     "parentTheme": "magic-wizards-spells",
     "ageGroup": "kids",
@@ -1932,9 +1909,9 @@
     "language": "en"
   },
   {
-    "id": "page-magic-wizards-spells-162",
+    "id": "page-magic-wizards-spells-84",
     "title": "A Magical Wizard (Scene 157)",
-    "slug": "magic-wizards-spells-162",
+    "slug": "magic-wizards-spells-84",
     "parentHub": "fantasy-fairytales",
     "parentTheme": "magic-wizards-spells",
     "ageGroup": "toddlers",
@@ -1955,9 +1932,9 @@
     "language": "en"
   },
   {
-    "id": "page-magic-wizards-spells-164",
+    "id": "page-magic-wizards-spells-85",
     "title": "A Magical Wizard (Scene 159)",
-    "slug": "magic-wizards-spells-164",
+    "slug": "magic-wizards-spells-85",
     "parentHub": "fantasy-fairytales",
     "parentTheme": "magic-wizards-spells",
     "ageGroup": "teens",
@@ -1978,9 +1955,9 @@
     "language": "en"
   },
   {
-    "id": "page-magic-wizards-spells-166",
+    "id": "page-magic-wizards-spells-86",
     "title": "A Magical Wizard (Scene 161)",
-    "slug": "magic-wizards-spells-166",
+    "slug": "magic-wizards-spells-86",
     "parentHub": "fantasy-fairytales",
     "parentTheme": "magic-wizards-spells",
     "ageGroup": "kids",
@@ -2001,9 +1978,9 @@
     "language": "en"
   },
   {
-    "id": "page-magic-wizards-spells-168",
+    "id": "page-magic-wizards-spells-87",
     "title": "A Magical Wizard (Scene 163)",
-    "slug": "magic-wizards-spells-168",
+    "slug": "magic-wizards-spells-87",
     "parentHub": "fantasy-fairytales",
     "parentTheme": "magic-wizards-spells",
     "ageGroup": "toddlers",
@@ -2024,9 +2001,9 @@
     "language": "en"
   },
   {
-    "id": "page-magic-wizards-spells-170",
+    "id": "page-magic-wizards-spells-88",
     "title": "A Magical Wizard (Scene 165)",
-    "slug": "magic-wizards-spells-170",
+    "slug": "magic-wizards-spells-88",
     "parentHub": "fantasy-fairytales",
     "parentTheme": "magic-wizards-spells",
     "ageGroup": "teens",
@@ -2047,9 +2024,9 @@
     "language": "en"
   },
   {
-    "id": "page-magic-wizards-spells-172",
+    "id": "page-magic-wizards-spells-89",
     "title": "A Magical Wizard (Scene 167)",
-    "slug": "magic-wizards-spells-172",
+    "slug": "magic-wizards-spells-89",
     "parentHub": "fantasy-fairytales",
     "parentTheme": "magic-wizards-spells",
     "ageGroup": "kids",
@@ -2070,9 +2047,9 @@
     "language": "en"
   },
   {
-    "id": "page-magic-wizards-spells-174",
+    "id": "page-magic-wizards-spells-90",
     "title": "A Magical Wizard (Scene 169)",
-    "slug": "magic-wizards-spells-174",
+    "slug": "magic-wizards-spells-90",
     "parentHub": "fantasy-fairytales",
     "parentTheme": "magic-wizards-spells",
     "ageGroup": "toddlers",
@@ -2093,9 +2070,9 @@
     "language": "en"
   },
   {
-    "id": "page-magic-wizards-spells-176",
+    "id": "page-magic-wizards-spells-91",
     "title": "A Magical Wizard (Scene 171)",
-    "slug": "magic-wizards-spells-176",
+    "slug": "magic-wizards-spells-91",
     "parentHub": "fantasy-fairytales",
     "parentTheme": "magic-wizards-spells",
     "ageGroup": "teens",
@@ -2116,9 +2093,9 @@
     "language": "en"
   },
   {
-    "id": "page-magic-wizards-spells-178",
+    "id": "page-magic-wizards-spells-92",
     "title": "A Magical Wizard (Scene 173)",
-    "slug": "magic-wizards-spells-178",
+    "slug": "magic-wizards-spells-92",
     "parentHub": "fantasy-fairytales",
     "parentTheme": "magic-wizards-spells",
     "ageGroup": "kids",
@@ -2139,9 +2116,9 @@
     "language": "en"
   },
   {
-    "id": "page-magic-wizards-spells-180",
+    "id": "page-magic-wizards-spells-93",
     "title": "A Magical Wizard (Scene 175)",
-    "slug": "magic-wizards-spells-180",
+    "slug": "magic-wizards-spells-93",
     "parentHub": "fantasy-fairytales",
     "parentTheme": "magic-wizards-spells",
     "ageGroup": "toddlers",
@@ -2162,9 +2139,9 @@
     "language": "en"
   },
   {
-    "id": "page-magic-wizards-spells-182",
+    "id": "page-magic-wizards-spells-94",
     "title": "A Magical Wizard (Scene 177)",
-    "slug": "magic-wizards-spells-182",
+    "slug": "magic-wizards-spells-94",
     "parentHub": "fantasy-fairytales",
     "parentTheme": "magic-wizards-spells",
     "ageGroup": "teens",
@@ -2185,9 +2162,9 @@
     "language": "en"
   },
   {
-    "id": "page-magic-wizards-spells-184",
+    "id": "page-magic-wizards-spells-95",
     "title": "A Magical Wizard (Scene 179)",
-    "slug": "magic-wizards-spells-184",
+    "slug": "magic-wizards-spells-95",
     "parentHub": "fantasy-fairytales",
     "parentTheme": "magic-wizards-spells",
     "ageGroup": "kids",
@@ -2208,9 +2185,9 @@
     "language": "en"
   },
   {
-    "id": "page-magic-wizards-spells-186",
+    "id": "page-magic-wizards-spells-96",
     "title": "A Magical Wizard (Scene 181)",
-    "slug": "magic-wizards-spells-186",
+    "slug": "magic-wizards-spells-96",
     "parentHub": "fantasy-fairytales",
     "parentTheme": "magic-wizards-spells",
     "ageGroup": "toddlers",
@@ -2231,9 +2208,9 @@
     "language": "en"
   },
   {
-    "id": "page-magic-wizards-spells-188",
+    "id": "page-magic-wizards-spells-97",
     "title": "A Magical Wizard (Scene 183)",
-    "slug": "magic-wizards-spells-188",
+    "slug": "magic-wizards-spells-97",
     "parentHub": "fantasy-fairytales",
     "parentTheme": "magic-wizards-spells",
     "ageGroup": "teens",
@@ -2254,9 +2231,9 @@
     "language": "en"
   },
   {
-    "id": "page-magic-wizards-spells-190",
+    "id": "page-magic-wizards-spells-98",
     "title": "A Magical Wizard (Scene 185)",
-    "slug": "magic-wizards-spells-190",
+    "slug": "magic-wizards-spells-98",
     "parentHub": "fantasy-fairytales",
     "parentTheme": "magic-wizards-spells",
     "ageGroup": "kids",
@@ -2277,9 +2254,9 @@
     "language": "en"
   },
   {
-    "id": "page-magic-wizards-spells-192",
+    "id": "page-magic-wizards-spells-99",
     "title": "A Magical Wizard (Scene 187)",
-    "slug": "magic-wizards-spells-192",
+    "slug": "magic-wizards-spells-99",
     "parentHub": "fantasy-fairytales",
     "parentTheme": "magic-wizards-spells",
     "ageGroup": "toddlers",
@@ -2300,9 +2277,9 @@
     "language": "en"
   },
   {
-    "id": "page-magic-wizards-spells-194",
+    "id": "page-magic-wizards-spells-100",
     "title": "A Magical Wizard (Scene 189)",
-    "slug": "magic-wizards-spells-194",
+    "slug": "magic-wizards-spells-100",
     "parentHub": "fantasy-fairytales",
     "parentTheme": "magic-wizards-spells",
     "ageGroup": "teens",
@@ -2323,9 +2300,9 @@
     "language": "en"
   },
   {
-    "id": "page-magic-wizards-spells-196",
+    "id": "page-magic-wizards-spells-101",
     "title": "A Magical Wizard (Scene 191)",
-    "slug": "magic-wizards-spells-196",
+    "slug": "magic-wizards-spells-101",
     "parentHub": "fantasy-fairytales",
     "parentTheme": "magic-wizards-spells",
     "ageGroup": "kids",
@@ -2346,9 +2323,9 @@
     "language": "en"
   },
   {
-    "id": "page-magic-wizards-spells-198",
+    "id": "page-magic-wizards-spells-102",
     "title": "A Magical Wizard (Scene 193)",
-    "slug": "magic-wizards-spells-198",
+    "slug": "magic-wizards-spells-102",
     "parentHub": "fantasy-fairytales",
     "parentTheme": "magic-wizards-spells",
     "ageGroup": "toddlers",
@@ -2369,9 +2346,9 @@
     "language": "en"
   },
   {
-    "id": "page-magic-wizards-spells-200",
+    "id": "page-magic-wizards-spells-103",
     "title": "A Magical Wizard (Scene 195)",
-    "slug": "magic-wizards-spells-200",
+    "slug": "magic-wizards-spells-103",
     "parentHub": "fantasy-fairytales",
     "parentTheme": "magic-wizards-spells",
     "ageGroup": "teens",
@@ -2392,9 +2369,9 @@
     "language": "en"
   },
   {
-    "id": "page-magic-wizards-spells-202",
+    "id": "page-magic-wizards-spells-104",
     "title": "A Magical Wizard (Scene 197)",
-    "slug": "magic-wizards-spells-202",
+    "slug": "magic-wizards-spells-104",
     "parentHub": "fantasy-fairytales",
     "parentTheme": "magic-wizards-spells",
     "ageGroup": "kids",
@@ -2415,9 +2392,9 @@
     "language": "en"
   },
   {
-    "id": "page-magic-wizards-spells-204",
+    "id": "page-magic-wizards-spells-105",
     "title": "A Magical Wizard (Scene 199)",
-    "slug": "magic-wizards-spells-204",
+    "slug": "magic-wizards-spells-105",
     "parentHub": "fantasy-fairytales",
     "parentTheme": "magic-wizards-spells",
     "ageGroup": "toddlers",
@@ -2438,9 +2415,9 @@
     "language": "en"
   },
   {
-    "id": "page-magic-wizards-spells-206",
+    "id": "page-magic-wizards-spells-106",
     "title": "A Magical Wizard (Scene 201)",
-    "slug": "magic-wizards-spells-206",
+    "slug": "magic-wizards-spells-106",
     "parentHub": "fantasy-fairytales",
     "parentTheme": "magic-wizards-spells",
     "ageGroup": "teens",
@@ -2461,9 +2438,9 @@
     "language": "en"
   },
   {
-    "id": "page-magic-wizards-spells-208",
+    "id": "page-magic-wizards-spells-107",
     "title": "A Magical Wizard (Scene 203)",
-    "slug": "magic-wizards-spells-208",
+    "slug": "magic-wizards-spells-107",
     "parentHub": "fantasy-fairytales",
     "parentTheme": "magic-wizards-spells",
     "ageGroup": "kids",
@@ -2484,9 +2461,9 @@
     "language": "en"
   },
   {
-    "id": "page-magic-wizards-spells-210",
+    "id": "page-magic-wizards-spells-108",
     "title": "A Magical Wizard (Scene 205)",
-    "slug": "magic-wizards-spells-210",
+    "slug": "magic-wizards-spells-108",
     "parentHub": "fantasy-fairytales",
     "parentTheme": "magic-wizards-spells",
     "ageGroup": "toddlers",
@@ -2507,9 +2484,9 @@
     "language": "en"
   },
   {
-    "id": "page-magic-wizards-spells-212",
+    "id": "page-magic-wizards-spells-109",
     "title": "A Magical Wizard (Scene 207)",
-    "slug": "magic-wizards-spells-212",
+    "slug": "magic-wizards-spells-109",
     "parentHub": "fantasy-fairytales",
     "parentTheme": "magic-wizards-spells",
     "ageGroup": "teens",
@@ -2530,9 +2507,9 @@
     "language": "en"
   },
   {
-    "id": "page-magic-wizards-spells-214",
+    "id": "page-magic-wizards-spells-110",
     "title": "A Magical Wizard (Scene 209)",
-    "slug": "magic-wizards-spells-214",
+    "slug": "magic-wizards-spells-110",
     "parentHub": "fantasy-fairytales",
     "parentTheme": "magic-wizards-spells",
     "ageGroup": "kids",
@@ -2553,9 +2530,9 @@
     "language": "en"
   },
   {
-    "id": "page-magic-wizards-spells-216",
+    "id": "page-magic-wizards-spells-111",
     "title": "A Magical Wizard (Scene 211)",
-    "slug": "magic-wizards-spells-216",
+    "slug": "magic-wizards-spells-111",
     "parentHub": "fantasy-fairytales",
     "parentTheme": "magic-wizards-spells",
     "ageGroup": "toddlers",
@@ -2576,9 +2553,9 @@
     "language": "en"
   },
   {
-    "id": "page-magic-wizards-spells-218",
+    "id": "page-magic-wizards-spells-112",
     "title": "A Magical Wizard (Scene 213)",
-    "slug": "magic-wizards-spells-218",
+    "slug": "magic-wizards-spells-112",
     "parentHub": "fantasy-fairytales",
     "parentTheme": "magic-wizards-spells",
     "ageGroup": "teens",
@@ -2599,9 +2576,9 @@
     "language": "en"
   },
   {
-    "id": "page-magic-wizards-spells-220",
+    "id": "page-magic-wizards-spells-113",
     "title": "A Magical Wizard (Scene 215)",
-    "slug": "magic-wizards-spells-220",
+    "slug": "magic-wizards-spells-113",
     "parentHub": "fantasy-fairytales",
     "parentTheme": "magic-wizards-spells",
     "ageGroup": "kids",
@@ -2622,9 +2599,9 @@
     "language": "en"
   },
   {
-    "id": "page-magic-wizards-spells-222",
+    "id": "page-magic-wizards-spells-114",
     "title": "A Magical Wizard (Scene 217)",
-    "slug": "magic-wizards-spells-222",
+    "slug": "magic-wizards-spells-114",
     "parentHub": "fantasy-fairytales",
     "parentTheme": "magic-wizards-spells",
     "ageGroup": "toddlers",
@@ -2645,9 +2622,9 @@
     "language": "en"
   },
   {
-    "id": "page-magic-wizards-spells-224",
+    "id": "page-magic-wizards-spells-115",
     "title": "A Magical Wizard (Scene 219)",
-    "slug": "magic-wizards-spells-224",
+    "slug": "magic-wizards-spells-115",
     "parentHub": "fantasy-fairytales",
     "parentTheme": "magic-wizards-spells",
     "ageGroup": "teens",
@@ -2668,9 +2645,9 @@
     "language": "en"
   },
   {
-    "id": "page-magic-wizards-spells-226",
+    "id": "page-magic-wizards-spells-116",
     "title": "A Magical Wizard (Scene 221)",
-    "slug": "magic-wizards-spells-226",
+    "slug": "magic-wizards-spells-116",
     "parentHub": "fantasy-fairytales",
     "parentTheme": "magic-wizards-spells",
     "ageGroup": "kids",
@@ -2691,9 +2668,9 @@
     "language": "en"
   },
   {
-    "id": "page-magic-wizards-spells-228",
+    "id": "page-magic-wizards-spells-117",
     "title": "A Magical Wizard (Scene 223)",
-    "slug": "magic-wizards-spells-228",
+    "slug": "magic-wizards-spells-117",
     "parentHub": "fantasy-fairytales",
     "parentTheme": "magic-wizards-spells",
     "ageGroup": "toddlers",
@@ -2714,9 +2691,9 @@
     "language": "en"
   },
   {
-    "id": "page-magic-wizards-spells-230",
+    "id": "page-magic-wizards-spells-118",
     "title": "A Magical Wizard (Scene 225)",
-    "slug": "magic-wizards-spells-230",
+    "slug": "magic-wizards-spells-118",
     "parentHub": "fantasy-fairytales",
     "parentTheme": "magic-wizards-spells",
     "ageGroup": "teens",
@@ -2737,9 +2714,9 @@
     "language": "en"
   },
   {
-    "id": "page-magic-wizards-spells-232",
+    "id": "page-magic-wizards-spells-119",
     "title": "A Magical Wizard (Scene 227)",
-    "slug": "magic-wizards-spells-232",
+    "slug": "magic-wizards-spells-119",
     "parentHub": "fantasy-fairytales",
     "parentTheme": "magic-wizards-spells",
     "ageGroup": "kids",
@@ -2760,9 +2737,9 @@
     "language": "en"
   },
   {
-    "id": "page-magic-wizards-spells-234",
+    "id": "page-magic-wizards-spells-120",
     "title": "A Magical Wizard (Scene 229)",
-    "slug": "magic-wizards-spells-234",
+    "slug": "magic-wizards-spells-120",
     "parentHub": "fantasy-fairytales",
     "parentTheme": "magic-wizards-spells",
     "ageGroup": "toddlers",
@@ -2783,9 +2760,9 @@
     "language": "en"
   },
   {
-    "id": "page-magic-wizards-spells-236",
+    "id": "page-magic-wizards-spells-121",
     "title": "A Magical Wizard (Scene 231)",
-    "slug": "magic-wizards-spells-236",
+    "slug": "magic-wizards-spells-121",
     "parentHub": "fantasy-fairytales",
     "parentTheme": "magic-wizards-spells",
     "ageGroup": "teens",
@@ -2806,9 +2783,9 @@
     "language": "en"
   },
   {
-    "id": "page-magic-wizards-spells-238",
+    "id": "page-magic-wizards-spells-122",
     "title": "A Magical Wizard (Scene 233)",
-    "slug": "magic-wizards-spells-238",
+    "slug": "magic-wizards-spells-122",
     "parentHub": "fantasy-fairytales",
     "parentTheme": "magic-wizards-spells",
     "ageGroup": "kids",
@@ -2829,9 +2806,9 @@
     "language": "en"
   },
   {
-    "id": "page-magic-wizards-spells-240",
+    "id": "page-magic-wizards-spells-123",
     "title": "A Magical Wizard (Scene 235)",
-    "slug": "magic-wizards-spells-240",
+    "slug": "magic-wizards-spells-123",
     "parentHub": "fantasy-fairytales",
     "parentTheme": "magic-wizards-spells",
     "ageGroup": "toddlers",
@@ -2852,9 +2829,9 @@
     "language": "en"
   },
   {
-    "id": "page-magic-wizards-spells-242",
+    "id": "page-magic-wizards-spells-124",
     "title": "A Magical Wizard (Scene 237)",
-    "slug": "magic-wizards-spells-242",
+    "slug": "magic-wizards-spells-124",
     "parentHub": "fantasy-fairytales",
     "parentTheme": "magic-wizards-spells",
     "ageGroup": "teens",
@@ -2875,9 +2852,9 @@
     "language": "en"
   },
   {
-    "id": "page-magic-wizards-spells-244",
+    "id": "page-magic-wizards-spells-125",
     "title": "Two Wizards",
-    "slug": "magic-wizards-spells-244",
+    "slug": "magic-wizards-spells-125",
     "parentHub": "fantasy-fairytales",
     "parentTheme": "magic-wizards-spells",
     "ageGroup": "kids",
@@ -2898,9 +2875,9 @@
     "language": "en"
   },
   {
-    "id": "page-magic-wizards-spells-246",
+    "id": "page-magic-wizards-spells-126",
     "title": "Whimsical Wizard",
-    "slug": "magic-wizards-spells-246",
+    "slug": "magic-wizards-spells-126",
     "parentHub": "fantasy-fairytales",
     "parentTheme": "magic-wizards-spells",
     "ageGroup": "toddlers",
@@ -2921,9 +2898,9 @@
     "language": "en"
   },
   {
-    "id": "page-magic-wizards-spells-248",
+    "id": "page-magic-wizards-spells-127",
     "title": "Wizard Meditation Pose",
-    "slug": "magic-wizards-spells-248",
+    "slug": "magic-wizards-spells-127",
     "parentHub": "fantasy-fairytales",
     "parentTheme": "magic-wizards-spells",
     "ageGroup": "teens",
@@ -2944,9 +2921,9 @@
     "language": "en"
   },
   {
-    "id": "page-magic-wizards-spells-250",
+    "id": "page-magic-wizards-spells-128",
     "title": "Wizard Conjuring Magical Orbs",
-    "slug": "magic-wizards-spells-250",
+    "slug": "magic-wizards-spells-128",
     "parentHub": "fantasy-fairytales",
     "parentTheme": "magic-wizards-spells",
     "ageGroup": "kids",
@@ -2967,9 +2944,9 @@
     "language": "en"
   },
   {
-    "id": "page-magic-wizards-spells-252",
+    "id": "page-magic-wizards-spells-129",
     "title": "Wizard In Clouds",
-    "slug": "magic-wizards-spells-252",
+    "slug": "magic-wizards-spells-129",
     "parentHub": "fantasy-fairytales",
     "parentTheme": "magic-wizards-spells",
     "ageGroup": "toddlers",
@@ -2990,9 +2967,9 @@
     "language": "en"
   },
   {
-    "id": "page-magic-wizards-spells-254",
+    "id": "page-magic-wizards-spells-130",
     "title": "Wizard On Horseback",
-    "slug": "magic-wizards-spells-254",
+    "slug": "magic-wizards-spells-130",
     "parentHub": "fantasy-fairytales",
     "parentTheme": "magic-wizards-spells",
     "ageGroup": "teens",
@@ -3013,9 +2990,9 @@
     "language": "en"
   },
   {
-    "id": "page-magic-wizards-spells-256",
+    "id": "page-magic-wizards-spells-131",
     "title": "Wizard On Horseback (Scene 3)",
-    "slug": "magic-wizards-spells-256",
+    "slug": "magic-wizards-spells-131",
     "parentHub": "fantasy-fairytales",
     "parentTheme": "magic-wizards-spells",
     "ageGroup": "kids",
@@ -3036,9 +3013,9 @@
     "language": "en"
   },
   {
-    "id": "page-magic-wizards-spells-258",
+    "id": "page-magic-wizards-spells-132",
     "title": "Wizard On Horseback (Scene 5)",
-    "slug": "magic-wizards-spells-258",
+    "slug": "magic-wizards-spells-132",
     "parentHub": "fantasy-fairytales",
     "parentTheme": "magic-wizards-spells",
     "ageGroup": "toddlers",
@@ -3059,9 +3036,9 @@
     "language": "en"
   },
   {
-    "id": "page-magic-wizards-spells-260",
+    "id": "page-magic-wizards-spells-133",
     "title": "Wizard On Horseback (Scene 7)",
-    "slug": "magic-wizards-spells-260",
+    "slug": "magic-wizards-spells-133",
     "parentHub": "fantasy-fairytales",
     "parentTheme": "magic-wizards-spells",
     "ageGroup": "teens",
@@ -3082,9 +3059,9 @@
     "language": "en"
   },
   {
-    "id": "page-magic-wizards-spells-262",
+    "id": "page-magic-wizards-spells-134",
     "title": "Wizard On Horseback (Scene 9)",
-    "slug": "magic-wizards-spells-262",
+    "slug": "magic-wizards-spells-134",
     "parentHub": "fantasy-fairytales",
     "parentTheme": "magic-wizards-spells",
     "ageGroup": "kids",
@@ -3105,9 +3082,9 @@
     "language": "en"
   },
   {
-    "id": "page-magic-wizards-spells-264",
+    "id": "page-magic-wizards-spells-135",
     "title": "Wizards Magic Trick",
-    "slug": "magic-wizards-spells-264",
+    "slug": "magic-wizards-spells-135",
     "parentHub": "fantasy-fairytales",
     "parentTheme": "magic-wizards-spells",
     "ageGroup": "toddlers",
@@ -3128,9 +3105,9 @@
     "language": "en"
   },
   {
-    "id": "page-magic-wizards-spells-266",
+    "id": "page-magic-wizards-spells-136",
     "title": "Woman Flying Magic Carpet",
-    "slug": "magic-wizards-spells-266",
+    "slug": "magic-wizards-spells-136",
     "parentHub": "fantasy-fairytales",
     "parentTheme": "magic-wizards-spells",
     "ageGroup": "teens",
@@ -3151,9 +3128,9 @@
     "language": "en"
   },
   {
-    "id": "page-magic-wizards-spells-267",
+    "id": "page-magic-wizards-spells-137",
     "title": "Wise Ancient Wizard in Star-patterned Midnight Blue",
-    "slug": "magic-wizards-spells-267",
+    "slug": "magic-wizards-spells-137",
     "parentHub": "fantasy-fairytales",
     "parentTheme": "magic-wizards-spells",
     "ageGroup": "toddlers",
