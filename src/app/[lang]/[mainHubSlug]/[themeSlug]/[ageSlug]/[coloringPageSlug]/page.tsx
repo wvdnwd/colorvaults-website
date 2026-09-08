@@ -10,6 +10,7 @@ import FavoriteButton from '@/components/FavoriteButton';
 import MotionCard from '@/components/MotionCard';
 import CharacterIpDisclaimer from '@/components/CharacterIpDisclaimer';
 import AdSlot from '@/components/AdSlot';
+import AdCard from '@/components/AdCard';
 import ReportButton from '@/components/ReportButton';
 import CraftIdeasSection from '@/components/CraftIdeasSection';
 import ThemeFaqSection from '@/components/ThemeFaqSection';
@@ -38,7 +39,13 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
     description: page.metaDescription || page.shortDescription,
     alternates: {
       canonical: `/${lang}/${mainHubSlug}/${themeSlug}/${ageSlug}/${page.slug}`,
-      languages: { 'en': `/${lang}/${mainHubSlug}/${themeSlug}/${ageSlug}/${page.slug}`, 'nl': `/${lang}/${mainHubSlug}/${themeSlug}/${ageSlug}/${page.slug}`, 'x-default': `/en/${mainHubSlug}/${themeSlug}/${ageSlug}/${page.slug}` }
+      languages: {
+        en: `/en/${mainHubSlug}/${themeSlug}/${ageSlug}/${page.slug}`,
+        nl: `/nl/${mainHubSlug}/${themeSlug}/${ageSlug}/${page.slug}`,
+        de: `/de/${mainHubSlug}/${themeSlug}/${ageSlug}/${page.slug}`,
+        fr: `/fr/${mainHubSlug}/${themeSlug}/${ageSlug}/${page.slug}`,
+        'x-default': `/en/${mainHubSlug}/${themeSlug}/${ageSlug}/${page.slug}`,
+      },
     },
     openGraph: {
       title: page.metaTitle || page.title,
@@ -89,10 +96,10 @@ export default async function ColoringPageDetail({ params }: { params: Promise<{
   // Show up to 24 related pages
   const displayPages = allThemePages.slice(0, 24);
 
-  // Split into chunks of 8 to insert AdSlot in between rows
+  // Split into chunks of 12 (3 rows x 4 cols) to insert AdSlot in between rows
   const pageChunks = [];
-  for (let i = 0; i < displayPages.length; i += 8) {
-    pageChunks.push(displayPages.slice(i, i + 8));
+  for (let i = 0; i < displayPages.length; i += 12) {
+    pageChunks.push(displayPages.slice(i, i + 12));
   }
 
   const pinterestUrl =`https://pinterest.com/pin/create/button/?url=${encodeURIComponent(`https://colorvaults.com/${lang}/${mainHubSlug}/${themeSlug}/${ageSlug}/${page.slug}`)}&media=${encodeURIComponent(page.image)}&description=${encodeURIComponent(page.metaTitle || page.title)}`;
@@ -321,22 +328,28 @@ export default async function ColoringPageDetail({ params }: { params: Promise<{
             </Link>
           </div>
 
-          {pageChunks.map((chunk, chunkIdx) => (
-            <React.Fragment key={chunkIdx}>
-              <div className="grid-4"style={{ marginBottom:'2.5rem'}}>
-                {chunk.map(related => (
-                  <MotionCard key={related.slug} page={related} lang={lang} isEn={isEn} />
-                ))}
-              </div>
+          {pageChunks.map((chunk, chunkIdx) => {
+            const gridItems: React.ReactNode[] = [];
+            chunk.forEach((related, i) => {
+              if (i === 5) gridItems.push(<AdCard key="related-ad-card" />);
+              gridItems.push(<MotionCard key={related.slug} page={related} lang={lang} isEn={isEn} />);
+            });
 
-              {/* Advertisement between rows of coloring pages */}
-              {chunkIdx < pageChunks.length - 1 && (
-                <div style={{ margin:'3.5rem 0', background:'var(--surface-2)', padding:'1.5rem', borderRadius:'var(--radius-lg)', border:'1px solid var(--gray-200)'}}>
-                  <AdSlot type="banner"text={isEn ?"Sponsored Content":"Gesponsord"} />
+            return (
+              <React.Fragment key={chunkIdx}>
+                <div className="grid-4" style={{ marginBottom: '2.5rem' }}>
+                  {gridItems}
                 </div>
-              )}
-            </React.Fragment>
-          ))}
+
+                {/* Advertisement between rows of coloring pages */}
+                {chunkIdx < pageChunks.length - 1 && (
+                  <div style={{ margin: '3.5rem 0', background: 'var(--surface-2)', padding: '1.5rem', borderRadius: 'var(--radius-lg)', border: '1px solid var(--gray-200)' }}>
+                    <AdSlot type="banner" text={isEn ? "Sponsored Content" : "Gesponsord"} />
+                  </div>
+                )}
+              </React.Fragment>
+            );
+          })}
 
           <div style={{ textAlign:'center', marginTop:'3.5rem'}}>
             <Link

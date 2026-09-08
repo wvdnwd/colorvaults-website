@@ -63,6 +63,8 @@ export async function generateMetadata({
       languages: {
         en: `/en/search${qString ? `?${qString}` : ''}`,
         nl: `/nl/search${qString ? `?${qString}` : ''}`,
+        de: `/de/search${qString ? `?${qString}` : ''}`,
+        fr: `/fr/search${qString ? `?${qString}` : ''}`,
         'x-default': `/en/search${qString ? `?${qString}` : ''}`,
       },
     },

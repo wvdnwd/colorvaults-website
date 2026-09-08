@@ -94,9 +94,9 @@ export default async function HowToDrawLessonPage({
 
         {/* 6 Step Cards */}
         <div style={{ display:'flex', flexDirection:'column', gap:'2rem', marginTop:'2rem'}}>
-          {lesson.steps.map((step) => (
-            <div
-              key={step.stepNumber}
+          {lesson.steps.map((step, index) => (
+            <React.Fragment key={step.stepNumber}>
+              <div
               style={{
                 background:'#FFFFFF',
                 borderRadius:'24px',
@@ -134,26 +134,32 @@ export default async function HowToDrawLessonPage({
                   {isEn ? step.instructionEn : step.instructionNl}
                 </p>
 
-                {(step.tipEn || step.tipNl) && (
-                  <div style={{
-                    background:'#FEF3C7',
-                    border:'1px solid #FDE68A',
-                    borderRadius:'12px',
-                    padding:'0.6rem 1rem',
-                    color:'#92400E',
-                    fontSize:'0.875rem',
-                    fontWeight: 600,
-                    display:'inline-flex',
-                    alignItems:'center',
-                    gap:'0.4rem',
-                  }}>
-                    <strong>{isEn ?'Artist Tip:':'Kunstenaars Tip:'}</strong> {isEn ? step.tipEn : step.tipNl}
-                  </div>
-                )}
-              </div>
+              {(step.tipEn || step.tipNl) && (
+                <div style={{
+                  background:'#FEF3C7',
+                  border:'1px solid #FDE68A',
+                  borderRadius:'12px',
+                  padding:'0.6rem 1rem',
+                  color:'#92400E',
+                  fontSize:'0.875rem',
+                  fontWeight: 600,
+                  display:'inline-flex',
+                  alignItems:'center',
+                  gap:'0.4rem',
+                }}>
+                  <strong>{isEn ?'Artist Tip:':'Kunstenaars Tip:'}</strong> {isEn ? step.tipEn : step.tipNl}
+                </div>
+              )}
             </div>
-          ))}
-        </div>
+          </div>
+          {index === 2 && (
+            <div style={{ margin: '1.5rem 0' }}>
+              <AdSlot type="banner" text={isEn ? 'Sponsored Content' : 'Gesponsord'} />
+            </div>
+          )}
+        </React.Fragment>
+      ))}
+    </div>
 
         {/* Printable Drawing Worksheet Box */}
         <div style={{

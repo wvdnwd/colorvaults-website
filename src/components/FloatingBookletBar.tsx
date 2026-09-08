@@ -113,14 +113,14 @@ export default function FloatingBookletBar({ lang }: { lang: string }) {
       <div className={styles.floatingBar}>
         {/* Left: Booklet Summary & Count */}
         <div className={styles.infoGroup}>
-          <div className={styles.bookletIcon}>📕</div>
+          <div className={styles.bookletIcon} aria-hidden="true">📕</div>
           <div>
             <div className={styles.barTitle}>
-              {isEn ?'My Custom Coloring Book':'Mijn Eigen Kleurboek'}
+              {isEn ? 'My Custom Coloring Book' : 'Mijn Eigen Kleurboek'}
             </div>
             <div className={styles.barSubtitle}>
               {isEn
-                ?`${totalSelected} page${totalSelected > 1 ?'s':''} selected across categories`:`${totalSelected} kleurplaat${totalSelected > 1 ?'en':''} geselecteerd`}
+                ? `${totalSelected} page${totalSelected > 1 ? 's' : ''} selected across categories` : `${totalSelected} kleurplaat${totalSelected > 1 ? 'en' : ''} geselecteerd`}
             </div>
           </div>
         </div>
@@ -131,9 +131,11 @@ export default function FloatingBookletBar({ lang }: { lang: string }) {
             <div key={p.slug} className={styles.thumbWrapper} title={p.title}>
               <SafeImage src={p.image} alt={p.title} width={36} height={36} className={styles.thumbImg} />
               <button
-                type="button"className={styles.removeThumbBtn}
+                type="button"
+                className={styles.removeThumbBtn}
                 onClick={() => removePage(p.slug)}
-                title={isEn ?'Remove from booklet':'Verwijderen'}
+                title={isEn ? 'Remove from booklet' : 'Verwijderen'}
+                aria-label={isEn ? `Remove ${p.title} from booklet` : `Verwijder ${p.title} uit boekje`}
               >
                 ✕
               </button>

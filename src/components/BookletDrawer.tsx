@@ -119,30 +119,31 @@ export default function BookletDrawer({ isOpen, onClose, lang }: BookletDrawerPr
         {/* Header */}
         <div className={styles.header}>
           <div className={styles.headerTitleGroup}>
-            <div className={styles.basketIcon}></div>
+            <div className={styles.basketIcon} aria-hidden="true">🧺</div>
             <div>
               <h2 className={styles.title}>
-                {isEn ?'My Coloring Bundle':'Mijn Kleurboek Bundel'}
+                {isEn ? 'My Coloring Bundle' : 'Mijn Kleurboek Bundel'}
               </h2>
               <p className={styles.subtitle}>
-                {totalSelected} {isEn ?`page${totalSelected === 1 ?'':'s'} in your print basket`:`kleurplaat${totalSelected === 1 ?'':'en'} in je printmandje`}
+                {totalSelected} {isEn ? `page${totalSelected === 1 ? '' : 's'} in your print basket` : `kleurplaat${totalSelected === 1 ? '' : 'en'} in je printmandje`}
               </p>
             </div>
           </div>
-          <button className={styles.closeBtn} onClick={onClose} aria-label="Close">✕</button>
+          <button className={styles.closeBtn} onClick={onClose} aria-label={isEn ? 'Close' : 'Sluiten'}>✕</button>
         </div>
 
         {/* Content List */}
         <div className={styles.body}>
           {totalSelected === 0 ? (
             <div className={styles.emptyState}>
-              <div style={{ fontSize:'3rem', marginBottom:'0.5rem'}}></div>
-              <p style={{ fontWeight: 800, fontSize:'1.1rem', color:'var(--foreground)'}}>
-                {isEn ?'Your bundle is still empty':'Je printmandje is nog leeg'}
+              <div style={{ fontSize: '3rem', marginBottom: '0.5rem' }} aria-hidden="true">🎨</div>
+              <p style={{ fontWeight: 800, fontSize: '1.1rem', color: 'var(--foreground)' }}>
+                {isEn ? 'Your bundle is still empty' : 'Je printmandje is nog leeg'}
               </p>
-              <p style={{ fontSize:'0.875rem', color:'var(--gray-500)', maxWidth:'300px', margin:'0 auto', lineHeight: 1.6 }}>
+              <p style={{ fontSize: '0.875rem', color: 'var(--gray-500)', maxWidth: '300px', margin: '0 auto', lineHeight: 1.6 }}>
                 {isEn
-                  ?'Browse different categories and click the button on any coloring page to build your custom collection!':'Blader door de categorieën en klik op de knop bij een kleurplaat om je eigen verzameling samen te stellen!'}
+                  ? 'Browse different categories and click the button on any coloring page to build your custom collection!'
+                  : 'Blader door de categorieën en klik op de knop bij een kleurplaat om je eigen verzameling samen te stellen!'}
               </p>
             </div>
           ) : (
@@ -154,16 +155,18 @@ export default function BookletDrawer({ isOpen, onClose, lang }: BookletDrawerPr
                   </div>
                   <div className={styles.cardDetails}>
                     <div className={styles.cardTheme}>
-                      {page.parentTheme ? page.parentTheme.replace(/-/g,'') :'Coloring Page'}
+                      {page.parentTheme ? page.parentTheme.replace(/-/g, '') : 'Coloring Page'}
                     </div>
                     <h4 className={styles.cardTitle}>{page.title}</h4>
                   </div>
                   <button
-                    type="button"className={styles.removeBtn}
+                    type="button"
+                    className={styles.removeBtn}
                     onClick={() => removePage(page.slug)}
-                    title={isEn ?'Remove from bundle':'Verwijder uit bundel'}
+                    title={isEn ? 'Remove from bundle' : 'Verwijder uit bundel'}
+                    aria-label={isEn ? `Remove ${page.title} from bundle` : `Verwijder ${page.title} uit bundel`}
                   >
-                   
+                    ✕
                   </button>
                 </div>
               ))}

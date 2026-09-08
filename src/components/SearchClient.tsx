@@ -1,13 +1,14 @@
 'use client';
 
-import React, { useState, useEffect, useTransition } from'react';
-import { useRouter, usePathname, useSearchParams } from'next/navigation';
-import Link from'next/link';
-import MotionCard from'@/components/MotionCard';
-import SearchFilterBar from'@/components/SearchFilterBar';
-import AdSlot from'@/components/AdSlot';
-import { ColoringPage } from'@/lib/api';
-import styles from'./SearchPage.module.css';
+import React, { useState, useEffect, useRef, useTransition } from 'react';
+import { useRouter, usePathname, useSearchParams } from 'next/navigation';
+import Link from 'next/link';
+import MotionCard from '@/components/MotionCard';
+import SearchFilterBar from '@/components/SearchFilterBar';
+import AdSlot from '@/components/AdSlot';
+import AdCard from '@/components/AdCard';
+import { ColoringPage } from '@/lib/api';
+import styles from './SearchPage.module.css';
 
 interface ThemeOption {
  slug: string;
@@ -40,6 +41,11 @@ export default function SearchClient({
  const searchParams = useSearchParams();
  const [isPending, startTransition] = useTransition();
 
+ const initialPagesRef = useRef(initialPages);
+ useEffect(() => {
+   initialPagesRef.current = initialPages;
+ }, [initialPages]);
+
  const [query, setQuery] = useState(initialQuery);
  const [difficulty, setDifficulty] = useState(initialDifficulty);
  const [age, setAge] = useState(initialAge);
@@ -48,22 +54,22 @@ export default function SearchClient({
  const [pages, setPages] = useState<ColoringPage[]>(initialPages);
  const [loading, setLoading] = useState(false);
 
- const isEn = lang ==='en';
+ const isEn = lang === 'en';
 
  // Sync state from searchParams if user navigates history
  useEffect(() => {
- setQuery(searchParams.get('q') ||'');
- setDifficulty(searchParams.get('difficulty') ||'');
- setAge(searchParams.get('age') ||'');
- setTheme(searchParams.get('theme') ||'');
- const p = parseInt(searchParams.get('page') ||'1', 10);
+ setQuery(searchParams.get('q') || '');
+ setDifficulty(searchParams.get('difficulty') || '');
+ setAge(searchParams.get('age') || '');
+ setTheme(searchParams.get('theme') || '');
+ const p = parseInt(searchParams.get('page') || '1', 10);
  setCurrentPage(isNaN(p) || p < 1 ? 1 : p);
  }, [searchParams]);
 
  // Fetch results dynamically from /api/search when filters or query change
  useEffect(() => {
  if (!query.trim() && !difficulty && !age && !theme) {
- setPages(initialPages);
+ setPages(initialPagesRef.current);
  return;
  }
 
@@ -102,7 +108,7 @@ export default function SearchClient({
  }, 200);
 
  return () => clearTimeout(timer);
- }, [query, difficulty, age, theme, lang, initialPages]);
+ }, [query, difficulty, age, theme, lang]);
 
  // Update URL helper
  const updateUrl = (newQuery: string, newDiff: string, newAge: string, newTheme: string, pageNum = 1) => {
@@ -187,20 +193,31 @@ export default function SearchClient({
  </div>
  ) : (
  <>
- <div className="grid-4">
- {displayedPages.map((page, index) => {
- const shouldShowAd = (index + 1) % 6 === 0;
+        {Array.from({ length: Math.ceil(displayedPages.length / 12) }).map((_, chunkIndex) => {
+          const chunk = displayedPages.slice(chunkIndex * 12, chunkIndex * 12 + 12);
+          const showAdBar = chunkIndex < Math.ceil(displayedPages.length / 12) - 1;
 
- return (
- <React.Fragment key={page.slug + page.parentTheme}>
- <MotionCard page={page} lang={lang} isEn={isEn} />
- {shouldShowAd && (
- <AdSlot type="in-feed"text={isEn ?'Sponsored':'Gesponsord'} />
- )}
- </React.Fragment>
- );
- })}
- </div>
+          const gridItems: React.ReactNode[] = [];
+          chunk.forEach((page, idx) => {
+            if (idx === 5) {
+              gridItems.push(<AdCard key={`search-ad-${chunkIndex}`} />);
+            }
+            gridItems.push(<MotionCard key={page.slug + page.parentTheme} page={page} lang={lang} isEn={isEn} />);
+          });
+
+          return (
+            <React.Fragment key={chunkIndex}>
+              <div className="grid-4" style={{ marginBottom: showAdBar ? '2.5rem' : 0 }}>
+                {gridItems}
+              </div>
+              {showAdBar && (
+                <div style={{ margin: '2.5rem 0' }}>
+                  <AdSlot type="banner" text={isEn ? 'Sponsored Content' : 'Gesponsord'} />
+                </div>
+              )}
+            </React.Fragment>
+          );
+        })}
 
  {/* Pagination Controls */}
  {totalPages > 1 && (

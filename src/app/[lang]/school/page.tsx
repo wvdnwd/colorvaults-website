@@ -2,6 +2,7 @@ import React from 'react';
 import Link from 'next/link';
 import Breadcrumbs from '@/components/Breadcrumbs';
 import AdSlot from '@/components/AdSlot';
+import AdCard from '@/components/AdCard';
 import NewsletterBox from '@/components/NewsletterBox';
 import SchoolWorksheetCard from '@/components/SchoolWorksheetCard';
 import { SCHOOL_WORKSHEETS_DATA } from '@/data/schoolData';
@@ -98,28 +99,39 @@ export default async function SchoolHubPage({ params }: { params: Promise<{ lang
       <div className="container section">
         <AdSlot type="banner" text={isEn ? 'Sponsored Content' : 'Gesponsord'} />
 
-        {categories.map((cat) => (
-          <section key={cat.id} style={{ marginBottom: '4rem' }}>
-            <div className="section-header" style={{ marginBottom: '1.5rem' }}>
-              <div>
-                <span className="badge" style={{ background: '#FEF3C7', color: '#92400E', borderColor: '#FDE68A' }}>
-                  {cat.badge}
-                </span>
-                <h2 className="title-h2" style={{ marginTop: '0.5rem' }}>{cat.title}</h2>
-                <p style={{ color: '#64748B', marginTop: '0.25rem', fontSize: '0.95rem' }}>{cat.desc}</p>
+        {categories.map((cat, catIdx) => (
+          <React.Fragment key={cat.id}>
+            <section style={{ marginBottom: '4rem' }}>
+              <div className="section-header" style={{ marginBottom: '1.5rem' }}>
+                <div>
+                  <span className="badge" style={{ background: '#FEF3C7', color: '#92400E', borderColor: '#FDE68A' }}>
+                    {cat.badge}
+                  </span>
+                  <h2 className="title-h2" style={{ marginTop: '0.5rem' }}>{cat.title}</h2>
+                  <p style={{ color: '#64748B', marginTop: '0.25rem', fontSize: '0.95rem' }}>{cat.desc}</p>
+                </div>
               </div>
-            </div>
 
-            <div style={{
-              display: 'grid',
-              gridTemplateColumns: 'repeat(auto-fill, minmax(290px, 1fr))',
-              gap: '1.5rem',
-            }}>
-              {cat.items.map((sheet) => (
-                <SchoolWorksheetCard key={sheet.slug} sheet={sheet} isEn={isEn} />
-              ))}
-            </div>
-          </section>
+              <div style={{
+                display: 'grid',
+                gridTemplateColumns: 'repeat(auto-fill, minmax(290px, 1fr))',
+                gap: '1.5rem',
+              }}>
+                {cat.items.map((sheet, idx) => (
+                  <React.Fragment key={sheet.slug}>
+                    {idx === 5 && <AdCard key={'ad-school-' + cat.id} />}
+                    <SchoolWorksheetCard sheet={sheet} isEn={isEn} />
+                  </React.Fragment>
+                ))}
+              </div>
+            </section>
+
+            {catIdx < categories.length - 1 && (
+              <div style={{ margin: '3rem 0' }}>
+                <AdSlot type="banner" text={isEn ? 'Sponsored Content' : 'Gesponsord'} />
+              </div>
+            )}
+          </React.Fragment>
         ))}
 
         <NewsletterBox isEn={isEn} lang={lang} />

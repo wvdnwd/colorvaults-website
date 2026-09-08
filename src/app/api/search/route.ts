@@ -16,24 +16,38 @@ interface SearchEntry {
 
 const cachedIndices: Record<string, SearchEntry[]> = {};
 
-function getSearchIndex(lang: string): SearchEntry[] {
-  const targetLang = lang === 'nl' ? 'nl' : 'en';
+async function getSearchIndex(lang: string): Promise<{ entries: SearchEntry[]; activeLang: string }> {
+  const langPath = path.join(process.cwd(), 'public', `search-index-${lang}.json`);
+  let targetLang = lang;
+
+  if (fs.existsSync(langPath)) {
+    targetLang = lang;
+  } else {
+    targetLang = 'en';
+  }
+
   if (!cachedIndices[targetLang]) {
     try {
-      const langPath = path.join(process.cwd(), 'public', `search-index-${targetLang}.json`);
-      if (fs.existsSync(langPath)) {
-        cachedIndices[targetLang] = JSON.parse(fs.readFileSync(langPath, 'utf8'));
+      const filePath = path.join(process.cwd(), 'public', `search-index-${targetLang}.json`);
+      if (fs.existsSync(filePath)) {
+        const data = await fs.promises.readFile(filePath, 'utf8');
+        cachedIndices[targetLang] = JSON.parse(data);
       } else {
         const fullPath = path.join(process.cwd(), 'public', 'search-index.json');
-        const all = JSON.parse(fs.readFileSync(fullPath, 'utf8')) as SearchEntry[];
-        cachedIndices[targetLang] = all.filter(e => e.lang === targetLang);
+        if (fs.existsSync(fullPath)) {
+          const allData = await fs.promises.readFile(fullPath, 'utf8');
+          const all = JSON.parse(allData) as SearchEntry[];
+          cachedIndices[targetLang] = all.filter(e => e.lang === targetLang);
+        } else {
+          cachedIndices[targetLang] = [];
+        }
       }
     } catch (e) {
       console.error(`Failed to load search index for ${targetLang}`, e);
-      return [];
+      return { entries: [], activeLang: targetLang };
     }
   }
-  return cachedIndices[targetLang];
+  return { entries: cachedIndices[targetLang], activeLang: targetLang };
 }
 
 export async function GET(request: Request) {
@@ -44,9 +58,9 @@ export async function GET(request: Request) {
   const age = searchParams.get('age');
   const theme = searchParams.get('theme');
 
-  const index = getSearchIndex(lang);
+  const { entries: index, activeLang } = await getSearchIndex(lang);
 
-  let matched = index.filter(e => e.lang === lang);
+  let matched = index.filter(e => e.lang === lang || e.lang === activeLang);
 
   if (theme) {
     matched = matched.filter(e => e.parentTheme === theme || e.url.includes(`/${theme}/`));

@@ -152,6 +152,19 @@ a {
   text-decoration: none;
 }
 
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible,
+.btn-primary:focus-visible,
+.btn-secondary:focus-visible,
+.download-btn:focus-visible,
+.card:focus-visible {
+  outline: 2px solid var(--primary);
+  outline-offset: 2px;
+}
+
 img {
   max-width: 100%;
   display: block;
@@ -707,8 +720,8 @@ main {
   }
 
   .coloring-page-image-container {
-    width: 100vw !important;
-    height: 100vh !important;
+    width: 100% !important;
+    max-height: 100% !important;
     display: flex !important;
     justify-content: center !important;
     align-items: center !important;

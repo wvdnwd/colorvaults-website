@@ -2,12 +2,16 @@ import { NextRequest, NextResponse } from 'next/server';
 import fs from 'fs';
 import path from 'path';
 import { resolveHolidayTheme, HolidayThemeId } from '@/data/holidayThemes';
+import { isAdminLoggedIn } from '@/lib/adminAuth';
 
 export const dynamic = 'force-dynamic';
 
 const CONFIG_PATH = path.join(process.cwd(), 'src', 'data', 'theme-config.json');
 
 export async function GET() {
+  const isAuth = await isAdminLoggedIn();
+  if (!isAuth) return NextResponse.json({ error: 'Unauthorized' }, { status: 401 });
+
   try {
     let config = {
       activeTheme: 'auto' as HolidayThemeId,
@@ -31,6 +35,9 @@ export async function GET() {
 }
 
 export async function POST(req: NextRequest) {
+  const isAuth = await isAdminLoggedIn();
+  if (!isAuth) return NextResponse.json({ error: 'Unauthorized' }, { status: 401 });
+
   try {
     const body = await req.json();
     const { activeTheme, effectsEnabled, bannerEnabled } = body;

@@ -5,8 +5,10 @@ import { notFound } from'next/navigation';
 import Link from'next/link';
 import Breadcrumbs from'@/components/Breadcrumbs';
 import AdSlot from'@/components/AdSlot';
+import AdCard from'@/components/AdCard';
 import ThemeCard from'@/components/ThemeCard';
 import * as motion from'framer-motion/client';
+import React from'react';
 
 export async function generateStaticParams() {
   try { validateDataModel(); } catch(e) { console.error(e); throw e; }
@@ -227,10 +229,18 @@ export default async function MainHubPage({ params }: { params: Promise<{ lang: 
           </Link>
         </div>
         
-        <div className="grid-4">
-          {allThemes.map((theme, i) => {
+        {/* 3-row chunks (12 themes) → AdCard in middle → banner between groups */}
+        {Array.from({ length: Math.ceil(allThemes.length / 12) }).map((_, chunkIndex) => {
+          const chunk = allThemes.slice(chunkIndex * 12, chunkIndex * 12 + 12);
+          const showAdBar = chunkIndex < Math.ceil(allThemes.length / 12) - 1;
+
+          const gridItems: React.ReactNode[] = [];
+          chunk.forEach((theme, i) => {
+            if (i === 5) {
+              gridItems.push(<AdCard key="hub-ad-card" />);
+            }
             const sampleImages = getSampleImagesForTheme(lang, hub.slug, theme.slug, theme.image, 3);
-            return (
+            gridItems.push(
               <motion.div 
                 key={theme.slug}
                 initial={{ opacity: 0 }}
@@ -250,10 +260,26 @@ export default async function MainHubPage({ params }: { params: Promise<{ lang: 
                 />
               </motion.div>
             );
-          })}
-        </div>
+          });
 
-        <AdSlot type="banner"text={isEn ?"Sponsored Content":"Gesponsord"} />
+          return (
+            <React.Fragment key={chunkIndex}>
+              <div className="grid-4" style={{ marginBottom: showAdBar ? '2.5rem' : 0 }}>
+                {gridItems}
+              </div>
+
+              {showAdBar && (
+                <div style={{ margin: '2.5rem 0' }}>
+                  <AdSlot type="banner" text={isEn ? "Sponsored Content" : "Gesponsord"} />
+                </div>
+              )}
+            </React.Fragment>
+          );
+        })}
+
+        <div style={{ margin: '2.5rem 0' }}>
+          <AdSlot type="banner" text={isEn ? "Sponsored Content" : "Gesponsord"} />
+        </div>
 
         <CategorySeoBlock
           title={isEn ?`About ${hub.title} Coloring Pages`:`Over ${hub.title} Kleurplaten`}

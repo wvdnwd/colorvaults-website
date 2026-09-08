@@ -10,6 +10,7 @@ import styles from'./page.module.css';
 import Link from'next/link';
 import MotionCard from'@/components/MotionCard';
 import AdSlot from'@/components/AdSlot';
+import AdCard from'@/components/AdCard';
 import ScrollReveal from '@/components/ScrollReveal';
 import HeroCarousel from '@/components/HeroCarousel';
 import TrendingCarousel from '@/components/TrendingCarousel';
@@ -100,13 +101,13 @@ export default async function HomePage({ params }: { params: Promise<{ lang: str
 
   const popularCharacters = allThemes
     .filter(t => characterSlugs.some(s => t.slug.includes(s)))
-    .slice(0, 8);
+    .slice(0, 12);
 
   const popularAnimals = allThemes
     .filter(t => animalSlugs.some(s => t.slug.includes(s)))
     .slice(0, 4);
 
-  const featuredPages = featuredPool.slice(0, 8);
+  const featuredPages = featuredPool.slice(0, 24);
 
   const difficultyCards = [
     {
@@ -661,17 +662,20 @@ export default async function HomePage({ params }: { params: Promise<{ lang: str
               {popularCharacters.map((theme, i) => {
                 const sampleImages = getSampleImagesForTheme(lang, theme.parentHub, theme.slug, theme.image, 3);
                 return (
-                  <ScrollReveal key={theme.slug} delay={(i % 4) as 0 | 1 | 2 | 3 | 4}>
-                    <ThemeCard
-                      lang={lang}
-                      hubSlug={theme.parentHub}
-                      themeSlug={theme.slug}
-                      title={theme.title}
-                      description={theme.description}
-                      images={sampleImages}
-                      pageCount={theme.pageCount}
-                    />
-                  </ScrollReveal>
+                  <React.Fragment key={theme.slug}>
+                    {i === 5 && <AdCard key="char-ad-card" />}
+                    <ScrollReveal delay={(i % 4) as 0 | 1 | 2 | 3 | 4}>
+                      <ThemeCard
+                        lang={lang}
+                        hubSlug={theme.parentHub}
+                        themeSlug={theme.slug}
+                        title={theme.title}
+                        description={theme.description}
+                        images={sampleImages}
+                        pageCount={theme.pageCount}
+                      />
+                    </ScrollReveal>
+                  </React.Fragment>
                 );
               })}
             </div>
@@ -788,13 +792,35 @@ export default async function HomePage({ params }: { params: Promise<{ lang: str
             </div>
           </ScrollReveal>
 
-          <div className="grid-4">
-            {featuredPages.map((page, idx) => (
-              <ScrollReveal key={page.slug} delay={(idx % 4) as 0 | 1 | 2 | 3 | 4}>
-                <MotionCard page={page} lang={lang} isEn={isEn} />
-              </ScrollReveal>
-            ))}
-          </div>
+          {Array.from({ length: Math.ceil(featuredPages.length / 12) }).map((_, chunkIndex) => {
+            const chunk = featuredPages.slice(chunkIndex * 12, chunkIndex * 12 + 12);
+            const showAdBar = chunkIndex < Math.ceil(featuredPages.length / 12) - 1;
+
+            const gridItems: React.ReactNode[] = [];
+            chunk.forEach((page, idx) => {
+              if (idx === 5) {
+                gridItems.push(<AdCard key={`hp-ad-card-${chunkIndex}`} />);
+              }
+              gridItems.push(
+                <ScrollReveal key={page.slug} delay={(idx % 4) as 0 | 1 | 2 | 3 | 4}>
+                  <MotionCard page={page} lang={lang} isEn={isEn} />
+                </ScrollReveal>
+              );
+            });
+
+            return (
+              <React.Fragment key={chunkIndex}>
+                <div className="grid-4" style={{ marginBottom: showAdBar ? '2.5rem' : 0 }}>
+                  {gridItems}
+                </div>
+                {showAdBar && (
+                  <div style={{ margin: '2.5rem 0' }}>
+                    <AdSlot type="banner" text={isEn ? 'Sponsored Content' : 'Gesponsord'} />
+                  </div>
+                )}
+              </React.Fragment>
+            );
+          })}
         </div>
       </section>
 

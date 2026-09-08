@@ -9,6 +9,7 @@ import Link from'next/link';
 import Breadcrumbs from'@/components/Breadcrumbs';
 import MotionCard from'@/components/MotionCard';
 import AdSlot from'@/components/AdSlot';
+import AdCard from'@/components/AdCard';
 import SafeImage from'@/components/SafeImage';
 import React from'react';
 
@@ -29,8 +30,14 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
     title:`${agePage.title} (Free PDF Printables) | ColorVaults`,
     description: agePage.seoText,
     alternates: {
-      canonical:`/${lang}/${mainHubSlug}/${themeSlug}/${ageSlug}`,
-      languages: {'en':`/en/${mainHubSlug}/${themeSlug}/${ageSlug}`,'nl':`/nl/${mainHubSlug}/${themeSlug}/${ageSlug}`,'x-default':`/en/${mainHubSlug}/${themeSlug}/${ageSlug}`}
+      canonical: `/${lang}/${mainHubSlug}/${themeSlug}/${ageSlug}`,
+      languages: {
+        en: `/en/${mainHubSlug}/${themeSlug}/${ageSlug}`,
+        nl: `/nl/${mainHubSlug}/${themeSlug}/${ageSlug}`,
+        de: `/de/${mainHubSlug}/${themeSlug}/${ageSlug}`,
+        fr: `/fr/${mainHubSlug}/${themeSlug}/${ageSlug}`,
+        'x-default': `/en/${mainHubSlug}/${themeSlug}/${ageSlug}`,
+      },
     },
     openGraph: {
       title:`${agePage.title} (Free PDF Printables) | ColorVaults`,
@@ -339,29 +346,34 @@ export default async function AgePage({
           </div>
         ) : (
           <div>
-            {/* 2x3 Grid -> In-feed Ad -> 2x3 Grid -> In-feed Ad pattern */}
-            {Array.from({ length: Math.ceil(coloringPages.length / 6) }).map((_, chunkIndex) => {
-              const chunk = coloringPages.slice(chunkIndex * 6, chunkIndex * 6 + 6);
-              const showAdBar = chunkIndex < Math.ceil(coloringPages.length / 6) - 1;
+            {/* 3-row chunks (12 cards) → AdCard in middle → banner between groups */}
+            {Array.from({ length: Math.ceil(coloringPages.length / 12) }).map((_, chunkIndex) => {
+              const chunk = coloringPages.slice(chunkIndex * 12, chunkIndex * 12 + 12);
+              const showAdBar = chunkIndex < Math.ceil(coloringPages.length / 12) - 1;
+
+              // Inject AdCard at grid position 5 (middle of 2nd row in a 4-col grid)
+              const gridItems: React.ReactNode[] = [];
+              chunk.forEach((page, i) => {
+                if (i === 5) gridItems.push(<AdCard key="ad-card" />);
+                gridItems.push(<MotionCard key={page.slug} page={page} lang={lang} isEn={isEn} />);
+              });
 
               return (
                 <React.Fragment key={chunkIndex}>
                   <div
                     style={{
-                      display:'grid',
-                      gridTemplateColumns:'repeat(auto-fill, minmax(240px, 1fr))',
-                      gap:'1.5rem',
-                      marginBottom: showAdBar ?'2.5rem': 0,
+                      display: 'grid',
+                      gridTemplateColumns: 'repeat(auto-fill, minmax(240px, 1fr))',
+                      gap: '1.5rem',
+                      marginBottom: showAdBar ? '2.5rem' : 0,
                     }}
                   >
-                    {chunk.map(page => (
-                      <MotionCard key={page.slug} page={page} lang={lang} isEn={isEn} />
-                    ))}
+                    {gridItems}
                   </div>
 
                   {showAdBar && (
-                    <div style={{ margin:'2.5rem 0'}}>
-                      <AdSlot type="banner"text={isEn ?'Sponsored Content':'Gesponsord'} />
+                    <div style={{ margin: '2.5rem 0' }}>
+                      <AdSlot type="banner" text={isEn ? 'Sponsored Content' : 'Gesponsord'} />
                     </div>
                   )}
                 </React.Fragment>

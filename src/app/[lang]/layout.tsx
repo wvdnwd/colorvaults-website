@@ -71,6 +71,20 @@ export async function generateStaticParams() {
   return [{ lang: "en" }, { lang: "nl" }, { lang: "de" }, { lang: "fr" }];
 }
 
+function getSkipLinkText(lang: string): string {
+  switch (lang) {
+    case 'nl':
+      return 'Naar hoofdinhoud springen';
+    case 'de':
+      return 'Zum Hauptinhalt springen';
+    case 'fr':
+      return 'Aller au contenu principal';
+    case 'en':
+    default:
+      return 'Skip to main content';
+  }
+}
+
 export default async function RootLayout({
   children,
   params,
@@ -82,39 +96,23 @@ export default async function RootLayout({
   return (
     <html lang={lang} className={`${fredoka.variable} ${nunito.variable}`} data-theme="dark">
       <head>
-        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0" />
         <meta name="google-adsense-account" content="ca-pub-1184801748776428" />
-
-        {/* Static Open Graph & WhatsApp Preview Tags in raw <head> */}
-        <meta property="og:site_name" content="ColorVaults" />
-        <meta property="og:type" content="website" />
-        <meta property="og:title" content="ColorVaults | Free Premium Coloring Pages" />
-        <meta property="og:description" content="Download thousands of high-quality free printable coloring pages for kids, toddlers, teens and adults. 100% free, no account required." />
-        <meta property="og:url" content="https://www.colorvaults.com" />
-        <meta property="og:image" content="https://www.colorvaults.com/images/og-share.jpg" />
-        <meta property="og:image:secure_url" content="https://www.colorvaults.com/images/og-share.jpg" />
-        <meta property="og:image:type" content="image/jpeg" />
-        <meta property="og:image:width" content="1200" />
-        <meta property="og:image:height" content="630" />
-        <meta property="og:image:alt" content="ColorVaults — Free Premium Coloring Pages" />
-
-        <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="ColorVaults | Free Premium Coloring Pages" />
-        <meta name="twitter:description" content="Download thousands of high-quality free printable coloring pages for kids, toddlers, teens and adults. 100% free, no account required." />
-        <meta name="twitter:image" content="https://www.colorvaults.com/images/og-share.jpg" />
-        <link rel="image_src" href="https://www.colorvaults.com/images/og-share.jpg" />
       </head>
       <body>
         <Script
           async
-          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1184801748776428"crossOrigin="anonymous"strategy="afterInteractive"/>
+          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1184801748776428"
+          crossOrigin="anonymous"
+          strategy="afterInteractive"
+        />
         {gaId && (
           <>
             <Script
               async
               src={`https://www.googletagmanager.com/gtag/js?id=${gaId}`}
-              strategy="afterInteractive"/>
-            <Script id="google-analytics"strategy="afterInteractive">
+              strategy="afterInteractive"
+            />
+            <Script id="google-analytics" strategy="afterInteractive">
               {`window.dataLayer = window.dataLayer || [];
                 function gtag(){dataLayer.push(arguments);}
                 gtag('js', new Date());
@@ -123,8 +121,8 @@ export default async function RootLayout({
           </>
         )}
 
-        <a href="#main-content"className="skip-link">
-          {lang ==='en'?'Skip to main content':'Naar hoofdinhoud springen'}
+        <a href="#main-content" className="skip-link">
+          {getSkipLinkText(lang)}
         </a>
         <script
           type="application/ld+json"dangerouslySetInnerHTML={{ __html: safeJsonLd({"@context":"https://schema.org","@graph": [

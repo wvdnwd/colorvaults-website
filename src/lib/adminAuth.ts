@@ -2,22 +2,33 @@ import { cookies } from'next/headers';
 import { redirect } from'next/navigation';
 import crypto from 'crypto';
 
-const ADMIN_COOKIE ='cv_admin_auth';
-const ADMIN_PASSWORD = process.env.ADMIN_PASSWORD ||'kleurvel1023nwd';
+const ADMIN_COOKIE = 'cv_admin_auth';
+
+function getAdminPassword(): string {
+  const pwd = process.env.ADMIN_PASSWORD;
+  if (!pwd) {
+    if (process.env.NODE_ENV === 'production') {
+      throw new Error('[Security] ADMIN_PASSWORD environment variable is not defined!');
+    }
+    console.warn('[Security Warning] ADMIN_PASSWORD is not set. Please define it in your .env file.');
+    return 'fallback_dev_password_only';
+  }
+  return pwd;
+}
 
 export function getAdminAuthToken(): string {
-  return crypto.createHash('sha256').update(ADMIN_PASSWORD + '_cv_salt_2026').digest('hex');
+  return crypto.createHash('sha256').update(getAdminPassword() + '_cv_salt_2026').digest('hex');
 }
 
 export function checkAdminPassword(password: string): boolean {
-  return password === ADMIN_PASSWORD;
+  return password === getAdminPassword();
 }
 
-export async function requireAdmin(lang ='en') {
+export async function requireAdmin(_lang = 'en') {
   const cookieStore = await cookies();
   const token = cookieStore.get(ADMIN_COOKIE)?.value;
   const validToken = getAdminAuthToken();
-  if (token !== validToken && token !== ADMIN_PASSWORD) {
+  if (token !== validToken) {
     redirect('/admin');
   }
 }
@@ -26,7 +37,7 @@ export async function isAdminLoggedIn(): Promise<boolean> {
   const cookieStore = await cookies();
   const token = cookieStore.get(ADMIN_COOKIE)?.value;
   const validToken = getAdminAuthToken();
-  return token === validToken || token === ADMIN_PASSWORD;
+  return token === validToken;
 }
 
 export { ADMIN_COOKIE };

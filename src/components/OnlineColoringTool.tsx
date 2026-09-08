@@ -293,230 +293,243 @@ export default function OnlineColoringTool({
  }
  };
 
- const drawBrush = (x: number, y: number) => {
- const canvas = canvasRef.current;
- if (!canvas) return;
- const ctx = canvas.getContext('2d', { willReadFrequently: true });
- if (!ctx || !lastPos.current) return;
+  const drawBrush = (x: number, y: number) => {
+    const canvas = canvasRef.current;
+    if (!canvas) return;
+    const ctx = canvas.getContext('2d', { willReadFrequently: true });
+    if (!ctx || !lastPos.current) return;
 
- ctx.beginPath();
- ctx.moveTo(lastPos.current.x, lastPos.current.y);
- ctx.lineTo(x, y);
- ctx.strokeStyle = activeTool ==='eraser'?'#FFFFFF': activeColor;
- ctx.lineWidth = brushSize;
- ctx.lineCap ='round';
- ctx.lineJoin ='round';
- ctx.stroke();
+    ctx.beginPath();
+    ctx.moveTo(lastPos.current.x, lastPos.current.y);
+    ctx.lineTo(x, y);
+    ctx.strokeStyle = activeTool === 'eraser' ? '#FFFFFF' : activeColor;
+    ctx.lineWidth = brushSize;
+    ctx.lineCap = 'round';
+    ctx.lineJoin = 'round';
+    ctx.stroke();
 
- lastPos.current = { x, y };
- };
+    lastPos.current = { x, y };
+  };
 
- // Download colored image
- const handleDownloadColored = () => {
- const canvas = canvasRef.current;
- if (!canvas) return;
+  // Download colored image
+  const handleDownloadColored = () => {
+    const canvas = canvasRef.current;
+    if (!canvas) return;
 
- // Create watermarked export canvas
- const exportCanvas = document.createElement('canvas');
- exportCanvas.width = canvas.width;
- exportCanvas.height = canvas.height;
- const ctx = exportCanvas.getContext('2d');
- if (!ctx) return;
+    // Create watermarked export canvas
+    const exportCanvas = document.createElement('canvas');
+    exportCanvas.width = canvas.width;
+    exportCanvas.height = canvas.height;
+    const ctx = exportCanvas.getContext('2d');
+    if (!ctx) return;
 
- ctx.drawImage(canvas, 0, 0);
+    ctx.drawImage(canvas, 0, 0);
 
- // Watermark
- ctx.fillStyle ='rgba(0, 0, 0, 0.4)';
- const fontSize = Math.max(14, canvas.width * 0.025);
- ctx.font =`bold ${fontSize}px sans-serif`;
- ctx.textAlign ='right';
- ctx.fillText('Colored on ColorVaults.com', canvas.width - 16, canvas.height - 16);
+    // Watermark
+    ctx.fillStyle = 'rgba(0, 0, 0, 0.4)';
+    const fontSize = Math.max(14, canvas.width * 0.025);
+    ctx.font = `bold ${fontSize}px sans-serif`;
+    ctx.textAlign = 'right';
+    ctx.fillText('Colored on ColorVaults.com', canvas.width - 16, canvas.height - 16);
 
- const a = document.createElement('a');
- a.href = exportCanvas.toDataURL('image/png');
- a.download =`colorvaults-colored-${title.toLowerCase().replace(/[^a-z0-9]+/g,'-')}.png`;
- a.click();
- fireConfetti();
- };
+    const a = document.createElement('a');
+    a.href = exportCanvas.toDataURL('image/png');
+    a.download = `colorvaults-colored-${title.toLowerCase().replace(/[^a-z0-9]+/g, '-')}.png`;
+    a.click();
+    fireConfetti();
+  };
 
- // Print colored image
- const handlePrintColored = () => {
- const canvas = canvasRef.current;
- if (!canvas) return;
+  // Print colored image
+  const handlePrintColored = () => {
+    const canvas = canvasRef.current;
+    if (!canvas) return;
 
- fireConfetti();
- const dataUrl = canvas.toDataURL('image/png');
- const printWindow = window.open('','_blank');
- if (!printWindow) return;
+    fireConfetti();
+    const dataUrl = canvas.toDataURL('image/png');
+    const printWindow = window.open('', '_blank');
+    if (!printWindow) return;
 
- printWindow.document.write(`<!DOCTYPE html>
- <html>
- <head>
- <title>${title} - ColorVaults</title>
- <style>
- @page { size: A4 portrait; margin: 10mm; }
- body { margin: 0; display: flex; align-items: center; justify-content: center; height: 100vh; font-family: sans-serif; }
- img { max-width: 100%; max-height: 95vh; object-fit: contain; }
- </style>
- </head>
- <body>
- <img src="${dataUrl}"onload="window.print();window.close();"/>
- </body>
- </html>`);
- printWindow.document.close();
- };
+    printWindow.document.write(`<!DOCTYPE html>
+<html>
+<head>
+<title>${title} - ColorVaults</title>
+<style>
+@page { size: A4 portrait; margin: 10mm; }
+body { margin: 0; display: flex; align-items: center; justify-content: center; height: 100vh; font-family: sans-serif; }
+img { max-width: 100%; max-height: 95vh; object-fit: contain; }
+</style>
+</head>
+<body>
+<img src="${dataUrl}" onload="window.print();window.close();"/>
+</body>
+</html>`);
+    printWindow.document.close();
+  };
 
- if (!isOpen) return null;
+  if (!isOpen) return null;
 
  return (
- <div className={styles.modalOverlay} onClick={(e) => { if (e.target === e.currentTarget) onClose(); }}>
- <div className={styles.modalContent} role="dialog"aria-modal="true"aria-label={isEn ?'Color online':'Online inkleuren'}>
- {/* Header */}
- <div className={styles.header}>
- <div className={styles.titleGroup}>
- <span style={{ fontSize:'1.4rem'}}></span>
- <h2 className={styles.title}>{title}</h2>
- <span className={styles.badge}>{isEn ?'Interactive Canvas':'Interactieve Kleur-tool'}</span>
- </div>
- <button className={styles.closeBtn} onClick={onClose} aria-label={isEn ?'Close':'Sluiten'}>
- 
- </button>
- </div>
+    <div className={styles.modalOverlay} onClick={(e) => { if (e.target === e.currentTarget) onClose(); }}>
+      <div className={styles.modalContent} role="dialog" aria-modal="true" aria-label={isEn ? 'Color online' : 'Online inkleuren'}>
+        {/* Header */}
+        <div className={styles.header}>
+          <div className={styles.titleGroup}>
+            <span style={{ fontSize: '1.4rem' }} aria-hidden="true">🎨</span>
+            <h2 className={styles.title}>{title}</h2>
+            <span className={styles.badge}>{isEn ? 'Interactive Canvas' : 'Interactieve Kleur-tool'}</span>
+          </div>
+          <button className={styles.closeBtn} onClick={onClose} aria-label={isEn ? 'Close' : 'Sluiten'}>
+            ✕
+          </button>
+        </div>
 
- {/* Main Workspace */}
- <div className={styles.workspace}>
- {/* Toolbar Sidebar */}
- <div className={styles.toolbar}>
- {/* Tools */}
- <div>
- <p className={styles.sectionLabel}>{isEn ?'Tools':'Gereedschap'}</p>
- <div className={styles.toolGrid}>
- <button
- className={`${styles.toolBtn} ${activeTool ==='bucket'? styles.active :''}`}
- onClick={() => setActiveTool('bucket')}
- type="button">
- <span>🪣</span> {isEn ?'Fill Bucket':'Verfemmer'}
- </button>
- <button
- className={`${styles.toolBtn} ${activeTool ==='brush'? styles.active :''}`}
- onClick={() => setActiveTool('brush')}
- type="button">
- <span>🖌️</span> {isEn ?'Brush':'Kwast'}
- </button>
- <button
- className={`${styles.toolBtn} ${activeTool ==='eraser'? styles.active :''}`}
- onClick={() => setActiveTool('eraser')}
- type="button">
- <span>🧹</span> {isEn ?'Eraser':'Gum'}
- </button>
- <button
- className={styles.toolBtn}
- onClick={handleReset}
- type="button">
- <span>🗑️</span> {isEn ?'Clear All':'Wissen'}
- </button>
- </div>
- </div>
+        {/* Main Workspace */}
+        <div className={styles.workspace}>
+          {/* Toolbar Sidebar */}
+          <div className={styles.toolbar}>
+            {/* Tools */}
+            <div>
+              <p className={styles.sectionLabel}>{isEn ? 'Tools' : 'Gereedschap'}</p>
+              <div className={styles.toolGrid}>
+                <button
+                  className={`${styles.toolBtn} ${activeTool === 'bucket' ? styles.active : ''}`}
+                  onClick={() => setActiveTool('bucket')}
+                  type="button"
+                >
+                  <span aria-hidden="true">🪣</span> {isEn ? 'Fill Bucket' : 'Verfemmer'}
+                </button>
+                <button
+                  className={`${styles.toolBtn} ${activeTool === 'brush' ? styles.active : ''}`}
+                  onClick={() => setActiveTool('brush')}
+                  type="button"
+                >
+                  <span aria-hidden="true">🖌️</span> {isEn ? 'Brush' : 'Kwast'}
+                </button>
+                <button
+                  className={`${styles.toolBtn} ${activeTool === 'eraser' ? styles.active : ''}`}
+                  onClick={() => setActiveTool('eraser')}
+                  type="button"
+                >
+                  <span aria-hidden="true">🧹</span> {isEn ? 'Eraser' : 'Gum'}
+                </button>
+                <button
+                  className={styles.toolBtn}
+                  onClick={handleReset}
+                  type="button"
+                >
+                  <span aria-hidden="true">🗑️</span> {isEn ? 'Clear All' : 'Wissen'}
+                </button>
+              </div>
+            </div>
 
- {/* Brush Size Slider */}
- {activeTool !=='bucket'&& (
- <div className={styles.sliderGroup}>
- <p className={styles.sectionLabel}>
- {isEn ?`Size: ${brushSize}px`:`Grootte: ${brushSize}px`}
- </p>
- <input
- type="range"min="4"max="40"value={brushSize}
- onChange={(e) => setBrushSize(parseInt(e.target.value, 10))}
- className={styles.slider}
- />
- </div>
- )}
+            {/* Brush Size Slider */}
+            {activeTool !== 'bucket' && (
+              <div className={styles.sliderGroup}>
+                <p className={styles.sectionLabel}>
+                  {isEn ? `Size: ${brushSize}px` : `Grootte: ${brushSize}px`}
+                </p>
+                <input
+                  type="range"
+                  min="4"
+                  max="40"
+                  value={brushSize}
+                  onChange={(e) => setBrushSize(parseInt(e.target.value, 10))}
+                  className={styles.slider}
+                  aria-label={isEn ? 'Brush size' : 'Kwastgrootte'}
+                />
+              </div>
+            )}
 
- {/* Palette */}
- <div>
- <p className={styles.sectionLabel}>{isEn ?'Color Palette':'Kleurenpalet'}</p>
- <div className={styles.paletteGrid}>
- {PRESET_COLORS.map((c) => (
- <button
- key={c}
- className={`${styles.colorSwatch} ${activeColor.toLowerCase() === c.toLowerCase() ? styles.activeSwatch :''}`}
- style={{ background: c }}
- onClick={() => setActiveColor(c)}
- type="button"aria-label={`Color ${c}`}
- />
- ))}
- </div>
+            {/* Palette */}
+            <div>
+              <p className={styles.sectionLabel}>{isEn ? 'Color Palette' : 'Kleurenpalet'}</p>
+              <div className={styles.paletteGrid}>
+                {PRESET_COLORS.map((c) => (
+                  <button
+                    key={c}
+                    className={`${styles.colorSwatch} ${activeColor.toLowerCase() === c.toLowerCase() ? styles.activeSwatch : ''}`}
+                    style={{ background: c }}
+                    onClick={() => setActiveColor(c)}
+                    type="button"
+                    aria-label={`Color ${c}`}
+                  />
+                ))}
+              </div>
 
- <div className={styles.customColorRow}>
- <input
- type="color"value={activeColor}
- onChange={(e) => setActiveColor(e.target.value)}
- className={styles.customColorPicker}
- aria-label="Custom color picker"/>
- <span style={{ fontSize:'0.8rem', fontWeight: 600, color:'var(--gray-600)'}}>
- {isEn ?'Custom Color Picker':'Eigen Kleur Kiezen'}
- </span>
- </div>
- </div>
+              <div className={styles.customColorRow}>
+                <input
+                  type="color"
+                  value={activeColor}
+                  onChange={(e) => setActiveColor(e.target.value)}
+                  className={styles.customColorPicker}
+                  aria-label="Custom color picker"
+                />
+                <span style={{ fontSize: '0.8rem', fontWeight: 600, color: 'var(--gray-600)' }}>
+                  {isEn ? 'Custom Color Picker' : 'Eigen Kleur Kiezen'}
+                </span>
+              </div>
+            </div>
 
- {/* History Actions */}
- <div>
- <p className={styles.sectionLabel}>{isEn ?'History':'Geschiedenis'}</p>
- <div className={styles.actionRow}>
- <button
- className={styles.actionBtn}
- onClick={handleUndo}
- disabled={historyIndex <= 0}
- type="button">
- ↩️ {isEn ?'Undo':'Ongedaan'}
- </button>
- <button
- className={styles.actionBtn}
- onClick={handleRedo}
- disabled={historyIndex >= history.length - 1}
- type="button">
- ↪️ {isEn ?'Redo':'Opnieuw'}
- </button>
- </div>
- </div>
- </div>
+            {/* History Actions */}
+            <div>
+              <p className={styles.sectionLabel}>{isEn ? 'History' : 'Geschiedenis'}</p>
+              <div className={styles.actionRow}>
+                <button
+                  className={styles.actionBtn}
+                  onClick={handleUndo}
+                  disabled={historyIndex <= 0}
+                  type="button"
+                >
+                  <span aria-hidden="true">↩️</span> {isEn ? 'Undo' : 'Ongedaan'}
+                </button>
+                <button
+                  className={styles.actionBtn}
+                  onClick={handleRedo}
+                  disabled={historyIndex >= history.length - 1}
+                  type="button"
+                >
+                  <span aria-hidden="true">↪️</span> {isEn ? 'Redo' : 'Opnieuw'}
+                </button>
+              </div>
+            </div>
+          </div>
 
- {/* Canvas Area */}
- <div className={styles.canvasStage}>
- {loading ? (
- <p style={{ color:'var(--gray-500)', fontWeight: 700 }}>
- {isEn ?'Loading canvas...':'Kleurplaat inladen...'}
- </p>
- ) : (
- <div className={styles.canvasWrapper}>
- <canvas
- ref={canvasRef}
- className={styles.paintCanvas}
- onMouseDown={handlePointerDown}
- onMouseMove={handlePointerMove}
- onMouseUp={handlePointerUp}
- onMouseLeave={handlePointerUp}
- onTouchStart={handlePointerDown}
- onTouchMove={handlePointerMove}
- onTouchEnd={handlePointerUp}
- />
- </div>
- )}
- </div>
- </div>
+          {/* Canvas Area */}
+          <div className={styles.canvasStage}>
+            {loading ? (
+              <p style={{ color: 'var(--gray-500)', fontWeight: 700 }}>
+                {isEn ? 'Loading canvas...' : 'Kleurplaat inladen...'}
+              </p>
+            ) : (
+              <div className={styles.canvasWrapper}>
+                <canvas
+                  ref={canvasRef}
+                  className={styles.paintCanvas}
+                  onMouseDown={handlePointerDown}
+                  onMouseMove={handlePointerMove}
+                  onMouseUp={handlePointerUp}
+                  onMouseLeave={handlePointerUp}
+                  onTouchStart={handlePointerDown}
+                  onTouchMove={handlePointerMove}
+                  onTouchEnd={handlePointerUp}
+                />
+              </div>
+            )}
+          </div>
+        </div>
 
- {/* Footer */}
- <div className={styles.footer}>
- <div style={{ display:'flex', gap:'0.6rem'}}>
- <button className={styles.btnPrint} onClick={handlePrintColored} type="button">
- <span>️</span> {isEn ?'Print Artwork':'Kunstwerk Printen'}
- </button>
- </div>
- <button className={styles.btnExport} onClick={handleDownloadColored} type="button">
- <span>💾</span> {isEn ?'Save Colored Image':'Gekleurde Kleurplaat Opslaan'}
- </button>
- </div>
- </div>
- </div>
- );
+        {/* Footer */}
+        <div className={styles.footer}>
+          <div style={{ display: 'flex', gap: '0.6rem' }}>
+            <button className={styles.btnPrint} onClick={handlePrintColored} type="button">
+              <span aria-hidden="true">🖨️</span> {isEn ? 'Print Artwork' : 'Kunstwerk Printen'}
+            </button>
+          </div>
+          <button className={styles.btnExport} onClick={handleDownloadColored} type="button">
+            <span aria-hidden="true">💾</span> {isEn ? 'Save Colored Image' : 'Gekleurde Kleurplaat Opslaan'}
+          </button>
+        </div>
+      </div>
+    </div>
+  );
 }

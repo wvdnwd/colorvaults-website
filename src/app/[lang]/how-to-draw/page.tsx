@@ -2,6 +2,7 @@ import React from'react';
 import Link from'next/link';
 import Breadcrumbs from'@/components/Breadcrumbs';
 import AdSlot from'@/components/AdSlot';
+import AdCard from'@/components/AdCard';
 import NewsletterBox from'@/components/NewsletterBox';
 import { HOW_TO_DRAW_LESSONS } from'@/data/howToDrawData';
 
@@ -81,10 +82,11 @@ export default async function HowToDrawHubPage({ params }: { params: Promise<{ l
           gridTemplateColumns:'repeat(auto-fill, minmax(300px, 1fr))',
           gap:'1.75rem',
         }}>
-          {HOW_TO_DRAW_LESSONS.map((lesson) => (
-            <Link
-              key={lesson.slug}
-              href={`/${lang}/how-to-draw/${lesson.slug}`}
+          {HOW_TO_DRAW_LESSONS.map((lesson, idx) => (
+            <React.Fragment key={lesson.slug}>
+              {idx === 5 && <AdCard key="ad-how-to-draw" />}
+              <Link
+                href={`/${lang}/how-to-draw/${lesson.slug}`}
               className="card"style={{
                 textDecoration:'none',
                 color:'inherit',
@@ -156,6 +158,7 @@ export default async function HowToDrawHubPage({ params }: { params: Promise<{ l
                 </div>
               </div>
             </Link>
+          </React.Fragment>
           ))}
         </div>
 

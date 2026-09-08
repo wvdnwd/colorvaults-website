@@ -34,6 +34,7 @@ export default function StickyBottomAd({ isEn = true }: { isEn?: boolean }) {
           className="adsbygoogle"
           style={{ display: 'inline-block', width: '320px', height: '50px' }}
           data-ad-client="ca-pub-1184801748776428"
+          data-ad-slot="5856381732"
           data-ad-format="horizontal"
           data-full-width-responsive="false"
         />

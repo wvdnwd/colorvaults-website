@@ -34,13 +34,27 @@ export default function AdSlot({
     }
   }, []);
 
-  // Prepare valid AdSense data attributes (NEVER pass data-ad-slot="auto"as Google rejects it)
-  const adDataProps: Record<string, string> = {'data-ad-client':'ca-pub-1184801748776428','data-ad-format': type ==='rectangle'?'rectangle': type ==='in-feed'?'fluid':'auto','data-full-width-responsive':'true',
+  // Default slot IDs per ad type (from Google AdSense dashboard)
+  const SLOT_IDS: Record<string, string> = {
+    banner: '5856381732',
+    rectangle: '6437272564',
+    'in-feed': '6760706190',
   };
 
-  // Only attach data-ad-slot if a real numeric slotId was passed
-  if (slotId && /^\d+$/.test(slotId.trim())) {
-    adDataProps['data-ad-slot'] = slotId.trim();
+  // Prepare valid AdSense data attributes
+  const resolvedSlot = slotId && /^\d+$/.test(slotId.trim())
+    ? slotId.trim()
+    : SLOT_IDS[type] ?? SLOT_IDS['banner'];
+
+  const adDataProps: Record<string, string> = {
+    'data-ad-client': 'ca-pub-1184801748776428',
+    'data-ad-slot': resolvedSlot,
+    'data-ad-format': type === 'rectangle' ? 'rectangle' : type === 'in-feed' ? 'fluid' : 'auto',
+    'data-full-width-responsive': 'true',
+  };
+
+  if (type === 'in-feed') {
+    adDataProps['data-ad-layout-key'] = '-6t+ed+2i-1n-4w';
   }
 
   return (
