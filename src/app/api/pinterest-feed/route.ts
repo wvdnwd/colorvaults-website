@@ -5,12 +5,33 @@ import fs from 'fs';
 export const dynamic = 'force-dynamic';
 export const revalidate = 3600;
 
+function cleanTitle(title: string, theme: string, hub: string): string {
+  if (!title) return 'Coloring Page';
+  
+  let cleaned = title.trim();
+  
+  // Fix known truncated titles like "A Mythical F", "A Clean Printa", etc.
+  if (cleaned.toLowerCase().startsWith('a mythical f')) {
+    cleaned = cleaned.replace(/A Mythical F\b/i, 'Mythical Fantasy Creature');
+  }
+  if (cleaned.toLowerCase().startsWith('a clean printa')) {
+    cleaned = cleaned.replace(/A Clean Printa\b/i, 'Pixel Game World Scene');
+  }
+  
+  // If title is super short (like "A" or "The"), use theme name
+  if (cleaned.length <= 3) {
+    const formattedTheme = theme.replace(/-/g, ' ').replace(/\b\w/g, l => l.toUpperCase());
+    cleaned = `${formattedTheme} Illustration`;
+  }
+  
+  return cleaned;
+}
+
 export async function GET(request: Request) {
   try {
     const { searchParams } = new URL(request.url);
     const hubFilter = searchParams.get('hub')?.toLowerCase();
     const themeFilter = searchParams.get('theme')?.toLowerCase();
-    const queryFilter = searchParams.get('q')?.toLowerCase();
 
     const dataPath = path.join(process.cwd(), 'src', 'data', 'en', 'coloring-pages.json');
     if (!fs.existsSync(dataPath)) {
@@ -22,26 +43,24 @@ export async function GET(request: Request) {
     // Filter valid pages with images
     let validPages = allPages.filter((p: any) => p.image && !p.image.includes('default.jpg'));
     
-    // Halloween special filter or theme/hub filter
-    if (hubFilter === 'halloween' || themeFilter === 'halloween' || queryFilter === 'halloween') {
-      const halloweenPages = validPages.filter((p: any) => 
+    if (hubFilter === 'anime-manga') {
+      // Strictly popular anime & manga themes only!
+      const animeThemes = [
+        'dragonball', 'naruto', 'one-piece', 'demon-slayer', 'jujutsu-kaisen',
+        'my-hero-academia', 'studio-ghibli-spirited-away', 'studio-ghibli-totoro',
+        'studio-ghibli-howl-moving-castle', 'bleach', 'sailor-moon', 'spy-x-family',
+        'hunter-x-hunter', 'fullmetal-alchemist'
+      ];
+      validPages = validPages.filter((p: any) => animeThemes.includes(p.parentTheme));
+    } else if (hubFilter === 'halloween') {
+      validPages = validPages.filter((p: any) => 
         (p.parentTheme || '').toLowerCase().includes('halloween') ||
-        (p.title || '').toLowerCase().includes('halloween') ||
-        (p.tags || []).some((t: string) => t.toLowerCase().includes('halloween'))
+        (p.title || '').toLowerCase().includes('halloween')
       );
-      if (halloweenPages.length > 0) {
-        validPages = halloweenPages;
-      }
     } else if (hubFilter) {
-      const filtered = validPages.filter((p: any) => (p.parentHub || '').toLowerCase() === hubFilter);
-      if (filtered.length > 0) {
-        validPages = filtered;
-      }
+      validPages = validPages.filter((p: any) => (p.parentHub || '').toLowerCase() === hubFilter);
     } else if (themeFilter) {
-      const filtered = validPages.filter((p: any) => (p.parentTheme || '').toLowerCase().includes(themeFilter));
-      if (filtered.length > 0) {
-        validPages = filtered;
-      }
+      validPages = validPages.filter((p: any) => (p.parentTheme || '').toLowerCase().includes(themeFilter));
     }
     
     // Rotate items daily
@@ -61,11 +80,12 @@ export async function GET(request: Request) {
     };
 
     const itemsXml = selectedPages.map((page: any) => {
-      const hub = page.parentHub || 'holidays-seasons';
-      const theme = page.parentTheme || 'halloween-spooky-nights';
+      const hub = page.parentHub || 'anime-manga';
+      const theme = page.parentTheme || 'dragonball';
       const age = page.ageGroup || 'kids';
       const slug = page.slug;
-      const title = page.title || 'Free Coloring Page';
+      const rawTitle = page.title || 'Coloring Page';
+      const title = cleanTitle(rawTitle, theme, hub);
       const imgUrl = page.image || page.downloadableFile;
       const pageUrl = `https://www.colorvaults.com/en/${hub}/${theme}/${age}/${slug}`;
       const description = `Download & print this free ${title} coloring page! High-resolution A4 & Letter PDF format ready to print at home or school. 100% free with no sign-up required on ColorVaults.com.`;
@@ -81,9 +101,9 @@ export async function GET(request: Request) {
     </item>`;
     }).join('');
 
-    const channelTitle = (hubFilter === 'halloween' || themeFilter === 'halloween')
-      ? 'ColorVaults - Halloween Spooky Coloring Pages'
-      : hubFilter 
+    const channelTitle = hubFilter === 'anime-manga'
+      ? 'ColorVaults - Anime & Manga Coloring Pages'
+      : hubFilter
       ? `ColorVaults - ${hubFilter} Coloring Pages`
       : 'ColorVaults - Free Printable Coloring Pages';
 
