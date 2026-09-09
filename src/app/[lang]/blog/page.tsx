@@ -11,7 +11,7 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
   const { lang } = await params;
   const isEn = lang ==='en';
   return {
-    title: isEn ?'Parenting & Teaching Guides, Tips & Coloring Blog | ColorVaults':'Kleurplaten Tips, Opvoeding & Onderwijs Blog | ColorVaults',
+    title: isEn ? 'Parenting & Teaching Guides, Tips & Coloring Blog' : 'Kleurplaten Tips, Opvoeding & Onderwijs Blog',
     description: isEn
       ?'Explore expert guides on child motor skills development, mindfulness coloring for adults, and creative classroom ideas.':'Ontdek handige tips voor fijne motoriek bij peuters, mindfulness kleurplaten voor volwassenen en creatieve lesideën voor de basisschool.',
   };
