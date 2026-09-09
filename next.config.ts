@@ -69,6 +69,14 @@ const nextConfig: NextConfig = {
         destination: '/sitemap.xml',
       },
       {
+        source: '/pinterest-feed.xml',
+        destination: '/api/pinterest-feed',
+      },
+      {
+        source: '/pinterest.xml',
+        destination: '/api/pinterest-feed',
+      },
+      {
         source: '/cv-vault-8942',
         destination: '/admin?secret=cv-vault-8942',
       },
