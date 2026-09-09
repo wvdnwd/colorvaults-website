@@ -12,22 +12,22 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 DATA_PATH = os.path.join(BASE_DIR, "src", "data", "en", "coloring-pages.json")
 HISTORY_PATH = os.path.join(BASE_DIR, "scripts", "pinned_history.json")
 
-# Map your 10 Master Hubs to Pinterest Board Names
+# Map your 10 Master Hubs to exact existing Pinterest Board Names
 HUB_TO_BOARD_NAME = {
     "disney-pixar": "Disney & Pixar Coloring Pages",
     "anime-manga": "Anime & Manga Coloring Pages",
     "gaming-virtual-worlds": "Gaming & Minecraft Coloring Pages",
-    "superheroes-comic-universes": "Superheroes & Comics Coloring Pages",
-    "kids-tv-shows": "Kids TV Shows & Cartoons Coloring Pages",
-    "animals-wildlife": "Animals & Wildlife Coloring Pages",
-    "fantasy-fairytales": "Fantasy & Fairytales Coloring Pages",
-    "vehicles-transportation": "Vehicles & Transport Coloring Pages",
-    "art-aesthetic": "Mandalas & Adult Coloring Pages",
-    "holidays-seasons": "Holidays & Seasonal Coloring Pages",
-    "crafts-diy-learning": "Educational & Learning Worksheets",
+    "superheroes-comic-universes": "Superheroes & Marvel Coloring Pages",
+    "kids-tv-shows": "Kids TV Shows & Cartoons",
+    "animals-wildlife": "Cute Animals & Pets Coloring Pages",
+    "fantasy-fairytales": "Fantasy, Fairy Tales & Princesses",
+    "vehicles-transportation": "Gaming & Minecraft Coloring Pages",
+    "art-aesthetic": "Mandala & Adult Coloring Pages",
+    "holidays-seasons": "Coloring Calendars & Planners 2026",
+    "crafts-diy-learning": "School & Educational Worksheets",
 }
 
-DEFAULT_BOARD_NAME = "Free Printable Coloring Pages"
+DEFAULT_BOARD_NAME = "Disney & Pixar Coloring Pages"
 
 def api_request(endpoint, method="GET", data=None):
     if not ACCESS_TOKEN:
@@ -55,7 +55,7 @@ def api_request(endpoint, method="GET", data=None):
         return None
 
 def get_or_create_boards():
-    """Fetch existing boards or create them if missing."""
+    """Fetch existing boards."""
     print("Fetching existing Pinterest boards...")
     resp = api_request("/boards?page_size=100")
     boards = {}
@@ -63,22 +63,9 @@ def get_or_create_boards():
     if resp and "items" in resp:
         for b in resp["items"]:
             boards[b["name"].lower().strip()] = b["id"]
+            print(f"  - Board: {b['name']} (ID: {b['id']})")
             
-    print(f"Found {len(boards)} existing boards.")
     return boards
-
-def create_board(name):
-    """Create a new board if it doesn't exist yet."""
-    print(f"Creating board: {name}...")
-    data = {
-        "name": name,
-        "description": f"Download and print {name} for free in high resolution A4 / Letter format on ColorVaults.com",
-        "privacy": "PUBLIC"
-    }
-    resp = api_request("/boards", method="POST", data=data)
-    if resp and "id" in resp:
-        return resp["id"]
-    return None
 
 def load_history():
     if os.path.exists(HISTORY_PATH):
@@ -98,7 +85,7 @@ def main(pins_to_post=6):
     print("Starting ColorVaults Pinterest Auto-Poster...")
     
     if not ACCESS_TOKEN:
-        print("ERROR: PINTEREST_ACCESS_TOKEN is missing. Please configure it in your GitHub repository secrets.")
+        print("ERROR: PINTEREST_ACCESS_TOKEN is missing.")
         return
 
     if not os.path.exists(DATA_PATH):
@@ -120,11 +107,13 @@ def main(pins_to_post=6):
         history = set()
         available = [p for p in all_pages if p.get("image")]
 
-    # Shuffle to pick a diverse selection across categories
     random.shuffle(available)
     selected = available[:pins_to_post]
 
     boards = get_or_create_boards()
+    if not boards:
+        print("ERROR: Could not fetch boards. Please check your token scopes.")
+        return
 
     posted_count = 0
     for page in selected:
@@ -139,16 +128,8 @@ def main(pins_to_post=6):
         board_id = boards.get(target_board_name.lower().strip())
         
         if not board_id:
-            board_id = create_board(target_board_name)
-            if board_id:
-                boards[target_board_name.lower().strip()] = board_id
-            else:
-                # Fallback to first available board
-                board_id = list(boards.values())[0] if boards else None
-
-        if not board_id:
-            print(f"Could not find or create a board for {target_board_name}. Skipping...")
-            continue
+            # Fallback to any board available
+            board_id = list(boards.values())[0]
 
         page_url = f"https://www.colorvaults.com/en/{hub}/{theme}/{age}/{slug}"
         
@@ -184,7 +165,7 @@ def main(pins_to_post=6):
         else:
             print(f"FAILED to post pin for {slug}")
         
-        time.sleep(2) # rate limit pause
+        time.sleep(2)
 
     save_history(history)
     print(f"\nDone! Successfully posted {posted_count}/{len(selected)} pins to Pinterest.")
