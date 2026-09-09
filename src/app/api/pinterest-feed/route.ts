@@ -8,7 +8,9 @@ export const revalidate = 3600;
 export async function GET(request: Request) {
   try {
     const { searchParams } = new URL(request.url);
-    const hubFilter = searchParams.get('hub');
+    const hubFilter = searchParams.get('hub')?.toLowerCase();
+    const themeFilter = searchParams.get('theme')?.toLowerCase();
+    const queryFilter = searchParams.get('q')?.toLowerCase();
 
     const dataPath = path.join(process.cwd(), 'src', 'data', 'en', 'coloring-pages.json');
     if (!fs.existsSync(dataPath)) {
@@ -17,16 +19,32 @@ export async function GET(request: Request) {
 
     const allPages = JSON.parse(fs.readFileSync(dataPath, 'utf-8'));
     
-    // Filter by hub if specified, or all valid pages
+    // Filter valid pages with images
     let validPages = allPages.filter((p: any) => p.image && !p.image.includes('default.jpg'));
-    if (hubFilter) {
-      const filtered = validPages.filter((p: any) => p.parentHub === hubFilter);
+    
+    // Halloween special filter or theme/hub filter
+    if (hubFilter === 'halloween' || themeFilter === 'halloween' || queryFilter === 'halloween') {
+      const halloweenPages = validPages.filter((p: any) => 
+        (p.parentTheme || '').toLowerCase().includes('halloween') ||
+        (p.title || '').toLowerCase().includes('halloween') ||
+        (p.tags || []).some((t: string) => t.toLowerCase().includes('halloween'))
+      );
+      if (halloweenPages.length > 0) {
+        validPages = halloweenPages;
+      }
+    } else if (hubFilter) {
+      const filtered = validPages.filter((p: any) => (p.parentHub || '').toLowerCase() === hubFilter);
+      if (filtered.length > 0) {
+        validPages = filtered;
+      }
+    } else if (themeFilter) {
+      const filtered = validPages.filter((p: any) => (p.parentTheme || '').toLowerCase().includes(themeFilter));
       if (filtered.length > 0) {
         validPages = filtered;
       }
     }
     
-    // Rotate items daily based on day of the year
+    // Rotate items daily
     const dayOfYear = Math.floor((Date.now() - new Date(new Date().getFullYear(), 0, 0).getTime()) / (1000 * 60 * 60 * 24));
     const batchSize = 50;
     const startIndex = (dayOfYear * 25) % Math.max(1, validPages.length - batchSize);
@@ -43,8 +61,8 @@ export async function GET(request: Request) {
     };
 
     const itemsXml = selectedPages.map((page: any) => {
-      const hub = page.parentHub || 'disney-pixar';
-      const theme = page.parentTheme || 'frozen';
+      const hub = page.parentHub || 'holidays-seasons';
+      const theme = page.parentTheme || 'halloween-spooky-nights';
       const age = page.ageGroup || 'kids';
       const slug = page.slug;
       const title = page.title || 'Free Coloring Page';
@@ -63,7 +81,9 @@ export async function GET(request: Request) {
     </item>`;
     }).join('');
 
-    const channelTitle = hubFilter 
+    const channelTitle = (hubFilter === 'halloween' || themeFilter === 'halloween')
+      ? 'ColorVaults - Halloween Spooky Coloring Pages'
+      : hubFilter 
       ? `ColorVaults - ${hubFilter} Coloring Pages`
       : 'ColorVaults - Free Printable Coloring Pages';
 
