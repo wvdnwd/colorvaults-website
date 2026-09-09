@@ -6,22 +6,24 @@ export const dynamic = 'force-dynamic';
 export const revalidate = 3600;
 
 function cleanTitle(title: string, theme: string, hub: string): string {
-  if (!title) return 'Coloring Page';
+  if (!title) {
+    const formattedTheme = theme.replace(/-/g, ' ').replace(/\b\w/g, l => l.toUpperCase());
+    return `${formattedTheme} Coloring Sheet`;
+  }
   
   let cleaned = title.trim();
   
-  // Fix known truncated titles like "A Mythical F", "A Clean Printa", etc.
-  if (cleaned.toLowerCase().startsWith('a mythical f')) {
-    cleaned = cleaned.replace(/A Mythical F\b/i, 'Mythical Fantasy Creature');
+  // Clean known broken prefixes
+  if (/^a\s+mythical\s+[a-z]?\s*(\(|$)/i.test(cleaned)) {
+    cleaned = cleaned.replace(/^a\s+mythical\s+[a-z]?\b/i, 'Mythical Fantasy Beast');
   }
-  if (cleaned.toLowerCase().startsWith('a clean printa')) {
-    cleaned = cleaned.replace(/A Clean Printa\b/i, 'Pixel Game World Scene');
+  if (/^a\s+clean\s+printa?\b/i.test(cleaned)) {
+    cleaned = cleaned.replace(/^a\s+clean\s+printa?\b/i, 'Pixel Game World Scene');
   }
   
-  // If title is super short (like "A" or "The"), use theme name
-  if (cleaned.length <= 3) {
+  if (cleaned.length <= 4) {
     const formattedTheme = theme.replace(/-/g, ' ').replace(/\b\w/g, l => l.toUpperCase());
-    cleaned = `${formattedTheme} Illustration`;
+    cleaned = `${formattedTheme} Printable`;
   }
   
   return cleaned;
@@ -43,15 +45,23 @@ export async function GET(request: Request) {
     // Filter valid pages with images
     let validPages = allPages.filter((p: any) => p.image && !p.image.includes('default.jpg'));
     
-    if (hubFilter === 'anime-manga') {
-      // Strictly popular anime & manga themes only!
-      const animeThemes = [
-        'dragonball', 'naruto', 'one-piece', 'demon-slayer', 'jujutsu-kaisen',
-        'my-hero-academia', 'studio-ghibli-spirited-away', 'studio-ghibli-totoro',
-        'studio-ghibli-howl-moving-castle', 'bleach', 'sailor-moon', 'spy-x-family',
-        'hunter-x-hunter', 'fullmetal-alchemist'
-      ];
-      validPages = validPages.filter((p: any) => animeThemes.includes(p.parentTheme));
+    // Strict hub-specific filtering
+    if (hubFilter === 'disney-pixar') {
+      validPages = validPages.filter((p: any) => p.parentHub === 'disney-pixar');
+    } else if (hubFilter === 'anime-manga') {
+      validPages = validPages.filter((p: any) => p.parentHub === 'anime-manga');
+    } else if (hubFilter === 'gaming-virtual-worlds' || hubFilter === 'gaming') {
+      validPages = validPages.filter((p: any) => p.parentHub === 'gaming-virtual-worlds');
+    } else if (hubFilter === 'superheroes-comic-universes' || hubFilter === 'superheroes') {
+      validPages = validPages.filter((p: any) => p.parentHub === 'superheroes-comic-universes');
+    } else if (hubFilter === 'kids-tv-shows' || hubFilter === 'cartoons') {
+      validPages = validPages.filter((p: any) => p.parentHub === 'kids-tv-shows');
+    } else if (hubFilter === 'animals-wildlife' || hubFilter === 'animals') {
+      validPages = validPages.filter((p: any) => p.parentHub === 'animals-wildlife');
+    } else if (hubFilter === 'art-aesthetic' || hubFilter === 'mandalas') {
+      validPages = validPages.filter((p: any) => p.parentHub === 'art-aesthetic');
+    } else if (hubFilter === 'fantasy-fairytales' || hubFilter === 'fantasy') {
+      validPages = validPages.filter((p: any) => p.parentHub === 'fantasy-fairytales');
     } else if (hubFilter === 'halloween') {
       validPages = validPages.filter((p: any) => 
         (p.parentTheme || '').toLowerCase().includes('halloween') ||
@@ -61,9 +71,13 @@ export async function GET(request: Request) {
       validPages = validPages.filter((p: any) => (p.parentHub || '').toLowerCase() === hubFilter);
     } else if (themeFilter) {
       validPages = validPages.filter((p: any) => (p.parentTheme || '').toLowerCase().includes(themeFilter));
+    } else {
+      // Default general feed: curated mix of top popular character hubs
+      const popularHubs = ['disney-pixar', 'anime-manga', 'gaming-virtual-worlds', 'superheroes-comic-universes', 'kids-tv-shows', 'animals-wildlife'];
+      validPages = validPages.filter((p: any) => popularHubs.includes(p.parentHub));
     }
     
-    // Rotate items daily
+    // Rotate items daily based on day of the year
     const dayOfYear = Math.floor((Date.now() - new Date(new Date().getFullYear(), 0, 0).getTime()) / (1000 * 60 * 60 * 24));
     const batchSize = 50;
     const startIndex = (dayOfYear * 25) % Math.max(1, validPages.length - batchSize);
@@ -80,8 +94,8 @@ export async function GET(request: Request) {
     };
 
     const itemsXml = selectedPages.map((page: any) => {
-      const hub = page.parentHub || 'anime-manga';
-      const theme = page.parentTheme || 'dragonball';
+      const hub = page.parentHub || 'disney-pixar';
+      const theme = page.parentTheme || 'frozen';
       const age = page.ageGroup || 'kids';
       const slug = page.slug;
       const rawTitle = page.title || 'Coloring Page';
@@ -101,9 +115,7 @@ export async function GET(request: Request) {
     </item>`;
     }).join('');
 
-    const channelTitle = hubFilter === 'anime-manga'
-      ? 'ColorVaults - Anime & Manga Coloring Pages'
-      : hubFilter
+    const channelTitle = hubFilter 
       ? `ColorVaults - ${hubFilter} Coloring Pages`
       : 'ColorVaults - Free Printable Coloring Pages';
 
