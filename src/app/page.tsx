@@ -7,6 +7,7 @@ export default function RootPage() {
         <title>ColorVaults | Free Premium Coloring Pages</title>
         <meta name="description" content="Download thousands of high-quality free printable coloring pages for kids, toddlers, teens and adults. 100% free, no account required." />
         <meta name="google-adsense-account" content="ca-pub-1184801748776428" />
+        <meta name="p:domain_verify" content="314125f62194f4aab9b5275a55bc34a2" />
 
         {/* WhatsApp & Social Media Preview Meta Tags */}
         <meta property="og:site_name" content="ColorVaults" />

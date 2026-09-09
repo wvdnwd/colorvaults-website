@@ -97,6 +97,7 @@ export default async function RootLayout({
     <html lang={lang} className={`${fredoka.variable} ${nunito.variable}`} data-theme="dark">
       <head>
         <meta name="google-adsense-account" content="ca-pub-1184801748776428" />
+        <meta name="p:domain_verify" content="314125f62194f4aab9b5275a55bc34a2" />
       </head>
       <body>
         <Script
