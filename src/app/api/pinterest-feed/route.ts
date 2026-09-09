@@ -3,10 +3,13 @@ import path from 'path';
 import fs from 'fs';
 
 export const dynamic = 'force-dynamic';
-export const revalidate = 3600; // Refresh every hour
+export const revalidate = 3600;
 
-export async function GET() {
+export async function GET(request: Request) {
   try {
+    const { searchParams } = new URL(request.url);
+    const hubFilter = searchParams.get('hub');
+
     const dataPath = path.join(process.cwd(), 'src', 'data', 'en', 'coloring-pages.json');
     if (!fs.existsSync(dataPath)) {
       return new NextResponse('Data not found', { status: 404 });
@@ -14,13 +17,20 @@ export async function GET() {
 
     const allPages = JSON.parse(fs.readFileSync(dataPath, 'utf-8'));
     
-    // Pick 50 diverse high-quality coloring pages with images
-    const validPages = allPages.filter((p: any) => p.image && !p.image.includes('default.jpg'));
+    // Filter by hub if specified, or all valid pages
+    let validPages = allPages.filter((p: any) => p.image && !p.image.includes('default.jpg'));
+    if (hubFilter) {
+      const filtered = validPages.filter((p: any) => p.parentHub === hubFilter);
+      if (filtered.length > 0) {
+        validPages = filtered;
+      }
+    }
     
     // Rotate items daily based on day of the year
     const dayOfYear = Math.floor((Date.now() - new Date(new Date().getFullYear(), 0, 0).getTime()) / (1000 * 60 * 60 * 24));
-    const startIndex = (dayOfYear * 25) % Math.max(1, validPages.length - 50);
-    const selectedPages = validPages.slice(startIndex, startIndex + 50);
+    const batchSize = 50;
+    const startIndex = (dayOfYear * 25) % Math.max(1, validPages.length - batchSize);
+    const selectedPages = validPages.slice(startIndex, startIndex + batchSize);
 
     const escapeXml = (unsafe: string) => {
       if (!unsafe) return '';
@@ -53,15 +63,19 @@ export async function GET() {
     </item>`;
     }).join('');
 
+    const channelTitle = hubFilter 
+      ? `ColorVaults - ${hubFilter} Coloring Pages`
+      : 'ColorVaults - Free Printable Coloring Pages';
+
     const rssXml = `<?xml version="1.0" encoding="UTF-8"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:media="http://search.yahoo.com/mrss/">
   <channel>
-    <title>ColorVaults - Free Printable Coloring Pages</title>
+    <title>${escapeXml(channelTitle)}</title>
     <link>https://www.colorvaults.com</link>
     <description>Daily free high-resolution printable coloring pages for kids, toddlers, teens, and adults.</description>
     <language>en-us</language>
     <lastBuildDate>${new Date().toUTCString()}</lastBuildDate>
-    <atom:link href="https://www.colorvaults.com/api/pinterest-feed.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://www.colorvaults.com/api/pinterest-feed" rel="self" type="application/rss+xml" />
     ${itemsXml}
   </channel>
 </rss>`;
