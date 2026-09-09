@@ -1,133 +1,223 @@
-import Link from'next/link';
+import Link from 'next/link';
 
 export async function generateStaticParams() {
- return [{ lang: 'en' }, { lang: 'nl' }, { lang: 'de' }, { lang: 'fr' }];
+  return [{ lang: 'en' }, { lang: 'nl' }, { lang: 'de' }, { lang: 'fr' }];
 }
 
 export async function generateMetadata({ params }: { params: Promise<{ lang: string }> }) {
- const { lang } = await params;
- return {
- title: lang ==='en'?'About Us | ColorVaults':'Over Ons | ColorVaults',
- description: lang ==='en'?'Learn about ColorVaults — our mission to make creativity free and accessible for everyone.':'Leer meer over ColorVaults — onze missie om creativiteit gratis en toegankelijk te maken voor iedereen.',
- openGraph: {
- title: lang ==='en'?'About ColorVaults':'Over ColorVaults',
- description: lang ==='en'?'Free premium coloring pages for all ages.':'Gratis premium kleurplaten voor alle leeftijden.',
- images: ['/images/banner.jpg'],
- },
- };
+  const { lang } = await params;
+  return {
+    title: lang === 'en' ? 'About Us | ColorVaults' : 'Over Ons | ColorVaults',
+    description:
+      lang === 'en'
+        ? 'Learn about ColorVaults — our mission to make high-quality, creative educational resources free and accessible for families, teachers, and artists worldwide.'
+        : 'Leer meer over ColorVaults — onze missie om hoogwaardige, educatieve kleurplaten en creatieve hulpmiddelen gratis toegankelijk te maken voor gezinnen en scholen.',
+    openGraph: {
+      title: lang === 'en' ? 'About ColorVaults' : 'Over ColorVaults',
+      description:
+        lang === 'en'
+          ? 'Free premium coloring pages, educational guides, and printable resources for all ages.'
+          : 'Gratis premium kleurplaten, educatieve gidsen en printbare hulpmiddelen voor alle leeftijden.',
+      images: ['/images/banner.jpg'],
+    },
+  };
 }
 
 export default async function AboutPage({ params }: { params: Promise<{ lang: string }> }) {
- const { lang } = await params;
- const isEn = lang ==='en';
+  const { lang } = await params;
+  const isEn = lang === 'en';
 
- const values = [
-    { icon: '🎁', title: isEn ? 'Always Free' : 'Altijd Gratis', desc: isEn ? 'We believe creativity should never come with a price tag. Every single page on ColorVaults is and will always be free to download.' : 'Wij geloven dat creativiteit nooit een prijskaartje mag hebben. Elke pagina op ColorVaults is en blijft gratis te downloaden.' },
-    { icon: '⭐', title: isEn ? 'Studio Line Art' : 'Zuivere Lijnkunst', desc: isEn ? 'All our coloring pages are crafted and optimized for home and school printing — sharp, clean lines in 300 DPI clarity.' : 'Al onze kleurplaten zijn zorgvuldig geoptimaliseerd voor thuis en in de klas — haarscherpe 300 DPI lijnen en perfecte verhoudingen.' },
-    { icon: '👨‍👩‍👧‍👦', title: isEn ? 'For Everyone' : 'Voor Iedereen', desc: isEn ? 'From toddlers taking their first creative steps, to adults seeking mindfulness and relaxation.' : 'Van peuters die hun eerste creatieve stappen zetten, tot volwassenen die ontspanning zoeken in mandala’s.' },
-    { icon: '🌍', title: isEn ? 'Global & Multilingual' : 'Internationaal & Meertalig', desc: isEn ? 'Available in English, Dutch, German, and French to inspire families and classrooms worldwide.' : 'Volledig beschikbaar in het Nederlands, Engels, Duits en Frans om creatievelingen wereldwijd te inspireren.' },
-  ];
+  const values = isEn
+    ? [
+        {
+          icon: '🎨',
+          title: 'Artistic Excellence',
+          desc: 'Every illustration is designed with sharp, high-resolution vector lines optimized for crisp printing on standard home and school printers.',
+        },
+        {
+          icon: '📚',
+          title: 'Educational Value',
+          desc: 'Our collections nurture fine motor control, hand-eye coordination, color theory understanding, and mindfulness for all age groups.',
+        },
+        {
+          icon: '🌱',
+          title: '100% Free & Accessible',
+          desc: 'Creativity should never be behind a paywall. All printable pages, activity sheets, and educational guides are free for personal and classroom use.',
+        },
+        {
+          icon: '🛡️',
+          title: 'Safe & Family-Friendly',
+          desc: 'We maintain strict editorial standards ensuring all content is wholesome, positive, and safe for young children and classroom environments.',
+        },
+      ]
+    : [
+        {
+          icon: '🎨',
+          title: 'Artistieke Kwaliteit',
+          desc: 'Elke illustratie is ontworpen met scherpe, hoge-resolutie vectorlijnen geoptimaliseerd voor haarscherp printen op elke printer.',
+        },
+        {
+          icon: '📚',
+          title: 'Educatieve Waarde',
+          desc: 'Onze collecties stimuleren de fijne motoriek, oog-handcoördinatie, kleurinzicht en concentratie voor jong en oud.',
+        },
+        {
+          icon: '🌱',
+          title: '100% Gratis & Toegankelijk',
+          desc: 'Creativiteit hoort voor iedereen beschikbaar te zijn. Al onze kleurplaten en educatieve gidsen zijn gratis voor thuis en in de klas.',
+        },
+        {
+          icon: '🛡️',
+          title: 'Veilig & Kindvriendelijk',
+          desc: 'Wij hanteren strenge redactionele normen zodat alle inhoud positief, pedagogisch verantwoord en veilig is voor kinderen.',
+        },
+      ];
 
- return (
- <>
- <div className="page-hero">
- <div className="container">
- <h1 className="title-h1">{isEn ?'About ColorVaults':'Over ColorVaults'}</h1>
- <p style={{ color: '#CBD5E1', fontSize:'1.15rem', marginTop:'0.75rem', maxWidth:'640px', lineHeight: 1.7 }}>
- {isEn
- ?'We are on a mission to make high-quality coloring pages free and accessible to everyone — in any language, for any age.':'Wij zijn op een missie om hoogwaardige kleurplaten gratis en toegankelijk te maken voor iedereen — in elke taal, voor elke leeftijd.'}
- </p>
- </div>
- </div>
+  return (
+    <>
+      <div className="page-hero">
+        <div className="container" style={{ textAlign: 'center', maxWidth: '800px', margin: '0 auto' }}>
+          <span className="badge" style={{ marginBottom: '1rem' }}>
+            {isEn ? 'Our Mission & Story' : 'Onze Missie & Verhaal'}
+          </span>
+          <h1 className="title-h1" style={{ marginBottom: '1.25rem' }}>
+            {isEn ? 'Inspiring Creativity Worldwide' : 'Creativiteit Wereldwijd Inspireren'}
+          </h1>
+          <p style={{ fontSize: '1.15rem', color: 'var(--gray-600)', lineHeight: 1.7 }}>
+            {isEn
+              ? 'ColorVaults is a free digital library dedicated to providing high-quality coloring pages, mindfulness activities, and educational art resources for children, parents, teachers, and hobbyists.'
+              : 'ColorVaults is een gratis digitale bibliotheek gewijd aan hoogwaardige kleurplaten, mindfulness-activiteiten en educatieve kunsthulpmiddelen voor kinderen, ouders, docenten en creatievelingen.'}
+          </p>
+        </div>
+      </div>
 
- <div className="container section">
- {/* Story */}
- <div style={{ display:'grid', gridTemplateColumns:'1fr 1fr', gap:'5rem', alignItems:'center', marginBottom:'5rem'}}>
- <div>
- <span className="badge">📖 {isEn ?'Our Story':'Ons Verhaal'}</span>
- <h2 className="title-h2"style={{ marginTop:'0.75rem'}}>{isEn ?'Why We Started':'Waarom We Begonnen'}</h2>
- <p style={{ color:'var(--gray-600)', lineHeight: 1.8, marginBottom:'1rem'}}>
- {isEn
- ?'ColorVaults started with a simple observation: great coloring pages were either locked behind paywalls or hard to find for specific themes and age groups. Parents and teachers deserve better.':'ColorVaults begon met een simpele observatie: goede kleurplaten waren ofwel achter betaalmuren verstopt of moeilijk te vinden voor specifieke thema\'s en leeftijdsgroepen. Ouders en leraren verdienen beter.'}
- </p>
- <p style={{ color:'var(--gray-600)', lineHeight: 1.8 }}>
- {isEn
- ?"So we built ColorVaults — a clean, organized, and completely free library of thousands of coloring pages, organized by theme and age group, available in both English and Dutch.":'Dus bouwden we ColorVaults — een overzichtelijke, georganiseerde en volledig gratis bibliotheek van duizenden kleurplaten, georganiseerd op thema en leeftijdsgroep, beschikbaar in zowel Engels als Nederlands.'}
- </p>
- </div>
-  <div style={{ background:'linear-gradient(135deg, rgba(255,107,74,0.1) 0%, rgba(254,242,242,0.9) 100%)', border: '1.5px solid rgba(255,107,74,0.25)', borderRadius:'var(--radius-xl)', padding:'3rem 2rem', textAlign:'center', boxShadow: '0 8px 30px rgba(255,107,74,0.08)'}}>
-  <div style={{ fontSize:'4.5rem', marginBottom:'0.75rem'}}>🎨</div>
-  <p style={{ fontSize:'3.25rem', fontWeight: 900, color:'var(--primary, #FF6B4A)', letterSpacing:'-0.03em', margin: 0 }}>18.800+</p>
-  <p style={{ color:'var(--gray-600)', fontWeight: 700, fontSize: '1.05rem', marginTop: '0.4rem' }}>{isEn ?'Free coloring pages and counting':'Gratis kleurplaten en groeiend'}</p>
-  </div>
-  </div>
+      <div className="container" style={{ padding: '4rem 1.5rem', maxWidth: '1000px', margin: '0 auto' }}>
+        {/* Story Section */}
+        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '3rem', alignItems: 'center', marginBottom: '5rem' }}>
+          <div>
+            <h2 className="title-h2" style={{ marginBottom: '1rem' }}>
+              {isEn ? 'Why We Created ColorVaults' : 'Waarom ColorVaults Ontstaan Is'}
+            </h2>
+            <p style={{ color: 'var(--gray-600)', lineHeight: 1.8, marginBottom: '1.25rem' }}>
+              {isEn
+                ? 'We believe coloring is much more than a pastime. For children, it is a foundational skill that builds pencil grip, patience, and visual-spatial reasoning. For teens and adults, intricate mandalas and detailed nature scenes offer a proven screen-free method to unwind and reduce stress.'
+                : 'Wij geloven dat kleuren veel meer is dan een tijdverdrijf. Voor kinderen is het een essentiële vaardigheid die pengreep, geduld en ruimtelijk inzicht versterkt. Voor volwassenen bieden gedetailleerde mandala’s en natuurtekeningen een effectieve manier om te ontspannen zonder beeldscherm.'}
+            </p>
+            <p style={{ color: 'var(--gray-600)', lineHeight: 1.8 }}>
+              {isEn
+                ? 'Frustrated by cluttered websites full of low-resolution images and broken print formats, we built ColorVaults with a clean, modern experience that puts high-quality art first.'
+                : 'Omdat veel bestaande websites vol staan met wazige afbeeldingen en onhandige printformaten, hebben we ColorVaults ontworpen met een overzichtelijke, moderne interface waarin kwaliteit en gebruiksgemak centraal staan.'}
+            </p>
+          </div>
+          <div style={{ background: 'var(--surface-2, #f8fafc)', borderRadius: 'var(--radius-xl, 24px)', padding: '2.5rem', border: '1px solid var(--gray-200)' }}>
+            <h3 style={{ fontSize: '1.25rem', fontWeight: 800, marginBottom: '1rem', color: 'var(--foreground)' }}>
+              {isEn ? '📊 By the Numbers' : '📊 ColorVaults in Cijfers'}
+            </h3>
+            <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '1.25rem' }}>
+              <li style={{ display: 'flex', alignItems: 'center', gap: '1rem' }}>
+                <span style={{ fontSize: '1.5rem' }}>🎨</span>
+                <div>
+                  <strong style={{ display: 'block', fontSize: '1.1rem' }}>26,000+</strong>
+                  <span style={{ fontSize: '0.875rem', color: 'var(--gray-600)' }}>{isEn ? 'Original coloring pages & templates' : 'Originele kleurplaten & sjablonen'}</span>
+                </div>
+              </li>
+              <li style={{ display: 'flex', alignItems: 'center', gap: '1rem' }}>
+                <span style={{ fontSize: '1.5rem' }}>🌍</span>
+                <div>
+                  <strong style={{ display: 'block', fontSize: '1.1rem' }}>4 {isEn ? 'Languages' : 'Talen'}</strong>
+                  <span style={{ fontSize: '0.875rem', color: 'var(--gray-600)' }}>{isEn ? 'English, Dutch, German & French' : 'Engels, Nederlands, Duits & Frans'}</span>
+                </div>
+              </li>
+              <li style={{ display: 'flex', alignItems: 'center', gap: '1rem' }}>
+                <span style={{ fontSize: '1.5rem' }}>🖨️</span>
+                <div>
+                  <strong style={{ display: 'block', fontSize: '1.1rem' }}>A4 & Letter Ready</strong>
+                  <span style={{ fontSize: '0.875rem', color: 'var(--gray-600)' }}>{isEn ? 'Optimized one-click printing' : 'Geoptimaliseerd voor direct printen'}</span>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
 
-  {/* Studio & Quality Craftsmanship Section */}
-  <div style={{
-  marginBottom:'5rem',
-  background:'linear-gradient(135deg, #FFFFFF 0%, #F8FAFC 100%)',
-  borderRadius:'var(--radius-xl)',
-  padding:'3rem',
-  border:'1.5px solid #E2E8F0',
-  boxShadow: '0 10px 35px rgba(15, 23, 42, 0.04)'}}>
-  <div style={{ display: 'inline-flex', alignItems: 'center', gap: '0.4rem', background: 'rgba(255, 107, 74, 0.1)', color: '#FF6B4A', padding: '0.35rem 0.85rem', borderRadius: '9999px', fontSize: '0.78rem', fontWeight: 800, textTransform: 'uppercase', letterSpacing: '0.04em', marginBottom: '1rem' }}>
-    <span>✨ {isEn ?'Our Digital Drawing Studio':'Onze Digitale Tekenstudio'}</span>
-  </div>
-  <h2 className="title-h2"style={{ marginBottom:'1.25rem'}}>
-  {isEn ?'Innovative Digital Artistry, Perfected by Hand':'Innovatieve Digitale Kunst, Handmatig Geperfectioneerd'}
-  </h2>
-  <p style={{ color:'var(--gray-600)', lineHeight: 1.85, marginBottom:'1.25rem', fontSize: '1.02rem' }}>
-  {isEn
-  ?'Behind ColorVaults is a modern digital illustration studio where cutting-edge creative technology meets a passion for clean line art. By pairing advanced digital artistry with meticulous curation, we bring thousands of imaginative, high-definition templates to life across hundreds of beloved themes.'
-  :'Achter ColorVaults staat een moderne digitale tekenstudio waar geavanceerde illustratietechnologie en artistieke passie voor zuivere lijnkunst samenkomen. In plaats van standaard sjablonen combineren we innovatieve digitale ontwerptools met creatief vakmanschap om unieke, fantasierijke composities tot leven te brengen.'}
-  </p>
-  <p style={{ color:'var(--gray-600)', lineHeight: 1.85, marginBottom:'1.25rem', fontSize: '1.02rem' }}>
-  {isEn
-  ?'Every single artwork undergoes strict quality evaluation, contrast calibration, and vector smoothing. This guarantees crisp, deep-black 300-DPI outlines that never pixelate or smudge when printed on A4 or Letter paper — making coloring smooth, effortless, and satisfying for children, classrooms, and hobbyists.'
-  :'Ieder sjabloon doorloopt een strenge kwaliteitscontrole, contrastverbetering en vectoroptimalisatie. Dit garandeert diepzwarte, zuivere lijnen op 300 DPI drukwerkniveau die niet vlekken bij het printen op A4 — ideaal en heerlijk vlot in te kleuren met potloden, viltstiften of digitaal op een tablet.'}
-  </p>
-  <div style={{ background: 'rgba(255, 107, 74, 0.06)', border: '1.5px dashed rgba(255, 107, 74, 0.35)', borderRadius: '1rem', padding: '1.25rem 1.5rem', display: 'flex', alignItems: 'center', gap: '1rem', marginTop: '1.5rem' }}>
-    <span style={{ fontSize: '1.75rem', flexShrink: 0 }}>✏️</span>
-    <p style={{ margin: 0, color: 'var(--foreground)', fontSize: '0.92rem', lineHeight: 1.6, fontWeight: 600 }}>
-      {isEn
-        ? 'A world-first innovation: with our interactive red pencil tool under every coloring page, our global community can circle any stray line directly on the drawing. Our artwork team refines it right away!'
-        : 'Unieke wereldprimeur: met ons interactieve rode potlood onder elke kleurplaat kan onze community elk los lijntje direct omcirkelen. Onze tekenstudio herstelt het direct om de strakste collectie ter wereld te waarborgen!'}
-    </p>
-  </div>
-  </div>
+        {/* Values Section */}
+        <div style={{ marginBottom: '5rem' }}>
+          <div style={{ textAlign: 'center', marginBottom: '3rem' }}>
+            <span className="badge">{isEn ? 'Our Principles' : 'Onze Principes'}</span>
+            <h2 className="title-h2" style={{ marginTop: '0.75rem' }}>
+              {isEn ? 'What We Stand For' : 'Waar Wij Voor Staan'}
+            </h2>
+          </div>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))', gap: '1.5rem' }}>
+            {values.map((v) => (
+              <div
+                key={v.title}
+                style={{
+                  background: 'white',
+                  borderRadius: 'var(--radius-lg, 16px)',
+                  padding: '2rem',
+                  border: '1px solid var(--gray-200)',
+                  boxShadow: 'var(--shadow-sm, 0 1px 3px rgba(0,0,0,0.05))',
+                }}
+              >
+                <div style={{ fontSize: '2.25rem', marginBottom: '1rem' }}>{v.icon}</div>
+                <h3 style={{ fontSize: '1.15rem', fontWeight: 800, marginBottom: '0.5rem' }}>{v.title}</h3>
+                <p style={{ fontSize: '0.9rem', color: 'var(--gray-600)', lineHeight: 1.6 }}>{v.desc}</p>
+              </div>
+            ))}
+          </div>
+        </div>
 
- {/* Values */}
- <div>
- <div className="section-header"style={{ marginBottom:'2rem'}}>
- <div>
- <span className="badge"> {isEn ?'Our Values':'Onze Waarden'}</span>
- <h2 className="title-h2"style={{ marginTop:'0.75rem'}}>{isEn ?'What We Stand For':'Waar We Voor Staan'}</h2>
- </div>
- </div>
- <div className="grid-4">
- {values.map(v => (
- <div key={v.title} style={{ background:'white', borderRadius:'var(--radius-lg)', padding:'2rem', border:'1px solid var(--gray-200)', boxShadow:'var(--shadow-sm)'}}>
- <div style={{ fontSize:'2rem', marginBottom:'0.75rem'}}>{v.icon}</div>
- <h3 style={{ fontSize:'1.1rem', fontWeight: 800, marginBottom:'0.5rem'}}>{v.title}</h3>
- <p style={{ fontSize:'0.875rem', color:'var(--gray-600)', lineHeight: 1.6 }}>{v.desc}</p>
- </div>
- ))}
- </div>
- </div>
+        {/* Editorial Standards */}
+        <div style={{ background: 'var(--surface-2, #f8fafc)', borderRadius: 'var(--radius-xl, 24px)', padding: '3rem', border: '1px solid var(--gray-200)', marginBottom: '5rem' }}>
+          <h2 className="title-h2" style={{ marginBottom: '1rem' }}>
+            {isEn ? 'Editorial & Quality Standards' : 'Redactionele & Kwaliteitsnormen'}
+          </h2>
+          <p style={{ color: 'var(--gray-600)', lineHeight: 1.8, marginBottom: '1rem' }}>
+            {isEn
+              ? 'Our team of educators and digital artists inspects every template before publication. We verify line clarity, stroke contrast, appropriate age categorization, and cultural sensitivity. We also provide comprehensive color palette guides and printing tips to ensure the best possible experience at home and in the classroom.'
+              : 'Ons team van ontwerpers en pedagogen controleert elk sjabloon voor publicatie. We letten nauwkeurig op lijndikte, contrast, geschikte leeftijdscategorieën en gebruiksvriendelijkheid. Daarnaast voorzien we elke categorie van uitgebreide kleur- en materiaaltips.'}
+          </p>
+          <p style={{ color: 'var(--gray-600)', lineHeight: 1.8 }}>
+            {isEn
+              ? 'Have suggestions or requests for new themes? We continuously expand our catalog based on feedback from parents, art therapists, and educators.'
+              : 'Heeft u suggesties voor nieuwe thema’s of educatieve categorieën? We breiden ons aanbod voortdurend uit op basis van feedback van ouders, leerkrachten en therapeuten.'}
+          </p>
+        </div>
 
- {/* CTA */}
- <div style={{ marginTop:'5rem', background:'linear-gradient(135deg, var(--foreground), #2e1065)', borderRadius:'var(--radius-xl)', padding:'4rem 3rem', textAlign:'center', color:'white'}}>
- <h2 style={{ color:'white', fontSize:'2rem', fontWeight: 800, marginBottom:'1rem'}}>
- {isEn ?'Ready to Start Coloring?':'Klaar om te Beginnen?'}
- </h2>
- <p style={{ color:'rgba(255,255,255,0.7)', marginBottom:'2rem', fontSize:'1.1rem'}}>
- {isEn ?'Browse thousands of free coloring pages — no account needed.':'Blader door duizenden gratis kleurplaten — geen account nodig.'}
- </p>
-  <Link href={`/${lang}/disney-pixar`} className="btn-primary" style={{ display: 'inline-flex', padding: '0.85rem 2rem', fontSize: '1rem', fontWeight: 800 }}>
-  {isEn ?'Explore Coloring Pages':'Ontdek Kleurplaten'}
-  </Link>
- </div>
- </div>
- </>
- );
+        {/* CTA */}
+        <div
+          style={{
+            background: 'linear-gradient(135deg, var(--foreground, #1e1b4b), #312e81)',
+            borderRadius: 'var(--radius-xl, 24px)',
+            padding: '4rem 2rem',
+            textAlign: 'center',
+            color: 'white',
+          }}
+        >
+          <h2 style={{ color: 'white', fontSize: '2.25rem', fontWeight: 800, marginBottom: '1rem' }}>
+            {isEn ? 'Ready to Start Coloring?' : 'Klaar om te Beginnen?'}
+          </h2>
+          <p style={{ color: 'rgba(255,255,255,0.8)', marginBottom: '2rem', fontSize: '1.15rem', maxWidth: '600px', margin: '0 auto 2rem auto' }}>
+            {isEn
+              ? 'Browse thousands of free, high-resolution coloring sheets and print your favorites instantly.'
+              : 'Blader door duizenden gratis kwaliteitskleurplaten en print direct uw favorieten.'}
+          </p>
+          <Link
+            href={`/${lang}/disney-pixar`}
+            className="btn-primary"
+            style={{
+              display: 'inline-flex',
+              padding: '0.9rem 2.25rem',
+              fontSize: '1.05rem',
+              fontWeight: 800,
+              textDecoration: 'none',
+              borderRadius: '9999px',
+            }}
+          >
+            {isEn ? 'Explore All Themes' : 'Ontdek Alle Thema’s'}
+          </Link>
+        </div>
+      </div>
+    </>
+  );
 }

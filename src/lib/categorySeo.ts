@@ -413,36 +413,70 @@ function getDefaultBottomHtml(
   relatedLinksHtml: string
 ): string {
   if (isEn) {
-    return`<h2>Free Printable ${themeTitle} Coloring Pages for All Ages</h2>
-      <p>Our high-quality ${themeTitle} coloring collection offers creative inspiration for everyone. Designed in crisp line vector format, these templates are optimized for easy A4 printing and digital coloring apps.</p>
+    return `<h2>The Ultimate ${themeTitle} Coloring Guide: Creative Fun & Learning</h2>
+      <p>Welcome to ColorVaults’ comprehensive library of free printable <strong>${themeTitle} coloring pages</strong>! Whether you are a parent looking for wholesome weekend activities, an educator preparing classroom lesson plans, or an art enthusiast seeking mindful creative relaxation, our high-resolution line art templates provide hours of engaging entertainment.</p>
 
-      <h3>Age Groups & Difficulty Levels</h3>
-      <p>Find the best ${themeTitle} coloring page suited for your skill level:</p>
+      <h3>Recommended Color Palettes & Creative Supplies</h3>
+      <p>To achieve the most vibrant and satisfying results with your ${themeTitle} illustrations, consider using these suggested materials:</p>
       <ul>
-        <li><a href="${kidsUrl}"><strong>Easy / Kids (Makkelijk)</strong></a>: Simple outlines and playful designs perfect for toddlers and young beginners.</li>
-        <li><a href="${teensUrl}"><strong>Medium / Teens (Gemiddeld)</strong></a>: Creative scenes and expressive details ideal for school-aged kids and teens.</li>
-        <li><a href="${adultsUrl}"><strong>Hard / Adults (Moeilijk)</strong></a>: Intricate patterns and detailed artwork tailored for adult coloring and stress reduction.</li>
+        <li><strong>Soft-Core Colored Pencils:</strong> Excellent for smooth blending, gradient shading, and fine boundary control on intricate line art.</li>
+        <li><strong>Dual-Tip Brush Markers:</strong> Ideal for bold, saturated coverage across large areas with zero streaks. Always place a scrap sheet behind your page to prevent bleed-through.</li>
+        <li><strong>Fine-Liner Pens (0.4mm):</strong> Perfect for accentuating delicate outlines, patterns, and decorative borders.</li>
+        <li><strong>Standard 120–160 GSM Paper:</strong> For the best drawing feel and durability, print on medium-weight cardstock rather than thin copy paper.</li>
       </ul>
 
-      <h3>High Resolution PDF & Image Downloads</h3>
-      <p>Looking for <em>free printable ${themeTitle} coloring pages PDF</em> or <em>easy ${themeTitle} coloring sheets for toddlers</em>? ColorVaults provides clean, instant downloads for endless hours of coloring fun.</p>
+      <h3>Age Groups & Difficulty Levels</h3>
+      <p>Our ${themeTitle} collection is thoughtfully organized across three skill tiers to ensure an enjoyable experience for every colorist:</p>
+      <ul>
+        <li><a href="${kidsUrl}"><strong>Easy / Kids (Makkelijk)</strong></a>: Bold, thick borders and simplified shapes designed specifically for toddlers, preschoolers, and early learners building pencil grip.</li>
+        <li><a href="${teensUrl}"><strong>Medium / Teens (Gemiddeld)</strong></a>: Dynamic scenes, expressive character poses, and detailed scenery perfect for school-aged kids and creative teenagers.</li>
+        <li><a href="${adultsUrl}"><strong>Hard / Adults (Moeilijk)</strong></a>: Complex compositions, detailed backgrounds, and intricate mandala-style shading areas crafted for adult relaxation and mindfulness.</li>
+      </ul>
 
-      ${relatedLinksHtml ?`<h3>Explore Related Categories</h3><p>Check out these popular coloring categories:</p>${relatedLinksHtml}`:''}`;
+      <h3>Educational & Developmental Benefits</h3>
+      <p>Engaging in coloring exercises featuring ${themeTitle} supports child cognitive development in several fundamental ways: it improves fine motor precision and grip endurance, enhances spatial reasoning and boundary awareness, and encourages emotional self-regulation through tactile focus.</p>
+
+      <h3>How to Print Free ${themeTitle} Coloring Pages</h3>
+      <ol>
+        <li>Click on your favorite ${themeTitle} image thumbnail to open the full-page view.</li>
+        <li>Click the purple <strong>"Print Free Coloring Page"</strong> button for an instant print preview.</li>
+        <li>In your browser's printer settings, select <em>A4</em> or <em>US Letter</em> size, choose <em>Portrait orientation</em>, and ensure scale is set to <strong>100% (Fit to Page)</strong>.</li>
+        <li>Click Print or hit the <strong>"Download Image File"</strong> button to save the 300 DPI high-definition image to your computer or tablet.</li>
+      </ol>
+
+      ${relatedLinksHtml ? `<h3>Explore Related Coloring Collections</h3><p>Discover more free printable pages from our library:</p>${relatedLinksHtml}` : ''}`;
   }
 
-  return`<h2>Gratis Printbare ${themeTitle} Kleurplaten voor Elke Leeftijd</h2>
-    <p>Onze hoogwaardige verzameling ${themeTitle} kleurplaten biedt creatieve inspiratie voor jong en oud. Alle sjablonen zijn strak getekend en geoptimaliseerd voor eenvoudig A4-afdrukken en digitaal kleuren.</p>
+  return `<h2>De Complete ${themeTitle} Kleurgids: Creatief Plezier & Educatie</h2>
+    <p>Welkom bij de uitgebreide verzameling gratis printbare <strong>${themeTitle} kleurplaten</strong> op ColorVaults! Of je nu als ouder zoekt naar een gezellige activiteit voor het weekend, als juf of meester lesmateriaal zoekt voor de klas, of als volwassene ontspanning zoekt na een drukke dag: onze haarscherpe kleurplaten bieden urenlang creatief plezier.</p>
 
-    <h3>Leeftijdsgroepen & Moeilijkheidsgraden</h3>
-    <p>Kies de perfecte ${themeTitle} kleurplaat op basis van je ervaring en niveau:</p>
+    <h3>Aanbevolen Kleurmaterialen & Tips</h3>
+    <p>Voor het allermooiste resultaat bij het inkleuren van ${themeTitle} tekeningen adviseren we de volgende materialen:</p>
     <ul>
-      <li><a href="${kidsUrl}"><strong>Makkelijk / Peuters & Kinderen (Easy)</strong></a>: Duidelijke contouren en schattige vormen voor peuters en kleuters.</li>
-      <li><a href="${teensUrl}"><strong>Gemiddeld / Tieners (Medium)</strong></a>: Creatieve scènes en meer details voor basisschoolkinderen en tieners.</li>
-      <li><a href="${adultsUrl}"><strong>Moeilijk / Volwassenen (Hard)</strong></a>: Gedetailleerde patronen en uitdagende ontwerpen voor volwassenen en ontspanning.</li>
+      <li><strong>Zachte Kleurpotloden:</strong> Ideaal voor het zachtjes mengen van kleuren, het maken van schaduwen en strak werken binnen de lijntjes.</li>
+      <li><strong>Viltstiften & Brushpennen:</strong> Voor felle, sprekende kleuren. Tip: leg even een extra leeg printpapiertje onder de kleurplaat om doordrukken te voorkomen.</li>
+      <li><strong>Fineliners (0.4 mm):</strong> Geweldig voor het accentueren van kleine details en sierlijke lijntjes.</li>
+      <li><strong>120–160 Grams Tekenpapier:</strong> Print bij voorkeur op iets steviger papier voor een professioneel en kreukvrij eindresultaat.</li>
     </ul>
 
-    <h3>Gratis PDF & Hoge Resolutie Afbeeldingen</h3>
-    <p>Zoek je naar <em>gratis ${themeTitle} kleurplaat printen pdf</em> of <em>makkelijke ${themeTitle} kleurplaten voor kinderen</em>? Bij ColorVaults download je snel en zonder account.</p>
+    <h3>Leeftijdsgroepen & Moeilijkheidsgraden</h3>
+    <p>Onze ${themeTitle} collectie is ingedeeld in drie duidelijke niveaus zodat iedereen op zijn eigen tempo kan genieten:</p>
+    <ul>
+      <li><a href="${kidsUrl}"><strong>Makkelijk / Peuters & Kleuters (Easy)</strong></a>: Extra dikke lijnen en overzichtelijke vlakken om de pengreep en motoriek te oefenen.</li>
+      <li><a href="${teensUrl}"><strong>Gemiddeld / Tieners & Basisschool (Medium)</strong></a>: Vrolijke scènes, gedetailleerde personages en creatieve achtergronden.</li>
+      <li><a href="${adultsUrl}"><strong>Moeilijk / Volwassenen (Hard)</strong></a>: Ingewikkelde patronen en verfijnde illustraties voor rustgevende kleurtherapie en mindfulness.</li>
+    </ul>
 
-    ${relatedLinksHtml ?`<h3>Ontdek ook gerelateerde categorieën</h3><p>Bekijk ook deze populaire categorieën:</p>${relatedLinksHtml}`:''}`;
+    <h3>Ontwikkelingsvoordelen van Kleuren</h3>
+    <p>Het regelmatig inkleuren van ${themeTitle} kleurplaten stimuleert de fijne motoriek en handspieren bij jonge kinderen, bevordert het ruimtelijk inzicht en helpt kinderen en volwassenen om tot rust te komen na een dag vol prikkels.</p>
+
+    <h3>Stappenplan: Gratis ${themeTitle} Kleurplaat Printen</h3>
+    <ol>
+      <li>Klik op een ${themeTitle} afbeelding om de detailpagina te openen.</li>
+      <li>Klik op de knop <strong>"Gratis Kleurplaat Printen"</strong> voor een direct afdrukvoorbeeld.</li>
+      <li>Kies in je printermenu voor <em>A4-formaat</em> en selecteer <em>Aanpassen aan pagina (100% schaal)</em> in staande afdrukstand.</li>
+      <li>Druk op Printen of kies <strong>"Download Afbeelding"</strong> om het bestand digitaal op te slaan op je pc, tablet of telefoon.</li>
+    </ol>
+
+    ${relatedLinksHtml ? `<h3>Ontdek ook gerelateerde categorieën</h3><p>Bekijk ook deze populaire thema's:</p>${relatedLinksHtml}` : ''}`;
 }

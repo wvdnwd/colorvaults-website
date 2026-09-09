@@ -209,21 +209,57 @@ export default async function ColoringPageDetail({ params }: { params: Promise<{
             imageUrl={page.image}
           />
 
-          {/* Long SEO text */}
-          <div className="seo-block"style={{ marginTop:'2.5rem'}}>
-            <h2>{isEn ?'About This Coloring Page':'Over Deze Kleurplaat'}</h2>
-            <p>{page.shortDescription || page.metaDescription}</p>
+          {/* Detailed Editorial & Educational Content */}
+          <div className="seo-block" style={{ marginTop: '2.5rem' }}>
+            <h2>{isEn ? `About the "${page.title}" Coloring Sheet` : `Over de "${page.title}" Kleurplaat`}</h2>
+            <p style={{ lineHeight: 1.8, marginBottom: '1rem' }}>
+              {isEn
+                ? `Enjoy this high-definition printable "${page.title}" coloring template from our ${theme.title} collection. Carefully formatted with crisp, clean vector outlines on pure white background, this artwork is designed for effortless printing and smooth coloring without ink bleed.`
+                : `Geniet van deze haarscherpe, printbare "${page.title}" kleurplaat uit onze ${theme.title} collectie. Zorgvuldig ontworpen met strakke, diepzwarte vectorcontouren op een witte achtergrond, perfect voor soepel kleurplezier zonder vlekken.`}
+            </p>
+            <p style={{ lineHeight: 1.8, marginBottom: '1.5rem' }}>
+              {isEn
+                ? `Whether you are coloring at home with your family, using this sheet in a primary school classroom, or relaxing with mindful art therapy, this ${theme.title} printable stimulates fine motor coordination, color harmony exploration, and creative focus.`
+                : `Of je nu thuis kleurt met het gezin, deze tekening inzet in de klas of kleutergroep, of ontspanning zoekt na een drukke dag: deze ${theme.title} kleurplaat stimuleert de fijne motoriek, creatieve verbeelding en concentratie.`}
+            </p>
+
+            <h3 style={{ fontSize: '1.25rem', marginTop: '1.5rem', marginBottom: '0.6rem' }}>
+              {isEn ? '🎨 Creative Coloring Tips & Color Palettes' : '🎨 Kleurtips & Kleurencombinaties'}
+            </h3>
+            <ul style={{ paddingLeft: '1.5rem', display: 'flex', flexDirection: 'column', gap: '0.5rem', lineHeight: 1.7, marginBottom: '1.5rem' }}>
+              <li>
+                <strong>{isEn ? 'Pencils vs. Markers:' : 'Potloden versus Stiften:'}</strong>{' '}
+                {isEn
+                  ? 'Soft-core colored pencils allow for delicate shading and gradient layering. If using markers, place an extra backing sheet under the page.'
+                  : 'Kleurpotloden zijn ideaal voor zachte schaduwen en kleurovergangen. Gebruik je viltstiften? Leg dan even een leeg vel onder de kleurplaat.'}
+              </li>
+              <li>
+                <strong>{isEn ? 'Lighting & Depth:' : 'Licht & Diepte:'}</strong>{' '}
+                {isEn
+                  ? 'Pick a consistent light angle and apply lighter tones on upper surfaces and darker complementary tones on lower shadows.'
+                  : 'Kies een vaste lichtinval en kleur de bovenzijden lichter en de onderliggende plooien en schaduwen iets donkerder.'}
+              </li>
+            </ul>
+
+            <h3 style={{ fontSize: '1.25rem', marginTop: '1.5rem', marginBottom: '0.6rem' }}>
+              {isEn ? '🖨️ Easy Printing Instructions (A4 & Letter)' : '🖨️ Eenvoudig Printen (A4 & Letter)'}
+            </h3>
+            <p style={{ lineHeight: 1.7 }}>
+              {isEn
+                ? 'To print this coloring sheet at full quality without cropped margins: click "Print Free Coloring Page", select A4 or US Letter in portrait mode, and set print scale to "Fit to Printable Area" (100%). You can also download the 300 DPI high-resolution image file directly for digital tablet coloring!'
+                : 'Voor een perfecte afdruk zonder afgesneden randen: klik op "Gratis Kleurplaat Printen", selecteer A4-formaat in staande stand en kies in het printermenu voor "Aanpassen aan pagina" (100% schaal). Liever digitaal kleuren? Download direct het haarscherpe 300 DPI bestand naar je tablet!'}
+            </p>
           </div>
 
           {page.faq && page.faq.length > 0 && (
-            <div className="seo-block"style={{ marginTop:'2.5rem'}}>
-              <h2>{isEn ?'Frequently Asked Questions':'Veelgestelde Vragen'}</h2>
+            <div className="seo-block" style={{ marginTop: '2.5rem' }}>
+              <h2>{isEn ? 'Frequently Asked Questions' : 'Veelgestelde Vragen'}</h2>
               {page.faq.map((item, i) => (
-                <details key={i} style={{ marginTop:'1rem', borderBottom:'1px solid var(--gray-200)', paddingBottom:'1rem'}}>
-                  <summary style={{ fontWeight: 700, cursor:'pointer', color:'var(--foreground)'}}>
+                <details key={i} style={{ marginTop: '1rem', borderBottom: '1px solid var(--gray-200)', paddingBottom: '1rem' }}>
+                  <summary style={{ fontWeight: 700, cursor: 'pointer', color: 'var(--foreground)' }}>
                     {item.question}
                   </summary>
-                  <p style={{ marginTop:'0.75rem', color:'var(--gray-600)', lineHeight: 1.8 }}>
+                  <p style={{ marginTop: '0.75rem', color: 'var(--gray-600)', lineHeight: 1.8 }}>
                     {item.answer}
                   </p>
                 </details>
