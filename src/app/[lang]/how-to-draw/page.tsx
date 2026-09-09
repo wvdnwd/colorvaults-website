@@ -4,6 +4,7 @@ import Breadcrumbs from'@/components/Breadcrumbs';
 import AdSlot from'@/components/AdSlot';
 import AdCard from'@/components/AdCard';
 import NewsletterBox from'@/components/NewsletterBox';
+import SafeImage from '@/components/SafeImage';
 import { HOW_TO_DRAW_LESSONS } from'@/data/howToDrawData';
 
 export async function generateStaticParams() {
@@ -101,27 +102,53 @@ export default async function HowToDrawHubPage({ params }: { params: Promise<{ l
               }}
             >
               <div style={{
-                background:'linear-gradient(135deg, #F8FAFC 0%, #EEF2FF 100%)',
-                padding:'2.5rem 1.5rem',
-                textAlign:'center',
-                fontSize:'4.5rem',
-                borderBottom:'1px solid var(--gray-200)',
-                position:'relative',
+                position: 'relative',
+                aspectRatio: '4/3',
+                background: '#F8FAFC',
+                borderBottom: '1px solid var(--gray-200)',
+                overflow: 'hidden',
               }}>
-                <span>{lesson.icon}</span>
+                {lesson.image ? (
+                  <SafeImage
+                    src={lesson.image}
+                    alt={isEn ? lesson.titleEn : lesson.titleNl}
+                    style={{ width: '100%', height: '100%', objectFit: 'contain', padding: '1rem' }}
+                  />
+                ) : (
+                  <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', height: '100%', fontSize: '4.5rem' }}>
+                    <span>{lesson.icon}</span>
+                  </div>
+                )}
                 <span style={{
-                  position:'absolute',
-                  top:'12px',
-                  right:'12px',
-                  background:'rgba(37, 99, 235, 0.12)',
-                  color:'#2563EB',
-                  borderRadius:'9999px',
-                  padding:'0.2rem 0.65rem',
-                  fontSize:'0.72rem',
+                  position: 'absolute',
+                  top: '12px',
+                  right: '12px',
+                  background: 'rgba(37, 99, 235, 0.9)',
+                  color: '#FFFFFF',
+                  borderRadius: '9999px',
+                  padding: '0.2rem 0.65rem',
+                  fontSize: '0.72rem',
                   fontWeight: 800,
-                  textTransform:'uppercase',
+                  textTransform: 'uppercase',
+                  boxShadow: '0 2px 8px rgba(0,0,0,0.15)',
                 }}>
                   ⏱️ {lesson.timeMinutes} min
+                </span>
+                <span style={{
+                  position: 'absolute',
+                  top: '12px',
+                  left: '12px',
+                  fontSize: '1.25rem',
+                  background: 'rgba(255,255,255,0.9)',
+                  borderRadius: '50%',
+                  width: '32px',
+                  height: '32px',
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  boxShadow: '0 2px 6px rgba(0,0,0,0.1)',
+                }}>
+                  {lesson.icon}
                 </span>
               </div>
 

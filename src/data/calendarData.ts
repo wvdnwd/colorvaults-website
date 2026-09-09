@@ -40,7 +40,7 @@ export const CALENDAR_THEMES_DATA: CalendarThemeBundle[] = [
         "themeTitleNl": "Januari - IJsbeertje in Winterbos",
         "icon": "⛄",
         "days": 31,
-        "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/banner/hub_holidays-seasons.webp",
+        "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Art%20Nouveau%20%28Mucha%20Style%29/Art_Nouveau__Mucha_Style___A_clean_print_1788492256558.webp",
         "quoteEn": "Color your way through January with joy!",
         "quoteNl": "Kleur Januari vol vrolijkheid en creativiteit!"
       },
@@ -55,7 +55,7 @@ export const CALENDAR_THEMES_DATA: CalendarThemeBundle[] = [
         "themeTitleNl": "Februari - Valentijn Konijntjes met Hartjes",
         "icon": "💖",
         "days": 28,
-        "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/banner/hub_holidays-seasons.webp",
+        "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Bold%20And%20Easy/Kitten_with_Heart_Balloon.webp",
         "quoteEn": "Color your way through February with joy!",
         "quoteNl": "Kleur Februari vol vrolijkheid en creativiteit!"
       },
@@ -70,7 +70,7 @@ export const CALENDAR_THEMES_DATA: CalendarThemeBundle[] = [
         "themeTitleNl": "Maart - Kuikentjes tussen Lentebloemen",
         "icon": "🐣",
         "days": 31,
-        "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/banner/hub_holidays-seasons.webp",
+        "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Easter%20%26%20Spring%20Bloom/Easter___Spring_Bloom__A_clean_printable_1788512014498.webp",
         "quoteEn": "Color your way through March with joy!",
         "quoteNl": "Kleur Maart vol vrolijkheid en creativiteit!"
       },
@@ -85,7 +85,7 @@ export const CALENDAR_THEMES_DATA: CalendarThemeBundle[] = [
         "themeTitleNl": "April - Eendje met Regenlaarzen en Paraplu",
         "icon": "🌧️",
         "days": 30,
-        "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/banner/hub_holidays-seasons.webp",
+        "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Art%20Nouveau%20%28Mucha%20Style%29/Belles_Enchanted_Garden_1788283568856.webp",
         "quoteEn": "Color your way through April with joy!",
         "quoteNl": "Kleur April vol vrolijkheid en creativiteit!"
       },
@@ -100,7 +100,7 @@ export const CALENDAR_THEMES_DATA: CalendarThemeBundle[] = [
         "themeTitleNl": "Mei - Puppy in het Tulpenveld",
         "icon": "🐶",
         "days": 31,
-        "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/banner/hub_holidays-seasons.webp",
+        "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Art%20Nouveau%20%28Mucha%20Style%29/A_clean_printable_coloring_page_showing__1788492321598_2.webp",
         "quoteEn": "Color your way through May with joy!",
         "quoteNl": "Kleur Mei vol vrolijkheid en creativiteit!"
       },
@@ -115,7 +115,7 @@ export const CALENDAR_THEMES_DATA: CalendarThemeBundle[] = [
         "themeTitleNl": "Juni - Zonkatje op het Strand",
         "icon": "🐱",
         "days": 30,
-        "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/banner/hub_holidays-seasons.webp",
+        "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Art%20Nouveau%20%28Mucha%20Style%29/A_clean_printable_coloring_page_showing__1788493507218_2.webp",
         "quoteEn": "Color your way through June with joy!",
         "quoteNl": "Kleur Juni vol vrolijkheid en creativiteit!"
       },
@@ -130,7 +130,7 @@ export const CALENDAR_THEMES_DATA: CalendarThemeBundle[] = [
         "themeTitleNl": "Juli - Zeeschildpad en Dolfijnen",
         "icon": "🐬",
         "days": 31,
-        "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/banner/hub_holidays-seasons.webp",
+        "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Botanical%20Gardens%20%26%20Greenhouses/Jungle_Botanical_Wonderland_1784877566427.webp",
         "quoteEn": "Color your way through July with joy!",
         "quoteNl": "Kleur Juli vol vrolijkheid en creativiteit!"
       },
@@ -145,7 +145,7 @@ export const CALENDAR_THEMES_DATA: CalendarThemeBundle[] = [
         "themeTitleNl": "Augustus - Koala Familie in de Zomerzon",
         "icon": "🐨",
         "days": 31,
-        "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/banner/hub_holidays-seasons.webp",
+        "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Animal%20Crossing/Animal_Crossing_Town_Hall_Service_Desk.webp",
         "quoteEn": "Color your way through August with joy!",
         "quoteNl": "Kleur Augustus vol vrolijkheid en creativiteit!"
       },
@@ -160,7 +160,7 @@ export const CALENDAR_THEMES_DATA: CalendarThemeBundle[] = [
         "themeTitleNl": "September - Vosje met Schooltas en Herfstbladeren",
         "icon": "🦊",
         "days": 30,
-        "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/banner/hub_holidays-seasons.webp",
+        "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Art%20Nouveau%20%28Mucha%20Style%29/A_clean_printable_coloring_page_showing__1788492762807_2.webp",
         "quoteEn": "Color your way through September with joy!",
         "quoteNl": "Kleur September vol vrolijkheid en creativiteit!"
       },
@@ -175,7 +175,7 @@ export const CALENDAR_THEMES_DATA: CalendarThemeBundle[] = [
         "themeTitleNl": "Oktober - Egel op een Herfstpompoen",
         "icon": "🦔",
         "days": 31,
-        "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/banner/hub_holidays-seasons.webp",
+        "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Halloween%20Spooky%20Creatures/Halloween_Spooky_Creatures__A_clean_prin_1788510958866.webp",
         "quoteEn": "Color your way through October with joy!",
         "quoteNl": "Kleur Oktober vol vrolijkheid en creativiteit!"
       },
@@ -190,7 +190,7 @@ export const CALENDAR_THEMES_DATA: CalendarThemeBundle[] = [
         "themeTitleNl": "November - Uil in Gouden Eikenboom",
         "icon": "🦉",
         "days": 30,
-        "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/banner/hub_holidays-seasons.webp",
+        "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Art%20Nouveau%20%28Mucha%20Style%29/Cozy_Indoor_Plantscape_1787908648681.webp",
         "quoteEn": "Color your way through November with joy!",
         "quoteNl": "Kleur November vol vrolijkheid en creativiteit!"
       },
@@ -205,7 +205,7 @@ export const CALENDAR_THEMES_DATA: CalendarThemeBundle[] = [
         "themeTitleNl": "December - Rendier met Kerstverlichting",
         "icon": "🦌",
         "days": 31,
-        "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/banner/hub_holidays-seasons.webp",
+        "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Christmas%20%26%20Winter%20Holidays/A_cheerful_Christmas_tree_with_a_broom_1787924646893.webp",
         "quoteEn": "Color your way through December with joy!",
         "quoteNl": "Kleur December vol vrolijkheid en creativiteit!"
       }
@@ -228,7 +228,7 @@ export const CALENDAR_THEMES_DATA: CalendarThemeBundle[] = [
         "themeTitleNl": "Januari - IJskasteel & Winterfee",
         "icon": "❄️",
         "days": 31,
-        "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/banner/hub_holidays-seasons.webp",
+        "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Art%20Nouveau%20%28Mucha%20Style%29/Art_Nouveau__Mucha_Style___A_clean_print_1788492256558.webp",
         "quoteEn": "Color your way through January with joy!",
         "quoteNl": "Kleur Januari vol vrolijkheid en creativiteit!"
       },
@@ -243,7 +243,7 @@ export const CALENDAR_THEMES_DATA: CalendarThemeBundle[] = [
         "themeTitleNl": "Februari - Pegasus & Zwevende Hartjes",
         "icon": "💖",
         "days": 28,
-        "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/banner/hub_holidays-seasons.webp",
+        "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Bold%20And%20Easy/Kitten_with_Heart_Balloon.webp",
         "quoteEn": "Color your way through February with joy!",
         "quoteNl": "Kleur Februari vol vrolijkheid en creativiteit!"
       },
@@ -258,7 +258,7 @@ export const CALENDAR_THEMES_DATA: CalendarThemeBundle[] = [
         "themeTitleNl": "Maart - Lentefee & Bloemenmagie",
         "icon": "🧚‍♀️",
         "days": 31,
-        "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/banner/hub_holidays-seasons.webp",
+        "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Easter%20%26%20Spring%20Bloom/Easter___Spring_Bloom__A_clean_printable_1788512014498.webp",
         "quoteEn": "Color your way through March with joy!",
         "quoteNl": "Kleur Maart vol vrolijkheid en creativiteit!"
       },
@@ -273,7 +273,7 @@ export const CALENDAR_THEMES_DATA: CalendarThemeBundle[] = [
         "themeTitleNl": "April - Eenhoorn onder Dubbele Regenboog",
         "icon": "🌈",
         "days": 30,
-        "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/banner/hub_holidays-seasons.webp",
+        "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Art%20Nouveau%20%28Mucha%20Style%29/Belles_Enchanted_Garden_1788283568856.webp",
         "quoteEn": "Color your way through April with joy!",
         "quoteNl": "Kleur April vol vrolijkheid en creativiteit!"
       },
@@ -288,7 +288,7 @@ export const CALENDAR_THEMES_DATA: CalendarThemeBundle[] = [
         "themeTitleNl": "Mei - Zeemeermin & Dolfijnen",
         "icon": "🧜‍♀️",
         "days": 31,
-        "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/banner/hub_holidays-seasons.webp",
+        "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Art%20Nouveau%20%28Mucha%20Style%29/A_clean_printable_coloring_page_showing__1788492321598_2.webp",
         "quoteEn": "Color your way through May with joy!",
         "quoteNl": "Kleur Mei vol vrolijkheid en creativiteit!"
       },
@@ -303,7 +303,7 @@ export const CALENDAR_THEMES_DATA: CalendarThemeBundle[] = [
         "themeTitleNl": "Juni - Vriendelijke Draak boven Kastelen",
         "icon": "🐉",
         "days": 30,
-        "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/banner/hub_holidays-seasons.webp",
+        "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Art%20Nouveau%20%28Mucha%20Style%29/A_clean_printable_coloring_page_showing__1788493507218_2.webp",
         "quoteEn": "Color your way through June with joy!",
         "quoteNl": "Kleur Juni vol vrolijkheid en creativiteit!"
       },
@@ -318,7 +318,7 @@ export const CALENDAR_THEMES_DATA: CalendarThemeBundle[] = [
         "themeTitleNl": "Juli - Koninklijk Onderwater Kasteel",
         "icon": "🏰",
         "days": 31,
-        "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/banner/hub_holidays-seasons.webp",
+        "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Botanical%20Gardens%20%26%20Greenhouses/Jungle_Botanical_Wonderland_1784877566427.webp",
         "quoteEn": "Color your way through July with joy!",
         "quoteNl": "Kleur Juli vol vrolijkheid en creativiteit!"
       },
@@ -333,7 +333,7 @@ export const CALENDAR_THEMES_DATA: CalendarThemeBundle[] = [
         "themeTitleNl": "Augustus - Sprookjes Boomhutdorp",
         "icon": "🏡",
         "days": 31,
-        "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/banner/hub_holidays-seasons.webp",
+        "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Animal%20Crossing/Animal_Crossing_Town_Hall_Service_Desk.webp",
         "quoteEn": "Color your way through August with joy!",
         "quoteNl": "Kleur Augustus vol vrolijkheid en creativiteit!"
       },
@@ -348,7 +348,7 @@ export const CALENDAR_THEMES_DATA: CalendarThemeBundle[] = [
         "themeTitleNl": "September - Jonge Tovenaar & Toverspreuken",
         "icon": "🧙‍♂️",
         "days": 30,
-        "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/banner/hub_holidays-seasons.webp",
+        "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Art%20Nouveau%20%28Mucha%20Style%29/A_clean_printable_coloring_page_showing__1788492762807_2.webp",
         "quoteEn": "Color your way through September with joy!",
         "quoteNl": "Kleur September vol vrolijkheid en creativiteit!"
       },
@@ -363,7 +363,7 @@ export const CALENDAR_THEMES_DATA: CalendarThemeBundle[] = [
         "themeTitleNl": "Oktober - Vriendelijk Heksenfeestje",
         "icon": "🎃",
         "days": 31,
-        "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/banner/hub_holidays-seasons.webp",
+        "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Halloween%20Spooky%20Creatures/Halloween_Spooky_Creatures__A_clean_prin_1788510958866.webp",
         "quoteEn": "Color your way through October with joy!",
         "quoteNl": "Kleur Oktober vol vrolijkheid en creativiteit!"
       },
@@ -378,7 +378,7 @@ export const CALENDAR_THEMES_DATA: CalendarThemeBundle[] = [
         "themeTitleNl": "November - Slapende Draak in Herfstbos",
         "icon": "🍂",
         "days": 30,
-        "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/banner/hub_holidays-seasons.webp",
+        "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Art%20Nouveau%20%28Mucha%20Style%29/Cozy_Indoor_Plantscape_1787908648681.webp",
         "quoteEn": "Color your way through November with joy!",
         "quoteNl": "Kleur November vol vrolijkheid en creativiteit!"
       },
@@ -393,7 +393,7 @@ export const CALENDAR_THEMES_DATA: CalendarThemeBundle[] = [
         "themeTitleNl": "December - Kerstslee met Gevleugelde Eenhoorns",
         "icon": "✨",
         "days": 31,
-        "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/banner/hub_holidays-seasons.webp",
+        "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Christmas%20%26%20Winter%20Holidays/A_cheerful_Christmas_tree_with_a_broom_1787924646893.webp",
         "quoteEn": "Color your way through December with joy!",
         "quoteNl": "Kleur December vol vrolijkheid en creativiteit!"
       }
@@ -416,7 +416,7 @@ export const CALENDAR_THEMES_DATA: CalendarThemeBundle[] = [
         "themeTitleNl": "Januari - IJstijd Mammoet & Baby T-Rex",
         "icon": "🧊",
         "days": 31,
-        "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/banner/hub_holidays-seasons.webp",
+        "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Art%20Nouveau%20%28Mucha%20Style%29/Art_Nouveau__Mucha_Style___A_clean_print_1788492256558.webp",
         "quoteEn": "Color your way through January with joy!",
         "quoteNl": "Kleur Januari vol vrolijkheid en creativiteit!"
       },
@@ -431,7 +431,7 @@ export const CALENDAR_THEMES_DATA: CalendarThemeBundle[] = [
         "themeTitleNl": "Februari - Brachiosaurus Knuffel",
         "icon": "🦕",
         "days": 28,
-        "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/banner/hub_holidays-seasons.webp",
+        "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Bold%20And%20Easy/Kitten_with_Heart_Balloon.webp",
         "quoteEn": "Color your way through February with joy!",
         "quoteNl": "Kleur Februari vol vrolijkheid en creativiteit!"
       },
@@ -446,7 +446,7 @@ export const CALENDAR_THEMES_DATA: CalendarThemeBundle[] = [
         "themeTitleNl": "Maart - Uitbroedende Triceratops",
         "icon": "🥚",
         "days": 31,
-        "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/banner/hub_holidays-seasons.webp",
+        "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Easter%20%26%20Spring%20Bloom/Easter___Spring_Bloom__A_clean_printable_1788512014498.webp",
         "quoteEn": "Color your way through March with joy!",
         "quoteNl": "Kleur Maart vol vrolijkheid en creativiteit!"
       },
@@ -461,7 +461,7 @@ export const CALENDAR_THEMES_DATA: CalendarThemeBundle[] = [
         "themeTitleNl": "April - Stegosaurus in de Regen",
         "icon": "🌴",
         "days": 30,
-        "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/banner/hub_holidays-seasons.webp",
+        "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Art%20Nouveau%20%28Mucha%20Style%29/Belles_Enchanted_Garden_1788283568856.webp",
         "quoteEn": "Color your way through April with joy!",
         "quoteNl": "Kleur April vol vrolijkheid en creativiteit!"
       },
@@ -476,7 +476,7 @@ export const CALENDAR_THEMES_DATA: CalendarThemeBundle[] = [
         "themeTitleNl": "Mei - Vliegdino boven Vulkaanvallei",
         "icon": "🌋",
         "days": 31,
-        "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/banner/hub_holidays-seasons.webp",
+        "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Art%20Nouveau%20%28Mucha%20Style%29/A_clean_printable_coloring_page_showing__1788492321598_2.webp",
         "quoteEn": "Color your way through May with joy!",
         "quoteNl": "Kleur Mei vol vrolijkheid en creativiteit!"
       },
@@ -491,7 +491,7 @@ export const CALENDAR_THEMES_DATA: CalendarThemeBundle[] = [
         "themeTitleNl": "Juni - Spinosaurus in het Zomermeer",
         "icon": "🐟",
         "days": 30,
-        "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/banner/hub_holidays-seasons.webp",
+        "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Art%20Nouveau%20%28Mucha%20Style%29/A_clean_printable_coloring_page_showing__1788493507218_2.webp",
         "quoteEn": "Color your way through June with joy!",
         "quoteNl": "Kleur Juni vol vrolijkheid en creativiteit!"
       },
@@ -506,7 +506,7 @@ export const CALENDAR_THEMES_DATA: CalendarThemeBundle[] = [
         "themeTitleNl": "Juli - Ankylosaurus op het Strand",
         "icon": "🏖️",
         "days": 31,
-        "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/banner/hub_holidays-seasons.webp",
+        "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Botanical%20Gardens%20%26%20Greenhouses/Jungle_Botanical_Wonderland_1784877566427.webp",
         "quoteEn": "Color your way through July with joy!",
         "quoteNl": "Kleur Juli vol vrolijkheid en creativiteit!"
       },
@@ -521,7 +521,7 @@ export const CALENDAR_THEMES_DATA: CalendarThemeBundle[] = [
         "themeTitleNl": "Augustus - Dinosafari bij de Rivier",
         "icon": "🌊",
         "days": 31,
-        "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/banner/hub_holidays-seasons.webp",
+        "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Animal%20Crossing/Animal_Crossing_Town_Hall_Service_Desk.webp",
         "quoteEn": "Color your way through August with joy!",
         "quoteNl": "Kleur Augustus vol vrolijkheid en creativiteit!"
       },
@@ -536,7 +536,7 @@ export const CALENDAR_THEMES_DATA: CalendarThemeBundle[] = [
         "themeTitleNl": "September - Dinoschool in de Jungle",
         "icon": "✏️",
         "days": 30,
-        "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/banner/hub_holidays-seasons.webp",
+        "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Art%20Nouveau%20%28Mucha%20Style%29/A_clean_printable_coloring_page_showing__1788492762807_2.webp",
         "quoteEn": "Color your way through September with joy!",
         "quoteNl": "Kleur September vol vrolijkheid en creativiteit!"
       },
@@ -551,7 +551,7 @@ export const CALENDAR_THEMES_DATA: CalendarThemeBundle[] = [
         "themeTitleNl": "Oktober - Fossielengriezelen in Oktober",
         "icon": "🦴",
         "days": 31,
-        "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/banner/hub_holidays-seasons.webp",
+        "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Halloween%20Spooky%20Creatures/Halloween_Spooky_Creatures__A_clean_prin_1788510958866.webp",
         "quoteEn": "Color your way through October with joy!",
         "quoteNl": "Kleur Oktober vol vrolijkheid en creativiteit!"
       },
@@ -566,7 +566,7 @@ export const CALENDAR_THEMES_DATA: CalendarThemeBundle[] = [
         "themeTitleNl": "November - Triceratops in de Herfstbladeren",
         "icon": "🍁",
         "days": 30,
-        "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/banner/hub_holidays-seasons.webp",
+        "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Art%20Nouveau%20%28Mucha%20Style%29/Cozy_Indoor_Plantscape_1787908648681.webp",
         "quoteEn": "Color your way through November with joy!",
         "quoteNl": "Kleur November vol vrolijkheid en creativiteit!"
       },
@@ -581,7 +581,7 @@ export const CALENDAR_THEMES_DATA: CalendarThemeBundle[] = [
         "themeTitleNl": "December - T-Rex met Kerstboom",
         "icon": "🎄",
         "days": 31,
-        "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/banner/hub_holidays-seasons.webp",
+        "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Christmas%20%26%20Winter%20Holidays/A_cheerful_Christmas_tree_with_a_broom_1787924646893.webp",
         "quoteEn": "Color your way through December with joy!",
         "quoteNl": "Kleur December vol vrolijkheid en creativiteit!"
       }
@@ -604,7 +604,7 @@ export const CALENDAR_THEMES_DATA: CalendarThemeBundle[] = [
         "themeTitleNl": "Januari - Astronaut bij Telescoop",
         "icon": "🪐",
         "days": 31,
-        "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/banner/hub_holidays-seasons.webp",
+        "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Art%20Nouveau%20%28Mucha%20Style%29/Art_Nouveau__Mucha_Style___A_clean_print_1788492256558.webp",
         "quoteEn": "Color your way through January with joy!",
         "quoteNl": "Kleur Januari vol vrolijkheid en creativiteit!"
       },
@@ -619,7 +619,7 @@ export const CALENDAR_THEMES_DATA: CalendarThemeBundle[] = [
         "themeTitleNl": "Februari - Hartjes Nevel in de Ruimte",
         "icon": "💫",
         "days": 28,
-        "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/banner/hub_holidays-seasons.webp",
+        "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Bold%20And%20Easy/Kitten_with_Heart_Balloon.webp",
         "quoteEn": "Color your way through February with joy!",
         "quoteNl": "Kleur Februari vol vrolijkheid en creativiteit!"
       },
@@ -634,7 +634,7 @@ export const CALENDAR_THEMES_DATA: CalendarThemeBundle[] = [
         "themeTitleNl": "Maart - Mars Rover Verkenning",
         "icon": "🤖",
         "days": 31,
-        "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/banner/hub_holidays-seasons.webp",
+        "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Easter%20%26%20Spring%20Bloom/Easter___Spring_Bloom__A_clean_printable_1788512014498.webp",
         "quoteEn": "Color your way through March with joy!",
         "quoteNl": "Kleur Maart vol vrolijkheid en creativiteit!"
       },
@@ -649,7 +649,7 @@ export const CALENDAR_THEMES_DATA: CalendarThemeBundle[] = [
         "themeTitleNl": "April - Komeet & Vallende Sterren",
         "icon": "☄️",
         "days": 30,
-        "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/banner/hub_holidays-seasons.webp",
+        "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Art%20Nouveau%20%28Mucha%20Style%29/Belles_Enchanted_Garden_1788283568856.webp",
         "quoteEn": "Color your way through April with joy!",
         "quoteNl": "Kleur April vol vrolijkheid en creativiteit!"
       },
@@ -664,7 +664,7 @@ export const CALENDAR_THEMES_DATA: CalendarThemeBundle[] = [
         "themeTitleNl": "Mei - Internationaal Ruimtestation",
         "icon": "🛰️",
         "days": 31,
-        "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/banner/hub_holidays-seasons.webp",
+        "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Art%20Nouveau%20%28Mucha%20Style%29/A_clean_printable_coloring_page_showing__1788492321598_2.webp",
         "quoteEn": "Color your way through May with joy!",
         "quoteNl": "Kleur Mei vol vrolijkheid en creativiteit!"
       },
@@ -679,7 +679,7 @@ export const CALENDAR_THEMES_DATA: CalendarThemeBundle[] = [
         "themeTitleNl": "Juni - Alien Picknick op de Maan",
         "icon": "👽",
         "days": 30,
-        "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/banner/hub_holidays-seasons.webp",
+        "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Art%20Nouveau%20%28Mucha%20Style%29/A_clean_printable_coloring_page_showing__1788493507218_2.webp",
         "quoteEn": "Color your way through June with joy!",
         "quoteNl": "Kleur Juni vol vrolijkheid en creativiteit!"
       },
@@ -694,7 +694,7 @@ export const CALENDAR_THEMES_DATA: CalendarThemeBundle[] = [
         "themeTitleNl": "Juli - Zon & Planetenparade",
         "icon": "☀️",
         "days": 31,
-        "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/banner/hub_holidays-seasons.webp",
+        "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Botanical%20Gardens%20%26%20Greenhouses/Jungle_Botanical_Wonderland_1784877566427.webp",
         "quoteEn": "Color your way through July with joy!",
         "quoteNl": "Kleur Juli vol vrolijkheid en creativiteit!"
       },
@@ -709,7 +709,7 @@ export const CALENDAR_THEMES_DATA: CalendarThemeBundle[] = [
         "themeTitleNl": "Augustus - Reis door het Melkwegstelsel",
         "icon": "🌌",
         "days": 31,
-        "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/banner/hub_holidays-seasons.webp",
+        "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Animal%20Crossing/Animal_Crossing_Town_Hall_Service_Desk.webp",
         "quoteEn": "Color your way through August with joy!",
         "quoteNl": "Kleur Augustus vol vrolijkheid en creativiteit!"
       },
@@ -724,7 +724,7 @@ export const CALENDAR_THEMES_DATA: CalendarThemeBundle[] = [
         "themeTitleNl": "September - Drijvende Ruimteschool",
         "icon": "🛸",
         "days": 30,
-        "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/banner/hub_holidays-seasons.webp",
+        "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Art%20Nouveau%20%28Mucha%20Style%29/A_clean_printable_coloring_page_showing__1788492762807_2.webp",
         "quoteEn": "Color your way through September with joy!",
         "quoteNl": "Kleur September vol vrolijkheid en creativiteit!"
       },
@@ -739,7 +739,7 @@ export const CALENDAR_THEMES_DATA: CalendarThemeBundle[] = [
         "themeTitleNl": "Oktober - Halloween op Mars",
         "icon": "🎃",
         "days": 31,
-        "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/banner/hub_holidays-seasons.webp",
+        "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Halloween%20Spooky%20Creatures/Halloween_Spooky_Creatures__A_clean_prin_1788510958866.webp",
         "quoteEn": "Color your way through October with joy!",
         "quoteNl": "Kleur Oktober vol vrolijkheid en creativiteit!"
       },
@@ -754,7 +754,7 @@ export const CALENDAR_THEMES_DATA: CalendarThemeBundle[] = [
         "themeTitleNl": "November - Ruimteschip bij Kosmisch Portaal",
         "icon": "✨",
         "days": 30,
-        "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/banner/hub_holidays-seasons.webp",
+        "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Art%20Nouveau%20%28Mucha%20Style%29/Cozy_Indoor_Plantscape_1787908648681.webp",
         "quoteEn": "Color your way through November with joy!",
         "quoteNl": "Kleur November vol vrolijkheid en creativiteit!"
       },
@@ -769,7 +769,7 @@ export const CALENDAR_THEMES_DATA: CalendarThemeBundle[] = [
         "themeTitleNl": "December - Kerstraket langs de Maan",
         "icon": "🚀",
         "days": 31,
-        "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/banner/hub_holidays-seasons.webp",
+        "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Christmas%20%26%20Winter%20Holidays/A_cheerful_Christmas_tree_with_a_broom_1787924646893.webp",
         "quoteEn": "Color your way through December with joy!",
         "quoteNl": "Kleur December vol vrolijkheid en creativiteit!"
       }
@@ -792,7 +792,7 @@ export const CALENDAR_THEMES_DATA: CalendarThemeBundle[] = [
         "themeTitleNl": "Januari - Sneeuwschuiver in de Stad",
         "icon": "❄️",
         "days": 31,
-        "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/banner/hub_holidays-seasons.webp",
+        "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Art%20Nouveau%20%28Mucha%20Style%29/Art_Nouveau__Mucha_Style___A_clean_print_1788492256558.webp",
         "quoteEn": "Color your way through January with joy!",
         "quoteNl": "Kleur Januari vol vrolijkheid en creativiteit!"
       },
@@ -807,7 +807,7 @@ export const CALENDAR_THEMES_DATA: CalendarThemeBundle[] = [
         "themeTitleNl": "Februari - Kever met Hartjesballonnen",
         "icon": "🚗",
         "days": 28,
-        "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/banner/hub_holidays-seasons.webp",
+        "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Bold%20And%20Easy/Kitten_with_Heart_Balloon.webp",
         "quoteEn": "Color your way through February with joy!",
         "quoteNl": "Kleur Februari vol vrolijkheid en creativiteit!"
       },
@@ -822,7 +822,7 @@ export const CALENDAR_THEMES_DATA: CalendarThemeBundle[] = [
         "themeTitleNl": "Maart - Tractor op het Voorjaarsveld",
         "icon": "🚜",
         "days": 31,
-        "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/banner/hub_holidays-seasons.webp",
+        "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Easter%20%26%20Spring%20Bloom/Easter___Spring_Bloom__A_clean_printable_1788512014498.webp",
         "quoteEn": "Color your way through March with joy!",
         "quoteNl": "Kleur Maart vol vrolijkheid en creativiteit!"
       },
@@ -837,7 +837,7 @@ export const CALENDAR_THEMES_DATA: CalendarThemeBundle[] = [
         "themeTitleNl": "April - Schuimende Wasstraat",
         "icon": "🧼",
         "days": 30,
-        "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/banner/hub_holidays-seasons.webp",
+        "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Art%20Nouveau%20%28Mucha%20Style%29/Belles_Enchanted_Garden_1788283568856.webp",
         "quoteEn": "Color your way through April with joy!",
         "quoteNl": "Kleur April vol vrolijkheid en creativiteit!"
       },
@@ -852,7 +852,7 @@ export const CALENDAR_THEMES_DATA: CalendarThemeBundle[] = [
         "themeTitleNl": "Mei - Formule 1 Finishvlag",
         "icon": "🏁",
         "days": 31,
-        "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/banner/hub_holidays-seasons.webp",
+        "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Art%20Nouveau%20%28Mucha%20Style%29/A_clean_printable_coloring_page_showing__1788492321598_2.webp",
         "quoteEn": "Color your way through May with joy!",
         "quoteNl": "Kleur Mei vol vrolijkheid en creativiteit!"
       },
@@ -867,7 +867,7 @@ export const CALENDAR_THEMES_DATA: CalendarThemeBundle[] = [
         "themeTitleNl": "Juni - Monster Truck Stadion Stunt",
         "icon": "🛻",
         "days": 30,
-        "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/banner/hub_holidays-seasons.webp",
+        "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Art%20Nouveau%20%28Mucha%20Style%29/A_clean_printable_coloring_page_showing__1788493507218_2.webp",
         "quoteEn": "Color your way through June with joy!",
         "quoteNl": "Kleur Juni vol vrolijkheid en creativiteit!"
       },
@@ -882,7 +882,7 @@ export const CALENDAR_THEMES_DATA: CalendarThemeBundle[] = [
         "themeTitleNl": "Juli - Kustwacht Reddingsboot",
         "icon": "🚤",
         "days": 31,
-        "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/banner/hub_holidays-seasons.webp",
+        "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Botanical%20Gardens%20%26%20Greenhouses/Jungle_Botanical_Wonderland_1784877566427.webp",
         "quoteEn": "Color your way through July with joy!",
         "quoteNl": "Kleur Juli vol vrolijkheid en creativiteit!"
       },
@@ -897,7 +897,7 @@ export const CALENDAR_THEMES_DATA: CalendarThemeBundle[] = [
         "themeTitleNl": "Augustus - Kampeerbusje in de Bergen",
         "icon": "🚐",
         "days": 31,
-        "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/banner/hub_holidays-seasons.webp",
+        "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Animal%20Crossing/Animal_Crossing_Town_Hall_Service_Desk.webp",
         "quoteEn": "Color your way through August with joy!",
         "quoteNl": "Kleur Augustus vol vrolijkheid en creativiteit!"
       },
@@ -912,7 +912,7 @@ export const CALENDAR_THEMES_DATA: CalendarThemeBundle[] = [
         "themeTitleNl": "September - Gele Schoolbus op Tijd",
         "icon": "🚌",
         "days": 30,
-        "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/banner/hub_holidays-seasons.webp",
+        "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Art%20Nouveau%20%28Mucha%20Style%29/A_clean_printable_coloring_page_showing__1788492762807_2.webp",
         "quoteEn": "Color your way through September with joy!",
         "quoteNl": "Kleur September vol vrolijkheid en creativiteit!"
       },
@@ -927,7 +927,7 @@ export const CALENDAR_THEMES_DATA: CalendarThemeBundle[] = [
         "themeTitleNl": "Oktober - Stoere Spookauto",
         "icon": "💀",
         "days": 31,
-        "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/banner/hub_holidays-seasons.webp",
+        "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Halloween%20Spooky%20Creatures/Halloween_Spooky_Creatures__A_clean_prin_1788510958866.webp",
         "quoteEn": "Color your way through October with joy!",
         "quoteNl": "Kleur Oktober vol vrolijkheid en creativiteit!"
       },
@@ -942,7 +942,7 @@ export const CALENDAR_THEMES_DATA: CalendarThemeBundle[] = [
         "themeTitleNl": "November - Graafmachines op de Bouwplaats",
         "icon": "🏗️",
         "days": 30,
-        "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/banner/hub_holidays-seasons.webp",
+        "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Art%20Nouveau%20%28Mucha%20Style%29/Cozy_Indoor_Plantscape_1787908648681.webp",
         "quoteEn": "Color your way through November with joy!",
         "quoteNl": "Kleur November vol vrolijkheid en creativiteit!"
       },
@@ -957,7 +957,7 @@ export const CALENDAR_THEMES_DATA: CalendarThemeBundle[] = [
         "themeTitleNl": "December - Kerst Stoomtrein vol Cadeaus",
         "icon": "🚂",
         "days": 31,
-        "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/banner/hub_holidays-seasons.webp",
+        "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Christmas%20%26%20Winter%20Holidays/A_cheerful_Christmas_tree_with_a_broom_1787924646893.webp",
         "quoteEn": "Color your way through December with joy!",
         "quoteNl": "Kleur December vol vrolijkheid en creativiteit!"
       }
@@ -980,7 +980,7 @@ export const CALENDAR_THEMES_DATA: CalendarThemeBundle[] = [
         "themeTitleNl": "Januari - IJskristal Mandala",
         "icon": "❄️",
         "days": 31,
-        "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/banner/hub_holidays-seasons.webp",
+        "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Art%20Nouveau%20%28Mucha%20Style%29/Art_Nouveau__Mucha_Style___A_clean_print_1788492256558.webp",
         "quoteEn": "Color your way through January with joy!",
         "quoteNl": "Kleur Januari vol vrolijkheid en creativiteit!"
       },
@@ -995,7 +995,7 @@ export const CALENDAR_THEMES_DATA: CalendarThemeBundle[] = [
         "themeTitleNl": "Februari - Botanische Hartjesmandala",
         "icon": "🌹",
         "days": 28,
-        "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/banner/hub_holidays-seasons.webp",
+        "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Bold%20And%20Easy/Kitten_with_Heart_Balloon.webp",
         "quoteEn": "Color your way through February with joy!",
         "quoteNl": "Kleur Februari vol vrolijkheid en creativiteit!"
       },
@@ -1010,7 +1010,7 @@ export const CALENDAR_THEMES_DATA: CalendarThemeBundle[] = [
         "themeTitleNl": "Maart - Lentebloesem Mandala",
         "icon": "🌸",
         "days": 31,
-        "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/banner/hub_holidays-seasons.webp",
+        "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Easter%20%26%20Spring%20Bloom/Easter___Spring_Bloom__A_clean_printable_1788512014498.webp",
         "quoteEn": "Color your way through March with joy!",
         "quoteNl": "Kleur Maart vol vrolijkheid en creativiteit!"
       },
@@ -1025,7 +1025,7 @@ export const CALENDAR_THEMES_DATA: CalendarThemeBundle[] = [
         "themeTitleNl": "April - Waterdruppels Mandala",
         "icon": "💧",
         "days": 30,
-        "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/banner/hub_holidays-seasons.webp",
+        "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Art%20Nouveau%20%28Mucha%20Style%29/Belles_Enchanted_Garden_1788283568856.webp",
         "quoteEn": "Color your way through April with joy!",
         "quoteNl": "Kleur April vol vrolijkheid en creativiteit!"
       },
@@ -1040,7 +1040,7 @@ export const CALENDAR_THEMES_DATA: CalendarThemeBundle[] = [
         "themeTitleNl": "Mei - Vlindertuin Mandala",
         "icon": "🦋",
         "days": 31,
-        "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/banner/hub_holidays-seasons.webp",
+        "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Art%20Nouveau%20%28Mucha%20Style%29/A_clean_printable_coloring_page_showing__1788492321598_2.webp",
         "quoteEn": "Color your way through May with joy!",
         "quoteNl": "Kleur Mei vol vrolijkheid en creativiteit!"
       },
@@ -1055,7 +1055,7 @@ export const CALENDAR_THEMES_DATA: CalendarThemeBundle[] = [
         "themeTitleNl": "Juni - Zonnewende Straalmandala",
         "icon": "☀️",
         "days": 30,
-        "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/banner/hub_holidays-seasons.webp",
+        "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Art%20Nouveau%20%28Mucha%20Style%29/A_clean_printable_coloring_page_showing__1788493507218_2.webp",
         "quoteEn": "Color your way through June with joy!",
         "quoteNl": "Kleur Juni vol vrolijkheid en creativiteit!"
       },
@@ -1070,7 +1070,7 @@ export const CALENDAR_THEMES_DATA: CalendarThemeBundle[] = [
         "themeTitleNl": "Juli - Zeeschelpen & Golven Mandala",
         "icon": "🐚",
         "days": 31,
-        "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/banner/hub_holidays-seasons.webp",
+        "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Botanical%20Gardens%20%26%20Greenhouses/Jungle_Botanical_Wonderland_1784877566427.webp",
         "quoteEn": "Color your way through July with joy!",
         "quoteNl": "Kleur Juli vol vrolijkheid en creativiteit!"
       },
@@ -1085,7 +1085,7 @@ export const CALENDAR_THEMES_DATA: CalendarThemeBundle[] = [
         "themeTitleNl": "Augustus - Zonnebloem Geometrie Mandala",
         "icon": "🌻",
         "days": 31,
-        "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/banner/hub_holidays-seasons.webp",
+        "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Animal%20Crossing/Animal_Crossing_Town_Hall_Service_Desk.webp",
         "quoteEn": "Color your way through August with joy!",
         "quoteNl": "Kleur Augustus vol vrolijkheid en creativiteit!"
       },
@@ -1100,7 +1100,7 @@ export const CALENDAR_THEMES_DATA: CalendarThemeBundle[] = [
         "themeTitleNl": "September - Eikenblad & Eikel Mandala",
         "icon": "🍂",
         "days": 30,
-        "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/banner/hub_holidays-seasons.webp",
+        "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Art%20Nouveau%20%28Mucha%20Style%29/A_clean_printable_coloring_page_showing__1788492762807_2.webp",
         "quoteEn": "Color your way through September with joy!",
         "quoteNl": "Kleur September vol vrolijkheid en creativiteit!"
       },
@@ -1115,7 +1115,7 @@ export const CALENDAR_THEMES_DATA: CalendarThemeBundle[] = [
         "themeTitleNl": "Oktober - Maan & Sterren Mandala",
         "icon": "🌙",
         "days": 31,
-        "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/banner/hub_holidays-seasons.webp",
+        "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Halloween%20Spooky%20Creatures/Halloween_Spooky_Creatures__A_clean_prin_1788510958866.webp",
         "quoteEn": "Color your way through October with joy!",
         "quoteNl": "Kleur Oktober vol vrolijkheid en creativiteit!"
       },
@@ -1130,7 +1130,7 @@ export const CALENDAR_THEMES_DATA: CalendarThemeBundle[] = [
         "themeTitleNl": "November - Levensboom Mandala",
         "icon": "🌳",
         "days": 30,
-        "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/banner/hub_holidays-seasons.webp",
+        "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Art%20Nouveau%20%28Mucha%20Style%29/Cozy_Indoor_Plantscape_1787908648681.webp",
         "quoteEn": "Color your way through November with joy!",
         "quoteNl": "Kleur November vol vrolijkheid en creativiteit!"
       },
@@ -1145,7 +1145,7 @@ export const CALENDAR_THEMES_DATA: CalendarThemeBundle[] = [
         "themeTitleNl": "December - Winterster Mandala",
         "icon": "⭐",
         "days": 31,
-        "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/banner/hub_holidays-seasons.webp",
+        "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Christmas%20%26%20Winter%20Holidays/A_cheerful_Christmas_tree_with_a_broom_1787924646893.webp",
         "quoteEn": "Color your way through December with joy!",
         "quoteNl": "Kleur December vol vrolijkheid en creativiteit!"
       }
@@ -1168,7 +1168,7 @@ export const CALENDAR_THEMES_DATA: CalendarThemeBundle[] = [
         "themeTitleNl": "Januari - Narwal bij de Gletsjer",
         "icon": "🧊",
         "days": 31,
-        "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/banner/hub_holidays-seasons.webp",
+        "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Art%20Nouveau%20%28Mucha%20Style%29/Art_Nouveau__Mucha_Style___A_clean_print_1788492256558.webp",
         "quoteEn": "Color your way through January with joy!",
         "quoteNl": "Kleur Januari vol vrolijkheid en creativiteit!"
       },
@@ -1183,7 +1183,7 @@ export const CALENDAR_THEMES_DATA: CalendarThemeBundle[] = [
         "themeTitleNl": "Februari - Zeepaardjes Vriendschap",
         "icon": "💕",
         "days": 28,
-        "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/banner/hub_holidays-seasons.webp",
+        "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Bold%20And%20Easy/Kitten_with_Heart_Balloon.webp",
         "quoteEn": "Color your way through February with joy!",
         "quoteNl": "Kleur Februari vol vrolijkheid en creativiteit!"
       },
@@ -1198,7 +1198,7 @@ export const CALENDAR_THEMES_DATA: CalendarThemeBundle[] = [
         "themeTitleNl": "Maart - Clownsbeker en Koraalrif",
         "icon": "🐠",
         "days": 31,
-        "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/banner/hub_holidays-seasons.webp",
+        "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Easter%20%26%20Spring%20Bloom/Easter___Spring_Bloom__A_clean_printable_1788512014498.webp",
         "quoteEn": "Color your way through March with joy!",
         "quoteNl": "Kleur Maart vol vrolijkheid en creativiteit!"
       },
@@ -1213,7 +1213,7 @@ export const CALENDAR_THEMES_DATA: CalendarThemeBundle[] = [
         "themeTitleNl": "April - Glow Kwallen Dans",
         "icon": "🪼",
         "days": 30,
-        "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/banner/hub_holidays-seasons.webp",
+        "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Art%20Nouveau%20%28Mucha%20Style%29/Belles_Enchanted_Garden_1788283568856.webp",
         "quoteEn": "Color your way through April with joy!",
         "quoteNl": "Kleur April vol vrolijkheid en creativiteit!"
       },
@@ -1228,7 +1228,7 @@ export const CALENDAR_THEMES_DATA: CalendarThemeBundle[] = [
         "themeTitleNl": "Mei - Manta Rog in Zonnestralen",
         "icon": "🌊",
         "days": 31,
-        "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/banner/hub_holidays-seasons.webp",
+        "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Art%20Nouveau%20%28Mucha%20Style%29/A_clean_printable_coloring_page_showing__1788492321598_2.webp",
         "quoteEn": "Color your way through May with joy!",
         "quoteNl": "Kleur Mei vol vrolijkheid en creativiteit!"
       },
@@ -1243,7 +1243,7 @@ export const CALENDAR_THEMES_DATA: CalendarThemeBundle[] = [
         "themeTitleNl": "Juni - Dolfijnenparade",
         "icon": "🐬",
         "days": 30,
-        "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/banner/hub_holidays-seasons.webp",
+        "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Art%20Nouveau%20%28Mucha%20Style%29/A_clean_printable_coloring_page_showing__1788493507218_2.webp",
         "quoteEn": "Color your way through June with joy!",
         "quoteNl": "Kleur Juni vol vrolijkheid en creativiteit!"
       },
@@ -1258,7 +1258,7 @@ export const CALENDAR_THEMES_DATA: CalendarThemeBundle[] = [
         "themeTitleNl": "Juli - Zeeschildpad Koraalreis",
         "icon": "🐢",
         "days": 31,
-        "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/banner/hub_holidays-seasons.webp",
+        "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Botanical%20Gardens%20%26%20Greenhouses/Jungle_Botanical_Wonderland_1784877566427.webp",
         "quoteEn": "Color your way through July with joy!",
         "quoteNl": "Kleur Juli vol vrolijkheid en creativiteit!"
       },
@@ -1273,7 +1273,7 @@ export const CALENDAR_THEMES_DATA: CalendarThemeBundle[] = [
         "themeTitleNl": "Augustus - Walvishaai en Visjes",
         "icon": "🦈",
         "days": 31,
-        "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/banner/hub_holidays-seasons.webp",
+        "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Animal%20Crossing/Animal_Crossing_Town_Hall_Service_Desk.webp",
         "quoteEn": "Color your way through August with joy!",
         "quoteNl": "Kleur Augustus vol vrolijkheid en creativiteit!"
       },
@@ -1288,7 +1288,7 @@ export const CALENDAR_THEMES_DATA: CalendarThemeBundle[] = [
         "themeTitleNl": "September - Octopus Schelpentuin",
         "icon": "🐙",
         "days": 30,
-        "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/banner/hub_holidays-seasons.webp",
+        "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Art%20Nouveau%20%28Mucha%20Style%29/A_clean_printable_coloring_page_showing__1788492762807_2.webp",
         "quoteEn": "Color your way through September with joy!",
         "quoteNl": "Kleur September vol vrolijkheid en creativiteit!"
       },
@@ -1303,7 +1303,7 @@ export const CALENDAR_THEMES_DATA: CalendarThemeBundle[] = [
         "themeTitleNl": "Oktober - Diepzee Hengelvis",
         "icon": "💡",
         "days": 31,
-        "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/banner/hub_holidays-seasons.webp",
+        "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Halloween%20Spooky%20Creatures/Halloween_Spooky_Creatures__A_clean_prin_1788510958866.webp",
         "quoteEn": "Color your way through October with joy!",
         "quoteNl": "Kleur Oktober vol vrolijkheid en creativiteit!"
       },
@@ -1318,7 +1318,7 @@ export const CALENDAR_THEMES_DATA: CalendarThemeBundle[] = [
         "themeTitleNl": "November - Bultrug Walvis Sprong",
         "icon": "🐋",
         "days": 30,
-        "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/banner/hub_holidays-seasons.webp",
+        "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Art%20Nouveau%20%28Mucha%20Style%29/Cozy_Indoor_Plantscape_1787908648681.webp",
         "quoteEn": "Color your way through November with joy!",
         "quoteNl": "Kleur November vol vrolijkheid en creativiteit!"
       },
@@ -1333,7 +1333,7 @@ export const CALENDAR_THEMES_DATA: CalendarThemeBundle[] = [
         "themeTitleNl": "December - Pinguïns op de IJsberg",
         "icon": "🐧",
         "days": 31,
-        "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/banner/hub_holidays-seasons.webp",
+        "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Christmas%20%26%20Winter%20Holidays/A_cheerful_Christmas_tree_with_a_broom_1787924646893.webp",
         "quoteEn": "Color your way through December with joy!",
         "quoteNl": "Kleur December vol vrolijkheid en creativiteit!"
       }
@@ -1356,7 +1356,7 @@ export const CALENDAR_THEMES_DATA: CalendarThemeBundle[] = [
         "themeTitleNl": "Januari - Winter Leesclub in de Klas",
         "icon": "📚",
         "days": 31,
-        "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/banner/hub_holidays-seasons.webp",
+        "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Art%20Nouveau%20%28Mucha%20Style%29/Art_Nouveau__Mucha_Style___A_clean_print_1788492256558.webp",
         "quoteEn": "Color your way through January with joy!",
         "quoteNl": "Kleur Januari vol vrolijkheid en creativiteit!"
       },
@@ -1371,7 +1371,7 @@ export const CALENDAR_THEMES_DATA: CalendarThemeBundle[] = [
         "themeTitleNl": "Februari - Vriendschapskaarten Knutselen",
         "icon": "💌",
         "days": 28,
-        "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/banner/hub_holidays-seasons.webp",
+        "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Bold%20And%20Easy/Kitten_with_Heart_Balloon.webp",
         "quoteEn": "Color your way through February with joy!",
         "quoteNl": "Kleur Februari vol vrolijkheid en creativiteit!"
       },
@@ -1386,7 +1386,7 @@ export const CALENDAR_THEMES_DATA: CalendarThemeBundle[] = [
         "themeTitleNl": "Maart - Wetenschapsdag & Vulkaanproef",
         "icon": "🔬",
         "days": 31,
-        "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/banner/hub_holidays-seasons.webp",
+        "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Easter%20%26%20Spring%20Bloom/Easter___Spring_Bloom__A_clean_printable_1788512014498.webp",
         "quoteEn": "Color your way through March with joy!",
         "quoteNl": "Kleur Maart vol vrolijkheid en creativiteit!"
       },
@@ -1401,7 +1401,7 @@ export const CALENDAR_THEMES_DATA: CalendarThemeBundle[] = [
         "themeTitleNl": "April - Schooltuintje Inzaaien",
         "icon": "🌱",
         "days": 30,
-        "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/banner/hub_holidays-seasons.webp",
+        "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Art%20Nouveau%20%28Mucha%20Style%29/Belles_Enchanted_Garden_1788283568856.webp",
         "quoteEn": "Color your way through April with joy!",
         "quoteNl": "Kleur April vol vrolijkheid en creativiteit!"
       },
@@ -1416,7 +1416,7 @@ export const CALENDAR_THEMES_DATA: CalendarThemeBundle[] = [
         "themeTitleNl": "Mei - Tekenen & Schilderen in de Klas",
         "icon": "🎨",
         "days": 31,
-        "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/banner/hub_holidays-seasons.webp",
+        "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Art%20Nouveau%20%28Mucha%20Style%29/A_clean_printable_coloring_page_showing__1788492321598_2.webp",
         "quoteEn": "Color your way through May with joy!",
         "quoteNl": "Kleur Mei vol vrolijkheid en creativiteit!"
       },
@@ -1431,7 +1431,7 @@ export const CALENDAR_THEMES_DATA: CalendarThemeBundle[] = [
         "themeTitleNl": "Juni - Sportdag & Buitenspelen",
         "icon": "🏃",
         "days": 30,
-        "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/banner/hub_holidays-seasons.webp",
+        "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Art%20Nouveau%20%28Mucha%20Style%29/A_clean_printable_coloring_page_showing__1788493507218_2.webp",
         "quoteEn": "Color your way through June with joy!",
         "quoteNl": "Kleur Juni vol vrolijkheid en creativiteit!"
       },
@@ -1446,7 +1446,7 @@ export const CALENDAR_THEMES_DATA: CalendarThemeBundle[] = [
         "themeTitleNl": "Juli - Zomervakantie Boekenhoek",
         "icon": "🏕️",
         "days": 31,
-        "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/banner/hub_holidays-seasons.webp",
+        "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Botanical%20Gardens%20%26%20Greenhouses/Jungle_Botanical_Wonderland_1784877566427.webp",
         "quoteEn": "Color your way through July with joy!",
         "quoteNl": "Kleur Juli vol vrolijkheid en creativiteit!"
       },
@@ -1461,7 +1461,7 @@ export const CALENDAR_THEMES_DATA: CalendarThemeBundle[] = [
         "themeTitleNl": "Augustus - Schoolspullen Klaarmaken",
         "icon": "🎒",
         "days": 31,
-        "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/banner/hub_holidays-seasons.webp",
+        "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Animal%20Crossing/Animal_Crossing_Town_Hall_Service_Desk.webp",
         "quoteEn": "Color your way through August with joy!",
         "quoteNl": "Kleur Augustus vol vrolijkheid en creativiteit!"
       },
@@ -1476,7 +1476,7 @@ export const CALENDAR_THEMES_DATA: CalendarThemeBundle[] = [
         "themeTitleNl": "September - Eerste Schooldag!",
         "icon": "🏫",
         "days": 30,
-        "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/banner/hub_holidays-seasons.webp",
+        "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Art%20Nouveau%20%28Mucha%20Style%29/A_clean_printable_coloring_page_showing__1788492762807_2.webp",
         "quoteEn": "Color your way through September with joy!",
         "quoteNl": "Kleur September vol vrolijkheid en creativiteit!"
       },
@@ -1491,7 +1491,7 @@ export const CALENDAR_THEMES_DATA: CalendarThemeBundle[] = [
         "themeTitleNl": "Oktober - Bibliotheek Voorleesfeest",
         "icon": "📖",
         "days": 31,
-        "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/banner/hub_holidays-seasons.webp",
+        "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Halloween%20Spooky%20Creatures/Halloween_Spooky_Creatures__A_clean_prin_1788510958866.webp",
         "quoteEn": "Color your way through October with joy!",
         "quoteNl": "Kleur Oktober vol vrolijkheid en creativiteit!"
       },
@@ -1506,7 +1506,7 @@ export const CALENDAR_THEMES_DATA: CalendarThemeBundle[] = [
         "themeTitleNl": "November - Muziekles & Schoolorkest",
         "icon": "🎵",
         "days": 30,
-        "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/banner/hub_holidays-seasons.webp",
+        "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Art%20Nouveau%20%28Mucha%20Style%29/Cozy_Indoor_Plantscape_1787908648681.webp",
         "quoteEn": "Color your way through November with joy!",
         "quoteNl": "Kleur November vol vrolijkheid en creativiteit!"
       },
@@ -1521,7 +1521,7 @@ export const CALENDAR_THEMES_DATA: CalendarThemeBundle[] = [
         "themeTitleNl": "December - Kersttoneelstuk op het Podium",
         "icon": "🎭",
         "days": 31,
-        "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/banner/hub_holidays-seasons.webp",
+        "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Christmas%20%26%20Winter%20Holidays/A_cheerful_Christmas_tree_with_a_broom_1787924646893.webp",
         "quoteEn": "Color your way through December with joy!",
         "quoteNl": "Kleur December vol vrolijkheid en creativiteit!"
       }
@@ -1544,7 +1544,7 @@ export const CALENDAR_THEMES_DATA: CalendarThemeBundle[] = [
         "themeTitleNl": "Januari - Peperkoekhuisje met Glazuur",
         "icon": "🏠",
         "days": 31,
-        "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/banner/hub_holidays-seasons.webp",
+        "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Art%20Nouveau%20%28Mucha%20Style%29/Art_Nouveau__Mucha_Style___A_clean_print_1788492256558.webp",
         "quoteEn": "Color your way through January with joy!",
         "quoteNl": "Kleur Januari vol vrolijkheid en creativiteit!"
       },
@@ -1559,7 +1559,7 @@ export const CALENDAR_THEMES_DATA: CalendarThemeBundle[] = [
         "themeTitleNl": "Februari - Luxe Bonbondoos",
         "icon": "🍫",
         "days": 28,
-        "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/banner/hub_holidays-seasons.webp",
+        "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Bold%20And%20Easy/Kitten_with_Heart_Balloon.webp",
         "quoteEn": "Color your way through February with joy!",
         "quoteNl": "Kleur Februari vol vrolijkheid en creativiteit!"
       },
@@ -1574,7 +1574,7 @@ export const CALENDAR_THEMES_DATA: CalendarThemeBundle[] = [
         "themeTitleNl": "Maart - Macarons op een Schaal",
         "icon": "🍪",
         "days": 31,
-        "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/banner/hub_holidays-seasons.webp",
+        "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Easter%20%26%20Spring%20Bloom/Easter___Spring_Bloom__A_clean_printable_1788512014498.webp",
         "quoteEn": "Color your way through March with joy!",
         "quoteNl": "Kleur Maart vol vrolijkheid en creativiteit!"
       },
@@ -1589,7 +1589,7 @@ export const CALENDAR_THEMES_DATA: CalendarThemeBundle[] = [
         "themeTitleNl": "April - Paaskoekjes Versieren",
         "icon": "🐰",
         "days": 30,
-        "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/banner/hub_holidays-seasons.webp",
+        "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Art%20Nouveau%20%28Mucha%20Style%29/Belles_Enchanted_Garden_1788283568856.webp",
         "quoteEn": "Color your way through April with joy!",
         "quoteNl": "Kleur April vol vrolijkheid en creativiteit!"
       },
@@ -1604,7 +1604,7 @@ export const CALENDAR_THEMES_DATA: CalendarThemeBundle[] = [
         "themeTitleNl": "Mei - Aardbeientaart met Slagroom",
         "icon": "🍓",
         "days": 31,
-        "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/banner/hub_holidays-seasons.webp",
+        "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Art%20Nouveau%20%28Mucha%20Style%29/A_clean_printable_coloring_page_showing__1788492321598_2.webp",
         "quoteEn": "Color your way through May with joy!",
         "quoteNl": "Kleur Mei vol vrolijkheid en creativiteit!"
       },
@@ -1619,7 +1619,7 @@ export const CALENDAR_THEMES_DATA: CalendarThemeBundle[] = [
         "themeTitleNl": "Juni - IJscowagen aan het Park",
         "icon": "🍦",
         "days": 30,
-        "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/banner/hub_holidays-seasons.webp",
+        "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Art%20Nouveau%20%28Mucha%20Style%29/A_clean_printable_coloring_page_showing__1788493507218_2.webp",
         "quoteEn": "Color your way through June with joy!",
         "quoteNl": "Kleur Juni vol vrolijkheid en creativiteit!"
       },
@@ -1634,7 +1634,7 @@ export const CALENDAR_THEMES_DATA: CalendarThemeBundle[] = [
         "themeTitleNl": "Juli - Zomerse Fruitsmoothies",
         "icon": "🥤",
         "days": 31,
-        "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/banner/hub_holidays-seasons.webp",
+        "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Botanical%20Gardens%20%26%20Greenhouses/Jungle_Botanical_Wonderland_1784877566427.webp",
         "quoteEn": "Color your way through July with joy!",
         "quoteNl": "Kleur Juli vol vrolijkheid en creativiteit!"
       },
@@ -1649,7 +1649,7 @@ export const CALENDAR_THEMES_DATA: CalendarThemeBundle[] = [
         "themeTitleNl": "Augustus - Pannenkoekenberg met Stroop",
         "icon": "🥞",
         "days": 31,
-        "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/banner/hub_holidays-seasons.webp",
+        "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Animal%20Crossing/Animal_Crossing_Town_Hall_Service_Desk.webp",
         "quoteEn": "Color your way through August with joy!",
         "quoteNl": "Kleur Augustus vol vrolijkheid en creativiteit!"
       },
@@ -1664,7 +1664,7 @@ export const CALENDAR_THEMES_DATA: CalendarThemeBundle[] = [
         "themeTitleNl": "September - Versgebakken Appeltaart",
         "icon": "🥧",
         "days": 30,
-        "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/banner/hub_holidays-seasons.webp",
+        "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Art%20Nouveau%20%28Mucha%20Style%29/A_clean_printable_coloring_page_showing__1788492762807_2.webp",
         "quoteEn": "Color your way through September with joy!",
         "quoteNl": "Kleur September vol vrolijkheid en creativiteit!"
       },
@@ -1679,7 +1679,7 @@ export const CALENDAR_THEMES_DATA: CalendarThemeBundle[] = [
         "themeTitleNl": "Oktober - Spookachtige Cupcakes",
         "icon": "🧁",
         "days": 31,
-        "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/banner/hub_holidays-seasons.webp",
+        "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Halloween%20Spooky%20Creatures/Halloween_Spooky_Creatures__A_clean_prin_1788510958866.webp",
         "quoteEn": "Color your way through October with joy!",
         "quoteNl": "Kleur Oktober vol vrolijkheid en creativiteit!"
       },
@@ -1694,7 +1694,7 @@ export const CALENDAR_THEMES_DATA: CalendarThemeBundle[] = [
         "themeTitleNl": "November - Kaneelbroodje & Warme Choco",
         "icon": "☕",
         "days": 30,
-        "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/banner/hub_holidays-seasons.webp",
+        "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Art%20Nouveau%20%28Mucha%20Style%29/Cozy_Indoor_Plantscape_1787908648681.webp",
         "quoteEn": "Color your way through November with joy!",
         "quoteNl": "Kleur November vol vrolijkheid en creativiteit!"
       },
@@ -1709,7 +1709,7 @@ export const CALENDAR_THEMES_DATA: CalendarThemeBundle[] = [
         "themeTitleNl": "December - Zuurstokken & Snoepdorp",
         "icon": "🍬",
         "days": 31,
-        "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/banner/hub_holidays-seasons.webp",
+        "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Christmas%20%26%20Winter%20Holidays/A_cheerful_Christmas_tree_with_a_broom_1787924646893.webp",
         "quoteEn": "Color your way through December with joy!",
         "quoteNl": "Kleur December vol vrolijkheid en creativiteit!"
       }
@@ -1732,7 +1732,7 @@ export const CALENDAR_THEMES_DATA: CalendarThemeBundle[] = [
         "themeTitleNl": "Januari - Hertjes in het Sneeuwbos",
         "icon": "🦌",
         "days": 31,
-        "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/banner/hub_holidays-seasons.webp",
+        "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Art%20Nouveau%20%28Mucha%20Style%29/Art_Nouveau__Mucha_Style___A_clean_print_1788492256558.webp",
         "quoteEn": "Color your way through January with joy!",
         "quoteNl": "Kleur Januari vol vrolijkheid en creativiteit!"
       },
@@ -1747,7 +1747,7 @@ export const CALENDAR_THEMES_DATA: CalendarThemeBundle[] = [
         "themeTitleNl": "Februari - Roodborstje op Hulsttak",
         "icon": "🐦",
         "days": 28,
-        "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/banner/hub_holidays-seasons.webp",
+        "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Bold%20And%20Easy/Kitten_with_Heart_Balloon.webp",
         "quoteEn": "Color your way through February with joy!",
         "quoteNl": "Kleur Februari vol vrolijkheid en creativiteit!"
       },
@@ -1762,7 +1762,7 @@ export const CALENDAR_THEMES_DATA: CalendarThemeBundle[] = [
         "themeTitleNl": "Maart - Lentebeekje & Sneeuwklokjes",
         "icon": "💧",
         "days": 31,
-        "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/banner/hub_holidays-seasons.webp",
+        "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Easter%20%26%20Spring%20Bloom/Easter___Spring_Bloom__A_clean_printable_1788512014498.webp",
         "quoteEn": "Color your way through March with joy!",
         "quoteNl": "Kleur Maart vol vrolijkheid en creativiteit!"
       },
@@ -1777,7 +1777,7 @@ export const CALENDAR_THEMES_DATA: CalendarThemeBundle[] = [
         "themeTitleNl": "April - Vogelhuisje in Bloeiende Appelboom",
         "icon": "🏡",
         "days": 30,
-        "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/banner/hub_holidays-seasons.webp",
+        "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Art%20Nouveau%20%28Mucha%20Style%29/Belles_Enchanted_Garden_1788283568856.webp",
         "quoteEn": "Color your way through April with joy!",
         "quoteNl": "Kleur April vol vrolijkheid en creativiteit!"
       },
@@ -1792,7 +1792,7 @@ export const CALENDAR_THEMES_DATA: CalendarThemeBundle[] = [
         "themeTitleNl": "Mei - Eendjes tussen de Waterlelies",
         "icon": "🦆",
         "days": 31,
-        "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/banner/hub_holidays-seasons.webp",
+        "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Art%20Nouveau%20%28Mucha%20Style%29/A_clean_printable_coloring_page_showing__1788492321598_2.webp",
         "quoteEn": "Color your way through May with joy!",
         "quoteNl": "Kleur Mei vol vrolijkheid en creativiteit!"
       },
@@ -1807,7 +1807,7 @@ export const CALENDAR_THEMES_DATA: CalendarThemeBundle[] = [
         "themeTitleNl": "Juni - Zonnebloemveld in de Avondzon",
         "icon": "🌻",
         "days": 30,
-        "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/banner/hub_holidays-seasons.webp",
+        "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Art%20Nouveau%20%28Mucha%20Style%29/A_clean_printable_coloring_page_showing__1788493507218_2.webp",
         "quoteEn": "Color your way through June with joy!",
         "quoteNl": "Kleur Juni vol vrolijkheid en creativiteit!"
       },
@@ -1822,7 +1822,7 @@ export const CALENDAR_THEMES_DATA: CalendarThemeBundle[] = [
         "themeTitleNl": "Juli - Kustvuurtoren & Zomerbloemen",
         "icon": "🗼",
         "days": 31,
-        "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/banner/hub_holidays-seasons.webp",
+        "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Botanical%20Gardens%20%26%20Greenhouses/Jungle_Botanical_Wonderland_1784877566427.webp",
         "quoteEn": "Color your way through July with joy!",
         "quoteNl": "Kleur Juli vol vrolijkheid en creativiteit!"
       },
@@ -1837,7 +1837,7 @@ export const CALENDAR_THEMES_DATA: CalendarThemeBundle[] = [
         "themeTitleNl": "Augustus - Kampvuur onder de Melkweg",
         "icon": "🔥",
         "days": 31,
-        "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/banner/hub_holidays-seasons.webp",
+        "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Animal%20Crossing/Animal_Crossing_Town_Hall_Service_Desk.webp",
         "quoteEn": "Color your way through August with joy!",
         "quoteNl": "Kleur Augustus vol vrolijkheid en creativiteit!"
       },
@@ -1852,7 +1852,7 @@ export const CALENDAR_THEMES_DATA: CalendarThemeBundle[] = [
         "themeTitleNl": "September - Appels Oogsten in de Boomgaard",
         "icon": "🍏",
         "days": 30,
-        "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/banner/hub_holidays-seasons.webp",
+        "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Art%20Nouveau%20%28Mucha%20Style%29/A_clean_printable_coloring_page_showing__1788492762807_2.webp",
         "quoteEn": "Color your way through September with joy!",
         "quoteNl": "Kleur September vol vrolijkheid en creativiteit!"
       },
@@ -1867,7 +1867,7 @@ export const CALENDAR_THEMES_DATA: CalendarThemeBundle[] = [
         "themeTitleNl": "Oktober - Herfstboerderij & Pompoenen",
         "icon": "🎃",
         "days": 31,
-        "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/banner/hub_holidays-seasons.webp",
+        "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Halloween%20Spooky%20Creatures/Halloween_Spooky_Creatures__A_clean_prin_1788510958866.webp",
         "quoteEn": "Color your way through October with joy!",
         "quoteNl": "Kleur Oktober vol vrolijkheid en creativiteit!"
       },
@@ -1882,7 +1882,7 @@ export const CALENDAR_THEMES_DATA: CalendarThemeBundle[] = [
         "themeTitleNl": "November - Eekhoorntjes met Eikels",
         "icon": "🐿️",
         "days": 30,
-        "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/banner/hub_holidays-seasons.webp",
+        "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Art%20Nouveau%20%28Mucha%20Style%29/Cozy_Indoor_Plantscape_1787908648681.webp",
         "quoteEn": "Color your way through November with joy!",
         "quoteNl": "Kleur November vol vrolijkheid en creativiteit!"
       },
@@ -1897,7 +1897,7 @@ export const CALENDAR_THEMES_DATA: CalendarThemeBundle[] = [
         "themeTitleNl": "December - Gezellig Houten Blokhutje in de Sneeuw",
         "icon": "🪵",
         "days": 31,
-        "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/banner/hub_holidays-seasons.webp",
+        "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Christmas%20%26%20Winter%20Holidays/A_cheerful_Christmas_tree_with_a_broom_1787924646893.webp",
         "quoteEn": "Color your way through December with joy!",
         "quoteNl": "Kleur December vol vrolijkheid en creativiteit!"
       }
@@ -1905,16 +1905,10 @@ export const CALENDAR_THEMES_DATA: CalendarThemeBundle[] = [
   }
 ];
 
-export const CALENDAR_2026_MONTHS: CalendarMonth[] = CALENDAR_THEMES_DATA[0].months;
-
-export function getCalendarYear(year: number = 2026) {
+export function getCalendarYear(year: number) {
   return {
     year,
-    months: CALENDAR_2026_MONTHS,
     themes: CALENDAR_THEMES_DATA,
+    months: CALENDAR_THEMES_DATA[0]?.months || []
   };
-}
-
-export function getCalendarThemeById(themeId: string): CalendarThemeBundle | undefined {
-  return CALENDAR_THEMES_DATA.find(t => t.id === themeId);
 }
