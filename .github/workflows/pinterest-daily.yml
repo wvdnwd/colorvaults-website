@@ -1,0 +1,36 @@
+name: Pinterest Daily Auto-Poster
+
+on:
+  schedule:
+    # Runs twice a day at 10:00 UTC (12:00 CET) and 16:00 UTC (18:00 CET)
+    - cron: '0 10,16 * * *'
+  workflow_dispatch: # Allows manual trigger from GitHub web UI
+
+jobs:
+  post-pins:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Run Pinterest Bot
+        env:
+          PINTEREST_ACCESS_TOKEN: ${{ secrets.PINTEREST_ACCESS_TOKEN }}
+          PINS_PER_RUN: '6'
+        run: |
+          python scripts/pinterest_bot.py
+
+      - name: Commit Pinned History
+        run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+          git add scripts/pinned_history.json || true
+          git commit -m "chore: update pinterest pinned history [skip ci]" || echo "No changes to commit"
+          git push || echo "Nothing to push"
