@@ -1,31 +1,8 @@
 [
   {
     "id": "page-frozen-1",
-    "title": "African Savanna Scene (Scene 2)",
-    "slug": "frozen-1",
-    "parentHub": "disney-pixar",
-    "parentTheme": "frozen",
-    "ageGroup": "teens",
-    "difficulty": "medium",
-    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Disney%20-%20Frozen/African_Savanna_Scene_1788436385897.webp",
-    "preview": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Disney%20-%20Frozen/African_Savanna_Scene_1788436385897.webp",
-    "downloadableFile": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Disney%20-%20Frozen/African_Savanna_Scene_1788436385897.webp",
-    "metaTitle": "African Savanna Scene (Scene 2) - Free Printable Coloring Page | ColorVaults",
-    "metaDescription": "Download and print this free African Savanna Scene (Scene 2) coloring page from the Safari - Lions & Big Cats collection. High-resolution in A4 & Letter size!",
-    "shortDescription": "Free printable African Savanna Scene (Scene 2) coloring page from our Safari - Lions & Big Cats collection.",
-    "longDescription": "Enjoy this high-quality African Savanna Scene (Scene 2) coloring page from the Safari - Lions & Big Cats category. Designed with crisp black outlines, download or print directly in A4/Letter size for free!",
-    "altText": "African Savanna Scene (Scene 2) coloring page - free printable",
-    "tags": [
-      "frozen",
-      "kids"
-    ],
-    "relatedPages": [],
-    "language": "en"
-  },
-  {
-    "id": "page-frozen-2",
     "title": "Belle And Elsa Tea Time",
-    "slug": "frozen-2",
+    "slug": "frozen-1",
     "parentHub": "disney-pixar",
     "parentTheme": "frozen",
     "ageGroup": "toddlers",
@@ -92,52 +69,6 @@
     "language": "en"
   },
   {
-    "id": "page-sonic-the-hedgehog-1",
-    "title": "Naruto In His Nine Tails Mode",
-    "slug": "sonic-the-hedgehog-1",
-    "parentHub": "gaming-virtual-worlds",
-    "parentTheme": "sonic-the-hedgehog",
-    "ageGroup": "teens",
-    "difficulty": "medium",
-    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Anime%20-%20Naruto/Naruto_in_his_Nine-Tails_Mode_1788560731593.webp",
-    "preview": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Anime%20-%20Naruto/Naruto_in_his_Nine-Tails_Mode_1788560731593.webp",
-    "downloadableFile": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Anime%20-%20Naruto/Naruto_in_his_Nine-Tails_Mode_1788560731593.webp",
-    "metaTitle": "Naruto In His Nine Tails Mode - Free Printable Coloring Page | ColorVaults",
-    "metaDescription": "Download and print this free Naruto In His Nine Tails Mode coloring page from the Sonic the Hedgehog collection. High-resolution in A4 & Letter size!",
-    "shortDescription": "Free printable Naruto In His Nine Tails Mode coloring page from our Sonic the Hedgehog collection.",
-    "longDescription": "Enjoy this high-quality Naruto In His Nine Tails Mode coloring page from the Sonic the Hedgehog category. Designed with crisp black outlines, download or print directly in A4/Letter size for free!",
-    "altText": "Naruto In His Nine Tails Mode coloring page - free printable",
-    "tags": [
-      "sonic-the-hedgehog",
-      "kids"
-    ],
-    "relatedPages": [],
-    "language": "en"
-  },
-  {
-    "id": "page-sonic-the-hedgehog-2",
-    "title": "Sonic The Hedgehog",
-    "slug": "sonic-the-hedgehog-2",
-    "parentHub": "gaming-virtual-worlds",
-    "parentTheme": "sonic-the-hedgehog",
-    "ageGroup": "toddlers",
-    "difficulty": "hard",
-    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Sonic%20the%20Hedgehog/Sonic_The_Hedgehog_1788295103115.webp",
-    "preview": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Sonic%20the%20Hedgehog/Sonic_The_Hedgehog_1788295103115.webp",
-    "downloadableFile": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Sonic%20the%20Hedgehog/Sonic_The_Hedgehog_1788295103115.webp",
-    "metaTitle": "Sonic The Hedgehog - Free Printable Coloring Page | ColorVaults",
-    "metaDescription": "Download and print this free Sonic The Hedgehog coloring page from the Sonic the Hedgehog collection. High-resolution in A4 & Letter size!",
-    "shortDescription": "Free printable Sonic The Hedgehog coloring page from our Sonic the Hedgehog collection.",
-    "longDescription": "Enjoy this high-quality Sonic The Hedgehog coloring page from the Sonic the Hedgehog category. Designed with crisp black outlines, download or print directly in A4/Letter size for free!",
-    "altText": "Sonic The Hedgehog coloring page - free printable",
-    "tags": [
-      "sonic-the-hedgehog",
-      "teens"
-    ],
-    "relatedPages": [],
-    "language": "en"
-  },
-  {
     "id": "page-marvel-spider-man-1",
     "title": "Spider-man Helping a Friendly Cat Down from a Tree",
     "slug": "marvel-spider-man-1",
@@ -179,29 +110,6 @@
     "tags": [
       "marvel-spider-man",
       "teens"
-    ],
-    "relatedPages": [],
-    "language": "en"
-  },
-  {
-    "id": "page-paw-patrol-1",
-    "title": "A Majestic Lion Sits Atop A Rocky Outcrop",
-    "slug": "paw-patrol-1",
-    "parentHub": "kids-tv-shows",
-    "parentTheme": "paw-patrol",
-    "ageGroup": "toddlers",
-    "difficulty": "medium",
-    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Paw%20Patrol/A_majestic_lion_sits_atop_a_rocky_outcrop_1788436518984.webp",
-    "preview": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Paw%20Patrol/A_majestic_lion_sits_atop_a_rocky_outcrop_1788436518984.webp",
-    "downloadableFile": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Paw%20Patrol/A_majestic_lion_sits_atop_a_rocky_outcrop_1788436518984.webp",
-    "metaTitle": "A Majestic Lion Sits Atop A Rocky Outcrop - Free Printable Coloring Page | ColorVaults",
-    "metaDescription": "Download and print this free A Majestic Lion Sits Atop A Rocky Outcrop coloring page from the Paw Patrol collection. High-resolution in A4 & Letter size!",
-    "shortDescription": "Free printable A Majestic Lion Sits Atop A Rocky Outcrop coloring page from our Paw Patrol collection.",
-    "longDescription": "Enjoy this high-quality A Majestic Lion Sits Atop A Rocky Outcrop coloring page from the Paw Patrol category. Designed with crisp black outlines, download or print directly in A4/Letter size for free!",
-    "altText": "A Majestic Lion Sits Atop A Rocky Outcrop coloring page - free printable",
-    "tags": [
-      "paw-patrol",
-      "kids"
     ],
     "relatedPages": [],
     "language": "en"

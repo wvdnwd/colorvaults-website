@@ -34,6 +34,7 @@ export interface AgePage {
 }
 
 export interface ColoringPage {
+  id?: string;
   slug: string;
   parentHub: string;
   parentTheme: string;
@@ -312,16 +313,16 @@ function validateSlug(slug: string, typeName: string) {
 }
 
 export function getAgeLabel(ageSlug: string, lang: string): { label: string; emoji: string; desc: string } {
-  const isEn = lang ==='en';
+  const isEn = lang !== 'nl';
   const map: Record<string, { en: string; nl: string; emoji: string; descEn: string; descNl: string }> = {
-    kids:        { en:'Easy',   nl:'Makkelijk', emoji:'', descEn:'Simple shapes & fun designs',       descNl:'Eenvoudige vormen & leuke designs'},
-    kinderen:    { en:'Easy',   nl:'Makkelijk', emoji:'', descEn:'Simple shapes & fun designs',       descNl:'Eenvoudige vormen & leuke designs'},
-    toddlers:    { en:'Easy',   nl:'Makkelijk', emoji:'', descEn:'Simple shapes & fun designs',       descNl:'Eenvoudige vormen & leuke designs'},
-    peuters:     { en:'Easy',   nl:'Makkelijk', emoji:'', descEn:'Simple shapes & fun designs',       descNl:'Eenvoudige vormen & leuke designs'},
-    teens:       { en:'Medium', nl:'Gemiddeld', emoji:'', descEn:'More detail & creative scenes',     descNl:'Meer detail & creatieve scènes'},
-    tieners:     { en:'Medium', nl:'Gemiddeld', emoji:'', descEn:'More detail & creative scenes',     descNl:'Meer detail & creatieve scènes'},
-    adults:      { en:'Hard',   nl:'Moeilijk',  emoji:'', descEn:'Intricate patterns & fine details', descNl:'Ingewikkelde patronen & fijne details'},
-    volwassenen: { en:'Hard',   nl:'Moeilijk',  emoji:'', descEn:'Intricate patterns & fine details', descNl:'Ingewikkelde patronen & fijne details'},
+    toddlers:    { en:'Toddlers (2-4)',          nl:'Peuters (2-4)',                 emoji:'', descEn:'Coloring pages for toddlers',          descNl:'Kleurplaten voor peuters'},
+    peuters:     { en:'Toddlers (2-4)',          nl:'Peuters (2-4)',                 emoji:'', descEn:'Coloring pages for toddlers',          descNl:'Kleurplaten voor peuters'},
+    kids:        { en:'Kids (5-8)',               nl:'Kinderen (5-8)',                emoji:'', descEn:'Coloring pages for kids',              descNl:'Kleurplaten voor kinderen'},
+    kinderen:    { en:'Kids (5-8)',               nl:'Kinderen (5-8)',                emoji:'', descEn:'Coloring pages for kids',              descNl:'Kleurplaten voor kinderen'},
+    teens:       { en:'Older Kids (9-12)',        nl:'Oudere Kinderen (9-12)',        emoji:'', descEn:'Coloring pages for older kids',        descNl:'Kleurplaten voor oudere kinderen'},
+    tieners:     { en:'Older Kids (9-12)',        nl:'Oudere Kinderen (9-12)',        emoji:'', descEn:'Coloring pages for older kids',        descNl:'Kleurplaten voor oudere kinderen'},
+    adults:      { en:'Teens & Adults (13+)',     nl:'Tieners & Volwassenen (13+)',   emoji:'', descEn:'Detailed pages for teens and adults',  descNl:'Gedetailleerde platen voor tieners en volwassenen'},
+    volwassenen: { en:'Teens & Adults (13+)',     nl:'Tieners & Volwassenen (13+)',   emoji:'', descEn:'Detailed pages for teens and adults',  descNl:'Gedetailleerde platen voor tieners en volwassenen'},
   };
   const entry = map[ageSlug];
   if (!entry) return { label: ageSlug, emoji:'', desc:''};

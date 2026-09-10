@@ -1,36 +1,34 @@
-'use client';
-
-import { useRouter, useSearchParams, usePathname } from'next/navigation';
+import Link from 'next/link';
+import { buildThemeFilterHref, type AgeRoute, type Difficulty } from '@/lib/themeFilters';
 import styles from'./DifficultyFilterBar.module.css';
 
 interface DifficultyFilterBarProps {
   isEn: boolean;
+  basePath: string;
+  currentDifficulty?: Difficulty;
+  activeAge?: AgeRoute;
   counts: {
     all: number;
     easy: number;
     medium: number;
     hard: number;
   };
+  ageCounts: {
+    all: number;
+    toddlers: number;
+    kids: number;
+    teens: number;
+  };
 }
 
-export default function DifficultyFilterBar({ isEn, counts }: DifficultyFilterBarProps) {
-  const router = useRouter();
-  const pathname = usePathname();
-  const searchParams = useSearchParams();
-  const currentDiff = searchParams.get('difficulty') ||'all';
-
-  const handleSelect = (value: string) => {
-    const params = new URLSearchParams(searchParams.toString());
-    if (value ==='all') {
-      params.delete('difficulty');
-    } else {
-      params.set('difficulty', value);
-    }
-    params.delete('page'); // Reset to page 1 on filter change
-    const queryString = params.toString();
-    router.push(queryString ?`${pathname}?${queryString}`: pathname, { scroll: false });
-  };
-
+export default function DifficultyFilterBar({
+  isEn,
+  basePath,
+  currentDifficulty,
+  activeAge,
+  counts,
+  ageCounts,
+}: DifficultyFilterBarProps) {
   const filters = [
     {
       id:'all',
@@ -52,7 +50,14 @@ export default function DifficultyFilterBar({ isEn, counts }: DifficultyFilterBa
       label: isEn ?'Hard':'Moeilijk',
       count: counts.hard,
     },
-  ];
+  ] as const;
+
+  const ages = [
+    { id: 'all', label: isEn ? 'All Ages' : 'Alle Leeftijden', count: ageCounts.all },
+    { id: 'toddlers', label: isEn ? 'Toddlers' : 'Peuters', count: ageCounts.toddlers },
+    { id: 'kids', label: isEn ? 'Kids' : 'Kinderen', count: ageCounts.kids },
+    { id: 'teens', label: isEn ? 'Teens' : 'Tieners', count: ageCounts.teens },
+  ] as const;
 
   return (
     <div className={styles.container}>
@@ -62,19 +67,45 @@ export default function DifficultyFilterBar({ isEn, counts }: DifficultyFilterBa
 
       <div className={styles.filterGrid}>
         {filters.map(item => {
-          const isActive = currentDiff === item.id || (item.id ==='easy'&& currentDiff ==='kids') || (item.id ==='medium'&& currentDiff ==='teens') || (item.id ==='hard'&& currentDiff ==='adults');
+          const isActive = item.id === (currentDifficulty || 'all');
 
           return (
-            <button
+            <Link
               key={item.id}
-              onClick={() => handleSelect(item.id)}
+              href={buildThemeFilterHref(basePath, {
+                age: activeAge,
+                difficulty: item.id === 'all' ? undefined : item.id,
+              })}
               className={`${styles.filterBtn} ${isActive ? styles.active :''}`}
-              type="button">
+              aria-current={isActive ? 'page' : undefined}>
               <span className={styles.btnLabel}>{item.label}</span>
               {item.count !== undefined && (
                 <span className={styles.countBadge}>{item.count}</span>
               )}
-            </button>
+            </Link>
+          );
+        })}
+      </div>
+
+      <div className={styles.labelGroup}>
+        <span className={styles.title}>{isEn ? 'Browse by Age:' : 'Bekijk op Leeftijd:'}</span>
+      </div>
+      <div className={styles.filterGrid}>
+        {ages.map(item => {
+          const isActive = item.id === (activeAge || 'all');
+          return (
+            <Link
+              key={item.id}
+              href={buildThemeFilterHref(basePath, {
+                age: item.id === 'all' ? undefined : item.id,
+                difficulty: currentDifficulty,
+              })}
+              className={`${styles.filterBtn} ${isActive ? styles.active : ''}`}
+              aria-current={isActive ? 'page' : undefined}
+            >
+              <span className={styles.btnLabel}>{item.label}</span>
+              <span className={styles.countBadge}>{item.count}</span>
+            </Link>
           );
         })}
       </div>

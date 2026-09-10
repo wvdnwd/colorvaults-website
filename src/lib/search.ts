@@ -1,5 +1,6 @@
 import { getColoringPages, getMainHubs, getThemes, type ColoringPage } from './api';
 import { buildSearchIndex } from './search-index';
+import { getPageDifficulty, normalizeDifficulty } from './themeFilters';
 
 export interface SearchEntry {
   lang: string;
@@ -30,17 +31,14 @@ export function searchCatalog(lang: string, params: URLSearchParams): SearchEntr
   const query = (params.get('q') || '').trim().toLowerCase();
   const theme = params.get('theme');
   const age = params.get('age');
-  const difficulty = params.get('difficulty')?.toLowerCase();
+  const difficulty = normalizeDifficulty(params.get('difficulty'));
   const type = params.get('type');
   return indices.get(lang)!.flatMap(entry => {
     if (type && entry.type !== type) return [];
     if (theme && entry.parentTheme !== theme) return [];
     if (age && !(Object.hasOwn(ages, age) ? ages[age] : [age]).includes(entry.ageGroup || '')) return [];
     if (difficulty) {
-      const inferred = ages.kids.includes(entry.ageGroup || '') ? 'easy'
-        : ages.teens.includes(entry.ageGroup || '') ? 'medium'
-        : ages.adults.includes(entry.ageGroup || '') ? 'hard' : '';
-      if ((entry.difficulty || inferred) !== difficulty) return [];
+      if (!entry.ageGroup || getPageDifficulty({ ageGroup: entry.ageGroup, difficulty: entry.difficulty }) !== difficulty) return [];
     }
     if (!query) return [{ entry, score: 0 }];
     const title = entry.title.toLowerCase();

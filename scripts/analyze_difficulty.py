@@ -18,9 +18,8 @@ from pathlib import Path
 
 try:
     from PIL import Image
-    import numpy as np
 except ImportError:
-    print("ERROR: Pillow and numpy are required. Run: pip install pillow numpy")
+    print("ERROR: Pillow is required. Run: pip install pillow")
     sys.exit(1)
 
 # Directories to scan
@@ -138,9 +137,12 @@ def main():
     print(f"  Newly analyzed: {analyzed}")
     print(f"  Skipped (cached): {skipped}")
     print(f"  Total in cache: {len(cache)}")
-    print(f"  Easy:   {easy} ({easy/len(cache)*100:.1f}%)")
-    print(f"  Medium: {medium} ({medium/len(cache)*100:.1f}%)")
-    print(f"  Hard:   {hard} ({hard/len(cache)*100:.1f}%)")
+    total = len(cache)
+    def percentage(count):
+        return count / total * 100 if total else 0.0
+    print(f"  Easy:   {easy} ({percentage(easy):.1f}%)")
+    print(f"  Medium: {medium} ({percentage(medium):.1f}%)")
+    print(f"  Hard:   {hard} ({percentage(hard):.1f}%)")
     print(f"  Output: {OUTPUT_FILE}")
 
 
