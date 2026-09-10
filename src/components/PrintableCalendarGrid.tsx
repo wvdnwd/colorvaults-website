@@ -3,6 +3,7 @@
 import React, { useState, useEffect, useTransition } from 'react';
 import SafeImage from './SafeImage';
 import { CalendarMonth, CalendarThemeBundle } from '@/data/calendarData';
+import { generateMonthGrid } from '@/lib/calendar';
 import styles from './PrintableCalendarGrid.module.css';
 
 interface PrintableCalendarProps {
@@ -269,21 +270,26 @@ export default function PrintableCalendarGrid({ themes = [], months: initialMont
                 ))}
               </div>
 
-              <div className={styles.plannerDaysGrid}>
-                {Array.from({ length: 35 }).map((_, i) => {
-                  const dayNum = i + 1;
-                  const isValidDay = dayNum <= activeMonth.days;
-
-                  return (
-                    <div
-                      key={i}
-                      className={`${styles.plannerDayBox} ${!isValidDay ? styles.plannerDayBoxEmpty : ''}`}
-                    >
-                      <span>{isValidDay ? dayNum : ''}</span>
-                    </div>
-                  );
-                })}
-              </div>
+              {(() => {
+                const monthGrid = generateMonthGrid(year, activeMonth.monthNumber);
+                return (
+                  <div
+                    className={styles.plannerDaysGrid}
+                    style={{
+                      gridTemplateRows: `repeat(${monthGrid.rowCount}, 1fr)`,
+                    }}
+                  >
+                    {monthGrid.cells.map((cell, i) => (
+                      <div
+                        key={i}
+                        className={`${styles.plannerDayBox} ${!cell.isCurrentMonth ? styles.plannerDayBoxEmpty : ''}`}
+                      >
+                        <span>{cell.dayNumber ?? ''}</span>
+                      </div>
+                    ))}
+                  </div>
+                );
+              })()}
             </div>
 
             <div className={styles.sheetFooter}>
@@ -678,34 +684,34 @@ export default function PrintableCalendarGrid({ themes = [], months: initialMont
                 ))}
               </div>
 
-              <div style={{
-                display: 'grid',
-                gridTemplateColumns: 'repeat(7, 1fr)',
-                gridAutoRows: '45px',
-                gap: '4px',
-              }}>
-                {Array.from({ length: 35 }).map((_, i) => {
-                  const dayNum = i + 1;
-                  const isValidDay = dayNum <= m.days;
-
-                  return (
-                    <div
-                      key={i}
-                      style={{
-                        border: '1.5px solid #CBD5E1',
-                        borderRadius: '4px',
-                        padding: '4px',
-                        fontSize: '1rem',
-                        fontWeight: 700,
-                        color: isValidDay ? '#0F172A' : 'transparent',
-                        background: isValidDay ? '#FFFFFF' : '#F8FAFC',
-                      }}
-                    >
-                      {isValidDay ? dayNum : ''}
-                    </div>
-                  );
-                })}
-              </div>
+              {(() => {
+                const mGrid = generateMonthGrid(year, m.monthNumber);
+                return (
+                  <div style={{
+                    display: 'grid',
+                    gridTemplateColumns: 'repeat(7, 1fr)',
+                    gridAutoRows: mGrid.rowCount === 6 ? '38px' : '45px',
+                    gap: '4px',
+                  }}>
+                    {mGrid.cells.map((cell, i) => (
+                      <div
+                        key={i}
+                        style={{
+                          border: '1.5px solid #CBD5E1',
+                          borderRadius: '4px',
+                          padding: '4px',
+                          fontSize: '1rem',
+                          fontWeight: 700,
+                          color: cell.isCurrentMonth ? '#0F172A' : 'transparent',
+                          background: cell.isCurrentMonth ? '#FFFFFF' : '#F8FAFC',
+                        }}
+                      >
+                        {cell.dayNumber ?? ''}
+                      </div>
+                    ))}
+                  </div>
+                );
+              })()}
             </div>
 
             <div style={{ textAlign: 'center', fontSize: '0.85rem', color: '#94A3B8', marginTop: '0.5cm' }}>

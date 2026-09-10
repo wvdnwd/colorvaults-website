@@ -13,7 +13,8 @@
     "generate:data": "node scripts/generate-real-data.js",
     "generate:search": "node scripts/generate-search-index.js",
     "generate:all": "npm run generate:data && npm run generate:search",
-    "prebuild": "npm run generate:search"
+    "prebuild": "npm run generate:search",
+    "test": "tsx --test tests/*.test.ts"
   },
   "dependencies": {
     "@emnapi/core": "1.11.3",
@@ -32,6 +33,7 @@
   },
   "devDependencies": {
     "eslint": "^9",
-    "eslint-config-next": "16.3.4"
+    "eslint-config-next": "16.3.4",
+    "tsx": "^4.23.13"
   }
 }

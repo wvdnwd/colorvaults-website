@@ -104,7 +104,7 @@ export default function ThemeFaqSection({
     ...getGenreFaqs(),
     {
       question: `What paper size is recommended for best print quality?`,
-      answer: `All our line art coloring sheets are rendered in high-resolution (300 DPI) and formatted to fit both standard international A4 and US Letter (8.5 x 11 inch) paper. For standard coloring, regular 80 gsm printer paper works wonderfully. For markers, watercolors, or crafts, we recommend 120–160 gsm cardstock to prevent bleed-through.`,
+      answer: `All our line art coloring sheets are formatted to fit both standard international A4 and US Letter (8.5 x 11 inch) paper. For standard coloring, regular 80 gsm printer paper works wonderfully. For markers, watercolors, or crafts, heavier paper (120–160 gsm) is recommended.`,
     },
     {
       question: `Can teachers and educators use these in classrooms and daycare?`,
@@ -130,7 +130,7 @@ export default function ThemeFaqSection({
     ...getGenreFaqs(),
     {
       question: `Welk papier en printerformaat is het beste om te gebruiken?`,
-      answer: `Onze kleurplaten zijn ontworpen in haarscherpe 300 DPI resolutie en geoptimaliseerd voor standaard A4-formaat (en US Letter). Voor potloden en waskrijtjes volstaat standaard printpapier (80 g/m²). Ga je aan de slag met viltstiften, waterverf of knutselwerkjes? Dan adviseren we steviger papier van 120–160 g/m² om doordrukken te voorkomen.`,
+      answer: `Onze kleurplaten zijn geoptimaliseerd voor standaard A4-formaat (en US Letter). Voor potloden en waskrijtjes volstaat standaard printpapier (80 g/m²). Ga je aan de slag met viltstiften, waterverf of knutselwerkjes? Dan adviseren we steviger papier van 120–160 g/m².`,
     },
     {
       question: `Mogen leerkrachten en kinderopvang deze kleurplaten in de klas gebruiken?`,

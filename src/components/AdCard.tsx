@@ -1,6 +1,7 @@
 'use client';
 
 import { useEffect, useRef } from 'react';
+import { useConsent } from '@/components/ConsentProvider';
 
 /**
  * AdCard — an AdSense display ad styled as a coloring page card.
@@ -9,8 +10,10 @@ import { useEffect, useRef } from 'react';
 export default function AdCard() {
   const adRef = useRef<HTMLModElement>(null);
   const pushedRef = useRef(false);
+  const { consent } = useConsent();
 
   useEffect(() => {
+    if (consent !== 'accepted') return;
     if (pushedRef.current) return;
     try {
       if (typeof window !== 'undefined') {
@@ -23,7 +26,7 @@ export default function AdCard() {
     } catch (e) {
       console.warn('AdCard push notice:', e);
     }
-  }, []);
+  }, [consent]);
 
   return (
     <div

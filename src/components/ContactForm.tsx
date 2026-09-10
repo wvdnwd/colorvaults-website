@@ -9,29 +9,34 @@ export default function ContactForm({ lang, isEn }: { lang: string; isEn: boolea
  email:'',
  subject:'',
  message:''});
- const [status, setStatus] = useState<'idle'|'submitting'|'success'|'error'>('idle');
+  const [status, setStatus] = useState<'idle' | 'submitting' | 'success' | 'error'>('idle');
+  const [errorMessage, setErrorMessage] = useState('');
 
- const handleSubmit = async (e: React.FormEvent) => {
- e.preventDefault();
- if (status ==='submitting') return;
- setStatus('submitting');
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    if (status === 'submitting') return;
+    setStatus('submitting');
+    setErrorMessage('');
 
- try {
- const res = await fetch('/api/contact', {
- method:'POST',
- headers: {'Content-Type':'application/json'},
- body: JSON.stringify(formData),
- });
+    try {
+      const res = await fetch('/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(formData),
+      });
 
- if (res.ok) {
- setStatus('success');
- } else {
- setStatus('error');
- }
- } catch {
- setStatus('error');
- }
- };
+      if (res.ok) {
+        setStatus('success');
+      } else {
+        const data = await res.json().catch(() => ({}));
+        setErrorMessage(data.error || (isEn ? 'Failed to send message. Please try again.' : 'Verzenden mislukt. Probeer het opnieuw.'));
+        setStatus('error');
+      }
+    } catch {
+      setErrorMessage(isEn ? 'Network error. Please try again later.' : 'Netwerkfout. Probeer het later opnieuw.');
+      setStatus('error');
+    }
+  };
 
 
  const inputStyle: React.CSSProperties = {
@@ -155,6 +160,12 @@ export default function ContactForm({ lang, isEn }: { lang: string; isEn: boolea
  placeholder={isEn ?'Tell us how we can help...':'Vertel ons hoe we kunnen helpen...'} 
  />
  </div>
+
+  {status === 'error' && (
+    <div style={{ padding: '0.85rem 1rem', background: '#FEE2E2', border: '1px solid #EF4444', borderRadius: '8px', color: '#B91C1C', fontSize: '0.85rem', fontWeight: 600 }}>
+      {errorMessage || (isEn ? 'An error occurred. Please verify your email and try again.' : 'Er is een fout opgetreden. Controleer je e-mailadres en probeer opnieuw.')}
+    </div>
+  )}
 
  <button 
  type="submit"disabled={status ==='submitting'}

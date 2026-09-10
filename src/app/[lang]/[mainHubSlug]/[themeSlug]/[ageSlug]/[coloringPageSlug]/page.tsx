@@ -27,52 +27,33 @@ export async function generateStaticParams() {
   return [...pagesEn, ...pagesNl, ...pagesDe, ...pagesFr];
 }
 
+import { createMetadata } from '@/lib/seo';
+import { SITE_ORIGIN } from '@/lib/site';
+
 export async function generateMetadata({ params }: { params: Promise<{ lang: string, mainHubSlug: string, themeSlug: string, ageSlug: string, coloringPageSlug: string }> }) {
   const { lang, mainHubSlug, themeSlug, ageSlug, coloringPageSlug } = await params;
   const page = getPageBySlug(lang, mainHubSlug, themeSlug, ageSlug, coloringPageSlug);
-  if (!page) return {};
+  if (!page || page.parentHub !== mainHubSlug || page.parentTheme !== themeSlug || page.ageGroup !== ageSlug) return {};
   
-  const ogImageUrl = `/api/og?title=${encodeURIComponent(page.title)}&image=${encodeURIComponent(page.image)}`;
+  const rawTitle = page.metaTitle || `${page.title} Coloring Page`;
+  const title = rawTitle.includes('ColorVaults') ? rawTitle : `${rawTitle} | ColorVaults`;
+  const description = page.metaDescription || page.shortDescription;
+  const imageUrl = page.image ? (page.image.startsWith('http') ? page.image : `${SITE_ORIGIN}${page.image}`) : `${SITE_ORIGIN}/images/banner.jpg`;
   
-  return {
-    title: page.metaTitle || page.title,
-    description: page.metaDescription || page.shortDescription,
-    alternates: {
-      canonical: `/${lang}/${mainHubSlug}/${themeSlug}/${ageSlug}/${page.slug}`,
-      languages: {
-        en: `/en/${mainHubSlug}/${themeSlug}/${ageSlug}/${page.slug}`,
-        nl: `/nl/${mainHubSlug}/${themeSlug}/${ageSlug}/${page.slug}`,
-        de: `/de/${mainHubSlug}/${themeSlug}/${ageSlug}/${page.slug}`,
-        fr: `/fr/${mainHubSlug}/${themeSlug}/${ageSlug}/${page.slug}`,
-        'x-default': `/en/${mainHubSlug}/${themeSlug}/${ageSlug}/${page.slug}`,
-      },
-    },
-    openGraph: {
-      title: page.metaTitle || page.title,
-      description: page.metaDescription || page.shortDescription,
-      images: [
-        {
-          url: ogImageUrl,
-          width: 1200,
-          height: 630,
-          alt: page.title,
-        }
-      ]
-    },
-    twitter: {
-      card: 'summary_large_image',
-      title: page.metaTitle || page.title,
-      description: page.metaDescription || page.shortDescription,
-      images: [ogImageUrl]
-    }
-  };
+  return createMetadata({
+    lang,
+    path: `/${mainHubSlug}/${themeSlug}/${ageSlug}/${page.slug}`,
+    title,
+    description,
+    image: imageUrl,
+  });
 }
 
 export default async function ColoringPageDetail({ params }: { params: Promise<{ lang: string, mainHubSlug: string, themeSlug: string, ageSlug: string, coloringPageSlug: string }> }) {
   const { lang, mainHubSlug, themeSlug, ageSlug, coloringPageSlug } = await params;
 
   const page = getPageBySlug(lang, mainHubSlug, themeSlug, ageSlug, coloringPageSlug);
-  if (!page) return notFound();
+  if (!page || page.parentHub !== mainHubSlug || page.parentTheme !== themeSlug || page.ageGroup !== ageSlug) return notFound();
 
   const hub = getMainHubs(lang).find(h => h.slug === mainHubSlug);
   const theme = getThemes(lang).find(t => t.slug === themeSlug && t.parentHub === mainHubSlug);
@@ -144,7 +125,7 @@ export default async function ColoringPageDetail({ params }: { params: Promise<{
                 {
                   question: isEn ?`What paper size is best for printing?`:`Welk papierformaat is het beste om af te drukken?`,
                   answer: isEn
-                    ?`These templates are optimized for standard A4 and US Letter sizes at high resolution (300 DPI equivalent line art).`:`Deze sjablonen zijn geoptimaliseerd voor standaard A4 en Letter formaat in hoge resolutie.`},
+                    ?`These templates are formatted for standard A4 and US Letter sizes with clear outlines for clean home and classroom printing.`:`Deze sjablonen zijn geoptimaliseerd voor standaard A4 en Letter formaat in hoge resolutie.`},
                 {
                   question: isEn ?`Can I color this template digitally on iPad or tablet?`:`Kan ik deze kleurplaat ook digitaal inkleuren op een tablet?`,
                   answer: isEn
@@ -214,8 +195,8 @@ export default async function ColoringPageDetail({ params }: { params: Promise<{
             <h2>{isEn ? `About the "${page.title}" Coloring Sheet` : `Over de "${page.title}" Kleurplaat`}</h2>
             <p style={{ lineHeight: 1.8, marginBottom: '1rem' }}>
               {isEn
-                ? `Enjoy this high-definition printable "${page.title}" coloring template from our ${theme.title} collection. Carefully formatted with crisp, clean vector outlines on pure white background, this artwork is designed for effortless printing and smooth coloring without ink bleed.`
-                : `Geniet van deze haarscherpe, printbare "${page.title}" kleurplaat uit onze ${theme.title} collectie. Zorgvuldig ontworpen met strakke, diepzwarte vectorcontouren op een witte achtergrond, perfect voor soepel kleurplezier zonder vlekken.`}
+                ? `Enjoy this printable "${page.title}" coloring template from our ${theme.title} collection. Formatted with clear outlines on a clean white background, this artwork is ready for printing and coloring.`
+                : `Geniet van deze printbare "${page.title}" kleurplaat uit onze ${theme.title} collectie. Ontworpen met duidelijke lijnen op een witte achtergrond, direct klaar om te printen en in te kleuren.`}
             </p>
             <p style={{ lineHeight: 1.8, marginBottom: '1.5rem' }}>
               {isEn
@@ -246,8 +227,8 @@ export default async function ColoringPageDetail({ params }: { params: Promise<{
             </h3>
             <p style={{ lineHeight: 1.7 }}>
               {isEn
-                ? 'To print this coloring sheet at full quality without cropped margins: click "Print Free Coloring Page", select A4 or US Letter in portrait mode, and set print scale to "Fit to Printable Area" (100%). You can also download the 300 DPI high-resolution image file directly for digital tablet coloring!'
-                : 'Voor een perfecte afdruk zonder afgesneden randen: klik op "Gratis Kleurplaat Printen", selecteer A4-formaat in staande stand en kies in het printermenu voor "Aanpassen aan pagina" (100% schaal). Liever digitaal kleuren? Download direct het haarscherpe 300 DPI bestand naar je tablet!'}
+                ? 'To print this coloring sheet: click "Print Free Coloring Page", select A4 or US Letter in portrait mode, and set print scale to "Fit to Page" (100%). You can also download the high-resolution image file directly for digital tablet coloring!'
+                : 'Voor een nette afdruk: klik op "Gratis Kleurplaat Printen", selecteer A4-formaat in staande stand en kies in het printermenu voor "Aanpassen aan pagina". Liever digitaal kleuren? Download direct het afbeeldingsbestand naar je tablet!'}
             </p>
           </div>
 

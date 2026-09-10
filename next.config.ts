@@ -62,12 +62,22 @@ const nextConfig: NextConfig = {
       },
     ],
   },
-  async rewrites() {
+  async redirects() {
     return [
       {
-        source: '/:lang/sitemap.xml',
-        destination: '/sitemap.xml',
+        source: '/calendars',
+        destination: '/en/calendars',
+        permanent: true,
       },
+      {
+        source: '/school',
+        destination: '/en/school',
+        permanent: true,
+      },
+    ];
+  },
+  async rewrites() {
+    return [
       {
         source: '/pinterest-feed.xml',
         destination: '/api/pinterest-feed',

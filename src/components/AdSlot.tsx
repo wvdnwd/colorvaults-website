@@ -3,6 +3,8 @@
 import { useEffect, useRef } from'react';
 import styles from'./AdSlot.module.css';
 
+import { useConsent } from '@/components/ConsentProvider';
+
 interface AdSlotProps {
   type?:'banner'|'rectangle'|'in-feed';
   text?: string;
@@ -16,8 +18,10 @@ export default function AdSlot({
 }: AdSlotProps) {
   const adRef = useRef<HTMLModElement>(null);
   const pushedRef = useRef(false);
+  const { consent } = useConsent();
 
   useEffect(() => {
+    if (consent !== 'accepted') return;
     if (pushedRef.current) return;
 
     try {
@@ -32,7 +36,7 @@ export default function AdSlot({
     } catch (e) {
       console.warn('AdSense push notice:', e);
     }
-  }, []);
+  }, [consent]);
 
   // Default slot IDs per ad type (from Google AdSense dashboard)
   const SLOT_IDS: Record<string, string> = {

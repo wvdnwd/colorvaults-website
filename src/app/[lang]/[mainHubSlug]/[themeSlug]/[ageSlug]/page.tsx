@@ -21,14 +21,28 @@ export async function generateStaticParams() {
   return [...agesEn, ...agesNl, ...agesDe, ...agesFr];
 }
 
-export async function generateMetadata({ params }: { params: Promise<{ lang: string, mainHubSlug: string, themeSlug: string, ageSlug: string }> }) {
+import { createMetadata } from '@/lib/seo';
+import { SITE_ORIGIN } from '@/lib/site';
+
+export async function generateMetadata({
+  params,
+  searchParams,
+}: {
+  params: Promise<{ lang: string, mainHubSlug: string, themeSlug: string, ageSlug: string }>;
+  searchParams?: Promise<{ [key: string]: string | string[] | undefined }>;
+}) {
   const { lang, mainHubSlug, themeSlug, ageSlug } = await params;
+  const sParams = searchParams ? await searchParams : {};
+  const pageParam = typeof sParams.page === 'string' ? sParams.page : '1';
+  const currentPage = Math.max(1, parseInt(pageParam || '1', 10));
+
   const agePage = getAgePageBySlug(lang, mainHubSlug, themeSlug, ageSlug);
-  if (!agePage) return {};
+  if (!agePage || agePage.parentHub !== mainHubSlug || agePage.parentTheme !== themeSlug) return {};
+
   const theme = getThemes(lang).find(t => t.parentHub === mainHubSlug && t.slug === themeSlug);
   const ogImageUrl = theme?.image
-    ? `/api/og?title=${encodeURIComponent(agePage.title)}&image=${encodeURIComponent(theme.image)}`
-    : '/images/banner.jpg';
+    ? (theme.image.startsWith('http') ? theme.image : `${SITE_ORIGIN}${theme.image}`)
+    : `${SITE_ORIGIN}/images/banner.jpg`;
 
   let title = `${agePage.title} (Free Printable PDF Coloring Pages) | ColorVaults`;
   if (lang === 'nl') {
@@ -39,29 +53,14 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
     title = `${agePage.title} (Coloriages Gratuits à Imprimer PDF) | ColorVaults`;
   }
 
-  return {
+  return createMetadata({
+    lang,
+    path: `/${mainHubSlug}/${themeSlug}/${ageSlug}`,
     title,
     description: agePage.seoText,
-    alternates: {
-      canonical: `/${lang}/${mainHubSlug}/${themeSlug}/${ageSlug}`,
-      languages: {
-        en: `/en/${mainHubSlug}/${themeSlug}/${ageSlug}`,
-        nl: `/nl/${mainHubSlug}/${themeSlug}/${ageSlug}`,
-        de: `/de/${mainHubSlug}/${themeSlug}/${ageSlug}`,
-        fr: `/fr/${mainHubSlug}/${themeSlug}/${ageSlug}`,
-        'x-default': `/en/${mainHubSlug}/${themeSlug}/${ageSlug}`,
-      },
-    },
-    openGraph: {
-      title,
-      description: agePage.seoText,
-      images: [{ url: ogImageUrl, width: 1200, height: 630, alt: agePage.title }],
-    },
-    twitter: {
-      card: 'summary_large_image',
-      images: [ogImageUrl],
-    },
-  };
+    page: currentPage,
+    image: ogImageUrl,
+  });
 }
 
 export default async function AgePage({ 

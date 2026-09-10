@@ -3,8 +3,10 @@ import { getThemes } from'@/lib/api';
 import { getSearchPage } from '@/lib/search';
 import Breadcrumbs from'@/components/Breadcrumbs';
 
+import { SITE_ORIGIN, VALID_LOCALES } from '@/lib/site';
+
 export async function generateStaticParams() {
-  return [{ lang:'en'}, { lang:'nl'}];
+  return VALID_LOCALES.map(lang => ({ lang }));
 }
 
 export async function generateMetadata({
@@ -16,24 +18,24 @@ export async function generateMetadata({
 }) {
   const { lang } = await params;
   const { q, difficulty, age, theme } = await searchParams;
-  const isEn = lang ==='en';
+  const isEn = lang === 'en';
 
   let titleParts: string[] = [];
 
   if (q) titleParts.push(`"${q}"`);
   if (difficulty) {
     const dMap: Record<string, string> = {
-      easy: isEn ?'Easy':'Makkelijk',
-      medium: isEn ?'Medium':'Gemiddeld',
-      hard: isEn ?'Hard':'Moeilijk',
+      easy: isEn ? 'Easy' : 'Makkelijk',
+      medium: isEn ? 'Medium' : 'Gemiddeld',
+      hard: isEn ? 'Hard' : 'Moeilijk',
     };
     titleParts.push(dMap[difficulty] || difficulty);
   }
   if (age) {
     const aMap: Record<string, string> = {
-      kids: isEn ?'Kids':'Kinderen',
-      teens: isEn ?'Teens':'Tieners',
-      adults: isEn ?'Adults':'Volwassenen',
+      kids: isEn ? 'Kids' : 'Kinderen',
+      teens: isEn ? 'Teens' : 'Tieners',
+      adults: isEn ? 'Adults' : 'Volwassenen',
     };
     titleParts.push(aMap[age] || age);
   }
@@ -43,7 +45,7 @@ export async function generateMetadata({
   }
 
   const mainTitle = titleParts.length > 0
-    ?`${titleParts.join(' • ')} ${isEn ?'Coloring Pages':'Kleurplaten'}`: (isEn ?'Search Free Coloring Pages':'Zoek Gratis Kleurplaten');
+    ? `${titleParts.join(' • ')} ${isEn ? 'Coloring Pages' : 'Kleurplaten'}` : (isEn ? 'Search Free Coloring Pages' : 'Zoek Gratis Kleurplaten');
 
   // Build canonical URL query string
   const urlParams = new URLSearchParams();
@@ -52,22 +54,30 @@ export async function generateMetadata({
   if (age) urlParams.set('age', age);
   if (theme) urlParams.set('theme', theme);
   const qString = urlParams.toString();
-  const canonicalPath = qString ?`/${lang}/search?${qString}`:`/${lang}/search`;
+  const canonicalPath = qString ? `${SITE_ORIGIN}/${lang}/search?${qString}` : `${SITE_ORIGIN}/${lang}/search`;
+
+  const languages: Record<string, string> = {};
+  for (const l of VALID_LOCALES) {
+    languages[l] = `${SITE_ORIGIN}/${l}/search${qString ? `?${qString}` : ''}`;
+  }
+  languages['x-default'] = `${SITE_ORIGIN}/en/search${qString ? `?${qString}` : ''}`;
 
   return {
     title: `${mainTitle} | ColorVaults`,
     description: isEn
       ? `Search and filter thousands of free printable coloring pages by theme, difficulty, and age group.`
       : `Zoek en filter door duizenden gratis printbare kleurplaten op onderwerp, moeilijkheidsgraad en leeftijd.`,
+    robots: {
+      index: false,
+      follow: true,
+      googleBot: {
+        index: false,
+        follow: true,
+      },
+    },
     alternates: {
       canonical: canonicalPath,
-      languages: {
-        en: `/en/search${qString ? `?${qString}` : ''}`,
-        nl: `/nl/search${qString ? `?${qString}` : ''}`,
-        de: `/de/search${qString ? `?${qString}` : ''}`,
-        fr: `/fr/search${qString ? `?${qString}` : ''}`,
-        'x-default': `/en/search${qString ? `?${qString}` : ''}`,
-      },
+      languages,
     },
   };
 }

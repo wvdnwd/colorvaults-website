@@ -86,6 +86,13 @@ function getSkipLinkText(lang: string): string {
   }
 }
 
+import { isValidLocale } from "@/lib/site";
+import { notFound } from "next/navigation";
+
+import { ConsentProvider } from "@/components/ConsentProvider";
+import JsonLd from "@/components/JsonLd";
+import { buildWebsiteAndOrgSchema } from "@/lib/structuredData";
+
 export default async function RootLayout({
   children,
   params,
@@ -94,6 +101,9 @@ export default async function RootLayout({
   params: Promise<{ lang: string }>;
 }>) {
   const { lang } = await params;
+  if (!isValidLocale(lang)) {
+    notFound();
+  }
   return (
     <html lang={lang} className={`${fredoka.variable} ${nunito.variable}`} data-theme="dark">
       <head>
@@ -101,57 +111,28 @@ export default async function RootLayout({
         <meta name="p:domain_verify" content="314125f62194f4aab9b5275a55bc34a2" />
       </head>
       <body>
-        <Script
-          async
-          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1184801748776428"
-          crossOrigin="anonymous"
-          strategy="afterInteractive"
-        />
-        {gaId && (
-          <>
-            <Script
-              async
-              src={`https://www.googletagmanager.com/gtag/js?id=${gaId}`}
-              strategy="afterInteractive"
-            />
-            <Script id="google-analytics" strategy="afterInteractive">
-              {`window.dataLayer = window.dataLayer || [];
-                function gtag(){dataLayer.push(arguments);}
-                gtag('js', new Date());
-                gtag('config','${gaId}');`}
-            </Script>
-          </>
-        )}
-
         <a href="#main-content" className="skip-link">
           {getSkipLinkText(lang)}
         </a>
-        <script
-          type="application/ld+json"dangerouslySetInnerHTML={{ __html: safeJsonLd({"@context":"https://schema.org","@graph": [
-              {"@type":"WebSite","@id":"https://www.colorvaults.com/#website","url":"https://www.colorvaults.com","name":"ColorVaults","description":"Free premium printable coloring pages for all ages","inLanguage": ["en","nl","de","fr"],"potentialAction": [{"@type":"SearchAction","target": {"@type":"EntryPoint","urlTemplate":`https://www.colorvaults.com/${lang}/search?q={search_term_string}`},"query-input":"required name=search_term_string"}]
-              },
-              {"@type":"Organization","@id":"https://www.colorvaults.com/#organization","name":"ColorVaults","url":"https://www.colorvaults.com","logo": {"@type":"ImageObject","url":"https://www.colorvaults.com/images/banner.jpg","width": 1200,"height": 630
-                }
-              }
-            ]
-          }) }}
-        />
-        <ThemeProvider>
-          <FavoritesProvider>
-            <ColoringBookProvider>
-              <div className="layout-container">
-                <HolidayDecorationOverlay lang={lang} />
-                <Navbar lang={lang} />
-                <main id="main-content"><PageTransition>{children}</PageTransition></main>
-                <Footer lang={lang} />
-                <CookieBanner lang={lang} />
-                <BackToTop />
-                <GoogleTranslator />
-                <StickyBottomAd isEn={lang !== 'nl'} />
-              </div>
-            </ColoringBookProvider>
-          </FavoritesProvider>
-        </ThemeProvider>
+        <JsonLd data={buildWebsiteAndOrgSchema(lang)} />
+        <ConsentProvider gaId={gaId}>
+          <ThemeProvider>
+            <FavoritesProvider>
+              <ColoringBookProvider>
+                <div className="layout-container">
+                  <HolidayDecorationOverlay lang={lang} />
+                  <Navbar lang={lang} />
+                  <main id="main-content"><PageTransition>{children}</PageTransition></main>
+                  <Footer lang={lang} />
+                  <CookieBanner lang={lang} />
+                  <BackToTop />
+                  <GoogleTranslator />
+                  <StickyBottomAd isEn={lang !== 'nl'} />
+                </div>
+              </ColoringBookProvider>
+            </FavoritesProvider>
+          </ThemeProvider>
+        </ConsentProvider>
       </body>
     </html>
   );

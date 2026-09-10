@@ -32,7 +32,7 @@ export default async function AboutPage({ params }: { params: Promise<{ lang: st
         {
           icon: '🎨',
           title: 'Artistic Excellence',
-          desc: 'Every illustration is designed with sharp, high-resolution vector lines optimized for crisp printing on standard home and school printers.',
+          desc: 'Every illustration is crafted with clear, clean outlines optimized for crisp printing on standard home and school printers.',
         },
         {
           icon: '📚',
@@ -54,7 +54,7 @@ export default async function AboutPage({ params }: { params: Promise<{ lang: st
         {
           icon: '🎨',
           title: 'Artistieke Kwaliteit',
-          desc: 'Elke illustratie is ontworpen met scherpe, hoge-resolutie vectorlijnen geoptimaliseerd voor haarscherp printen op elke printer.',
+          desc: 'Elke illustratie is ontworpen met duidelijke, strakke lijnen geoptimaliseerd voor scherp printen op elke printer.',
         },
         {
           icon: '📚',

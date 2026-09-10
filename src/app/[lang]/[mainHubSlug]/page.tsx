@@ -9,6 +9,8 @@ import AdCard from'@/components/AdCard';
 import ThemeCard from'@/components/ThemeCard';
 import * as motion from'framer-motion/client';
 import React from'react';
+import { createMetadata } from '@/lib/seo';
+import { SITE_ORIGIN } from '@/lib/site';
 
 export async function generateStaticParams() {
   try { validateDataModel(); } catch(e) { console.error(e); throw e; }
@@ -24,8 +26,8 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
   const hub = getMainHubs(lang).find(h => h.slug === mainHubSlug);
   if (!hub) return {};
   const ogImageUrl = hub.image
-    ? `/api/og?title=${encodeURIComponent(hub.title + ' Coloring Pages')}&image=${encodeURIComponent(hub.image)}`
-    : '/images/banner.jpg';
+    ? (hub.image.startsWith('http') ? hub.image : `${SITE_ORIGIN}${hub.image}`)
+    : `${SITE_ORIGIN}/images/banner.jpg`;
 
   let title = `${hub.title} Coloring Pages (Free Printable PDFs) | ColorVaults`;
   if (lang === 'nl') {
@@ -36,29 +38,13 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
     title = `Coloriages ${hub.title} (Gratuits à Imprimer) | ColorVaults`;
   }
 
-  return {
+  return createMetadata({
+    lang,
+    path: `/${mainHubSlug}`,
     title,
     description: hub.description,
-    alternates: {
-      canonical: `/${lang}/${hub.slug}`,
-      languages: {
-        'en': `/en/${hub.slug}`,
-        'nl': `/nl/${hub.slug}`,
-        'de': `/de/${hub.slug}`,
-        'fr': `/fr/${hub.slug}`,
-        'x-default': `/en/${hub.slug}`,
-      },
-    },
-    openGraph: {
-      title,
-      description: hub.description,
-      images: [{ url: ogImageUrl, width: 1200, height: 630, alt: hub.title }],
-    },
-    twitter: {
-      card: 'summary_large_image',
-      images: [ogImageUrl],
-    },
-  };
+    image: ogImageUrl,
+  });
 }
 
 export default async function MainHubPage({ params }: { params: Promise<{ lang: string, mainHubSlug: string }> }) {
@@ -300,7 +286,7 @@ export default async function MainHubPage({ params }: { params: Promise<{ lang: 
               ${allThemes.slice(0, 6).map(t =>`<li><a href="/${lang}/${hub.slug}/${t.slug}"><strong>${t.title}</strong></a> — ${t.description}</li>`).join('')}
             </ul>
             <h3>Easy Printing & High Quality Downloads</h3>
-            <p>Download your favorite ${hub.title} coloring pages instantly in clean line vector PDF format. Ideal for toddlers, children, teens, and adults.</p>`:`<h2>Gratis Printbare ${hub.title} Kleurplaten Collectie</h2>
+            <p>Download your favorite ${hub.title} coloring pages instantly in clean printable PDF format. Ideal for toddlers, children, teens, and adults.</p>`:`<h2>Gratis Printbare ${hub.title} Kleurplaten Collectie</h2>
             <p>${hub.description} Ontdek onze volledige verzameling van hoge resolutie printbare kleurplaten, zorgvuldig ingedeeld per subthema en moeilijkheidsgraad.</p>
             <h3>Populaire Thema's in ${hub.title}</h3>
             <ul>

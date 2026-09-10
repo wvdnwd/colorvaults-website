@@ -1,21 +1,21 @@
-export const dynamic ='force-static';
-import type { MetadataRoute } from'next';
+export const dynamic = 'force-static';
+import type { MetadataRoute } from 'next';
+import { SITE_ORIGIN, VALID_LOCALES } from '@/lib/site';
 
 export default function robots(): MetadataRoute.Robots {
+  const languageSitemaps = VALID_LOCALES.map(lang => `${SITE_ORIGIN}/sitemap-pages/${lang}`);
+
   return {
     rules: [
       {
-        userAgent:'*',
-        allow:'/',
+        userAgent: '*',
+        allow: '/',
         disallow: ['/api/'],
       },
     ],
     sitemap: [
-      'https://www.colorvaults.com/sitemap.xml',
-      'https://www.colorvaults.com/sitemap-pages/en',
-      'https://www.colorvaults.com/sitemap-pages/nl',
-      'https://www.colorvaults.com/sitemap-pages/de',
-      'https://www.colorvaults.com/sitemap-pages/fr',
+      `${SITE_ORIGIN}/sitemap.xml`,
+      ...languageSitemaps,
     ],
   };
 }

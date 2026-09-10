@@ -6,21 +6,41 @@ import NewsletterBox from '@/components/NewsletterBox';
 import PrintableCalendarGrid from '@/components/PrintableCalendarGrid';
 import { getCalendarYear } from '@/data/calendarData';
 
+import { VALID_LOCALES } from '@/lib/site';
+import { createMetadata } from '@/lib/seo';
+
 export async function generateStaticParams() {
-  return [{ lang: 'en' }, { lang: 'nl' }];
+  return VALID_LOCALES.map(lang => ({ lang }));
 }
 
 export async function generateMetadata({ params }: { params: Promise<{ lang: string }> }) {
   const { lang } = await params;
   const isEn = lang === 'en';
-  return {
-    title: isEn
-      ? 'Free Printable 2026 & 2027 Coloring Calendars (34 Theme Editions, 408 Designs) | ColorVaults'
-      : 'Gratis Printbare 2026 & 2027 Kleurkalenders (34 Thema Uitgaven, 408 Tekeningen) | ColorVaults',
-    description: isEn
-      ? 'Download and print our 34 free 12-month printable coloring calendars for 2026 and 2027! Over 408 clean landscape coloring pages across animals, dinosaurs, space, mandalas, fairytales, and monthly planning grids.'
-      : 'Download en print onze 34 gratis 12-maanden jaarkalenders voor 2026 en 2027! Meer dan 408 liggende kleurplaten met dieren, dino’s, ruimte, mandala’s, seizoenen en handige maandplanning.',
-  };
+  const isDe = lang === 'de';
+  const isFr = lang === 'fr';
+
+  const title = isDe
+    ? 'Kostenloser Ausmal-Kalender Generator | ColorVaults'
+    : isFr
+    ? 'Créateur de Calendrier de Coloriage Gratuit | ColorVaults'
+    : isEn
+    ? 'Free Printable Coloring Calendar Maker | ColorVaults'
+    : 'Gratis kleurkalender maken en printen | ColorVaults';
+
+  const description = isDe
+    ? 'Erstelle und drucke deinen kostenlosen 12-Monate Ausmal-Kalender für 2026. Wähle deine Lieblingsmotive und drucke direkt im DIN A4 Format.'
+    : isFr
+    ? 'Créez et imprimez votre calendrier de coloriage personnalisé 12 mois pour 2026. Gratuit au format A4.'
+    : isEn
+    ? 'Create and print your free 12-month custom coloring calendar for 2026. Choose favorite designs, add notes, and print in clean A4 / Letter format.'
+    : 'Maak en print je eigen gratis 12-maanden kleurkalender voor 2026. Kies je favoriete tekeningen en print direct in A4-formaat.';
+
+  return createMetadata({
+    lang,
+    path: '/calendars',
+    title,
+    description,
+  });
 }
 
 export default async function CalendarsPage({ params }: { params: Promise<{ lang: string }> }) {
@@ -57,7 +77,13 @@ export default async function CalendarsPage({ params }: { params: Promise<{ lang
           </span>
 
           <h1 className="title-h1" style={{ fontSize: '2.5rem', fontWeight: 900, lineHeight: 1.25, color: '#0F172A' }}>
-            {isEn ? 'Free Printable Custom Coloring Calendars' : 'Gratis Printbare Gepersonaliseerde Kleurkalenders'}
+            {lang === 'de'
+              ? 'Kostenloser Ausmal-Kalender Generator'
+              : lang === 'fr'
+              ? 'Créateur de Calendrier de Coloriage Gratuit'
+              : isEn
+              ? 'Free Printable Coloring Calendar Maker'
+              : 'Gratis kleurkalender maken en printen'}
           </h1>
 
           <p style={{ color: '#475569', fontSize: '1.1rem', marginTop: '0.8rem', lineHeight: 1.7, maxWidth: '680px', margin: '0.8rem auto 0' }}>

@@ -7,21 +7,41 @@ import NewsletterBox from '@/components/NewsletterBox';
 import SchoolWorksheetCard from '@/components/SchoolWorksheetCard';
 import { SCHOOL_WORKSHEETS_DATA } from '@/data/schoolData';
 
+import { VALID_LOCALES } from '@/lib/site';
+import { createMetadata } from '@/lib/seo';
+
 export async function generateStaticParams() {
-  return [{ lang: 'en' }, { lang: 'nl' }];
+  return VALID_LOCALES.map(lang => ({ lang }));
 }
 
 export async function generateMetadata({ params }: { params: Promise<{ lang: string }> }) {
   const { lang } = await params;
   const isEn = lang === 'en';
-  return {
-    title: isEn
-      ? 'School & Educational Worksheets (Math, Letters, Spelling) | ColorVaults'
-      : 'School & Educatieve Werkbladen (Rekenen, Schrijven, Woorden) | ColorVaults',
-    description: isEn
-      ? 'Download 100+ free printable educational coloring worksheets for kids! Math sums, letter tracing A-Z, handwriting practice, and bilingual vocabulary.'
-      : 'Download 100+ gratis printbare educatieve werkbladen voor kinderen! Rekensommen, letters schrijven A-Z, woordenschat en kleuren.',
-  };
+  const isDe = lang === 'de';
+  const isFr = lang === 'fr';
+
+  const title = isDe
+    ? 'Kostenlose Arbeitsblätter für Kinder | ColorVaults'
+    : isFr
+    ? 'Fiches Pédagogiques Gratuites pour Enfants | ColorVaults'
+    : isEn
+    ? 'Free Printable Worksheets for Kids | ColorVaults'
+    : 'Gratis werkbladen voor kinderen | ColorVaults';
+
+  const description = isDe
+    ? 'Lade kostenlose druckbare Arbeitsblätter für Kinder herunter! Rechnen, Buchstaben schreiben von A bis Z und spielerisches Lernen.'
+    : isFr
+    ? 'Téléchargez des fiches pédagogiques gratuites à imprimer pour enfants! Calcul, écriture des lettres de A à Z et vocabulaire.'
+    : isEn
+    ? 'Download 100+ free printable educational worksheets for kids! Math, alphabet letter tracing A-Z, handwriting practice, and learning games.'
+    : 'Download meer dan 100 gratis printbare educatieve werkbladen voor kinderen! Rekenen, letters overtrekken A-Z, schrijven en woordenschat.';
+
+  return createMetadata({
+    lang,
+    path: '/school',
+    title,
+    description,
+  });
 }
 
 export default async function SchoolHubPage({ params }: { params: Promise<{ lang: string }> }) {
@@ -85,7 +105,13 @@ export default async function SchoolHubPage({ params }: { params: Promise<{ lang
           </span>
 
           <h1 className="title-h1" style={{ fontSize: '2.5rem', fontWeight: 900, lineHeight: 1.25, color: '#0F172A' }}>
-            {isEn ? 'School, Math & Handwriting Worksheets' : 'School, Rekenen & Letters Schrijven'}
+            {lang === 'de'
+              ? 'Kostenlose Arbeitsblätter für Kinder'
+              : lang === 'fr'
+              ? 'Fiches Pédagogiques Gratuites pour Enfants'
+              : isEn
+              ? 'Free Printable Worksheets for Kids'
+              : 'Gratis werkbladen voor kinderen'}
           </h1>
 
           <p style={{ color: '#475569', fontSize: '1.1rem', marginTop: '0.8rem', lineHeight: 1.7, maxWidth: '680px', margin: '0.8rem auto 0' }}>

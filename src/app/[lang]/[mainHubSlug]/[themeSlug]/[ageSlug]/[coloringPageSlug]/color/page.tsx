@@ -16,49 +16,45 @@ export async function generateStaticParams() {
   return [...pagesEn, ...pagesNl];
 }
 
+import { createMetadata } from '@/lib/seo';
+import { SITE_ORIGIN } from '@/lib/site';
+
 export async function generateMetadata({ params }: { params: Promise<{ lang: string, mainHubSlug: string, themeSlug: string, ageSlug: string, coloringPageSlug: string }> }) {
   const { lang, mainHubSlug, themeSlug, ageSlug, coloringPageSlug } = await params;
   const page = getPageBySlug(lang, mainHubSlug, themeSlug, ageSlug, coloringPageSlug);
-  if (!page) return {};
+  if (!page || page.parentHub !== mainHubSlug || page.parentTheme !== themeSlug || page.ageGroup !== ageSlug) return {};
   
   const isEn = lang === 'en';
-  const title = isEn 
-    ? `Color ${page.title} Online for Free | ColorVaults` : `${page.title} Gratis Online Inkleuren | ColorVaults`;
+  const isDe = lang === 'de';
+  const isFr = lang === 'fr';
+  const title = isDe
+    ? `${page.title} Online Ausmalen (Kostenlos) | ColorVaults`
+    : isFr
+    ? `Colorier ${page.title} en Ligne Gratuitement | ColorVaults`
+    : isEn 
+    ? `Color ${page.title} Online for Free | ColorVaults`
+    : `${page.title} Gratis Online Inkleuren | ColorVaults`;
+
   const description = isEn
-    ? `Color the ${page.title} coloring page online for free! Interactive in-browser painting studio with fill bucket, custom brush tools, and instant download.` : `Kleur de ${page.title} kleurplaat gratis online in! Interactieve online kleurstudio met verfemmer, kwasten en direct opslaan als kunstwerk.`;
+    ? `Color the ${page.title} coloring page online for free! Interactive in-browser painting studio with fill bucket, custom brush tools, and instant download.`
+    : `Kleur de ${page.title} kleurplaat gratis online in! Interactieve online kleurstudio met verfemmer, kwasten en direct opslaan als kunstwerk.`;
   
-  return {
+  const imageUrl = page.image ? (page.image.startsWith('http') ? page.image : `${SITE_ORIGIN}${page.image}`) : `${SITE_ORIGIN}/images/banner.jpg`;
+
+  return createMetadata({
+    lang,
+    path: `/${mainHubSlug}/${themeSlug}/${ageSlug}/${page.slug}/color`,
     title,
     description,
-    alternates: {
-      canonical: `/${lang}/${mainHubSlug}/${themeSlug}/${ageSlug}/${page.slug}/color`,
-      languages: {
-        en: `/en/${mainHubSlug}/${themeSlug}/${ageSlug}/${page.slug}/color`,
-        nl: `/nl/${mainHubSlug}/${themeSlug}/${ageSlug}/${page.slug}/color`,
-        de: `/de/${mainHubSlug}/${themeSlug}/${ageSlug}/${page.slug}/color`,
-        fr: `/fr/${mainHubSlug}/${themeSlug}/${ageSlug}/${page.slug}/color`,
-        'x-default': `/en/${mainHubSlug}/${themeSlug}/${ageSlug}/${page.slug}/color`,
-      },
-    },
-    openGraph: {
-      title,
-      description,
-      images: [{ url: page.image, width: 832, height: 1184, alt: page.title }]
-    },
-    twitter: {
-      card: 'summary_large_image',
-      title,
-      description,
-      images: [page.image]
-    }
-  };
+    image: imageUrl,
+  });
 }
 
 export default async function ColoringPageDetail({ params }: { params: Promise<{ lang: string, mainHubSlug: string, themeSlug: string, ageSlug: string, coloringPageSlug: string }> }) {
   const { lang, mainHubSlug, themeSlug, ageSlug, coloringPageSlug } = await params;
 
   const page = getPageBySlug(lang, mainHubSlug, themeSlug, ageSlug, coloringPageSlug);
-  if (!page) return notFound();
+  if (!page || page.parentHub !== mainHubSlug || page.parentTheme !== themeSlug || page.ageGroup !== ageSlug) return notFound();
 
   const hub = getMainHubs(lang).find(h => h.slug === mainHubSlug);
   const theme = getThemes(lang).find(t => t.slug === themeSlug && t.parentHub === mainHubSlug);

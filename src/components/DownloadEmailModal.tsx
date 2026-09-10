@@ -104,7 +104,7 @@ export default function DownloadEmailModal({
 
         <p className={styles.subtitle}>
           {isEn
-            ? `Enjoying ${pageTitle ? `"${pageTitle}"` : 'our coloring pages'}? Join 15,000+ happy parents & teachers getting 10 fresh, free coloring pages every weekend!`
+            ? `Enjoying ${pageTitle ? `"${pageTitle}"` : 'our coloring pages'}? Get 10 fresh, free coloring pages in your inbox every weekend!`
             : `Veel plezier met ${pageTitle ? `"${pageTitle}"` : 'je kleurplaat'}! Ontvang elk weekend 10 gloednieuwe, gratis kleurplaten direct in je mailbox.`}
         </p>
 

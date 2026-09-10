@@ -40,6 +40,10 @@ export async function POST(req: NextRequest) {
     }
 
     const cleanEmail = email.trim().slice(0, 200);
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(cleanEmail)) {
+      return NextResponse.json({ error: 'Invalid email address format' }, { status: 400 });
+    }
     const cleanSubject = String(subject || 'General Inquiry').slice(0, 200);
     const cleanMessage = message.trim().slice(0, 5000);
     const cleanName = `${String(firstName || '')} ${String(lastName || '')}`.trim().slice(0, 100) || 'Anonymous';

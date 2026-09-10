@@ -26,17 +26,26 @@ export async function generateStaticParams() {
   return [...themesEn, ...themesNl, ...themesDe, ...themesFr];
 }
 
+import { createMetadata } from '@/lib/seo';
+import { SITE_ORIGIN } from '@/lib/site';
+
 export async function generateMetadata({
   params,
+  searchParams,
 }: {
   params: Promise<{ lang: string; mainHubSlug: string; themeSlug: string }>;
+  searchParams?: Promise<{ page?: string; difficulty?: string }>;
 }) {
   const { lang, mainHubSlug, themeSlug } = await params;
+  const sParams = searchParams ? await searchParams : {};
+  const currentPage = Math.max(1, parseInt(sParams.page || '1', 10));
+
   const theme = getThemeBySlug(lang, mainHubSlug, themeSlug);
-  if (!theme) return {};
+  if (!theme || theme.parentHub !== mainHubSlug) return {};
+
   const ogImageUrl = theme.image
-    ? `/api/og?title=${encodeURIComponent(theme.title + ' Coloring Pages')}&image=${encodeURIComponent(theme.image)}`
-    : '/images/banner.jpg';
+    ? (theme.image.startsWith('http') ? theme.image : `${SITE_ORIGIN}${theme.image}`)
+    : `${SITE_ORIGIN}/images/banner.jpg`;
 
   let title = `${theme.title} Coloring Pages (Free Printable PDFs) | ColorVaults`;
   if (lang === 'nl') {
@@ -47,29 +56,14 @@ export async function generateMetadata({
     title = `Coloriage ${theme.title} (Gratuit à Imprimer PDF) | ColorVaults`;
   }
 
-  return {
+  return createMetadata({
+    lang,
+    path: `/${mainHubSlug}/${themeSlug}`,
     title,
     description: theme.description,
-    alternates: {
-      canonical: `/${lang}/${mainHubSlug}/${theme.slug}`,
-      languages: {
-        en: `/en/${mainHubSlug}/${theme.slug}`,
-        nl: `/nl/${mainHubSlug}/${theme.slug}`,
-        de: `/de/${mainHubSlug}/${theme.slug}`,
-        fr: `/fr/${mainHubSlug}/${theme.slug}`,
-        'x-default': `/en/${mainHubSlug}/${theme.slug}`,
-      },
-    },
-    openGraph: {
-      title,
-      description: theme.description,
-      images: [{ url: ogImageUrl, width: 1200, height: 630, alt: theme.title }],
-    },
-    twitter: {
-      card: 'summary_large_image',
-      images: [ogImageUrl],
-    },
-  };
+    page: currentPage,
+    image: ogImageUrl,
+  });
 }
 
 export default async function ThemePage({
@@ -85,7 +79,7 @@ export default async function ThemePage({
   const rawDiff = (diffParam ||'').toLowerCase();
 
   const theme = getThemeBySlug(lang, mainHubSlug, themeSlug);
-  if (!theme) return notFound();
+  if (!theme || theme.parentHub !== mainHubSlug) return notFound();
 
   const hub = getMainHubs(lang).find(h => h.slug === mainHubSlug);
   if (!hub) return notFound();

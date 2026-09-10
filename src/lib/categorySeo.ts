@@ -17,7 +17,7 @@ interface SpecificSeoOverride {
 const SPECIFIC_SEO_DATA: Record<string, SpecificSeoOverride> = {
   animals: {
     enIntro:`Welcome to our extensive collection of free printable animals coloring pages! Whether you are looking for cute puppies, majestic lions, ocean creatures, or farm animals, we offer high-resolution PDF and image templates ready for instant download. Perfect for toddlers, school kids, and adults looking for creative fun without registration.`,
-    nlIntro:`Welkom bij onze uitgebreide verzameling gratis dieren kleurplaten om uit te printen! Of je nu op zoek bent naar schattige honden, schattige katten, machtige leeuwen, zeedieren of boerderijdieren: wij bieden hoge resolutie PDF- en afbeeldingensjablonen die direct printbaar zijn. Ideaal voor peuters, basisschoolkinderen en volwassenen die ontspannen willen kleuren zonder te registreren.`,
+    nlIntro:`Kies een dierenkleurplaat op onderwerp en moeilijkheid. Grote kleurvlakken zijn handig voor beginnende kleurders; platen met kleinere details bieden meer uitdaging. Bekijk honden, katten, boerderijdieren en zeedieren, open je favoriete tekening en kies voor printen, downloaden of online inkleuren.`,
     relatedSlugs: ['birds','safari-wildlife','cute-pets-animals','dolphins-underwater','farm'],
     enBottomHtml:`<h2>Who Are Our Animals Coloring Pages Suitable For?</h2>
       <p>Our printable animal coloring templates cater to colorists of all experience levels and ages. From simple thick outlines for toddlers to highly detailed wildlife portraits for adults, every nature lover will find their favorite creature ready to print.</p>
@@ -441,7 +441,7 @@ function getDefaultBottomHtml(
         <li>Click on your favorite ${themeTitle} image thumbnail to open the full-page view.</li>
         <li>Click the purple <strong>"Print Free Coloring Page"</strong> button for an instant print preview.</li>
         <li>In your browser's printer settings, select <em>A4</em> or <em>US Letter</em> size, choose <em>Portrait orientation</em>, and ensure scale is set to <strong>100% (Fit to Page)</strong>.</li>
-        <li>Click Print or hit the <strong>"Download Image File"</strong> button to save the 300 DPI high-definition image to your computer or tablet.</li>
+        <li>Click Print or hit the <strong>"Download Image File"</strong> button to save the high-definition image file to your computer or tablet.</li>
       </ol>
 
       ${relatedLinksHtml ? `<h3>Explore Related Coloring Collections</h3><p>Discover more free printable pages from our library:</p>${relatedLinksHtml}` : ''}`;

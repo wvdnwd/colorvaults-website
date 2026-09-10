@@ -2,7 +2,6 @@
 
 import { useState, useEffect, useRef } from 'react';
 import SafeImage from './SafeImage';
-import AdSlot from './AdSlot';
 import styles from './DownloadProgressModal.module.css';
 
 interface DownloadProgressModalProps {
@@ -36,27 +35,12 @@ export default function DownloadProgressModal({
       return;
     }
 
-    const duration = 2800; // 2.8 seconds
-    const intervalTime = 50;
-    const step = (intervalTime / duration) * 100;
-
-    const timer = setInterval(() => {
-      setProgress((prev) => {
-        const next = prev + step;
-        if (next >= 100) {
-          clearInterval(timer);
-          if (!hasTriggeredRef.current) {
-            hasTriggeredRef.current = true;
-            setIsDone(true);
-            onCompleteDownload();
-          }
-          return 100;
-        }
-        return next;
-      });
-    }, intervalTime);
-
-    return () => clearInterval(timer);
+    if (!hasTriggeredRef.current) {
+      hasTriggeredRef.current = true;
+      setProgress(100);
+      setIsDone(true);
+      onCompleteDownload();
+    }
   }, [isOpen, onCompleteDownload]);
 
   if (!isOpen) return null;
@@ -88,7 +72,7 @@ export default function DownloadProgressModal({
             <div className={styles.infoCol}>
               <h4 className={styles.pageTitle}>{title}</h4>
               <span className={styles.badge}>
-                {fileType === 'pdf' ? '📄 Print-Ready A4 PDF (300 DPI)' : '🖼️ Ultra HD PNG Image'}
+                {fileType === 'pdf' ? '📄 Print-Ready A4 PDF' : '🖼️ Ultra HD PNG Image'}
               </span>
               <p className={styles.tipText}>
                 {isEn
@@ -110,15 +94,10 @@ export default function DownloadProgressModal({
               <span>
                 {isDone
                   ? (isEn ? '✅ Download started!' : '✅ Download gestart!')
-                  : (isEn ? 'Optimizing resolution...' : 'Lijnen en resolutie optimaliseren...')}
+                  : (isEn ? 'Preparing file...' : 'Bestand voorbereiden...')}
               </span>
               <span className={styles.percentText}>{Math.min(100, Math.round(progress))}%</span>
             </div>
-          </div>
-
-          {/* Sponsored Ad Area */}
-          <div className={styles.adArea}>
-            <AdSlot type="rectangle" text={isEn ? "Advertisement" : "Advertentie"} />
           </div>
 
           {/* Actions */}

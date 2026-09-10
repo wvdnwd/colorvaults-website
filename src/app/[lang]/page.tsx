@@ -17,6 +17,8 @@ import HeaderSearchBar from '@/components/HeaderSearchBar';
 import CategoryExplorerTabs from '@/components/CategoryExplorerTabs';
 import FaqSection from '@/components/FaqSection';
 import React from 'react';
+import { createMetadata } from '@/lib/seo';
+import { SITE_ORIGIN } from '@/lib/site';
 
 export async function generateMetadata({ params }: { params: Promise<{ lang: string }> }) {
   const { lang } = await params;
@@ -25,59 +27,28 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
   const isFr = lang === 'fr';
 
   const title = isDe
-    ? 'ColorVaults | Kostenlose Premium Malvorlagen & Ausmalbilder'
+    ? 'ColorVaults | Kostenlose Malvorlagen & Ausmalbilder'
     : isFr
-    ? 'ColorVaults | Coloriages Gratuits à Imprimer de Haute Qualité'
+    ? 'ColorVaults | Coloriages Gratuits à Imprimer'
     : isEn
-    ? 'ColorVaults | Free Premium Coloring Pages'
-    : 'ColorVaults | Gratis Premium Kleurplaten';
+    ? 'Free Printable Coloring Pages: PDF & Online | ColorVaults'
+    : 'Gratis kleurplaten printen en downloaden | ColorVaults';
 
   const description = isDe
     ? 'Kostenlose Malvorlagen und Ausmalbilder für Kinder, Kleinkinder und Erwachsene zum Ausdrucken als PDF.'
     : isFr
     ? 'Téléchargez des coloriages gratuits et dessins à imprimer pour enfants et adultes. Gratuit en PDF.'
     : isEn
-    ? 'Download free printable coloring pages for kids, toddlers, teens and adults. No account required.'
-    : 'Download gratis printbare kleurplaten voor kinderen, peuters, tieners en volwassenen. Geen account nodig.';
+    ? 'Download free printable coloring pages for kids, toddlers, teens and adults. Print or color online without an account.'
+    : 'Download gratis printbare kleurplaten voor kinderen, peuters, tieners en volwassenen. Print direct of kleur online zonder account.';
 
-  return {
+  return createMetadata({
+    lang,
+    path: '/',
     title,
     description,
-    alternates: {
-      canonical: `/${lang}`,
-      languages: {
-        'en': '/en',
-        'nl': '/nl',
-        'de': '/de',
-        'fr': '/fr',
-        'x-default': '/en',
-      },
-    },
-    openGraph: {
-      title,
-      description,
-      url: `/${lang}`,
-      siteName: 'ColorVaults',
-      locale: lang === 'nl' ? 'nl_NL' : lang === 'de' ? 'de_DE' : lang === 'fr' ? 'fr_FR' : 'en_US',
-      type: 'website',
-      images: [
-        {
-          url: 'https://www.colorvaults.com/images/og-share.jpg',
-          secureUrl: 'https://www.colorvaults.com/images/og-share.jpg',
-          width: 1200,
-          height: 630,
-          type: 'image/jpeg',
-          alt: 'ColorVaults — Free Premium Coloring Pages',
-        },
-      ],
-    },
-    twitter: {
-      card: 'summary_large_image',
-      title,
-      description,
-      images: ['https://www.colorvaults.com/images/og-share.jpg'],
-    },
-  };
+    image: `${SITE_ORIGIN}/images/og-share.jpg`,
+  });
 }
 
 export default async function HomePage({ params }: { params: Promise<{ lang: string }> }) {
@@ -166,10 +137,14 @@ export default async function HomePage({ params }: { params: Promise<{ lang: str
             </div>
             
             <h1 className={styles.heroMainTitle}>
-              {isEn ? (
-                <>Free Premium <span className={styles.heroTitleGradient}>Coloring Pages</span></>
+              {lang === 'de' ? (
+                <>Kostenlose Malvorlagen <span className={styles.heroTitleGradient}>zum Ausdrucken & Ausmalen</span></>
+              ) : lang === 'fr' ? (
+                <>Coloriages gratuits <span className={styles.heroTitleGradient}>à imprimer et à colorier</span></>
+              ) : isEn ? (
+                <>Free Printable <span className={styles.heroTitleGradient}>Coloring Pages</span></>
               ) : (
-                <>Gratis Premium <span className={styles.heroTitleGradient}>Kleurplaten</span></>
+                <>Gratis kleurplaten <span className={styles.heroTitleGradient}>om te printen en online in te kleuren</span></>
               )}
             </h1>
             

@@ -61,20 +61,24 @@ export default function SafeImage({
     );
   }
 
- return (
- // eslint-disable-next-line @next/next/no-img-element
- <img
- {...props}
- src={typeof src ==='string'? src : undefined}
- alt={alt ||''}
- className={className}
- style={{
- maxWidth:'100%',
- height:'auto',
- display:'block',
- ...style,
- }}
- onError={handleError}
- loading="lazy"decoding="async"/>
- );
+  return (
+    // eslint-disable-next-line @next/next/no-img-element
+    <img
+      src={typeof src === 'string' ? src : undefined}
+      alt={alt || ''}
+      className={className}
+      width={width}
+      height={height}
+      style={{
+        maxWidth: '100%',
+        height: 'auto',
+        display: 'block',
+        ...style,
+      }}
+      onError={handleError}
+      loading={props.loading ?? 'lazy'}
+      decoding={props.decoding ?? 'async'}
+      {...props}
+    />
+  );
 }
