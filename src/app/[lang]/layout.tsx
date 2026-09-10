@@ -44,6 +44,9 @@ export const metadata: Metadata = {
   description:"Download free printable coloring pages for kids, toddlers, teens and adults. No account required.",
   verification: {
     google:"r57LIyNltfhaHeN4Lean5iNHEkbWBJbD-z-s6uF9t0s",
+    other: {
+      "p:domain_verify": "314125f62194f4aab9b5275a55bc34a2",
+    },
   },
   openGraph: {
     siteName: "ColorVaults",
