@@ -42,6 +42,8 @@ export default function PrintableCalendarGrid({ themes = [], months: initialMont
   const [pickingForMonth, setPickingForMonth] = useState<CalendarMonth | null>(null);
   
   // Picker state
+  const [pickerTab, setPickerTab] = useState<'calendarArt' | 'catalog'>('calendarArt');
+  const [selectedPickerTheme, setSelectedPickerTheme] = useState<string>('cute-animals');
   const [searchQuery, setSearchQuery] = useState<string>('');
   const [activeChip, setActiveChip] = useState<string>('all');
   const [searchResults, setSearchResults] = useState<SearchItem[]>([]);
@@ -94,7 +96,7 @@ export default function PrintableCalendarGrid({ themes = [], months: initialMont
 
   // Execute drawing search when picker opens or query changes
   useEffect(() => {
-    if (!pickingForMonth) return;
+    if (!pickingForMonth || pickerTab !== 'catalog') return;
 
     let isMounted = true;
     const query = searchQuery.trim() || (CATEGORY_CHIPS.find(c => c.id === activeChip)?.query || 'cute');
@@ -452,87 +454,178 @@ export default function PrintableCalendarGrid({ themes = [], months: initialMont
               </button>
             </div>
 
-            {/* Search Input & Category Chips */}
-            <div className={styles.pickerControls}>
-              <input
-                type="text"
-                value={searchQuery}
-                onChange={(e) => {
-                  setSearchQuery(e.target.value);
-                  setActiveChip('');
-                }}
-                placeholder={isEn
-                  ? '🔍 Search 18,000+ coloring pages... (e.g. unicorn, dinosaur, flowers, mandala, cat)'
-                  : '🔍 Zoek in 18.000+ kleurplaten... (bijv. eenhoorn, dino, bloemen, mandala, hond)'}
-                className={styles.pickerSearchInput}
-                autoFocus
-              />
-
-              <div className={styles.pickerChips}>
-                {CATEGORY_CHIPS.map((chip) => {
-                  const isActive = activeChip === chip.id;
-                  return (
-                    <button
-                      key={chip.id}
-                      type="button"
-                      onClick={() => {
-                        setActiveChip(chip.id);
-                        setSearchQuery('');
-                      }}
-                      className={`${styles.pickerChip} ${isActive ? styles.pickerChipActive : ''}`}
-                    >
-                      {isEn ? chip.labelEn : chip.labelNl}
-                    </button>
-                  );
-                })}
+            {/* Modal Tabs: Dedicated Calendar Art (34 Themes / 408 Designs) vs Search 18k Catalog */}
+            <div style={{ padding: '0.85rem 1.75rem 0', background: '#F8FAFC' }}>
+              <div className={styles.pickerModeTabs}>
+                <button
+                  type="button"
+                  onClick={() => setPickerTab('calendarArt')}
+                  className={`${styles.pickerModeTab} ${pickerTab === 'calendarArt' ? styles.pickerModeTabActive : ''}`}
+                >
+                  <span>📅</span>
+                  <span>{isEn ? 'Dedicated Calendar Art (34 Themes)' : 'Speciale Kalenderplaten (34 Thema’s)'}</span>
+                </button>
+                <button
+                  type="button"
+                  onClick={() => setPickerTab('catalog')}
+                  className={`${styles.pickerModeTab} ${pickerTab === 'catalog' ? styles.pickerModeTabActive : ''}`}
+                >
+                  <span>🔍</span>
+                  <span>{isEn ? 'Search 18,000+ Catalog' : 'Zoek in 18.000+ Catalogus'}</span>
+                </button>
               </div>
             </div>
 
-            {/* Results Grid */}
-            <div className={styles.pickerGrid}>
-              {isLoadingSearch ? (
-                <div style={{ gridColumn: '1 / -1', textAlign: 'center', padding: '3rem', color: '#64748B' }}>
-                  <div style={{ fontSize: '2rem', marginBottom: '0.5rem' }}>⏳</div>
-                  <p style={{ fontWeight: 700 }}>
-                    {isEn ? 'Searching 18,000+ coloring pages...' : '18.000+ kleurplaten doorzoeken...'}
-                  </p>
-                </div>
-              ) : searchResults.length > 0 ? (
-                searchResults.map((item, idx) => (
-                  <div
-                    key={idx}
-                    className={styles.pickerCard}
-                    onClick={() => handleSelectDrawing(item)}
-                  >
-                    <div className={styles.pickerCardImageWrapper}>
-                      <SafeImage
-                        src={item.image}
-                        alt={item.title}
-                        width={220}
-                        height={180}
-                        style={{ maxWidth: '100%', maxHeight: '100%', objectFit: 'contain' }}
-                      />
-                    </div>
-                    <p className={styles.pickerCardTitle} title={item.title}>
-                      {item.title}
-                    </p>
-                    <button
-                      type="button"
-                      className={styles.pickerCardSelectBtn}
+            {/* TAB 1: DEDICATED CALENDAR ART */}
+            {pickerTab === 'calendarArt' && (
+              <>
+                <div className={styles.pickerControls}>
+                  <div className={styles.themeSelectorRow}>
+                    <label htmlFor="calendar-theme-select" style={{ fontSize: '0.85rem', fontWeight: 800, color: '#334155' }}>
+                      {isEn ? 'Select Theme Bundle:' : 'Selecteer Thema:'}
+                    </label>
+                    <select
+                      id="calendar-theme-select"
+                      value={selectedPickerTheme}
+                      onChange={(e) => setSelectedPickerTheme(e.target.value)}
+                      className={styles.themeSelectDropdown}
                     >
-                      ✨ {isEn ? `Select for ${pickingForMonth.nameEn}` : `Kies voor ${pickingForMonth.nameNl}`}
-                    </button>
+                      {themes.map((t) => (
+                        <option key={t.id} value={t.id}>
+                          {t.icon} {isEn ? t.titleEn : t.titleNl} (12 Designs)
+                        </option>
+                      ))}
+                    </select>
                   </div>
-                ))
-              ) : (
-                <div style={{ gridColumn: '1 / -1', textAlign: 'center', padding: '3rem', color: '#64748B' }}>
-                  <div style={{ fontSize: '2.5rem', marginBottom: '0.5rem' }}>🔍</div>
-                  <p style={{ fontWeight: 700 }}>
-                    {isEn ? 'No coloring pages found. Try another search term!' : 'Geen kleurplaten gevonden. Probeer een andere zoekterm!'}
-                  </p>
                 </div>
-              )}
-            </div>
+
+                <div className={styles.pickerGrid}>
+                  {(() => {
+                    const currentThemeBundle = themes.find(t => t.id === selectedPickerTheme) || themes[0];
+                    if (!currentThemeBundle) return null;
+
+                    return currentThemeBundle.months.map((itemMonth) => {
+                      const itemTitle = isEn ? itemMonth.themeTitleEn : itemMonth.themeTitleNl;
+                      return (
+                        <div
+                          key={itemMonth.monthNumber}
+                          className={styles.pickerCard}
+                          onClick={() => handleSelectDrawing({
+                            title: itemTitle,
+                            image: itemMonth.image,
+                          })}
+                        >
+                          <div className={styles.pickerCardImageWrapper}>
+                            <SafeImage
+                              src={itemMonth.image}
+                              alt={itemTitle}
+                              width={220}
+                              height={180}
+                              style={{ maxWidth: '100%', maxHeight: '100%', objectFit: 'contain' }}
+                            />
+                          </div>
+                          <p className={styles.pickerCardTitle} title={itemTitle}>
+                            {itemMonth.icon} {isEn ? itemMonth.nameEn : itemMonth.nameNl} ({itemTitle})
+                          </p>
+                          <button
+                            type="button"
+                            className={styles.pickerCardSelectBtn}
+                          >
+                            ✨ {isEn ? `Select for ${pickingForMonth.nameEn}` : `Kies voor ${pickingForMonth.nameNl}`}
+                          </button>
+                        </div>
+                      );
+                    });
+                  })()}
+                </div>
+              </>
+            )}
+
+            {/* TAB 2: SEARCH 18K CATALOG */}
+            {pickerTab === 'catalog' && (
+              <>
+                <div className={styles.pickerControls}>
+                  <input
+                    type="text"
+                    value={searchQuery}
+                    onChange={(e) => {
+                      setSearchQuery(e.target.value);
+                      setActiveChip('');
+                    }}
+                    placeholder={isEn
+                      ? '🔍 Search 18,000+ coloring pages... (e.g. unicorn, dinosaur, flowers, mandala, cat)'
+                      : '🔍 Zoek in 18.000+ kleurplaten... (bijv. eenhoorn, dino, bloemen, mandala, hond)'}
+                    className={styles.pickerSearchInput}
+                    autoFocus
+                  />
+
+                  <div className={styles.pickerChips}>
+                    {CATEGORY_CHIPS.map((chip) => {
+                      const isActive = activeChip === chip.id;
+                      return (
+                        <button
+                          key={chip.id}
+                          type="button"
+                          onClick={() => {
+                            setActiveChip(chip.id);
+                            setSearchQuery('');
+                          }}
+                          className={`${styles.pickerChip} ${isActive ? styles.pickerChipActive : ''}`}
+                        >
+                          {isEn ? chip.labelEn : chip.labelNl}
+                        </button>
+                      );
+                    })}
+                  </div>
+                </div>
+
+                {/* Results Grid */}
+                <div className={styles.pickerGrid}>
+                  {isLoadingSearch ? (
+                    <div style={{ gridColumn: '1 / -1', textAlign: 'center', padding: '3rem', color: '#64748B' }}>
+                      <div style={{ fontSize: '2rem', marginBottom: '0.5rem' }}>⏳</div>
+                      <p style={{ fontWeight: 700 }}>
+                        {isEn ? 'Searching 18,000+ coloring pages...' : '18.000+ kleurplaten doorzoeken...'}
+                      </p>
+                    </div>
+                  ) : searchResults.length > 0 ? (
+                    searchResults.map((item, idx) => (
+                      <div
+                        key={idx}
+                        className={styles.pickerCard}
+                        onClick={() => handleSelectDrawing(item)}
+                      >
+                        <div className={styles.pickerCardImageWrapper}>
+                          <SafeImage
+                            src={item.image}
+                            alt={item.title}
+                            width={220}
+                            height={180}
+                            style={{ maxWidth: '100%', maxHeight: '100%', objectFit: 'contain' }}
+                          />
+                        </div>
+                        <p className={styles.pickerCardTitle} title={item.title}>
+                          {item.title}
+                        </p>
+                        <button
+                          type="button"
+                          className={styles.pickerCardSelectBtn}
+                        >
+                          ✨ {isEn ? `Select for ${pickingForMonth.nameEn}` : `Kies voor ${pickingForMonth.nameNl}`}
+                        </button>
+                      </div>
+                    ))
+                  ) : (
+                    <div style={{ gridColumn: '1 / -1', textAlign: 'center', padding: '3rem', color: '#64748B' }}>
+                      <div style={{ fontSize: '2.5rem', marginBottom: '0.5rem' }}>🔍</div>
+                      <p style={{ fontWeight: 700 }}>
+                        {isEn ? 'No coloring pages found. Try another search term!' : 'Geen kleurplaten gevonden. Probeer een andere zoekterm!'}
+                      </p>
+                    </div>
+                  )}
+                </div>
+              </>
+            )}
           </div>
         </div>
       )}

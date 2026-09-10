@@ -137,10 +137,12 @@
   margin: 0;
 }
 
-/* 🌟 Hero Drawing Frame (No Empty Voids, Fills Allocated Space) ───────────── */
+/* 🌟 Hero Drawing Frame (3:2 Aspect Ratio, Crisp Landscape Coloring Art) ───────────── */
 .sheetArtworkFrame {
   position: relative;
-  height: 440px;
+  width: 100%;
+  aspect-ratio: 3 / 2;
+  max-height: 400px;
   background: #FFFFFF;
   border-radius: 14px;
   border: 1.5px solid #CBD5E1;
@@ -155,7 +157,7 @@
 
 @media (max-width: 600px) {
   .sheetArtworkFrame {
-    height: 340px;
+    max-height: 280px;
   }
 }
 
@@ -390,6 +392,8 @@
   border-radius: 16px;
   border: 1px solid var(--gray-200);
   padding: 1.15rem;
+  display: flex;
+  flex-direction: column;
 }
 
 .quickThemesHeader {
@@ -406,6 +410,9 @@
   display: flex;
   flex-wrap: wrap;
   gap: 0.45rem;
+  max-height: 260px;
+  overflow-y: auto;
+  padding-right: 4px;
 }
 
 .themeChipBtn {
@@ -563,6 +570,61 @@
   background: var(--gray-200);
 }
 
+.pickerModeTabs {
+  display: flex;
+  background: #F1F5F9;
+  padding: 0.35rem;
+  border-radius: 12px;
+  gap: 0.35rem;
+}
+
+.pickerModeTab {
+  flex: 1;
+  padding: 0.6rem 1rem;
+  border-radius: 9px;
+  border: none;
+  background: transparent;
+  font-size: 0.88rem;
+  font-weight: 800;
+  color: #475569;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  transition: all 0.2s ease;
+}
+
+.pickerModeTabActive {
+  background: #FFFFFF;
+  color: #2563EB;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+.themeSelectorRow {
+  display: flex;
+  gap: 0.75rem;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.themeSelectDropdown {
+  flex: 1;
+  padding: 0.75rem 1rem;
+  border-radius: 10px;
+  border: 2px solid var(--gray-300);
+  background: #FFFFFF;
+  font-weight: 700;
+  font-size: 0.92rem;
+  color: #0F172A;
+  outline: none;
+  cursor: pointer;
+}
+
+.themeSelectDropdown:focus {
+  border-color: #2563EB;
+}
+
 .pickerControls {
   padding: 1.25rem 1.75rem 0.75rem;
   border-bottom: 1px solid var(--gray-200);
@@ -703,7 +765,7 @@
     page-break-after: always;
     break-after: page;
     height: 100vh;
-    padding: 1.5cm 2cm;
+    padding: 1.2cm 1.8cm;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
