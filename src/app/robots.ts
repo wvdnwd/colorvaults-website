@@ -7,15 +7,15 @@ export default function robots(): MetadataRoute.Robots {
       {
         userAgent:'*',
         allow:'/',
-        disallow: ['/api/','/_next/'],
+        disallow: ['/api/'],
       },
     ],
     sitemap: [
-      'https://colorvaults.com/sitemap.xml',
-      'https://colorvaults.com/sitemap-pages/en',
-      'https://colorvaults.com/sitemap-pages/nl',
-      'https://colorvaults.com/sitemap-pages/de',
-      'https://colorvaults.com/sitemap-pages/fr',
+      'https://www.colorvaults.com/sitemap.xml',
+      'https://www.colorvaults.com/sitemap-pages/en',
+      'https://www.colorvaults.com/sitemap-pages/nl',
+      'https://www.colorvaults.com/sitemap-pages/de',
+      'https://www.colorvaults.com/sitemap-pages/fr',
     ],
   };
 }

@@ -2,7 +2,6 @@ import SafeImage from'@/components/SafeImage';
 import DailyColoringChallenge from'@/components/DailyColoringChallenge';
 import DailyFeaturedCard from'@/components/DailyFeaturedCard';
 import SeasonalEventBanner from'@/components/SeasonalEventBanner';
-import NewsletterBox from'@/components/NewsletterBox';
 import { getThemes, getFeaturedPages, getMainHubs, getSampleImagesForTheme } from'@/lib/api';
 import ThemeCard from'@/components/ThemeCard';
 import { blogPosts } from'@/data/blogs';
@@ -34,12 +33,12 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
     : 'ColorVaults | Gratis Premium Kleurplaten';
 
   const description = isDe
-    ? 'Tausende hochwertige kostenlose Malvorlagen und Ausmalbilder für Kinder, Kleinkinder und Erwachsene. 100% kostenlos zum Ausdrucken als PDF.'
+    ? 'Kostenlose Malvorlagen und Ausmalbilder für Kinder, Kleinkinder und Erwachsene zum Ausdrucken als PDF.'
     : isFr
-    ? 'Téléchargez des milliers de coloriages gratuits et dessins à imprimer de haute qualité pour enfants et adultes. 100% gratuit en PDF.'
+    ? 'Téléchargez des coloriages gratuits et dessins à imprimer pour enfants et adultes. Gratuit en PDF.'
     : isEn
-    ? 'Download thousands of high-quality free printable coloring pages for kids, toddlers, teens and adults. 100% free, no account required.'
-    : 'Download duizenden gratis printbare kleurplaten van topkwaliteit voor kinderen, peuters, tieners en volwassenen. 100% gratis.';
+    ? 'Download free printable coloring pages for kids, toddlers, teens and adults. No account required.'
+    : 'Download gratis printbare kleurplaten voor kinderen, peuters, tieners en volwassenen. Geen account nodig.';
 
   return {
     title,
@@ -57,7 +56,7 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
     openGraph: {
       title,
       description,
-      url: `https://colorvaults.com/${lang}`,
+      url: `/${lang}`,
       siteName: 'ColorVaults',
       locale: lang === 'nl' ? 'nl_NL' : lang === 'de' ? 'de_DE' : lang === 'fr' ? 'fr_FR' : 'en_US',
       type: 'website',
@@ -84,7 +83,6 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
 export default async function HomePage({ params }: { params: Promise<{ lang: string }> }) {
   const { lang } = await params;
   const isEn = lang !== 'nl';
-  const isNl = lang === 'nl';
 
   const allThemes = getThemes(lang);
   const mainHubs = getMainHubs(lang);
@@ -111,32 +109,23 @@ export default async function HomePage({ params }: { params: Promise<{ lang: str
 
   const difficultyCards = [
     {
-      slug:'kids',
+      slug:'easy',
       name: isEn ?'Easy':'Makkelijk',
       badge: isEn ?'Level 1':'Niveau 1',
       desc: isEn ?'Simple shapes & fun designs for preschoolers and toddlers':'Eenvoudige vormen & leuke designs voor peuters en kleuters',
-      className: styles.ageKids,
-      hubSlug:'kids-tv-shows',
-      themeSlug:'paw-patrol',
-      ageSlug:'kids'},
+      className: styles.ageKids},
     {
-      slug:'teens',
+      slug:'medium',
       name: isEn ?'Medium':'Gemiddeld',
       badge: isEn ?'Level 2':'Niveau 2',
       desc: isEn ?'Creative scenes with rich details and vibrant characters':'Creatieve scènes met leuke details en populaire karakters',
-      className: styles.ageTeens,
-      hubSlug:'gaming-virtual-worlds',
-      themeSlug:'pokemon',
-      ageSlug:'teens'},
+      className: styles.ageTeens},
     {
-      slug:'adults',
+      slug:'hard',
       name: isEn ?'Hard':'Moeilijk',
       badge: isEn ?'Level 3':'Niveau 3',
       desc: isEn ?'Intricate floral mandalas and relaxing complex line art':'Ingewikkelde bloemenmandala\'s en ontspannende lijntekeningen',
-      className: styles.ageAdults,
-      hubSlug:'art-aesthetic',
-      themeSlug:'mandalas-sacred-geometry',
-      ageSlug:'adults'}
+      className: styles.ageAdults}
   ];
 
   const quickShortcuts = [
@@ -186,8 +175,8 @@ export default async function HomePage({ params }: { params: Promise<{ lang: str
             
             <p className={styles.heroMainSubtitle}>
               {isEn
-                ? 'Thousands of high-quality printable coloring pages for toddlers, kids, teens, and adults. Free instant downloads — no account needed!'
-                : 'Duizenden gratis printbare kleurplaten voor peuters, kinderen, tieners en volwassenen. Direct gratis downloaden — geen account nodig!'}
+                ? 'Free printable coloring pages for toddlers, kids, teens, and adults. Download without an account!'
+                : 'Gratis printbare kleurplaten voor peuters, kinderen, tieners en volwassenen. Download zonder account!'}
             </p>
 
             {/* Central Hero Search Bar */}
@@ -195,7 +184,7 @@ export default async function HomePage({ params }: { params: Promise<{ lang: str
               <HeaderSearchBar
                 lang={lang}
                 variant="hero"
-                placeholder={isEn ? 'Search 10,000+ coloring pages (e.g. Spider-Man, Unicorn, Elsa)...' : 'Zoek uit 10.000+ kleurplaten (bijv. Pokémon, Stitch, Dinos)...'}
+                placeholder={isEn ? 'Search coloring pages (e.g. Spider-Man, Unicorn, Elsa)...' : 'Zoek kleurplaten (bijv. Pokémon, Stitch, Dinos)...'}
               />
             </div>
 
@@ -215,7 +204,7 @@ export default async function HomePage({ params }: { params: Promise<{ lang: str
               </span>
               <span className={styles.heroFeatureItem}>
                 <span aria-hidden="true">🛡️</span>
-                {isEn ? '100% Free Forever' : '100% Gratis Zonder Account'}
+                {isEn ? 'Free Without an Account' : 'Gratis Zonder Account'}
               </span>
             </div>
           </div>
@@ -254,16 +243,16 @@ export default async function HomePage({ params }: { params: Promise<{ lang: str
                   <span className={styles.trendingFireIcon} aria-hidden="true">🔥</span>
                   <div>
                     <h3 className={styles.trendingTitle}>
-                      {isEn ? 'Top Trending Albums & Categories' : 'Populaire Albums & Categorieën'}
+                      {isEn ? 'Explore Albums & Categories' : 'Ontdek Albums & Categorieën'}
                     </h3>
                     <span className={styles.trendingSubtitle}>
-                      {isEn ? 'Direct access to the most loved coloring sheets' : 'Direct naar de meest gekleurde thema’s'}
+                      {isEn ? 'Quick links to coloring themes and activities' : 'Direct naar kleurthema’s en activiteiten'}
                     </span>
                   </div>
                 </div>
                 <Link href="#categories" className={styles.trendingBadgeBtn}>
                   <span className={styles.trendingBadgeDot} aria-hidden="true" />
-                  <span>{isEn ? '130+ Themes' : "130+ Thema's"}</span>
+                  <span>{allThemes.length} {isEn ? 'Themes' : "Thema's"}</span>
                   <span aria-hidden="true" className={styles.trendingBadgeArrow}>→</span>
                 </Link>
               </div>
@@ -316,18 +305,18 @@ export default async function HomePage({ params }: { params: Promise<{ lang: str
         </div>
       </section>
 
-      {/* ── Section 0: Explore All 10 Master Hubs Showcase ── */}
+      {/* Explore all main hubs */}
       <section id="collections" className="section" style={{ paddingTop: '2.5rem', paddingBottom: '1.5rem', scrollMarginTop: '80px' }}>
         <div className="container">
           <ScrollReveal className="section-header">
             <div>
-              <span className="badge">10 {isEn ?'Master Hubs':'Hoofdcategorieën'}</span>
+              <span className="badge">{mainHubs.length} {isEn ?'Master Hubs':'Hoofdcategorieën'}</span>
               <h2 className="title-h2"style={{ marginTop:'0.65rem'}}>
-                {isEn ?'Explore All 10 Hubs':'Ontdek Alle 10 Hoofdcategorieën'}
+                {isEn ? `Explore All ${mainHubs.length} Hubs` : `Ontdek Alle ${mainHubs.length} Hoofdcategorieën`}
               </h2>
             </div>
             <Link href={`/${lang}/search`} className="btn-secondary">
-              {isEn ?'Explore All 10,000+ Pages →':'Alle 10.000+ Kleurplaten →'}
+              {isEn ?'Explore All Coloring Pages →':'Alle Kleurplaten →'}
             </Link>
           </ScrollReveal>
 
@@ -449,7 +438,7 @@ export default async function HomePage({ params }: { params: Promise<{ lang: str
                 boxShadow: '0 4px 12px rgba(79, 70, 229, 0.25)',
               }}>
                 <span>✨</span>
-                <span>{isEn ? 'Exclusive Free Tool — Better Than Single Downloads' : 'Exclusief bij ColorVaults — Geen Losse Downloads Meer'}</span>
+                <span>{isEn ? 'Free Coloring Book Maker' : 'Gratis Kleurboek Maker'}</span>
               </span>
               <h2 style={{
                 fontSize: 'clamp(1.6rem, 3vw, 2.25rem)',
@@ -558,7 +547,7 @@ export default async function HomePage({ params }: { params: Promise<{ lang: str
         </div>
       </section>
 
-      {/* ── World-First Innovation Highlight Banner ── */}
+      {/* Interactive artwork feedback */}
       <section style={{ padding: '0 0 2rem 0' }}>
         <div className="container">
           <div
@@ -608,7 +597,7 @@ export default async function HomePage({ params }: { params: Promise<{ lang: str
                     marginBottom: '0.35rem',
                   }}
                 >
-                  {isEn ? 'World-First Innovation' : 'Unieke Wereldprimeur'}
+                  {isEn ? 'Help Improve Our Artwork' : 'Help Onze Tekeningen Verbeteren'}
                 </span>
                 <h3 style={{ margin: '0 0 0.25rem', fontSize: '1.15rem', fontWeight: 800, color: '#0F172A' }}>
                   {isEn ? 'Spot a stray line? Circle it with our digital red pencil!' : 'Zie je een foutje of los lijntje? Omcirkel het met ons digitale potlood!'}
@@ -616,7 +605,7 @@ export default async function HomePage({ params }: { params: Promise<{ lang: str
                 <p style={{ margin: 0, fontSize: '0.88rem', color: '#475569', lineHeight: 1.5 }}>
                   {isEn
                     ? 'At ColorVaults, every visitor can help refine our artwork. Click "Circle an issue" under any coloring page to draw right on the template with your finger or mouse!'
-                    : 'Bij ColorVaults kan iedere bezoeker meehelpen aan de strakste tekeningen ter wereld. Klik onder elke kleurplaat op ons potlood en omcirkel het probleem direct op de plaat!'}
+                    : 'Bij ColorVaults kan iedere bezoeker helpen onze tekeningen te verbeteren. Klik onder elke kleurplaat op ons potlood en omcirkel het probleem direct op de plaat!'}
                 </p>
               </div>
             </div>
@@ -648,9 +637,9 @@ export default async function HomePage({ params }: { params: Promise<{ lang: str
 
             <ScrollReveal className="section-header">
               <div>
-                <span className="badge">{isEn ?'Trending Characters':'Populaire Karakters'}</span>
+                <span className="badge">{isEn ?'Character Themes':'Karakterthema’s'}</span>
                 <h2 className="title-h2"style={{ marginTop:'0.65rem'}}>
-                  {isEn ?'Popular Series & Movies':'Populaire Series & Films'}
+                  {isEn ?'Series & Movies':'Series & Films'}
                 </h2>
               </div>
               <Link href={`/${lang}/disney-pixar`} className="btn-secondary">
@@ -726,7 +715,7 @@ export default async function HomePage({ params }: { params: Promise<{ lang: str
             {difficultyCards.map((age, i) => (
               <ScrollReveal key={age.name} delay={(i % 4) as 0 | 1 | 2 | 3 | 4}>
                 <Link
-                  href={`/${lang}/${age.hubSlug}/${age.themeSlug}/${age.ageSlug}`}
+                  href={`/${lang}/search?difficulty=${age.slug}`}
                   className={`${styles.ageCard} ${age.className}`}
                 >
                   <div className={styles.ageEmoji}>{age.badge}</div>
@@ -785,9 +774,9 @@ export default async function HomePage({ params }: { params: Promise<{ lang: str
 
           <ScrollReveal className="section-header">
             <div>
-              <span className="badge">{isEn ?'Fresh Additions':'Nieuwste Kleurplaten'}</span>
+              <span className="badge">{isEn ?'Featured Pages':'Uitgelichte Kleurplaten'}</span>
               <h2 className="title-h2"style={{ marginTop:'0.65rem'}}>
-                {isEn ?'Recently Added Line Art':'Recente Kleurplaten'}
+                {isEn ?'Coloring Pages to Explore':'Ontdek Deze Kleurplaten'}
               </h2>
             </div>
           </ScrollReveal>
@@ -877,7 +866,7 @@ export default async function HomePage({ params }: { params: Promise<{ lang: str
                 {isEn ?'Why ColorVaults?':'Waarom ColorVaults?'}
               </span>
               <h2 className="title-h2"style={{ marginTop:'0.75rem', marginBottom:'1.25rem'}}>
-                {isEn ?'The Best Free Printable Coloring Pages':'De Beste Gratis Printbare Kleurplaten'}
+                {isEn ?'Free Printable Coloring Pages for Every Age':'Gratis Printbare Kleurplaten voor Elke Leeftijd'}
               </h2>
               <p className={styles.whyLead}>
                 {isEn
@@ -885,16 +874,16 @@ export default async function HomePage({ params }: { params: Promise<{ lang: str
               </p>
               <p className={styles.whyLead} style={{ marginBottom: 0 }}>
                 {isEn
-                  ?'Whether you are a parent, a teacher, or an adult unwinding with intricate mandalas — we have thousands of high-definition line art pages ready to print.':'Of je nu een ouder bent, een leraar, of een volwassene die ontspant met mandala\'s — wij hebben duizenden hoge resolutie kleurplaten printklaar.'}
+                  ?'Find printable line art for family activities, classroom projects, or a relaxing moment with mandalas.':'Ontdek printbare kleurplaten voor gezinsactiviteiten, schoolprojecten of een ontspannen moment met mandala\'s.'}
               </p>
             </ScrollReveal>
 
             <div>
               {[
-                { number:'01', title: isEn ?'100% Free Forever':'100% Gratis Voor Altijd', desc: isEn ?'No paywalls, no subscriptions, no accounts. Download & print instantly.':'Geen abonnementskosten, geen account nodig. Direct printen.'},
+                { number:'01', title: isEn ?'Free Downloads':'Gratis Downloads', desc: isEn ?'No paywalls, no subscriptions, no accounts. Download & print instantly.':'Geen abonnementskosten, geen account nodig. Direct printen.'},
                 { number:'02', title: isEn ?'Print-Optimized':'Optimaal Af te Drukken', desc: isEn ?'Clean crisp line art formatted for standard A4 and Letter paper.':'Scherpe lijnen geformatteerd voor A4 en Letter papier.'},
                 { number:'03', title: isEn ?'Curated by Age':'Gesorteerd op Leeftijd', desc: isEn ?'Tailored difficulty levels for toddlers, kids, teens & adults.':'Aangepaste moeilijkheidsgraden voor peuters, kinderen & volwassenen.'},
-                { number:'04', title: isEn ?'Interactive Pencil QA (World First!)':'Interactief Potlood (Wereldprimeur!)', desc: isEn ?'Spot an error? Circle it with our digital red pencil right on the drawing and we refine it!':'Zie je een foutje? Omcirkel het met ons digitale potlood direct op de tekening en we herstellen het!'},
+                { number:'04', title: isEn ?'Interactive Artwork Feedback':'Interactieve Feedback', desc: isEn ?'Spot an error? Circle it with our digital red pencil and send it to our team for review.':'Zie je een foutje? Omcirkel het met ons digitale potlood en stuur het naar ons team ter beoordeling.'},
                 { number:'05', title: isEn ?'Multilingual (EN, NL, DE, FR)':'4 Talen Beschikbaar', desc: isEn ?'Native localized experience in English, Dutch, German and French.':'Volledig beschikbaar in het Nederlands, Engels, Duits en Frans.'},
               ].map((f, i) => (
                 <ScrollReveal key={f.title} delay={(i % 4) as 0 | 1 | 2 | 3 | 4}>

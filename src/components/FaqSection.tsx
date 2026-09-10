@@ -27,13 +27,13 @@ export default function FaqSection({ isEn }: { isEn: boolean }) {
           answer:'Simply click on any coloring page card to open its detail view. You can use the"Print Free Coloring Page"button for instant browser printing, or click"Download Image File"to save a clean, high-resolution watermarked file ready for digital apps like Procreate or offline printing.'},
         {
           question:'Do you offer complex adult coloring pages and mindfulness mandalas?',
-          answer:'Yes! We have hundreds of intricate adult coloring pages, including sacred geometry mandalas, Art Nouveau floral patterns, fantasy architecture, and mindfulness anti-stress line art in our"Art & Aesthetic"and"Mandalas"categories.'},
+          answer:'Explore detailed designs for adults, including geometric patterns and floral mandalas, in our Art & Aesthetic collection.'},
         {
-          question:'How often are new coloring pages and character themes added?',
-          answer:'We continuously expand our vault with new trending characters, animated series, superhero sagas, seasonal festivals (Christmas, Halloween, Easter, Sinterklaas), and nature collections every week — offering over 18,800+ free designs.'},
+          question:'Where can I browse coloring pages and themes?',
+          answer:'Use the category explorer to browse our current collections, or search by theme, difficulty, and age group to find a design for your next activity.'},
         {
           question:'What should I do if I spot an error or stray line on a coloring page?',
-          answer:'Use our world-first interactive red pencil tool directly below any coloring page! Tap the button, draw a circle around the issue with your finger or mouse, and send it to our team. Our digital artwork studio will review and fix the lines right away.'},
+          answer:'Use the interactive red pencil tool below a coloring page. Tap the button, circle the issue with your finger or mouse, and send it to our team for review.'},
         {
           question:'Can I combine multiple coloring pages into a custom coloring book?',
           answer:'Yes! With our free built-in Coloring Book Maker, you can select up to 12 of your favorite coloring pages and instantly download them as a single, print-ready PDF book complete with a personalized cover page.'}
@@ -53,13 +53,13 @@ export default function FaqSection({ isEn }: { isEn: boolean }) {
           answer:'Klik op een gewenste kleurplaat om de detailpagina te openen. Klik vervolgens op"Gratis Kleurplaat Printen"om direct via je browser af te drukken, of op"Download Afbeelding"om de hoge resolutie afbeelding direct op te slaan op je telefoon, tablet of computer.'},
         {
           question:'Zijn er ook moeilijke mandala\'s en kleurplaten voor volwassenen (anti-stress)?',
-          answer:'Ja! Wij hebben honderden gedetailleerde kleurplaten voor volwassenen, waaronder ingewikkelde bloemenmandala\'s, Art Nouveau kunstplaten, geometrische patronen en ontspannende mindfulness lijntekeningen in de categorie"Kunst & Mandala\'s".'},
+          answer:'Ontdek gedetailleerde tekeningen voor volwassenen, zoals geometrische patronen en bloemenmandala\'s, in onze kunstcollectie.'},
         {
-          question:'Hoe vaak worden er nieuwe kleurplaten en karakters toegevoegd?',
-          answer:'Onze collectie telt inmiddels meer dan 18.800+ kleurplaten en wordt wekelijks aangevuld met nieuwe populaire karakters, kinderseries, superhelden, seizoensfeesten (Sinterklaas, Kerstmis, Halloween, Pasen) en educatieve sjablonen.'},
+          question:'Waar kan ik kleurplaten en thema\'s bekijken?',
+          answer:'Blader door onze huidige collecties per categorie, of zoek op thema, moeilijkheidsgraad en leeftijdsgroep om een tekening voor je volgende activiteit te vinden.'},
         {
           question:'Wat kan ik doen als ik een foutje of los lijntje zie op een kleurplaat?',
-          answer:'Gebruik ons unieke interactieve rode potlood direct onder de afbeelding! Omcirkel het foutje met je vinger of muis en stuur het in. Onze tekenstudio herstelt het direct om de strakste collectie ter wereld te waarborgen.'},
+          answer:'Gebruik het interactieve rode potlood onder een kleurplaat. Omcirkel het foutje met je vinger of muis en stuur het naar ons team ter beoordeling.'},
         {
           question:'Kan ik ook meerdere kleurplaten bundelen tot één eigen kleurboek?',
           answer:'Ja! Met onze gratis ingebouwde Kleurboek Maker kun je met één klik tot 12 van je favoriete kleurplaten toevoegen en direct als één compleet, printklaar PDF-kleurboek inclusief mooie omslag downloaden.'}

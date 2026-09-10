@@ -51,15 +51,15 @@ export default function TrendingCarousel({
         <div className={styles.titleCol}>
           <div className={styles.badgeRow}>
             <span className={styles.fireIcon}>🔥</span>
-            <span className={styles.badgeText}>{isEn ? 'Trending This Week' : 'Populair Deze Week'}</span>
+            <span className={styles.badgeText}>{isEn ? 'Featured Selection' : 'Uitgelichte Selectie'}</span>
           </div>
           <h2 className={styles.heading}>
-            {title || (isEn ? 'Most Loved Coloring Pages' : 'Meest Gekozen Kleurplaten')}
+            {title || (isEn ? 'Find Your Next Coloring Page' : 'Vind Je Volgende Kleurplaat')}
           </h2>
           <p className={styles.sub}>
             {subtitle || (isEn
-              ? 'Trending templates printed and colored by thousands of creators today.'
-              : 'De populairste kleurplaten die vandaag het meest geprint en ingekleurd worden.')}
+              ? 'Explore a selection of printable designs for your next coloring break.'
+              : 'Ontdek een selectie printbare tekeningen voor je volgende kleurmoment.')}
           </p>
         </div>
 
@@ -95,7 +95,7 @@ export default function TrendingCarousel({
                     style={{ width: '100%', height: '100%', objectFit: 'cover' }}
                   />
                   <div className={styles.trendingTag}>
-                    <span>🔥 #{idx + 1}</span>
+                    <span>{isEn ? 'Featured' : 'Uitgelicht'}</span>
                   </div>
                   <div className={styles.favBtnWrapper} onClick={(e) => e.preventDefault()}>
                     <FavoriteButton

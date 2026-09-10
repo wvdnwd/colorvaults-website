@@ -142,12 +142,12 @@ export default function MotionCard({ page, lang, isEn }: MotionCardProps) {
               border ='#A7F3D0';
               text ='#065F46';
             } else if (age.includes('teen') || age.includes('tiener')) {
-              label = isEn ?'Teens (9-12y)':'Tieners (9-12j)';
+              label = isEn ?'Older Kids (9-12y)':'Oudere Kinderen (9-12j)';
               bg ='#FAF5FF';
               border ='#E9D5FF';
               text ='#6B21A8';
             } else if (age.includes('adult') || age.includes('volwassen')) {
-              label = isEn ?'Adults (13+)':'Volwassenen';
+              label = isEn ?'Teens & Adults (13+)':'Tieners & Volwassenen (13+)';
               bg ='#FFF1F2';
               border ='#FECDD3';
               text ='#9F1239';

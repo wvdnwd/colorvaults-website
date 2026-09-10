@@ -41,6 +41,7 @@ export interface ColoringPage {
   title: string;
   shortDescription: string;
   image: string;
+  difficulty?: string;
   fileSize?: string;
   dimensions?: string;
   tags?: string[];
@@ -84,7 +85,7 @@ function readThemePages(lang: string, themeSlug: string): ColoringPage[] {
 }
 
 // Cached memory so we don't read JSONs thousands of times during build
-let cache: Record<string, unknown[]> = {};
+const cache: Record<string, unknown[]> = {};
 
 function getCached<T>(lang: string, key: string, filename: string): T[] {
   const cacheKey = `${lang}_${key}`;
@@ -132,7 +133,6 @@ const mainHubsCache: Record<string, MainHub[]> = {};
 const themesCache: Record<string, Theme[]> = {};
 const themeBySlugCache: Record<string, Map<string, Theme>> = {};
 const pagesByThemeCache: Record<string, Map<string, ColoringPage[]>> = {};
-const pageBySlugCache: Record<string, Map<string, ColoringPage>> = {};
 const featuredPagesCache: Record<string, ColoringPage[]> = {};
 
 export function getMainHubs(lang: string): MainHub[] {
@@ -195,13 +195,8 @@ export function getColoringPagesForTheme(lang: string, parentHubSlug: string, th
   if (pagesByThemeCache[lang].has(key)) {
     return pagesByThemeCache[lang].get(key)!;
   }
-  if (pagesByThemeCache[lang].has(themeSlug)) {
-    return pagesByThemeCache[lang].get(themeSlug)!;
-  }
-
-  const pages = readThemePages(lang, themeSlug);
+  const pages = readThemePages(lang, themeSlug).filter(p => p.parentHub === parentHubSlug && p.parentTheme === themeSlug);
   pagesByThemeCache[lang].set(key, pages);
-  pagesByThemeCache[lang].set(themeSlug, pages);
   return pages;
 }
 
@@ -218,7 +213,15 @@ export function getPageBySlug(lang: string, parentHubSlug: string, themeSlug: st
 export function getFeaturedPages(lang: string, count = 24): ColoringPage[] {
   if (!featuredPagesCache[lang]) {
     const pages = getCached<ColoringPage>(lang, 'featured', 'featured-pages.json');
-    featuredPagesCache[lang] = pages && pages.length > 0 ? pages : [];
+    // Featured JSON selects shipped URLs; only the detail shard owns their content.
+    const seen = new Set<string>();
+    featuredPagesCache[lang] = pages.flatMap(p => {
+      const key = `${p.parentHub}/${p.parentTheme}/${p.ageGroup}/${p.slug}`;
+      const page = getPageBySlug(lang, p.parentHub, p.parentTheme, p.ageGroup, p.slug);
+      if (!page || seen.has(key)) return [];
+      seen.add(key);
+      return [page];
+    });
   }
   return featuredPagesCache[lang].slice(0, count);
 }
