@@ -202,23 +202,23 @@ export default function PrintableCalendarGrid({ themes = [], months: initialMont
               <span style={{ fontSize: '1.8rem' }}>{m.icon}</span>
             </div>
 
-            {/* Clean Crisp Centered Coloring Artwork (No dark gradient covering!) */}
+            {/* Clean Crisp Centered Coloring Artwork */}
             <div style={{
               position: 'relative',
-              height: '210px',
+              height: '240px',
               background: '#FFFFFF',
               display: 'flex',
               alignItems: 'center',
               justifyContent: 'center',
-              padding: '0.75rem',
+              padding: '1rem',
               borderBottom: '1px solid var(--gray-200)',
             }}>
               {m.image ? (
                 <SafeImage
                   src={m.image}
                   alt={m.nameEn + ' Coloring Page'}
-                  width={350}
-                  height={200}
+                  width={380}
+                  height={240}
                   style={{ maxWidth: '100%', maxHeight: '100%', objectFit: 'contain' }}
                 />
               ) : (
@@ -227,14 +227,15 @@ export default function PrintableCalendarGrid({ themes = [], months: initialMont
 
               <span style={{
                 position: 'absolute',
-                bottom: '8px',
+                bottom: '10px',
                 right: '12px',
-                background: 'rgba(15, 23, 42, 0.75)',
+                background: 'rgba(15, 23, 42, 0.85)',
                 color: '#FFFFFF',
                 borderRadius: '9999px',
-                padding: '0.2rem 0.6rem',
-                fontSize: '0.7rem',
-                fontWeight: 700,
+                padding: '0.25rem 0.65rem',
+                fontSize: '0.72rem',
+                fontWeight: 800,
+                boxShadow: '0 2px 8px rgba(0,0,0,0.15)',
               }}>
                 🔍 {isEn ? 'Click to Open' : 'Klik om te Openen'}
               </span>
@@ -297,20 +298,25 @@ export default function PrintableCalendarGrid({ themes = [], months: initialMont
                     setActiveModalMonth(m);
                   }}
                   style={{
-                    flex: 1,
-                    padding: '0.65rem',
+                    width: '100%',
+                    padding: '0.75rem',
                     borderRadius: '12px',
                     border: 'none',
                     background: '#2563EB',
                     color: '#FFFFFF',
                     fontWeight: 800,
-                    fontSize: '0.85rem',
+                    fontSize: '0.9rem',
                     cursor: 'pointer',
                     boxShadow: '0 2px 8px rgba(37, 99, 235, 0.25)',
                     transition: 'all 0.2s',
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    gap: '0.4rem',
                   }}
                 >
-                  🔍 {isEn ? 'Open & Print ' + m.nameEn : 'Bekijk & Print ' + m.nameNl}
+                  <span>🔍</span>
+                  <span>{isEn ? 'Open & Print ' + m.nameEn : 'Bekijk & Print ' + m.nameNl}</span>
                 </button>
               </div>
             </div>
@@ -412,7 +418,7 @@ export default function PrintableCalendarGrid({ themes = [], months: initialMont
 
                 {/* Big Clean Line Art Image to Color */}
                 <div style={{
-                  height: '240px',
+                  height: '280px',
                   background: '#FFFFFF',
                   borderRadius: '12px',
                   border: '1px solid #E2E8F0',
@@ -427,7 +433,7 @@ export default function PrintableCalendarGrid({ themes = [], months: initialMont
                       src={activeModalMonth.image}
                       alt={activeModalMonth.nameEn + ' Coloring Artwork'}
                       width={400}
-                      height={240}
+                      height={280}
                       style={{ maxWidth: '100%', maxHeight: '100%', objectFit: 'contain' }}
                     />
                   ) : (
