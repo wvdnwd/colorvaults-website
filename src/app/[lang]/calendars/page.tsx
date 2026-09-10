@@ -53,17 +53,17 @@ export default async function CalendarsPage({ params }: { params: Promise<{ lang
             letterSpacing: '0.04em',
             marginBottom: '0.75rem',
           }}>
-            {isEn ? '10 Full Theme Editions (2026 & 2027)' : '10 Complete Thema Uitgaven (2026 & 2027)'}
+            {isEn ? '🎨 Custom 12-Month Calendar Maker (18,000+ Designs)' : '🎨 Maak Je Eigen 12-Maanden Kalender (18.000+ Kleurplaten)'}
           </span>
 
           <h1 className="title-h1" style={{ fontSize: '2.5rem', fontWeight: 900, lineHeight: 1.25, color: '#0F172A' }}>
-            {isEn ? 'Free Printable Coloring Calendars' : 'Gratis Printbare Kleurkalenders'}
+            {isEn ? 'Free Printable Custom Coloring Calendars' : 'Gratis Printbare Gepersonaliseerde Kleurkalenders'}
           </h1>
 
           <p style={{ color: '#475569', fontSize: '1.1rem', marginTop: '0.8rem', lineHeight: 1.7, maxWidth: '680px', margin: '0.8rem auto 0' }}>
             {isEn
-              ? 'Stay organized all year round with our 10 full 12-month printable coloring calendars! Choose your favorite theme below and print the full year in 1 click.'
-              : 'Blijf het hele jaar door georganiseerd met onze 10 complete 12-maanden kleurkalenders! Kies hieronder je favoriete thema en print het hele jaar in 1 klik uit.'}
+              ? 'Create and print your personalized 12-month coloring calendar! Customize each month with your favorite drawings from 18,000+ pages and print the complete year in 1 click.'
+              : 'Stel je eigen gepersonaliseerde 12-maanden kleurkalender samen! Kies voor elke maand zelf je favoriete tekening uit 18.000+ kleurplaten en print het hele jaar in 1 klik uit.'}
           </p>
         </div>
       </div>
