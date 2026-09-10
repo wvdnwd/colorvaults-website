@@ -4,6 +4,7 @@ export interface SchoolWorksheet {
   grade: 'preschool' | 'kindergarten' | 'grade1' | 'grade2';
   ageGroup: 'toddlers' | 'kids';
   icon: string;
+  image: string;
   titleEn: string;
   titleNl: string;
   descEn: string;
@@ -22,7 +23,8 @@ export const SCHOOL_WORKSHEETS_DATA: SchoolWorksheet[] = [
     "titleNl": "Cijfer 1 & Appelboom Traceren",
     "descEn": "Practice writing number 1 and count 1 delicious apple on the tree.",
     "descNl": "Oefen met het schrijven van cijfer 1 en tel 1 appel in de boom.",
-    "promptKey": "1"
+    "promptKey": "1",
+    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Autumn%20Harvest%20%26%20Pumpkins/Autumn_Harvest___Pumpkins__A_clean_print_1788513091009.webp"
   },
   {
     "slug": "math-number-2-twin-ducks",
@@ -34,7 +36,8 @@ export const SCHOOL_WORKSHEETS_DATA: SchoolWorksheet[] = [
     "titleNl": "Cijfer 2 & Zwemmende Eendjes",
     "descEn": "Trace number 2 and solve simple visual addition 1 + 1 = 2.",
     "descNl": "Trek cijfer 2 over en ontdek dat 1 + 1 = 2 eendjes is.",
-    "promptKey": "2"
+    "promptKey": "2",
+    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Autumn%20Harvest%20%26%20Pumpkins/Autumn_Harvest___Pumpkins__A_clean_print_1788513146295.webp"
   },
   {
     "slug": "math-number-3-triplet-kittens",
@@ -46,7 +49,8 @@ export const SCHOOL_WORKSHEETS_DATA: SchoolWorksheet[] = [
     "titleNl": "Cijfer 3 & Speelse Katjes",
     "descEn": "Count 3 playful kittens with yarn and trace big number 3.",
     "descNl": "Tel 3 katjes met een bolletje wol en leer cijfer 3 schrijven.",
-    "promptKey": "3"
+    "promptKey": "3",
+    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Autumn%20Harvest%20%26%20Pumpkins/Autumn_Harvest___Pumpkins__A_clean_print_1788513164555.webp"
   },
   {
     "slug": "math-number-4-forest-animals",
@@ -58,7 +62,8 @@ export const SCHOOL_WORKSHEETS_DATA: SchoolWorksheet[] = [
     "titleNl": "Cijfer 4 & Bosdieren",
     "descEn": "Meet 4 friendly woodland animals and trace number 4.",
     "descNl": "Kleur 4 vrolijke bosdieren en oefen het cijfer 4.",
-    "promptKey": "4"
+    "promptKey": "4",
+    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Autumn%20Harvest%20%26%20Pumpkins/Autumn_Harvest___Pumpkins__A_clean_print_1788513183229.webp"
   },
   {
     "slug": "math-number-5-hand-high-five",
@@ -70,7 +75,8 @@ export const SCHOOL_WORKSHEETS_DATA: SchoolWorksheet[] = [
     "titleNl": "Cijfer 5 & High-Five Handje",
     "descEn": "Count all 5 fingers and color 5 stars on this worksheet.",
     "descNl": "Tel de 5 vingers van je hand en kleur 5 sterren in.",
-    "promptKey": "5"
+    "promptKey": "5",
+    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Autumn%20Harvest%20%26%20Pumpkins/Autumn_Harvest___Pumpkins__A_clean_print_1788513276131.webp"
   },
   {
     "slug": "math-number-6-hexagon-bees",
@@ -82,7 +88,8 @@ export const SCHOOL_WORKSHEETS_DATA: SchoolWorksheet[] = [
     "titleNl": "Cijfer 6 & Honingbijen",
     "descEn": "Count 6 busy bees and trace number 6 on a honeycomb grid.",
     "descNl": "Tel 6 bezige bijtjes en schrijf het cijfer 6 in de honingraat.",
-    "promptKey": "6"
+    "promptKey": "6",
+    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Autumn%20Harvest%20%26%20Pumpkins/Autumn_Harvest___Pumpkins__A_clean_print_1788513332264.webp"
   },
   {
     "slug": "math-number-7-rainbow-arc",
@@ -94,7 +101,8 @@ export const SCHOOL_WORKSHEETS_DATA: SchoolWorksheet[] = [
     "titleNl": "Cijfer 7 & Regenboogbanen",
     "descEn": "Color the 7 stripes of the rainbow and count 7 sun rays.",
     "descNl": "Kleur de 7 kleuren van de regenboog en schrijf cijfer 7.",
-    "promptKey": "7"
+    "promptKey": "7",
+    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Autumn%20Harvest%20%26%20Pumpkins/Autumn_Harvest___Pumpkins__A_clean_print_1788513350519.webp"
   },
   {
     "slug": "math-number-8-octopus-tentacles",
@@ -106,7 +114,8 @@ export const SCHOOL_WORKSHEETS_DATA: SchoolWorksheet[] = [
     "titleNl": "Cijfer 8 & Octopus Armen",
     "descEn": "Count all 8 numbered suction-cup arms of the happy octopus.",
     "descNl": "Tel de 8 armen van de vrolijke octopus en leer cijfer 8.",
-    "promptKey": "8"
+    "promptKey": "8",
+    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Autumn%20Harvest%20%26%20Pumpkins/Autumn_Harvest___Pumpkins__A_clean_print_1788513368819.webp"
   },
   {
     "slug": "math-number-9-hot-air-balloons",
@@ -118,7 +127,8 @@ export const SCHOOL_WORKSHEETS_DATA: SchoolWorksheet[] = [
     "titleNl": "Cijfer 9 & Luchtballonnen",
     "descEn": "Count 9 floating hot air balloons and practice writing 9.",
     "descNl": "Tel 9 zwevende luchtballonnen en oefen met cijfer 9.",
-    "promptKey": "9"
+    "promptKey": "9",
+    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Autumn%20Harvest%20%26%20Pumpkins/Autumn_Harvest___Pumpkins__A_clean_print_1788513470062.webp"
   },
   {
     "slug": "math-number-10-ten-balloons",
@@ -130,7 +140,8 @@ export const SCHOOL_WORKSHEETS_DATA: SchoolWorksheet[] = [
     "titleNl": "Cijfer 10 & Feestballonnen",
     "descEn": "Celebrate reaching 10! Count 10 festive balloons.",
     "descNl": "Hoera voor de 10! Tel 10 feestballonnen en schrijf 10.",
-    "promptKey": "10"
+    "promptKey": "10",
+    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Autumn%20Harvest%20%26%20Pumpkins/Autumn_Harvest___Pumpkins__A_clean_print_1788513524305.webp"
   },
   {
     "slug": "math-addition-farm-animals",
@@ -142,7 +153,8 @@ export const SCHOOL_WORKSHEETS_DATA: SchoolWorksheet[] = [
     "titleNl": "Visueel Optellen (tot 5) Boerderijdieren",
     "descEn": "Count cows and sheep to solve easy addition problems up to 5.",
     "descNl": "Tel koeien en schaapjes bij elkaar op voor sommen tot 5.",
-    "promptKey": "11"
+    "promptKey": "11",
+    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Autumn%20Harvest%20%26%20Pumpkins/Autumn_Harvest___Pumpkins__A_clean_print_1788513543094.webp"
   },
   {
     "slug": "math-addition-fruit-basket",
@@ -154,7 +166,8 @@ export const SCHOOL_WORKSHEETS_DATA: SchoolWorksheet[] = [
     "titleNl": "Optellen tot 10 met Fruit",
     "descEn": "Add strawberries and oranges together in this colorful worksheet.",
     "descNl": "Tel aardbeien en sinaasappels bij elkaar op tot 10.",
-    "promptKey": "12"
+    "promptKey": "12",
+    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Autumn%20Harvest%20%26%20Pumpkins/Autumn_Harvest___Pumpkins__A_clean_print_1788513561545.webp"
   },
   {
     "slug": "math-subtraction-swimming-fish",
@@ -166,7 +179,8 @@ export const SCHOOL_WORKSHEETS_DATA: SchoolWorksheet[] = [
     "titleNl": "Visueel Aftrekken met Vissen (5 - 2 = 3)",
     "descEn": "Cross out fish to learn easy takeaway subtraction math.",
     "descNl": "Streep visjes weg en ontdek hoe min-sommen werken.",
-    "promptKey": "13"
+    "promptKey": "13",
+    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Autumn%20Harvest%20%26%20Pumpkins/Autumn_Harvest___Pumpkins__A_clean_print_1788513653918.webp"
   },
   {
     "slug": "math-subtraction-party-balloons",
@@ -178,7 +192,8 @@ export const SCHOOL_WORKSHEETS_DATA: SchoolWorksheet[] = [
     "titleNl": "Aftrekken tot 10 met Ballonnen",
     "descEn": "Pop the balloons to solve subtraction sums up to 10.",
     "descNl": "Los de min-sommen tot 10 op met feestelijke ballonnen.",
-    "promptKey": "14"
+    "promptKey": "14",
+    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Autumn%20Harvest%20%26%20Pumpkins/Autumn_Harvest___Pumpkins__A_clean_print_1788513709416.webp"
   },
   {
     "slug": "math-count-and-match-1-to-5",
@@ -190,7 +205,8 @@ export const SCHOOL_WORKSHEETS_DATA: SchoolWorksheet[] = [
     "titleNl": "Tellen & Verbinden (1 t/m 5)",
     "descEn": "Draw lines connecting numbers 1-5 to matching groups of stars.",
     "descNl": "Trek verbindingslijnen tussen de cijfers 1-5 en de sterren.",
-    "promptKey": "15"
+    "promptKey": "15",
+    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Autumn%20Harvest%20%26%20Pumpkins/Autumn_Harvest___Pumpkins__A_clean_print_1788513727983.webp"
   },
   {
     "slug": "math-count-and-match-6-to-10",
@@ -202,7 +218,8 @@ export const SCHOOL_WORKSHEETS_DATA: SchoolWorksheet[] = [
     "titleNl": "Tellen & Verbinden (6 t/m 10)",
     "descEn": "Match digits 6-10 with delicious cupcakes and butterflies.",
     "descNl": "Verbind de cijfers 6-10 met het juiste aantal cupcakes.",
-    "promptKey": "16"
+    "promptKey": "16",
+    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Autumn%20Harvest%20%26%20Pumpkins/Autumn_Harvest___Pumpkins__A_clean_print_1788513746995.webp"
   },
   {
     "slug": "math-shapes-circle-square-triangle",
@@ -214,7 +231,8 @@ export const SCHOOL_WORKSHEETS_DATA: SchoolWorksheet[] = [
     "titleNl": "Vormen Safari (Cirkel, Vierkant, Driehoek)",
     "descEn": "Discover geometric shapes disguised as cheerful safari animals.",
     "descNl": "Ontdek cirkels, vierkanten en driehoeken bij safaridieren.",
-    "promptKey": "17"
+    "promptKey": "17",
+    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Autumn%20Harvest%20%26%20Pumpkins/Autumn_Harvest___Pumpkins__A_clean_print_1788513838940.webp"
   },
   {
     "slug": "math-shapes-rectangle-oval-star",
@@ -226,7 +244,8 @@ export const SCHOOL_WORKSHEETS_DATA: SchoolWorksheet[] = [
     "titleNl": "Vormen Verkenner (Rechthoek, Ster, Ruit)",
     "descEn": "Color and trace geometric shapes on a cool space rocket.",
     "descNl": "Kleur en traceer ruiten, sterren en ovalen op een raket.",
-    "promptKey": "18"
+    "promptKey": "18",
+    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Autumn%20Harvest%20%26%20Pumpkins/Autumn_Harvest___Pumpkins__A_clean_print_1788513894553.webp"
   },
   {
     "slug": "math-color-by-number-dino",
@@ -238,7 +257,8 @@ export const SCHOOL_WORKSHEETS_DATA: SchoolWorksheet[] = [
     "titleNl": "Kleuren op Nummer: Vrolijke Dino",
     "descEn": "Use the 1-4 color code legend to bring the dinosaur to life.",
     "descNl": "Volg de kleurcode 1 t/m 4 en tover de dinosaurus tevoorschijn.",
-    "promptKey": "19"
+    "promptKey": "19",
+    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Autumn%20Harvest%20%26%20Pumpkins/Autumn_Harvest___Pumpkins__A_clean_print_1788513913168.webp"
   },
   {
     "slug": "math-color-by-number-unicorn",
@@ -250,7 +270,8 @@ export const SCHOOL_WORKSHEETS_DATA: SchoolWorksheet[] = [
     "titleNl": "Kleuren op Nummer: Magische Eenhoorn",
     "descEn": "Match numbers 1 to 6 with colors on this magical fairytale scene.",
     "descNl": "Kleur de magische eenhoorn in met de cijfercodes 1 t/m 6.",
-    "promptKey": "20"
+    "promptKey": "20",
+    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Autumn%20Harvest%20%26%20Pumpkins/Autumn_Harvest___Pumpkins__A_clean_print_1788513931900.webp"
   },
   {
     "slug": "math-color-by-math-addition",
@@ -262,7 +283,8 @@ export const SCHOOL_WORKSHEETS_DATA: SchoolWorksheet[] = [
     "titleNl": "Kleuren op Som: Vliegende Superheld",
     "descEn": "Solve addition problems (1+4=5, 2+3=5) to color the superhero.",
     "descNl": "Reken de plussommen uit om de superheld in te kleuren.",
-    "promptKey": "21"
+    "promptKey": "21",
+    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Autumn%20Harvest%20%26%20Pumpkins/Autumn_Harvest___Pumpkins__A_clean_print_1788514025110.webp"
   },
   {
     "slug": "math-color-by-math-subtraction",
@@ -274,7 +296,8 @@ export const SCHOOL_WORKSHEETS_DATA: SchoolWorksheet[] = [
     "titleNl": "Kleuren op Som: Dolfijnenzee",
     "descEn": "Solve subtraction equations to reveal the vibrant ocean scene.",
     "descNl": "Los de min-sommen op en kleur de dolfijnenzee in.",
-    "promptKey": "22"
+    "promptKey": "22",
+    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Autumn%20Harvest%20%26%20Pumpkins/Autumn_Harvest___Pumpkins__A_clean_print_1788514080582.webp"
   },
   {
     "slug": "math-ten-frame-grid",
@@ -286,7 +309,8 @@ export const SCHOOL_WORKSHEETS_DATA: SchoolWorksheet[] = [
     "titleNl": "Tienstip Rekenrooster (Ten Frame)",
     "descEn": "Fill in ten-frame boxes to visualize numbers up to 10.",
     "descNl": "Oefen met het handige tienstip-rooster voor sommen tot 10.",
-    "promptKey": "23"
+    "promptKey": "23",
+    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Autumn%20Harvest%20%26%20Pumpkins/Autumn_Harvest___Pumpkins__A_clean_print_1788514099385.webp"
   },
   {
     "slug": "math-number-bonds-rainbow",
@@ -298,7 +322,8 @@ export const SCHOOL_WORKSHEETS_DATA: SchoolWorksheet[] = [
     "titleNl": "Vriendjes van 10 met de Regenboog",
     "descEn": "Learn pairs that make 10 (1+9, 2+8, 3+7) with a rainbow chart.",
     "descNl": "Leer alle verliefde getallen en vriendjes van 10 met de regenboog.",
-    "promptKey": "24"
+    "promptKey": "24",
+    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Autumn%20Harvest%20%26%20Pumpkins/Autumn_Harvest___Pumpkins__A_clean_print_1788514118169.webp"
   },
   {
     "slug": "math-telling-time-clock-hours",
@@ -310,7 +335,8 @@ export const SCHOOL_WORKSHEETS_DATA: SchoolWorksheet[] = [
     "titleNl": "Klokkijken: Hele Uren Oefenen",
     "descEn": "Read analog clocks showing whole hours like 3:00 and 8:00.",
     "descNl": "Leer hele uren klokkijken op de grote vrolijke wijzerklok.",
-    "promptKey": "25"
+    "promptKey": "25",
+    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Birds/Colorful_birds_by_an_egg-shaped_plant_1788559949249.webp"
   },
   {
     "slug": "math-telling-time-half-past",
@@ -322,7 +348,8 @@ export const SCHOOL_WORKSHEETS_DATA: SchoolWorksheet[] = [
     "titleNl": "Klokkijken: Halve Uren Oefenen",
     "descEn": "Learn half-past times (4:30, 8:30) with morning and bedtime scenes.",
     "descNl": "Oefen met halve uren klokkijken met herkenbare dagmomenten.",
-    "promptKey": "26"
+    "promptKey": "26",
+    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Birds%20Of%20The%20World/Night_Sky_Bird_and_Clock_Tower_1787901001000.webp"
   },
   {
     "slug": "math-fractions-pizza-slices",
@@ -334,7 +361,8 @@ export const SCHOOL_WORKSHEETS_DATA: SchoolWorksheet[] = [
     "titleNl": "Breuken Leren met Pizzapunten (1/2, 1/4)",
     "descEn": "Understand halves and quarters by coloring delicious pizza slices.",
     "descNl": "Begrijp breuken zoals een half en een kwart met pizza.",
-    "promptKey": "27"
+    "promptKey": "27",
+    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Bluey/Beach_Day_Dogs.webp"
   },
   {
     "slug": "math-fractions-chocolate-bars",
@@ -346,7 +374,8 @@ export const SCHOOL_WORKSHEETS_DATA: SchoolWorksheet[] = [
     "titleNl": "Breuken Leren met Chocoladerepen",
     "descEn": "Divide chocolate bars into equal thirds and fourths.",
     "descNl": "Verdeel chocoladerepen in gelijke stukjes en kleur de breuken.",
-    "promptKey": "28"
+    "promptKey": "28",
+    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Bluey/Cartoon_Cat_on_Bicycle_1787913727436.webp"
   },
   {
     "slug": "math-greater-less-than-alligator",
@@ -358,7 +387,8 @@ export const SCHOOL_WORKSHEETS_DATA: SchoolWorksheet[] = [
     "titleNl": "Groter Dan / Kleiner Dan (> < =) Krokodil",
     "descEn": "Feed the hungry math alligator who always eats the bigger number!",
     "descNl": "Voer de hongerige rekenkrokodil die altijd het grootste getal eet!",
-    "promptKey": "29"
+    "promptKey": "29",
+    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Bluey/Cartoon_Dog_Balloon.webp"
   },
   {
     "slug": "math-skip-counting-by-2s",
@@ -370,7 +400,8 @@ export const SCHOOL_WORKSHEETS_DATA: SchoolWorksheet[] = [
     "titleNl": "Sprongen van 2 (2, 4, 6, 8, 10, 12)",
     "descEn": "Hop with the frog across numbered lily pads in increments of 2.",
     "descNl": "Spring met het kikkertje in stappen van 2 over de waterlelies.",
-    "promptKey": "30"
+    "promptKey": "30",
+    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Bluey/Cartoon_Dog_Balloon_1.webp"
   },
   {
     "slug": "math-skip-counting-by-5s",
@@ -382,7 +413,8 @@ export const SCHOOL_WORKSHEETS_DATA: SchoolWorksheet[] = [
     "titleNl": "Sprongen van 5 (5, 10, 15, 20)",
     "descEn": "Count flower petals in multiples of 5 in a sunny spring garden.",
     "descNl": "Tel zonnebloemblaadjes in sprongen van 5 in de tuin.",
-    "promptKey": "31"
+    "promptKey": "31",
+    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Bluey/Cartoon_Dog_Balloon_2.webp"
   },
   {
     "slug": "math-skip-counting-by-10s-to-100",
@@ -394,7 +426,8 @@ export const SCHOOL_WORKSHEETS_DATA: SchoolWorksheet[] = [
     "titleNl": "Tellen met Tientallen tot 100",
     "descEn": "Climb the math mountain step by step: 10, 20, 30 up to 100!",
     "descNl": "Klim de rekenberg op in stappen van 10 tot aan de top van 100!",
-    "promptKey": "32"
+    "promptKey": "32",
+    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Bluey/Cartoon_Dog_Balloon_Party.webp"
   },
   {
     "slug": "math-simple-word-problems-ice-cream",
@@ -406,7 +439,8 @@ export const SCHOOL_WORKSHEETS_DATA: SchoolWorksheet[] = [
     "titleNl": "Verhaaltjessommen: De IJssalon",
     "descEn": "Read simple illustrated story problems and calculate totals.",
     "descNl": "Lees vrolijke plaatjessommen en reken het totaal uit.",
-    "promptKey": "33"
+    "promptKey": "33",
+    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Bluey/Cartoon_Dog_Coloring_Page_1787913614447.webp"
   },
   {
     "slug": "math-patterns-sequences-ab",
@@ -418,7 +452,8 @@ export const SCHOOL_WORKSHEETS_DATA: SchoolWorksheet[] = [
     "titleNl": "Patronen Herkennen en Afmaken",
     "descEn": "Identify repeating fruit patterns and draw what comes next.",
     "descNl": "Herken herhalende fruitpatronen en teken wat er volgt.",
-    "promptKey": "34"
+    "promptKey": "34",
+    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Bluey/Cartoon_Dog_Coloring_Page_1787914132178.webp"
   },
   {
     "slug": "math-measurement-ruler-fun",
@@ -430,7 +465,8 @@ export const SCHOOL_WORKSHEETS_DATA: SchoolWorksheet[] = [
     "titleNl": "Meten met de Liniaal (Centimeters)",
     "descEn": "Measure cute pencils, toys, and giraffes with a standard ruler.",
     "descNl": "Meet potloden, giraffen en autootjes op met de liniaal.",
-    "promptKey": "35"
+    "promptKey": "35",
+    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Bluey/Cartoon_Dog_Holding_Balloon.webp"
   },
   {
     "slug": "letter-writing-a",
@@ -442,7 +478,8 @@ export const SCHOOL_WORKSHEETS_DATA: SchoolWorksheet[] = [
     "titleNl": "Letter A Leren Schrijven (Astronaut & Appel)",
     "descEn": "Learn uppercase and lowercase letter Aa with stroke guides and handwriting lines.",
     "descNl": "Leer de grote en kleine letter Aa schrijven met handige hulplijnen en schrijfregels.",
-    "promptKey": "36"
+    "promptKey": "36",
+    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Animal%20Crossing/Animal_Crossing__A_clean_printable_color_1788415685738.webp"
   },
   {
     "slug": "letter-writing-b",
@@ -454,7 +491,8 @@ export const SCHOOL_WORKSHEETS_DATA: SchoolWorksheet[] = [
     "titleNl": "Letter B Leren Schrijven (Beer & Vlinder)",
     "descEn": "Learn uppercase and lowercase letter Bb with stroke guides and handwriting lines.",
     "descNl": "Leer de grote en kleine letter Bb schrijven met handige hulplijnen en schrijfregels.",
-    "promptKey": "37"
+    "promptKey": "37",
+    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Animal%20Crossing/Animal_Crossing__A_clean_printable_color_1788415699792.webp"
   },
   {
     "slug": "letter-writing-c",
@@ -466,7 +504,8 @@ export const SCHOOL_WORKSHEETS_DATA: SchoolWorksheet[] = [
     "titleNl": "Letter C Leren Schrijven (Kat & Taart)",
     "descEn": "Learn uppercase and lowercase letter Cc with stroke guides and handwriting lines.",
     "descNl": "Leer de grote en kleine letter Cc schrijven met handige hulplijnen en schrijfregels.",
-    "promptKey": "38"
+    "promptKey": "38",
+    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Animal%20Crossing/Animal_Crossing__A_clean_printable_color_1788415708857.webp"
   },
   {
     "slug": "letter-writing-d",
@@ -478,7 +517,8 @@ export const SCHOOL_WORKSHEETS_DATA: SchoolWorksheet[] = [
     "titleNl": "Letter D Leren Schrijven (Dinosaurus & Hond)",
     "descEn": "Learn uppercase and lowercase letter Dd with stroke guides and handwriting lines.",
     "descNl": "Leer de grote en kleine letter Dd schrijven met handige hulplijnen en schrijfregels.",
-    "promptKey": "39"
+    "promptKey": "39",
+    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Animal%20Crossing/Animal_Crossing__A_clean_printable_color_1788415717814.webp"
   },
   {
     "slug": "letter-writing-e",
@@ -490,7 +530,8 @@ export const SCHOOL_WORKSHEETS_DATA: SchoolWorksheet[] = [
     "titleNl": "Letter E Leren Schrijven (Olifant & Ei)",
     "descEn": "Learn uppercase and lowercase letter Ee with stroke guides and handwriting lines.",
     "descNl": "Leer de grote en kleine letter Ee schrijven met handige hulplijnen en schrijfregels.",
-    "promptKey": "40"
+    "promptKey": "40",
+    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Animal%20Crossing/Animal_Crossing__A_clean_printable_color_1788415726609.webp"
   },
   {
     "slug": "letter-writing-f",
@@ -502,7 +543,8 @@ export const SCHOOL_WORKSHEETS_DATA: SchoolWorksheet[] = [
     "titleNl": "Letter F Leren Schrijven (Vos & Vis)",
     "descEn": "Learn uppercase and lowercase letter Ff with stroke guides and handwriting lines.",
     "descNl": "Leer de grote en kleine letter Ff schrijven met handige hulplijnen en schrijfregels.",
-    "promptKey": "41"
+    "promptKey": "41",
+    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Animal%20Crossing/Animal_Crossing__A_clean_printable_color_1788415735451.webp"
   },
   {
     "slug": "letter-writing-g",
@@ -514,7 +556,8 @@ export const SCHOOL_WORKSHEETS_DATA: SchoolWorksheet[] = [
     "titleNl": "Letter G Leren Schrijven (Giraf & Gitaar)",
     "descEn": "Learn uppercase and lowercase letter Gg with stroke guides and handwriting lines.",
     "descNl": "Leer de grote en kleine letter Gg schrijven met handige hulplijnen en schrijfregels.",
-    "promptKey": "42"
+    "promptKey": "42",
+    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Animal%20Crossing/Animal_Crossing__A_clean_printable_color_1788415744255.webp"
   },
   {
     "slug": "letter-writing-h",
@@ -526,7 +569,8 @@ export const SCHOOL_WORKSHEETS_DATA: SchoolWorksheet[] = [
     "titleNl": "Letter H Leren Schrijven (Paard & Hartje)",
     "descEn": "Learn uppercase and lowercase letter Hh with stroke guides and handwriting lines.",
     "descNl": "Leer de grote en kleine letter Hh schrijven met handige hulplijnen en schrijfregels.",
-    "promptKey": "43"
+    "promptKey": "43",
+    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Animal%20Crossing/Animal_Crossing__A_clean_printable_color_1788415753100.webp"
   },
   {
     "slug": "letter-writing-i",
@@ -538,7 +582,8 @@ export const SCHOOL_WORKSHEETS_DATA: SchoolWorksheet[] = [
     "titleNl": "Letter I Leren Schrijven (IJsje & Eiland)",
     "descEn": "Learn uppercase and lowercase letter Ii with stroke guides and handwriting lines.",
     "descNl": "Leer de grote en kleine letter Ii schrijven met handige hulplijnen en schrijfregels.",
-    "promptKey": "44"
+    "promptKey": "44",
+    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Animal%20Crossing/Animal_Crossing__A_clean_printable_color_1788415761719.webp"
   },
   {
     "slug": "letter-writing-j",
@@ -550,7 +595,8 @@ export const SCHOOL_WORKSHEETS_DATA: SchoolWorksheet[] = [
     "titleNl": "Letter J Leren Schrijven (Kwal & Jungle)",
     "descEn": "Learn uppercase and lowercase letter Jj with stroke guides and handwriting lines.",
     "descNl": "Leer de grote en kleine letter Jj schrijven met handige hulplijnen en schrijfregels.",
-    "promptKey": "45"
+    "promptKey": "45",
+    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Animal%20Crossing/Animal_Crossing__A_clean_printable_color_1788415779236.webp"
   },
   {
     "slug": "letter-writing-k",
@@ -562,7 +608,8 @@ export const SCHOOL_WORKSHEETS_DATA: SchoolWorksheet[] = [
     "titleNl": "Letter K Leren Schrijven (Koala & Koning)",
     "descEn": "Learn uppercase and lowercase letter Kk with stroke guides and handwriting lines.",
     "descNl": "Leer de grote en kleine letter Kk schrijven met handige hulplijnen en schrijfregels.",
-    "promptKey": "46"
+    "promptKey": "46",
+    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Animal%20Crossing/Animal_Crossing__A_clean_printable_color_1788415787874.webp"
   },
   {
     "slug": "letter-writing-l",
@@ -574,7 +621,8 @@ export const SCHOOL_WORKSHEETS_DATA: SchoolWorksheet[] = [
     "titleNl": "Letter L Leren Schrijven (Leeuw & Blaadje)",
     "descEn": "Learn uppercase and lowercase letter Ll with stroke guides and handwriting lines.",
     "descNl": "Leer de grote en kleine letter Ll schrijven met handige hulplijnen en schrijfregels.",
-    "promptKey": "47"
+    "promptKey": "47",
+    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Animal%20Crossing/Animal_Crossing__A_clean_printable_color_1788415803896.webp"
   },
   {
     "slug": "letter-writing-m",
@@ -586,7 +634,8 @@ export const SCHOOL_WORKSHEETS_DATA: SchoolWorksheet[] = [
     "titleNl": "Letter M Leren Schrijven (Aap & Maan)",
     "descEn": "Learn uppercase and lowercase letter Mm with stroke guides and handwriting lines.",
     "descNl": "Leer de grote en kleine letter Mm schrijven met handige hulplijnen en schrijfregels.",
-    "promptKey": "48"
+    "promptKey": "48",
+    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Animal%20Crossing/Animal_Crossing__A_clean_printable_color_1788415818736.webp"
   },
   {
     "slug": "letter-writing-n",
@@ -598,7 +647,8 @@ export const SCHOOL_WORKSHEETS_DATA: SchoolWorksheet[] = [
     "titleNl": "Letter N Leren Schrijven (Nest & Vogel)",
     "descEn": "Learn uppercase and lowercase letter Nn with stroke guides and handwriting lines.",
     "descNl": "Leer de grote en kleine letter Nn schrijven met handige hulplijnen en schrijfregels.",
-    "promptKey": "49"
+    "promptKey": "49",
+    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Animal%20Crossing/Animal_Crossing__A_clean_printable_color_1788415827570.webp"
   },
   {
     "slug": "letter-writing-o",
@@ -610,7 +660,8 @@ export const SCHOOL_WORKSHEETS_DATA: SchoolWorksheet[] = [
     "titleNl": "Letter O Leren Schrijven (Uil & Oceaan)",
     "descEn": "Learn uppercase and lowercase letter Oo with stroke guides and handwriting lines.",
     "descNl": "Leer de grote en kleine letter Oo schrijven met handige hulplijnen en schrijfregels.",
-    "promptKey": "50"
+    "promptKey": "50",
+    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Animal%20Crossing/Animal_Crossing__A_clean_printable_color_1788415836991.webp"
   },
   {
     "slug": "letter-writing-p",
@@ -622,7 +673,8 @@ export const SCHOOL_WORKSHEETS_DATA: SchoolWorksheet[] = [
     "titleNl": "Letter P Leren Schrijven (Pinguïn & Pizza)",
     "descEn": "Learn uppercase and lowercase letter Pp with stroke guides and handwriting lines.",
     "descNl": "Leer de grote en kleine letter Pp schrijven met handige hulplijnen en schrijfregels.",
-    "promptKey": "51"
+    "promptKey": "51",
+    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Animal%20Crossing/Animal_Crossing__A_clean_printable_color_1788415845585.webp"
   },
   {
     "slug": "letter-writing-q",
@@ -634,7 +686,8 @@ export const SCHOOL_WORKSHEETS_DATA: SchoolWorksheet[] = [
     "titleNl": "Letter Q Leren Schrijven (Koningin & Deken)",
     "descEn": "Learn uppercase and lowercase letter Qq with stroke guides and handwriting lines.",
     "descNl": "Leer de grote en kleine letter Qq schrijven met handige hulplijnen en schrijfregels.",
-    "promptKey": "52"
+    "promptKey": "52",
+    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Animal%20Crossing/Animal_Crossing__A_clean_printable_color_1788415857578.webp"
   },
   {
     "slug": "letter-writing-r",
@@ -646,7 +699,8 @@ export const SCHOOL_WORKSHEETS_DATA: SchoolWorksheet[] = [
     "titleNl": "Letter R Leren Schrijven (Robot & Raket)",
     "descEn": "Learn uppercase and lowercase letter Rr with stroke guides and handwriting lines.",
     "descNl": "Leer de grote en kleine letter Rr schrijven met handige hulplijnen en schrijfregels.",
-    "promptKey": "53"
+    "promptKey": "53",
+    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Animal%20Crossing/Animal_Crossing__A_clean_printable_color_1788415866214.webp"
   },
   {
     "slug": "letter-writing-s",
@@ -658,7 +712,8 @@ export const SCHOOL_WORKSHEETS_DATA: SchoolWorksheet[] = [
     "titleNl": "Letter S Leren Schrijven (Zon & Ster)",
     "descEn": "Learn uppercase and lowercase letter Ss with stroke guides and handwriting lines.",
     "descNl": "Leer de grote en kleine letter Ss schrijven met handige hulplijnen en schrijfregels.",
-    "promptKey": "54"
+    "promptKey": "54",
+    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Animal%20Crossing/Animal_Crossing__A_clean_printable_color_1788415874296.webp"
   },
   {
     "slug": "letter-writing-t",
@@ -670,7 +725,8 @@ export const SCHOOL_WORKSHEETS_DATA: SchoolWorksheet[] = [
     "titleNl": "Letter T Leren Schrijven (Schildpad & Trein)",
     "descEn": "Learn uppercase and lowercase letter Tt with stroke guides and handwriting lines.",
     "descNl": "Leer de grote en kleine letter Tt schrijven met handige hulplijnen en schrijfregels.",
-    "promptKey": "55"
+    "promptKey": "55",
+    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Animal%20Crossing/Animal_Crossing__A_clean_printable_color_1788415882301.webp"
   },
   {
     "slug": "letter-writing-u",
@@ -682,7 +738,8 @@ export const SCHOOL_WORKSHEETS_DATA: SchoolWorksheet[] = [
     "titleNl": "Letter U Leren Schrijven (Eenhoorn & Paraplu)",
     "descEn": "Learn uppercase and lowercase letter Uu with stroke guides and handwriting lines.",
     "descNl": "Leer de grote en kleine letter Uu schrijven met handige hulplijnen en schrijfregels.",
-    "promptKey": "56"
+    "promptKey": "56",
+    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Animal%20Crossing/Animal_Crossing__A_clean_printable_color_1788415890381.webp"
   },
   {
     "slug": "letter-writing-v",
@@ -694,7 +751,8 @@ export const SCHOOL_WORKSHEETS_DATA: SchoolWorksheet[] = [
     "titleNl": "Letter V Leren Schrijven (Vulkaan & Busje)",
     "descEn": "Learn uppercase and lowercase letter Vv with stroke guides and handwriting lines.",
     "descNl": "Leer de grote en kleine letter Vv schrijven met handige hulplijnen en schrijfregels.",
-    "promptKey": "57"
+    "promptKey": "57",
+    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Animal%20Crossing/Animal_Crossing__A_clean_printable_color_1788415898951.webp"
   },
   {
     "slug": "letter-writing-w",
@@ -706,7 +764,8 @@ export const SCHOOL_WORKSHEETS_DATA: SchoolWorksheet[] = [
     "titleNl": "Letter W Leren Schrijven (Walvis & Water)",
     "descEn": "Learn uppercase and lowercase letter Ww with stroke guides and handwriting lines.",
     "descNl": "Leer de grote en kleine letter Ww schrijven met handige hulplijnen en schrijfregels.",
-    "promptKey": "58"
+    "promptKey": "58",
+    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Animal%20Crossing/Animal_Crossing__A_clean_printable_color_1788415907779.webp"
   },
   {
     "slug": "letter-writing-x",
@@ -718,7 +777,8 @@ export const SCHOOL_WORKSHEETS_DATA: SchoolWorksheet[] = [
     "titleNl": "Letter X Leren Schrijven (Xylofoon)",
     "descEn": "Learn uppercase and lowercase letter Xx with stroke guides and handwriting lines.",
     "descNl": "Leer de grote en kleine letter Xx schrijven met handige hulplijnen en schrijfregels.",
-    "promptKey": "59"
+    "promptKey": "59",
+    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Animal%20Crossing/Animal_Crossing__A_clean_printable_color_1788415916572.webp"
   },
   {
     "slug": "letter-writing-y",
@@ -730,7 +790,8 @@ export const SCHOOL_WORKSHEETS_DATA: SchoolWorksheet[] = [
     "titleNl": "Letter Y Leren Schrijven (Jacht & Jojo)",
     "descEn": "Learn uppercase and lowercase letter Yy with stroke guides and handwriting lines.",
     "descNl": "Leer de grote en kleine letter Yy schrijven met handige hulplijnen en schrijfregels.",
-    "promptKey": "60"
+    "promptKey": "60",
+    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Animal%20Crossing/Animal_Crossing__A_clean_printable_color_1788415925570.webp"
   },
   {
     "slug": "letter-writing-z",
@@ -742,7 +803,8 @@ export const SCHOOL_WORKSHEETS_DATA: SchoolWorksheet[] = [
     "titleNl": "Letter Z Leren Schrijven (Zebra & Dierentuin)",
     "descEn": "Learn uppercase and lowercase letter Zz with stroke guides and handwriting lines.",
     "descNl": "Leer de grote en kleine letter Zz schrijven met handige hulplijnen en schrijfregels.",
-    "promptKey": "61"
+    "promptKey": "61",
+    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Animal%20Crossing/Animal_Crossing__A_clean_printable_color_1788415934258.webp"
   },
   {
     "slug": "writing-vowels-a-e-i-o-u",
@@ -754,7 +816,8 @@ export const SCHOOL_WORKSHEETS_DATA: SchoolWorksheet[] = [
     "titleNl": "De Klinkers Oefenen (A E I O U)",
     "descEn": "Master the 5 core vowel sounds in cheerful singing clouds.",
     "descNl": "Leer de 5 klinkers herkennen in vrolijke zingende wolkjes.",
-    "promptKey": "62"
+    "promptKey": "62",
+    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Animal%20Crossing/Animal_Crossing__A_clean_printable_color_1788415943258.webp"
   },
   {
     "slug": "writing-alphabet-train-a-to-z",
@@ -766,7 +829,8 @@ export const SCHOOL_WORKSHEETS_DATA: SchoolWorksheet[] = [
     "titleNl": "De Alfabet Trein: Alle Letters van A tot Z",
     "descEn": "Color the full 26-wagon alphabet train from A to Z.",
     "descNl": "Kleur de complete 26-delige lettertrein van A t/m Z.",
-    "promptKey": "63"
+    "promptKey": "63",
+    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Animal%20Crossing/Animal_Crossing__A_clean_printable_color_1788415952071.webp"
   },
   {
     "slug": "writing-uppercase-lowercase-matching",
@@ -778,7 +842,8 @@ export const SCHOOL_WORKSHEETS_DATA: SchoolWorksheet[] = [
     "titleNl": "Grote & Kleine Letters Koppelen (Aa, Bb, Cc)",
     "descEn": "Connect mother animals with uppercase letters to babies with lowercase letters.",
     "descNl": "Koppel de moederdieren met hoofdletters aan de baby's met kleine letters.",
-    "promptKey": "64"
+    "promptKey": "64",
+    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Animal%20Crossing/Animal_Crossing__A_clean_printable_color_1788415961015.webp"
   },
   {
     "slug": "writing-prewriting-zigzag-waves",
@@ -790,7 +855,8 @@ export const SCHOOL_WORKSHEETS_DATA: SchoolWorksheet[] = [
     "titleNl": "Voorbereidend Schrijven: Golven & Zigzag",
     "descEn": "Boost fine motor pencil control by tracing dotted water waves.",
     "descNl": "Verbeter de pengreep en fijne motoriek door stippellijnen over te trekken.",
-    "promptKey": "65"
+    "promptKey": "65",
+    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Animal%20Crossing/Animal_Crossing__A_clean_printable_color_1788415969602.webp"
   },
   {
     "slug": "writing-prewriting-spiral-swirls",
@@ -802,7 +868,8 @@ export const SCHOOL_WORKSHEETS_DATA: SchoolWorksheet[] = [
     "titleNl": "Voorbereidend Schrijven: Lussen & Krullen",
     "descEn": "Help snails and bumblebees follow dotted curly loop paths.",
     "descNl": "Help slakjes en bijtjes door vrolijke lussen en krullen te trekken.",
-    "promptKey": "66"
+    "promptKey": "66",
+    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Animal%20Crossing/Animal_Crossing__A_clean_printable_color_1788415978453.webp"
   },
   {
     "slug": "writing-prewriting-castle-crenellations",
@@ -814,7 +881,8 @@ export const SCHOOL_WORKSHEETS_DATA: SchoolWorksheet[] = [
     "titleNl": "Voorbereidend Schrijven: Kasteelmuren & Blokken",
     "descEn": "Guide the brave knight along square crenellation dotted lines.",
     "descNl": "Teken over de strakke kanteellijnen van de kasteelmuur.",
-    "promptKey": "67"
+    "promptKey": "67",
+    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Animal%20Crossing/Animal_Crossing__A_clean_printable_color_1788415987063.webp"
   },
   {
     "slug": "writing-name-personalized-template",
@@ -826,7 +894,8 @@ export const SCHOOL_WORKSHEETS_DATA: SchoolWorksheet[] = [
     "titleNl": "Mijn Naam Is: Schrijf Je Eigen Naam",
     "descEn": "A beautiful decorative frame to practice writing your own name.",
     "descNl": "Een prachtige versierde lijst om je eigen naam netjes in te schrijven.",
-    "promptKey": "68"
+    "promptKey": "68",
+    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Animal%20Crossing/Isabelles_Animal_Crossing_Reception.webp"
   },
   {
     "slug": "writing-first-sounds-phonics-match",
@@ -838,7 +907,8 @@ export const SCHOOL_WORKSHEETS_DATA: SchoolWorksheet[] = [
     "titleNl": "Klanken & Beginletters Verbinden",
     "descEn": "Match starting letters (B, S, M) to pictures of Ball, Sun, Monkey.",
     "descNl": "Luister naar de beginklank en verbind de letter met het plaatje.",
-    "promptKey": "69"
+    "promptKey": "69",
+    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Animal%20Crossing/Tom_Nooks_Stand.webp"
   },
   {
     "slug": "writing-cursive-letters-starter",
@@ -850,7 +920,8 @@ export const SCHOOL_WORKSHEETS_DATA: SchoolWorksheet[] = [
     "titleNl": "Aan elkaar Leren Schrijven (Verbonden Schrift)",
     "descEn": "Practice smooth, flowing cursive letters with decorative flourishes.",
     "descNl": "Oefen met sierlijk aan elkaar schrijven van de eerste letters.",
-    "promptKey": "70"
+    "promptKey": "70",
+    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Disney%20-%20Belle/Resident_Town_Hall.webp"
   },
   {
     "slug": "lang-colors-primary-red-blue-yellow",
@@ -862,7 +933,8 @@ export const SCHOOL_WORKSHEETS_DATA: SchoolWorksheet[] = [
     "titleNl": "Kleuren Leren: Rood, Blauw, Geel (Red, Blue, Yellow)",
     "descEn": "Learn primary colors with bilingual English/Dutch labels.",
     "descNl": "Leer de basiskleuren in het Nederlands en Engels.",
-    "promptKey": "71"
+    "promptKey": "71",
+    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Construction%20Vehicles/Bulldozer_Adventure_1787912223574.webp"
   },
   {
     "slug": "lang-colors-secondary-green-orange-purple",
@@ -874,7 +946,8 @@ export const SCHOOL_WORKSHEETS_DATA: SchoolWorksheet[] = [
     "titleNl": "Kleuren Leren: Groen, Oranje, Paars (Green, Orange, Purple)",
     "descEn": "Explore secondary colors with bilingual vocabulary words.",
     "descNl": "Ontdek meer kleuren tweetalig met duidelijke illustraties.",
-    "promptKey": "72"
+    "promptKey": "72",
+    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Construction%20Vehicles/Bulldozer_Adventure_1787912812370.webp"
   },
   {
     "slug": "lang-emotions-happy-sad-angry",
@@ -886,7 +959,8 @@ export const SCHOOL_WORKSHEETS_DATA: SchoolWorksheet[] = [
     "titleNl": "Emoties & Gevoelens: Blij, Boos, Verdrietig",
     "descEn": "Social emotional learning worksheet exploring feelings.",
     "descNl": "Praat en leer over emoties met vrolijke gezichtjes.",
-    "promptKey": "73"
+    "promptKey": "73",
+    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Construction%20Vehicles/Bulldozer_Adventure_1787912990166.webp"
   },
   {
     "slug": "lang-family-mom-dad-sister-brother",
@@ -898,7 +972,8 @@ export const SCHOOL_WORKSHEETS_DATA: SchoolWorksheet[] = [
     "titleNl": "Mijn Familie: Vader, Moeder, Broer, Zus",
     "descEn": "Learn family member vocabulary with a sweet cartoon house scene.",
     "descNl": "Kleur het familiehuis in en leer de woorden voor gezinsleden.",
-    "promptKey": "74"
+    "promptKey": "74",
+    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Construction%20Vehicles/Bulldozer_Adventure_1787913182082.webp"
   },
   {
     "slug": "lang-human-body-head-hand-arm-leg",
@@ -910,7 +985,8 @@ export const SCHOOL_WORKSHEETS_DATA: SchoolWorksheet[] = [
     "titleNl": "Het Menselijk Lichaam: Hoofd, Hand, Arm, Been",
     "descEn": "Bilingual anatomy vocabulary labeling worksheet for kids.",
     "descNl": "Benoem en kleur de lichaamsdelen in het Nederlands en Engels.",
-    "promptKey": "75"
+    "promptKey": "75",
+    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Construction%20%26%20Heavy%20Vehicles/Bulldozer_Character_1787734106377.webp"
   },
   {
     "slug": "lang-5-senses-sight-sound-smell-taste-touch",
@@ -922,7 +998,8 @@ export const SCHOOL_WORKSHEETS_DATA: SchoolWorksheet[] = [
     "titleNl": "De 5 Zintuigen: Zien, Horen, Ruiken, Proeven, Voelen",
     "descEn": "Discover the five senses with clear bilingual illustrated icons.",
     "descNl": "Ontdek hoe je ogen, oren, neus, tong en handen werken.",
-    "promptKey": "76"
+    "promptKey": "76",
+    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Construction%20%26%20Heavy%20Vehicles/Bulldozer_Operator_1787734156834.webp"
   },
   {
     "slug": "lang-4-seasons-spring-summer-autumn-winter",
@@ -934,7 +1011,8 @@ export const SCHOOL_WORKSHEETS_DATA: SchoolWorksheet[] = [
     "titleNl": "De 4 Seizoenen: Lente, Zomer, Herfst, Winter",
     "descEn": "A four-quadrant tree illustration showing nature through the year.",
     "descNl": "Kleur de boom in 4 seizoenen en leer de seizoensnamen.",
-    "promptKey": "77"
+    "promptKey": "77",
+    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Construction%20%26%20Heavy%20Vehicles/Bulldozer_and_Backhoe_1786109194761.webp"
   },
   {
     "slug": "lang-weather-sunny-rainy-snowy-windy",
@@ -946,7 +1024,8 @@ export const SCHOOL_WORKSHEETS_DATA: SchoolWorksheet[] = [
     "titleNl": "Het Weer: Zonnig, Regen, Sneeuw, Wind",
     "descEn": "Learn weather terminology with cheerful weather clouds.",
     "descNl": "Benoem het weer met zonnetjes, regenwolkjes en sneeuwvlokken.",
-    "promptKey": "78"
+    "promptKey": "78",
+    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Construction%20%26%20Heavy%20Vehicles/Bulldozer_and_Bird.webp"
   },
   {
     "slug": "lang-days-of-week-roller-coaster",
@@ -958,7 +1037,8 @@ export const SCHOOL_WORKSHEETS_DATA: SchoolWorksheet[] = [
     "titleNl": "Dagen van de Week: Maandag t/m Zondag",
     "descEn": "Ride through Monday to Sunday on a fun 7-cart roller coaster.",
     "descNl": "Leer de dagen van de week van maandag t/m zondag.",
-    "promptKey": "79"
+    "promptKey": "79",
+    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Construction%20%26%20Heavy%20Vehicles/Bulldozer_and_Bird_1.webp"
   },
   {
     "slug": "lang-months-of-year-stepping-stones",
@@ -970,7 +1050,8 @@ export const SCHOOL_WORKSHEETS_DATA: SchoolWorksheet[] = [
     "titleNl": "De 12 Maanden van het Jaar: Januari t/m December",
     "descEn": "Step across the 12 month stepping stones through the calendar.",
     "descNl": "Leer alle twaalf maanden van januari t/m december.",
-    "promptKey": "80"
+    "promptKey": "80",
+    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Construction%20%26%20Heavy%20Vehicles/Bulldozer_coloring_page_1786140623612.webp"
   },
   {
     "slug": "lang-opposites-big-small-hot-cold",
@@ -982,7 +1063,8 @@ export const SCHOOL_WORKSHEETS_DATA: SchoolWorksheet[] = [
     "titleNl": "Tegenstellingen: Groot & Klein, Warm & Koud",
     "descEn": "Explore contrasting word pairs with cute animals and foods.",
     "descNl": "Vergelijk tegenstellingen met de olifant, muis en ijsjes.",
-    "promptKey": "81"
+    "promptKey": "81",
+    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Construction%20%26%20Heavy%20Vehicles/Bulldozer_in_action_1786109069923.webp"
   },
   {
     "slug": "lang-opposites-up-down-fast-slow",
@@ -994,7 +1076,8 @@ export const SCHOOL_WORKSHEETS_DATA: SchoolWorksheet[] = [
     "titleNl": "Tegenstellingen: Hoog & Laag, Snel & Langzaam",
     "descEn": "Compare cheetah speed vs snail slow in this bilingual activity.",
     "descNl": "Leer het verschil tussen de snelle cheeta en langzame slak.",
-    "promptKey": "82"
+    "promptKey": "82",
+    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Construction%20%26%20Heavy%20Vehicles/Bulldozer_in_action_1786109194761.webp"
   },
   {
     "slug": "lang-classroom-objects-pencil-book-scissors",
@@ -1006,7 +1089,8 @@ export const SCHOOL_WORKSHEETS_DATA: SchoolWorksheet[] = [
     "titleNl": "Schoolspullen Benoemen: Potlood, Boek, Schaar",
     "descEn": "Label backpack essentials with Dutch and English word tags.",
     "descNl": "Kleur je schooltas en leer de namen van alle schoolspullen.",
-    "promptKey": "83"
+    "promptKey": "83",
+    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Construction%20%26%20Heavy%20Vehicles/Bulldozer_in_action_1786116179440.webp"
   },
   {
     "slug": "lang-community-helpers-doctor-firefighter",
@@ -1018,7 +1102,8 @@ export const SCHOOL_WORKSHEETS_DATA: SchoolWorksheet[] = [
     "titleNl": "Beroepen Leren: Dokter, Brandweer, Politie, Meester",
     "descEn": "Celebrate community heroes and their essential tools.",
     "descNl": "Leer over de brandweer, dokter en politieagent.",
-    "promptKey": "84"
+    "promptKey": "84",
+    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Construction%20%26%20Heavy%20Vehicles/Bulldozer_in_action_1786140647760.webp"
   },
   {
     "slug": "lang-healthy-food-vegetables-fruit",
@@ -1030,7 +1115,8 @@ export const SCHOOL_WORKSHEETS_DATA: SchoolWorksheet[] = [
     "titleNl": "Gezonde Voeding: Groente & Fruit in de Boodschappenmand",
     "descEn": "Identify broccoli, carrots, and apples in a shopping basket.",
     "descNl": "Kleur de verse groenten en fruit en leer gezond eten.",
-    "promptKey": "85"
+    "promptKey": "85",
+    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Construction%20%26%20Heavy%20Vehicles/Bulldozer_in_action_1786140683957.webp"
   },
   {
     "slug": "lang-animal-babies-dog-puppy-cow-calf",
@@ -1042,7 +1128,8 @@ export const SCHOOL_WORKSHEETS_DATA: SchoolWorksheet[] = [
     "titleNl": "Moederdieren en Hun Baby's (Hond & Puppy, Koe & Kalf)",
     "descEn": "Match mother animals to their sweet baby offspring.",
     "descNl": "Verbind de moeders met hun jongen (Koe & Kalf, Schaap & Lam).",
-    "promptKey": "86"
+    "promptKey": "86",
+    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Construction%20%26%20Heavy%20Vehicles/Bulldozer_on_railway_track.webp"
   },
   {
     "slug": "lang-animal-habitats-jungle-ocean-arctic",
@@ -1054,7 +1141,8 @@ export const SCHOOL_WORKSHEETS_DATA: SchoolWorksheet[] = [
     "titleNl": "Waar Wonen Dieren? Jungle, Zee, Noordpool, Boerderij",
     "descEn": "Explore 4 world habitats and their native wild animals.",
     "descNl": "Ontdek waar dieren over de hele wereld wonen en leven.",
-    "promptKey": "87"
+    "promptKey": "87",
+    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Construction%20%26%20Heavy%20Vehicles/Bulldozer_with_Hard_Hat_1786116245835.webp"
   },
   {
     "slug": "lang-daily-routine-morning-afternoon-night",
@@ -1066,7 +1154,8 @@ export const SCHOOL_WORKSHEETS_DATA: SchoolWorksheet[] = [
     "titleNl": "Mijn Dagritme: Ochtend, Middag en Avond",
     "descEn": "Sequence daily activities from breakfast to bedtime stars.",
     "descNl": "Volg de dag van opstaan en tandenpoetsen tot slapengaan.",
-    "promptKey": "88"
+    "promptKey": "88",
+    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Construction%20%26%20Heavy%20Vehicles/Cartoon_Bulldozer_Coloring_Page_1786116306568.webp"
   },
   {
     "slug": "lang-traffic-safety-crossing-street",
@@ -1078,7 +1167,8 @@ export const SCHOOL_WORKSHEETS_DATA: SchoolWorksheet[] = [
     "titleNl": "Veilig in het Verkeer: Zebrapad & Fietshelm",
     "descEn": "Learn pedestrian rules, green lights, and bicycle safety.",
     "descNl": "Leer veilig oversteken op het zebrapad en fietsen met helm.",
-    "promptKey": "89"
+    "promptKey": "89",
+    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Construction%20%26%20Heavy%20Vehicles/Cartoon_Bulldozer_Coloring_Page_1786140581382.webp"
   },
   {
     "slug": "lang-clean-planet-recycling-sorting",
@@ -1090,7 +1180,8 @@ export const SCHOOL_WORKSHEETS_DATA: SchoolWorksheet[] = [
     "titleNl": "Schone Planeet: Afval Scheiden & Recyclen",
     "descEn": "Sort paper, glass, and plastic into smiling recycling bins.",
     "descNl": "Help mee met afval scheiden voor een schone aarde.",
-    "promptKey": "90"
+    "promptKey": "90",
+    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Construction%20%26%20Heavy%20Vehicles/Cartoon_Bulldozer_Driver_1787734116470.webp"
   },
   {
     "slug": "lang-rhyming-words-cat-hat-bat",
@@ -1102,7 +1193,8 @@ export const SCHOOL_WORKSHEETS_DATA: SchoolWorksheet[] = [
     "titleNl": "Rijmwoorden: De -AT Familie (Kat, Mat, Rat)",
     "descEn": "Early phonics reading worksheet with rhyming word pictures.",
     "descNl": "Leer rijmen met grappige plaatjes van de kat en zijn hoed.",
-    "promptKey": "91"
+    "promptKey": "91",
+    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Construction%20%26%20Heavy%20Vehicles/Cartoon_Bulldozer_Driver_1787734399271.webp"
   },
   {
     "slug": "lang-rhyming-words-sun-run-bun",
@@ -1114,7 +1206,8 @@ export const SCHOOL_WORKSHEETS_DATA: SchoolWorksheet[] = [
     "titleNl": "Rijmwoorden: De -ON / -UN Familie (Zon, Ton, Bon)",
     "descEn": "Match sounds and rhyming word families in this reading sheet.",
     "descNl": "Zoek woorden die op elkaar rijmen en kleur de plaatjes in.",
-    "promptKey": "92"
+    "promptKey": "92",
+    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Construction%20%26%20Heavy%20Vehicles/Cartoon_Character_Driving_Bulldozer_1787734453698.webp"
   },
   {
     "slug": "lang-sight-words-word-search",
@@ -1126,7 +1219,8 @@ export const SCHOOL_WORKSHEETS_DATA: SchoolWorksheet[] = [
     "titleNl": "Eenvoudige Woordzoeker voor Beginners",
     "descEn": "Find 5 simple high-frequency reading words in a 6x6 grid.",
     "descNl": "Vind 5 makkelijke woordjes in de kinder-woordzoeker.",
-    "promptKey": "93"
+    "promptKey": "93",
+    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Construction%20%26%20Heavy%20Vehicles/Cartoon_Character_by_Construction_Equipment_1787734360932.webp"
   },
   {
     "slug": "lang-simple-crossword-picture-clues",
@@ -1138,7 +1232,8 @@ export const SCHOOL_WORKSHEETS_DATA: SchoolWorksheet[] = [
     "titleNl": "Kruiswoordpuzzel met Plaatjes voor Kinderen",
     "descEn": "Fill in letter boxes using cute picture clues for Sun, Star, Tree.",
     "descNl": "Vul de letters in met behulp van de vrolijke tekeningen.",
-    "promptKey": "94"
+    "promptKey": "94",
+    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Construction%20%26%20Heavy%20Vehicles/Cartoon_Worker_and_Bulldozer_1787734786457.webp"
   },
   {
     "slug": "lang-unscramble-animal-words",
@@ -1150,7 +1245,8 @@ export const SCHOOL_WORKSHEETS_DATA: SchoolWorksheet[] = [
     "titleNl": "Husselwoorden: Zet de Letters Goed",
     "descEn": "Rearrange scrambled letters (D-O-G, K-A-T) next to animals.",
     "descNl": "Zet de door elkaar gehusselde letters in de goede volgorde.",
-    "promptKey": "95"
+    "promptKey": "95",
+    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Construction%20%26%20Heavy%20Vehicles/Castle_Construction_1786116185474.webp"
   },
   {
     "slug": "lang-missing-vowels-spelling",
@@ -1162,7 +1258,8 @@ export const SCHOOL_WORKSHEETS_DATA: SchoolWorksheet[] = [
     "titleNl": "Vul de Ontbrekende Klinkers In (K_T, H_ND, B_S)",
     "descEn": "Choose the correct vowel (A, E, I, O, U) to complete words.",
     "descNl": "Kies de juiste klinker om het woord compleet te maken.",
-    "promptKey": "96"
+    "promptKey": "96",
+    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Construction%20%26%20Heavy%20Vehicles/Character_with_bowtie_driving_a_bulldozer_1787734098291.webp"
   },
   {
     "slug": "lang-story-starter-dragon-treehouse",
@@ -1174,7 +1271,8 @@ export const SCHOOL_WORKSHEETS_DATA: SchoolWorksheet[] = [
     "titleNl": "Creatief Schrijven: De Draak en het Boomhuis",
     "descEn": "Write your own imaginative adventure on lined story prompt lines.",
     "descNl": "Bedenk en schrijf je eigen verhaaltje bij de tekening.",
-    "promptKey": "97"
+    "promptKey": "97",
+    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Construction%20%26%20Heavy%20Vehicles/Colorful_construction_site_1786116463498.webp"
   },
   {
     "slug": "lang-comic-strip-3-panel-story",
@@ -1186,7 +1284,8 @@ export const SCHOOL_WORKSHEETS_DATA: SchoolWorksheet[] = [
     "titleNl": "Stripverhaal Maken: Eerst, Daarna, Tenslotte",
     "descEn": "Tell a sequential story in 3 illustrated cartoon frames.",
     "descNl": "Teken en vertel een stripverhaaltje in 3 opeenvolgende vakjes.",
-    "promptKey": "98"
+    "promptKey": "98",
+    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Construction%20%26%20Heavy%20Vehicles/Coloring_Page_of_Construction_Vehicle_1786116239792.webp"
   },
   {
     "slug": "lang-spot-5-differences-school",
@@ -1198,7 +1297,8 @@ export const SCHOOL_WORKSHEETS_DATA: SchoolWorksheet[] = [
     "titleNl": "Zoek de 5 Verschillen: Het Schoolplein",
     "descEn": "Look closely at two side-by-side scenes and circle 5 differences.",
     "descNl": "Kijk goed naar de twee schoolpleinen en omcirkel de 5 verschillen.",
-    "promptKey": "99"
+    "promptKey": "99",
+    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Construction%20%26%20Heavy%20Vehicles/Coloring_Page_of_Construction_Vehicle_1786116354873.webp"
   },
   {
     "slug": "lang-graduation-super-student-diploma",
@@ -1210,7 +1310,8 @@ export const SCHOOL_WORKSHEETS_DATA: SchoolWorksheet[] = [
     "titleNl": "Super Leerling Diploma (Kleurplaat Certificaat)",
     "descEn": "A celebratory award diploma coloring page to print and personalize.",
     "descNl": "Een feestelijk diploma om in te kleuren en je eigen naam op te zetten.",
-    "promptKey": "100"
+    "promptKey": "100",
+    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Construction%20%26%20Heavy%20Vehicles/Coloring_Page_of_Construction_Vehicle_1786116354873_1.webp"
   }
 ];
 

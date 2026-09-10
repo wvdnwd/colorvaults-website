@@ -104,12 +104,15 @@ export default function PrintableCalendarGrid({ themes = [], months: initialMont
         const res = await fetch(`/api/search?q=${encodeURIComponent(query)}&lang=${lang}&type=page`);
         if (res.ok) {
           const data = await res.json();
-          if (isMounted && Array.isArray(data)) {
+          const items: SearchItem[] = Array.isArray(data) ? data : (data.pages || []);
+          if (isMounted) {
             startTransition(() => {
-              setSearchResults(data.slice(0, 36));
+              setSearchResults(items.slice(0, 48));
               setIsLoadingSearch(false);
             });
           }
+        } else {
+          if (isMounted) setIsLoadingSearch(false);
         }
       } catch (err) {
         console.error('Search fetch error:', err);
