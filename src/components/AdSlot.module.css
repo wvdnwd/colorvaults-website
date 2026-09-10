@@ -1,21 +1,22 @@
 .adSlot {
-  background: transparent;
+  background: var(--surface-2, #F8FAFC);
+  border: 1.5px dashed var(--gray-300, #CBD5E1);
+  border-radius: var(--radius-lg, 16px);
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   position: relative;
   overflow: hidden;
-  margin: 1rem 0;
+  margin: 1.75rem 0;
   transition: all 0.25s ease;
 }
 
 .adHeader {
   position: absolute;
-  top: 4px;
-  right: 8px;
+  top: 8px;
+  right: 12px;
   z-index: 2;
-  opacity: 0.6;
 }
 
 .adTag {
@@ -23,10 +24,11 @@
   font-weight: 800;
   letter-spacing: 0.08em;
   text-transform: uppercase;
-  color: var(--gray-400);
-  background: var(--primary-light);
-  padding: 0.15rem 0.5rem;
-  border-radius: var(--radius-full);
+  color: var(--gray-500, #64748B);
+  background: rgba(255, 255, 255, 0.85);
+  border: 1px solid var(--gray-200, #E2E8F0);
+  padding: 0.2rem 0.6rem;
+  border-radius: var(--radius-full, 9999px);
 }
 
 .adContainer {
@@ -69,40 +71,36 @@
 
 /* Variant Styles */
 .adSlot.banner {
-  min-height: 90px;
+  min-height: 100px;
   max-width: 100%;
   width: 100%;
 }
 
 .adSlot.rectangle {
-  min-height: 250px;
+  min-height: 280px;
   width: 100%;
 }
 
 .adSlot.in-feed {
-  min-height: 120px;
+  min-height: 140px;
   height: 100%;
   margin: 0;
-  border-style: solid;
-  border-color: var(--gray-200);
+  border-style: dashed;
+  border-color: var(--gray-300);
   background: var(--surface-2);
 }
 
 @media (max-width: 768px) {
   .adSlot.banner {
     margin: 1.5rem 0;
+    min-height: 85px;
   }
 }
 
-/* Auto-clean when AdSense successfully fills the ad unit */
+/* When AdSense or any provider successfully fills the ad unit */
 .adSlot:has(ins[data-ad-status="filled"]),
 .adSlot:has(iframe) {
   border: none;
   background: transparent;
   box-shadow: none;
-}
-
-/* Gracefully auto-collapse when AdSense marks unit as unfilled */
-.adSlot:has(ins[data-ad-status="unfilled"]) {
-  display: none !important;
 }
