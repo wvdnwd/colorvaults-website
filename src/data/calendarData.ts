@@ -55,7 +55,7 @@ export const CALENDAR_THEMES_DATA: CalendarThemeBundle[] = [
         "themeTitleNl": "Februari - Valentijn Poesje met Hartjes",
         "icon": "💖",
         "days": 28,
-        "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Cute%20Puppies%20%26%20Dogs/ComfyUI_08272_.webp",
+        "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Animals/Autumn_kitten_among_Ferris_wheel_and_foliage.webp",
         "quoteEn": "Color your way through February with joy!",
         "quoteNl": "Kleur Februari vol vrolijkheid en creativiteit!"
       },
@@ -85,7 +85,7 @@ export const CALENDAR_THEMES_DATA: CalendarThemeBundle[] = [
         "themeTitleNl": "April - Eendjes in de Lenteregen",
         "icon": "🌧️",
         "days": 30,
-        "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Cute%20Puppies%20%26%20Dogs/ComfyUI_08274_.webp",
+        "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Animals/Autumn_kitten_among_fall_foliage.webp",
         "quoteEn": "Color your way through April with joy!",
         "quoteNl": "Kleur April vol vrolijkheid en creativiteit!"
       },
@@ -100,7 +100,7 @@ export const CALENDAR_THEMES_DATA: CalendarThemeBundle[] = [
         "themeTitleNl": "Mei - Speelse Pony in het Gras",
         "icon": "🌸",
         "days": 31,
-        "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Cute%20Puppies%20%26%20Dogs/ComfyUI_08275_.webp",
+        "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Animals/Cat_plays_guitar_at_beach_campsite.webp",
         "quoteEn": "Color your way through May with joy!",
         "quoteNl": "Kleur Mei vol vrolijkheid en creativiteit!"
       },
@@ -115,7 +115,7 @@ export const CALENDAR_THEMES_DATA: CalendarThemeBundle[] = [
         "themeTitleNl": "Juni - Vogeltjes in het Nest",
         "icon": "☀️",
         "days": 30,
-        "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Cute%20Puppies%20%26%20Dogs/ComfyUI_08276_.webp",
+        "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Cute%20Kittens%20%26%20Cats/ComfyUI_13143_.webp",
         "quoteEn": "Color your way through June with joy!",
         "quoteNl": "Kleur Juni vol vrolijkheid en creativiteit!"
       },
@@ -145,7 +145,7 @@ export const CALENDAR_THEMES_DATA: CalendarThemeBundle[] = [
         "themeTitleNl": "Augustus - Katje met een Zonnebloem",
         "icon": "🌻",
         "days": 31,
-        "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Cute%20Puppies%20%26%20Dogs/ComfyUI_08278_.webp",
+        "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Cute%20Kittens%20%26%20Cats/ComfyUI_13145_.webp",
         "quoteEn": "Color your way through August with joy!",
         "quoteNl": "Kleur Augustus vol vrolijkheid en creativiteit!"
       },
@@ -160,7 +160,7 @@ export const CALENDAR_THEMES_DATA: CalendarThemeBundle[] = [
         "themeTitleNl": "September - Puppy met Schooltas",
         "icon": "🎒",
         "days": 30,
-        "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Cute%20Puppies%20%26%20Dogs/ComfyUI_08279_.webp",
+        "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Cute%20Kittens%20%26%20Cats/ComfyUI_13205_.webp",
         "quoteEn": "Color your way through September with joy!",
         "quoteNl": "Kleur September vol vrolijkheid en creativiteit!"
       },
@@ -175,7 +175,7 @@ export const CALENDAR_THEMES_DATA: CalendarThemeBundle[] = [
         "themeTitleNl": "Oktober - Poesje tussen de Pompoenen",
         "icon": "🎃",
         "days": 31,
-        "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Cute%20Puppies%20%26%20Dogs/ComfyUI_08280_.webp",
+        "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Cute%20Kittens%20%26%20Cats/ComfyUI_20035_.webp",
         "quoteEn": "Color your way through October with joy!",
         "quoteNl": "Kleur Oktober vol vrolijkheid en creativiteit!"
       },
@@ -190,7 +190,7 @@ export const CALENDAR_THEMES_DATA: CalendarThemeBundle[] = [
         "themeTitleNl": "November - Eekhoorn met Eikeltjes",
         "icon": "🍂",
         "days": 30,
-        "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Cute%20Puppies%20%26%20Dogs/ComfyUI_08281_.webp",
+        "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Cute%20Kittens%20%26%20Cats/ComfyUI_20064_.webp",
         "quoteEn": "Color your way through November with joy!",
         "quoteNl": "Kleur November vol vrolijkheid en creativiteit!"
       },
@@ -205,7 +205,7 @@ export const CALENDAR_THEMES_DATA: CalendarThemeBundle[] = [
         "themeTitleNl": "December - Kerst Puppy bij de Kerstboom",
         "icon": "🎄",
         "days": 31,
-        "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Cute%20Puppies%20%26%20Dogs/ComfyUI_08282_.webp",
+        "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Cute%20Kittens%20%26%20Cats/ComfyUI_21864_.webp",
         "quoteEn": "Color your way through December with joy!",
         "quoteNl": "Kleur December vol vrolijkheid en creativiteit!"
       }

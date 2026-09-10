@@ -1,0 +1,439 @@
+.calendarContainer {
+  width: 100%;
+  max-width: 100%;
+}
+
+.themePicker {
+  margin-bottom: 2.5rem;
+}
+
+.themePickerTitle {
+  font-size: 1.25rem;
+  font-weight: 800;
+  color: #0F172A;
+  margin-bottom: 1rem;
+}
+
+.themeButtonsList {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.65rem;
+}
+
+.themeButton {
+  padding: 0.65rem 1.15rem;
+  border-radius: 9999px;
+  font-weight: 800;
+  font-size: 0.9rem;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  transition: all 0.2s ease;
+  white-space: nowrap;
+}
+
+.themeButtonActive {
+  border: 2px solid #2563EB;
+  background: #2563EB;
+  color: #FFFFFF;
+  box-shadow: 0 4px 14px rgba(37, 99, 235, 0.3);
+}
+
+.themeButtonInactive {
+  border: 1.5px solid var(--gray-200);
+  background: #FFFFFF;
+  color: #334155;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.04);
+}
+
+.themeButtonInactive:hover {
+  border-color: var(--gray-400);
+  background: #F8FAFC;
+}
+
+/* Hero Banner */
+.heroBanner {
+  background: linear-gradient(135deg, #1E1B4B 0%, #312E81 100%);
+  border-radius: 24px;
+  padding: 2rem;
+  color: #FFFFFF;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+  box-shadow: 0 15px 35px rgba(30, 27, 75, 0.25);
+  margin-bottom: 3rem;
+}
+
+.heroLeft {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+}
+
+.heroIcon {
+  font-size: 3rem;
+}
+
+.heroBadge {
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 9999px;
+  padding: 0.2rem 0.75rem;
+  font-size: 0.75rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  display: inline-block;
+}
+
+.heroTitle {
+  font-size: 1.65rem;
+  font-weight: 800;
+  margin: 0.4rem 0 0.2rem;
+  color: #FFFFFF;
+}
+
+.heroSubtitle {
+  margin: 0;
+  font-size: 0.95rem;
+  color: #C7D2FE;
+}
+
+.heroPrintButton {
+  padding: 0.9rem 2rem;
+  border-radius: 9999px;
+  background: var(--gradient-primary, linear-gradient(135deg, #FF6B35, #FF3B30));
+  color: #FFFFFF;
+  border: none;
+  font-weight: 800;
+  font-size: 1rem;
+  cursor: pointer;
+  box-shadow: 0 6px 20px rgba(255, 107, 53, 0.4);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  white-space: nowrap;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.heroPrintButton:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px rgba(255, 107, 53, 0.5);
+}
+
+/* 12-Month Grid Layout */
+.monthGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+  width: 100%;
+}
+
+@media (max-width: 1100px) {
+  .monthGrid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .monthGrid {
+    grid-template-columns: 1fr;
+    gap: 1.75rem;
+  }
+  
+  .heroBanner {
+    padding: 1.5rem;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  
+  .heroPrintButton {
+    width: 100%;
+    justify-content: center;
+  }
+}
+
+/* Month Card */
+.monthCard {
+  background: #FFFFFF;
+  border-radius: 24px;
+  border: 1.5px solid var(--gray-200);
+  overflow: hidden;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.04);
+  display: flex;
+  flex-direction: column;
+  cursor: pointer;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  width: 100%;
+}
+
+.monthCard:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 36px rgba(0, 0, 0, 0.08);
+}
+
+.cardHeader {
+  padding: 1.1rem 1.25rem 0.85rem;
+  background: #F8FAFC;
+  border-bottom: 1px solid var(--gray-200);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.cardSeason {
+  font-size: 0.75rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: #64748B;
+}
+
+.cardTitle {
+  font-size: 1.35rem;
+  font-weight: 900;
+  margin: 0.1rem 0 0;
+  color: #0F172A;
+}
+
+.cardIcon {
+  font-size: 2rem;
+}
+
+/* Clean Crisp Centered Artwork */
+.cardImageWrapper {
+  position: relative;
+  height: 280px;
+  background: #FFFFFF;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.25rem;
+  border-bottom: 1px solid var(--gray-200);
+}
+
+.openBadge {
+  position: absolute;
+  bottom: 12px;
+  right: 14px;
+  background: rgba(15, 23, 42, 0.85);
+  color: #FFFFFF;
+  border-radius: 9999px;
+  padding: 0.3rem 0.75rem;
+  font-size: 0.75rem;
+  font-weight: 800;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+}
+
+/* Mini Calendar Section */
+.cardBody {
+  padding: 1.25rem;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  background: #FAFAFA;
+}
+
+.daysHeader {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  text-align: center;
+  font-weight: 800;
+  font-size: 0.78rem;
+  color: #64748B;
+  margin-bottom: 0.5rem;
+}
+
+.daysGrid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  grid-auto-rows: 30px;
+  gap: 4px;
+  flex: 1;
+}
+
+.dayCell {
+  border-radius: 6px;
+  border: 1px solid #E2E8F0;
+  padding: 2px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.78rem;
+  font-weight: 700;
+}
+
+.dayCellValid {
+  background: #FFFFFF;
+  color: #1E293B;
+}
+
+.dayCellEmpty {
+  background: transparent;
+  color: transparent;
+  border-color: transparent;
+}
+
+.openMonthButton {
+  margin-top: 1.25rem;
+  width: 100%;
+  padding: 0.85rem;
+  border-radius: 12px;
+  border: none;
+  background: #2563EB;
+  color: #FFFFFF;
+  font-weight: 800;
+  font-size: 0.95rem;
+  cursor: pointer;
+  box-shadow: 0 2px 8px rgba(37, 99, 235, 0.25);
+  transition: all 0.2s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.45rem;
+}
+
+.openMonthButton:hover {
+  background: #1D4ED8;
+  transform: translateY(-1px);
+}
+
+/* Modal */
+.modalOverlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.75);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  z-index: 99999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+}
+
+.modalContent {
+  background: #FFFFFF;
+  border-radius: 24px;
+  max-width: 680px;
+  width: 100%;
+  max-height: 94vh;
+  overflow-y: auto;
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.3);
+  display: flex;
+  flex-direction: column;
+}
+
+.modalHeader {
+  padding: 1.25rem 1.75rem;
+  border-bottom: 1px solid var(--gray-200);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.modalCloseBtn {
+  background: var(--gray-100);
+  border: none;
+  border-radius: 9999px;
+  width: 36px;
+  height: 36px;
+  font-size: 1.1rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.2s;
+}
+
+.modalCloseBtn:hover {
+  background: var(--gray-200);
+}
+
+.modalSheetWrapper {
+  padding: 1.5rem;
+  background: #F8FAFC;
+  display: flex;
+  justify-content: center;
+}
+
+.printableSheet {
+  background: #FFFFFF;
+  border-radius: 16px;
+  border: 1.5px solid var(--gray-300);
+  padding: 1.5rem;
+  width: 100%;
+  max-width: 500px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06);
+  display: flex;
+  flex-direction: column;
+  gap: 1.1rem;
+}
+
+.sheetBanner {
+  text-align: center;
+  border-bottom: 2px solid #0F172A;
+  padding-bottom: 0.6rem;
+}
+
+.sheetImageWrapper {
+  height: 290px;
+  background: #FFFFFF;
+  border-radius: 12px;
+  border: 1px solid #E2E8F0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.75rem;
+  overflow: hidden;
+}
+
+.modalActions {
+  padding: 1.25rem 1.75rem;
+  border-top: 1px solid var(--gray-200);
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.modalPrintBtn {
+  flex: 2;
+  padding: 0.95rem;
+  border-radius: 9999px;
+  background: var(--gradient-primary, linear-gradient(135deg, #6C5CE7, #A29BFE));
+  color: #FFFFFF;
+  border: none;
+  font-weight: 800;
+  font-size: 1rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  box-shadow: 0 4px 14px rgba(108, 92, 231, 0.3);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.modalPrintBtn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(108, 92, 231, 0.4);
+}
+
+.modalCancelBtn {
+  flex: 1;
+  padding: 0.95rem;
+  border-radius: 9999px;
+  border: 2px solid var(--gray-200);
+  background: #FFFFFF;
+  color: #475569;
+  font-weight: 800;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.modalCancelBtn:hover {
+  background: var(--gray-100);
+}
