@@ -89,7 +89,7 @@ export const HOW_TO_DRAW_LESSONS: HowToDrawLesson[] = [
     ],
     "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Dinosaur%20Adventures/A_Friendly_Spiky_Dinosaur_1788433082694.webp",
     "coloringPageSlug": "dinosaur-adventures-1",
-    "coloringPageUrl": "/en/animals-wildlife/dinosaur-adventures/kids/dinosaur-adventures-1"
+    "coloringPageUrl": "/animals-wildlife/dinosaur-adventures/kids/dinosaur-adventures-1"
   },
   {
     "slug": "how-to-draw-a-triceratops",
@@ -153,7 +153,7 @@ export const HOW_TO_DRAW_LESSONS: HowToDrawLesson[] = [
     ],
     "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Dinosaur%20Adventures/Cartoon_Alligator_Dinosaur_1787903491461.webp",
     "coloringPageSlug": "dinosaur-adventures-2",
-    "coloringPageUrl": "/en/animals-wildlife/dinosaur-adventures/teens/dinosaur-adventures-2"
+    "coloringPageUrl": "/animals-wildlife/dinosaur-adventures/teens/dinosaur-adventures-2"
   },
   {
     "slug": "how-to-draw-a-brachiosaurus",
@@ -217,7 +217,7 @@ export const HOW_TO_DRAW_LESSONS: HowToDrawLesson[] = [
     ],
     "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Dinosaur%20Adventures/Cartoon_Character_Rides_Dinosaur_1787914182842.webp",
     "coloringPageSlug": "dinosaur-adventures-3",
-    "coloringPageUrl": "/en/animals-wildlife/dinosaur-adventures/toddlers/dinosaur-adventures-3"
+    "coloringPageUrl": "/animals-wildlife/dinosaur-adventures/toddlers/dinosaur-adventures-3"
   },
   {
     "slug": "how-to-draw-a-stegosaurus",
@@ -281,7 +281,7 @@ export const HOW_TO_DRAW_LESSONS: HowToDrawLesson[] = [
     ],
     "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Dinosaur%20Adventures/Cartoon_Dinosaur_1787912134785.webp",
     "coloringPageSlug": "dinosaur-adventures-4",
-    "coloringPageUrl": "/en/animals-wildlife/dinosaur-adventures/kids/dinosaur-adventures-4"
+    "coloringPageUrl": "/animals-wildlife/dinosaur-adventures/kids/dinosaur-adventures-4"
   },
   {
     "slug": "how-to-draw-a-pterodactyl",
@@ -345,7 +345,7 @@ export const HOW_TO_DRAW_LESSONS: HowToDrawLesson[] = [
     ],
     "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Dinosaur%20Adventures/Cartoon_Dinosaur_Adventure_1787912454417.webp",
     "coloringPageSlug": "dinosaur-adventures-5",
-    "coloringPageUrl": "/en/animals-wildlife/dinosaur-adventures/teens/dinosaur-adventures-5"
+    "coloringPageUrl": "/animals-wildlife/dinosaur-adventures/teens/dinosaur-adventures-5"
   },
   {
     "slug": "how-to-draw-a-puppy",
@@ -1303,9 +1303,9 @@ export const HOW_TO_DRAW_LESSONS: HowToDrawLesson[] = [
         "instructionNl": "Maak je meesterwerk af! Trek strakke zwarte contourlijnen en kleur alles prachtig in met viltstiften, potloden of in onze Online Kleurtool!"
       }
     ],
-    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Farm%20Animals/Coloring_Sheep_Family_1788440926447.webp",
-    "coloringPageSlug": "farm-animals-20",
-    "coloringPageUrl": "/en/animals-wildlife/farm-animals/toddlers/farm-animals-20"
+    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Farm%20Animals/A_Cow_Family_in_the_Farmyard_1788441090739.webp",
+    "coloringPageSlug": "farm-animals-1",
+    "coloringPageUrl": "/animals-wildlife/farm-animals/kids/farm-animals-1"
   },
   {
     "slug": "how-to-draw-a-koala",
@@ -1687,9 +1687,9 @@ export const HOW_TO_DRAW_LESSONS: HowToDrawLesson[] = [
         "instructionNl": "Maak je meesterwerk af! Trek strakke zwarte contourlijnen en kleur alles prachtig in met viltstiften, potloden of in onze Online Kleurtool!"
       }
     ],
-    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Unicorns%20%26%20Pegasus/Unicorns___Pegasus__A_clean_printable_co_1788447944112.webp",
-    "coloringPageSlug": "unicorns-pegasus-26",
-    "coloringPageUrl": "/en/fantasy-fairytales/unicorns-pegasus/toddlers/unicorns-pegasus-26"
+    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Ancient%20Mythology/Pegasus_Ascending_1788269130914.webp",
+    "coloringPageSlug": "unicorns-pegasus-1",
+    "coloringPageUrl": "/fantasy-fairytales/unicorns-pegasus/toddlers/unicorns-pegasus-1"
   },
   {
     "slug": "how-to-draw-a-dragon",
@@ -1815,9 +1815,9 @@ export const HOW_TO_DRAW_LESSONS: HowToDrawLesson[] = [
         "instructionNl": "Maak je meesterwerk af! Trek strakke zwarte contourlijnen en kleur alles prachtig in met viltstiften, potloden of in onze Online Kleurtool!"
       }
     ],
-    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Fairytale%20Kingdoms%20%26%20Castles/Fairytale_Kingdoms___Castles__A_magical__1788454733282.webp",
-    "coloringPageSlug": "fairytale-kingdoms-castles-28",
-    "coloringPageUrl": "/en/fantasy-fairytales/fairytale-kingdoms-castles/kids/fairytale-kingdoms-castles-28"
+    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Fairytale%20Kingdoms%20%26%20Castles/Fairytale_Kingdoms___Castles__A_magical__1788454486928.webp",
+    "coloringPageSlug": "fairytale-kingdoms-castles-1",
+    "coloringPageUrl": "/fantasy-fairytales/fairytale-kingdoms-castles/kids/fairytale-kingdoms-castles-1"
   },
   {
     "slug": "how-to-draw-a-fairy",
@@ -1879,9 +1879,9 @@ export const HOW_TO_DRAW_LESSONS: HowToDrawLesson[] = [
         "instructionNl": "Maak je meesterwerk af! Trek strakke zwarte contourlijnen en kleur alles prachtig in met viltstiften, potloden of in onze Online Kleurtool!"
       }
     ],
-    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Fairytale%20Kingdoms%20%26%20Castles/Fairytale_Kingdoms___Castles__A_magical__1788454742518.webp",
-    "coloringPageSlug": "fairytale-kingdoms-castles-29",
-    "coloringPageUrl": "/en/fantasy-fairytales/fairytale-kingdoms-castles/teens/fairytale-kingdoms-castles-29"
+    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Fairytale%20Kingdoms%20%26%20Castles/Fairytale_Kingdoms___Castles__A_magical__1788454495930.webp",
+    "coloringPageSlug": "fairytale-kingdoms-castles-2",
+    "coloringPageUrl": "/fantasy-fairytales/fairytale-kingdoms-castles/teens/fairytale-kingdoms-castles-2"
   },
   {
     "slug": "how-to-draw-a-castle",
@@ -1943,9 +1943,9 @@ export const HOW_TO_DRAW_LESSONS: HowToDrawLesson[] = [
         "instructionNl": "Maak je meesterwerk af! Trek strakke zwarte contourlijnen en kleur alles prachtig in met viltstiften, potloden of in onze Online Kleurtool!"
       }
     ],
-    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Fairytale%20Kingdoms%20%26%20Castles/Fairytale_Kingdoms___Castles__A_magical__1788454751534.webp",
-    "coloringPageSlug": "fairytale-kingdoms-castles-30",
-    "coloringPageUrl": "/en/fantasy-fairytales/fairytale-kingdoms-castles/toddlers/fairytale-kingdoms-castles-30"
+    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Fairytale%20Kingdoms%20%26%20Castles/Fairytale_Kingdoms___Castles__A_magical__1788454505188.webp",
+    "coloringPageSlug": "fairytale-kingdoms-castles-3",
+    "coloringPageUrl": "/fantasy-fairytales/fairytale-kingdoms-castles/toddlers/fairytale-kingdoms-castles-3"
   },
   {
     "slug": "how-to-draw-a-pirate",
@@ -2007,9 +2007,9 @@ export const HOW_TO_DRAW_LESSONS: HowToDrawLesson[] = [
         "instructionNl": "Maak je meesterwerk af! Trek strakke zwarte contourlijnen en kleur alles prachtig in met viltstiften, potloden of in onze Online Kleurtool!"
       }
     ],
-    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Fairytale%20Kingdoms%20%26%20Castles/Fairytale_Kingdoms___Castles__A_magical__1788454760781.webp",
-    "coloringPageSlug": "fairytale-kingdoms-castles-31",
-    "coloringPageUrl": "/en/fantasy-fairytales/fairytale-kingdoms-castles/kids/fairytale-kingdoms-castles-31"
+    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Fairytale%20Kingdoms%20%26%20Castles/Fairytale_Kingdoms___Castles__A_magical__1788454514316.webp",
+    "coloringPageSlug": "fairytale-kingdoms-castles-4",
+    "coloringPageUrl": "/fantasy-fairytales/fairytale-kingdoms-castles/kids/fairytale-kingdoms-castles-4"
   },
   {
     "slug": "how-to-draw-a-pirate-ship",
@@ -2071,9 +2071,9 @@ export const HOW_TO_DRAW_LESSONS: HowToDrawLesson[] = [
         "instructionNl": "Maak je meesterwerk af! Trek strakke zwarte contourlijnen en kleur alles prachtig in met viltstiften, potloden of in onze Online Kleurtool!"
       }
     ],
-    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Fairytale%20Kingdoms%20%26%20Castles/Fairytale_Kingdoms___Castles__A_magical__1788454770029.webp",
-    "coloringPageSlug": "fairytale-kingdoms-castles-32",
-    "coloringPageUrl": "/en/fantasy-fairytales/fairytale-kingdoms-castles/teens/fairytale-kingdoms-castles-32"
+    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Fairytale%20Kingdoms%20%26%20Castles/Fairytale_Kingdoms___Castles__A_magical__1788454523529.webp",
+    "coloringPageSlug": "fairytale-kingdoms-castles-5",
+    "coloringPageUrl": "/fantasy-fairytales/fairytale-kingdoms-castles/teens/fairytale-kingdoms-castles-5"
   },
   {
     "slug": "how-to-draw-a-treasure-chest",
@@ -2135,9 +2135,9 @@ export const HOW_TO_DRAW_LESSONS: HowToDrawLesson[] = [
         "instructionNl": "Maak je meesterwerk af! Trek strakke zwarte contourlijnen en kleur alles prachtig in met viltstiften, potloden of in onze Online Kleurtool!"
       }
     ],
-    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Fairytale%20Kingdoms%20%26%20Castles/Fairytale_Kingdoms___Castles__A_magical__1788454779302.webp",
-    "coloringPageSlug": "fairytale-kingdoms-castles-33",
-    "coloringPageUrl": "/en/fantasy-fairytales/fairytale-kingdoms-castles/toddlers/fairytale-kingdoms-castles-33"
+    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Fairytale%20Kingdoms%20%26%20Castles/Fairytale_Kingdoms___Castles__A_magical__1788454532561.webp",
+    "coloringPageSlug": "fairytale-kingdoms-castles-6",
+    "coloringPageUrl": "/fantasy-fairytales/fairytale-kingdoms-castles/toddlers/fairytale-kingdoms-castles-6"
   },
   {
     "slug": "how-to-draw-an-astronaut",
@@ -2455,9 +2455,9 @@ export const HOW_TO_DRAW_LESSONS: HowToDrawLesson[] = [
         "instructionNl": "Maak je meesterwerk af! Trek strakke zwarte contourlijnen en kleur alles prachtig in met viltstiften, potloden of in onze Online Kleurtool!"
       }
     ],
-    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Fairytale%20Kingdoms%20%26%20Castles/Fairytale_Kingdoms___Castles__A_magical__1788454824752.webp",
-    "coloringPageSlug": "fairytale-kingdoms-castles-38",
-    "coloringPageUrl": "/en/fantasy-fairytales/fairytale-kingdoms-castles/teens/fairytale-kingdoms-castles-38"
+    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Fairytale%20Kingdoms%20%26%20Castles/Fairytale_Kingdoms___Castles__A_magical__1788454541683.webp",
+    "coloringPageSlug": "fairytale-kingdoms-castles-7",
+    "coloringPageUrl": "/fantasy-fairytales/fairytale-kingdoms-castles/kids/fairytale-kingdoms-castles-7"
   },
   {
     "slug": "how-to-draw-a-princess",
@@ -2519,9 +2519,9 @@ export const HOW_TO_DRAW_LESSONS: HowToDrawLesson[] = [
         "instructionNl": "Maak je meesterwerk af! Trek strakke zwarte contourlijnen en kleur alles prachtig in met viltstiften, potloden of in onze Online Kleurtool!"
       }
     ],
-    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Fairytale%20Kingdoms%20%26%20Castles/Fairytale_Kingdoms___Castles__A_magical__1788454833932.webp",
-    "coloringPageSlug": "fairytale-kingdoms-castles-39",
-    "coloringPageUrl": "/en/fantasy-fairytales/fairytale-kingdoms-castles/toddlers/fairytale-kingdoms-castles-39"
+    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Fairytale%20Kingdoms%20%26%20Castles/Fairytale_Kingdoms___Castles__A_magical__1788454550684.webp",
+    "coloringPageSlug": "fairytale-kingdoms-castles-8",
+    "coloringPageUrl": "/fantasy-fairytales/fairytale-kingdoms-castles/teens/fairytale-kingdoms-castles-8"
   },
   {
     "slug": "how-to-draw-a-crown",
@@ -2583,9 +2583,9 @@ export const HOW_TO_DRAW_LESSONS: HowToDrawLesson[] = [
         "instructionNl": "Maak je meesterwerk af! Trek strakke zwarte contourlijnen en kleur alles prachtig in met viltstiften, potloden of in onze Online Kleurtool!"
       }
     ],
-    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Fairytale%20Kingdoms%20%26%20Castles/Fairytale_Kingdoms___Castles__A_magical__1788454842736.webp",
-    "coloringPageSlug": "fairytale-kingdoms-castles-40",
-    "coloringPageUrl": "/en/fantasy-fairytales/fairytale-kingdoms-castles/kids/fairytale-kingdoms-castles-40"
+    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Fairytale%20Kingdoms%20%26%20Castles/Fairytale_Kingdoms___Castles__A_magical__1788454559838.webp",
+    "coloringPageSlug": "fairytale-kingdoms-castles-9",
+    "coloringPageUrl": "/fantasy-fairytales/fairytale-kingdoms-castles/toddlers/fairytale-kingdoms-castles-9"
   },
   {
     "slug": "how-to-draw-a-robot",
@@ -2711,9 +2711,9 @@ export const HOW_TO_DRAW_LESSONS: HowToDrawLesson[] = [
         "instructionNl": "Maak je meesterwerk af! Trek strakke zwarte contourlijnen en kleur alles prachtig in met viltstiften, potloden of in onze Online Kleurtool!"
       }
     ],
-    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Marvel%20-%20Spider-Man/Marvel__A_clean_printable_coloring_page__1788418940611.webp",
-    "coloringPageSlug": "marvel-spider-man-42",
-    "coloringPageUrl": "/en/superheroes-comic-universes/marvel-spider-man/toddlers/marvel-spider-man-42"
+    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Marvel%20-%20Spider-Man/Marvel__A_clean_printable_coloring_page__1788418580858.webp",
+    "coloringPageSlug": "marvel-spider-man-1",
+    "coloringPageUrl": "/superheroes-comic-universes/marvel-spider-man/kids/marvel-spider-man-1"
   },
   {
     "slug": "how-to-draw-a-superhero-girl",
@@ -2775,9 +2775,9 @@ export const HOW_TO_DRAW_LESSONS: HowToDrawLesson[] = [
         "instructionNl": "Maak je meesterwerk af! Trek strakke zwarte contourlijnen en kleur alles prachtig in met viltstiften, potloden of in onze Online Kleurtool!"
       }
     ],
-    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Marvel%20-%20Spider-Man/Marvel__A_clean_printable_coloring_page__1788418949614.webp",
-    "coloringPageSlug": "marvel-spider-man-43",
-    "coloringPageUrl": "/en/superheroes-comic-universes/marvel-spider-man/kids/marvel-spider-man-43"
+    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Marvel%20-%20Spider-Man/Marvel__A_clean_printable_coloring_page__1788418589511.webp",
+    "coloringPageSlug": "marvel-spider-man-2",
+    "coloringPageUrl": "/superheroes-comic-universes/marvel-spider-man/teens/marvel-spider-man-2"
   },
   {
     "slug": "how-to-draw-a-cute-monster",
@@ -3159,9 +3159,9 @@ export const HOW_TO_DRAW_LESSONS: HowToDrawLesson[] = [
         "instructionNl": "Maak je meesterwerk af! Trek strakke zwarte contourlijnen en kleur alles prachtig in met viltstiften, potloden of in onze Online Kleurtool!"
       }
     ],
-    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Unicorns%20%26%20Pegasus/Unicorns___Pegasus__A_clean_printable_co_1788448152394.webp",
-    "coloringPageSlug": "unicorns-pegasus-49",
-    "coloringPageUrl": "/en/fantasy-fairytales/unicorns-pegasus/kids/unicorns-pegasus-49"
+    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Ancient%20Mythology/Pegasus_Over_Classical_Building_1788269391678.webp",
+    "coloringPageSlug": "unicorns-pegasus-2",
+    "coloringPageUrl": "/fantasy-fairytales/unicorns-pegasus/teens/unicorns-pegasus-2"
   },
   {
     "slug": "how-to-draw-a-phoenix",
@@ -5143,9 +5143,9 @@ export const HOW_TO_DRAW_LESSONS: HowToDrawLesson[] = [
         "instructionNl": "Maak je meesterwerk af! Trek strakke zwarte contourlijnen en kleur alles prachtig in met viltstiften, potloden of in onze Online Kleurtool!"
       }
     ],
-    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Fairytale%20Kingdoms%20%26%20Castles/Fairytale_Kingdoms___Castles__A_magical__1788455207245.webp",
-    "coloringPageSlug": "fairytale-kingdoms-castles-80",
-    "coloringPageUrl": "/en/fantasy-fairytales/fairytale-kingdoms-castles/teens/fairytale-kingdoms-castles-80"
+    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Fairytale%20Kingdoms%20%26%20Castles/Fairytale_Kingdoms___Castles__A_magical__1788454568837.webp",
+    "coloringPageSlug": "fairytale-kingdoms-castles-10",
+    "coloringPageUrl": "/fantasy-fairytales/fairytale-kingdoms-castles/kids/fairytale-kingdoms-castles-10"
   },
   {
     "slug": "how-to-draw-an-oak-tree",

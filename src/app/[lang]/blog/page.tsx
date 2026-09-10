@@ -30,12 +30,13 @@ export default async function BlogIndexPage({ params }: { params: Promise<{ lang
             items={[{ label: isEn ?'Guides & Articles':'Tips & Artikelen'}]}
             lang={lang}
           />
-          <h1 className="title-h1"style={{ marginTop:'1rem'}}>
-            {isEn ?'Parenting & Teaching Guides':'Tips voor Ouders, Juffen & Meesters'}
+          <h1 className="title-h1" style={{ marginTop: '1rem' }}>
+            {isEn ? '🎨 Coloring Guides, Tips & Articles' : '🎨 Kleurplaten Gidsen, Tips & Artikelen'}
           </h1>
-          <p style={{ color:'var(--gray-600)', fontSize:'1.1rem', marginTop:'0.6rem', maxWidth:'640px'}}>
+          <p style={{ color: 'var(--gray-600)', fontSize: '1.1rem', marginTop: '0.6rem', maxWidth: '640px' }}>
             {isEn
-              ?'Discover creative ideas, educational benefits of coloring, and stress-relief tips for all ages.':'Ontdek creatieve lesideën, de voordelen van inkleuren voor de motoriek van kinderen en ontspanningstips voor volwassenen.'}
+              ? 'Discover creative coloring ideas, educational benefits for kids, and relaxing mindfulness tips for adults.'
+              : 'Ontdek creatieve kleurtips, de voordelen voor de motoriek van kinderen en ontspannende mindfulness tips voor volwassenen.'}
           </p>
         </div>
       </div>

@@ -177,64 +177,85 @@ export default async function HowToDrawLessonPage({
         </div>
 
         <div style={{ display: 'flex', flexDirection: 'column', gap: '1.75rem' }}>
-          {lesson.steps.map((step) => (
-            <div
-              key={step.stepNumber}
-              style={{
-                background: '#FFFFFF',
-                borderRadius: '20px',
-                padding: '1.75rem 2rem',
-                border: '1.5px solid var(--gray-200)',
-                boxShadow: '0 4px 16px rgba(0,0,0,0.02)',
-                display: 'flex',
-                gap: '1.5rem',
-                alignItems: 'flex-start',
-              }}
-            >
-              <div style={{
-                width: '48px',
-                height: '48px',
-                borderRadius: '14px',
-                background: 'linear-gradient(135deg, #2563EB, #60A5FA)',
-                color: '#FFFFFF',
-                display: 'flex',
-                alignItems: 'center',
-                justifyContent: 'center',
-                fontSize: '1.35rem',
-                fontWeight: 900,
-                flexShrink: 0,
-                boxShadow: '0 4px 12px rgba(37, 99, 235, 0.25)',
-              }}>
-                {step.stepNumber}
-              </div>
+          {lesson.steps.map((step) => {
+            const stepBadgesEn = ['✏️ Stage 1: Basic Shapes', '📐 Stage 2: Outer Contours', '🔍 Stage 3: Facial & Body Details', '🖋️ Stage 4: Line Inking', '🎨 Stage 5: Shading & Highlights', '✨ Stage 6: Full Coloring'];
+            const stepBadgesNl = ['✏️ Fase 1: Basis Schets', '📐 Fase 2: Omtrek & Vorm', '🔍 Fase 3: Karakterdetails', '🖋️ Fase 4: Lijnen Overstiften', '🎨 Fase 5: Schaduw & Reliëf', '✨ Fase 6: Inkleuren'];
+            const badgeText = isEn ? stepBadgesEn[step.stepNumber - 1] || `Step ${step.stepNumber}` : stepBadgesNl[step.stepNumber - 1] || `Stap ${step.stepNumber}`;
 
-              <div style={{ flex: 1 }}>
-                <h3 style={{ fontSize: '1.25rem', fontWeight: 800, color: '#0F172A', margin: '0 0 0.4rem' }}>
-                  {isEn ? step.titleEn : step.titleNl}
-                </h3>
-                <p style={{ color: '#334155', fontSize: '1rem', lineHeight: 1.65, margin: '0 0 0.75rem' }}>
-                  {isEn ? step.instructionEn : step.instructionNl}
-                </p>
+            return (
+              <div
+                key={step.stepNumber}
+                style={{
+                  background: '#FFFFFF',
+                  borderRadius: '20px',
+                  padding: '1.75rem 2rem',
+                  border: '1.5px solid var(--gray-200)',
+                  boxShadow: '0 4px 16px rgba(0,0,0,0.02)',
+                  display: 'flex',
+                  gap: '1.5rem',
+                  alignItems: 'flex-start',
+                }}
+              >
+                <div style={{
+                  width: '52px',
+                  height: '52px',
+                  borderRadius: '16px',
+                  background: 'linear-gradient(135deg, #2563EB, #60A5FA)',
+                  color: '#FFFFFF',
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  fontSize: '1.4rem',
+                  fontWeight: 900,
+                  flexShrink: 0,
+                  boxShadow: '0 4px 12px rgba(37, 99, 235, 0.25)',
+                }}>
+                  {step.stepNumber}
+                </div>
 
-                {(step.tipEn || step.tipNl) && (
-                  <div style={{
-                    background: '#FEF3C7',
-                    border: '1px solid #FDE68A',
-                    borderRadius: '12px',
-                    padding: '0.65rem 1rem',
-                    fontSize: '0.875rem',
-                    color: '#92400E',
-                    display: 'flex',
-                    alignItems: 'center',
-                    gap: '0.5rem',
-                  }}>
-                    <span>💡</span>
-                    <span><strong>{isEn ? 'Artist Tip:' : 'Teken Tip:'}</strong> {isEn ? step.tipEn : step.tipNl}</span>
+                <div style={{ flex: 1 }}>
+                  <div style={{ display: 'flex', alignItems: 'center', gap: '0.6rem', marginBottom: '0.4rem', flexWrap: 'wrap' }}>
+                    <span style={{
+                      background: 'rgba(37, 99, 235, 0.1)',
+                      color: '#2563EB',
+                      padding: '0.2rem 0.65rem',
+                      borderRadius: '9999px',
+                      fontSize: '0.75rem',
+                      fontWeight: 800,
+                      textTransform: 'uppercase',
+                      letterSpacing: '0.03em',
+                    }}>
+                      {badgeText}
+                    </span>
                   </div>
-                )}
+
+                  <h3 style={{ fontSize: '1.25rem', fontWeight: 800, color: '#0F172A', margin: '0 0 0.5rem' }}>
+                    {isEn ? step.titleEn : step.titleNl}
+                  </h3>
+                  <p style={{ color: '#334155', fontSize: '1.02rem', lineHeight: 1.7, margin: '0 0 0.85rem' }}>
+                    {isEn ? step.instructionEn : step.instructionNl}
+                  </p>
+
+                  {(step.tipEn || step.tipNl) && (
+                    <div style={{
+                      background: '#FEF3C7',
+                      border: '1px solid #FDE68A',
+                      borderRadius: '12px',
+                      padding: '0.65rem 1rem',
+                      fontSize: '0.875rem',
+                      color: '#92400E',
+                      display: 'flex',
+                      alignItems: 'center',
+                      gap: '0.5rem',
+                    }}>
+                      <span>💡</span>
+                      <span><strong>{isEn ? 'Artist Tip:' : 'Teken Tip:'}</strong> {isEn ? step.tipEn : step.tipNl}</span>
+                    </div>
+                  )}
+                </div>
               </div>
-            </div>
-          ))}
+            );
+          })}
         </div>
 
         {/* Related Drawing Lessons */}
