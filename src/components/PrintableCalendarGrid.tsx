@@ -275,7 +275,7 @@ export default function PrintableCalendarGrid({ themes = [], months: initialMont
         </div>
       )}
 
-      {/* ── 12 Month Interactive Grid (100% full-width on mobile, 3 cols on desktop) ── */}
+      {/* ── 12 Month Interactive Grid (Strictly 1-col on mobile, 2/3 cols on tablet/desktop) ── */}
       <div className={styles.monthGrid}>
         {months.map((m) => (
           <div key={m.monthNumber} className={styles.monthCard}>
@@ -292,28 +292,35 @@ export default function PrintableCalendarGrid({ themes = [], months: initialMont
               <span className={styles.cardIcon}>{m.icon}</span>
             </div>
 
-            {/* Crisp Centered Artwork Area (Click to change drawing) */}
+            {/* 🌟 BIG Crisp Centered Artwork Area (Click to change drawing or preview) 🌟 */}
             <div
               className={styles.cardImageContainer}
-              onClick={() => setPickingForMonth(m)}
+              onClick={() => setActiveModalMonth(m)}
             >
               {m.image ? (
                 <SafeImage
                   src={m.image}
                   alt={(isEn ? m.nameEn : m.nameNl) + ' Coloring Page'}
-                  width={400}
-                  height={280}
-                  style={{ maxWidth: '100%', maxHeight: '100%', objectFit: 'contain' }}
+                  width={480}
+                  height={420}
+                  style={{ maxWidth: '98%', maxHeight: '98%', objectFit: 'contain' }}
                 />
               ) : (
-                <div style={{ fontSize: '3.5rem' }}>{m.icon}</div>
+                <div style={{ fontSize: '4rem' }}>{m.icon}</div>
               )}
 
               {/* Hover overlay */}
               <div className={styles.changePageOverlay}>
-                <span style={{ fontSize: '1.75rem' }}>🎨</span>
-                <button type="button" className={styles.changePageButton}>
-                  {isEn ? 'Change Drawing' : 'Kleurplaat Wijzigen'}
+                <span style={{ fontSize: '2rem' }}>🔍</span>
+                <button
+                  type="button"
+                  onClick={(e) => {
+                    e.stopPropagation();
+                    setPickingForMonth(m);
+                  }}
+                  className={styles.changePageButton}
+                >
+                  🎨 {isEn ? 'Change Drawing' : 'Kleurplaat Wijzigen'}
                 </button>
               </div>
 
@@ -472,8 +479,8 @@ export default function PrintableCalendarGrid({ themes = [], months: initialMont
                       <SafeImage
                         src={item.image}
                         alt={item.title}
-                        width={200}
-                        height={160}
+                        width={220}
+                        height={180}
                         style={{ maxWidth: '100%', maxHeight: '100%', objectFit: 'contain' }}
                       />
                     </div>
@@ -552,8 +559,8 @@ export default function PrintableCalendarGrid({ themes = [], months: initialMont
                     <SafeImage
                       src={activeModalMonth.image}
                       alt={activeModalMonth.nameEn + ' Coloring Artwork'}
-                      width={420}
-                      height={290}
+                      width={480}
+                      height={340}
                       style={{ maxWidth: '100%', maxHeight: '100%', objectFit: 'contain' }}
                     />
                   ) : (
@@ -673,7 +680,7 @@ export default function PrintableCalendarGrid({ themes = [], months: initialMont
                 <img
                   src={m.image}
                   alt={m.nameEn}
-                  style={{ maxWidth: '100%', maxHeight: '420px', objectFit: 'contain' }}
+                  style={{ maxWidth: '100%', maxHeight: '450px', objectFit: 'contain' }}
                 />
               ) : null}
             </div>
