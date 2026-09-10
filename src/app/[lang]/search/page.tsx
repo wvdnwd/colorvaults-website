@@ -1,5 +1,6 @@
 import SearchClient from'@/components/SearchClient';
-import { getThemes, getFeaturedPages, getColoringPagesForTheme, ColoringPage } from'@/lib/api';
+import { getThemes } from'@/lib/api';
+import { getSearchPage } from '@/lib/search';
 import Breadcrumbs from'@/components/Breadcrumbs';
 
 export async function generateStaticParams() {
@@ -79,21 +80,12 @@ export default async function SearchPage({
   searchParams: Promise<{ q?: string; difficulty?: string; age?: string; theme?: string; page?: string }>;
 }) {
   const { lang } = await params;
-  const { q = '', difficulty = '', age = '', theme = '' } = await searchParams;
+  const { q = '', difficulty = '', age = '', theme = '', page = '1' } = await searchParams;
   const isEn = lang === 'en';
 
   const allThemes = getThemes(lang).map(t => ({ slug: t.slug, title: t.title }));
 
-  // Lightweight initial pages load (no 39MB payload!)
-  let initialPages: ColoringPage[] = [];
-  if (theme) {
-    const foundTheme = getThemes(lang).find(t => t.slug === theme);
-    if (foundTheme) {
-      initialPages = getColoringPagesForTheme(lang, foundTheme.parentHub, theme);
-    }
-  } else {
-    initialPages = getFeaturedPages(lang, 48);
-  }
+  const results = getSearchPage(lang, new URLSearchParams({ q, difficulty, age, theme, page }));
 
   return (
     <>
@@ -122,7 +114,9 @@ export default async function SearchPage({
           initialAge={age}
           initialTheme={theme}
           allThemes={allThemes}
-          initialPages={initialPages}
+          initialPages={results.pages}
+          total={results.total}
+          currentPage={results.page}
         />
       </div>
     </>

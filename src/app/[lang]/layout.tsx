@@ -39,11 +39,9 @@ const adsenseClientId = process.env.NEXT_PUBLIC_ADSENSE_CLIENT_ID;
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.colorvaults.com"),
-  title: {
-    template:"%s | ColorVaults",
-    default:"ColorVaults | Free Premium Coloring Pages",
-  },
-  description:"Download thousands of high-quality free printable coloring pages for kids, toddlers, teens and adults. 100% free, no account required.",
+  // Routes supply complete titles, often including the brand already.
+  title: "ColorVaults | Free Premium Coloring Pages",
+  description:"Download free printable coloring pages for kids, toddlers, teens and adults. No account required.",
   verification: {
     google:"r57LIyNltfhaHeN4Lean5iNHEkbWBJbD-z-s6uF9t0s",
   },
@@ -127,9 +125,9 @@ export default async function RootLayout({
         </a>
         <script
           type="application/ld+json"dangerouslySetInnerHTML={{ __html: safeJsonLd({"@context":"https://schema.org","@graph": [
-              {"@type":"WebSite","@id":"https://colorvaults.com/#website","url":"https://colorvaults.com","name":"ColorVaults","description":"Free premium printable coloring pages for all ages","inLanguage": ["en","nl"],"potentialAction": [{"@type":"SearchAction","target": {"@type":"EntryPoint","urlTemplate":`https://colorvaults.com/${lang}/search?q={search_term_string}`},"query-input":"required name=search_term_string"}]
+              {"@type":"WebSite","@id":"https://www.colorvaults.com/#website","url":"https://www.colorvaults.com","name":"ColorVaults","description":"Free premium printable coloring pages for all ages","inLanguage": ["en","nl","de","fr"],"potentialAction": [{"@type":"SearchAction","target": {"@type":"EntryPoint","urlTemplate":`https://www.colorvaults.com/${lang}/search?q={search_term_string}`},"query-input":"required name=search_term_string"}]
               },
-              {"@type":"Organization","@id":"https://colorvaults.com/#organization","name":"ColorVaults","url":"https://colorvaults.com","logo": {"@type":"ImageObject","url":"https://colorvaults.com/images/banner.jpg","width": 1200,"height": 630
+              {"@type":"Organization","@id":"https://www.colorvaults.com/#organization","name":"ColorVaults","url":"https://www.colorvaults.com","logo": {"@type":"ImageObject","url":"https://www.colorvaults.com/images/banner.jpg","width": 1200,"height": 630
                 }
               }
             ]

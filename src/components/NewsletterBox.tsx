@@ -57,11 +57,11 @@ export default function NewsletterBox({ isEn, lang }: { isEn: boolean; lang: str
           {isEn ?'ColorVaults Club':'Kleurplaten Club'}
         </span>
         <h2 style={{ fontSize:'2rem', fontWeight: 800, margin:'0 0 0.75rem', lineHeight: 1.25 }}>
-          {isEn ?'Get 10 New Free Coloring Pages Every Week!':'Ontvang Elke Week 10 Nieuwe Gratis Kleurplaten!'}
+          {isEn ?'Get Coloring Page Updates':'Ontvang Updates over Kleurplaten'}
         </h2>
         <p style={{ color:'#94A3B8', fontSize:'1rem', lineHeight: 1.6, marginBottom:'2rem'}}>
           {isEn
-            ?'Join over 15,000+ parents and teachers. Free high-resolution printables sent directly to your inbox — 100% spam-free.':'Sluit je aan bij meer dan 15.000+ ouders en leerkrachten. Wekelijks nieuwe A4 printables in je mailbox — 100% gratis en vrijblijvend.'}
+            ?'Subscribe for coloring inspiration and updates about free printables in your inbox.':'Meld je aan voor kleurinspiratie en updates over gratis printbare kleurplaten in je mailbox.'}
         </p>
 
         {status ==='success'? (
@@ -74,7 +74,7 @@ export default function NewsletterBox({ isEn, lang }: { isEn: boolean; lang: str
             fontWeight: 700,
             fontSize:'1.05rem',
           }}>
-            {isEn ?'Thank you! You are now subscribed to the weekly coloring club.':'Bedankt! Je staat ingeschreven en ontvangt direct de nieuwste kleurplaten.'}
+            {isEn ?'Thank you! You are now subscribed to coloring page updates.':'Bedankt! Je staat ingeschreven voor updates over kleurplaten.'}
           </div>
         ) : (
           <form onSubmit={handleSubmit} style={{

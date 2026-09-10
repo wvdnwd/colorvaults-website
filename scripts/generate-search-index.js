@@ -1,81 +1,30 @@
-/**
- * Generates a static search index JSON file at public/search-index.json
- * Run: node scripts/generate-search-index.js
- */
+/* eslint-disable @typescript-eslint/no-require-imports -- Node 20 CommonJS build script. */
+/** Run: node scripts/generate-search-index.js */
 const fs = require('fs');
 const path = require('path');
+const { buildSearchIndex } = require('../src/lib/search-index');
 
 const dataDir = path.join(__dirname, '..', 'src', 'data');
-const outputPath = path.join(__dirname, '..', 'public', 'search-index.json');
+const publicDir = path.join(__dirname, '..', 'public');
 
 function readJson(lang, filename) {
-  const filePath = path.join(dataDir, lang, filename);
+  let filePath = path.join(dataDir, lang, filename);
+  if (!fs.existsSync(filePath)) filePath = path.join(dataDir, 'en', filename);
   if (!fs.existsSync(filePath)) return [];
   return JSON.parse(fs.readFileSync(filePath, 'utf8'));
 }
 
 const index = [];
-
 for (const lang of ['en', 'nl', 'de', 'fr']) {
   const hubs = readJson(lang, 'main-hubs.json');
   const themes = readJson(lang, 'themes.json');
-
-  for (const hub of hubs) {
-    index.push({
-      lang,
-      type: 'hub',
-      title: hub.title,
-      description: hub.description || '',
-      image: hub.image || '',
-      url: `/${lang}/${hub.slug}`,
-    });
-  }
-
-  for (const theme of themes) {
-    index.push({
-      lang,
-      type: 'theme',
-      title: theme.title,
-      description: theme.description || '',
-      image: theme.image || '',
-      parentHub: theme.parentHub,
-      parentTheme: theme.slug,
-      url: `/${lang}/${theme.parentHub}/${theme.slug}`,
-    });
-  }
-
-  const themesDataDir = path.join(dataDir, lang, 'themes-data');
-  if (fs.existsSync(themesDataDir)) {
-    const files = fs.readdirSync(themesDataDir).filter(f => f.endsWith('.json'));
-    for (const f of files) {
-      const themePages = JSON.parse(fs.readFileSync(path.join(themesDataDir, f), 'utf8'));
-      for (const page of themePages) {
-        index.push({
-          lang,
-          type: 'page',
-          title: page.title,
-          image: page.image || '',
-          parentHub: page.parentHub,
-          parentTheme: page.parentTheme,
-          ageGroup: page.ageGroup,
-          url: `/${lang}/${page.parentHub}/${page.parentTheme}/${page.ageGroup}/${page.slug}`,
-          tags: page.tags || [],
-        });
-      }
-    }
-  }
+  // Match runtime catalog membership and per-file English fallback, not directory contents.
+  const pages = themes.flatMap(theme =>
+    readJson(lang, `themes-data/${theme.slug}.json`)
+      .filter(page => page.parentHub === theme.parentHub && page.parentTheme === theme.slug));
+  const entries = buildSearchIndex(lang, hubs, themes, pages);
+  fs.writeFileSync(path.join(publicDir, `search-index-${lang}.json`), JSON.stringify(entries));
+  index.push(...entries);
+  console.log(`Search index (${lang}): ${entries.length} entries`);
 }
-
-fs.writeFileSync(outputPath, JSON.stringify(index));
-const stats = fs.statSync(outputPath);
-console.log(`Search index generated: ${index.length} entries → ${outputPath} (${(stats.size / (1024 * 1024)).toFixed(2)} MB)`);
-
-// Also generate language-specific lightweight indexes
-for (const lang of ['en', 'nl', 'de', 'fr']) {
-  const langIndex = index.filter(e => e.lang === lang);
-  const langPath = path.join(__dirname, '..', 'public', `search-index-${lang}.json`);
-  fs.writeFileSync(langPath, JSON.stringify(langIndex));
-  const langStats = fs.statSync(langPath);
-  console.log(`Language search index (${lang}): ${langIndex.length} entries → ${langPath} (${(langStats.size / (1024 * 1024)).toFixed(2)} MB)`);
-}
-
+fs.writeFileSync(path.join(publicDir, 'search-index.json'), JSON.stringify(index));

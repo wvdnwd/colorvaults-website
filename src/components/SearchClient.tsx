@@ -1,13 +1,13 @@
 'use client';
 
-import React, { useState, useEffect, useRef, useTransition } from 'react';
-import { useRouter, usePathname, useSearchParams } from 'next/navigation';
+import React, { useOptimistic, useTransition } from 'react';
+import { useRouter, usePathname } from 'next/navigation';
 import Link from 'next/link';
 import MotionCard from '@/components/MotionCard';
 import SearchFilterBar from '@/components/SearchFilterBar';
 import AdSlot from '@/components/AdSlot';
 import AdCard from '@/components/AdCard';
-import { ColoringPage } from '@/lib/api';
+import type { ColoringPage } from '@/lib/api';
 import styles from './SearchPage.module.css';
 
 interface ThemeOption {
@@ -23,6 +23,8 @@ interface SearchClientProps {
  initialTheme: string;
  allThemes: ThemeOption[];
  initialPages: ColoringPage[];
+ total: number;
+ currentPage: number;
 }
 
 const PER_PAGE = 40;
@@ -35,80 +37,18 @@ export default function SearchClient({
  initialTheme,
  allThemes,
  initialPages,
+ total,
+ currentPage,
 }: SearchClientProps) {
  const router = useRouter();
  const pathname = usePathname();
- const searchParams = useSearchParams();
  const [isPending, startTransition] = useTransition();
 
- const initialPagesRef = useRef(initialPages);
- useEffect(() => {
-   initialPagesRef.current = initialPages;
- }, [initialPages]);
-
- const [query, setQuery] = useState(initialQuery);
- const [difficulty, setDifficulty] = useState(initialDifficulty);
- const [age, setAge] = useState(initialAge);
- const [theme, setTheme] = useState(initialTheme);
- const [currentPage, setCurrentPage] = useState(1);
- const [pages, setPages] = useState<ColoringPage[]>(initialPages);
- const [loading, setLoading] = useState(false);
+ const [{ query, difficulty, age, theme }, setFilters] = useOptimistic({
+   query: initialQuery, difficulty: initialDifficulty, age: initialAge, theme: initialTheme,
+ });
 
  const isEn = lang === 'en';
-
- // Sync state from searchParams if user navigates history
- useEffect(() => {
- setQuery(searchParams.get('q') || '');
- setDifficulty(searchParams.get('difficulty') || '');
- setAge(searchParams.get('age') || '');
- setTheme(searchParams.get('theme') || '');
- const p = parseInt(searchParams.get('page') || '1', 10);
- setCurrentPage(isNaN(p) || p < 1 ? 1 : p);
- }, [searchParams]);
-
- // Fetch results dynamically from /api/search when filters or query change
- useEffect(() => {
- if (!query.trim() && !difficulty && !age && !theme) {
- setPages(initialPagesRef.current);
- return;
- }
-
- const timer = setTimeout(async () => {
- setLoading(true);
- try {
- const params = new URLSearchParams();
- if (query.trim()) params.set('q', query.trim());
- if (difficulty) params.set('difficulty', difficulty);
- if (age) params.set('age', age);
- if (theme) params.set('theme', theme);
- params.set('lang', lang);
-
- const res = await fetch(`/api/search?${params.toString()}`);
- if (res.ok) {
- const results = await res.json();
- const pageResults: ColoringPage[] = results
- .filter((r: { type?: string }) => !r.type || r.type === 'page')
- .map((r: { url: string; parentHub?: string; parentTheme?: string; ageGroup?: string; title: string; description?: string; image?: string; tags?: string[] }) => ({
- slug: r.url.split('/').pop() || '',
- parentHub: r.parentHub || '',
- parentTheme: r.parentTheme || '',
- ageGroup: r.ageGroup || '',
- title: r.title,
- shortDescription: r.description || '',
- image: r.image || '',
- tags: r.tags || [],
- }));
- setPages(pageResults);
- }
- } catch (err) {
- console.error('Search fetch error:', err);
- } finally {
- setLoading(false);
- }
- }, 200);
-
- return () => clearTimeout(timer);
- }, [query, difficulty, age, theme, lang]);
 
  // Update URL helper
  const updateUrl = (newQuery: string, newDiff: string, newAge: string, newTheme: string, pageNum = 1) => {
@@ -123,6 +63,7 @@ export default function SearchClient({
  const newUrl = queryString ?`${pathname}?${queryString}`: pathname;
 
  startTransition(() => {
+ setFilters({ query: newQuery, difficulty: newDiff, age: newAge, theme: newTheme });
  router.push(newUrl, { scroll: false });
  });
  };
@@ -138,24 +79,14 @@ export default function SearchClient({
  const nextAge = updates.age !== undefined ? updates.age : age;
  const nextTheme = updates.theme !== undefined ? updates.theme : theme;
 
- setQuery(nextQuery);
- setDifficulty(nextDiff);
- setAge(nextAge);
- setTheme(nextTheme);
- setCurrentPage(1);
-
  updateUrl(nextQuery, nextDiff, nextAge, nextTheme, 1);
  };
 
- const filteredPages = pages;
- const totalPages = Math.ceil(filteredPages.length / PER_PAGE);
- const displayedPages = filteredPages.slice(
- (currentPage - 1) * PER_PAGE,
- currentPage * PER_PAGE
- );
+ const totalPages = Math.ceil(total / PER_PAGE);
+ const displayedPages = initialPages;
 
  return (
- <div className={styles.wrapper}>
+ <div className={styles.wrapper} aria-busy={isPending}>
  {/* Combinable Filter Bar & Active Chips */}
  <SearchFilterBar
  lang={lang}
@@ -169,17 +100,17 @@ export default function SearchClient({
 
  {/* Results Header */}
  <div className={styles.resultCount}>
- {filteredPages.length > 0 ? (
+  {total > 0 ? (
  <p>
  {isEn ?'Found':'Gevonden'}{''}
- <strong>{filteredPages.length}</strong>{''}
+  <strong>{total}</strong>{''}
  {isEn ?'coloring pages':'kleurplaten'}
  </p>
  ) : null}
  </div>
 
  {/* Grid Results */}
- {filteredPages.length === 0 ? (
+  {total === 0 ? (
  <div className={styles.empty}>
  <p style={{ fontWeight: 700, fontSize:'1.2rem', marginBottom:'0.5rem', color:'var(--foreground)'}}>
  {isEn ?'No coloring pages found matching your filters':'Geen kleurplaten gevonden met deze filters'}
@@ -225,7 +156,7 @@ export default function SearchClient({
  <div style={{ marginBottom:'1.5rem', textAlign:'center'}}>
  <p style={{ fontSize:'0.85rem', color:'var(--gray-500)', fontWeight: 600, marginBottom:'0.6rem'}}>
  {isEn
- ?`Page ${currentPage} of ${totalPages} — ${Math.min(currentPage * PER_PAGE, filteredPages.length)} of ${filteredPages.length} coloring pages`:`Pagina ${currentPage} van ${totalPages} — ${Math.min(currentPage * PER_PAGE, filteredPages.length)} van ${filteredPages.length} kleurplaten`}
+  ?`Page ${currentPage} of ${totalPages} — ${Math.min(currentPage * PER_PAGE, total)} of ${total} coloring pages`:`Pagina ${currentPage} van ${totalPages} — ${Math.min(currentPage * PER_PAGE, total)} van ${total} kleurplaten`}
  </p>
  <div
  style={{
@@ -251,10 +182,10 @@ export default function SearchClient({
 
  <div style={{ display:'flex', justifyContent:'center', alignItems:'center', gap:'1rem'}}>
  {currentPage > 1 ? (
- <button
- type="button"onClick={() => {
+  <button
+  disabled={isPending}
+  type="button"onClick={() => {
  const nextP = currentPage - 1;
- setCurrentPage(nextP);
  updateUrl(query, difficulty, age, theme, nextP);
  }}
  className="btn-secondary">
@@ -279,10 +210,10 @@ export default function SearchClient({
  </span>
 
  {currentPage < totalPages ? (
- <button
- type="button"onClick={() => {
+  <button
+  disabled={isPending}
+  type="button"onClick={() => {
  const nextP = currentPage + 1;
- setCurrentPage(nextP);
  updateUrl(query, difficulty, age, theme, nextP);
  }}
  className="btn-primary">
