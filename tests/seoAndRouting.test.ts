@@ -1,7 +1,7 @@
 import { describe, it } from 'node:test';
 import assert from 'node:assert/strict';
 import { SITE_ORIGIN, VALID_LOCALES, isValidLocale, getCanonicalUrl, escapeXml } from '../src/lib/site';
-import { buildCanonicalUrl, buildHreflangAlternates } from '../src/lib/seo';
+import { buildCanonicalUrl, buildHreflangAlternates, createMetadata } from '../src/lib/seo';
 import { safeJsonLd, buildWebsiteAndOrgSchema } from '../src/lib/structuredData';
 
 describe('Site & Routing Helpers', () => {
@@ -50,6 +50,29 @@ describe('SEO & Canonical Helpers', () => {
     assert.equal(alternates['de'], 'https://www.colorvaults.com/de/calendars');
     assert.equal(alternates['fr'], 'https://www.colorvaults.com/fr/calendars');
     assert.equal(alternates['x-default'], 'https://www.colorvaults.com/en/calendars');
+  });
+
+  it('keeps hreflang alternates on the same paginated page', () => {
+    const alternates = buildHreflangAlternates('/animals', 2);
+    assert.equal(alternates['en'], 'https://www.colorvaults.com/en/animals?page=2');
+    assert.equal(alternates['nl'], 'https://www.colorvaults.com/nl/animals?page=2');
+    assert.equal(alternates['de'], 'https://www.colorvaults.com/de/animals?page=2');
+    assert.equal(alternates['fr'], 'https://www.colorvaults.com/fr/animals?page=2');
+    assert.equal(alternates['x-default'], 'https://www.colorvaults.com/en/animals?page=2');
+  });
+
+  it('uses the normalized page for both canonical and metadata alternates', () => {
+    const metadata = createMetadata({
+      lang: 'de',
+      path: '/animals',
+      title: 'Animals',
+      description: 'Animal coloring pages',
+      page: 3,
+    });
+
+    assert.equal(metadata.alternates?.canonical, 'https://www.colorvaults.com/de/animals?page=3');
+    assert.equal(metadata.alternates?.languages?.en, 'https://www.colorvaults.com/en/animals?page=3');
+    assert.equal(metadata.alternates?.languages?.['x-default'], 'https://www.colorvaults.com/en/animals?page=3');
   });
 });
 

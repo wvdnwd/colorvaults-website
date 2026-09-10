@@ -1,4 +1,5 @@
-import { getThemes, getThemeBySlug, getMainHubs, getColoringPages, getColoringPagesForTheme, safeJsonLd } from '@/lib/api';
+import { getThemes, getThemeBySlug, getMainHubs, getColoringPagesForTheme, safeJsonLd } from '@/lib/api';
+import { filterColoringPages, getAgeCounts, getDifficultyCounts, normalizeDifficulty, paginate } from '@/lib/coloringPageFilters';
 import { getCategorySeoData } from'@/lib/categorySeo';
 import CategorySeoBlock from'@/components/CategorySeoBlock';
 import RelatedThemes from '@/components/RelatedThemes';
@@ -38,10 +39,13 @@ export async function generateMetadata({
 }) {
   const { lang, mainHubSlug, themeSlug } = await params;
   const sParams = searchParams ? await searchParams : {};
-  const currentPage = Math.max(1, parseInt(sParams.page || '1', 10));
+  const difficulty = normalizeDifficulty(sParams.difficulty);
 
   const theme = getThemeBySlug(lang, mainHubSlug, themeSlug);
   if (!theme || theme.parentHub !== mainHubSlug) return {};
+  const allPages = getColoringPagesForTheme(lang, mainHubSlug, themeSlug);
+  const filteredPages = filterColoringPages(allPages, { difficulty });
+  const { currentPage } = paginate(filteredPages, sParams.page, PER_PAGE);
 
   const ogImageUrl = theme.image
     ? (theme.image.startsWith('http') ? theme.image : `${SITE_ORIGIN}${theme.image}`)
@@ -61,8 +65,9 @@ export async function generateMetadata({
     path: `/${mainHubSlug}/${themeSlug}`,
     title,
     description: theme.description,
-    page: currentPage,
+    page: difficulty ? undefined : currentPage,
     image: ogImageUrl,
+    noindex: Boolean(difficulty),
   });
 }
 
@@ -75,8 +80,7 @@ export default async function ThemePage({
 }) {
   const { lang, mainHubSlug, themeSlug } = await params;
   const { page: pageParam, difficulty: diffParam } = await searchParams;
-  const currentPage = Math.max(1, parseInt(pageParam ||'1', 10));
-  const rawDiff = (diffParam ||'').toLowerCase();
+  const difficulty = normalizeDifficulty(diffParam);
 
   const theme = getThemeBySlug(lang, mainHubSlug, themeSlug);
   if (!theme || theme.parentHub !== mainHubSlug) return notFound();
@@ -84,7 +88,7 @@ export default async function ThemePage({
   const hub = getMainHubs(lang).find(h => h.slug === mainHubSlug);
   if (!hub) return notFound();
 
-  const isEn = lang !== 'nl';
+  const isEn = lang === 'en' || lang === 'de' || lang === 'fr';
 
   const allThemesInHub = getThemes(lang)
     .filter(t => t.parentHub === mainHubSlug)
@@ -95,27 +99,19 @@ export default async function ThemePage({
   // Get ALL coloring pages for this theme via O(1) index
   const allColoringPages = getColoringPagesForTheme(lang, mainHubSlug, themeSlug);
 
-  const counts = {
-    all: allColoringPages.length,
-    easy: allColoringPages.filter(p => p.ageGroup ==='kids'|| p.ageGroup ==='kinderen').length,
-    medium: allColoringPages.filter(p => p.ageGroup ==='teens'|| p.ageGroup ==='tieners').length,
-    hard: allColoringPages.filter(p => p.ageGroup ==='adults'|| p.ageGroup ==='volwassenen').length,
+  const counts = getDifficultyCounts(allColoringPages);
+  const filteredPages = filterColoringPages(allColoringPages, { difficulty });
+  const ageCounts = getAgeCounts(filteredPages);
+  const { items: coloringPages, currentPage, totalPages } = paginate(filteredPages, pageParam, PER_PAGE);
+  const difficultyQueryString = difficulty ? `&difficulty=${difficulty}` : '';
+  const basePath = `/${lang}/${mainHubSlug}/${themeSlug}`;
+  const emptyLabels: Record<string, { message: string; reset: string }> = {
+    en: { message: 'No coloring pages match these filters.', reset: 'Reset filters' },
+    nl: { message: 'Geen kleurplaten gevonden met deze filters.', reset: 'Filters wissen' },
+    de: { message: 'Keine Malvorlagen entsprechen diesen Filtern.', reset: 'Filter zurücksetzen' },
+    fr: { message: 'Aucun coloriage ne correspond à ces filtres.', reset: 'Réinitialiser les filtres' },
   };
-
-  let filteredPages = allColoringPages;
-  if (rawDiff ==='easy'|| rawDiff ==='kids') {
-    filteredPages = allColoringPages.filter(p => p.ageGroup ==='kids'|| p.ageGroup ==='kinderen');
-  } else if (rawDiff ==='medium'|| rawDiff ==='teens') {
-    filteredPages = allColoringPages.filter(p => p.ageGroup ==='teens'|| p.ageGroup ==='tieners');
-  } else if (rawDiff ==='hard'|| rawDiff ==='adults') {
-    filteredPages = allColoringPages.filter(p => p.ageGroup ==='adults'|| p.ageGroup ==='volwassenen');
-  }
-
-  const totalPages = Math.ceil(filteredPages.length / PER_PAGE);
-  const offset = (currentPage - 1) * PER_PAGE;
-  const coloringPages = filteredPages.slice(offset, offset + PER_PAGE);
-
-  const difficultyQueryString = rawDiff ?`&difficulty=${encodeURIComponent(rawDiff)}`:'';
+  const emptyText = emptyLabels[lang] || emptyLabels.en;
 
   // 4 Related themes in this hub for quick pill navigation
   const relatedPills = getThemes(lang)
@@ -404,7 +400,15 @@ export default async function ThemePage({
           </div>
         </div>
 
-        <DifficultyFilterBar isEn={isEn} counts={counts} />
+        <DifficultyFilterBar
+          lang={lang}
+          basePath={basePath}
+          currentPath={basePath}
+          difficulty={difficulty}
+          ageOptions={theme.availableAges}
+          counts={counts}
+          ageCounts={ageCounts}
+        />
 
         <div className="section-header"style={{ marginTop:'2rem'}}>
           <div>
@@ -430,8 +434,11 @@ export default async function ThemePage({
           >
             <p style={{ fontSize:'3.5rem', marginBottom:'1rem'}}></p>
             <p style={{ fontSize:'1.2rem', fontWeight: 700, color:'var(--foreground)'}}>
-              {isEn ?'No coloring pages found for this difficulty level.':'Geen kleurplaten gevonden voor deze moeilijkheidsgraad.'}
+              {emptyText.message}
             </p>
+            <Link href={basePath} className="btn-secondary" style={{ display: 'inline-flex', marginTop: '1rem' }}>
+              {emptyText.reset}
+            </Link>
           </div>
         ) : (
           <div>
@@ -500,7 +507,7 @@ export default async function ThemePage({
             <div style={{ display:'flex', justifyContent:'center', gap:'0.5rem', flexWrap:'wrap'}}>
               {currentPage > 1 && (
                 <Link
-                  href={`/${lang}/${mainHubSlug}/${themeSlug}?page=${currentPage - 1}${difficultyQueryString}`}
+                   href={`${basePath}?page=${currentPage - 1}${difficultyQueryString}`}
                   className="btn-secondary">
                   ← {isEn ?'Previous':'Vorige'}
                 </Link>
@@ -511,7 +518,7 @@ export default async function ThemePage({
                 return (
                   <Link
                     key={pageNum}
-                    href={`/${lang}/${mainHubSlug}/${themeSlug}?page=${pageNum}${difficultyQueryString}`}
+                     href={`${basePath}?page=${pageNum}${difficultyQueryString}`}
                     style={{
                       width:'40px',
                       height:'40px',
@@ -532,7 +539,7 @@ export default async function ThemePage({
               })}
               {currentPage < totalPages && (
                 <Link
-                  href={`/${lang}/${mainHubSlug}/${themeSlug}?page=${currentPage + 1}${difficultyQueryString}`}
+                   href={`${basePath}?page=${currentPage + 1}${difficultyQueryString}`}
                   className="btn-secondary">
                   {isEn ?'Next':'Volgende'} →
                 </Link>
@@ -542,7 +549,13 @@ export default async function ThemePage({
         )}
 
         {/* 10 Fun Craft Ideas & Activities (SEO Supercharger) */}
-        <CraftIdeasSection themeTitle={theme.title} isEn={isEn} hubSlug={mainHubSlug} themeSlug={themeSlug} />
+        <CraftIdeasSection
+          themeTitle={theme.title}
+          hubSlug={mainHubSlug}
+          themeSlug={themeSlug}
+          lang={lang}
+          isEn={isEn}
+        />
 
         {/* Frequently Asked Questions (Schema.org FAQPage Rich Results) */}
         <ThemeFaqSection themeTitle={theme.title} isEn={isEn} hubSlug={mainHubSlug} themeSlug={themeSlug} />

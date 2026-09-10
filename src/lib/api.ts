@@ -312,22 +312,34 @@ function validateSlug(slug: string, typeName: string) {
 }
 
 export function getAgeLabel(ageSlug: string, lang: string): { label: string; emoji: string; desc: string } {
-  const isEn = lang ==='en';
-  const map: Record<string, { en: string; nl: string; emoji: string; descEn: string; descNl: string }> = {
-    kids:        { en:'Easy',   nl:'Makkelijk', emoji:'', descEn:'Simple shapes & fun designs',       descNl:'Eenvoudige vormen & leuke designs'},
-    kinderen:    { en:'Easy',   nl:'Makkelijk', emoji:'', descEn:'Simple shapes & fun designs',       descNl:'Eenvoudige vormen & leuke designs'},
-    toddlers:    { en:'Easy',   nl:'Makkelijk', emoji:'', descEn:'Simple shapes & fun designs',       descNl:'Eenvoudige vormen & leuke designs'},
-    peuters:     { en:'Easy',   nl:'Makkelijk', emoji:'', descEn:'Simple shapes & fun designs',       descNl:'Eenvoudige vormen & leuke designs'},
-    teens:       { en:'Medium', nl:'Gemiddeld', emoji:'', descEn:'More detail & creative scenes',     descNl:'Meer detail & creatieve scènes'},
-    tieners:     { en:'Medium', nl:'Gemiddeld', emoji:'', descEn:'More detail & creative scenes',     descNl:'Meer detail & creatieve scènes'},
-    adults:      { en:'Hard',   nl:'Moeilijk',  emoji:'', descEn:'Intricate patterns & fine details', descNl:'Ingewikkelde patronen & fijne details'},
-    volwassenen: { en:'Hard',   nl:'Moeilijk',  emoji:'', descEn:'Intricate patterns & fine details', descNl:'Ingewikkelde patronen & fijne details'},
+  const locale = ['en', 'nl', 'de', 'fr'].includes(lang) ? lang : 'en';
+  const ageDifficulties: Record<string, 'easy' | 'medium' | 'hard'> = {
+    kids: 'easy', children: 'easy', kinderen: 'easy', kinder: 'easy', enfants: 'easy',
+    toddlers: 'easy', peuters: 'easy', kleinkinder: 'easy', 'tout-petits': 'easy',
+    teens: 'medium', tieners: 'medium', jugendliche: 'medium', ados: 'medium',
+    adults: 'hard', volwassenen: 'hard', erwachsene: 'hard', adultes: 'hard',
   };
-  const entry = map[ageSlug];
-  if (!entry) return { label: ageSlug, emoji:'', desc:''};
-  return {
-    label: isEn ? entry.en : entry.nl,
-    emoji: entry.emoji,
-    desc:  isEn ? entry.descEn : entry.descNl,
+  const labels: Record<'easy' | 'medium' | 'hard', Record<string, { label: string; desc: string }>> = {
+    easy: {
+      en: { label: 'Easy', desc: 'Simple shapes & fun designs' },
+      nl: { label: 'Makkelijk', desc: 'Eenvoudige vormen & leuke designs' },
+      de: { label: 'Einfach', desc: 'Einfache Formen & lustige Motive' },
+      fr: { label: 'Facile', desc: 'Formes simples et dessins amusants' },
+    },
+    medium: {
+      en: { label: 'Medium', desc: 'More detail & creative scenes' },
+      nl: { label: 'Gemiddeld', desc: 'Meer detail & creatieve scènes' },
+      de: { label: 'Mittel', desc: 'Mehr Details & kreative Szenen' },
+      fr: { label: 'Moyen', desc: 'Plus de détails et scènes créatives' },
+    },
+    hard: {
+      en: { label: 'Hard', desc: 'Intricate patterns & fine details' },
+      nl: { label: 'Moeilijk', desc: 'Ingewikkelde patronen & fijne details' },
+      de: { label: 'Schwer', desc: 'Komplexe Muster & feine Details' },
+      fr: { label: 'Difficile', desc: 'Motifs complexes et détails fins' },
+    },
   };
+  const difficulty = ageDifficulties[ageSlug];
+  if (!difficulty) return { label: ageSlug, emoji: '', desc: '' };
+  return { ...labels[difficulty][locale], emoji: '' };
 }

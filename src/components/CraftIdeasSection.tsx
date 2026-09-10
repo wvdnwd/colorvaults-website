@@ -126,12 +126,20 @@ export default function CraftIdeasSection({
   ageGroup,
   hubSlug,
   themeSlug,
-  lang = 'nl',
+  lang,
   isEn = false
 }: Props) {
-  const currentLang = ['nl', 'en', 'de', 'fr'].includes(lang) ? lang : (isEn ? 'en' : 'nl');
+  const currentLang = typeof lang === 'string' && ['nl', 'en', 'de', 'fr'].includes(lang)
+    ? lang
+    : (isEn ? 'en' : 'nl');
   const t = UI_STRINGS[currentLang] || UI_STRINGS.nl;
-  const effectiveTitle = pageTitle || themeTitle || (currentLang === 'en' ? 'Coloring Page' : 'Kleurplaat');
+  const fallbackTitles: Record<string, string> = {
+    en: 'Coloring Page',
+    nl: 'Kleurplaat',
+    de: 'Malvorlage',
+    fr: 'Coloriage',
+  };
+  const effectiveTitle = pageTitle || themeTitle || fallbackTitles[currentLang];
   const effectiveHub = parentHub || hubSlug;
   const ideas = getCraftIdeas(effectiveTitle, effectiveHub, ageGroup, currentLang);
 

@@ -24,17 +24,19 @@ export function buildCanonicalUrl(pathWithoutLang: string, lang: string, page?: 
 
 export function buildHreflangAlternates(
   pathWithoutLang: string,
+  page?: number,
   supportedLangs: readonly ValidLocale[] = VALID_LOCALES
 ): Record<string, string> {
   const cleanPath = pathWithoutLang.startsWith('/') ? pathWithoutLang : `/${pathWithoutLang}`;
   const pathPart = cleanPath === '/' ? '' : cleanPath;
+  const pagePart = page && page > 1 ? `?page=${page}` : '';
   const alternates: Record<string, string> = {};
 
   for (const l of supportedLangs) {
-    alternates[l] = `${SITE_ORIGIN}/${l}${pathPart}`;
+    alternates[l] = `${SITE_ORIGIN}/${l}${pathPart}${pagePart}`;
   }
   // x-default points to en
-  alternates['x-default'] = `${SITE_ORIGIN}/en${pathPart}`;
+  alternates['x-default'] = `${SITE_ORIGIN}/en${pathPart}${pagePart}`;
 
   return alternates;
 }
@@ -62,7 +64,7 @@ export function createMetadata({
   }
 
   const canonical = buildCanonicalUrl(relPath, cleanLang, page);
-  const alternates = buildHreflangAlternates(relPath, alternateLangs);
+  const alternates = buildHreflangAlternates(relPath, page, alternateLangs);
 
   const meta: Metadata = {
     title,
