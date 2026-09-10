@@ -111,7 +111,11 @@ export async function GET(request: Request) {
       <guid isPermaLink="true">${escapeXml(pageUrl)}</guid>
       <pubDate>${new Date().toUTCString()}</pubDate>
       <description><![CDATA[<p>${description}</p><img src="${imgUrl}" alt="${escapeXml(title)}" />]]></description>
-      <enclosure url="${escapeXml(imgUrl)}" type="image/webp" length="102400" />
+      <enclosure url="${escapeXml(imgUrl)}" type="image/jpeg" length="102400" />
+      <media:content url="${escapeXml(imgUrl)}" medium="image" type="image/jpeg">
+        <media:title>${escapeXml(title)}</media:title>
+        <media:description>${escapeXml(description)}</media:description>
+      </media:content>
     </item>`;
     }).join('');
 
