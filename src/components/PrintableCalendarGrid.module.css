@@ -1,288 +1,197 @@
-/* Custom Calendar Builder Styles — Mobile First */
-.calendarContainer {
+/* ── Canva / Etsy Style Calendar Studio ──────────────────────────────────── */
+.studioContainer {
   width: 100%;
-  max-width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
   box-sizing: border-box;
 }
 
-/* Builder Header / Action Bar */
-.builderBar {
-  background: linear-gradient(135deg, #1E1B4B 0%, #312E81 100%);
-  border-radius: 24px;
-  padding: 2.25rem 2rem;
-  color: #FFFFFF;
+/* ── Top Month Switcher Tabs ──────────────────────────────────────────────── */
+.monthTabsNav {
   display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 1.5rem;
-  flex-wrap: wrap;
-  box-shadow: 0 16px 40px rgba(30, 27, 75, 0.25);
-  margin-bottom: 2rem;
-}
-
-.builderLeft {
-  display: flex;
-  align-items: center;
-  gap: 1.25rem;
-}
-
-.builderIcon {
-  font-size: 3.2rem;
-}
-
-.builderBadge {
-  background: rgba(255, 255, 255, 0.2);
-  border-radius: 9999px;
-  padding: 0.25rem 0.85rem;
-  font-size: 0.78rem;
-  font-weight: 800;
-  text-transform: uppercase;
-  letter-spacing: 0.04em;
-  display: inline-block;
-}
-
-.builderTitle {
-  font-size: 1.85rem;
-  font-weight: 900;
-  margin: 0.35rem 0 0.25rem;
-  color: #FFFFFF;
-}
-
-.builderSubtitle {
-  margin: 0;
-  font-size: 0.95rem;
-  color: #C7D2FE;
-  max-width: 600px;
-  line-height: 1.5;
-}
-
-.builderActions {
-  display: flex;
-  gap: 0.75rem;
-  flex-wrap: wrap;
-}
-
-.printAllBtn {
-  padding: 0.95rem 1.75rem;
-  border-radius: 9999px;
-  background: var(--gradient-primary, linear-gradient(135deg, #FF6B35, #FF3B30));
-  color: #FFFFFF;
-  border: none;
-  font-weight: 800;
-  font-size: 1rem;
-  cursor: pointer;
-  box-shadow: 0 6px 20px rgba(255, 107, 53, 0.4);
-  display: inline-flex;
   align-items: center;
   gap: 0.5rem;
-  white-space: nowrap;
-  transition: transform 0.2s, box-shadow 0.2s;
+  overflow-x: auto;
+  padding: 0.5rem 0.25rem 1.25rem;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+  margin-bottom: 1.5rem;
 }
 
-.printAllBtn:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 10px 25px rgba(255, 107, 53, 0.5);
+.monthTabsNav::-webkit-scrollbar {
+  display: none;
 }
 
-.secondaryActionBtn {
-  padding: 0.95rem 1.4rem;
+.monthTabBtn {
+  padding: 0.75rem 1.25rem;
   border-radius: 9999px;
-  background: rgba(255, 255, 255, 0.12);
-  border: 1.5px solid rgba(255, 255, 255, 0.25);
-  color: #FFFFFF;
+  border: 1.5px solid var(--gray-200);
+  background: #FFFFFF;
+  color: #475569;
   font-weight: 800;
-  font-size: 0.92rem;
+  font-size: 0.95rem;
   cursor: pointer;
+  white-space: nowrap;
   display: inline-flex;
   align-items: center;
   gap: 0.45rem;
-  transition: all 0.2s;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+  flex-shrink: 0;
 }
 
-.secondaryActionBtn:hover {
-  background: rgba(255, 255, 255, 0.22);
+.monthTabBtn:hover {
+  border-color: #2563EB;
+  background: #F0F7FF;
+  color: #2563EB;
+}
+
+.monthTabBtnActive {
+  background: #2563EB !important;
+  color: #FFFFFF !important;
+  border-color: #2563EB !important;
+  box-shadow: 0 6px 20px rgba(37, 99, 235, 0.35) !important;
   transform: translateY(-2px);
 }
 
-/* Quick Theme Presets */
-.presetSection {
-  margin-bottom: 2.5rem;
+/* ── Main Studio Stage (Paper Canvas + Control Sidebar) ───────────────────── */
+.studioStage {
+  display: flex;
+  gap: 2.5rem;
+  align-items: flex-start;
+  margin-bottom: 4rem;
+}
+
+@media (max-width: 960px) {
+  .studioStage {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+/* ── Realistic A4 Paper Sheet (Zero Awkward Blank Space) ──────────────────── */
+.a4PaperStage {
+  flex: 1;
+  width: 100%;
+  max-width: 620px;
+  margin: 0 auto;
+}
+
+.a4Sheet {
   background: #FFFFFF;
   border-radius: 20px;
-  padding: 1.25rem 1.5rem;
-  border: 1.5px solid var(--gray-200);
-  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.03);
-}
-
-.presetTitle {
-  font-size: 0.95rem;
-  font-weight: 800;
-  color: #0F172A;
-  margin: 0 0 0.85rem;
-  display: flex;
-  align-items: center;
-  gap: 0.4rem;
-}
-
-.presetList {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.5rem;
-}
-
-.presetChip {
-  padding: 0.55rem 1rem;
-  border-radius: 9999px;
-  border: 1.5px solid var(--gray-200);
-  background: #F8FAFC;
-  color: #334155;
-  font-weight: 700;
-  font-size: 0.85rem;
-  cursor: pointer;
-  display: inline-flex;
-  align-items: center;
-  gap: 0.4rem;
-  transition: all 0.2s ease;
-}
-
-.presetChip:hover {
-  border-color: #2563EB;
-  background: #EFF6FF;
-  color: #2563EB;
-}
-
-/* 12 Month Grid Layout — Mobile First (Default 1 column) */
-.monthGrid {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 2.5rem;
-  width: 100%;
-  box-sizing: border-box;
-}
-
-@media (min-width: 768px) {
-  .monthGrid {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 2rem;
-  }
-}
-
-@media (min-width: 1200px) {
-  .monthGrid {
-    grid-template-columns: repeat(3, 1fr);
-    gap: 2.5rem;
-  }
-}
-
-@media (max-width: 768px) {
-  .builderBar {
-    padding: 1.5rem;
-    flex-direction: column;
-    align-items: flex-start;
-  }
-  
-  .builderActions {
-    width: 100%;
-    flex-direction: column;
-  }
-  
-  .printAllBtn, .secondaryActionBtn {
-    width: 100%;
-    justify-content: center;
-  }
-}
-
-/* Month Card */
-.monthCard {
-  background: #FFFFFF;
-  border-radius: 28px;
-  border: 2px solid var(--gray-200);
-  overflow: hidden;
-  box-shadow: 0 10px 35px rgba(0, 0, 0, 0.05);
+  border: 2px solid #E2E8F0;
+  box-shadow: 0 20px 50px -10px rgba(15, 23, 42, 0.18), 0 0 0 1px rgba(0, 0, 0, 0.04);
+  padding: 2rem 2.25rem 2.25rem;
   display: flex;
   flex-direction: column;
-  transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
-  width: 100%;
+  gap: 1.25rem;
   box-sizing: border-box;
-}
-
-.monthCard:hover {
-  transform: translateY(-5px);
-  border-color: #2563EB;
-  box-shadow: 0 18px 45px rgba(37, 99, 235, 0.12);
-}
-
-.cardHeader {
-  padding: 1.25rem 1.5rem 1rem;
-  background: #F8FAFC;
-  border-bottom: 1.5px solid var(--gray-200);
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-
-.cardSeason {
-  font-size: 0.8rem;
-  font-weight: 800;
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
-  color: #2563EB;
-  display: block;
-}
-
-.cardTitle {
-  font-size: 1.5rem;
-  font-weight: 900;
-  margin: 0.2rem 0 0;
-  color: #0F172A;
-}
-
-.cardIcon {
-  font-size: 2.4rem;
-}
-
-/* 🌟 HUGE HERO COLORING PAGE AREA 🌟 */
-.cardImageContainer {
   position: relative;
-  height: 420px;
-  background: #FFFFFF;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 1.25rem;
-  border-bottom: 1.5px solid var(--gray-200);
-  cursor: pointer;
-  overflow: hidden;
+  transition: all 0.3s ease;
 }
 
 @media (max-width: 600px) {
-  .cardImageContainer {
-    height: 360px;
-    padding: 0.85rem;
+  .a4Sheet {
+    padding: 1.25rem 1rem 1.5rem;
+    border-radius: 16px;
+    gap: 1rem;
   }
 }
 
-.changePageOverlay {
+/* Sheet Top Header */
+.sheetHeader {
+  text-align: center;
+  border-bottom: 2.5px solid #0F172A;
+  padding-bottom: 0.75rem;
+}
+
+.sheetSeasonTag {
+  font-size: 0.78rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: #2563EB;
+}
+
+.sheetTitle {
+  font-size: 2.2rem;
+  font-weight: 900;
+  color: #0F172A;
+  margin: 0.2rem 0 0.15rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  font-family: var(--font-display), "Fredoka", sans-serif;
+}
+
+@media (max-width: 600px) {
+  .sheetTitle {
+    font-size: 1.7rem;
+  }
+}
+
+.sheetQuote {
+  font-size: 0.9rem;
+  color: #64748B;
+  font-style: italic;
+  margin: 0;
+}
+
+/* 🌟 Hero Drawing Frame (No Empty Voids, Fills Allocated Space) ───────────── */
+.sheetArtworkFrame {
+  position: relative;
+  height: 440px;
+  background: #FFFFFF;
+  border-radius: 14px;
+  border: 1.5px solid #CBD5E1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.5rem;
+  overflow: hidden;
+  cursor: pointer;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+@media (max-width: 600px) {
+  .sheetArtworkFrame {
+    height: 340px;
+  }
+}
+
+.sheetArtworkFrame:hover {
+  border-color: #2563EB;
+  box-shadow: 0 4px 16px rgba(37, 99, 235, 0.15);
+}
+
+.sheetArtworkImage {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+}
+
+/* Artwork Hover Prompt */
+.artworkHoverOverlay {
   position: absolute;
   inset: 0;
-  background: rgba(15, 23, 42, 0.7);
+  background: rgba(15, 23, 42, 0.65);
+  backdrop-filter: blur(2px);
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 0.6rem;
+  gap: 0.5rem;
   color: #FFFFFF;
   opacity: 0;
   transition: opacity 0.25s ease;
-  backdrop-filter: blur(3px);
-  z-index: 10;
 }
 
-.cardImageContainer:hover .changePageOverlay {
+.sheetArtworkFrame:hover .artworkHoverOverlay {
   opacity: 1;
 }
 
-.changePageButton {
+.overlayChangeBtn {
   padding: 0.75rem 1.5rem;
   border-radius: 9999px;
   background: #2563EB;
@@ -290,97 +199,152 @@
   border: none;
   font-weight: 800;
   font-size: 0.95rem;
-  box-shadow: 0 4px 16px rgba(37, 99, 235, 0.5);
   cursor: pointer;
-  display: inline-flex;
-  align-items: center;
-  gap: 0.4rem;
+  box-shadow: 0 4px 14px rgba(37, 99, 235, 0.4);
 }
 
-.cardSubtitleText {
+.drawingCaption {
   position: absolute;
-  bottom: 10px;
-  left: 14px;
-  right: 14px;
+  bottom: 8px;
+  left: 10px;
+  right: 10px;
   background: rgba(255, 255, 255, 0.95);
-  border: 1.5px solid var(--gray-200);
-  border-radius: 10px;
-  padding: 0.35rem 0.75rem;
-  font-size: 0.82rem;
+  border: 1px solid var(--gray-200);
+  border-radius: 6px;
+  padding: 0.25rem 0.5rem;
+  font-size: 0.75rem;
   font-weight: 700;
-  color: #334155;
+  color: #475569;
+  text-align: center;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
-  text-align: center;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
-  z-index: 5;
 }
 
-/* Card Body & Compact Date Grid */
-.cardBody {
-  padding: 1.25rem 1.5rem 1.5rem;
+/* ── Crisp Planner Grid ──────────────────────────────────────────────────── */
+.sheetPlannerGrid {
   display: flex;
   flex-direction: column;
-  background: #FAFAFC;
+  gap: 0.4rem;
 }
 
-.daysHeader {
+.plannerDaysHeader {
   display: grid;
   grid-template-columns: repeat(7, 1fr);
   text-align: center;
-  font-weight: 800;
-  font-size: 0.82rem;
-  color: #64748B;
-  margin-bottom: 0.4rem;
+  font-weight: 900;
+  font-size: 0.85rem;
+  color: #0F172A;
+  padding-bottom: 0.2rem;
+  border-bottom: 1.5px solid #E2E8F0;
 }
 
-.daysGrid {
+.plannerDaysGrid {
   display: grid;
   grid-template-columns: repeat(7, 1fr);
-  grid-auto-rows: 30px;
+  grid-auto-rows: 36px;
   gap: 4px;
 }
 
-.dayCell {
+@media (max-width: 600px) {
+  .plannerDaysGrid {
+    grid-auto-rows: 30px;
+  }
+}
+
+.plannerDayBox {
   border-radius: 6px;
-  border: 1px solid #E2E8F0;
-  padding: 2px;
+  border: 1px solid #CBD5E1;
+  background: #FFFFFF;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 0.82rem;
+  font-size: 0.88rem;
   font-weight: 700;
+  color: #0F172A;
 }
 
-.dayCellValid {
-  background: #FFFFFF;
-  color: #1E293B;
-}
-
-.dayCellEmpty {
+.plannerDayBoxEmpty {
+  border-color: transparent;
   background: transparent;
   color: transparent;
-  border-color: transparent;
 }
 
-/* Card Button Group */
-.cardButtonGroup {
-  margin-top: 1.25rem;
+.sheetFooter {
+  text-align: center;
+  font-size: 0.75rem;
+  color: #94A3B8;
+  font-weight: 600;
+  padding-top: 0.25rem;
+}
+
+/* ── Sidebar Control Panel (Canva Style) ─────────────────────────────────── */
+.studioSidebar {
+  flex: 0 0 380px;
   display: flex;
   flex-direction: column;
-  gap: 0.65rem;
+  gap: 1.25rem;
+  background: #FFFFFF;
+  border-radius: 24px;
+  border: 1.5px solid var(--gray-200);
+  padding: 1.75rem;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.04);
 }
 
-.changeDrawingBtn {
+@media (max-width: 960px) {
+  .studioSidebar {
+    flex: none;
+    width: 100%;
+    max-width: 620px;
+  }
+}
+
+.sidebarTitle {
+  font-size: 1.25rem;
+  font-weight: 900;
+  color: #0F172A;
+  margin: 0 0 0.25rem;
+}
+
+.sidebarDesc {
+  font-size: 0.9rem;
+  color: #64748B;
+  margin: 0 0 0.5rem;
+  line-height: 1.5;
+}
+
+.actionBtnPrimary {
   width: 100%;
-  padding: 0.85rem;
-  border-radius: 14px;
-  border: 2px solid #2563EB;
+  padding: 1.1rem;
+  border-radius: 16px;
+  background: var(--gradient-primary, linear-gradient(135deg, #FF6B35, #FF3B30));
+  color: #FFFFFF;
+  border: none;
+  font-weight: 900;
+  font-size: 1.05rem;
+  cursor: pointer;
+  box-shadow: 0 6px 20px rgba(255, 107, 53, 0.4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.6rem;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.actionBtnPrimary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px rgba(255, 107, 53, 0.5);
+}
+
+.actionBtnCustom {
+  width: 100%;
+  padding: 1rem;
+  border-radius: 16px;
   background: #EFF6FF;
+  border: 2px solid #2563EB;
   color: #1D4ED8;
   font-weight: 800;
-  font-size: 0.95rem;
+  font-size: 1rem;
   cursor: pointer;
   display: flex;
   align-items: center;
@@ -389,58 +353,154 @@
   transition: all 0.2s;
 }
 
-.changeDrawingBtn:hover {
+.actionBtnCustom:hover {
   background: #DBEAFE;
   transform: translateY(-1px);
 }
 
-.cardActionRow {
+.secondaryRow {
   display: flex;
-  gap: 0.6rem;
+  gap: 0.75rem;
 }
 
-.previewCardBtn {
+.sidebarSmallBtn {
   flex: 1;
-  padding: 0.75rem;
+  padding: 0.8rem;
   border-radius: 12px;
   border: 1.5px solid var(--gray-300);
+  background: #F8FAFC;
+  color: #334155;
+  font-weight: 800;
+  font-size: 0.88rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.4rem;
+  transition: all 0.2s;
+}
+
+.sidebarSmallBtn:hover {
+  background: #FFFFFF;
+  border-color: var(--gray-400);
+}
+
+.quickThemesBox {
+  background: #F8FAFC;
+  border-radius: 16px;
+  border: 1px solid var(--gray-200);
+  padding: 1.15rem;
+}
+
+.quickThemesHeader {
+  font-size: 0.85rem;
+  font-weight: 800;
+  color: #0F172A;
+  margin: 0 0 0.75rem;
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+}
+
+.quickThemesList {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.45rem;
+}
+
+.themeChipBtn {
+  padding: 0.45rem 0.85rem;
+  border-radius: 9999px;
+  border: 1px solid var(--gray-200);
   background: #FFFFFF;
   color: #334155;
+  font-size: 0.82rem;
   font-weight: 700;
-  font-size: 0.88rem;
   cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  transition: all 0.15s;
+}
+
+.themeChipBtn:hover {
+  border-color: #2563EB;
+  background: #EFF6FF;
+  color: #2563EB;
+}
+
+/* ── Bottom 12-Month Gallery Ribbon ──────────────────────────────────────── */
+.allMonthsSection {
+  margin-top: 3rem;
+  padding-top: 2.5rem;
+  border-top: 2px solid var(--gray-200);
+}
+
+.allMonthsHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1.5rem;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.allMonthsTitle {
+  font-size: 1.4rem;
+  font-weight: 900;
+  color: #0F172A;
+  margin: 0;
+}
+
+.monthsMiniGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+  gap: 1.25rem;
+}
+
+@media (max-width: 600px) {
+  .monthsMiniGrid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.85rem;
+  }
+}
+
+.miniMonthCard {
+  background: #FFFFFF;
+  border-radius: 16px;
+  border: 1.5px solid var(--gray-200);
+  overflow: hidden;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03);
+}
+
+.miniMonthCard:hover, .miniMonthCardActive {
+  transform: translateY(-4px);
+  border-color: #2563EB;
+  box-shadow: 0 8px 24px rgba(37, 99, 235, 0.2);
+}
+
+.miniImageFrame {
+  height: 140px;
+  background: #FFFFFF;
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 0.4rem;
-  transition: all 0.2s;
+  padding: 0.4rem;
+  border-bottom: 1px solid var(--gray-200);
 }
 
-.previewCardBtn:hover {
-  border-color: var(--gray-400);
+.miniTitle {
+  padding: 0.6rem 0.75rem;
+  font-size: 0.85rem;
+  font-weight: 800;
+  color: #0F172A;
+  text-align: center;
+  margin: 0;
   background: #F8FAFC;
-}
-
-.printCardBtn {
-  flex: 1;
-  padding: 0.75rem;
-  border-radius: 12px;
-  border: none;
-  background: #0F172A;
-  color: #FFFFFF;
-  font-weight: 700;
-  font-size: 0.88rem;
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 0.4rem;
-  transition: all 0.2s;
-}
-
-.printCardBtn:hover {
-  background: #1E293B;
-  transform: translateY(-1px);
 }
 
 /* ── Drawing Picker Modal ── */
@@ -460,7 +520,7 @@
 .pickerModal {
   background: #FFFFFF;
   border-radius: 24px;
-  max-width: 860px;
+  max-width: 880px;
   width: 100%;
   max-height: 92vh;
   display: flex;
@@ -589,7 +649,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 0.6rem;
+  padding: 0.5rem;
   border-bottom: 1px solid var(--gray-200);
 }
 
@@ -613,130 +673,6 @@
   background: #2563EB;
   color: #FFFFFF;
   font-size: 0.78rem;
-  font-weight: 800;
-  cursor: pointer;
-  transition: background 0.15s;
-}
-
-.pickerCardSelectBtn:hover {
-  background: #1D4ED8;
-}
-
-/* ── A4 Preview Modal ── */
-.modalOverlay {
-  position: fixed;
-  inset: 0;
-  background: rgba(0, 0, 0, 0.75);
-  backdrop-filter: blur(8px);
-  -webkit-backdrop-filter: blur(8px);
-  z-index: 99999;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 1rem;
-}
-
-.modalContent {
-  background: #FFFFFF;
-  border-radius: 24px;
-  max-width: 720px;
-  width: 100%;
-  max-height: 94vh;
-  overflow-y: auto;
-  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.3);
-  display: flex;
-  flex-direction: column;
-}
-
-.modalHeader {
-  padding: 1.25rem 1.75rem;
-  border-bottom: 1px solid var(--gray-200);
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-
-.modalSheetWrapper {
-  padding: 1.5rem;
-  background: #F8FAFC;
-  display: flex;
-  justify-content: center;
-}
-
-.printableSheet {
-  background: #FFFFFF;
-  border-radius: 16px;
-  border: 1.5px solid var(--gray-300);
-  padding: 1.75rem;
-  width: 100%;
-  max-width: 520px;
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06);
-  display: flex;
-  flex-direction: column;
-  gap: 1.1rem;
-}
-
-.sheetBanner {
-  text-align: center;
-  border-bottom: 2px solid #0F172A;
-  padding-bottom: 0.6rem;
-}
-
-.sheetImageWrapper {
-  height: 340px;
-  background: #FFFFFF;
-  border-radius: 12px;
-  border: 1px solid #E2E8F0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 0.75rem;
-  overflow: hidden;
-}
-
-.modalActions {
-  padding: 1.25rem 1.75rem;
-  border-top: 1px solid var(--gray-200);
-  display: flex;
-  gap: 1rem;
-  flex-wrap: wrap;
-}
-
-.modalPrintBtn {
-  flex: 2;
-  padding: 0.95rem;
-  border-radius: 9999px;
-  background: var(--gradient-primary, linear-gradient(135deg, #6C5CE7, #A29BFE));
-  color: #FFFFFF;
-  border: none;
-  font-weight: 800;
-  font-size: 1rem;
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 0.5rem;
-  box-shadow: 0 4px 14px rgba(108, 92, 231, 0.3);
-}
-
-.modalChangeBtn {
-  flex: 1.5;
-  padding: 0.95rem;
-  border-radius: 9999px;
-  border: 2px solid #2563EB;
-  background: #EFF6FF;
-  color: #1D4ED8;
-  font-weight: 800;
-  cursor: pointer;
-}
-
-.modalCancelBtn {
-  flex: 1;
-  padding: 0.95rem;
-  border-radius: 9999px;
-  border: 2px solid var(--gray-200);
-  background: #FFFFFF;
-  color: #475569;
   font-weight: 800;
   cursor: pointer;
 }
@@ -767,7 +703,7 @@
     page-break-after: always;
     break-after: page;
     height: 100vh;
-    padding: 2cm;
+    padding: 1.5cm 2cm;
     display: flex;
     flex-direction: column;
     justify-content: space-between;

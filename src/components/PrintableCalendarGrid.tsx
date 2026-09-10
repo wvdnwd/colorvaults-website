@@ -38,7 +38,7 @@ const CATEGORY_CHIPS = [
 
 export default function PrintableCalendarGrid({ themes = [], months: initialMonths = [], year, isEn, lang }: PrintableCalendarProps) {
   const [months, setMonths] = useState<CalendarMonth[]>(initialMonths);
-  const [activeModalMonth, setActiveModalMonth] = useState<CalendarMonth | null>(null);
+  const [selectedMonthIndex, setSelectedMonthIndex] = useState<number>(0);
   const [pickingForMonth, setPickingForMonth] = useState<CalendarMonth | null>(null);
   
   // Picker state
@@ -47,6 +47,8 @@ export default function PrintableCalendarGrid({ themes = [], months: initialMont
   const [searchResults, setSearchResults] = useState<SearchItem[]>([]);
   const [isLoadingSearch, setIsLoadingSearch] = useState<boolean>(false);
   const [, startTransition] = useTransition();
+
+  const activeMonth = months[selectedMonthIndex] || months[0];
 
   // Load saved custom calendar from localStorage
   useEffect(() => {
@@ -77,11 +79,10 @@ export default function PrintableCalendarGrid({ themes = [], months: initialMont
   useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
       if (e.key === 'Escape') {
-        setActiveModalMonth(null);
         setPickingForMonth(null);
       }
     };
-    if (activeModalMonth || pickingForMonth) {
+    if (pickingForMonth) {
       document.addEventListener('keydown', handleKeyDown);
       document.body.style.overflow = 'hidden';
     }
@@ -89,7 +90,7 @@ export default function PrintableCalendarGrid({ themes = [], months: initialMont
       document.removeEventListener('keydown', handleKeyDown);
       document.body.style.overflow = '';
     };
-  }, [activeModalMonth, pickingForMonth]);
+  }, [pickingForMonth]);
 
   // Execute drawing search when picker opens or query changes
   useEffect(() => {
@@ -134,7 +135,7 @@ export default function PrintableCalendarGrid({ themes = [], months: initialMont
     }
   };
 
-  // Randomize all 12 months with different seasonal items
+  // Randomize all 12 months
   const randomizeCalendar = () => {
     if (themes.length < 2) return;
     const randomized = months.map((m, idx) => {
@@ -178,20 +179,10 @@ export default function PrintableCalendarGrid({ themes = [], months: initialMont
     });
 
     updateCustomMonths(newMonths);
-    if (activeModalMonth && activeModalMonth.monthNumber === pickingForMonth.monthNumber) {
-      setActiveModalMonth({
-        ...activeModalMonth,
-        image: item.image,
-        themeTitleEn: item.title,
-        themeTitleNl: item.title,
-        seasonEn: item.title,
-        seasonNl: item.title,
-      });
-    }
     setPickingForMonth(null);
   };
 
-  const handlePrintAll = () => {
+  const handlePrintCurrentMonth = () => {
     window.print();
   };
 
@@ -200,196 +191,234 @@ export default function PrintableCalendarGrid({ themes = [], months: initialMont
   const daysOfWeek = isEn ? daysOfWeekEn : daysOfWeekNl;
 
   return (
-    <div className={styles.calendarContainer}>
-      {/* ── Builder Action Bar ── */}
-      <div className={styles.builderBar}>
-        <div className={styles.builderLeft}>
-          <div className={styles.builderIcon}>🎨</div>
-          <div>
-            <span className={styles.builderBadge}>
-              {isEn ? 'Personalized Calendar Creator' : 'Interactieve Kalender Maker'}
-            </span>
-            <h2 className={styles.builderTitle}>
-              {isEn ? `Create Your Custom ${year} Calendar` : `Maak Je Eigen ${year} Kleurkalender`}
-            </h2>
-            <p className={styles.builderSubtitle}>
-              {isEn
-                ? 'Choose your favorite coloring page for each month from 18,000+ designs! Print the complete 12-page calendar in 1 click.'
-                : 'Kies voor elke maand zelf je favoriete kleurplaat uit 18.000+ tekeningen! Print jouw complete 12-maanden kalender in 1 klik.'}
-            </p>
-          </div>
-        </div>
-
-        <div className={styles.builderActions}>
-          <button
-            type="button"
-            onClick={handlePrintAll}
-            className={styles.printAllBtn}
-          >
-            <span>🖨️</span>
-            <span>{isEn ? `Print Full ${year} Calendar (12 Pages)` : `Print Complete ${year} Kalender (12 Pagina’s)`}</span>
-          </button>
-
-          <button
-            type="button"
-            onClick={randomizeCalendar}
-            className={styles.secondaryActionBtn}
-            title={isEn ? 'Randomize coloring pages' : 'Willekeurige kleurplaten kiezen'}
-          >
-            <span>🎲</span>
-            <span>{isEn ? 'Surprise Me' : 'Verras Mij'}</span>
-          </button>
-
-          <button
-            type="button"
-            onClick={resetToDefault}
-            className={styles.secondaryActionBtn}
-            title={isEn ? 'Reset to default calendar' : 'Herstel naar standaard kalender'}
-          >
-            <span>🔄</span>
-            <span>{isEn ? 'Reset' : 'Herstel'}</span>
-          </button>
-        </div>
+    <div className={styles.studioContainer}>
+      {/* ── 12-Month Switcher Tabs ── */}
+      <div className={styles.monthTabsNav}>
+        {months.map((m, idx) => {
+          const isActive = idx === selectedMonthIndex;
+          return (
+            <button
+              key={m.monthNumber}
+              type="button"
+              onClick={() => setSelectedMonthIndex(idx)}
+              className={`${styles.monthTabBtn} ${isActive ? styles.monthTabBtnActive : ''}`}
+            >
+              <span>{m.icon}</span>
+              <span>{isEn ? m.nameEn : m.nameNl}</span>
+            </button>
+          );
+        })}
       </div>
 
-      {/* ── Quick Preset Theme Bar ── */}
-      {themes.length > 0 && (
-        <div className={styles.presetSection}>
-          <h4 className={styles.presetTitle}>
-            <span>⚡</span>
-            <span>{isEn ? 'Or pick a 1-click theme for all 12 months:' : 'Of kies een 1-klik snelthema voor alle 12 maanden:'}</span>
-          </h4>
-          <div className={styles.presetList}>
-            {themes.map((t) => (
-              <button
-                key={t.id}
-                type="button"
-                onClick={() => applyThemePreset(t.id)}
-                className={styles.presetChip}
-              >
-                <span>{t.icon}</span>
-                <span>{isEn ? t.titleEn : t.titleNl}</span>
-              </button>
-            ))}
-          </div>
-        </div>
-      )}
-
-      {/* ── 12 Month Interactive Grid (Strictly 1-col on mobile, 2/3 cols on tablet/desktop) ── */}
-      <div className={styles.monthGrid}>
-        {months.map((m) => (
-          <div key={m.monthNumber} className={styles.monthCard}>
-            {/* Header with Month Name */}
-            <div className={styles.cardHeader}>
-              <div>
-                <span className={styles.cardSeason}>
-                  {isEn ? m.seasonEn : m.seasonNl}
-                </span>
-                <h3 className={styles.cardTitle}>
-                  {(isEn ? m.nameEn : m.nameNl) + ' ' + year}
-                </h3>
-              </div>
-              <span className={styles.cardIcon}>{m.icon}</span>
+      {/* ── Main Studio Stage (Real A4 Sheet + Control Sidebar) ── */}
+      <div className={styles.studioStage}>
+        {/* Realistic A4 Paper Sheet */}
+        <div className={styles.a4PaperStage}>
+          <div className={styles.a4Sheet}>
+            {/* Sheet Header */}
+            <div className={styles.sheetHeader}>
+              <span className={styles.sheetSeasonTag}>
+                {isEn ? activeMonth.seasonEn : activeMonth.seasonNl}
+              </span>
+              <h2 className={styles.sheetTitle}>
+                {(isEn ? activeMonth.nameEn : activeMonth.nameNl) + ' ' + year}
+              </h2>
+              <p className={styles.sheetQuote}>
+                &ldquo;{isEn ? activeMonth.quoteEn : activeMonth.quoteNl}&rdquo;
+              </p>
             </div>
 
-            {/* 🌟 BIG Crisp Centered Artwork Area (Click to change drawing or preview) 🌟 */}
+            {/* 🌟 Big Hero Artwork Frame (Fills allocated space with 0 empty voids) 🌟 */}
             <div
-              className={styles.cardImageContainer}
-              onClick={() => setActiveModalMonth(m)}
+              className={styles.sheetArtworkFrame}
+              onClick={() => setPickingForMonth(activeMonth)}
+              title={isEn ? 'Click to change coloring page' : 'Klik om kleurplaat te wijzigen'}
             >
-              {m.image ? (
+              {activeMonth.image ? (
                 <SafeImage
-                  src={m.image}
-                  alt={(isEn ? m.nameEn : m.nameNl) + ' Coloring Page'}
-                  width={480}
-                  height={420}
-                  style={{ maxWidth: '98%', maxHeight: '98%', objectFit: 'contain' }}
+                  src={activeMonth.image}
+                  alt={(isEn ? activeMonth.nameEn : activeMonth.nameNl) + ' Coloring Page'}
+                  width={600}
+                  height={440}
+                  className={styles.sheetArtworkImage}
                 />
               ) : (
-                <div style={{ fontSize: '4rem' }}>{m.icon}</div>
+                <div style={{ fontSize: '5rem' }}>{activeMonth.icon}</div>
               )}
 
               {/* Hover overlay */}
-              <div className={styles.changePageOverlay}>
-                <span style={{ fontSize: '2rem' }}>🔍</span>
-                <button
-                  type="button"
-                  onClick={(e) => {
-                    e.stopPropagation();
-                    setPickingForMonth(m);
-                  }}
-                  className={styles.changePageButton}
-                >
-                  🎨 {isEn ? 'Change Drawing' : 'Kleurplaat Wijzigen'}
+              <div className={styles.artworkHoverOverlay}>
+                <span style={{ fontSize: '2rem' }}>🎨</span>
+                <button type="button" className={styles.overlayChangeBtn}>
+                  {isEn ? 'Change Drawing (18,000+)' : 'Kleurplaat Wijzigen (18.000+)'}
                 </button>
               </div>
 
-              <div className={styles.cardSubtitleText}>
-                🎨 {isEn ? m.themeTitleEn : m.themeTitleNl}
+              <div className={styles.drawingCaption}>
+                🎨 {isEn ? activeMonth.themeTitleEn : activeMonth.themeTitleNl}
               </div>
             </div>
 
-            {/* Card Body & Mini Planning Grid */}
-            <div className={styles.cardBody}>
-              <div className={styles.daysHeader}>
+            {/* Crisp Planner Grid */}
+            <div className={styles.sheetPlannerGrid}>
+              <div className={styles.plannerDaysHeader}>
                 {daysOfWeek.map((d, i) => (
                   <div key={i}>{d}</div>
                 ))}
               </div>
 
-              <div className={styles.daysGrid}>
+              <div className={styles.plannerDaysGrid}>
                 {Array.from({ length: 35 }).map((_, i) => {
                   const dayNum = i + 1;
-                  const isValidDay = dayNum <= m.days;
+                  const isValidDay = dayNum <= activeMonth.days;
 
                   return (
                     <div
                       key={i}
-                      className={`${styles.dayCell} ${isValidDay ? styles.dayCellValid : styles.dayCellEmpty}`}
+                      className={`${styles.plannerDayBox} ${!isValidDay ? styles.plannerDayBoxEmpty : ''}`}
                     >
                       <span>{isValidDay ? dayNum : ''}</span>
                     </div>
                   );
                 })}
               </div>
+            </div>
 
-              {/* Card Action Buttons */}
-              <div className={styles.cardButtonGroup}>
-                <button
-                  type="button"
-                  onClick={() => setPickingForMonth(m)}
-                  className={styles.changeDrawingBtn}
-                >
-                  <span>🎨</span>
-                  <span>{isEn ? 'Choose Coloring Page (18k+)' : 'Kleurplaat Kiezen (18.000+)'}</span>
-                </button>
-
-                <div className={styles.cardActionRow}>
-                  <button
-                    type="button"
-                    onClick={() => setActiveModalMonth(m)}
-                    className={styles.previewCardBtn}
-                  >
-                    <span>🔍</span>
-                    <span>{isEn ? 'A4 Preview' : 'A4 Voorbeeld'}</span>
-                  </button>
-
-                  <button
-                    type="button"
-                    onClick={() => setActiveModalMonth(m)}
-                    className={styles.printCardBtn}
-                  >
-                    <span>🖨️</span>
-                    <span>{isEn ? 'Print Month' : 'Print Maand'}</span>
-                  </button>
-                </div>
-              </div>
+            <div className={styles.sheetFooter}>
+              © ColorVaults.com • {isEn ? 'Free Printable 12-Month Coloring Calendar' : 'Gratis Printbare 12-Maanden Kleurkalender'}
             </div>
           </div>
-        ))}
+        </div>
+
+        {/* Sidebar Controls */}
+        <div className={styles.studioSidebar}>
+          <div>
+            <h3 className={styles.sidebarTitle}>
+              {isEn ? '🎨 Customize & Print' : '🎨 Aanpassen & Printen'}
+            </h3>
+            <p className={styles.sidebarDesc}>
+              {isEn
+                ? `You are viewing ${activeMonth.nameEn} ${year}. Customize the drawing or print on standard A4 paper!`
+                : `Je bekijkt ${activeMonth.nameNl} ${year}. Pas de kleurplaat aan of print direct op A4 papier!`}
+            </p>
+          </div>
+
+          <button
+            type="button"
+            onClick={handlePrintCurrentMonth}
+            className={styles.actionBtnPrimary}
+          >
+            <span>🖨️</span>
+            <span>{isEn ? `Print ${activeMonth.nameEn} (A4 Page)` : `Print ${activeMonth.nameNl} (A4 Formaat)`}</span>
+          </button>
+
+          <button
+            type="button"
+            onClick={() => setPickingForMonth(activeMonth)}
+            className={styles.actionBtnCustom}
+          >
+            <span>🎨</span>
+            <span>{isEn ? 'Choose Coloring Page (18k+)' : 'Kleurplaat Wijzigen (18.000+)'}</span>
+          </button>
+
+          <div className={styles.secondaryRow}>
+            <button
+              type="button"
+              onClick={randomizeCalendar}
+              className={styles.sidebarSmallBtn}
+            >
+              <span>🎲</span>
+              <span>{isEn ? 'Surprise Me' : 'Verras Mij'}</span>
+            </button>
+
+            <button
+              type="button"
+              onClick={resetToDefault}
+              className={styles.sidebarSmallBtn}
+            >
+              <span>🔄</span>
+              <span>{isEn ? 'Reset' : 'Herstel'}</span>
+            </button>
+          </div>
+
+          {/* 1-Click Themes */}
+          {themes.length > 0 && (
+            <div className={styles.quickThemesBox}>
+              <div className={styles.quickThemesHeader}>
+                <span>⚡</span>
+                <span>{isEn ? '1-Click Theme Bundles (12 Months):' : '1-Klik Thema Bundels (12 Maanden):'}</span>
+              </div>
+              <div className={styles.quickThemesList}>
+                {themes.map((t) => (
+                  <button
+                    key={t.id}
+                    type="button"
+                    onClick={() => applyThemePreset(t.id)}
+                    className={styles.themeChipBtn}
+                  >
+                    <span>{t.icon}</span>
+                    <span>{isEn ? t.titleEn : t.titleNl}</span>
+                  </button>
+                ))}
+              </div>
+            </div>
+          )}
+        </div>
       </div>
 
-      {/* ── Modal 1: Drawing Picker (18,000+ Coloring Pages Search & Select) ── */}
+      {/* ── Bottom 12-Month Gallery Ribbon ── */}
+      <div className={styles.allMonthsSection}>
+        <div className={styles.allMonthsHeader}>
+          <h3 className={styles.allMonthsTitle}>
+            {isEn ? `📅 All 12 Months of ${year}:` : `📅 Alle 12 Maanden van ${year}:`}
+          </h3>
+
+          <button
+            type="button"
+            onClick={handlePrintCurrentMonth}
+            className={styles.actionBtnPrimary}
+            style={{ width: 'auto', padding: '0.75rem 1.5rem', fontSize: '0.92rem' }}
+          >
+            <span>🖨️</span>
+            <span>{isEn ? `Print Complete ${year} Calendar (12 Pages)` : `Print Complete ${year} Kalender (12 Pagina’s)`}</span>
+          </button>
+        </div>
+
+        <div className={styles.monthsMiniGrid}>
+          {months.map((m, idx) => {
+            const isActive = idx === selectedMonthIndex;
+            return (
+              <div
+                key={m.monthNumber}
+                onClick={() => {
+                  setSelectedMonthIndex(idx);
+                  window.scrollTo({ top: 320, behavior: 'smooth' });
+                }}
+                className={`${styles.miniMonthCard} ${isActive ? styles.miniMonthCardActive : ''}`}
+              >
+                <div className={styles.miniImageFrame}>
+                  {m.image ? (
+                    <SafeImage
+                      src={m.image}
+                      alt={m.nameEn}
+                      width={160}
+                      height={130}
+                      style={{ maxWidth: '100%', maxHeight: '100%', objectFit: 'contain' }}
+                    />
+                  ) : (
+                    <span style={{ fontSize: '2.5rem' }}>{m.icon}</span>
+                  )}
+                </div>
+                <h4 className={styles.miniTitle}>
+                  {isEn ? m.nameEn : m.nameNl}
+                </h4>
+              </div>
+            );
+          })}
+        </div>
+      </div>
+
+      {/* ── Drawing Picker Modal (18,000+ Coloring Pages Search & Select) ── */}
       {pickingForMonth && (
         <div
           role="dialog"
@@ -508,158 +537,12 @@ export default function PrintableCalendarGrid({ themes = [], months: initialMont
         </div>
       )}
 
-      {/* ── Modal 2: Fullscreen A4 Preview & Print Modal ── */}
-      {activeModalMonth && (
-        <div
-          role="dialog"
-          aria-modal="true"
-          onClick={() => setActiveModalMonth(null)}
-          className={styles.modalOverlay}
-        >
-          <div
-            onClick={(e) => e.stopPropagation()}
-            className={styles.modalContent}
-          >
-            {/* Modal Header */}
-            <div className={styles.modalHeader}>
-              <div>
-                <span style={{ fontSize: '0.75rem', fontWeight: 800, color: '#2563EB', textTransform: 'uppercase' }}>
-                  {isEn ? activeModalMonth.seasonEn : activeModalMonth.seasonNl}
-                </span>
-                <h3 style={{ fontSize: '1.4rem', fontWeight: 900, color: '#0F172A', margin: '0.2rem 0 0' }}>
-                  {(isEn ? activeModalMonth.nameEn : activeModalMonth.nameNl) + ' ' + year + ' Kleurkalender'}
-                </h3>
-              </div>
-              <button
-                type="button"
-                onClick={() => setActiveModalMonth(null)}
-                className={styles.pickerCloseBtn}
-                aria-label={isEn ? 'Close preview' : 'Voorbeeld sluiten'}
-              >
-                ✕
-              </button>
-            </div>
-
-            {/* A4 Printable Sheet Preview */}
-            <div className={styles.modalSheetWrapper}>
-              <div className={styles.printableSheet}>
-                {/* Month Banner */}
-                <div className={styles.sheetBanner}>
-                  <h2 style={{ fontSize: '1.75rem', fontWeight: 900, color: '#0F172A', margin: 0, textTransform: 'uppercase', letterSpacing: '0.04em' }}>
-                    {(isEn ? activeModalMonth.nameEn : activeModalMonth.nameNl) + ' ' + year}
-                  </h2>
-                  <p style={{ margin: '0.2rem 0 0', fontSize: '0.85rem', color: '#64748B', fontStyle: 'italic' }}>
-                    &ldquo;{isEn ? activeModalMonth.quoteEn : activeModalMonth.quoteNl}&rdquo;
-                  </p>
-                </div>
-
-                {/* Big Clean Line Art Image to Color */}
-                <div className={styles.sheetImageWrapper}>
-                  {activeModalMonth.image ? (
-                    <SafeImage
-                      src={activeModalMonth.image}
-                      alt={activeModalMonth.nameEn + ' Coloring Artwork'}
-                      width={480}
-                      height={340}
-                      style={{ maxWidth: '100%', maxHeight: '100%', objectFit: 'contain' }}
-                    />
-                  ) : (
-                    <span style={{ fontSize: '4rem' }}>{activeModalMonth.icon}</span>
-                  )}
-                </div>
-
-                {/* Planning Grid */}
-                <div>
-                  <div style={{
-                    display: 'grid',
-                    gridTemplateColumns: 'repeat(7, 1fr)',
-                    textAlign: 'center',
-                    fontWeight: 800,
-                    fontSize: '0.75rem',
-                    color: '#334155',
-                    marginBottom: '0.4rem',
-                  }}>
-                    {daysOfWeek.map((d, i) => (
-                      <div key={i}>{d}</div>
-                    ))}
-                  </div>
-
-                  <div style={{
-                    display: 'grid',
-                    gridTemplateColumns: 'repeat(7, 1fr)',
-                    gridAutoRows: '32px',
-                    gap: '3px',
-                  }}>
-                    {Array.from({ length: 35 }).map((_, i) => {
-                      const dayNum = i + 1;
-                      const isValidDay = dayNum <= activeModalMonth.days;
-
-                      return (
-                        <div
-                          key={i}
-                          style={{
-                            borderRadius: '4px',
-                            border: '1px solid #CBD5E1',
-                            background: isValidDay ? '#FFFFFF' : '#F1F5F9',
-                            padding: '2px 4px',
-                            fontSize: '0.75rem',
-                            fontWeight: 700,
-                            color: isValidDay ? '#0F172A' : 'transparent',
-                          }}
-                        >
-                          {isValidDay ? dayNum : ''}
-                        </div>
-                      );
-                    })}
-                  </div>
-                </div>
-
-                <div style={{ textAlign: 'center', fontSize: '0.7rem', color: '#94A3B8' }}>
-                  © ColorVaults.com • {isEn ? 'Free Printable Coloring Calendar' : 'Gratis Printbare Kleurkalender'}
-                </div>
-              </div>
-            </div>
-
-            {/* Modal Actions */}
-            <div className={styles.modalActions}>
-              <button
-                type="button"
-                onClick={() => window.print()}
-                className={styles.modalPrintBtn}
-              >
-                <span>🖨️</span>
-                <span>{isEn ? 'Print This Month (Full A4)' : 'Nu Afdrukken (A4 Formaat)'}</span>
-              </button>
-
-              <button
-                type="button"
-                onClick={() => {
-                  setPickingForMonth(activeModalMonth);
-                }}
-                className={styles.modalChangeBtn}
-              >
-                <span>🎨</span>
-                <span>{isEn ? 'Change Drawing' : 'Kleurplaat Wijzigen'}</span>
-              </button>
-
-              <button
-                type="button"
-                onClick={() => setActiveModalMonth(null)}
-                className={styles.modalCancelBtn}
-              >
-                {isEn ? 'Close' : 'Sluiten'}
-              </button>
-            </div>
-          </div>
-        </div>
-      )}
-
       {/* ── Dedicated Print View for 12 Pages ── */}
       <div className={styles.printAllContainer}>
         {months.map((m) => (
           <div key={m.monthNumber} className={styles.printPage}>
-            <div style={{ textAlign: 'center', borderBottom: '2px solid #0F172A', paddingBottom: '0.5cm' }}>
-              <h1 style={{ fontSize: '2.5rem', fontWeight: 900, color: '#0F172A', margin: 0, textTransform: 'uppercase' }}>
+            <div style={{ textAlign: 'center', borderBottom: '2.5px solid #0F172A', paddingBottom: '0.5cm' }}>
+              <h1 style={{ fontSize: '2.8rem', fontWeight: 900, color: '#0F172A', margin: 0, textTransform: 'uppercase' }}>
                 {(isEn ? m.nameEn : m.nameNl) + ' ' + year}
               </h1>
               <p style={{ margin: '0.3rem 0 0', fontSize: '1.1rem', color: '#64748B', fontStyle: 'italic' }}>
@@ -669,7 +552,7 @@ export default function PrintableCalendarGrid({ themes = [], months: initialMont
 
             <div style={{
               flex: 1,
-              margin: '1cm 0',
+              margin: '0.8cm 0',
               display: 'flex',
               alignItems: 'center',
               justifyContent: 'center',
@@ -680,7 +563,7 @@ export default function PrintableCalendarGrid({ themes = [], months: initialMont
                 <img
                   src={m.image}
                   alt={m.nameEn}
-                  style={{ maxWidth: '100%', maxHeight: '450px', objectFit: 'contain' }}
+                  style={{ maxWidth: '100%', maxHeight: '480px', objectFit: 'contain' }}
                 />
               ) : null}
             </div>
@@ -694,6 +577,8 @@ export default function PrintableCalendarGrid({ themes = [], months: initialMont
                 fontSize: '1rem',
                 color: '#0F172A',
                 marginBottom: '0.3cm',
+                borderBottom: '1.5px solid #E2E8F0',
+                paddingBottom: '0.2cm',
               }}>
                 {daysOfWeek.map((d, i) => (
                   <div key={i}>{d}</div>
