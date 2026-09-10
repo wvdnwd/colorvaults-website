@@ -1,28 +1,5 @@
 [
   {
-    "id": "page-super-mario-1",
-    "title": "Mario In Action",
-    "slug": "super-mario-1",
-    "parentHub": "gaming-virtual-worlds",
-    "parentTheme": "super-mario",
-    "ageGroup": "kids",
-    "difficulty": "medium",
-    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Super%20Mario/Mario_in_action_1788295082908.webp",
-    "preview": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Super%20Mario/Mario_in_action_1788295082908.webp",
-    "downloadableFile": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Super%20Mario/Mario_in_action_1788295082908.webp",
-    "metaTitle": "Mario In Action - Kostenlose Malvorlage zum Ausdrucken | ColorVaults",
-    "metaDescription": "Lade dieses kostenlose Mario In Action Ausmalbild herunter. Hohe Auflösung in A4 & Letter!",
-    "shortDescription": "Kostenlose druckbare Mario In Action Malvorlage.",
-    "longDescription": "Genieße diese hochwertige Mario In Action Malvorlage. Jetzt kostenlos drucken oder online ausmalen!",
-    "altText": "Mario In Action Ausmalbild - kostenlos drucken",
-    "tags": [
-      "super-mario",
-      "kids"
-    ],
-    "relatedPages": [],
-    "language": "de"
-  },
-  {
     "id": "page-super-mario-2",
     "title": "Bowser The Koopa King",
     "slug": "super-mario-2",
@@ -777,29 +754,6 @@
     "tags": [
       "super-mario",
       "kids"
-    ],
-    "relatedPages": [],
-    "language": "de"
-  },
-  {
-    "id": "page-super-mario-35",
-    "title": "Princess Peach mit Royal Heart Wand",
-    "slug": "super-mario-35",
-    "parentHub": "gaming-virtual-worlds",
-    "parentTheme": "super-mario",
-    "ageGroup": "teens",
-    "difficulty": "hard",
-    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Super%20Mario/Super_Mario__Luigi_from_Super_Mario__tal_1788412629610.webp",
-    "preview": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Super%20Mario/Super_Mario__Luigi_from_Super_Mario__tal_1788412629610.webp",
-    "downloadableFile": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Super%20Mario/Super_Mario__Luigi_from_Super_Mario__tal_1788412629610.webp",
-    "metaTitle": "Princess Peach mit Royal Heart Wand - Kostenlose Malvorlage zum Ausdrucken | ColorVaults",
-    "metaDescription": "Lade dieses kostenlose Princess Peach mit Royal Heart Wand Ausmalbild herunter. Hohe Auflösung in A4 & Letter!",
-    "shortDescription": "Kostenlose druckbare Princess Peach mit Royal Heart Wand Malvorlage.",
-    "longDescription": "Genieße diese hochwertige Princess Peach mit Royal Heart Wand Malvorlage. Jetzt kostenlos drucken oder online ausmalen!",
-    "altText": "Princess Peach mit Royal Heart Wand Ausmalbild - kostenlos drucken",
-    "tags": [
-      "super-mario",
-      "teens"
     ],
     "relatedPages": [],
     "language": "de"

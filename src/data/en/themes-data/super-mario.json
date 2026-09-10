@@ -1,28 +1,5 @@
 [
   {
-    "id": "page-super-mario-1",
-    "title": "Mario In Action",
-    "slug": "super-mario-1",
-    "parentHub": "gaming-virtual-worlds",
-    "parentTheme": "super-mario",
-    "ageGroup": "kids",
-    "difficulty": "medium",
-    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Super%20Mario/Mario_in_action_1788295082908.webp",
-    "preview": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Super%20Mario/Mario_in_action_1788295082908.webp",
-    "downloadableFile": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Super%20Mario/Mario_in_action_1788295082908.webp",
-    "metaTitle": "Mario In Action - Free Printable Coloring Page | ColorVaults",
-    "metaDescription": "Download and print this free Mario In Action coloring page from the super-mario collection. High-resolution in A4 & Letter size!",
-    "shortDescription": "Free printable Mario In Action coloring page from our super-mario collection.",
-    "longDescription": "Enjoy this high-quality Mario In Action coloring page from the super-mario category. Designed with crisp black outlines, download or print directly in A4/Letter size for free!",
-    "altText": "Mario In Action coloring page - free printable",
-    "tags": [
-      "super-mario",
-      "kids"
-    ],
-    "relatedPages": [],
-    "language": "en"
-  },
-  {
     "id": "page-super-mario-2",
     "title": "Bowser The Koopa King",
     "slug": "super-mario-2",
@@ -777,29 +754,6 @@
     "tags": [
       "super-mario",
       "kids"
-    ],
-    "relatedPages": [],
-    "language": "en"
-  },
-  {
-    "id": "page-super-mario-35",
-    "title": "Princess Peach with Royal Heart Wand",
-    "slug": "super-mario-35",
-    "parentHub": "gaming-virtual-worlds",
-    "parentTheme": "super-mario",
-    "ageGroup": "teens",
-    "difficulty": "hard",
-    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Super%20Mario/Super_Mario__Luigi_from_Super_Mario__tal_1788412629610.webp",
-    "preview": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Super%20Mario/Super_Mario__Luigi_from_Super_Mario__tal_1788412629610.webp",
-    "downloadableFile": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Super%20Mario/Super_Mario__Luigi_from_Super_Mario__tal_1788412629610.webp",
-    "metaTitle": "Princess Peach with Royal Heart Wand - Free Printable Coloring Page | ColorVaults",
-    "metaDescription": "Download and print this free Princess Peach with Royal Heart Wand coloring page from the Super Mario collection. High-resolution in A4 & Letter size!",
-    "shortDescription": "Free printable Princess Peach with Royal Heart Wand coloring page from our Super Mario collection.",
-    "longDescription": "Enjoy this high-quality Princess Peach with Royal Heart Wand coloring page from the Super Mario category. Designed with crisp black outlines, download or print directly in A4/Letter size for free!",
-    "altText": "Princess Peach with Royal Heart Wand coloring page - free printable",
-    "tags": [
-      "super-mario",
-      "teens"
     ],
     "relatedPages": [],
     "language": "en"
