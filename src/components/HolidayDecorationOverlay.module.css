@@ -136,13 +136,9 @@
   color: #FFFFFF;
 }
 
-/* ── Floating Background Particles ────────────────────────────────────────── */
+/* ── Floating Background Particles (disabled to prevent blocking UI text) ── */
 .particleContainer {
-  position: fixed;
-  inset: 0;
-  pointer-events: none;
-  z-index: 9998;
-  overflow: hidden;
+  display: none !important;
 }
 
 /* Falling Snow */
