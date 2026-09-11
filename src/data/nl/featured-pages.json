@@ -1,31 +1,8 @@
 [
   {
     "id": "page-frozen-1",
-    "title": "African Savanna Scène (Scène 2)",
-    "slug": "frozen-1",
-    "parentHub": "animals-wildlife",
-    "parentTheme": "safari-lions-big-cats",
-    "ageGroup": "kids",
-    "difficulty": "medium",
-    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Disney%20-%20Frozen/African_Savanna_Scene_1788436385897.webp",
-    "preview": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Disney%20-%20Frozen/African_Savanna_Scene_1788436385897.webp",
-    "downloadableFile": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Disney%20-%20Frozen/African_Savanna_Scene_1788436385897.webp",
-    "metaTitle": "African Savanna Scène (Scène 2) - Gratis Printbare Kleurplaat | ColorVaults",
-    "metaDescription": "Download en print deze gratis African Savanna Scène (Scène 2) kleurplaat uit de Safari - Lions & Big Cats collectie. Hoge resolutie in A4 & Letter formaat!",
-    "shortDescription": "Gratis printbare African Savanna Scène (Scène 2) kleurplaat uit onze Safari - Lions & Big Cats collectie.",
-    "longDescription": "Geniet van deze hoogwaardige African Savanna Scène (Scène 2) kleurplaat uit de categorie Safari - Lions & Big Cats. Ontworpen met strakke zwarte lijnen, gratis te printen of direct op A4/Letter formaat te downloaden!",
-    "altText": "African Savanna Scène (Scène 2) kleurplaat - gratis printbaar",
-    "tags": [
-      "frozen",
-      "kids"
-    ],
-    "relatedPages": [],
-    "language": "nl"
-  },
-  {
-    "id": "page-frozen-2",
     "title": "Belle en Elsa Tea Time",
-    "slug": "frozen-2",
+    "slug": "frozen-1",
     "parentHub": "disney-pixar",
     "parentTheme": "frozen",
     "ageGroup": "teens",
@@ -92,52 +69,6 @@
     "language": "nl"
   },
   {
-    "id": "page-sonic-the-hedgehog-1",
-    "title": "Naruto in His Nine Tails Mode",
-    "slug": "sonic-the-hedgehog-1",
-    "parentHub": "gaming-virtual-worlds",
-    "parentTheme": "sonic-the-hedgehog",
-    "ageGroup": "kids",
-    "difficulty": "medium",
-    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Anime%20-%20Naruto/Naruto_in_his_Nine-Tails_Mode_1788560731593.webp",
-    "preview": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Anime%20-%20Naruto/Naruto_in_his_Nine-Tails_Mode_1788560731593.webp",
-    "downloadableFile": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Anime%20-%20Naruto/Naruto_in_his_Nine-Tails_Mode_1788560731593.webp",
-    "metaTitle": "Naruto in His Nine Tails Mode - Gratis Printbare Kleurplaat | ColorVaults",
-    "metaDescription": "Download en print deze gratis Naruto in His Nine Tails Mode kleurplaat uit de Sonic the Hedgehog collectie. Hoge resolutie in A4 & Letter formaat!",
-    "shortDescription": "Gratis printbare Naruto in His Nine Tails Mode kleurplaat uit onze Sonic the Hedgehog collectie.",
-    "longDescription": "Geniet van deze hoogwaardige Naruto in His Nine Tails Mode kleurplaat uit de categorie Sonic the Hedgehog. Ontworpen met strakke zwarte lijnen, gratis te printen of direct op A4/Letter formaat te downloaden!",
-    "altText": "Naruto in His Nine Tails Mode kleurplaat - gratis printbaar",
-    "tags": [
-      "sonic-the-hedgehog",
-      "kids"
-    ],
-    "relatedPages": [],
-    "language": "nl"
-  },
-  {
-    "id": "page-sonic-the-hedgehog-2",
-    "title": "Sonic de Hedgehog",
-    "slug": "sonic-the-hedgehog-2",
-    "parentHub": "gaming-virtual-worlds",
-    "parentTheme": "sonic-the-hedgehog",
-    "ageGroup": "teens",
-    "difficulty": "hard",
-    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Sonic%20the%20Hedgehog/Sonic_The_Hedgehog_1788295103115.webp",
-    "preview": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Sonic%20the%20Hedgehog/Sonic_The_Hedgehog_1788295103115.webp",
-    "downloadableFile": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Sonic%20the%20Hedgehog/Sonic_The_Hedgehog_1788295103115.webp",
-    "metaTitle": "Sonic de Hedgehog - Gratis Printbare Kleurplaat | ColorVaults",
-    "metaDescription": "Download en print deze gratis Sonic de Hedgehog kleurplaat uit de Sonic the Hedgehog collectie. Hoge resolutie in A4 & Letter formaat!",
-    "shortDescription": "Gratis printbare Sonic de Hedgehog kleurplaat uit onze Sonic the Hedgehog collectie.",
-    "longDescription": "Geniet van deze hoogwaardige Sonic de Hedgehog kleurplaat uit de categorie Sonic the Hedgehog. Ontworpen met strakke zwarte lijnen, gratis te printen of direct op A4/Letter formaat te downloaden!",
-    "altText": "Sonic de Hedgehog kleurplaat - gratis printbaar",
-    "tags": [
-      "sonic-the-hedgehog",
-      "teens"
-    ],
-    "relatedPages": [],
-    "language": "nl"
-  },
-  {
     "id": "page-marvel-spider-man-1",
     "title": "Spider-man Helping een Vriendelijke Kat Down van een Tree",
     "slug": "marvel-spider-man-1",
@@ -179,29 +110,6 @@
     "tags": [
       "marvel-spider-man",
       "teens"
-    ],
-    "relatedPages": [],
-    "language": "nl"
-  },
-  {
-    "id": "page-paw-patrol-1",
-    "title": "Een Majestueuze Leeuw Sits Atop een Rocky Outcrop",
-    "slug": "paw-patrol-1",
-    "parentHub": "kids-tv-shows",
-    "parentTheme": "paw-patrol",
-    "ageGroup": "kids",
-    "difficulty": "medium",
-    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Paw%20Patrol/A_majestic_lion_sits_atop_a_rocky_outcrop_1788436518984.webp",
-    "preview": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Paw%20Patrol/A_majestic_lion_sits_atop_a_rocky_outcrop_1788436518984.webp",
-    "downloadableFile": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Paw%20Patrol/A_majestic_lion_sits_atop_a_rocky_outcrop_1788436518984.webp",
-    "metaTitle": "Een Majestueuze Leeuw Sits Atop een Rocky Outcrop - Gratis Printbare Kleurplaat | ColorVaults",
-    "metaDescription": "Download en print deze gratis Een Majestueuze Leeuw Sits Atop een Rocky Outcrop kleurplaat uit de Paw Patrol collectie. Hoge resolutie in A4 & Letter formaat!",
-    "shortDescription": "Gratis printbare Een Majestueuze Leeuw Sits Atop een Rocky Outcrop kleurplaat uit onze Paw Patrol collectie.",
-    "longDescription": "Geniet van deze hoogwaardige Een Majestueuze Leeuw Sits Atop een Rocky Outcrop kleurplaat uit de categorie Paw Patrol. Ontworpen met strakke zwarte lijnen, gratis te printen of direct op A4/Letter formaat te downloaden!",
-    "altText": "Een Majestueuze Leeuw Sits Atop een Rocky Outcrop kleurplaat - gratis printbaar",
-    "tags": [
-      "paw-patrol",
-      "kids"
     ],
     "relatedPages": [],
     "language": "nl"

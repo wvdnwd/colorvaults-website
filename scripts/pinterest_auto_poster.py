@@ -17,6 +17,7 @@ import sys
 import json
 import random
 import time
+import urllib.error
 import urllib.request
 import urllib.parse
 from pathlib import Path
@@ -187,7 +188,7 @@ def format_pin_data(page, theme, lang='en'):
     parent_theme = page.get('parentTheme', theme.get('slug', 'all'))
     slug = page.get('slug', '')
 
-    dest_link = f"https://colorvaults.com/{lang}/{parent_hub}/{parent_theme}/{age}/{slug}"
+    dest_link = f"https://www.colorvaults.com/{lang}/{parent_hub}/{parent_theme}/{age}/{slug}"
     board_name = f"{theme_title} Coloring Pages" if is_en else f"{theme_title} Kleurplaten"
     clean_theme_tag = theme_title.replace(' ', '').replace('&', '').replace('-', '')
     
@@ -243,13 +244,18 @@ def main():
         pin_data = format_pin_data(page, theme, lang=lang)
 
         board_name = pin_data['board_name']
-        board_id = boards.get(board_name.lower()) or DEFAULT_BOARD_ID or f"mock_board_{theme.get('slug')}"
+        board_id = boards.get(board_name.lower()) or DEFAULT_BOARD_ID
 
-        if not board_id and PINTEREST_TOKEN:
+        if not board_id and PINTEREST_TOKEN and not DRY_RUN:
             print(f"Board '{board_name}' not found on account. Creating it now...")
             board_id = create_board(PINTEREST_TOKEN, board_name, f"Free printable {theme.get('title')} coloring pages from ColorVaults.com")
             if board_id:
                 boards[board_name.lower()] = board_id
+        if not board_id and DRY_RUN:
+            board_id = f"mock_board_{theme.get('slug')}"
+        if not board_id:
+            print(f"Could not resolve or create Pinterest board '{board_name}'.")
+            continue
 
         success, res = create_pin(
             token=PINTEREST_TOKEN,

@@ -1,98 +1,143 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
-"""
-generate_pinterest_feed.py - Pinterest Bulk Upload Feed Generator
-Genereert een kant-en-klare Pinterest CSV voor bulk upload naar Pinterest Business.
+"""Generate RFC 4180 Pinterest bulk-upload CSVs from canonical theme shards."""
 
-Formaat Pinterest CSV:
-  Title, Media URL, Ping URL, Description, Destination Link, Board Name
-"""
-
-import json
-import os
+import argparse
 import csv
+import json
+import re
+import unicodedata
 from pathlib import Path
+from urllib.parse import urlparse
 
-DATA_DIR = Path(__file__).resolve().parent.parent / 'src' / 'data'
-OUTPUT_CSV_EN = Path(__file__).resolve().parent.parent / 'public' / 'pinterest_pins_en.csv'
-OUTPUT_CSV_NL = Path(__file__).resolve().parent.parent / 'public' / 'pinterest_pins_nl.csv'
+FIELDNAMES = ['Title', 'Media URL', 'Ping URL', 'Description', 'Destination Link', 'Board Name']
+AGE_LABELS = {
+    'en': {
+        'toddlers': 'toddlers', 'peuters': 'toddlers',
+        'kids': 'children', 'kinderen': 'children',
+        'teens': 'teens', 'tieners': 'teens',
+        'adults': 'adults', 'volwassenen': 'adults',
+    },
+    'nl': {
+        'toddlers': 'peuters', 'peuters': 'peuters',
+        'kids': 'kinderen', 'kinderen': 'kinderen',
+        'teens': 'tieners', 'tieners': 'tieners',
+        'adults': 'volwassenen', 'volwassenen': 'volwassenen',
+    },
+}
 
-def generate_feed(lang='en'):
-    lang_dir = DATA_DIR / lang
-    pages_file = lang_dir / 'coloring-pages.json'
+
+def read_json(path):
+    with path.open('r', encoding='utf-8') as handle:
+        return json.load(handle)
+
+
+def direct_image_url(value):
+    if not isinstance(value, str):
+        return None
+    parsed = urlparse(value)
+    if parsed.scheme not in ('http', 'https') or not parsed.netloc:
+        return None
+    if Path(parsed.path).suffix.lower() not in ('.webp', '.jpg', '.jpeg', '.png'):
+        return None
+    return value
+
+
+def hashtag(value):
+    ascii_value = unicodedata.normalize('NFKD', value).encode('ascii', 'ignore').decode('ascii')
+    cleaned = re.sub(r'[^A-Za-z0-9]', '', ascii_value)
+    return f'#{cleaned}' if cleaned else ''
+
+
+def generate_feed(data_dir, output_dir, lang='en'):
+    lang_dir = data_dir / lang
     themes_file = lang_dir / 'themes.json'
-    hubs_file = lang_dir / 'main-hubs.json'
+    shards_dir = lang_dir / 'themes-data'
 
-    if not pages_file.exists():
-        print(f"File not found: {pages_file}")
-        return
+    if not themes_file.is_file() or not shards_dir.is_dir():
+        raise FileNotFoundError(f"Missing canonical Pinterest catalog for '{lang}': {lang_dir}")
 
-    with open(pages_file, 'r', encoding='utf-8') as f:
-        pages = json.load(f)
-
-    with open(themes_file, 'r', encoding='utf-8') as f:
-        themes = {t['slug']: t for t in json.load(f)}
-
-    with open(hubs_file, 'r', encoding='utf-8') as f:
-        hubs = {h['slug']: h for h in json.load(f)}
-
-    pins = []
+    themes = read_json(themes_file)
     is_en = lang == 'en'
+    pins = []
+    skipped = 0
 
-    for page in pages:
-        theme = themes.get(page.get('parentTheme'), {})
-        hub = hubs.get(page.get('parentHub'), {})
+    for theme in themes:
+        theme_slug = theme.get('slug')
+        parent_hub = theme.get('parentHub')
+        shard_file = shards_dir / f'{theme_slug}.json'
+        if not theme_slug or not parent_hub or not shard_file.is_file():
+            skipped += 1
+            continue
+
+        pages = read_json(shard_file)
         theme_title = theme.get('title', 'Coloring Pages')
-        hub_title = hub.get('title', 'ColorVaults')
-        age = page.get('ageGroup', 'kids')
+        theme_tag = hashtag(theme_title)
 
-        slug = page.get('slug', '')
-        title = page.get('title', '')
-        image_url = page.get('image', '')
-        dest_url = f"https://colorvaults.com/{lang}/{page.get('parentHub', 'collections')}/{page.get('parentTheme', 'all')}/{age}/{slug}"
+        for page in pages:
+            if page.get('parentHub') != parent_hub or page.get('parentTheme') != theme_slug:
+                skipped += 1
+                continue
 
-        # Board name on Pinterest
-        board_name = f"{theme_title} Coloring Pages" if is_en else f"{theme_title} Kleurplaten"
+            title = page.get('title')
+            slug = page.get('slug')
+            age = page.get('ageGroup')
+            image_url = direct_image_url(page.get('image'))
+            if not all(isinstance(value, str) and value for value in (title, slug, age)) or not image_url:
+                skipped += 1
+                continue
 
-        # SEO Description with hashtags
-        if is_en:
-            desc = (
-                f"Free printable {title} coloring page! High-resolution template perfect for {age} and adults. "
-                f"Print instantly on A4 or color online in your browser. Download 100% free at ColorVaults.com! "
-                f"#{theme_title.replace(' ', '')} #{is_en and 'ColoringPages' or 'Kleurplaten'} #FreePrintable #ColoringSheet #ArtActivities"
-            )
-            pin_title = f"{title} — Free Printable Coloring Page"
-        else:
-            desc = (
-                f"Gratis printbare {title} kleurplaat! Hoge resolutie kleurplaat voor {age} en volwassenen. "
-                f"Direct afdrukken op A4 of online inkleuren in de browser. 100% gratis te downloaden op ColorVaults.com! "
-                f"#{theme_title.replace(' ', '')} #Kleurplaten #GratisPrinten #KleurplaatVoorKinderen #Kleurboek"
-            )
-            pin_title = f"{title} — Gratis Printbare Kleurplaat"
+            age_label = AGE_LABELS[lang].get(age, age)
+            dest_url = f"https://www.colorvaults.com/{lang}/{parent_hub}/{theme_slug}/{age}/{slug}"
+            board_name = f"{theme_title} Coloring Pages" if is_en else f"{theme_title} Kleurplaten"
+            tags = ' '.join(filter(None, [theme_tag, '#ColoringPages' if is_en else '#Kleurplaten',
+                                          '#FreePrintable' if is_en else '#GratisPrinten',
+                                          '#ColoringSheet' if is_en else '#Kleurplaat']))
+            if is_en:
+                description = (
+                    f"Free printable {title} coloring page for {age_label}. Print the high-resolution A4 template "
+                    f"or color it online. Download free at ColorVaults.com. {tags}"
+                )
+                pin_title = f"{title} - Free Printable Coloring Page"
+            else:
+                description = (
+                    f"Gratis printbare {title} kleurplaat voor {age_label}. Print het hoge-resolutie A4-sjabloon "
+                    f"of kleur het online in. Gratis downloaden op ColorVaults.com. {tags}"
+                )
+                pin_title = f"{title} - Gratis printbare kleurplaat"
 
-        pins.append({
-            'Title': pin_title[:100],
-            'Media URL': image_url,
-            'Ping URL': image_url,
-            'Description': desc[:500],
-            'Destination Link': dest_url,
-            'Board Name': board_name[:50]
-        })
+            pins.append({
+                'Title': pin_title[:100],
+                'Media URL': image_url,
+                'Ping URL': image_url,
+                'Description': description[:500],
+                'Destination Link': dest_url,
+                'Board Name': board_name[:50],
+            })
 
-    out_file = OUTPUT_CSV_EN if is_en else OUTPUT_CSV_NL
-    with open(out_file, 'w', newline='', encoding='utf-8') as f:
-        writer = csv.DictWriter(f, fieldnames=['Title', 'Media URL', 'Ping URL', 'Description', 'Destination Link', 'Board Name'])
+    output_dir.mkdir(parents=True, exist_ok=True)
+    out_file = output_dir / f'pinterest_pins_{lang}.csv'
+    temporary_file = out_file.with_suffix('.csv.tmp')
+    with temporary_file.open('w', newline='', encoding='utf-8') as handle:
+        writer = csv.DictWriter(handle, fieldnames=FIELDNAMES, dialect='excel', lineterminator='\r\n')
         writer.writeheader()
         writer.writerows(pins)
+    temporary_file.replace(out_file)
 
-    print(f"Generated {len(pins)} Pinterest pins for '{lang}' -> {out_file}")
+    print(f"Generated {len(pins)} Pinterest pins for '{lang}' ({skipped} skipped) -> {out_file}")
+
 
 def main():
-    print("ColorVaults - Pinterest Feed Generator")
-    print("=" * 50)
-    generate_feed('en')
-    generate_feed('nl')
-    print("\nDone! CSV files are located in public/ directory.")
+    repository_root = Path(__file__).resolve().parent.parent
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument('--data-dir', type=Path, default=repository_root / 'src' / 'data')
+    parser.add_argument('--output-dir', type=Path, default=repository_root / 'public')
+    parser.add_argument('--language', choices=('en', 'nl', 'both'), default='both')
+    args = parser.parse_args()
+
+    languages = ('en', 'nl') if args.language == 'both' else (args.language,)
+    for language in languages:
+        generate_feed(args.data_dir.resolve(), args.output_dir.resolve(), language)
 
 if __name__ == '__main__':
     main()

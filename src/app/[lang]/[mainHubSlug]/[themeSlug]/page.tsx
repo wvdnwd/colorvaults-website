@@ -1,4 +1,5 @@
-import { getThemes, getThemeBySlug, getMainHubs, getColoringPages, getColoringPagesForTheme, safeJsonLd } from '@/lib/api';
+import { getThemes, getThemeBySlug, getMainHubs, getColoringPagesForTheme, safeJsonLd } from '@/lib/api';
+import { clampPage, filterByDifficulty, getAgeCounts, getDifficultyCounts, normalizeDifficulty } from '@/lib/themeFilters';
 import { getCategorySeoData } from'@/lib/categorySeo';
 import CategorySeoBlock from'@/components/CategorySeoBlock';
 import RelatedThemes from '@/components/RelatedThemes';
@@ -18,6 +19,11 @@ import React from'react';
 
 const PER_PAGE = 24;
 
+type ThemeSearchParams = {
+  page?: string | string[];
+  difficulty?: string | string[];
+};
+
 export async function generateStaticParams() {
   const themesEn = getThemes('en').map(t => ({ lang: 'en', mainHubSlug: t.parentHub, themeSlug: t.slug }));
   const themesNl = getThemes('nl').map(t => ({ lang: 'nl', mainHubSlug: t.parentHub, themeSlug: t.slug }));
@@ -34,14 +40,18 @@ export async function generateMetadata({
   searchParams,
 }: {
   params: Promise<{ lang: string; mainHubSlug: string; themeSlug: string }>;
-  searchParams?: Promise<{ page?: string; difficulty?: string }>;
+  searchParams?: Promise<ThemeSearchParams>;
 }) {
   const { lang, mainHubSlug, themeSlug } = await params;
   const sParams = searchParams ? await searchParams : {};
-  const currentPage = Math.max(1, parseInt(sParams.page || '1', 10));
-
   const theme = getThemeBySlug(lang, mainHubSlug, themeSlug);
   if (!theme || theme.parentHub !== mainHubSlug) return {};
+
+  const filteredPages = filterByDifficulty(
+    getColoringPagesForTheme(lang, mainHubSlug, themeSlug),
+    Array.isArray(sParams.difficulty) ? sParams.difficulty[0] : sParams.difficulty,
+  );
+  const currentPage = clampPage(sParams.page, filteredPages.length, PER_PAGE);
 
   const ogImageUrl = theme.image
     ? (theme.image.startsWith('http') ? theme.image : `${SITE_ORIGIN}${theme.image}`)
@@ -71,12 +81,11 @@ export default async function ThemePage({
   searchParams,
 }: {
   params: Promise<{ lang: string; mainHubSlug: string; themeSlug: string }>;
-  searchParams: Promise<{ page?: string; difficulty?: string }>;
+  searchParams: Promise<ThemeSearchParams>;
 }) {
   const { lang, mainHubSlug, themeSlug } = await params;
   const { page: pageParam, difficulty: diffParam } = await searchParams;
-  const currentPage = Math.max(1, parseInt(pageParam ||'1', 10));
-  const rawDiff = (diffParam ||'').toLowerCase();
+  const difficulty = normalizeDifficulty(Array.isArray(diffParam) ? diffParam[0] : diffParam);
 
   const theme = getThemeBySlug(lang, mainHubSlug, themeSlug);
   if (!theme || theme.parentHub !== mainHubSlug) return notFound();
@@ -95,27 +104,16 @@ export default async function ThemePage({
   // Get ALL coloring pages for this theme via O(1) index
   const allColoringPages = getColoringPagesForTheme(lang, mainHubSlug, themeSlug);
 
-  const counts = {
-    all: allColoringPages.length,
-    easy: allColoringPages.filter(p => p.ageGroup ==='kids'|| p.ageGroup ==='kinderen').length,
-    medium: allColoringPages.filter(p => p.ageGroup ==='teens'|| p.ageGroup ==='tieners').length,
-    hard: allColoringPages.filter(p => p.ageGroup ==='adults'|| p.ageGroup ==='volwassenen').length,
-  };
-
-  let filteredPages = allColoringPages;
-  if (rawDiff ==='easy'|| rawDiff ==='kids') {
-    filteredPages = allColoringPages.filter(p => p.ageGroup ==='kids'|| p.ageGroup ==='kinderen');
-  } else if (rawDiff ==='medium'|| rawDiff ==='teens') {
-    filteredPages = allColoringPages.filter(p => p.ageGroup ==='teens'|| p.ageGroup ==='tieners');
-  } else if (rawDiff ==='hard'|| rawDiff ==='adults') {
-    filteredPages = allColoringPages.filter(p => p.ageGroup ==='adults'|| p.ageGroup ==='volwassenen');
-  }
-
+  const counts = getDifficultyCounts(allColoringPages);
+  const ageCounts = getAgeCounts(allColoringPages);
+  const filteredPages = filterByDifficulty(allColoringPages, difficulty);
   const totalPages = Math.ceil(filteredPages.length / PER_PAGE);
+  const currentPage = clampPage(pageParam, filteredPages.length, PER_PAGE);
   const offset = (currentPage - 1) * PER_PAGE;
   const coloringPages = filteredPages.slice(offset, offset + PER_PAGE);
 
-  const difficultyQueryString = rawDiff ?`&difficulty=${encodeURIComponent(rawDiff)}`:'';
+  const difficultyQueryString = difficulty ?`&difficulty=${difficulty}`:'';
+  const basePath = `/${lang}/${mainHubSlug}/${themeSlug}`;
 
   // 4 Related themes in this hub for quick pill navigation
   const relatedPills = getThemes(lang)
@@ -404,7 +402,13 @@ export default async function ThemePage({
           </div>
         </div>
 
-        <DifficultyFilterBar isEn={isEn} counts={counts} />
+        <DifficultyFilterBar
+          isEn={isEn}
+          basePath={basePath}
+          currentDifficulty={difficulty}
+          counts={counts}
+          ageCounts={ageCounts}
+        />
 
         <div className="section-header"style={{ marginTop:'2rem'}}>
           <div>
@@ -428,10 +432,16 @@ export default async function ThemePage({
               border:'1px solid var(--gray-200)',
             }}
           >
-            <p style={{ fontSize:'3.5rem', marginBottom:'1rem'}}></p>
+            <div aria-hidden="true" style={{ fontSize:'3.25rem', marginBottom:'0.75rem'}}>◇</div>
             <p style={{ fontSize:'1.2rem', fontWeight: 700, color:'var(--foreground)'}}>
               {isEn ?'No coloring pages found for this difficulty level.':'Geen kleurplaten gevonden voor deze moeilijkheidsgraad.'}
             </p>
+            <p style={{ maxWidth:'480px', margin:'0.5rem auto 1.5rem', lineHeight: 1.6 }}>
+              {isEn ?'Try another level or clear the filter to browse the complete collection.':'Kies een ander niveau of wis het filter om de volledige collectie te bekijken.'}
+            </p>
+            <Link href={basePath} className="btn-secondary">
+              {isEn ?'Reset filters':'Filters wissen'}
+            </Link>
           </div>
         ) : (
           <div>
@@ -512,6 +522,7 @@ export default async function ThemePage({
                   <Link
                     key={pageNum}
                     href={`/${lang}/${mainHubSlug}/${themeSlug}?page=${pageNum}${difficultyQueryString}`}
+                    aria-current={isActive ? 'page' : undefined}
                     style={{
                       width:'40px',
                       height:'40px',

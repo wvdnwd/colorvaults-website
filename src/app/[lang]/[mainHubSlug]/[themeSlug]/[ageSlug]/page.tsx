@@ -1,17 +1,19 @@
-import { getAgePages, getAgePageBySlug, getMainHubs, getThemes, getPagesByAgeGroup, getAgeLabel, safeJsonLd } from'@/lib/api';
-import CategorySeoBlock from'@/components/CategorySeoBlock';
+import { getAgePages, getAgePageBySlug, getMainHubs, getThemes, getPagesByAgeGroup, getColoringPagesForTheme, getAgeLabel } from'@/lib/api';
+import { clampPage, filterByDifficulty, getAgeCounts, getDifficultyCounts, normalizeDifficulty } from '@/lib/themeFilters';
 import RelatedThemes from'@/components/RelatedThemes';
 import CraftIdeasSection from'@/components/CraftIdeasSection';
 import CharacterIpDisclaimer from'@/components/CharacterIpDisclaimer';
 import NewsletterBox from'@/components/NewsletterBox';
+import DifficultyFilterBar from '@/components/DifficultyFilterBar';
 import { notFound } from'next/navigation';
 import Link from'next/link';
 import Breadcrumbs from'@/components/Breadcrumbs';
 import MotionCard from'@/components/MotionCard';
 import AdSlot from'@/components/AdSlot';
 import AdCard from'@/components/AdCard';
-import SafeImage from'@/components/SafeImage';
 import React from'react';
+
+const PER_PAGE = 24;
 
 export async function generateStaticParams() {
   const agesEn = getAgePages('en').map(a => ({ lang: 'en', mainHubSlug: a.parentHub, themeSlug: a.parentTheme, ageSlug: a.ageGroup }));
@@ -33,11 +35,15 @@ export async function generateMetadata({
 }) {
   const { lang, mainHubSlug, themeSlug, ageSlug } = await params;
   const sParams = searchParams ? await searchParams : {};
-  const pageParam = typeof sParams.page === 'string' ? sParams.page : '1';
-  const currentPage = Math.max(1, parseInt(pageParam || '1', 10));
-
   const agePage = getAgePageBySlug(lang, mainHubSlug, themeSlug, ageSlug);
   if (!agePage || agePage.parentHub !== mainHubSlug || agePage.parentTheme !== themeSlug) return {};
+
+  const difficultyParam = Array.isArray(sParams.difficulty) ? sParams.difficulty[0] : sParams.difficulty;
+  const filteredPages = filterByDifficulty(
+    getPagesByAgeGroup(lang, mainHubSlug, themeSlug, ageSlug),
+    difficultyParam,
+  );
+  const currentPage = clampPage(sParams.page, filteredPages.length, PER_PAGE);
 
   const theme = getThemes(lang).find(t => t.parentHub === mainHubSlug && t.slug === themeSlug);
   const ogImageUrl = theme?.image
@@ -71,7 +77,7 @@ export default async function AgePage({
   searchParams: Promise<{ [key: string]: string | string[] | undefined }>
 }) {
   const { lang, mainHubSlug, themeSlug, ageSlug } = await params;
-  const { page } = await searchParams;
+  const { page, difficulty: difficultyParam } = await searchParams;
 
   const agePage = getAgePageBySlug(lang, mainHubSlug, themeSlug, ageSlug);
   if (!agePage) return notFound();
@@ -80,15 +86,24 @@ export default async function AgePage({
   const theme = getThemes(lang).find(t => t.slug === themeSlug && t.parentHub === mainHubSlug);
   if (!hub || !theme) return notFound();
 
+  const allThemePages = getColoringPagesForTheme(lang, mainHubSlug, themeSlug);
   const allColoringPages = getPagesByAgeGroup(lang, mainHubSlug, themeSlug, ageSlug);
-  const isEn = lang ==='en';
+  const isEn = lang !=='nl';
 
-  const PER_PAGE = 24;
-  const currentPage = Number(page) || 1;
-  const totalPages = Math.ceil(allColoringPages.length / PER_PAGE);
-  const coloringPages = allColoringPages.slice((currentPage - 1) * PER_PAGE, currentPage * PER_PAGE);
+  const rawDifficulty = Array.isArray(difficultyParam) ? difficultyParam[0] : difficultyParam;
+  const difficulty = normalizeDifficulty(rawDifficulty);
+  const filteredPages = filterByDifficulty(allColoringPages, difficulty);
+  const currentPage = clampPage(page, filteredPages.length, PER_PAGE);
+  const totalPages = Math.ceil(filteredPages.length / PER_PAGE);
+  const coloringPages = filteredPages.slice((currentPage - 1) * PER_PAGE, currentPage * PER_PAGE);
+  const counts = getDifficultyCounts(allColoringPages);
+  const ageCounts = getAgeCounts(allThemePages);
+  const activeAge = ageSlug === 'toddlers' || ageSlug === 'kids' || ageSlug === 'teens' ? ageSlug : undefined;
+  const basePath = `/${lang}/${mainHubSlug}/${themeSlug}`;
+  const currentPath = `${basePath}/${ageSlug}`;
+  const difficultyQueryString = difficulty ? `&difficulty=${difficulty}` : '';
 
-  const difficultyLabel = getAgeLabel(ageSlug, lang);
+  const ageLabel = getAgeLabel(ageSlug, lang);
 
   // 4 Related themes in this hub for quick pill navigation
   const relatedPills = getThemes(lang)
@@ -162,7 +177,7 @@ export default async function AgePage({
                     items={[
                       { label: hub.title, href:`/${lang}/${hub.slug}`},
                       { label: theme.title, href:`/${lang}/${hub.slug}/${theme.slug}`},
-                      { label: difficultyLabel.label }
+                      { label: ageLabel.label }
                     ]}
                     lang={lang}
                   />
@@ -178,7 +193,7 @@ export default async function AgePage({
                   letterSpacing:'-0.02em',
                   lineHeight: 1.15,
                 }}>
-                  {theme.title} — {difficultyLabel.label}
+                  {theme.title} — {ageLabel.label}
                 </h1>
 
                 <p style={{
@@ -300,22 +315,38 @@ export default async function AgePage({
 
         <AdSlot type="banner"text={isEn ?"Sponsored Content":"Gesponsord"} />
 
+        <DifficultyFilterBar
+          isEn={isEn}
+          basePath={basePath}
+          currentDifficulty={difficulty}
+          activeAge={activeAge}
+          counts={counts}
+          ageCounts={ageCounts}
+        />
+
         <div className="section-header"style={{ marginTop:'2rem'}}>
           <div>
             <span className="badge">
-              {allColoringPages.length} {isEn ?'Printables in this Collection':'Kleurplaten'}
+              {filteredPages.length} {isEn ?'Printables in this View':'Kleurplaten in deze selectie'}
             </span>
             <h2 className="title-h2"style={{ marginTop:'0.4rem'}}>
-              {isEn ?`All ${theme.title} (${difficultyLabel.label}) Sheets`:`Alle ${theme.title} (${difficultyLabel.label}) Kleurplaten`}
+              {isEn ?`All ${theme.title} (${ageLabel.label}) Sheets`:`Alle ${theme.title} (${ageLabel.label}) Kleurplaten`}
             </h2>
           </div>
         </div>
 
-        {coloringPages.length === 0 ? (
+        {filteredPages.length === 0 ? (
           <div style={{ textAlign:'center', padding:'5rem 2rem', color:'var(--gray-400)', background:'var(--surface)', borderRadius:'var(--radius-xl)', border:'1px solid var(--gray-200)'}}>
+            <div aria-hidden="true" style={{ fontSize:'3.25rem', marginBottom:'0.75rem'}}>◇</div>
             <p style={{ fontSize:'1.2rem', fontWeight: 700, color:'var(--foreground)'}}>
-              {isEn ?'Pages coming soon! Check back later.':'Kleurplaten binnenkort beschikbaar!'}
+              {isEn ?'No pages match this age and difficulty.':'Geen kleurplaten voor deze leeftijd en moeilijkheidsgraad.'}
             </p>
+            <p style={{ maxWidth:'480px', margin:'0.5rem auto 1.5rem', lineHeight: 1.6 }}>
+              {isEn ?'Clear the difficulty filter to see every page for this age group.':'Wis het moeilijkheidsfilter om alle kleurplaten voor deze leeftijd te zien.'}
+            </p>
+            <Link href={currentPath} className="btn-secondary">
+              {isEn ?'Reset difficulty':'Moeilijkheid wissen'}
+            </Link>
           </div>
         ) : (
           <div>
@@ -361,7 +392,7 @@ export default async function AgePage({
             <div style={{ marginBottom:'1.5rem', textAlign:'center'}}>
               <p style={{ fontSize:'0.85rem', color:'var(--gray-500)', fontWeight: 600, marginBottom:'0.6rem'}}>
                 {isEn
-                  ?`Page ${currentPage} of ${totalPages} — ${Math.min(currentPage * PER_PAGE, allColoringPages.length)} of ${allColoringPages.length} pages`:`Pagina ${currentPage} van ${totalPages} — ${Math.min(currentPage * PER_PAGE, allColoringPages.length)} van ${allColoringPages.length} kleurplaten`}
+                  ?`Page ${currentPage} of ${totalPages} — ${Math.min(currentPage * PER_PAGE, filteredPages.length)} of ${filteredPages.length} pages`:`Pagina ${currentPage} van ${totalPages} — ${Math.min(currentPage * PER_PAGE, filteredPages.length)} van ${filteredPages.length} kleurplaten`}
               </p>
               <div style={{
                 height:'6px',
@@ -384,7 +415,7 @@ export default async function AgePage({
             <div style={{ display:'flex', justifyContent:'center', gap:'0.5rem', flexWrap:'wrap'}}>
               {currentPage > 1 && (
                 <Link
-                  href={`/${lang}/${mainHubSlug}/${themeSlug}/${ageSlug}?page=${currentPage - 1}`}
+                  href={`${currentPath}?page=${currentPage - 1}${difficultyQueryString}`}
                   className="btn-secondary">
                   ← {isEn ?'Previous':'Vorige'}
                 </Link>
@@ -395,7 +426,8 @@ export default async function AgePage({
                 return (
                   <Link
                     key={pageNum}
-                    href={`/${lang}/${mainHubSlug}/${themeSlug}/${ageSlug}?page=${pageNum}`}
+                    href={`${currentPath}?page=${pageNum}${difficultyQueryString}`}
+                    aria-current={isActive ? 'page' : undefined}
                     style={{
                       width:'40px',
                       height:'40px',
@@ -416,7 +448,7 @@ export default async function AgePage({
               })}
               {currentPage < totalPages && (
                 <Link
-                  href={`/${lang}/${mainHubSlug}/${themeSlug}/${ageSlug}?page=${currentPage + 1}`}
+                  href={`${currentPath}?page=${currentPage + 1}${difficultyQueryString}`}
                   className="btn-secondary">
                   {isEn ?'Next':'Volgende'} →
                 </Link>
