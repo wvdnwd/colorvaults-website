@@ -2495,5 +2495,57 @@
     "featured": false,
     "popularity": 12,
     "language": "fr"
+  },
+  {
+    "title": "L'Attaque des Titans",
+    "slug": "attack-on-titan",
+    "parentHub": "anime-manga",
+    "description": "Coloriages gratuits à imprimer L'Attaque des Titans (Shingeki no Kyojin) pour ados et adultes.",
+    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/banner/theme_attack-on-titan.webp",
+    "availableAges": [
+      "teens",
+      "adults"
+    ],
+    "language": "fr",
+    "pageCount": 0,
+    "totalCount": 0,
+    "itemCount": 0,
+    "coloringPageCount": 0,
+    "coverImage": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/banner/theme_attack-on-titan.webp"
+  },
+  {
+    "title": "Mythologie Antique & Dieux",
+    "slug": "ancient-mythology",
+    "parentHub": "fantasy-fairytales",
+    "description": "Coloriages gratuits de mythologie grecque, romaine et égyptienne avec dieux, déesses et guerriers.",
+    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/banner/theme_ancient-mythology.webp",
+    "availableAges": [
+      "kids",
+      "teens",
+      "adults"
+    ],
+    "language": "fr",
+    "pageCount": 0,
+    "totalCount": 0,
+    "itemCount": 0,
+    "coloringPageCount": 0,
+    "coverImage": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/banner/theme_ancient-mythology.webp"
+  },
+  {
+    "title": "Robots & Mechas",
+    "slug": "robots",
+    "parentHub": "vehicles-transportation",
+    "description": "Coloriages gratuits de robots, mechas et cyborgs futuristes pour enfants et adolescents.",
+    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/banner/theme_robots.webp",
+    "availableAges": [
+      "kids",
+      "teens"
+    ],
+    "language": "fr",
+    "pageCount": 0,
+    "totalCount": 0,
+    "itemCount": 0,
+    "coloringPageCount": 0,
+    "coverImage": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/banner/theme_robots.webp"
   }
 ]

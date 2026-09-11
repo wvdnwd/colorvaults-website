@@ -2759,5 +2759,57 @@
     "featured": false,
     "popularity": 12,
     "language": "en"
+  },
+  {
+    "title": "Attack on Titan",
+    "slug": "attack-on-titan",
+    "parentHub": "anime-manga",
+    "description": "Free printable Attack on Titan (Shingeki no Kyojin) coloring pages for anime fans, teens, and adults.",
+    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/banner/theme_attack-on-titan.webp",
+    "availableAges": [
+      "teens",
+      "adults"
+    ],
+    "language": "en",
+    "pageCount": 0,
+    "totalCount": 0,
+    "itemCount": 0,
+    "coloringPageCount": 0,
+    "coverImage": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/banner/theme_attack-on-titan.webp"
+  },
+  {
+    "title": "Ancient Mythology & Gods",
+    "slug": "ancient-mythology",
+    "parentHub": "fantasy-fairytales",
+    "description": "Free printable Ancient Greek, Roman & Egyptian mythology coloring pages with gods, goddesses and legendary warriors.",
+    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/banner/theme_ancient-mythology.webp",
+    "availableAges": [
+      "kids",
+      "teens",
+      "adults"
+    ],
+    "language": "en",
+    "pageCount": 0,
+    "totalCount": 0,
+    "itemCount": 0,
+    "coloringPageCount": 0,
+    "coverImage": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/banner/theme_ancient-mythology.webp"
+  },
+  {
+    "title": "Cool Robots & Mechs",
+    "slug": "robots",
+    "parentHub": "vehicles-transportation",
+    "description": "Free printable cool robots, mecha warriors and futuristic cyborgs coloring pages for kids and teens.",
+    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/banner/theme_robots.webp",
+    "availableAges": [
+      "kids",
+      "teens"
+    ],
+    "language": "en",
+    "pageCount": 0,
+    "totalCount": 0,
+    "itemCount": 0,
+    "coloringPageCount": 0,
+    "coverImage": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/banner/theme_robots.webp"
   }
 ]

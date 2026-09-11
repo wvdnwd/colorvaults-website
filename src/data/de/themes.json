@@ -2495,5 +2495,57 @@
     "featured": false,
     "popularity": 12,
     "language": "de"
+  },
+  {
+    "title": "Attack on Titan",
+    "slug": "attack-on-titan",
+    "parentHub": "anime-manga",
+    "description": "Kostenlose druckbare Attack on Titan Malvorlagen für Anime-Fans, Jugendliche und Erwachsene.",
+    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/banner/theme_attack-on-titan.webp",
+    "availableAges": [
+      "teens",
+      "adults"
+    ],
+    "language": "de",
+    "pageCount": 0,
+    "totalCount": 0,
+    "itemCount": 0,
+    "coloringPageCount": 0,
+    "coverImage": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/banner/theme_attack-on-titan.webp"
+  },
+  {
+    "title": "Antike Mythologie & Götter",
+    "slug": "ancient-mythology",
+    "parentHub": "fantasy-fairytales",
+    "description": "Kostenlose druckbare Malvorlagen zur antiken Mythologie mit Göttern, Göttinnen und antiken Kriegern.",
+    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/banner/theme_ancient-mythology.webp",
+    "availableAges": [
+      "kids",
+      "teens",
+      "adults"
+    ],
+    "language": "de",
+    "pageCount": 0,
+    "totalCount": 0,
+    "itemCount": 0,
+    "coloringPageCount": 0,
+    "coverImage": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/banner/theme_ancient-mythology.webp"
+  },
+  {
+    "title": "Coole Roboter & Mechs",
+    "slug": "robots",
+    "parentHub": "vehicles-transportation",
+    "description": "Kostenlose druckbare coole Roboter-, Mecha- und Cyborg-Malvorlagen für Kinder und Jugendliche.",
+    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/banner/theme_robots.webp",
+    "availableAges": [
+      "kids",
+      "teens"
+    ],
+    "language": "de",
+    "pageCount": 0,
+    "totalCount": 0,
+    "itemCount": 0,
+    "coloringPageCount": 0,
+    "coverImage": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/banner/theme_robots.webp"
   }
 ]

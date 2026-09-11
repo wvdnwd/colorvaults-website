@@ -2759,5 +2759,57 @@
     "featured": false,
     "popularity": 12,
     "language": "nl"
+  },
+  {
+    "title": "Attack on Titan",
+    "slug": "attack-on-titan",
+    "parentHub": "anime-manga",
+    "description": "Gratis printbare Attack on Titan kleurplaten voor anime fans, tieners en volwassenen.",
+    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/banner/theme_attack-on-titan.webp",
+    "availableAges": [
+      "teens",
+      "adults"
+    ],
+    "language": "nl",
+    "pageCount": 0,
+    "totalCount": 0,
+    "itemCount": 0,
+    "coloringPageCount": 0,
+    "coverImage": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/banner/theme_attack-on-titan.webp"
+  },
+  {
+    "title": "Oude Mythologie & Goden",
+    "slug": "ancient-mythology",
+    "parentHub": "fantasy-fairytales",
+    "description": "Gratis printbare Griekse, Romeinse en Egyptische mythologie kleurplaten met goden, godinnen en krijgers.",
+    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/banner/theme_ancient-mythology.webp",
+    "availableAges": [
+      "kids",
+      "teens",
+      "adults"
+    ],
+    "language": "nl",
+    "pageCount": 0,
+    "totalCount": 0,
+    "itemCount": 0,
+    "coloringPageCount": 0,
+    "coverImage": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/banner/theme_ancient-mythology.webp"
+  },
+  {
+    "title": "Stoere Robots & Mechs",
+    "slug": "robots",
+    "parentHub": "vehicles-transportation",
+    "description": "Gratis printbare stoere robots, mecha krijgers en futuristische cyborgs kleurplaten voor kinderen en tieners.",
+    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/banner/theme_robots.webp",
+    "availableAges": [
+      "kids",
+      "teens"
+    ],
+    "language": "nl",
+    "pageCount": 0,
+    "totalCount": 0,
+    "itemCount": 0,
+    "coloringPageCount": 0,
+    "coverImage": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/banner/theme_robots.webp"
   }
 ]
