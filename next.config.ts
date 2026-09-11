@@ -79,10 +79,6 @@ const nextConfig: NextConfig = {
   async rewrites() {
     return [
       {
-        source: '/sitemap.xml',
-        destination: '/sitemap-index.xml',
-      },
-      {
         source: '/pinterest-feed.xml',
         destination: '/api/pinterest-feed',
       },
