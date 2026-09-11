@@ -18,6 +18,7 @@ import {
   getPageDifficulty,
 } from '../src/lib/themeFilters';
 import { getAgeLabel } from '../src/lib/api';
+import { HOW_TO_DRAW_LESSONS, getLessonColoringPageHref } from '../src/data/howToDrawData';
 
 describe('Site & Routing Helpers', () => {
   it('enforces exact site origin', () => {
@@ -177,3 +178,33 @@ describe('Catalog Source Data', () => {
     }
   });
 });
+
+describe('How-To-Draw Routing Helpers', () => {
+  it('correctly adds locale prefix to coloring page links', () => {
+    const sampleLesson = HOW_TO_DRAW_LESSONS.find(l => l.coloringPageUrl);
+    assert.ok(sampleLesson);
+    assert.equal(getLessonColoringPageHref(sampleLesson, 'nl').startsWith('/nl/'), true);
+    assert.equal(getLessonColoringPageHref(sampleLesson, 'en').startsWith('/en/'), true);
+    assert.equal(getLessonColoringPageHref(sampleLesson, 'de').startsWith('/de/'), true);
+    assert.equal(getLessonColoringPageHref(sampleLesson, 'fr').startsWith('/fr/'), true);
+  });
+
+  it('falls back to related theme route when coloringPageUrl is not set', () => {
+    const lessonWithoutUrl = {
+      slug: 'test-lesson',
+      category: 'animals' as const,
+      difficulty: 'easy' as const,
+      timeMinutes: 5,
+      icon: '🎨',
+      titleEn: 'Test',
+      titleNl: 'Test',
+      descEn: 'Test',
+      descNl: 'Test',
+      relatedHubSlug: 'animals-wildlife',
+      relatedThemeSlug: 'dinosaur-adventures',
+      steps: [],
+    };
+    assert.equal(getLessonColoringPageHref(lessonWithoutUrl, 'nl'), '/nl/animals-wildlife/dinosaur-adventures');
+  });
+});
+

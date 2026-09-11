@@ -6436,3 +6436,12 @@ export function getLessonBySlug(slug: string): HowToDrawLesson | undefined {
 export function getRelatedLessons(slug: string, limit = 4): HowToDrawLesson[] {
   return HOW_TO_DRAW_LESSONS.filter(l => l.slug !== slug).slice(0, limit);
 }
+
+export function getLessonColoringPageHref(lesson: HowToDrawLesson, locale: string): string {
+  if (lesson.coloringPageUrl) {
+    const cleanPath = lesson.coloringPageUrl.replace(/^\/(en|nl|de|fr)\//, '/');
+    return `/${locale}${cleanPath.startsWith('/') ? cleanPath : `/${cleanPath}`}`;
+  }
+  return `/${locale}/${lesson.relatedHubSlug}/${lesson.relatedThemeSlug}`;
+}
+

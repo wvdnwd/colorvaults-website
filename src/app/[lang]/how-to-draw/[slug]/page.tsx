@@ -5,7 +5,7 @@ import Breadcrumbs from '@/components/Breadcrumbs';
 import AdSlot from '@/components/AdSlot';
 import NewsletterBox from '@/components/NewsletterBox';
 import SafeImage from '@/components/SafeImage';
-import { HOW_TO_DRAW_LESSONS, getLessonBySlug, getRelatedLessons } from '@/data/howToDrawData';
+import { HOW_TO_DRAW_LESSONS, getLessonBySlug, getRelatedLessons, getLessonColoringPageHref } from '@/data/howToDrawData';
 
 export async function generateStaticParams() {
   const params: { lang: string; slug: string }[] = [];
@@ -148,7 +148,7 @@ export default async function HowToDrawLessonPage({
               <div style={{ display: 'flex', gap: '0.75rem', flexWrap: 'wrap' }}>
                 {lesson.coloringPageUrl && (
                   <Link
-                    href={lesson.coloringPageUrl}
+                    href={getLessonColoringPageHref(lesson, lang)}
                     className="btn-primary"
                     style={{ fontSize: '0.925rem', padding: '0.75rem 1.25rem' }}
                   >
