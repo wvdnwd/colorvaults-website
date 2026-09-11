@@ -131,3 +131,14 @@ export function buildSitemapXml(entries: SitemapUrlEntry[]): string {
 
   return `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${urlNodes}\n</urlset>`;
 }
+
+export function buildSitemapIndexXml(): string {
+  const buildDate = new Date().toISOString().split('T')[0];
+  const sitemaps = ['en', 'nl', 'de', 'fr'].map(lang => {
+    const loc = `${SITE_ORIGIN}/sitemap-pages/${lang}`;
+    return `  <sitemap>\n    <loc>${escapeXml(loc)}</loc>\n    <lastmod>${buildDate}</lastmod>\n  </sitemap>`;
+  }).join('\n');
+
+  return `<?xml version="1.0" encoding="UTF-8"?>\n<sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${sitemaps}\n</sitemapindex>`;
+}
+

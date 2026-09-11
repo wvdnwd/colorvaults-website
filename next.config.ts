@@ -80,7 +80,7 @@ const nextConfig: NextConfig = {
     return [
       {
         source: '/sitemap.xml',
-        destination: '/nl/sitemap.xml',
+        destination: '/sitemap-index.xml',
       },
       {
         source: '/pinterest-feed.xml',
