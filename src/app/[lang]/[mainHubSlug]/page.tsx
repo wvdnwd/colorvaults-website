@@ -9,7 +9,7 @@ import AdCard from'@/components/AdCard';
 import ThemeCard from'@/components/ThemeCard';
 import * as motion from'framer-motion/client';
 import React from'react';
-import { createMetadata } from '@/lib/seo';
+import { createMetadata, isOriginalHub } from '@/lib/seo';
 import { SITE_ORIGIN } from '@/lib/site';
 
 export async function generateStaticParams() {
@@ -44,6 +44,7 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
     title,
     description: hub.description,
     image: ogImageUrl,
+    noindex: !isOriginalHub(mainHubSlug),
   });
 }
 

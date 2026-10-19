@@ -24,6 +24,19 @@ export function buildCanonicalUrl(pathWithoutLang: string, lang: string, page?: 
 
 const INDEXED_LOCALES: readonly ValidLocale[] = ['en', 'nl'];
 
+export const ORIGINAL_HUB_SLUGS = new Set<string>([
+  'animals-wildlife',
+  'art-aesthetic',
+  'fantasy-fairytales',
+  'vehicles-transportation',
+  'holidays-seasons',
+  'crafts-diy-learning',
+]);
+
+export function isOriginalHub(hubSlug: string): boolean {
+  return ORIGINAL_HUB_SLUGS.has(hubSlug);
+}
+
 export function buildHreflangAlternates(
   pathWithoutLang: string,
   supportedLangs: readonly ValidLocale[] = INDEXED_LOCALES

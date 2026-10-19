@@ -1,5 +1,6 @@
 import { SITE_ORIGIN, escapeXml, ValidLocale } from '@/lib/site';
 import { getMainHubs, getThemes } from '@/lib/api';
+import { isOriginalHub } from '@/lib/seo';
 import { blogPosts } from '@/data/blogs';
 import { HOW_TO_DRAW_LESSONS } from '@/data/howToDrawData';
 
@@ -67,8 +68,8 @@ export function generateSitemapUrlsForLocale(lang: ValidLocale): SitemapUrlEntry
     }
   }
 
-  // Hubs (curated category landing pages with rich SEO guides)
-  const hubs = getMainHubs(lang);
+  // Hubs (curated original category landing pages with rich SEO guides)
+  const hubs = getMainHubs(lang).filter(h => isOriginalHub(h.slug));
   for (const hub of hubs) {
     entries.push({
       loc: `${SITE_ORIGIN}/${lang}/${hub.slug}`,
@@ -78,8 +79,8 @@ export function generateSitemapUrlsForLocale(lang: ValidLocale): SitemapUrlEntry
     });
   }
 
-  // Themes (curated theme albums with galleries, craft activities, and FAQs)
-  const themes = getThemes(lang);
+  // Themes (curated original theme albums with galleries, craft activities, and FAQs)
+  const themes = getThemes(lang).filter(t => isOriginalHub(t.parentHub));
   for (const theme of themes) {
     entries.push({
       loc: `${SITE_ORIGIN}/${lang}/${theme.parentHub}/${theme.slug}`,

@@ -166,6 +166,140 @@ export const blogPosts: Record<'en'|'nl', BlogPost[]> = {
           <li><strong>Customizable:</strong> Color-code project deadlines, family birthdays, fitness goals, and reading logs.</li>
         </ul>`,
     },
+    {
+      slug: 'diy-paper-crafts-finished-coloring-pages',
+      title: '12 Creative DIY Paper Crafts Using Finished Coloring Pages',
+      excerpt: 'Do not let completed coloring sheets pile up in a drawer! Turn your child’s finished artwork into lanterns, greeting cards, bookmarks, and garlands.',
+      category: 'DIY Crafts & Upcycling',
+      readTime: '7 min read',
+      date: 'September 4, 2026',
+      image: 'https://colorvaults.ams3.cdn.digitaloceanspaces.com/banner/hub_fantasy-fairytales.webp',
+      content: `<p>Every parent and teacher knows the feeling: children love coloring, and within a few weeks you have a towering stack of finished coloring pages on the kitchen counter. Instead of recycling them or hiding them away in a folder, you can transform completed coloring sheets into memorable DIY paper crafts, home decorations, and handmade gifts.</p>
+
+        <h2>1. Laminated Custom Bookmarks & Placemats</h2>
+        <p>Cut narrow vertical strips (5 cm × 18 cm) from the most vibrant sections of a finished mandala or animal coloring page. Punch a hole at the top, thread a colorful yarn tassel through it, and laminate the strip for a durable bookmark. You can also laminate an entire A4 animal or dinosaur sheet to create a washable dinner placemat for toddlers.</p>
+
+        <h2>2. Handmade 3D Pop-Up Greeting Cards</h2>
+        <p>Have your child color a favorite animal, dragon, or floral illustration on 160 gsm cardstock. Carefully cut around the outer black contour with safety scissors. Fold a blank sheet of colored construction paper in half, cut two small parallel slits in the center fold to create a pop-up tab, and glue the colored cutout onto the tab for a custom birthday or thank-you card.</p>
+
+        <h2>3. Festive Party Bunting & Classroom Garlands</h2>
+        <p>Using a ruler and pencil, draw large triangles across several finished coloring pages and cut them out. Punch two holes along the top edge of each pennant and string them onto baker’s twine. Hang the garland across a classroom whiteboard, reading nook, or birthday party table.</p>
+
+        <h2>4. Glowing Paper Lanterns (With LED Tea Lights)</h2>
+        <p>Color a botanical or geometric pattern page using bright markers. Lightly brush the back of the paper with a drop of vegetable oil on a cotton pad—this makes standard 80 gsm paper semi-translucent like stained glass! Roll the sheet into a cylinder, tape the seam, and place a battery-operated LED tea light inside for a magical bedside lantern.</p>
+
+        <h2>5. DIY Jigsaw Puzzles on Recycled Cardboard</h2>
+        <p>Glue a finished coloring sheet flat onto the clean inside of an empty cereal box using a glue stick. Once dry, draw 12 to 24 interlocking puzzle shapes on the back and cut them out. Kids love solving a puzzle they colored themselves!</p>`,
+    },
+    {
+      slug: 'coloring-neurodivergent-kids-adhd-autism-sensory',
+      title: 'How Structured Coloring Supports Focus & Sensory Regulation for Neurodivergent Kids',
+      excerpt: 'Evidence-based strategies for using visual boundaries, predictable patterns, and tactile coloring tools to support children with ADHD and autism.',
+      category: 'Special Education & Parenting',
+      readTime: '8 min read',
+      date: 'September 9, 2026',
+      image: 'https://colorvaults.ams3.cdn.digitaloceanspaces.com/banner/hub_animals-wildlife.webp',
+      content: `<p>For children with ADHD, autism spectrum differences, or sensory processing sensitivities, transitioning between high-energy activities and quiet learning time can be challenging. Occupational therapists and special educators frequently use structured coloring activities as a calming, predictable bridge that supports self-regulation without verbal overwhelm.</p>
+
+        <h2>Why Visual Boundaries Calm the Nervous System</h2>
+        <p>A blank sheet of paper can sometimes trigger decision fatigue or perfectionism ("What should I draw? What if I mess up?"). Pre-drawn coloring templates remove the anxiety of starting from scratch by providing clear, high-contrast black outlines. The child only needs to focus on one micro-decision at a time: choosing a color and filling a single enclosed shape.</p>
+
+        <h2>Matching Line Complexity to Sensory Needs</h2>
+        <ul>
+          <li><strong>For High-Energy or Restless Moments (ADHD):</strong> Choose medium-sized thematic illustrations (like race cars, dinosaurs, or space rockets) divided into 15–25 distinct zones. Combine with smooth gel crayons or brush markers that offer immediate, high-contrast visual payoff with minimal hand fatigue.</li>
+          <li><strong>For Sensory Overload & Meltdown Recovery:</strong> Symmetrical geometric mandalas or repetitive tile patterns provide soothing visual predictability. Counting and coloring repeating petals in a fixed sequence (e.g., blue-green-yellow) acts as a grounding exercise.</li>
+          <li><strong>For Proprioceptive Input:</strong> Using thicker triangular wax crayons on textured paper provides gentle resistance ("heavy work" for the fingers), which helps regulate tactile seekers.</li>
+        </ul>
+
+        <h2>Practical Tips for Parents & Therapists</h2>
+        <ol>
+          <li><strong>Limit the Palette to 4–5 Colors:</strong> Pouring out a box of 72 pencils can cause visual overstimulation. Offer a curated cup of 4 harmonious colors to make starting effortless.</li>
+          <li><strong>Use a Visual Timer:</strong> Pair coloring with a 10-minute sand timer during after-school decompression so the child knows exactly how long quiet time lasts.</li>
+          <li><strong>Celebrate Process Over Perfection:</strong> Never correct a child for coloring outside the lines or choosing "unrealistic" colors like a purple elephant—autonomy is what makes the activity therapeutic.</li>
+        </ol>`,
+    },
+    {
+      slug: 'home-printer-settings-crisp-line-art-ink-saving',
+      title: 'How to Print Coloring Pages at Home: Best Printer Settings to Save Ink & Get Crisp Lines',
+      excerpt: 'Stop wasting expensive color ink Cartridges! Learn the exact PDF print settings, grayscale modes, and paper trays for razor-sharp coloring sheets.',
+      category: 'Printing & Technical Guides',
+      readTime: '6 min read',
+      date: 'September 14, 2026',
+      image: 'https://colorvaults.ams3.cdn.digitaloceanspaces.com/banner/hub_vehicles-transportation.webp',
+      content: `<p>Printing coloring pages at home or in a school staffroom should be quick, affordable, and frustration-free. Yet many parents accidentally print black-and-white line art using composite color ink, or end up with cropped edges and smeared outlines when kids use markers. Follow this technical guide to get studio-quality prints while cutting ink costs by up to 50%.</p>
+
+        <h2>1. Always Enable "Black & White / Grayscale Only"</h2>
+        <p>By default, most inkjet printers mix Cyan, Magenta, and Yellow ink together to create "rich black" even when printing a black-and-white image. Before clicking Print, open your printer properties and select <strong>Grayscale</strong> or <strong>Black Cartridge Only</strong>. This uses only pigment black ink, which is significantly cheaper and dries instantly.</p>
+
+        <h2>2. Why Pigment Ink Beats Dye Ink for Markers</h2>
+        <p>If your children love coloring with water-based markers or watercolor brush pens, check whether your black cartridge uses <strong>pigment black ink</strong> (standard on most Brother, Epson EcoTank, and Canon PIXMA black tanks) or laser toner. Pigment ink and laser toner bond to paper fibers and will not smudge or turn gray when wet markers pass over the black lines.</p>
+
+        <h2>3. Fixing Cut-Off Borders: "Fit to Printable Area"</h2>
+        <p>Different regions use slightly different paper proportions: Europe uses <strong>ISO A4 (210 × 297 mm)</strong> while North America uses <strong>US Letter (8.5 × 11 inches)</strong>. In your browser or PDF print dialog, always set Scale to <strong>"Fit to Printable Area"</strong> (or 96% custom scale) rather than "Actual Size" so no outer frame or footer gets clipped by your printer’s hardware margins.</p>
+
+        <h2>4. Draft Mode vs. Standard Quality</h2>
+        <p>For toddler practice sheets and everyday sketching, <strong>Draft / Eco Mode</strong> works wonderfully and turns bold black lines into a soft charcoal gray—which many adult colorists actually prefer for realistic pencil shading!</p>`,
+    },
+    {
+      slug: 'early-math-literacy-coloring-worksheets-preschool',
+      title: 'Combining Art & Early Learning: Using Coloring Worksheets for Preschool Math and Phonics',
+      excerpt: 'How multisensory coloring activities help 3 to 6-year-olds master number sense, letter formation, and early vocabulary without rote drills.',
+      category: 'Education & Teaching',
+      readTime: '7 min read',
+      date: 'September 19, 2026',
+      image: 'https://colorvaults.ams3.cdn.digitaloceanspaces.com/banner/hub_art-aesthetic.webp',
+      content: `<p>Early childhood research consistently shows that young children learn abstract symbols—like letters and numbers—fastest when visual, auditory, and kinesthetic pathways are engaged simultaneously. Combining coloring with foundational math and phonics turns abstract memorization into hands-on discovery.</p>
+
+        <h2>1. Color-by-Number & Subitizing Skills</h2>
+        <p>When preschoolers count three spots on a ladybug or five petals on a flower before coloring them, they are practicing <strong>one-to-one correspondence</strong> and <strong>subitizing</strong> (instantly recognizing small quantities). Try giving your child prompts like: <em>"Color 3 dinosaurs green and 2 dinosaurs orange—how many dinosaurs are there in total?"</em></p>
+
+        <h2>2. Phonemic Awareness Through Thematic Coloring</h2>
+        <p>While coloring a woodland or ocean scene, play an interactive sound game. Ask your child to find and color every object that starts with the <strong>/s/</strong> sound (sun, starfish, sailboat, seashell). This builds phonological awareness long before formal reading begins.</p>
+
+        <h2>3. Pre-Writing Strokes Hidden in Art</h2>
+        <p>Every capital and lowercase letter in the alphabet is built from four basic strokes: vertical lines, horizontal lines, circles, and diagonal crosses. Coloring inside circular mandalas, zigzag dragon scales, and curved rainbow arches trains the exact wrist rotation and finger extension needed for fluent handwriting in first grade.</p>`,
+    },
+    {
+      slug: 'seasonal-coloring-traditions-family-holidays',
+      title: 'Building Year-Round Family Traditions with Seasonal & Holiday Coloring Pages',
+      excerpt: 'From autumn harvest placemats to winter countdown calendars and spring nature journals—creative ways to celebrate every season on paper.',
+      category: 'Family & Lifestyle',
+      readTime: '6 min read',
+      date: 'September 25, 2026',
+      image: 'https://colorvaults.ams3.cdn.digitaloceanspaces.com/banner/hub_holidays-seasons.webp',
+      content: `<p>Children experience the passage of time through sensory rituals and seasonal traditions. Creating a rotating seasonal coloring folder in your home or classroom helps kids connect with nature, cultural holidays, and changing weather throughout the year.</p>
+
+        <h2>Spring: Botanical Observation & Garden Journals</h2>
+        <p>Take a clipboard, colored pencils, and botanical coloring sheets outside into the garden or local park. Encourage kids to match their pencil colors to real daffodils, tulips, butterflies, and tree blossoms they spot outdoors.</p>
+
+        <h2>Summer: Road-Trip Binders & Rainy Camp Days</h2>
+        <p>Before heading out on a family road trip or flight, assemble a personalized travel binder with 20 ocean, vehicle, and camping coloring pages inside plastic sheet protectors, paired with a flat zippered pouch of twistable crayons (which never need sharpening in the car!).</p>
+
+        <h2>Autumn: Harvest Table Decor & Gratitude Leaves</h2>
+        <p>Print autumn leaf, pumpkin, and woodland animal templates on warm cream cardstock. Have each family member color a leaf and write one thing they are grateful for in the center to create an autumn centerpiece.</p>
+
+        <h2>Winter: Advent Countdown & Cozy Hygge Evenings</h2>
+        <p>Print 24 winter, Sinterklaas, or Christmas coloring sheets numbered 1 through 24. Coloring one festive page together each December evening with hot cocoa creates a calm, screen-free countdown to the holidays.</p>`,
+    },
+    {
+      slug: 'left-handed-kids-coloring-ergonomics-grip-tips',
+      title: 'Supporting Left-Handed Kids: Ergonomic Coloring & Drawing Tips for Parents and Teachers',
+      excerpt: 'Simple adjustments to paper angle, seating position, and smudge-free art supplies that make coloring comfortable for left-handed children.',
+      category: 'Parenting & Early Education',
+      readTime: '5 min read',
+      date: 'October 2, 2026',
+      image: 'https://colorvaults.ams3.cdn.digitaloceanspaces.com/Cute%20Pets%20Animals/Animals_An_intricate_fantasy_animal_kin_1785061615957_1.webp',
+      content: `<p>Roughly 10% of children are left-handed, yet most classroom desks, spiral notebooks, and writing demonstrations are designed for right-handed learners. Without small ergonomic adjustments, left-handed kids often develop an uncomfortable "hooked" wrist posture or get frustrated when their hand smudges wet marker ink across the page.</p>
+
+        <h2>1. Tilt the Paper Clockwise (30 to 45 Degrees)</h2>
+        <p>The single most helpful adjustment for a left-handed child is tilting the top-right corner of the coloring page upward (clockwise by about 30 degrees). This allows the child’s left hand to stay naturally below the coloring line, preventing wrist hooking and giving them a clear view of the outlines.</p>
+
+        <h2>2. Work from Right to Left</h2>
+        <p>When using gel pens, water-based markers, or soft pastels, encourage left-handed colorists to start coloring on the <strong>right side of the page</strong> and move leftward. This simple habit keeps the side of their palm from dragging through freshly applied color.</p>
+
+        <h2>3. Seating Placement at Shared Tables</h2>
+        <p>At school or the dinner table, seat left-handed children on the <strong>left end of the table</strong> so their left elbow does not bump against a right-handed neighbor’s right elbow while coloring.</p>`,
+    },
   ],
   nl: [
     {
@@ -325,6 +459,140 @@ export const blogPosts: Record<'en'|'nl', BlogPost[]> = {
           <li><strong>Maandelijkse Mindfulness:</strong> Een halfuurtje ontspannen de nieuwe maandkalender inkleuren zorgt voor een heldere mindset.</li>
           <li><strong>Geschikt voor het Hele Gezin:</strong> Maak overzichtelijke taken- en verjaardagskalenders met vrolijke iconen.</li>
         </ul>`,
+    },
+    {
+      slug: 'knutselideeen-met-ingekleurde-kleurplaten',
+      title: '12 Creatieve Knutselideeën met Ingekleurde Kleurplaten',
+      excerpt: 'Laat afgemaakte kleurplaten niet verstoffen op een stapel! Maak er vrolijke lantaarns, 3D-wenskaarten, boekenleggers, slingers en eigen legpuzzels van.',
+      category: 'Knutselen & DIY',
+      readTime: '7 min leestijd',
+      date: '4 september 2026',
+      image: 'https://colorvaults.ams3.cdn.digitaloceanspaces.com/banner/hub_fantasy-fairytales.webp',
+      content: `<p>Elke ouder en leerkracht herkent het: kinderen zijn dol op kleuren en binnen een paar weken ligt er een flinke stapel prachtig ingekleurde tekeningen op de keukentafel. In plaats van ze in een lade te bewaren of bij het oud papier te leggen, kun je afgemaakte kleurplaten eenvoudig omtoveren tot originele knutselwerkjes, cadeautjes en kamerdecoratie.</p>
+
+        <h2>1. Gelamineerde Boekenleggers & Placemats</h2>
+        <p>Knip smalle verticale stroken (5 cm × 18 cm) uit de mooiste delen van een ingekleurde mandala of dierenplaat. Maak met een perforator een gaatje bovenin, knoop er een vrolijk gekleurd koordje of kwastje doorheen en lamineer de strook voor een stevige boekenlegger. Je kunt ook een volledige A4-kleurplaat lamineren als afwasbare placemat voor aan de eettafel!</p>
+
+        <h2>2. Handgemaakte 3D Pop-Up Wenskaarten</h2>
+        <p>Laat je kind een favoriet dier, eenhoorn of bloem inkleuren op wat steviger papier (120–160 g/m²). Knip het figuur netjes langs de zwarte buitenlijn uit. Vouw een gekleurd vel karton dubbel, knip in het midden van de vouwrand twee kleine inkepingen van 2 cm diep en vouw dit lipje naar binnen. Plak de uitgeknipte kleurplaat op het pop-up lipje voor een verrassende verjaardags- of oma-en-opa-kaart.</p>
+
+        <h2>3. Feestelijke Vlaggetjesslingers voor Verjaardag of Klaslokaal</h2>
+        <p>Teken met een liniaal en potlood grote driehoeken over meerdere ingekleurde kleurplaten en knip deze uit. Perforeer twee gaatjes aan de bovenzijde van elk vlaggetje en rijg er een katoenen touwtje doorheen. Zo maak je een unieke, gepersonaliseerde slinger voor een kinderfeestje of het klaslokaal.</p>
+
+        <h2>4. Lichtgevende Papieren Lantaarns (voor Sint-Maarten of de Slaapkamer)</h2>
+        <p>Kleur een mandala of herfstplaat in met heldere viltstiften. Wrijf de achterkant van het papier heel lichtjes in met een watje met een druppel zonnebloemolie: hierdoor wordt gewoon printerpapier half-doorzichtig zoals glas-in-lood! Rol het vel op tot een koker, plak de rand vast en zet er een veilig LED-waxinelichtje op batterijen in.</p>
+
+        <h2>5. Je Eigen Legpuzzel van Gerecycled Karton</h2>
+        <p>Plak een ingekleurde plaat met een lijmstift strak op de binnenkant van een lege cornflakesdoos. Teken op de achterkant 12 tot 20 puzzelstukken en knip ze uit. Kinderen vinden het geweldig om hun eigen getekende puzzel op te lossen!</p>`,
+    },
+    {
+      slug: 'kleuren-voor-prikkelverwerking-adhd-autisme',
+      title: 'Hoe Gestructureerd Kleuren Helpt bij Prikkelverwerking, Focus & Rust (ADHD & Autisme)',
+      excerpt: 'Praktische tips van pedagogen over hoe duidelijke lijnen, voorspelbare patronen en de juiste kleurmaterialen kinderen ondersteunen bij ontprikkelen.',
+      category: 'Opvoeding & Ontwikkeling',
+      readTime: '8 min leestijd',
+      date: '9 september 2026',
+      image: 'https://colorvaults.ams3.cdn.digitaloceanspaces.com/banner/hub_animals-wildlife.webp',
+      content: `<p>Voor kinderen met ADHD, autisme of hooggevoeligheid (HSP) kan de overgang van een drukke schooldag naar rust in huis een flinke uitdaging zijn. Kinderergotherapeuten en leerkrachten zetten gestructureerde kleuractiviteiten vaak in als een veilige, voorspelbare tussenstap om het zenuwstelsel te kalmeren zonder dat er veel gesproken hoeft te worden.</p>
+
+        <h2>Waarom Duidelijke Zwarte Lijnen Rust Geven</h2>
+        <p>Een leeg wit vel papier kan bij veel kinderen keuzestress of faalangst oproepen ("Wat moet ik tekenen? Wat als het mislukt?"). Een kant-en-klare kleurplaat neemt die drempel direct weg door heldere kaders te bieden. Het brein hoeft zich maar op één kleine beslissing tegelijk te richten: welk kleurtje kies ik en welk vakje kleur ik nu in?</p>
+
+        <h2>Welk Type Kleurplaat Past bij Welke Behoefte?</h2>
+        <ul>
+          <li><strong>Bij Bewegingsonrust of Korte Spanningsboog (ADHD):</strong> Kies overzichtelijke thema-platen (zoals dinosauriërs, raceauto’s of ruimtevaart) met 15 tot 25 duidelijke vlakken. Combineer dit met zachte gelkrijtjes of dikke viltstiften die direct veel kleur afgeven zonder dat het kind hard hoeft te drukken.</li>
+          <li><strong>Bij Overprikkeling na Schooltijd:</strong> Symmetrische mandala’s of herhalende patronen bieden visuele voorspelbaarheid. Het inkleuren in een vaste volgorde (bijvoorbeeld blauw-groen-geel) werkt als een rustgevende aardings-oefening.</li>
+          <li><strong>Voor Tastzin & Drukregulatie:</strong> Dikke driekante waskrijtjes of kleurpotloden op licht gestructureerd papier geven fijne tegendruk aan de vingers, wat helpt om lichamelijke spanning los te laten.</li>
+        </ul>
+
+        <h2>3 Gouden Tips voor Ouders & Begeleiders</h2>
+        <ol>
+          <li><strong>Beperk het Aantal Potloden op Tafel:</strong> Een blik met 72 potloden kan zorgen voor nieuwe overprikkeling. Zet liever een beker met 4 of 5 mooie bij elkaar passende kleuren klaar.</li>
+          <li><strong>Koppel het aan een Visuele Timer:</strong> Gebruik een zandloper van 10 minuten na schooltijd, zodat het kind precies ziet hoe lang het rustmoment duurt.</li>
+          <li><strong>Geen Correcties:</strong> Laat je kind helemaal vrij om buiten de lijntjes te kleuren of een paarse olifant te maken—juist het gevoel van eigen regie zorgt voor ontspanning.</li>
+        </ol>`,
+    },
+    {
+      slug: 'kleurplaten-printen-instellingen-inkt-besparen',
+      title: 'Kleurplaten Printen Thuis: De Beste Printerinstellingen om Inkt te Besparen',
+      excerpt: 'Verspil geen dure kleureninkt! Ontdek hoe je met grijswaarden, A4-schaalinstellingen en conceptmodus haarscherpe kleurplaten print voor de helft van de prijs.',
+      category: 'Printen & Praktische Tips',
+      readTime: '6 min leestijd',
+      date: '14 september 2026',
+      image: 'https://colorvaults.ams3.cdn.digitaloceanspaces.com/banner/hub_vehicles-transportation.webp',
+      content: `<p>Zelf kleurplaten printen voor je kinderen of klas is superhandig, maar zonder de juiste printerinstellingen zijn je dure kleurencartridges verrassend snel leeg of vallen er randjes van de tekening weg. Met deze praktische tips haal je het maximale uit je thuisprinter en bespaar je tot wel 50% op je inktkosten.</p>
+
+        <h2>1. Zet Altijd "Alleen Zwart-Wit / Grijswaarden" Aan</h2>
+        <p>Wist je dat de meeste inkjetprinters standaard cyaan, magenta en geel mengen om zwart te drukken, zelfs als het bestand zwart-wit is? Vink in je printmenu altijd <strong>"Afdrukken in grijswaarden"</strong> of <strong>"Alleen zwarte inkt"</strong> aan. Zo gebruikt je printer uitsluitend het veel goedkopere zwarte inktpatroon.</p>
+
+        <h2>2. Voorkom Vlekken bij Viltstiften (Pigmentinkt vs. Kleurstofinkt)</h2>
+        <p>Kleuren je kinderen graag met viltstiften op waterbasis? Controleer dan of jouw zwarte cartridge gebruikmaakt van <strong>pigmentinkt</strong> (standaard bij de meeste Epson EcoTank, Brother en Canon zwarte tanks) of een laserprinter. Pigmentinkt en lasertoner hechten direct aan de papiervezel en lopen niet uit wanneer je er met een natte stift overheen gaat.</p>
+
+        <h2>3. Geen Afgesneden Randen: Kies "Passend maken voor afdrukbaar gebied"</h2>
+        <p>Sommige kleurplaten zijn opgemaakt op US Letter-formaat en andere op Europees <strong>A4-formaat (210 × 297 mm)</strong>. Kies in het afdrukvenster van je browser of PDF-lezer altijd voor <strong>"Passend" (Fit to page)</strong> of zet de schaal op 96%. Zo weet je zeker dat de hele tekening netjes binnen de marges van het vel valt.</p>
+
+        <h2>4. Gebruik de Eco- of Conceptmodus voor Potloodtekeningen</h2>
+        <p>Door te printen in de <strong>Conceptmodus (Draft / Eco)</strong> verbruik je tot 40% minder inkt én worden de dikke zwarte lijnen zacht donkergrijs afgedrukt. Vooral oudere kinderen en volwassenen vinden dit prachtig, omdat de eigen potloodkleuren dan nog beter spreken!</p>`,
+    },
+    {
+      slug: 'spelend-leren-rekenen-taal-educatieve-kleurplaten',
+      title: 'Spelend Leren in Groep 1, 2 & 3: Rekenen en Taal Oefenen met Kleurplaten',
+      excerpt: 'Hoe je printbare kleurplaten en werkbladen slim inzet om kleuters spelenderwijs te laten oefenen met tellen, letters herkennen en woordenschat.',
+      category: 'Onderwijs & Lesideën',
+      readTime: '7 min leestijd',
+      date: '19 september 2026',
+      image: 'https://colorvaults.ams3.cdn.digitaloceanspaces.com/banner/hub_art-aesthetic.webp',
+      content: `<p>Jonge kinderen tussen de 3 en 7 jaar leren het snelst wanneer ze zien, horen én doen tegelijk combineren. Door reken- en taalspelletjes te koppelen aan een vrolijke kleurplaat verandert oefenen van een verplichte taak in een ontdekkingsreis.</p>
+
+        <h2>1. Getalbegrip & Tellen op Kleur</h2>
+        <p>Voordat een kleuter begint met kleuren, kun je samen telvragen stellen bij de tekening: <em>"Hoeveel stippen tel je op het lieveheersbeestje? Kun je er 3 rood maken en 2 geel?"</em> Zo oefent je kind ongemerkt met splitsen, optellen en hoeveelheden overzien.</p>
+
+        <h2>2. Letters en Klanken Zoeken in de Tekening</h2>
+        <p>Kies een uitgebreide zoek- of natuurkleurplaat en speel een klankspelletje: <em>"Kun jij alles inkleuren dat begint met de klank /b/?"</em> (boom, bloem, bij, beer). Dit versterkt het fonemisch bewustzijn—de belangrijkste basis om in groep 3 vlot te leren lezen.</p>
+
+        <h2>3. Voorbereidend Schrijven door Vormen te Volgen</h2>
+        <p>Alle schrijfletters bestaan uit vier basisbewegingen: rechte lijnen, bogen, cirkels en schuine kruisjes. Het inkleuren van ronde bloembladeren, golvende oceaangolven en hoekige drakenschubben traint precies de polsbeweging en vingercontrole die kinderen nodig hebben om soepel te leren schrijven.</p>`,
+    },
+    {
+      slug: 'seizoenen-feestdagen-kleurtradities-voor-het-gezin',
+      title: 'Het Hele Jaar Door Creatief: Seizoens- & Feestdagen-Tradities met Kleurplaten',
+      excerpt: 'Van een lente-natuurboekje en vakantie-kleurmap voor op de achterbank tot Sinterklaas-aftelkalenders en herfstdecoratie in huis.',
+      category: 'Gezin & Lifestyle',
+      readTime: '6 min leestijd',
+      date: '25 september 2026',
+      image: 'https://colorvaults.ams3.cdn.digitaloceanspaces.com/banner/hub_holidays-seasons.webp',
+      content: `<p>Kinderen beleven het jaar aan de hand van de seizoenen en feestdagen. Door elk seizoen een klein creatief ritueel in huis te halen met bijpassende kleurplaten, geef je kinderen houvast én bouw je samen aan warme gezinsherinneringen.</p>
+
+        <h2>Lente: Buiten Kleuren in de Tuin of het Park</h2>
+        <p>Neem op de eerste zonnige lentedag een klembord, een doos kleurpotloden en een paar bloemen- en vlinderkleurplaten mee naar buiten. Laat kinderen echte tulpen, narcissen en kriebelbeestjes zoeken en dezelfde kleuren gebruiken op hun papier.</p>
+
+        <h2>Zomer: De Ultieme Vakantie-Kleurmap voor Onderweg</h2>
+        <p>Ga je met de auto op vakantie of vliegen? Maak voor elk kind een eigen ringbandmap met 20 favoriete kleurplaten in insteekhoezen en een plat etui met uitdraaibare waskrijtjes (die je onderweg nooit hoeft te slijpen!). Ideaal voor op de achterbank of op de camping.</p>
+
+        <h2>Herfst: Herfsttafel & Dankbaarheidsblaadjes</h2>
+        <p>Print herfstbladeren, eekhoorns en pompoenen op warm crèmekleurig papier. Laat ieder gezinslid een herfstblad inkleuren en erop schrijven waar hij of zij deze maand blij van werd, en leg ze samen op de herfsttafel.</p>
+
+        <h2>Winter: Aftellen naar Sinterklaas & Kerst</h2>
+        <p>Maak van de drukke decembermaand een rustmoment door een eigen aftelkalender van 24 winter-, Sinterklaas- en kerstkleurplaten te printen. Elke avond bij een kop warme chocolademelk één plaat inkleuren brengt direct gezelligheid in huis.</p>`,
+    },
+    {
+      slug: 'linkshandige-kinderen-kleuren-pengreep-tips',
+      title: 'Linkshandig Kleuren & Tekenen: Handige Ergonomische Tips voor Ouders en Leerkrachten',
+      excerpt: 'Met een kleine aanpassing in papierligging, zithouding en vlekvrije stiften voorkom je kramp en vegen bij linkshandige kinderen.',
+      category: 'Opvoeding & Ontwikkeling',
+      readTime: '5 min leestijd',
+      date: '2 oktober 2026',
+      image: 'https://colorvaults.ams3.cdn.digitaloceanspaces.com/Cute%20Pets%20Animals/Animals_An_intricate_fantasy_animal_kin_1785061615957_1.webp',
+      content: `<p>Ongeveer 1 op de 10 kinderen is linkshandig. Omdat veel schooltafels, schriften met ringbanden en knip- of schrijfvoorbeelden zijn ingericht op rechtshandigen, lopen linkshandige kinderen bij het kleuren en tekenen soms tegen onnodige frustraties aan, zoals vlekken van natte viltstift of een verkrampte polshouding.</p>
+
+        <h2>1. Draai het Papier Iets met de Klok Mee (30 Graden)</h2>
+        <p>De belangrijkste tip voor een linkshandig kind is het schuin neerleggen van de kleurplaat: draai de rechterbovenhoek van het papier ongeveer 30 graden omhoog (met de klok mee). Hierdoor blijft de linkerhand vanzelf <em>onder</em> de kleurlijn, hoeft het kind de pols niet krom te buigen en ziet het precies wat het kleurt.</p>
+
+        <h2>2. Kleur van Rechts naar Links bij Stiften</h2>
+        <p>Gebruikt je kind graag viltstiften, gelpennen of zachte wasco? Leer het dan om aan de <strong>rechterkant van de kleurplaat te beginnen</strong> en naar links toe te werken. Zo schuift de zijkant van de linkerhand niet door de nog natte inkt.</p>
+
+        <h2>3. Slimme Plek aan Tafel</h2>
+        <p>Laat een linkshandig kind aan de keukentafel of in de klas altijd aan de <strong>linkerkant van een duotafel</strong> zitten. Zo botsen de ellebogen van een links- en rechtshandig kind nooit tegen elkaar tijdens het kleuren!</p>`,
     },
   ],
 };

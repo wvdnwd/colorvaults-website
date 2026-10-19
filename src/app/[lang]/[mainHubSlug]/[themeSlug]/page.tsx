@@ -32,7 +32,7 @@ export async function generateStaticParams() {
   return [...themesEn, ...themesNl, ...themesDe, ...themesFr];
 }
 
-import { createMetadata } from '@/lib/seo';
+import { createMetadata, isOriginalHub } from '@/lib/seo';
 import { SITE_ORIGIN } from '@/lib/site';
 
 export async function generateMetadata({
@@ -73,6 +73,7 @@ export async function generateMetadata({
     description: theme.description,
     page: currentPage,
     image: ogImageUrl,
+    noindex: !isOriginalHub(mainHubSlug),
   });
 }
 

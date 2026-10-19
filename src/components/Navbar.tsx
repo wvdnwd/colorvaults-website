@@ -57,11 +57,6 @@ export default function Navbar({ lang }: { lang: string }) {
         { label: isEn ? 'Vehicles & Space' : 'Voertuigen & Ruimte', href: `/${lang}/vehicles-transportation` },
         { label: isEn ? 'Holidays & Seasons' : 'Feestdagen & Seizoenen', href: `/${lang}/holidays-seasons` },
         { label: isEn ? 'Crafts, DIY & Learning' : 'Knutselen, DIY & Educatie', href: `/${lang}/crafts-diy-learning` },
-        { label: isEn ? 'Kids TV & Cartoons' : 'Kinderseries & Tekenfilms', href: `/${lang}/kids-tv-shows` },
-        { label: isEn ? 'Gaming & Virtual Worlds' : 'Games & Gaming', href: `/${lang}/gaming-virtual-worlds` },
-        { label: 'Disney & Pixar', href: `/${lang}/disney-pixar` },
-        { label: 'Anime & Manga', href: `/${lang}/anime-manga` },
-        { label: isEn ? 'Superheroes & Comics' : 'Superhelden & Comics', href: `/${lang}/superheroes-comic-universes` },
       ],
     },
     {

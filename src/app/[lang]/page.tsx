@@ -644,7 +644,7 @@ export default async function HomePage({ params }: { params: Promise<{ lang: str
                   {isEn ?'Creative & Mindful Collections':'Creatieve & Ontspannende Collecties'}
                 </h2>
               </div>
-              <Link href={`/${lang}/mandala-abstract-art`} className="btn-secondary">
+              <Link href={`/${lang}/art-aesthetic`} className="btn-secondary">
                 {isEn ?'View All Art Themes →':'Bekijk Alle Kunstthema’s →'}
               </Link>
             </ScrollReveal>
@@ -683,7 +683,7 @@ export default async function HomePage({ params }: { params: Promise<{ lang: str
         <div className="container">
           <ScrollReveal className="section-header">
             <div>
-              <span className="badge">{allThemes.length} {isEn ?'Albums Available':'Albums Beschikbaar'}</span>
+              <span className="badge">{allThemes.filter(t => originalHubSlugs.has(t.parentHub)).length} {isEn ?'Albums Available':'Albums Beschikbaar'}</span>
               <h2 className="title-h2"style={{ marginTop:'0.65rem'}}>
                 {isEn ?'Explore by Category':'Blader op Categorie'}
               </h2>
@@ -695,8 +695,8 @@ export default async function HomePage({ params }: { params: Promise<{ lang: str
 
           <CategoryExplorerTabs
             lang={lang}
-            hubs={mainHubs}
-            themes={allThemes}
+            hubs={mainHubs.filter(h => originalHubSlugs.has(h.slug))}
+            themes={allThemes.filter(t => originalHubSlugs.has(t.parentHub))}
           />
         </div>
       </section>
@@ -831,7 +831,7 @@ export default async function HomePage({ params }: { params: Promise<{ lang: str
           </ScrollReveal>
 
           <div className="grid-3">
-            {(blogPosts[lang ==='nl'?'nl':'en'] || blogPosts.en).map(post => (
+            {(blogPosts[lang ==='nl'?'nl':'en'] || blogPosts.en).slice(0, 6).map(post => (
               <ScrollReveal key={post.slug}>
                 <Link href={`/${lang}/blog/${post.slug}`} className="card">
                   <div className="card-img-wrapper"style={{ aspectRatio:'16/9', position:'relative'}}>
