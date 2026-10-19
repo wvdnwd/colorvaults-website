@@ -57,23 +57,50 @@ export default async function HomePage({ params }: { params: Promise<{ lang: str
 
   const allThemes = getThemes(lang);
   const mainHubs = getMainHubs(lang);
-  const featuredPool = getFeaturedPages(lang, 50);
+
+  // Prioritize original, copyright-safe hubs for homepage featured pool & hero carousel
+  const originalHubSlugs = new Set([
+    'animals-wildlife',
+    'art-aesthetic',
+    'fantasy-fairytales',
+    'vehicles-transportation',
+    'holidays-seasons',
+    'crafts-diy-learning',
+  ]);
+
+  const rawFeaturedPool = getFeaturedPages(lang, 80);
+  const originalFeatured = rawFeaturedPool.filter(p => originalHubSlugs.has(p.parentHub));
+  const featuredPool = originalFeatured.length >= 16 ? originalFeatured : rawFeaturedPool;
+
   const dayOfYear = Math.floor((Date.now() - new Date(new Date().getFullYear(), 0, 0).getTime()) / (1000 * 60 * 60 * 24));
   const dailyPage = featuredPool[dayOfYear % (featuredPool.length || 1)] || featuredPool[0];
   const dailyTheme = allThemes.find(t => t.slug === dailyPage?.parentTheme);
 
-  // Popular character theme slugs
-  const characterSlugs = ['frozen','pokemon','sonic-the-hedgehog','marvel-spider-man','paw-patrol','beauty-and-the-beast-belle','bluey','spongebob-squarepants','super-mario','dragonball','minecraft-voxel-worlds','the-lion-king'];
+  // Popular original creative & educational theme slugs
+  const characterSlugs = [
+    'mandalas-sacred-geometry',
+    'dinosaur-adventures',
+    'unicorns-pegasus',
+    'cute-puppies-dogs',
+    'cute-kittens-cats',
+    'dragons',
+    'horses-ponies',
+    'formula-1-race-cars',
+    'space-rockets-astronauts',
+    'flowers-botanicals',
+    'cozy-life-hygge',
+    'ocean-life-whales',
+  ];
 
   // Animal & nature slugs
-  const animalSlugs = ['dinosaur-adventures','unicorns-pegasus','cute-puppies-dogs','cute-kittens-cats','safari-lions-big-cats','ocean-life-whales','horses-ponies','birds-of-the-world'];
+  const animalSlugs = ['dinosaur-adventures','cute-puppies-dogs','cute-kittens-cats','safari-lions-big-cats','ocean-life-whales','horses-ponies','birds-of-the-world','butterflies-garden-insects'];
 
   const popularCharacters = allThemes
-    .filter(t => characterSlugs.some(s => t.slug.includes(s)))
+    .filter(t => characterSlugs.some(s => t.slug === s || t.slug.includes(s)))
     .slice(0, 12);
 
   const popularAnimals = allThemes
-    .filter(t => animalSlugs.some(s => t.slug.includes(s)))
+    .filter(t => animalSlugs.some(s => t.slug === s || t.slug.includes(s)))
     .slice(0, 4);
 
   const featuredPages = featuredPool.slice(0, 24);
@@ -89,7 +116,7 @@ export default async function HomePage({ params }: { params: Promise<{ lang: str
       slug:'medium',
       name: isEn ?'Medium':'Gemiddeld',
       badge: isEn ?'Level 2':'Niveau 2',
-      desc: isEn ?'Creative scenes with rich details and vibrant characters':'Creatieve scènes met leuke details en populaire karakters',
+      desc: isEn ?'Creative scenes with rich details and vibrant characters':'Creatieve scènes met leuke details en mooie achtergronden',
       className: styles.ageTeens},
     {
       slug:'hard',
@@ -100,24 +127,24 @@ export default async function HomePage({ params }: { params: Promise<{ lang: str
   ];
 
   const quickShortcuts = [
-    { name: 'Paw Patrol', icon: '🐶', href: `/${lang}/kids-tv-shows/paw-patrol` },
-    { name: 'Pokémon', icon: '⚡', href: `/${lang}/gaming-virtual-worlds/pokemon` },
-    { name: 'Frozen (Elsa)', icon: '❄️', href: `/${lang}/disney-pixar/frozen` },
-    { name: 'Spider-Man', icon: '🕷️', href: `/${lang}/superheroes-comic-universes/marvel-spider-man` },
     { name: isEn ? 'Dinosaurs' : 'Dinosauriërs', icon: '🦖', href: `/${lang}/animals-wildlife/dinosaur-adventures` },
-    { name: isEn ? 'Unicorns' : 'Eenhoorns', icon: '🦄', href: `/${lang}/fantasy-fairytales/unicorns-pegasus` },
-    { name: 'Bluey', icon: '🐾', href: `/${lang}/kids-tv-shows/bluey` },
-    { name: 'Super Mario', icon: '🍄', href: `/${lang}/gaming-virtual-worlds/super-mario` },
-    { name: 'Minecraft', icon: '⛏️', href: `/${lang}/gaming-virtual-worlds/minecraft-voxel-worlds` },
-    { name: 'Sonic', icon: '🦔', href: `/${lang}/gaming-virtual-worlds/sonic-the-hedgehog` },
-    { name: 'Stitch', icon: '🌺', href: `/${lang}/disney-pixar/lilo-stitch` },
     { name: isEn ? 'Mandalas' : "Mandala's", icon: '🧘', href: `/${lang}/art-aesthetic/mandalas-sacred-geometry` },
+    { name: isEn ? 'Unicorns' : 'Eenhoorns', icon: '🦄', href: `/${lang}/fantasy-fairytales/unicorns-pegasus` },
     { name: isEn ? 'Puppies & Dogs' : "Puppy's & Honden", icon: '🐕', href: `/${lang}/animals-wildlife/cute-puppies-dogs` },
     { name: isEn ? 'Kittens & Cats' : 'Kittens & Katten', icon: '🐱', href: `/${lang}/animals-wildlife/cute-kittens-cats` },
-    { name: 'Dragon Ball', icon: '🥋', href: `/${lang}/anime-manga/dragonball` },
+    { name: isEn ? 'Horses & Ponies' : "Paarden & Pony's", icon: '🐴', href: `/${lang}/animals-wildlife/horses-ponies` },
+    { name: isEn ? 'Dragons' : 'Draken', icon: '🐉', href: `/${lang}/fantasy-fairytales/dragons` },
+    { name: isEn ? 'Space & Rockets' : 'Ruimte & Raketten', icon: '🚀', href: `/${lang}/vehicles-transportation/space-rockets-astronauts` },
     { name: isEn ? 'Formula 1 & Racing' : 'Formule 1 & Racers', icon: '🏎️', href: `/${lang}/vehicles-transportation/formula-1-race-cars` },
+    { name: isEn ? 'Flowers & Nature' : 'Bloemen & Planten', icon: '🌸', href: `/${lang}/art-aesthetic/flowers-botanicals` },
+    { name: isEn ? 'Cozy Hygge' : 'Cozy Life & Hygge', icon: '☕', href: `/${lang}/art-aesthetic/cozy-life-hygge` },
+    { name: isEn ? 'Ocean & Whales' : 'Zeedieren & Dolfijnen', icon: '🐬', href: `/${lang}/animals-wildlife/ocean-life-whales` },
+    { name: isEn ? 'Mermaids' : 'Zeemeerminnen', icon: '🧜‍♀️', href: `/${lang}/fantasy-fairytales/mermaids-of-the-deep` },
+    { name: isEn ? 'Monster Trucks' : 'Monstertrucks', icon: '🚜', href: `/${lang}/vehicles-transportation/monster-trucks` },
+    { name: isEn ? 'School & Math' : 'School & Werkbladen', icon: '🎓', href: `/${lang}/school` },
     { name: isEn ? '2026 Calendars' : '2026 Kalenders', icon: '📅', href: `/${lang}/calendars` },
     { name: isEn ? 'How to Draw' : 'Leren Tekenen', icon: '✏️', href: `/${lang}/how-to-draw` },
+    { name: isEn ? 'Coloring Guides' : 'Kleurtips & Blog', icon: '💡', href: `/${lang}/blog` },
   ];
 
   return (
@@ -159,7 +186,7 @@ export default async function HomePage({ params }: { params: Promise<{ lang: str
               <HeaderSearchBar
                 lang={lang}
                 variant="hero"
-                placeholder={isEn ? 'Search coloring pages (e.g. Spider-Man, Unicorn, Elsa)...' : 'Zoek kleurplaten (bijv. Pokémon, Stitch, Dinos)...'}
+                placeholder={isEn ? 'Search coloring pages (e.g. Dinosaur, Mandala, Unicorn, Puppy)...' : 'Zoek kleurplaten (bijv. Dinosaurus, Mandala, Eenhoorn, Hondje)...'}
               />
             </div>
 
@@ -187,7 +214,7 @@ export default async function HomePage({ params }: { params: Promise<{ lang: str
           {/* 2. Full-Width Pure 16:9 3D Vault Banner (Zero text obstruction, centered carousel) */}
           <HeroCarousel
             items={allThemes
-              .filter(t => t.image && !t.image.includes('default.jpg'))
+              .filter(t => originalHubSlugs.has(t.parentHub) && t.image && !t.image.includes('default.jpg'))
               .slice(0, 16)
               .map(t => ({
                 src: t.image,
@@ -586,7 +613,7 @@ export default async function HomePage({ params }: { params: Promise<{ lang: str
             </div>
 
             <Link
-              href={`/${lang}/disney-pixar`}
+              href={`/${lang}/animals-wildlife`}
               className="btn-primary"
               style={{
                 background: 'linear-gradient(135deg, #FF6B4A 0%, #F0501F 100%)',
@@ -604,7 +631,7 @@ export default async function HomePage({ params }: { params: Promise<{ lang: str
         </div>
       </section>
 
-      {/* ── Section 1: Trending Characters & Shows ── */}
+      {/* ── Section 1: Creative & Mindful Themes ── */}
       {popularCharacters.length > 0 && (
         <section className="section">
           <div className="container">
@@ -612,13 +639,13 @@ export default async function HomePage({ params }: { params: Promise<{ lang: str
 
             <ScrollReveal className="section-header">
               <div>
-                <span className="badge">{isEn ?'Character Themes':'Karakterthema’s'}</span>
+                <span className="badge">{isEn ?'Popular Themes':'Populaire Thema’s'}</span>
                 <h2 className="title-h2"style={{ marginTop:'0.65rem'}}>
-                  {isEn ?'Series & Movies':'Series & Films'}
+                  {isEn ?'Creative & Mindful Collections':'Creatieve & Ontspannende Collecties'}
                 </h2>
               </div>
-              <Link href={`/${lang}/disney-pixar`} className="btn-secondary">
-                {isEn ?'View All Series →':'Bekijk Alle Series →'}
+              <Link href={`/${lang}/mandala-abstract-art`} className="btn-secondary">
+                {isEn ?'View All Art Themes →':'Bekijk Alle Kunstthema’s →'}
               </Link>
             </ScrollReveal>
 
@@ -859,7 +886,7 @@ export default async function HomePage({ params }: { params: Promise<{ lang: str
                 { number:'02', title: isEn ?'Print-Optimized':'Optimaal Af te Drukken', desc: isEn ?'Clean crisp line art formatted for standard A4 and Letter paper.':'Scherpe lijnen geformatteerd voor A4 en Letter papier.'},
                 { number:'03', title: isEn ?'Curated by Age':'Gesorteerd op Leeftijd', desc: isEn ?'Tailored difficulty levels for toddlers, kids, teens & adults.':'Aangepaste moeilijkheidsgraden voor peuters, kinderen & volwassenen.'},
                 { number:'04', title: isEn ?'Interactive Artwork Feedback':'Interactieve Feedback', desc: isEn ?'Spot an error? Circle it with our digital red pencil and send it to our team for review.':'Zie je een foutje? Omcirkel het met ons digitale potlood en stuur het naar ons team ter beoordeling.'},
-                { number:'05', title: isEn ?'Multilingual (EN, NL, DE, FR)':'4 Talen Beschikbaar', desc: isEn ?'Native localized experience in English, Dutch, German and French.':'Volledig beschikbaar in het Nederlands, Engels, Duits en Frans.'},
+                { number:'05', title: isEn ?'Bilingual (EN & NL)':'Tweetalig (NL & EN)', desc: isEn ?'Full native localized experience and guides in English and Dutch.':'Volledig beschikbaar met uitgebreide gidsen in het Nederlands en Engels.'},
               ].map((f, i) => (
                 <ScrollReveal key={f.title} delay={(i % 4) as 0 | 1 | 2 | 3 | 4}>
                   <div className={styles.featureCard}>

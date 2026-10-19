@@ -7,13 +7,15 @@ import { useConsent } from '@/components/ConsentProvider';
  * AdCard — an AdSense display ad styled as a coloring page card.
  * Drop this directly into a grid alongside MotionCard items.
  */
+const adsEnabled = process.env.NEXT_PUBLIC_ADSENSE_APPROVED === 'true';
+
 export default function AdCard() {
   const adRef = useRef<HTMLModElement>(null);
   const pushedRef = useRef(false);
   const { consent } = useConsent();
 
   useEffect(() => {
-    if (consent !== 'accepted') return;
+    if (!adsEnabled || consent !== 'accepted') return;
     if (pushedRef.current) return;
     try {
       if (typeof window !== 'undefined') {
@@ -27,6 +29,8 @@ export default function AdCard() {
       console.warn('AdCard push notice:', e);
     }
   }, [consent]);
+
+  if (!adsEnabled) return null;
 
   return (
     <div

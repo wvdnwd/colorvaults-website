@@ -9,8 +9,8 @@ interface CategorySeoBlockProps {
 }
 
 export default function CategorySeoBlock({ title, contentHtml, lang }: CategorySeoBlockProps) {
-  const [isExpanded, setIsExpanded] = useState(false);
-  const isEn = lang ==='en';
+  const [isExpanded, setIsExpanded] = useState(true);
+  const isEn = lang !== 'nl';
 
   return (
     <div className="seo-block"style={{ marginTop:'3.5rem'}}>

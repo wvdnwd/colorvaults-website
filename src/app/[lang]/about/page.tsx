@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import { createMetadata } from '@/lib/seo';
 
 export async function generateStaticParams() {
   return [{ lang: 'en' }, { lang: 'nl' }, { lang: 'de' }, { lang: 'fr' }];
@@ -6,26 +7,20 @@ export async function generateStaticParams() {
 
 export async function generateMetadata({ params }: { params: Promise<{ lang: string }> }) {
   const { lang } = await params;
-  return {
-    title: lang === 'en' ? 'About Us | ColorVaults' : 'Over Ons | ColorVaults',
-    description:
-      lang === 'en'
-        ? 'Learn about ColorVaults — our mission to make high-quality, creative educational resources free and accessible for families, teachers, and artists worldwide.'
-        : 'Leer meer over ColorVaults — onze missie om hoogwaardige, educatieve kleurplaten en creatieve hulpmiddelen gratis toegankelijk te maken voor gezinnen en scholen.',
-    openGraph: {
-      title: lang === 'en' ? 'About ColorVaults' : 'Over ColorVaults',
-      description:
-        lang === 'en'
-          ? 'Free premium coloring pages, educational guides, and printable resources for all ages.'
-          : 'Gratis premium kleurplaten, educatieve gidsen en printbare hulpmiddelen voor alle leeftijden.',
-      images: ['/images/banner.jpg'],
-    },
-  };
+  const isEn = lang !== 'nl';
+  return createMetadata({
+    lang,
+    path: '/about',
+    title: isEn ? 'About Us — Mission & Editorial Standards | ColorVaults' : 'Over Ons — Missie & Kwaliteitsnormen | ColorVaults',
+    description: isEn
+      ? 'Learn about ColorVaults — our mission to make high-quality, creative educational coloring resources free and accessible for families, teachers, and artists.'
+      : 'Leer meer over ColorVaults — onze missie om hoogwaardige, educatieve kleurplaten en creatieve hulpmiddelen gratis toegankelijk te maken voor gezinnen en scholen.',
+  });
 }
 
 export default async function AboutPage({ params }: { params: Promise<{ lang: string }> }) {
   const { lang } = await params;
-  const isEn = lang === 'en';
+  const isEn = lang !== 'nl';
 
   const values = isEn
     ? [
@@ -117,15 +112,15 @@ export default async function AboutPage({ params }: { params: Promise<{ lang: st
               <li style={{ display: 'flex', alignItems: 'center', gap: '1rem' }}>
                 <span style={{ fontSize: '1.5rem' }}>🎨</span>
                 <div>
-                  <strong style={{ display: 'block', fontSize: '1.1rem' }}>26,000+</strong>
-                  <span style={{ fontSize: '0.875rem', color: 'var(--gray-600)' }}>{isEn ? 'Original coloring pages & templates' : 'Originele kleurplaten & sjablonen'}</span>
+                  <strong style={{ display: 'block', fontSize: '1.1rem' }}>150+ {isEn ? 'Curated Themes' : 'Gecureerde Thema’s'}</strong>
+                  <span style={{ fontSize: '0.875rem', color: 'var(--gray-600)' }}>{isEn ? 'High-contrast line art & educational sheets' : 'Scherpe lijntekeningen & educatieve werkbladen'}</span>
                 </div>
               </li>
               <li style={{ display: 'flex', alignItems: 'center', gap: '1rem' }}>
                 <span style={{ fontSize: '1.5rem' }}>🌍</span>
                 <div>
-                  <strong style={{ display: 'block', fontSize: '1.1rem' }}>4 {isEn ? 'Languages' : 'Talen'}</strong>
-                  <span style={{ fontSize: '0.875rem', color: 'var(--gray-600)' }}>{isEn ? 'English, Dutch, German & French' : 'Engels, Nederlands, Duits & Frans'}</span>
+                  <strong style={{ display: 'block', fontSize: '1.1rem' }}>{isEn ? 'Bilingual Library (EN & NL)' : 'Tweetalige Bibliotheek (NL & EN)'}</strong>
+                  <span style={{ fontSize: '0.875rem', color: 'var(--gray-600)' }}>{isEn ? 'Native guides in English & Dutch' : 'Uitgebreide gidsen in het Nederlands & Engels'}</span>
                 </div>
               </li>
               <li style={{ display: 'flex', alignItems: 'center', gap: '1rem' }}>
@@ -203,7 +198,7 @@ export default async function AboutPage({ params }: { params: Promise<{ lang: st
               : 'Blader door duizenden gratis kwaliteitskleurplaten en print direct uw favorieten.'}
           </p>
           <Link
-            href={`/${lang}/disney-pixar`}
+            href={`/${lang}/animals-wildlife`}
             className="btn-primary"
             style={{
               display: 'inline-flex',

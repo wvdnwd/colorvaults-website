@@ -66,6 +66,7 @@ export async function generateMetadata({
     description: agePage.seoText,
     page: currentPage,
     image: ogImageUrl,
+    noindex: true,
   });
 }
 

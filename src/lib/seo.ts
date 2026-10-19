@@ -22,9 +22,11 @@ export function buildCanonicalUrl(pathWithoutLang: string, lang: string, page?: 
   return base;
 }
 
+const INDEXED_LOCALES: readonly ValidLocale[] = ['en', 'nl'];
+
 export function buildHreflangAlternates(
   pathWithoutLang: string,
-  supportedLangs: readonly ValidLocale[] = VALID_LOCALES
+  supportedLangs: readonly ValidLocale[] = INDEXED_LOCALES
 ): Record<string, string> {
   const cleanPath = pathWithoutLang.startsWith('/') ? pathWithoutLang : `/${pathWithoutLang}`;
   const pathPart = cleanPath === '/' ? '' : cleanPath;
@@ -48,9 +50,10 @@ export function createMetadata({
   image = `${SITE_ORIGIN}/images/banner.jpg`,
   noindex = false,
   nofollow = false,
-  alternateLangs = VALID_LOCALES as unknown as ValidLocale[],
+  alternateLangs = INDEXED_LOCALES as unknown as ValidLocale[],
 }: SeoOptions): Metadata {
   const cleanLang = isValidLocale(lang) ? lang : 'en';
+  const effectiveNoindex = noindex || (cleanLang !== 'en' && cleanLang !== 'nl');
 
   // Normalize path relative to lang
   let relPath = path;
@@ -95,12 +98,12 @@ export function createMetadata({
     },
   };
 
-  if (noindex || nofollow) {
+  if (effectiveNoindex || nofollow) {
     meta.robots = {
-      index: !noindex,
+      index: !effectiveNoindex,
       follow: !nofollow,
       googleBot: {
-        index: !noindex,
+        index: !effectiveNoindex,
         follow: !nofollow,
       },
     };
@@ -108,3 +111,4 @@ export function createMetadata({
 
   return meta;
 }
+

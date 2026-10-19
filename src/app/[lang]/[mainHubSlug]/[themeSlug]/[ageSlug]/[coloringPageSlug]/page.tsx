@@ -46,6 +46,7 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
     title,
     description,
     image: imageUrl,
+    noindex: true,
   });
 }
 

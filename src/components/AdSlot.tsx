@@ -11,6 +11,8 @@ interface AdSlotProps {
   slotId?: string;
 }
 
+const adsEnabled = process.env.NEXT_PUBLIC_ADSENSE_APPROVED === 'true';
+
 export default function AdSlot({
   type ='banner',
   text ='Advertisement',
@@ -21,7 +23,7 @@ export default function AdSlot({
   const { consent } = useConsent();
 
   useEffect(() => {
-    if (consent !== 'accepted') return;
+    if (!adsEnabled || consent !== 'accepted') return;
     if (pushedRef.current) return;
 
     try {
@@ -37,6 +39,8 @@ export default function AdSlot({
       console.warn('AdSense push notice:', e);
     }
   }, [consent]);
+
+  if (!adsEnabled) return null;
 
   // Default slot IDs per ad type (from Google AdSense dashboard)
   const SLOT_IDS: Record<string, string> = {

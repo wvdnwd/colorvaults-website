@@ -12,7 +12,6 @@ import { ColoringBookProvider } from "@/context/ColoringBookContext";
 import { safeJsonLd } from "@/lib/api";
 import PageTransition from "@/components/PageTransition";
 import StickyBottomAd from "@/components/StickyBottomAd";
-import GoogleTranslator from "@/components/GoogleTranslator";
 import HolidayDecorationOverlay from "@/components/HolidayDecorationOverlay";
 
 export const viewport: Viewport = {
@@ -35,13 +34,12 @@ const nunito = Nunito({
 });
 
 const gaId = process.env.NEXT_PUBLIC_GA_ID;
-const adsenseClientId = process.env.NEXT_PUBLIC_ADSENSE_CLIENT_ID;
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.colorvaults.com"),
   // Routes supply complete titles, often including the brand already.
-  title: "ColorVaults | Free Premium Coloring Pages",
-  description:"Download free printable coloring pages for kids, toddlers, teens and adults. No account required.",
+  title: "ColorVaults | Free Printable Coloring Pages & Educational Activities",
+  description:"Download free printable coloring pages, step-by-step drawing tutorials, calendars, and classroom worksheets for toddlers, kids, teens, and adults.",
   verification: {
     google:"r57LIyNltfhaHeN4Lean5iNHEkbWBJbD-z-s6uF9t0s",
     other: {
@@ -58,7 +56,7 @@ export const metadata: Metadata = {
         width: 1200,
         height: 630,
         type: "image/jpeg",
-        alt: "ColorVaults — Free Premium Coloring Pages",
+        alt: "ColorVaults — Free Printable Coloring Pages",
       },
     ],
   },
@@ -109,6 +107,11 @@ export default async function RootLayout({
       <head>
         <meta name="google-adsense-account" content="ca-pub-1184801748776428" />
         <meta name="p:domain_verify" content="314125f62194f4aab9b5275a55bc34a2" />
+        <script
+          async
+          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1184801748776428"
+          crossOrigin="anonymous"
+        />
       </head>
       <body>
         <a href="#main-content" className="skip-link">
@@ -126,7 +129,6 @@ export default async function RootLayout({
                   <Footer lang={lang} />
                   <CookieBanner lang={lang} />
                   <BackToTop />
-                  <GoogleTranslator />
                   <StickyBottomAd isEn={lang !== 'nl'} />
                 </div>
               </ColoringBookProvider>

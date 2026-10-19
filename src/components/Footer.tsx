@@ -3,7 +3,7 @@ import CookieSettingsButton from './CookieSettingsButton';
 import styles from './Footer.module.css';
 
 export default function Footer({ lang }: { lang: string }) {
-  const isEn = lang === 'en';
+  const isEn = lang !== 'nl';
 
   return (
     <footer className={styles.footer}>
@@ -26,24 +26,23 @@ export default function Footer({ lang }: { lang: string }) {
             </Link>
             <p className={styles.brandDesc}>
               {isEn 
-                ? 'Your premier destination for high-quality, free printable coloring pages. Spark creativity today!'
-                : 'Jouw bestemming voor gratis printbare kleurplaten van topkwaliteit. Stimuleer creativiteit vandaag!'}
+                ? 'Your premier destination for high-quality, free printable coloring pages, drawing tutorials, and classroom worksheets. Spark creativity today!'
+                : 'Jouw bestemming voor gratis printbare kleurplaten, tekenlessen en educatieve werkbladen van topkwaliteit. Stimuleer creativiteit vandaag!'}
             </p>
             <div className={styles.langPill}>
-              {isEn ? '🌍 Available in 4 Languages: EN, NL, DE, FR' : '🌍 Beschikbaar in 4 talen: NL, EN, DE, FR'}
+              {isEn ? '🌍 Available in English & Nederlands (EN / NL)' : '🌍 Volledig beschikbaar in Nederlands & English (NL / EN)'}
             </div>
           </div>
 
           <div className={styles.links}>
             <div className={styles.linkColumn}>
-              <span className={styles.linkColumnTitle}>{isEn ? 'Popular Hubs' : 'Populaire Categorieën'}</span>
-              <Link href={`/${lang}/disney-pixar`} className={styles.link}>Disney & Pixar</Link>
-              <Link href={`/${lang}/anime-manga`} className={styles.link}>Anime & Manga</Link>
-              <Link href={`/${lang}/gaming-virtual-worlds`} className={styles.link}>{isEn ? 'Gaming & Minecraft' : 'Games & Minecraft'}</Link>
-              <Link href={`/${lang}/superheroes-comic-universes`} className={styles.link}>{isEn ? 'Superheroes & Marvel' : 'Superhelden & Marvel'}</Link>
-              <Link href={`/${lang}/kids-tv-shows`} className={styles.link}>{isEn ? 'Kids TV & Cartoons' : 'Paw Patrol & Peppa Pig'}</Link>
-              <Link href={`/${lang}/animals-wildlife`} className={styles.link}>{isEn ? 'Animals & Nature' : 'Dieren & Dinosauriërs'}</Link>
+              <span className={styles.linkColumnTitle}>{isEn ? 'Popular Categories' : 'Populaire Categorieën'}</span>
+              <Link href={`/${lang}/animals-wildlife`} className={styles.link}>{isEn ? 'Animals & Nature' : 'Dieren & Natuur'}</Link>
               <Link href={`/${lang}/art-aesthetic`} className={styles.link}>{isEn ? 'Mandalas & Adult Coloring' : 'Mandala’s & Volwassenen'}</Link>
+              <Link href={`/${lang}/fantasy-fairytales`} className={styles.link}>{isEn ? 'Fantasy & Fairytales' : 'Fantasie & Sprookjes'}</Link>
+              <Link href={`/${lang}/vehicles-transportation`} className={styles.link}>{isEn ? 'Vehicles & Space' : 'Voertuigen & Ruimte'}</Link>
+              <Link href={`/${lang}/holidays-seasons`} className={styles.link}>{isEn ? 'Holidays & Seasons' : 'Feestdagen & Seizoenen'}</Link>
+              <Link href={`/${lang}/crafts-diy-learning`} className={styles.link}>{isEn ? 'Crafts, DIY & Learning' : 'Knutselen, DIY & Educatie'}</Link>
             </div>
             <div className={styles.linkColumn}>
               <span className={styles.linkColumnTitle}>{isEn ? 'Quick Links' : 'Snelle Links'}</span>
