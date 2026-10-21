@@ -1,7 +1,82 @@
 [
   {
+    "id": "page-demon-slayer-77",
+    "title": "Kyojuro Rengoku the Flame Hashira in Blazing Flame",
+    "slug": "demon-slayer-77",
+    "parentHub": "anime-manga",
+    "parentTheme": "demon-slayer",
+    "ageGroup": "teens",
+    "difficulty": "hard",
+    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Demon%20Slayer/ComfyUI_18925_.webp",
+    "preview": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Demon%20Slayer/ComfyUI_18925_.webp",
+    "downloadableFile": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Demon%20Slayer/ComfyUI_18925_.webp",
+    "metaTitle": "Kyojuro Rengoku the Flame Hashira in Blazing Flame (Scene 2) - Free Printable Coloring Page | ColorVaults",
+    "metaDescription": "Download and print this free Kyojuro Rengoku the Flame Hashira in Blazing Flame (Scene 2) coloring page from the demon-slayer collection. High-resolution in A4 & Letter size!",
+    "shortDescription": "Free printable Kyojuro Rengoku the Flame Hashira in Blazing Flame (Scene 2) coloring page from our demon-slayer collection.",
+    "longDescription": "Enjoy this high-quality Kyojuro Rengoku the Flame Hashira in Blazing Flame (Scene 2) coloring page from the demon-slayer category. Designed with crisp black outlines, download or print directly in A4/Letter size for free!",
+    "altText": "Kyojuro Rengoku the Flame Hashira in Blazing Flame (Scene 2) coloring page - free printable",
+    "tags": [
+      "demon-slayer",
+      "teens"
+    ],
+    "relatedPages": [],
+    "language": "en",
+    "prompt": "Kyojuro Rengoku the Flame Hashira in Blazing Flame coloring page",
+    "qualityScore": 41
+  },
+  {
+    "id": "page-demon-slayer-64",
+    "title": "Akaza the Upper Three Demon with Martial Arts Compass",
+    "slug": "demon-slayer-64",
+    "parentHub": "anime-manga",
+    "parentTheme": "demon-slayer",
+    "ageGroup": "kids",
+    "difficulty": "medium",
+    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Demon%20Slayer/ComfyUI_18912_.webp",
+    "preview": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Demon%20Slayer/ComfyUI_18912_.webp",
+    "downloadableFile": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Demon%20Slayer/ComfyUI_18912_.webp",
+    "metaTitle": "Akaza the Upper Three Demon with Martial Arts Compass (Scene 2) - Free Printable Coloring Page | ColorVaults",
+    "metaDescription": "Download and print this free Akaza the Upper Three Demon with Martial Arts Compass (Scene 2) coloring page from the demon-slayer collection. High-resolution in A4 & Letter size!",
+    "shortDescription": "Free printable Akaza the Upper Three Demon with Martial Arts Compass (Scene 2) coloring page from our demon-slayer collection.",
+    "longDescription": "Enjoy this high-quality Akaza the Upper Three Demon with Martial Arts Compass (Scene 2) coloring page from the demon-slayer category. Designed with crisp black outlines, download or print directly in A4/Letter size for free!",
+    "altText": "Akaza the Upper Three Demon with Martial Arts Compass (Scene 2) coloring page - free printable",
+    "tags": [
+      "demon-slayer",
+      "kids"
+    ],
+    "relatedPages": [],
+    "language": "en",
+    "prompt": "Akaza the Upper Three Demon with Martial Arts Compass coloring page",
+    "qualityScore": 35
+  },
+  {
+    "id": "page-demon-slayer-83",
+    "title": "Tanjiro Kamado in Water Breathing Tenth Form Constant Flux",
+    "slug": "demon-slayer-83",
+    "parentHub": "anime-manga",
+    "parentTheme": "demon-slayer",
+    "ageGroup": "teens",
+    "difficulty": "hard",
+    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Demon%20Slayer/Girl_reading_in_the_garden_1788374435192.webp",
+    "preview": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Demon%20Slayer/Girl_reading_in_the_garden_1788374435192.webp",
+    "downloadableFile": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Demon%20Slayer/Girl_reading_in_the_garden_1788374435192.webp",
+    "metaTitle": "Girl Reading In The Garden - Free Printable Coloring Page | ColorVaults",
+    "metaDescription": "Download and print this free Girl Reading In The Garden coloring page from the demon-slayer collection. High-resolution in A4 & Letter size!",
+    "shortDescription": "Free printable Girl Reading In The Garden coloring page from our demon-slayer collection.",
+    "longDescription": "Enjoy this high-quality Girl Reading In The Garden coloring page from the demon-slayer category. Designed with crisp black outlines, download or print directly in A4/Letter size for free!",
+    "altText": "Girl Reading In The Garden coloring page - free printable",
+    "tags": [
+      "demon-slayer",
+      "teens"
+    ],
+    "relatedPages": [],
+    "language": "en",
+    "prompt": "Tanjiro Kamado in Water Breathing Tenth Form Constant Flux coloring page",
+    "qualityScore": 35
+  },
+  {
     "id": "page-demon-slayer-1",
-    "title": "Beerus Ascending Into Battle",
+    "title": "Beerus Ascending into Battle",
     "slug": "demon-slayer-1",
     "parentHub": "anime-manga",
     "parentTheme": "demon-slayer",
@@ -20,11 +95,13 @@
       "kids"
     ],
     "relatedPages": [],
-    "language": "en"
+    "language": "en",
+    "prompt": "Beerus Ascending into Battle coloring page",
+    "qualityScore": 20
   },
   {
     "id": "page-demon-slayer-2",
-    "title": "Carnival Character",
+    "title": "Nezuko Kamado in Awakened Demon Form with Horn and Bamboo Leaf",
     "slug": "demon-slayer-2",
     "parentHub": "anime-manga",
     "parentTheme": "demon-slayer",
@@ -43,11 +120,13 @@
       "teens"
     ],
     "relatedPages": [],
-    "language": "en"
+    "language": "en",
+    "prompt": "Nezuko Kamado in Awakened Demon Form with Horn and Bamboo Leaf coloring page",
+    "qualityScore": 20
   },
   {
     "id": "page-demon-slayer-12",
-    "title": "Anime Tanjiro Kamado in Classic Anime Style (Scene 10)",
+    "title": "Anime Tanjiro Kamado in Classic Anime Style",
     "slug": "demon-slayer-12",
     "parentHub": "anime-manga",
     "parentTheme": "demon-slayer",
@@ -66,11 +145,13 @@
       "toddlers"
     ],
     "relatedPages": [],
-    "language": "en"
+    "language": "en",
+    "prompt": "Anime Tanjiro Kamado in Classic Anime Style coloring page",
+    "qualityScore": 20
   },
   {
     "id": "page-demon-slayer-18",
-    "title": "Anime Tanjiro Kamado in Classic Anime Style (Scene 16)",
+    "title": "Anime Tanjiro Kamado in Classic Anime Style",
     "slug": "demon-slayer-18",
     "parentHub": "anime-manga",
     "parentTheme": "demon-slayer",
@@ -89,11 +170,13 @@
       "toddlers"
     ],
     "relatedPages": [],
-    "language": "en"
+    "language": "en",
+    "prompt": "Anime Tanjiro Kamado in Classic Anime Style coloring page",
+    "qualityScore": 20
   },
   {
     "id": "page-demon-slayer-24",
-    "title": "Anime (algemeen) Tanjiro Kamado in Classic Anime Style (Scene 4)",
+    "title": "Anime (algemeen) Tanjiro Kamado in Classic Anime Style",
     "slug": "demon-slayer-24",
     "parentHub": "anime-manga",
     "parentTheme": "demon-slayer",
@@ -112,11 +195,13 @@
       "toddlers"
     ],
     "relatedPages": [],
-    "language": "en"
+    "language": "en",
+    "prompt": "Anime (algemeen) Tanjiro Kamado in Classic Anime Style coloring page",
+    "qualityScore": 20
   },
   {
     "id": "page-demon-slayer-33",
-    "title": "Anime (algemeen) Tanjiro Kamado in Classic Anime Style (Scene 13)",
+    "title": "Anime (algemeen) Tanjiro Kamado in Classic Anime Style",
     "slug": "demon-slayer-33",
     "parentHub": "anime-manga",
     "parentTheme": "demon-slayer",
@@ -135,7 +220,9 @@
       "toddlers"
     ],
     "relatedPages": [],
-    "language": "en"
+    "language": "en",
+    "prompt": "Anime (algemeen) Tanjiro Kamado in Classic Anime Style coloring page",
+    "qualityScore": 20
   },
   {
     "id": "page-demon-slayer-62",
@@ -158,7 +245,9 @@
       "teens"
     ],
     "relatedPages": [],
-    "language": "en"
+    "language": "en",
+    "prompt": "Akaza the Upper Three Demon with Martial Arts Compass coloring page",
+    "qualityScore": 20
   },
   {
     "id": "page-demon-slayer-63",
@@ -181,30 +270,9 @@
       "toddlers"
     ],
     "relatedPages": [],
-    "language": "en"
-  },
-  {
-    "id": "page-demon-slayer-64",
-    "title": "Akaza the Upper Three Demon with Martial Arts Compass (Scene 2)",
-    "slug": "demon-slayer-64",
-    "parentHub": "anime-manga",
-    "parentTheme": "demon-slayer",
-    "ageGroup": "kids",
-    "difficulty": "medium",
-    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Demon%20Slayer/ComfyUI_18912_.webp",
-    "preview": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Demon%20Slayer/ComfyUI_18912_.webp",
-    "downloadableFile": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Demon%20Slayer/ComfyUI_18912_.webp",
-    "metaTitle": "Akaza the Upper Three Demon with Martial Arts Compass (Scene 2) - Free Printable Coloring Page | ColorVaults",
-    "metaDescription": "Download and print this free Akaza the Upper Three Demon with Martial Arts Compass (Scene 2) coloring page from the demon-slayer collection. High-resolution in A4 & Letter size!",
-    "shortDescription": "Free printable Akaza the Upper Three Demon with Martial Arts Compass (Scene 2) coloring page from our demon-slayer collection.",
-    "longDescription": "Enjoy this high-quality Akaza the Upper Three Demon with Martial Arts Compass (Scene 2) coloring page from the demon-slayer category. Designed with crisp black outlines, download or print directly in A4/Letter size for free!",
-    "altText": "Akaza the Upper Three Demon with Martial Arts Compass (Scene 2) coloring page - free printable",
-    "tags": [
-      "demon-slayer",
-      "kids"
-    ],
-    "relatedPages": [],
-    "language": "en"
+    "language": "en",
+    "prompt": "Zenitsu Agatsuma Asleep with Glowing Lightning Eyes coloring page",
+    "qualityScore": 20
   },
   {
     "id": "page-demon-slayer-65",
@@ -227,7 +295,9 @@
       "teens"
     ],
     "relatedPages": [],
-    "language": "en"
+    "language": "en",
+    "prompt": "Shinobu Kocho the Insect Hashira with Butterfly Wing coloring page",
+    "qualityScore": 20
   },
   {
     "id": "page-demon-slayer-66",
@@ -250,7 +320,9 @@
       "toddlers"
     ],
     "relatedPages": [],
-    "language": "en"
+    "language": "en",
+    "prompt": "Tanjiro Kamado in Sun Breathing Hinokami Kagura Dance coloring page",
+    "qualityScore": 20
   },
   {
     "id": "page-demon-slayer-67",
@@ -273,7 +345,9 @@
       "kids"
     ],
     "relatedPages": [],
-    "language": "en"
+    "language": "en",
+    "prompt": "Muichiro Tokito the Mist Hashira with Long Hair coloring page",
+    "qualityScore": 20
   },
   {
     "id": "page-demon-slayer-69",
@@ -296,7 +370,9 @@
       "toddlers"
     ],
     "relatedPages": [],
-    "language": "en"
+    "language": "en",
+    "prompt": "Tengen Uzui the Sound Hashira with Jewel Headband coloring page",
+    "qualityScore": 20
   },
   {
     "id": "page-demon-slayer-70",
@@ -319,7 +395,9 @@
       "kids"
     ],
     "relatedPages": [],
-    "language": "en"
+    "language": "en",
+    "prompt": "Giyu Tomioka the Water Hashira with Split Pattern Haori coloring page",
+    "qualityScore": 20
   },
   {
     "id": "page-demon-slayer-71",
@@ -342,11 +420,13 @@
       "teens"
     ],
     "relatedPages": [],
-    "language": "en"
+    "language": "en",
+    "prompt": "Tanjiro Kamado in Water Breathing Tenth Form Constant coloring page",
+    "qualityScore": 20
   },
   {
     "id": "page-demon-slayer-72",
-    "title": "Tanjiro Kamado in Sun Breathing Hinokami Kagura Dance (Scene 2)",
+    "title": "Tanjiro Kamado in Sun Breathing Hinokami Kagura Dance",
     "slug": "demon-slayer-72",
     "parentHub": "anime-manga",
     "parentTheme": "demon-slayer",
@@ -365,7 +445,9 @@
       "toddlers"
     ],
     "relatedPages": [],
-    "language": "en"
+    "language": "en",
+    "prompt": "Tanjiro Kamado in Sun Breathing Hinokami Kagura Dance coloring page",
+    "qualityScore": 20
   },
   {
     "id": "page-demon-slayer-74",
@@ -388,7 +470,9 @@
       "teens"
     ],
     "relatedPages": [],
-    "language": "en"
+    "language": "en",
+    "prompt": "Zenitsu Agatsuma in Seventh Form Honoikazuchi No Kami coloring page",
+    "qualityScore": 20
   },
   {
     "id": "page-demon-slayer-75",
@@ -411,7 +495,9 @@
       "toddlers"
     ],
     "relatedPages": [],
-    "language": "en"
+    "language": "en",
+    "prompt": "Inosuke Hashibira with Wild Boar Mask and Dual Jagged coloring page",
+    "qualityScore": 20
   },
   {
     "id": "page-demon-slayer-76",
@@ -434,34 +520,14 @@
       "kids"
     ],
     "relatedPages": [],
-    "language": "en"
-  },
-  {
-    "id": "page-demon-slayer-77",
-    "title": "Kyojuro Rengoku the Flame Hashira in Blazing Flame (Scene 2)",
-    "slug": "demon-slayer-77",
-    "parentHub": "anime-manga",
-    "parentTheme": "demon-slayer",
-    "ageGroup": "teens",
-    "difficulty": "hard",
-    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Demon%20Slayer/ComfyUI_18925_.webp",
-    "preview": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Demon%20Slayer/ComfyUI_18925_.webp",
-    "downloadableFile": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Demon%20Slayer/ComfyUI_18925_.webp",
-    "metaTitle": "Kyojuro Rengoku the Flame Hashira in Blazing Flame (Scene 2) - Free Printable Coloring Page | ColorVaults",
-    "metaDescription": "Download and print this free Kyojuro Rengoku the Flame Hashira in Blazing Flame (Scene 2) coloring page from the demon-slayer collection. High-resolution in A4 & Letter size!",
-    "shortDescription": "Free printable Kyojuro Rengoku the Flame Hashira in Blazing Flame (Scene 2) coloring page from our demon-slayer collection.",
-    "longDescription": "Enjoy this high-quality Kyojuro Rengoku the Flame Hashira in Blazing Flame (Scene 2) coloring page from the demon-slayer category. Designed with crisp black outlines, download or print directly in A4/Letter size for free!",
-    "altText": "Kyojuro Rengoku the Flame Hashira in Blazing Flame (Scene 2) coloring page - free printable",
-    "tags": [
-      "demon-slayer",
-      "teens"
-    ],
-    "relatedPages": [],
-    "language": "en"
+    "language": "en",
+    "prompt": "Kyojuro Rengoku the Flame Hashira in Blazing Flame coloring page",
+    "qualityScore": 20,
+    "hidden": true
   },
   {
     "id": "page-demon-slayer-78",
-    "title": "Tanjiro Kamado in Water Breathing Tenth Form Constant (Scene 2)",
+    "title": "Tanjiro Kamado in Water Breathing Tenth Form Constant",
     "slug": "demon-slayer-78",
     "parentHub": "anime-manga",
     "parentTheme": "demon-slayer",
@@ -480,11 +546,14 @@
       "toddlers"
     ],
     "relatedPages": [],
-    "language": "en"
+    "language": "en",
+    "prompt": "Tanjiro Kamado in Water Breathing Tenth Form Constant coloring page",
+    "qualityScore": 20,
+    "hidden": true
   },
   {
     "id": "page-demon-slayer-79",
-    "title": "Tanjiro Kamado in Sun Breathing Hinokami Kagura Dance (Scene 3)",
+    "title": "Tanjiro Kamado in Sun Breathing Hinokami Kagura Dance",
     "slug": "demon-slayer-79",
     "parentHub": "anime-manga",
     "parentTheme": "demon-slayer",
@@ -503,11 +572,14 @@
       "kids"
     ],
     "relatedPages": [],
-    "language": "en"
+    "language": "en",
+    "prompt": "Tanjiro Kamado in Sun Breathing Hinokami Kagura Dance coloring page",
+    "qualityScore": 20,
+    "hidden": true
   },
   {
     "id": "page-demon-slayer-80",
-    "title": "Shinobu Kocho the Insect Hashira with Butterfly Wing (Scene 2)",
+    "title": "Shinobu Kocho the Insect Hashira with Butterfly Wing",
     "slug": "demon-slayer-80",
     "parentHub": "anime-manga",
     "parentTheme": "demon-slayer",
@@ -526,11 +598,14 @@
       "teens"
     ],
     "relatedPages": [],
-    "language": "en"
+    "language": "en",
+    "prompt": "Shinobu Kocho the Insect Hashira with Butterfly Wing coloring page",
+    "qualityScore": 20,
+    "hidden": true
   },
   {
     "id": "page-demon-slayer-81",
-    "title": "Giyu Tomioka the Water Hashira with Split Pattern Haori (Scene 2)",
+    "title": "Giyu Tomioka the Water Hashira with Split Pattern Haori",
     "slug": "demon-slayer-81",
     "parentHub": "anime-manga",
     "parentTheme": "demon-slayer",
@@ -549,7 +624,10 @@
       "toddlers"
     ],
     "relatedPages": [],
-    "language": "en"
+    "language": "en",
+    "prompt": "Giyu Tomioka the Water Hashira with Split Pattern Haori coloring page",
+    "qualityScore": 20,
+    "hidden": true
   },
   {
     "id": "page-demon-slayer-82",
@@ -572,34 +650,14 @@
       "kids"
     ],
     "relatedPages": [],
-    "language": "en"
-  },
-  {
-    "id": "page-demon-slayer-83",
-    "title": "Girl Reading In The Garden",
-    "slug": "demon-slayer-83",
-    "parentHub": "anime-manga",
-    "parentTheme": "demon-slayer",
-    "ageGroup": "teens",
-    "difficulty": "hard",
-    "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Demon%20Slayer/Girl_reading_in_the_garden_1788374435192.webp",
-    "preview": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Demon%20Slayer/Girl_reading_in_the_garden_1788374435192.webp",
-    "downloadableFile": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/Demon%20Slayer/Girl_reading_in_the_garden_1788374435192.webp",
-    "metaTitle": "Girl Reading In The Garden - Free Printable Coloring Page | ColorVaults",
-    "metaDescription": "Download and print this free Girl Reading In The Garden coloring page from the demon-slayer collection. High-resolution in A4 & Letter size!",
-    "shortDescription": "Free printable Girl Reading In The Garden coloring page from our demon-slayer collection.",
-    "longDescription": "Enjoy this high-quality Girl Reading In The Garden coloring page from the demon-slayer category. Designed with crisp black outlines, download or print directly in A4/Letter size for free!",
-    "altText": "Girl Reading In The Garden coloring page - free printable",
-    "tags": [
-      "demon-slayer",
-      "teens"
-    ],
-    "relatedPages": [],
-    "language": "en"
+    "language": "en",
+    "prompt": "Fairy Cycling Through Village coloring page",
+    "qualityScore": 20,
+    "hidden": true
   },
   {
     "id": "page-demon-slayer-85",
-    "title": "Tanjiro And Nezuko At A Festival",
+    "title": "Tanjiro and Nezuko at a Festival",
     "slug": "demon-slayer-85",
     "parentHub": "anime-manga",
     "parentTheme": "demon-slayer",
@@ -618,11 +676,14 @@
       "teens"
     ],
     "relatedPages": [],
-    "language": "en"
+    "language": "en",
+    "prompt": "Tanjiro and Nezuko at a Festival coloring page",
+    "qualityScore": 20,
+    "hidden": true
   },
   {
     "id": "page-demon-slayer-86",
-    "title": "Tanjiro And Nezuko In A Serene Garden",
+    "title": "Tanjiro and Nezuko in a Serene Garden",
     "slug": "demon-slayer-86",
     "parentHub": "anime-manga",
     "parentTheme": "demon-slayer",
@@ -641,11 +702,14 @@
       "toddlers"
     ],
     "relatedPages": [],
-    "language": "en"
+    "language": "en",
+    "prompt": "Tanjiro and Nezuko in a Serene Garden coloring page",
+    "qualityScore": 20,
+    "hidden": true
   },
   {
     "id": "page-demon-slayer-87",
-    "title": "Traditional Attire Character",
+    "title": "Tengen Uzui the Sound Hashira with Jewel Headband and Dual",
     "slug": "demon-slayer-87",
     "parentHub": "anime-manga",
     "parentTheme": "demon-slayer",
@@ -664,11 +728,14 @@
       "kids"
     ],
     "relatedPages": [],
-    "language": "en"
+    "language": "en",
+    "prompt": "Tengen Uzui the Sound Hashira with Jewel Headband and Dual coloring page",
+    "qualityScore": 20,
+    "hidden": true
   },
   {
     "id": "page-demon-slayer-88",
-    "title": "Traditional Japanese Character At An Amusement Park",
+    "title": "Tengen Uzui the Sound Hashira with Jewel Headband and Dual",
     "slug": "demon-slayer-88",
     "parentHub": "anime-manga",
     "parentTheme": "demon-slayer",
@@ -687,11 +754,14 @@
       "teens"
     ],
     "relatedPages": [],
-    "language": "en"
+    "language": "en",
+    "prompt": "Tengen Uzui the Sound Hashira with Jewel Headband and Dual coloring page",
+    "qualityScore": 20,
+    "hidden": true
   },
   {
     "id": "page-demon-slayer-89",
-    "title": "Woman With Sword And Bicycle",
+    "title": "Mitsuri Kanroji the Love Hashira with Braided - Hair and Ribbon",
     "slug": "demon-slayer-89",
     "parentHub": "anime-manga",
     "parentTheme": "demon-slayer",
@@ -710,11 +780,14 @@
       "toddlers"
     ],
     "relatedPages": [],
-    "language": "en"
+    "language": "en",
+    "prompt": "Mitsuri Kanroji the Love Hashira with Braided - Hair and Ribbon coloring page",
+    "qualityScore": 20,
+    "hidden": true
   },
   {
     "id": "page-demon-slayer-103",
-    "title": "Tanjiro Kamado In Classic Anime S (Scene 6)",
+    "title": "Tanjiro Kamado in Classic Anime S",
     "slug": "demon-slayer-103",
     "parentHub": "anime-manga",
     "parentTheme": "demon-slayer",
@@ -733,6 +806,9 @@
       "teens"
     ],
     "relatedPages": [],
-    "language": "en"
+    "language": "en",
+    "prompt": "Tanjiro Kamado in Classic Anime S coloring page",
+    "qualityScore": 20,
+    "hidden": true
   }
 ]

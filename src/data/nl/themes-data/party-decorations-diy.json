@@ -1,7 +1,7 @@
 [
   {
     "id": "page-party-decorations-diy-1",
-    "title": "Fijne Verjaardag Slinger DIY",
+    "title": "Blije Birthday Garland Diy",
     "slug": "party-decorations-diy-1",
     "parentHub": "crafts-diy-learning",
     "parentTheme": "party-decorations-diy",
@@ -20,11 +20,13 @@
       "kids"
     ],
     "relatedPages": [],
-    "language": "nl"
+    "language": "nl",
+    "prompt": "Blije Birthday Garland Diy kleurplaat",
+    "qualityScore": 60
   },
   {
     "id": "page-party-decorations-diy-2",
-    "title": "Feestelijke Verjaardag Banner",
+    "title": "Festive Birthday Party Banner",
     "slug": "party-decorations-diy-2",
     "parentHub": "crafts-diy-learning",
     "parentTheme": "party-decorations-diy",
@@ -43,11 +45,13 @@
       "kids"
     ],
     "relatedPages": [],
-    "language": "nl"
+    "language": "nl",
+    "prompt": "Festive Birthday Party Banner kleurplaat",
+    "qualityScore": 60
   },
   {
     "id": "page-party-decorations-diy-3",
-    "title": "Feestelijke Ballonnenboog DIY",
+    "title": "Celebration Ballon Arch Diy",
     "slug": "party-decorations-diy-3",
     "parentHub": "crafts-diy-learning",
     "parentTheme": "party-decorations-diy",
@@ -66,11 +70,13 @@
       "kids"
     ],
     "relatedPages": [],
-    "language": "nl"
+    "language": "nl",
+    "prompt": "Celebration Ballon Arch Diy kleurplaat",
+    "qualityScore": 60
   },
   {
     "id": "page-party-decorations-diy-4",
-    "title": "Kleurrijke Vlaggetjeslijn DIY",
+    "title": "Colorful Party Pennant Flags",
     "slug": "party-decorations-diy-4",
     "parentHub": "crafts-diy-learning",
     "parentTheme": "party-decorations-diy",
@@ -89,11 +95,13 @@
       "kids"
     ],
     "relatedPages": [],
-    "language": "nl"
+    "language": "nl",
+    "prompt": "Colorful Party Pennant Flags kleurplaat",
+    "qualityScore": 60
   },
   {
     "id": "page-party-decorations-diy-5",
-    "title": "Feestlinten en Confetti Ontwerp",
+    "title": "Party Streamers en Confetti Layout",
     "slug": "party-decorations-diy-5",
     "parentHub": "crafts-diy-learning",
     "parentTheme": "party-decorations-diy",
@@ -112,11 +120,13 @@
       "kids"
     ],
     "relatedPages": [],
-    "language": "nl"
+    "language": "nl",
+    "prompt": "Party Streamers en Confetti Layout kleurplaat",
+    "qualityScore": 60
   },
   {
     "id": "page-party-decorations-diy-6",
-    "title": "Verjaardag Hangende Sterren Decoratie",
+    "title": "Birthday Hanging Ster Ornaments",
     "slug": "party-decorations-diy-6",
     "parentHub": "crafts-diy-learning",
     "parentTheme": "party-decorations-diy",
@@ -135,11 +145,13 @@
       "kids"
     ],
     "relatedPages": [],
-    "language": "nl"
+    "language": "nl",
+    "prompt": "Birthday Hanging Ster Ornaments kleurplaat",
+    "qualityScore": 60
   },
   {
     "id": "page-party-decorations-diy-7",
-    "title": "Papieren Lampionnen Feestslinger",
+    "title": "Paper Lantaarn Festive Garland",
     "slug": "party-decorations-diy-7",
     "parentHub": "crafts-diy-learning",
     "parentTheme": "party-decorations-diy",
@@ -158,11 +170,13 @@
       "kids"
     ],
     "relatedPages": [],
-    "language": "nl"
+    "language": "nl",
+    "prompt": "Paper Lantaarn Festive Garland kleurplaat",
+    "qualityScore": 60
   },
   {
     "id": "page-party-decorations-diy-8",
-    "title": "Feestvlaggetjes en Linten DIY",
+    "title": "Party Bunting en Ribbons Diy",
     "slug": "party-decorations-diy-8",
     "parentHub": "crafts-diy-learning",
     "parentTheme": "party-decorations-diy",
@@ -181,11 +195,13 @@
       "kids"
     ],
     "relatedPages": [],
-    "language": "nl"
+    "language": "nl",
+    "prompt": "Party Bunting en Ribbons Diy kleurplaat",
+    "qualityScore": 60
   },
   {
     "id": "page-party-decorations-diy-9",
-    "title": "Feestelijke Fotobooth Rekwisieten",
+    "title": "Festive Party Photo Booth Props",
     "slug": "party-decorations-diy-9",
     "parentHub": "crafts-diy-learning",
     "parentTheme": "party-decorations-diy",
@@ -204,11 +220,13 @@
       "kids"
     ],
     "relatedPages": [],
-    "language": "nl"
+    "language": "nl",
+    "prompt": "Festive Party Photo Booth Props kleurplaat",
+    "qualityScore": 60
   },
   {
     "id": "page-party-decorations-diy-10",
-    "title": "Verjaardag Rozetten Papieren Waaiers",
+    "title": "Birthday Rosette Paper Fans",
     "slug": "party-decorations-diy-10",
     "parentHub": "crafts-diy-learning",
     "parentTheme": "party-decorations-diy",
@@ -227,11 +245,13 @@
       "kids"
     ],
     "relatedPages": [],
-    "language": "nl"
+    "language": "nl",
+    "prompt": "Birthday Rosette Paper Fans kleurplaat",
+    "qualityScore": 60
   },
   {
     "id": "page-party-decorations-diy-11",
-    "title": "Feesttafel Middenstuk Decoratie",
+    "title": "Party Table Centerpiece Decor",
     "slug": "party-decorations-diy-11",
     "parentHub": "crafts-diy-learning",
     "parentTheme": "party-decorations-diy",
@@ -250,11 +270,13 @@
       "kids"
     ],
     "relatedPages": [],
-    "language": "nl"
+    "language": "nl",
+    "prompt": "Party Table Centerpiece Decor kleurplaat",
+    "qualityScore": 60
   },
   {
     "id": "page-party-decorations-diy-12",
-    "title": "Cupcake Toppers Knutseldecoratie",
+    "title": "Cupcake Toppers Diy Craft",
     "slug": "party-decorations-diy-12",
     "parentHub": "crafts-diy-learning",
     "parentTheme": "party-decorations-diy",
@@ -273,11 +295,13 @@
       "kids"
     ],
     "relatedPages": [],
-    "language": "nl"
+    "language": "nl",
+    "prompt": "Cupcake Toppers Diy Craft kleurplaat",
+    "qualityScore": 60
   },
   {
     "id": "page-party-decorations-diy-13",
-    "title": "Verjaardag Welkomstbord DIY",
+    "title": "Birthday Welcome Sign Diy",
     "slug": "party-decorations-diy-13",
     "parentHub": "crafts-diy-learning",
     "parentTheme": "party-decorations-diy",
@@ -296,11 +320,13 @@
       "kids"
     ],
     "relatedPages": [],
-    "language": "nl"
+    "language": "nl",
+    "prompt": "Birthday Welcome Sign Diy kleurplaat",
+    "qualityScore": 60
   },
   {
     "id": "page-party-decorations-diy-14",
-    "title": "Papieren Pompons Hangende Knutsel",
+    "title": "Paper Pompoms Hanging Craft",
     "slug": "party-decorations-diy-14",
     "parentHub": "crafts-diy-learning",
     "parentTheme": "party-decorations-diy",
@@ -319,11 +345,13 @@
       "kids"
     ],
     "relatedPages": [],
-    "language": "nl"
+    "language": "nl",
+    "prompt": "Paper Pompoms Hanging Craft kleurplaat",
+    "qualityScore": 60
   },
   {
     "id": "page-party-decorations-diy-15",
-    "title": "Feestzakjes Labels DIY",
+    "title": "Party Goodie Bag Labels Diy",
     "slug": "party-decorations-diy-15",
     "parentHub": "crafts-diy-learning",
     "parentTheme": "party-decorations-diy",
@@ -342,11 +370,13 @@
       "kids"
     ],
     "relatedPages": [],
-    "language": "nl"
+    "language": "nl",
+    "prompt": "Party Goodie Bag Labels Diy kleurplaat",
+    "qualityScore": 60
   },
   {
     "id": "page-party-decorations-diy-16",
-    "title": "Verjaardag Cupcake Wikkels",
+    "title": "Birthday Cupcake Wrapper Wraps",
     "slug": "party-decorations-diy-16",
     "parentHub": "crafts-diy-learning",
     "parentTheme": "party-decorations-diy",
@@ -365,11 +395,13 @@
       "kids"
     ],
     "relatedPages": [],
-    "language": "nl"
+    "language": "nl",
+    "prompt": "Birthday Cupcake Wrapper Wraps kleurplaat",
+    "qualityScore": 60
   },
   {
     "id": "page-party-decorations-diy-17",
-    "title": "Kwastjes Slinger DIY",
+    "title": "Party Tassel Garland Diy",
     "slug": "party-decorations-diy-17",
     "parentHub": "crafts-diy-learning",
     "parentTheme": "party-decorations-diy",
@@ -388,11 +420,13 @@
       "kids"
     ],
     "relatedPages": [],
-    "language": "nl"
+    "language": "nl",
+    "prompt": "Party Tassel Garland Diy kleurplaat",
+    "qualityScore": 60
   },
   {
     "id": "page-party-decorations-diy-18",
-    "title": "Feestelijke Drinkrietjes Vlaggetjes",
+    "title": "Festive Drink Straw Flags Diy",
     "slug": "party-decorations-diy-18",
     "parentHub": "crafts-diy-learning",
     "parentTheme": "party-decorations-diy",
@@ -411,11 +445,13 @@
       "kids"
     ],
     "relatedPages": [],
-    "language": "nl"
+    "language": "nl",
+    "prompt": "Festive Drink Straw Flags Diy kleurplaat",
+    "qualityScore": 60
   },
   {
     "id": "page-party-decorations-diy-19",
-    "title": "Feestmuts Knutsel Sjablonen",
+    "title": "Celebration Party Hat Templates",
     "slug": "party-decorations-diy-19",
     "parentHub": "crafts-diy-learning",
     "parentTheme": "party-decorations-diy",
@@ -434,11 +470,13 @@
       "kids"
     ],
     "relatedPages": [],
-    "language": "nl"
+    "language": "nl",
+    "prompt": "Celebration Party Hat Templates kleurplaat",
+    "qualityScore": 60
   },
   {
     "id": "page-party-decorations-diy-20",
-    "title": "A Festive Party Layou",
+    "title": "Een Festive Party Layou",
     "slug": "party-decorations-diy-20",
     "parentHub": "crafts-diy-learning",
     "parentTheme": "party-decorations-diy",
@@ -457,11 +495,13 @@
       "kids"
     ],
     "relatedPages": [],
-    "language": "nl"
+    "language": "nl",
+    "prompt": "Een Festive Party Layou kleurplaat",
+    "qualityScore": 60
   },
   {
     "id": "page-party-decorations-diy-21",
-    "title": "A Festive Party Layou",
+    "title": "Een Festive Party Layou",
     "slug": "party-decorations-diy-21",
     "parentHub": "crafts-diy-learning",
     "parentTheme": "party-decorations-diy",
@@ -480,11 +520,13 @@
       "kids"
     ],
     "relatedPages": [],
-    "language": "nl"
+    "language": "nl",
+    "prompt": "Een Festive Party Layou kleurplaat",
+    "qualityScore": 60
   },
   {
     "id": "page-party-decorations-diy-22",
-    "title": "A Festive Party Layou",
+    "title": "Een Festive Party Layou",
     "slug": "party-decorations-diy-22",
     "parentHub": "crafts-diy-learning",
     "parentTheme": "party-decorations-diy",
@@ -503,11 +545,13 @@
       "kids"
     ],
     "relatedPages": [],
-    "language": "nl"
+    "language": "nl",
+    "prompt": "Een Festive Party Layou kleurplaat",
+    "qualityScore": 60
   },
   {
     "id": "page-party-decorations-diy-23",
-    "title": "A Festive Party Layou",
+    "title": "Een Festive Party Layou",
     "slug": "party-decorations-diy-23",
     "parentHub": "crafts-diy-learning",
     "parentTheme": "party-decorations-diy",
@@ -526,11 +570,13 @@
       "kids"
     ],
     "relatedPages": [],
-    "language": "nl"
+    "language": "nl",
+    "prompt": "Een Festive Party Layou kleurplaat",
+    "qualityScore": 60
   },
   {
     "id": "page-party-decorations-diy-24",
-    "title": "A Festive Party Layou",
+    "title": "Een Festive Party Layou",
     "slug": "party-decorations-diy-24",
     "parentHub": "crafts-diy-learning",
     "parentTheme": "party-decorations-diy",
@@ -549,11 +595,13 @@
       "kids"
     ],
     "relatedPages": [],
-    "language": "nl"
+    "language": "nl",
+    "prompt": "Een Festive Party Layou kleurplaat",
+    "qualityScore": 60
   },
   {
     "id": "page-party-decorations-diy-25",
-    "title": "A Festive Party Layou",
+    "title": "Een Festive Party Layou",
     "slug": "party-decorations-diy-25",
     "parentHub": "crafts-diy-learning",
     "parentTheme": "party-decorations-diy",
@@ -572,11 +620,13 @@
       "kids"
     ],
     "relatedPages": [],
-    "language": "nl"
+    "language": "nl",
+    "prompt": "Een Festive Party Layou kleurplaat",
+    "qualityScore": 60
   },
   {
     "id": "page-party-decorations-diy-26",
-    "title": "A Festive Party Layou",
+    "title": "Een Festive Party Layou",
     "slug": "party-decorations-diy-26",
     "parentHub": "crafts-diy-learning",
     "parentTheme": "party-decorations-diy",
@@ -595,11 +645,13 @@
       "kids"
     ],
     "relatedPages": [],
-    "language": "nl"
+    "language": "nl",
+    "prompt": "Een Festive Party Layou kleurplaat",
+    "qualityScore": 60
   },
   {
     "id": "page-party-decorations-diy-27",
-    "title": "A Festive Party Layou",
+    "title": "Een Festive Party Layou",
     "slug": "party-decorations-diy-27",
     "parentHub": "crafts-diy-learning",
     "parentTheme": "party-decorations-diy",
@@ -618,11 +670,13 @@
       "kids"
     ],
     "relatedPages": [],
-    "language": "nl"
+    "language": "nl",
+    "prompt": "Een Festive Party Layou kleurplaat",
+    "qualityScore": 60
   },
   {
     "id": "page-party-decorations-diy-28",
-    "title": "A Festive Party Layou",
+    "title": "Een Festive Party Layou",
     "slug": "party-decorations-diy-28",
     "parentHub": "crafts-diy-learning",
     "parentTheme": "party-decorations-diy",
@@ -641,11 +695,13 @@
       "kids"
     ],
     "relatedPages": [],
-    "language": "nl"
+    "language": "nl",
+    "prompt": "Een Festive Party Layou kleurplaat",
+    "qualityScore": 60
   },
   {
     "id": "page-party-decorations-diy-29",
-    "title": "A Festive Party Layou",
+    "title": "Een Festive Party Layou",
     "slug": "party-decorations-diy-29",
     "parentHub": "crafts-diy-learning",
     "parentTheme": "party-decorations-diy",
@@ -664,11 +720,13 @@
       "kids"
     ],
     "relatedPages": [],
-    "language": "nl"
+    "language": "nl",
+    "prompt": "Een Festive Party Layou kleurplaat",
+    "qualityScore": 60
   },
   {
     "id": "page-party-decorations-diy-30",
-    "title": "A Festive Party Layou",
+    "title": "Een Festive Party Layou",
     "slug": "party-decorations-diy-30",
     "parentHub": "crafts-diy-learning",
     "parentTheme": "party-decorations-diy",
@@ -687,11 +745,13 @@
       "kids"
     ],
     "relatedPages": [],
-    "language": "nl"
+    "language": "nl",
+    "prompt": "Een Festive Party Layou kleurplaat",
+    "qualityScore": 60
   },
   {
     "id": "page-party-decorations-diy-31",
-    "title": "A Festive Party Layou",
+    "title": "Een Festive Party Layou",
     "slug": "party-decorations-diy-31",
     "parentHub": "crafts-diy-learning",
     "parentTheme": "party-decorations-diy",
@@ -710,11 +770,13 @@
       "kids"
     ],
     "relatedPages": [],
-    "language": "nl"
+    "language": "nl",
+    "prompt": "Een Festive Party Layou kleurplaat",
+    "qualityScore": 60
   },
   {
     "id": "page-party-decorations-diy-32",
-    "title": "A Festive Party Layou",
+    "title": "Een Festive Party Layou",
     "slug": "party-decorations-diy-32",
     "parentHub": "crafts-diy-learning",
     "parentTheme": "party-decorations-diy",
@@ -733,11 +795,13 @@
       "kids"
     ],
     "relatedPages": [],
-    "language": "nl"
+    "language": "nl",
+    "prompt": "Een Festive Party Layou kleurplaat",
+    "qualityScore": 60
   },
   {
     "id": "page-party-decorations-diy-33",
-    "title": "A Festive Party Layou",
+    "title": "Een Festive Party Layou",
     "slug": "party-decorations-diy-33",
     "parentHub": "crafts-diy-learning",
     "parentTheme": "party-decorations-diy",
@@ -756,11 +820,13 @@
       "kids"
     ],
     "relatedPages": [],
-    "language": "nl"
+    "language": "nl",
+    "prompt": "Een Festive Party Layou kleurplaat",
+    "qualityScore": 60
   },
   {
     "id": "page-party-decorations-diy-34",
-    "title": "A Festive Party Layou",
+    "title": "Een Festive Party Layou",
     "slug": "party-decorations-diy-34",
     "parentHub": "crafts-diy-learning",
     "parentTheme": "party-decorations-diy",
@@ -779,11 +845,13 @@
       "kids"
     ],
     "relatedPages": [],
-    "language": "nl"
+    "language": "nl",
+    "prompt": "Een Festive Party Layou kleurplaat",
+    "qualityScore": 60
   },
   {
     "id": "page-party-decorations-diy-35",
-    "title": "A Festive Party Layou",
+    "title": "Een Festive Party Layou",
     "slug": "party-decorations-diy-35",
     "parentHub": "crafts-diy-learning",
     "parentTheme": "party-decorations-diy",
@@ -802,11 +870,13 @@
       "kids"
     ],
     "relatedPages": [],
-    "language": "nl"
+    "language": "nl",
+    "prompt": "Een Festive Party Layou kleurplaat",
+    "qualityScore": 60
   },
   {
     "id": "page-party-decorations-diy-36",
-    "title": "A Festive Party Layou",
+    "title": "Een Festive Party Layou",
     "slug": "party-decorations-diy-36",
     "parentHub": "crafts-diy-learning",
     "parentTheme": "party-decorations-diy",
@@ -825,11 +895,13 @@
       "kids"
     ],
     "relatedPages": [],
-    "language": "nl"
+    "language": "nl",
+    "prompt": "Een Festive Party Layou kleurplaat",
+    "qualityScore": 60
   },
   {
     "id": "page-party-decorations-diy-37",
-    "title": "A Festive Party Layou",
+    "title": "Een Festive Party Layou",
     "slug": "party-decorations-diy-37",
     "parentHub": "crafts-diy-learning",
     "parentTheme": "party-decorations-diy",
@@ -848,11 +920,13 @@
       "kids"
     ],
     "relatedPages": [],
-    "language": "nl"
+    "language": "nl",
+    "prompt": "Een Festive Party Layou kleurplaat",
+    "qualityScore": 60
   },
   {
     "id": "page-party-decorations-diy-38",
-    "title": "A Festive Party Layou",
+    "title": "Een Festive Party Layou",
     "slug": "party-decorations-diy-38",
     "parentHub": "crafts-diy-learning",
     "parentTheme": "party-decorations-diy",
@@ -871,11 +945,13 @@
       "kids"
     ],
     "relatedPages": [],
-    "language": "nl"
+    "language": "nl",
+    "prompt": "Een Festive Party Layou kleurplaat",
+    "qualityScore": 60
   },
   {
     "id": "page-party-decorations-diy-39",
-    "title": "A Festive Party Layou",
+    "title": "Een Festive Party Layou",
     "slug": "party-decorations-diy-39",
     "parentHub": "crafts-diy-learning",
     "parentTheme": "party-decorations-diy",
@@ -894,11 +970,13 @@
       "kids"
     ],
     "relatedPages": [],
-    "language": "nl"
+    "language": "nl",
+    "prompt": "Een Festive Party Layou kleurplaat",
+    "qualityScore": 60
   },
   {
     "id": "page-party-decorations-diy-40",
-    "title": "A Festive Party Layou",
+    "title": "Een Festive Party Layou",
     "slug": "party-decorations-diy-40",
     "parentHub": "crafts-diy-learning",
     "parentTheme": "party-decorations-diy",
@@ -917,11 +995,13 @@
       "kids"
     ],
     "relatedPages": [],
-    "language": "nl"
+    "language": "nl",
+    "prompt": "Een Festive Party Layou kleurplaat",
+    "qualityScore": 60
   },
   {
     "id": "page-party-decorations-diy-41",
-    "title": "A Festive Party Layou",
+    "title": "Een Festive Party Layou",
     "slug": "party-decorations-diy-41",
     "parentHub": "crafts-diy-learning",
     "parentTheme": "party-decorations-diy",
@@ -940,11 +1020,13 @@
       "kids"
     ],
     "relatedPages": [],
-    "language": "nl"
+    "language": "nl",
+    "prompt": "Een Festive Party Layou kleurplaat",
+    "qualityScore": 60
   },
   {
     "id": "page-party-decorations-diy-42",
-    "title": "A Festive Party Layou",
+    "title": "Een Festive Party Layou",
     "slug": "party-decorations-diy-42",
     "parentHub": "crafts-diy-learning",
     "parentTheme": "party-decorations-diy",
@@ -963,11 +1045,13 @@
       "kids"
     ],
     "relatedPages": [],
-    "language": "nl"
+    "language": "nl",
+    "prompt": "Een Festive Party Layou kleurplaat",
+    "qualityScore": 60
   },
   {
     "id": "page-party-decorations-diy-43",
-    "title": "A Festive Party Layou",
+    "title": "Een Festive Party Layou",
     "slug": "party-decorations-diy-43",
     "parentHub": "crafts-diy-learning",
     "parentTheme": "party-decorations-diy",
@@ -986,11 +1070,13 @@
       "kids"
     ],
     "relatedPages": [],
-    "language": "nl"
+    "language": "nl",
+    "prompt": "Een Festive Party Layou kleurplaat",
+    "qualityScore": 60
   },
   {
     "id": "page-party-decorations-diy-44",
-    "title": "A Festive Party Layou",
+    "title": "Een Festive Party Layou",
     "slug": "party-decorations-diy-44",
     "parentHub": "crafts-diy-learning",
     "parentTheme": "party-decorations-diy",
@@ -1009,11 +1095,13 @@
       "kids"
     ],
     "relatedPages": [],
-    "language": "nl"
+    "language": "nl",
+    "prompt": "Een Festive Party Layou kleurplaat",
+    "qualityScore": 60
   },
   {
     "id": "page-party-decorations-diy-45",
-    "title": "A Festive Party Layou",
+    "title": "Een Festive Party Layou",
     "slug": "party-decorations-diy-45",
     "parentHub": "crafts-diy-learning",
     "parentTheme": "party-decorations-diy",
@@ -1032,11 +1120,13 @@
       "kids"
     ],
     "relatedPages": [],
-    "language": "nl"
+    "language": "nl",
+    "prompt": "Een Festive Party Layou kleurplaat",
+    "qualityScore": 60
   },
   {
     "id": "page-party-decorations-diy-46",
-    "title": "A Festive Party Layou",
+    "title": "Een Festive Party Layou",
     "slug": "party-decorations-diy-46",
     "parentHub": "crafts-diy-learning",
     "parentTheme": "party-decorations-diy",
@@ -1055,11 +1145,13 @@
       "kids"
     ],
     "relatedPages": [],
-    "language": "nl"
+    "language": "nl",
+    "prompt": "Een Festive Party Layou kleurplaat",
+    "qualityScore": 60
   },
   {
     "id": "page-party-decorations-diy-47",
-    "title": "A Festive Party Layou",
+    "title": "Een Festive Party Layou",
     "slug": "party-decorations-diy-47",
     "parentHub": "crafts-diy-learning",
     "parentTheme": "party-decorations-diy",
@@ -1078,11 +1170,13 @@
       "kids"
     ],
     "relatedPages": [],
-    "language": "nl"
+    "language": "nl",
+    "prompt": "Een Festive Party Layou kleurplaat",
+    "qualityScore": 60
   },
   {
     "id": "page-party-decorations-diy-48",
-    "title": "A Festive Party Layou",
+    "title": "Een Festive Party Layou",
     "slug": "party-decorations-diy-48",
     "parentHub": "crafts-diy-learning",
     "parentTheme": "party-decorations-diy",
@@ -1101,11 +1195,13 @@
       "kids"
     ],
     "relatedPages": [],
-    "language": "nl"
+    "language": "nl",
+    "prompt": "Een Festive Party Layou kleurplaat",
+    "qualityScore": 60
   },
   {
     "id": "page-party-decorations-diy-49",
-    "title": "A Festive Party Layou",
+    "title": "Een Festive Party Layou",
     "slug": "party-decorations-diy-49",
     "parentHub": "crafts-diy-learning",
     "parentTheme": "party-decorations-diy",
@@ -1124,11 +1220,13 @@
       "kids"
     ],
     "relatedPages": [],
-    "language": "nl"
+    "language": "nl",
+    "prompt": "Een Festive Party Layou kleurplaat",
+    "qualityScore": 60
   },
   {
     "id": "page-party-decorations-diy-50",
-    "title": "A Festive Party Layou",
+    "title": "Een Festive Party Layou",
     "slug": "party-decorations-diy-50",
     "parentHub": "crafts-diy-learning",
     "parentTheme": "party-decorations-diy",
@@ -1147,6 +1245,8 @@
       "kids"
     ],
     "relatedPages": [],
-    "language": "nl"
+    "language": "nl",
+    "prompt": "Een Festive Party Layou kleurplaat",
+    "qualityScore": 60
   }
 ]

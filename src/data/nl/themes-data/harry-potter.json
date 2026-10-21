@@ -1,7 +1,7 @@
 [
   {
     "id": "page-harry-potter-1",
-    "title": "Hermione Granger met a",
+    "title": "Hermione Granger",
     "slug": "harry-potter-1",
     "parentHub": "superheroes-comic-universes",
     "parentTheme": "harry-potter",
@@ -20,7 +20,9 @@
       "teens"
     ],
     "relatedPages": [],
-    "language": "nl"
+    "language": "nl",
+    "prompt": "Hermione Granger kleurplaat",
+    "qualityScore": 60
   },
   {
     "id": "page-harry-potter-2",
@@ -43,7 +45,9 @@
       "teens"
     ],
     "relatedPages": [],
-    "language": "nl"
+    "language": "nl",
+    "prompt": "Ron Weasley met His Wo kleurplaat",
+    "qualityScore": 60
   },
   {
     "id": "page-harry-potter-3",
@@ -66,7 +70,9 @@
       "teens"
     ],
     "relatedPages": [],
-    "language": "nl"
+    "language": "nl",
+    "prompt": "Severus Snape in His Dark kleurplaat",
+    "qualityScore": 60
   },
   {
     "id": "page-harry-potter-4",
@@ -89,6 +95,8 @@
       "teens"
     ],
     "relatedPages": [],
-    "language": "nl"
+    "language": "nl",
+    "prompt": "Severus Snape in His Dark kleurplaat",
+    "qualityScore": 60
   }
 ]

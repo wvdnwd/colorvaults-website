@@ -49,6 +49,8 @@ export interface ColoringPage {
   metaTitle?: string;
   metaDescription?: string;
   faq?: Array<{ question: string; answer: string }>;
+  qualityScore?: number;
+  hidden?: boolean;
 }
 
 const dataDir = path.join(process.cwd(), 'src/data');
@@ -201,7 +203,9 @@ export function getColoringPagesForTheme(lang: string, parentHubSlug: string, th
   if (pagesByThemeCache[lang].has(key)) {
     return pagesByThemeCache[lang].get(key)!;
   }
-  const pages = readThemePages(lang, themeSlug).filter(p => p.parentHub === parentHubSlug && p.parentTheme === themeSlug);
+  const allThemePages = readThemePages(lang, themeSlug).filter(p => p.parentHub === parentHubSlug && p.parentTheme === themeSlug);
+  const visiblePages = allThemePages.filter(p => !p.hidden);
+  const pages = visiblePages.length > 0 ? visiblePages : allThemePages;
   pagesByThemeCache[lang].set(key, pages);
   return pages;
 }
@@ -213,7 +217,11 @@ export function getPagesByAgeGroup(lang: string, parentHubSlug: string, themeSlu
 
 export function getPageBySlug(lang: string, parentHubSlug: string, themeSlug: string, ageGroupSlug: string, pageSlug: string): ColoringPage | undefined {
   const pages = getColoringPagesForTheme(lang, parentHubSlug, themeSlug);
-  return pages.find(p => p.slug === pageSlug && (!ageGroupSlug || p.ageGroup === ageGroupSlug));
+  const found = pages.find(p => p.slug === pageSlug && (!ageGroupSlug || p.ageGroup === ageGroupSlug));
+  if (found) return found;
+  // Fallback to full un-filtered theme pages so existing direct/Pinterest URLs never 404
+  const allPages = readThemePages(lang, themeSlug);
+  return allPages.find(p => p.slug === pageSlug && (!ageGroupSlug || p.ageGroup === ageGroupSlug));
 }
 
 export function getFeaturedPages(lang: string, count = 24): ColoringPage[] {
@@ -226,7 +234,7 @@ export function getFeaturedPages(lang: string, count = 24): ColoringPage[] {
       const page = getPageBySlug(lang, p.parentHub, p.parentTheme, p.ageGroup, p.slug);
       if (!page || seen.has(key)) return [];
       seen.add(key);
-      return [page];
+      return [{ ...page, title: p.title || page.title }];
     });
   }
   return featuredPagesCache[lang].slice(0, count);

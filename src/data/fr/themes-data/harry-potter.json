@@ -20,7 +20,8 @@
       "teens"
     ],
     "relatedPages": [],
-    "language": "fr"
+    "language": "fr",
+    "qualityScore": 60
   },
   {
     "id": "page-harry-potter-2",
@@ -43,7 +44,8 @@
       "teens"
     ],
     "relatedPages": [],
-    "language": "fr"
+    "language": "fr",
+    "qualityScore": 60
   },
   {
     "id": "page-harry-potter-3",
@@ -66,7 +68,8 @@
       "teens"
     ],
     "relatedPages": [],
-    "language": "fr"
+    "language": "fr",
+    "qualityScore": 60
   },
   {
     "id": "page-harry-potter-4",
@@ -89,6 +92,7 @@
       "teens"
     ],
     "relatedPages": [],
-    "language": "fr"
+    "language": "fr",
+    "qualityScore": 60
   }
 ]

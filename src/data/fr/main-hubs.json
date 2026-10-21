@@ -5,7 +5,7 @@
     "description": "Découvrez des coloriages magiques de vos classiques Disney et Pixar comme La Reine des Neiges, Toy Story et Cars.",
     "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/banner/hub_disney-pixar.webp",
     "language": "fr",
-    "pageCount": 3636,
+    "pageCount": 1618,
     "themeCount": 24
   },
   {
@@ -14,7 +14,7 @@
     "description": "Superbes coloriages d'anime et manga avec Dragon Ball, Naruto, One Piece, Demon Slayer et Pokémon.",
     "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/banner/hub_anime-manga.webp",
     "language": "fr",
-    "pageCount": 1869,
+    "pageCount": 566,
     "themeCount": 17
   },
   {
@@ -23,7 +23,7 @@
     "description": "Coloriages épiques de jeux vidéo avec Fortnite, Minecraft, Roblox, Super Mario et Sonic.",
     "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/banner/hub_gaming-virtual-worlds.webp",
     "language": "fr",
-    "pageCount": 1301,
+    "pageCount": 416,
     "themeCount": 15
   },
   {
@@ -32,7 +32,7 @@
     "description": "Coloriages de super-héros pleins d'action avec Spider-Man, Batman, Avengers et Superman.",
     "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/banner/hub_superheroes-comic-universes.webp",
     "language": "fr",
-    "pageCount": 269,
+    "pageCount": 134,
     "themeCount": 6
   },
   {
@@ -41,7 +41,7 @@
     "description": "Coloriages joyeux pour enfants avec Pat' Patrouille, Bluey, Peppa Pig, Miffy et Bob l'éponge.",
     "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/banner/hub_kids-tv-shows.webp",
     "language": "fr",
-    "pageCount": 2013,
+    "pageCount": 868,
     "themeCount": 17
   },
   {
@@ -50,7 +50,7 @@
     "description": "Explorez le royaume animal avec des coloriages de dinosaures, chiots, chatons et faune sauvage.",
     "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/banner/hub_animals-wildlife.webp",
     "language": "fr",
-    "pageCount": 3032,
+    "pageCount": 898,
     "themeCount": 18
   },
   {
@@ -59,7 +59,7 @@
     "description": "Entrez dans des mondes magiques avec licornes, dragons, fées, sirènes et châteaux enchantés.",
     "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/banner/hub_fantasy-fairytales.webp",
     "language": "fr",
-    "pageCount": 1801,
+    "pageCount": 396,
     "themeCount": 13
   },
   {
@@ -68,7 +68,7 @@
     "description": "Coloriages rapides de monster trucks, voitures de course F1, pompiers, trains et fusées.",
     "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/banner/hub_vehicles-transportation.webp",
     "language": "fr",
-    "pageCount": 780,
+    "pageCount": 253,
     "themeCount": 8
   },
   {
@@ -77,7 +77,7 @@
     "description": "Coloriages créatifs et relaxants, zentangle, motifs floraux et art esthétique pour ados et adultes.",
     "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/banner/hub_art-aesthetic.webp",
     "language": "fr",
-    "pageCount": 1614,
+    "pageCount": 639,
     "themeCount": 16
   },
   {
@@ -86,7 +86,7 @@
     "description": "Coloriages festifs pour Noël, Halloween, Pâques, Automne et Saint-Valentin.",
     "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/banner/hub_holidays-seasons.webp",
     "language": "fr",
-    "pageCount": 1904,
+    "pageCount": 606,
     "themeCount": 15
   },
   {
@@ -95,7 +95,7 @@
     "description": "Coloriages de bricolage DIY, tutoriels pas à pas pour dessiner, fiches scolaires et calendriers.",
     "image": "https://colorvaults.ams3.cdn.digitaloceanspaces.com/banner/hub_art-aesthetic.webp",
     "language": "fr",
-    "pageCount": 494,
+    "pageCount": 457,
     "themeCount": 8
   }
 ]

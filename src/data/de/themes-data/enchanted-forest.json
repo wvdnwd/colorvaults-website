@@ -20,7 +20,8 @@
       "kids"
     ],
     "relatedPages": [],
-    "language": "de"
+    "language": "de",
+    "qualityScore": 20
   },
   {
     "id": "page-enchanted-forest-3",
@@ -43,7 +44,8 @@
       "toddlers"
     ],
     "relatedPages": [],
-    "language": "de"
+    "language": "de",
+    "qualityScore": 20
   },
   {
     "id": "page-enchanted-forest-5",
@@ -66,7 +68,8 @@
       "teens"
     ],
     "relatedPages": [],
-    "language": "de"
+    "language": "de",
+    "qualityScore": 20
   },
   {
     "id": "page-enchanted-forest-6",
@@ -89,7 +92,8 @@
       "toddlers"
     ],
     "relatedPages": [],
-    "language": "de"
+    "language": "de",
+    "qualityScore": 20
   },
   {
     "id": "page-enchanted-forest-7",
@@ -112,7 +116,8 @@
       "kids"
     ],
     "relatedPages": [],
-    "language": "de"
+    "language": "de",
+    "qualityScore": 20
   },
   {
     "id": "page-enchanted-forest-8",
@@ -135,7 +140,8 @@
       "teens"
     ],
     "relatedPages": [],
-    "language": "de"
+    "language": "de",
+    "qualityScore": 20
   },
   {
     "id": "page-enchanted-forest-9",
@@ -158,7 +164,8 @@
       "toddlers"
     ],
     "relatedPages": [],
-    "language": "de"
+    "language": "de",
+    "qualityScore": 20
   },
   {
     "id": "page-enchanted-forest-10",
@@ -181,7 +188,8 @@
       "kids"
     ],
     "relatedPages": [],
-    "language": "de"
+    "language": "de",
+    "qualityScore": 20
   },
   {
     "id": "page-enchanted-forest-11",
@@ -204,7 +212,8 @@
       "teens"
     ],
     "relatedPages": [],
-    "language": "de"
+    "language": "de",
+    "qualityScore": 20
   },
   {
     "id": "page-enchanted-forest-12",
@@ -227,7 +236,8 @@
       "toddlers"
     ],
     "relatedPages": [],
-    "language": "de"
+    "language": "de",
+    "qualityScore": 20
   },
   {
     "id": "page-enchanted-forest-13",
@@ -250,7 +260,8 @@
       "kids"
     ],
     "relatedPages": [],
-    "language": "de"
+    "language": "de",
+    "qualityScore": 20
   },
   {
     "id": "page-enchanted-forest-14",
@@ -273,7 +284,8 @@
       "teens"
     ],
     "relatedPages": [],
-    "language": "de"
+    "language": "de",
+    "qualityScore": 20
   },
   {
     "id": "page-enchanted-forest-15",
@@ -296,7 +308,8 @@
       "toddlers"
     ],
     "relatedPages": [],
-    "language": "de"
+    "language": "de",
+    "qualityScore": 20
   },
   {
     "id": "page-enchanted-forest-16",
@@ -319,7 +332,8 @@
       "kids"
     ],
     "relatedPages": [],
-    "language": "de"
+    "language": "de",
+    "qualityScore": 20
   },
   {
     "id": "page-enchanted-forest-17",
@@ -342,7 +356,8 @@
       "teens"
     ],
     "relatedPages": [],
-    "language": "de"
+    "language": "de",
+    "qualityScore": 20
   },
   {
     "id": "page-enchanted-forest-18",
@@ -365,7 +380,8 @@
       "toddlers"
     ],
     "relatedPages": [],
-    "language": "de"
+    "language": "de",
+    "qualityScore": 20
   },
   {
     "id": "page-enchanted-forest-20",
@@ -388,7 +404,8 @@
       "teens"
     ],
     "relatedPages": [],
-    "language": "de"
+    "language": "de",
+    "qualityScore": 20
   },
   {
     "id": "page-enchanted-forest-21",
@@ -411,7 +428,8 @@
       "toddlers"
     ],
     "relatedPages": [],
-    "language": "de"
+    "language": "de",
+    "qualityScore": 20
   },
   {
     "id": "page-enchanted-forest-22",
@@ -434,7 +452,8 @@
       "kids"
     ],
     "relatedPages": [],
-    "language": "de"
+    "language": "de",
+    "qualityScore": 20
   },
   {
     "id": "page-enchanted-forest-23",
@@ -457,7 +476,8 @@
       "teens"
     ],
     "relatedPages": [],
-    "language": "de"
+    "language": "de",
+    "qualityScore": 20
   },
   {
     "id": "page-enchanted-forest-24",
@@ -480,7 +500,9 @@
       "toddlers"
     ],
     "relatedPages": [],
-    "language": "de"
+    "language": "de",
+    "qualityScore": 20,
+    "hidden": true
   },
   {
     "id": "page-enchanted-forest-25",
@@ -503,7 +525,9 @@
       "kids"
     ],
     "relatedPages": [],
-    "language": "de"
+    "language": "de",
+    "qualityScore": 20,
+    "hidden": true
   },
   {
     "id": "page-enchanted-forest-26",
@@ -526,7 +550,9 @@
       "teens"
     ],
     "relatedPages": [],
-    "language": "de"
+    "language": "de",
+    "qualityScore": 20,
+    "hidden": true
   },
   {
     "id": "page-enchanted-forest-27",
@@ -549,7 +575,9 @@
       "toddlers"
     ],
     "relatedPages": [],
-    "language": "de"
+    "language": "de",
+    "qualityScore": 20,
+    "hidden": true
   },
   {
     "id": "page-enchanted-forest-28",
@@ -572,7 +600,9 @@
       "kids"
     ],
     "relatedPages": [],
-    "language": "de"
+    "language": "de",
+    "qualityScore": 20,
+    "hidden": true
   },
   {
     "id": "page-enchanted-forest-29",
@@ -595,7 +625,9 @@
       "teens"
     ],
     "relatedPages": [],
-    "language": "de"
+    "language": "de",
+    "qualityScore": 20,
+    "hidden": true
   },
   {
     "id": "page-enchanted-forest-30",
@@ -618,7 +650,9 @@
       "toddlers"
     ],
     "relatedPages": [],
-    "language": "de"
+    "language": "de",
+    "qualityScore": 20,
+    "hidden": true
   },
   {
     "id": "page-enchanted-forest-31",
@@ -641,7 +675,9 @@
       "kids"
     ],
     "relatedPages": [],
-    "language": "de"
+    "language": "de",
+    "qualityScore": 20,
+    "hidden": true
   },
   {
     "id": "page-enchanted-forest-32",
@@ -664,7 +700,9 @@
       "teens"
     ],
     "relatedPages": [],
-    "language": "de"
+    "language": "de",
+    "qualityScore": 20,
+    "hidden": true
   },
   {
     "id": "page-enchanted-forest-33",
@@ -687,7 +725,9 @@
       "toddlers"
     ],
     "relatedPages": [],
-    "language": "de"
+    "language": "de",
+    "qualityScore": 20,
+    "hidden": true
   },
   {
     "id": "page-enchanted-forest-34",
@@ -710,7 +750,9 @@
       "kids"
     ],
     "relatedPages": [],
-    "language": "de"
+    "language": "de",
+    "qualityScore": 20,
+    "hidden": true
   },
   {
     "id": "page-enchanted-forest-35",
@@ -733,7 +775,9 @@
       "teens"
     ],
     "relatedPages": [],
-    "language": "de"
+    "language": "de",
+    "qualityScore": 20,
+    "hidden": true
   },
   {
     "id": "page-enchanted-forest-36",
@@ -756,7 +800,9 @@
       "toddlers"
     ],
     "relatedPages": [],
-    "language": "de"
+    "language": "de",
+    "qualityScore": 20,
+    "hidden": true
   },
   {
     "id": "page-enchanted-forest-37",
@@ -779,7 +825,9 @@
       "kids"
     ],
     "relatedPages": [],
-    "language": "de"
+    "language": "de",
+    "qualityScore": 20,
+    "hidden": true
   },
   {
     "id": "page-enchanted-forest-38",
@@ -802,7 +850,9 @@
       "teens"
     ],
     "relatedPages": [],
-    "language": "de"
+    "language": "de",
+    "qualityScore": 20,
+    "hidden": true
   },
   {
     "id": "page-enchanted-forest-39",
@@ -825,7 +875,9 @@
       "toddlers"
     ],
     "relatedPages": [],
-    "language": "de"
+    "language": "de",
+    "qualityScore": 20,
+    "hidden": true
   },
   {
     "id": "page-enchanted-forest-40",
@@ -848,7 +900,9 @@
       "kids"
     ],
     "relatedPages": [],
-    "language": "de"
+    "language": "de",
+    "qualityScore": 20,
+    "hidden": true
   },
   {
     "id": "page-enchanted-forest-41",
@@ -871,7 +925,9 @@
       "teens"
     ],
     "relatedPages": [],
-    "language": "de"
+    "language": "de",
+    "qualityScore": 20,
+    "hidden": true
   },
   {
     "id": "page-enchanted-forest-42",
@@ -894,7 +950,9 @@
       "toddlers"
     ],
     "relatedPages": [],
-    "language": "de"
+    "language": "de",
+    "qualityScore": 20,
+    "hidden": true
   },
   {
     "id": "page-enchanted-forest-43",
@@ -917,7 +975,9 @@
       "kids"
     ],
     "relatedPages": [],
-    "language": "de"
+    "language": "de",
+    "qualityScore": 20,
+    "hidden": true
   },
   {
     "id": "page-enchanted-forest-44",
@@ -940,7 +1000,9 @@
       "teens"
     ],
     "relatedPages": [],
-    "language": "de"
+    "language": "de",
+    "qualityScore": 20,
+    "hidden": true
   },
   {
     "id": "page-enchanted-forest-45",
@@ -963,7 +1025,9 @@
       "toddlers"
     ],
     "relatedPages": [],
-    "language": "de"
+    "language": "de",
+    "qualityScore": 20,
+    "hidden": true
   },
   {
     "id": "page-enchanted-forest-46",
@@ -986,7 +1050,9 @@
       "kids"
     ],
     "relatedPages": [],
-    "language": "de"
+    "language": "de",
+    "qualityScore": 20,
+    "hidden": true
   },
   {
     "id": "page-enchanted-forest-47",
@@ -1009,7 +1075,9 @@
       "teens"
     ],
     "relatedPages": [],
-    "language": "de"
+    "language": "de",
+    "qualityScore": 20,
+    "hidden": true
   },
   {
     "id": "page-enchanted-forest-48",
@@ -1032,7 +1100,9 @@
       "toddlers"
     ],
     "relatedPages": [],
-    "language": "de"
+    "language": "de",
+    "qualityScore": 20,
+    "hidden": true
   },
   {
     "id": "page-enchanted-forest-49",
@@ -1055,7 +1125,9 @@
       "kids"
     ],
     "relatedPages": [],
-    "language": "de"
+    "language": "de",
+    "qualityScore": 20,
+    "hidden": true
   },
   {
     "id": "page-enchanted-forest-50",
@@ -1078,7 +1150,9 @@
       "teens"
     ],
     "relatedPages": [],
-    "language": "de"
+    "language": "de",
+    "qualityScore": 20,
+    "hidden": true
   },
   {
     "id": "page-enchanted-forest-51",
@@ -1101,7 +1175,9 @@
       "toddlers"
     ],
     "relatedPages": [],
-    "language": "de"
+    "language": "de",
+    "qualityScore": 20,
+    "hidden": true
   },
   {
     "id": "page-enchanted-forest-52",
@@ -1124,7 +1200,9 @@
       "kids"
     ],
     "relatedPages": [],
-    "language": "de"
+    "language": "de",
+    "qualityScore": 20,
+    "hidden": true
   },
   {
     "id": "page-enchanted-forest-53",
@@ -1147,7 +1225,9 @@
       "teens"
     ],
     "relatedPages": [],
-    "language": "de"
+    "language": "de",
+    "qualityScore": 20,
+    "hidden": true
   },
   {
     "id": "page-enchanted-forest-54",
@@ -1170,7 +1250,9 @@
       "toddlers"
     ],
     "relatedPages": [],
-    "language": "de"
+    "language": "de",
+    "qualityScore": 20,
+    "hidden": true
   },
   {
     "id": "page-enchanted-forest-55",
@@ -1193,7 +1275,9 @@
       "kids"
     ],
     "relatedPages": [],
-    "language": "de"
+    "language": "de",
+    "qualityScore": 20,
+    "hidden": true
   },
   {
     "id": "page-enchanted-forest-56",
@@ -1216,7 +1300,9 @@
       "teens"
     ],
     "relatedPages": [],
-    "language": "de"
+    "language": "de",
+    "qualityScore": 20,
+    "hidden": true
   },
   {
     "id": "page-enchanted-forest-57",
@@ -1239,7 +1325,9 @@
       "toddlers"
     ],
     "relatedPages": [],
-    "language": "de"
+    "language": "de",
+    "qualityScore": 20,
+    "hidden": true
   },
   {
     "id": "page-enchanted-forest-58",
@@ -1262,7 +1350,9 @@
       "kids"
     ],
     "relatedPages": [],
-    "language": "de"
+    "language": "de",
+    "qualityScore": 20,
+    "hidden": true
   },
   {
     "id": "page-enchanted-forest-59",
@@ -1285,7 +1375,9 @@
       "teens"
     ],
     "relatedPages": [],
-    "language": "de"
+    "language": "de",
+    "qualityScore": 20,
+    "hidden": true
   },
   {
     "id": "page-enchanted-forest-60",
@@ -1308,7 +1400,9 @@
       "toddlers"
     ],
     "relatedPages": [],
-    "language": "de"
+    "language": "de",
+    "qualityScore": 20,
+    "hidden": true
   },
   {
     "id": "page-enchanted-forest-61",
@@ -1331,7 +1425,9 @@
       "kids"
     ],
     "relatedPages": [],
-    "language": "de"
+    "language": "de",
+    "qualityScore": 20,
+    "hidden": true
   },
   {
     "id": "page-enchanted-forest-62",
@@ -1354,7 +1450,9 @@
       "teens"
     ],
     "relatedPages": [],
-    "language": "de"
+    "language": "de",
+    "qualityScore": 20,
+    "hidden": true
   },
   {
     "id": "page-enchanted-forest-63",
@@ -1377,7 +1475,9 @@
       "toddlers"
     ],
     "relatedPages": [],
-    "language": "de"
+    "language": "de",
+    "qualityScore": 20,
+    "hidden": true
   },
   {
     "id": "page-enchanted-forest-64",
@@ -1400,7 +1500,9 @@
       "kids"
     ],
     "relatedPages": [],
-    "language": "de"
+    "language": "de",
+    "qualityScore": 20,
+    "hidden": true
   },
   {
     "id": "page-enchanted-forest-65",
@@ -1423,7 +1525,9 @@
       "teens"
     ],
     "relatedPages": [],
-    "language": "de"
+    "language": "de",
+    "qualityScore": 20,
+    "hidden": true
   },
   {
     "id": "page-enchanted-forest-66",
@@ -1446,7 +1550,9 @@
       "toddlers"
     ],
     "relatedPages": [],
-    "language": "de"
+    "language": "de",
+    "qualityScore": 20,
+    "hidden": true
   },
   {
     "id": "page-enchanted-forest-67",
@@ -1469,7 +1575,9 @@
       "kids"
     ],
     "relatedPages": [],
-    "language": "de"
+    "language": "de",
+    "qualityScore": 20,
+    "hidden": true
   },
   {
     "id": "page-enchanted-forest-68",
@@ -1492,7 +1600,9 @@
       "teens"
     ],
     "relatedPages": [],
-    "language": "de"
+    "language": "de",
+    "qualityScore": 20,
+    "hidden": true
   },
   {
     "id": "page-enchanted-forest-69",
@@ -1515,7 +1625,9 @@
       "toddlers"
     ],
     "relatedPages": [],
-    "language": "de"
+    "language": "de",
+    "qualityScore": 20,
+    "hidden": true
   },
   {
     "id": "page-enchanted-forest-70",
@@ -1538,7 +1650,9 @@
       "kids"
     ],
     "relatedPages": [],
-    "language": "de"
+    "language": "de",
+    "qualityScore": 20,
+    "hidden": true
   },
   {
     "id": "page-enchanted-forest-71",
@@ -1561,7 +1675,9 @@
       "teens"
     ],
     "relatedPages": [],
-    "language": "de"
+    "language": "de",
+    "qualityScore": 20,
+    "hidden": true
   },
   {
     "id": "page-enchanted-forest-72",
@@ -1584,7 +1700,9 @@
       "toddlers"
     ],
     "relatedPages": [],
-    "language": "de"
+    "language": "de",
+    "qualityScore": 20,
+    "hidden": true
   },
   {
     "id": "page-enchanted-forest-73",
@@ -1607,7 +1725,9 @@
       "kids"
     ],
     "relatedPages": [],
-    "language": "de"
+    "language": "de",
+    "qualityScore": 20,
+    "hidden": true
   },
   {
     "id": "page-enchanted-forest-74",
@@ -1630,7 +1750,9 @@
       "teens"
     ],
     "relatedPages": [],
-    "language": "de"
+    "language": "de",
+    "qualityScore": 20,
+    "hidden": true
   },
   {
     "id": "page-enchanted-forest-75",
@@ -1653,7 +1775,9 @@
       "toddlers"
     ],
     "relatedPages": [],
-    "language": "de"
+    "language": "de",
+    "qualityScore": 20,
+    "hidden": true
   },
   {
     "id": "page-enchanted-forest-76",
@@ -1676,7 +1800,9 @@
       "kids"
     ],
     "relatedPages": [],
-    "language": "de"
+    "language": "de",
+    "qualityScore": 20,
+    "hidden": true
   },
   {
     "id": "page-enchanted-forest-77",
@@ -1699,7 +1825,9 @@
       "teens"
     ],
     "relatedPages": [],
-    "language": "de"
+    "language": "de",
+    "qualityScore": 20,
+    "hidden": true
   },
   {
     "id": "page-enchanted-forest-78",
@@ -1722,7 +1850,9 @@
       "toddlers"
     ],
     "relatedPages": [],
-    "language": "de"
+    "language": "de",
+    "qualityScore": 20,
+    "hidden": true
   },
   {
     "id": "page-enchanted-forest-79",
@@ -1745,7 +1875,9 @@
       "kids"
     ],
     "relatedPages": [],
-    "language": "de"
+    "language": "de",
+    "qualityScore": 20,
+    "hidden": true
   },
   {
     "id": "page-enchanted-forest-80",
@@ -1768,7 +1900,9 @@
       "teens"
     ],
     "relatedPages": [],
-    "language": "de"
+    "language": "de",
+    "qualityScore": 20,
+    "hidden": true
   },
   {
     "id": "page-enchanted-forest-81",
@@ -1791,7 +1925,9 @@
       "toddlers"
     ],
     "relatedPages": [],
-    "language": "de"
+    "language": "de",
+    "qualityScore": 20,
+    "hidden": true
   },
   {
     "id": "page-enchanted-forest-82",
@@ -1814,7 +1950,9 @@
       "kids"
     ],
     "relatedPages": [],
-    "language": "de"
+    "language": "de",
+    "qualityScore": 20,
+    "hidden": true
   },
   {
     "id": "page-enchanted-forest-83",
@@ -1837,7 +1975,9 @@
       "teens"
     ],
     "relatedPages": [],
-    "language": "de"
+    "language": "de",
+    "qualityScore": 20,
+    "hidden": true
   },
   {
     "id": "page-enchanted-forest-84",
@@ -1860,7 +2000,9 @@
       "toddlers"
     ],
     "relatedPages": [],
-    "language": "de"
+    "language": "de",
+    "qualityScore": 20,
+    "hidden": true
   },
   {
     "id": "page-enchanted-forest-85",
@@ -1883,7 +2025,9 @@
       "kids"
     ],
     "relatedPages": [],
-    "language": "de"
+    "language": "de",
+    "qualityScore": 20,
+    "hidden": true
   },
   {
     "id": "page-enchanted-forest-86",
@@ -1906,7 +2050,9 @@
       "teens"
     ],
     "relatedPages": [],
-    "language": "de"
+    "language": "de",
+    "qualityScore": 20,
+    "hidden": true
   },
   {
     "id": "page-enchanted-forest-87",
@@ -1929,7 +2075,9 @@
       "toddlers"
     ],
     "relatedPages": [],
-    "language": "de"
+    "language": "de",
+    "qualityScore": 20,
+    "hidden": true
   },
   {
     "id": "page-enchanted-forest-88",
@@ -1952,7 +2100,9 @@
       "kids"
     ],
     "relatedPages": [],
-    "language": "de"
+    "language": "de",
+    "qualityScore": 20,
+    "hidden": true
   },
   {
     "id": "page-enchanted-forest-89",
@@ -1975,7 +2125,9 @@
       "teens"
     ],
     "relatedPages": [],
-    "language": "de"
+    "language": "de",
+    "qualityScore": 20,
+    "hidden": true
   },
   {
     "id": "page-enchanted-forest-90",
@@ -1998,7 +2150,9 @@
       "toddlers"
     ],
     "relatedPages": [],
-    "language": "de"
+    "language": "de",
+    "qualityScore": 20,
+    "hidden": true
   },
   {
     "id": "page-enchanted-forest-91",
@@ -2021,7 +2175,9 @@
       "kids"
     ],
     "relatedPages": [],
-    "language": "de"
+    "language": "de",
+    "qualityScore": 20,
+    "hidden": true
   },
   {
     "id": "page-enchanted-forest-92",
@@ -2044,7 +2200,9 @@
       "teens"
     ],
     "relatedPages": [],
-    "language": "de"
+    "language": "de",
+    "qualityScore": 20,
+    "hidden": true
   },
   {
     "id": "page-enchanted-forest-93",
@@ -2067,7 +2225,9 @@
       "toddlers"
     ],
     "relatedPages": [],
-    "language": "de"
+    "language": "de",
+    "qualityScore": 20,
+    "hidden": true
   },
   {
     "id": "page-enchanted-forest-94",
@@ -2090,7 +2250,9 @@
       "kids"
     ],
     "relatedPages": [],
-    "language": "de"
+    "language": "de",
+    "qualityScore": 20,
+    "hidden": true
   },
   {
     "id": "page-enchanted-forest-95",
@@ -2113,7 +2275,9 @@
       "teens"
     ],
     "relatedPages": [],
-    "language": "de"
+    "language": "de",
+    "qualityScore": 20,
+    "hidden": true
   },
   {
     "id": "page-enchanted-forest-96",
@@ -2136,7 +2300,9 @@
       "toddlers"
     ],
     "relatedPages": [],
-    "language": "de"
+    "language": "de",
+    "qualityScore": 20,
+    "hidden": true
   },
   {
     "id": "page-enchanted-forest-97",
@@ -2159,7 +2325,9 @@
       "kids"
     ],
     "relatedPages": [],
-    "language": "de"
+    "language": "de",
+    "qualityScore": 20,
+    "hidden": true
   },
   {
     "id": "page-enchanted-forest-98",
@@ -2182,7 +2350,9 @@
       "teens"
     ],
     "relatedPages": [],
-    "language": "de"
+    "language": "de",
+    "qualityScore": 20,
+    "hidden": true
   },
   {
     "id": "page-enchanted-forest-99",
@@ -2205,7 +2375,9 @@
       "toddlers"
     ],
     "relatedPages": [],
-    "language": "de"
+    "language": "de",
+    "qualityScore": 20,
+    "hidden": true
   },
   {
     "id": "page-enchanted-forest-100",
@@ -2228,7 +2400,9 @@
       "kids"
     ],
     "relatedPages": [],
-    "language": "de"
+    "language": "de",
+    "qualityScore": 20,
+    "hidden": true
   },
   {
     "id": "page-enchanted-forest-101",
@@ -2251,7 +2425,9 @@
       "teens"
     ],
     "relatedPages": [],
-    "language": "de"
+    "language": "de",
+    "qualityScore": 20,
+    "hidden": true
   },
   {
     "id": "page-enchanted-forest-102",
@@ -2274,7 +2450,9 @@
       "toddlers"
     ],
     "relatedPages": [],
-    "language": "de"
+    "language": "de",
+    "qualityScore": 20,
+    "hidden": true
   },
   {
     "id": "page-enchanted-forest-103",
@@ -2297,7 +2475,9 @@
       "kids"
     ],
     "relatedPages": [],
-    "language": "de"
+    "language": "de",
+    "qualityScore": 20,
+    "hidden": true
   },
   {
     "id": "page-enchanted-forest-104",
@@ -2320,7 +2500,9 @@
       "teens"
     ],
     "relatedPages": [],
-    "language": "de"
+    "language": "de",
+    "qualityScore": 20,
+    "hidden": true
   },
   {
     "id": "page-enchanted-forest-106",
@@ -2343,7 +2525,9 @@
       "kids"
     ],
     "relatedPages": [],
-    "language": "de"
+    "language": "de",
+    "qualityScore": 20,
+    "hidden": true
   },
   {
     "id": "page-enchanted-forest-107",
@@ -2366,7 +2550,9 @@
       "teens"
     ],
     "relatedPages": [],
-    "language": "de"
+    "language": "de",
+    "qualityScore": 20,
+    "hidden": true
   },
   {
     "id": "page-enchanted-forest-108",
@@ -2389,7 +2575,9 @@
       "toddlers"
     ],
     "relatedPages": [],
-    "language": "de"
+    "language": "de",
+    "qualityScore": 20,
+    "hidden": true
   },
   {
     "id": "page-enchanted-forest-109",
@@ -2412,7 +2600,9 @@
       "kids"
     ],
     "relatedPages": [],
-    "language": "de"
+    "language": "de",
+    "qualityScore": 20,
+    "hidden": true
   },
   {
     "id": "page-enchanted-forest-110",
@@ -2435,7 +2625,9 @@
       "teens"
     ],
     "relatedPages": [],
-    "language": "de"
+    "language": "de",
+    "qualityScore": 20,
+    "hidden": true
   },
   {
     "id": "page-enchanted-forest-111",
@@ -2458,7 +2650,9 @@
       "toddlers"
     ],
     "relatedPages": [],
-    "language": "de"
+    "language": "de",
+    "qualityScore": 20,
+    "hidden": true
   },
   {
     "id": "page-enchanted-forest-112",
@@ -2481,7 +2675,9 @@
       "kids"
     ],
     "relatedPages": [],
-    "language": "de"
+    "language": "de",
+    "qualityScore": 20,
+    "hidden": true
   },
   {
     "id": "page-enchanted-forest-113",
@@ -2504,7 +2700,9 @@
       "teens"
     ],
     "relatedPages": [],
-    "language": "de"
+    "language": "de",
+    "qualityScore": 20,
+    "hidden": true
   },
   {
     "id": "page-enchanted-forest-114",
@@ -2527,7 +2725,9 @@
       "toddlers"
     ],
     "relatedPages": [],
-    "language": "de"
+    "language": "de",
+    "qualityScore": 20,
+    "hidden": true
   },
   {
     "id": "page-enchanted-forest-115",
@@ -2550,7 +2750,9 @@
       "kids"
     ],
     "relatedPages": [],
-    "language": "de"
+    "language": "de",
+    "qualityScore": 20,
+    "hidden": true
   },
   {
     "id": "page-enchanted-forest-116",
@@ -2573,7 +2775,9 @@
       "teens"
     ],
     "relatedPages": [],
-    "language": "de"
+    "language": "de",
+    "qualityScore": 20,
+    "hidden": true
   },
   {
     "id": "page-enchanted-forest-117",
@@ -2596,7 +2800,9 @@
       "toddlers"
     ],
     "relatedPages": [],
-    "language": "de"
+    "language": "de",
+    "qualityScore": 20,
+    "hidden": true
   },
   {
     "id": "page-enchanted-forest-118",
@@ -2619,7 +2825,9 @@
       "kids"
     ],
     "relatedPages": [],
-    "language": "de"
+    "language": "de",
+    "qualityScore": 20,
+    "hidden": true
   },
   {
     "id": "page-enchanted-forest-119",
@@ -2642,7 +2850,9 @@
       "teens"
     ],
     "relatedPages": [],
-    "language": "de"
+    "language": "de",
+    "qualityScore": 20,
+    "hidden": true
   },
   {
     "id": "page-enchanted-forest-120",
@@ -2665,6 +2875,8 @@
       "toddlers"
     ],
     "relatedPages": [],
-    "language": "de"
+    "language": "de",
+    "qualityScore": 20,
+    "hidden": true
   }
 ]

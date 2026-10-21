@@ -70,7 +70,7 @@ export default async function HomePage({ params }: { params: Promise<{ lang: str
 
   const rawFeaturedPool = getFeaturedPages(lang, 80);
   const originalFeatured = rawFeaturedPool.filter(p => originalHubSlugs.has(p.parentHub));
-  const featuredPool = originalFeatured.length >= 16 ? originalFeatured : rawFeaturedPool;
+  const featuredPool = originalFeatured.length > 0 ? originalFeatured : rawFeaturedPool;
 
   const dayOfYear = Math.floor((Date.now() - new Date(new Date().getFullYear(), 0, 0).getTime()) / (1000 * 60 * 60 * 24));
   const dailyPage = featuredPool[dayOfYear % (featuredPool.length || 1)] || featuredPool[0];

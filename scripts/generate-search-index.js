@@ -21,7 +21,7 @@ for (const lang of ['en', 'nl', 'de', 'fr']) {
   // Match runtime catalog membership and per-file English fallback, not directory contents.
   const pages = themes.flatMap(theme =>
     readJson(lang, `themes-data/${theme.slug}.json`)
-      .filter(page => page.parentHub === theme.parentHub && page.parentTheme === theme.slug));
+      .filter(page => !page.hidden && page.parentHub === theme.parentHub && page.parentTheme === theme.slug));
   const entries = buildSearchIndex(lang, hubs, themes, pages);
   fs.writeFileSync(path.join(publicDir, `search-index-${lang}.json`), JSON.stringify(entries));
   index.push(...entries);
