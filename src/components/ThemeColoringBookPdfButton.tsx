@@ -24,6 +24,11 @@ export default function ThemeColoringBookPdfButton({
 
     try {
       const { default: jsPDF } = await import('jspdf');
+      const { default: QRCode } = await import('qrcode');
+      let qrDataUrl = '';
+      try {
+        qrDataUrl = await QRCode.toDataURL('https://www.colorvaults.com', { margin: 1, width: 80 });
+      } catch (e) {}
       const pdf = new jsPDF({
         orientation:'portrait',
         unit:'mm',
@@ -90,8 +95,11 @@ export default function ThemeColoringBookPdfButton({
 
             // Page footer
             pdf.setFontSize(8);
-            pdf.setTextColor(180, 190, 205);
-            pdf.text('ColorVaults.com', pageWidth / 2, pageHeight - 8, { align:'center'});
+            pdf.setTextColor(150, 160, 175);
+            pdf.text('ColorVaults.com — Free Printable Coloring Book', pageWidth / 2, pageHeight - 8, { align:'center'});
+            if (qrDataUrl) {
+              pdf.addImage(qrDataUrl, 'PNG', pageWidth - margin - 12, pageHeight - 16, 12, 12);
+            }
 
             URL.revokeObjectURL(img.src);
           }

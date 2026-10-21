@@ -63,6 +63,12 @@ export default async function ColoringPageDetail({ params }: { params: Promise<{
 
   const isEn = lang !== 'nl';
 
+  // Previous and Next page navigation for high engagement & session depth
+  const fullThemeList = getColoringPagesForTheme(lang, mainHubSlug, themeSlug);
+  const currentIdx = fullThemeList.findIndex(p => p.slug === page.slug);
+  const prevPage = currentIdx > 0 ? fullThemeList[currentIdx - 1] : fullThemeList[fullThemeList.length - 1];
+  const nextPage = currentIdx >= 0 && currentIdx < fullThemeList.length - 1 ? fullThemeList[currentIdx + 1] : fullThemeList[0];
+
   // Related pages: get all pages from the same theme (excluding current page)
   const allThemePages = getColoringPagesForTheme(lang, mainHubSlug, themeSlug).filter(
     p => p.slug !== page.slug
@@ -88,15 +94,70 @@ export default async function ColoringPageDetail({ params }: { params: Promise<{
 
   return (
     <div className="container section">
-      <Breadcrumbs
-        items={[
-          { label: hub.title, href:`/${lang}/${hub.slug}`},
-          { label: theme.title, href:`/${lang}/${hub.slug}/${theme.slug}`},
-          { label: agePage.title, href:`/${lang}/${hub.slug}/${theme.slug}/${agePage.ageGroup}`},
-          { label: page.title }
-        ]}
-        lang={lang}
-      />
+      <div style={{
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'space-between',
+        flexWrap: 'wrap',
+        gap: '0.75rem',
+        marginBottom: '1rem',
+      }}>
+        <Breadcrumbs
+          items={[
+            { label: hub.title, href:`/${lang}/${hub.slug}`},
+            { label: theme.title, href:`/${lang}/${hub.slug}/${theme.slug}`},
+            { label: agePage.title, href:`/${lang}/${hub.slug}/${theme.slug}/${agePage.ageGroup}`},
+            { label: page.title }
+          ]}
+          lang={lang}
+        />
+
+        {fullThemeList.length > 1 && (
+          <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+            {prevPage && (
+              <Link
+                href={`/${lang}/${prevPage.parentHub}/${prevPage.parentTheme}/${prevPage.ageGroup}/${prevPage.slug}`}
+                className="btn-secondary"
+                style={{
+                  padding: '0.35rem 0.85rem',
+                  fontSize: '0.825rem',
+                  borderRadius: '9999px',
+                  display: 'inline-flex',
+                  alignItems: 'center',
+                  gap: '0.35rem',
+                  textDecoration: 'none',
+                }}
+                title={isEn ? `Previous: ${prevPage.title}` : `Vorige: ${prevPage.title}`}
+              >
+                <span>←</span>
+                <span>{isEn ? 'Previous' : 'Vorige'}</span>
+              </Link>
+            )}
+            <span style={{ fontSize: '0.8rem', color: 'var(--gray-500)', fontWeight: 700 }}>
+              {currentIdx >= 0 ? `${currentIdx + 1} / ${fullThemeList.length}` : ''}
+            </span>
+            {nextPage && (
+              <Link
+                href={`/${lang}/${nextPage.parentHub}/${nextPage.parentTheme}/${nextPage.ageGroup}/${nextPage.slug}`}
+                className="btn-secondary"
+                style={{
+                  padding: '0.35rem 0.85rem',
+                  fontSize: '0.825rem',
+                  borderRadius: '9999px',
+                  display: 'inline-flex',
+                  alignItems: 'center',
+                  gap: '0.35rem',
+                  textDecoration: 'none',
+                }}
+                title={isEn ? `Next: ${nextPage.title}` : `Volgende: ${nextPage.title}`}
+              >
+                <span>{isEn ? 'Next' : 'Volgende'}</span>
+                <span>→</span>
+              </Link>
+            )}
+          </div>
+        )}
+      </div>
       
       <script
         type="application/ld+json"dangerouslySetInnerHTML={{ __html: safeJsonLd({"@context":"https://schema.org","@graph": [

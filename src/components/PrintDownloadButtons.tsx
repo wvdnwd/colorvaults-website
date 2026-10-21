@@ -31,6 +31,7 @@ export default function PrintDownloadButtons({
   const [showPreview, setShowPreview] = useState(false);
   const [showColorOnline, setShowColorOnline] = useState(false);
   const [showEmailModal, setShowEmailModal] = useState(false);
+  const [customName, setCustomName] = useState<string>('');
   const [progressModal, setProgressModal] = useState<{ open: boolean; type: 'pdf' | 'png' }>({
     open: false,
     type: 'pdf',
@@ -156,6 +157,7 @@ export default function PrintDownloadButtons({
       });
 
       const { default: jsPDF } = await import('jspdf');
+      const { default: QRCode } = await import('qrcode');
       const pdf = new jsPDF({
         orientation: 'portrait',
         unit: 'mm',
@@ -178,23 +180,46 @@ export default function PrintDownloadButtons({
       }
 
       const x = (pageWidth - renderWidth) / 2;
-      const y = margin + 8;
+      const y = margin + 11;
 
       pdf.setFont('helvetica', 'bold');
-      pdf.setFontSize(10);
-      pdf.setTextColor(120, 120, 120);
-      pdf.text('ColorVaults.com — Free Printable Coloring Pages', pageWidth / 2, margin, { align: 'center' });
+      if (customName.trim()) {
+        pdf.setFontSize(13);
+        pdf.setTextColor(15, 23, 42);
+        pdf.text(customName.trim(), pageWidth / 2, margin + 3, { align: 'center' });
+        pdf.setFontSize(7.5);
+        pdf.setTextColor(120, 120, 120);
+        pdf.text(`ColorVaults.com — ${pageTitle}`, pageWidth / 2, margin + 8, { align: 'center' });
+      } else {
+        pdf.setFontSize(9.5);
+        pdf.setTextColor(120, 120, 120);
+        pdf.text('ColorVaults.com — Free Printable Coloring Pages', pageWidth / 2, margin + 4, { align: 'center' });
+      }
 
       pdf.addImage(img, 'JPEG', x, y, renderWidth, renderHeight, undefined, 'FAST');
 
+      // Add QR Code in bottom-right corner
+      try {
+        const qrUrl = `https://www.colorvaults.com/${lang || 'nl'}`;
+        const qrDataUrl = await QRCode.toDataURL(qrUrl, { margin: 1, width: 80 });
+        pdf.addImage(qrDataUrl, 'PNG', pageWidth - margin - 15, pageHeight - margin - 5, 14, 14);
+        pdf.setFont('helvetica', 'bold');
+        pdf.setFontSize(6.5);
+        pdf.setTextColor(100, 116, 139);
+        pdf.text(isEn ? 'Scan for more:' : 'Scan voor meer:', pageWidth - margin - 17, pageHeight - margin + 2, { align: 'right' });
+        pdf.setFont('helvetica', 'normal');
+        pdf.text('ColorVaults.com', pageWidth - margin - 17, pageHeight - margin + 6, { align: 'right' });
+      } catch (qrErr) {
+        console.warn('QR generation skipped', qrErr);
+      }
+
       pdf.setFont('helvetica', 'normal');
-      pdf.setFontSize(8);
+      pdf.setFontSize(7.5);
       pdf.setTextColor(150, 150, 150);
       pdf.text(
         `© ColorVaults.com — ${pageTitle} — Free for personal, home and classroom educational use.`,
-        pageWidth / 2,
-        pageHeight - 6,
-        { align: 'center' }
+        margin,
+        pageHeight - 6
       );
 
       const cleanSlug = pageTitle.toLowerCase().replace(/[^a-z0-9]+/g, '-');
@@ -211,6 +236,48 @@ export default function PrintDownloadButtons({
   return (
     <>
       <div style={{ marginTop: '1.5rem', display: 'flex', flexDirection: 'column', gap: '0.75rem' }}>
+        {/* Optional Custom Name Input */}
+        <div style={{
+          background: '#F8FAFC',
+          border: '1.5px dashed #CBD5E1',
+          borderRadius: '16px',
+          padding: '0.85rem 1rem',
+          display: 'flex',
+          flexDirection: 'column',
+          gap: '0.35rem',
+        }}>
+          <label style={{
+            fontSize: '0.78rem',
+            fontWeight: 800,
+            color: '#475569',
+            display: 'flex',
+            alignItems: 'center',
+            gap: '0.35rem',
+            textTransform: 'uppercase',
+            letterSpacing: '0.04em',
+          }}>
+            <span>✨</span>
+            <span>{isEn ? 'Add Name to Coloring Sheet (Optional):' : 'Naam op Kleurplaat zetten (Optioneel):'}</span>
+          </label>
+          <input
+            type="text"
+            value={customName}
+            onChange={(e) => setCustomName(e.target.value)}
+            placeholder={isEn ? 'e.g. For Emma / Class 3B' : 'bijv. Voor Emma / Groep 3B'}
+            maxLength={40}
+            style={{
+              width: '100%',
+              padding: '0.55rem 0.85rem',
+              borderRadius: '10px',
+              border: '1.5px solid #E2E8F0',
+              fontSize: '0.9rem',
+              fontWeight: 600,
+              outline: 'none',
+              background: '#FFFFFF',
+            }}
+          />
+        </div>
+
         {/* Primary Action: Print */}
         <button
           onClick={handlePrintClick}

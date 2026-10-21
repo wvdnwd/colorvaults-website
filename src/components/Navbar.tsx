@@ -77,6 +77,8 @@ export default function Navbar({ lang }: { lang: string }) {
       ],
     },
     { label: isEn ? 'Search' : 'Zoeken', icon: '🔍', href: `/${lang}/search` },
+    { label: isEn ? 'Name Maker' : 'Naam-Kleurplaat', icon: '✨', href: `/${lang}/name-coloring-page` },
+    { label: isEn ? 'Surprise!' : 'Verrassing!', icon: '🎲', href: `/api/random-page?lang=${lang}` },
     { label: isEn ? 'Favorites' : 'Favorieten', icon: '❤️', href: `/${lang}/favorites` },
     { label: isEn ? 'How to Draw' : 'Leren Tekenen', icon: '✏️', href: `/${lang}/how-to-draw` },
     { label: isEn ? 'School & Math' : 'School & Rekenen', icon: '🎓', href: `/${lang}/school` },

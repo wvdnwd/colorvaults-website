@@ -127,6 +127,8 @@ export default async function HomePage({ params }: { params: Promise<{ lang: str
   ];
 
   const quickShortcuts = [
+    { name: isEn ? '✨ Name Maker' : '✨ Naam-Kleurplaat', icon: '✨', href: isEn ? `/${lang}/name-coloring-page` : `/${lang}/naam-kleurplaat` },
+    { name: isEn ? '🎲 Surprise Me!' : '🎲 Verras Me!', icon: '🎲', href: `/api/random-page?lang=${lang}` },
     { name: isEn ? 'Dinosaurs' : 'Dinosauriërs', icon: '🦖', href: `/${lang}/animals-wildlife/dinosaur-adventures` },
     { name: isEn ? 'Mandalas' : "Mandala's", icon: '🧘', href: `/${lang}/art-aesthetic/mandalas-sacred-geometry` },
     { name: isEn ? 'Unicorns' : 'Eenhoorns', icon: '🦄', href: `/${lang}/fantasy-fairytales/unicorns-pegasus` },

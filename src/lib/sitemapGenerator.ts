@@ -33,6 +33,7 @@ export function generateSitemapUrlsForLocale(lang: ValidLocale): SitemapUrlEntry
 
   // Standalone core & editorial sections
   const corePages: Array<{ path: string; changefreq: SitemapUrlEntry['changefreq']; priority: string }> = [
+    { path: 'name-coloring-page', changefreq: 'weekly', priority: '0.9' },
     { path: 'calendars', changefreq: 'weekly', priority: '0.8' },
     { path: 'school', changefreq: 'weekly', priority: '0.8' },
     { path: 'how-to-draw', changefreq: 'weekly', priority: '0.8' },

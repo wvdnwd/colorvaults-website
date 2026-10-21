@@ -32,6 +32,8 @@ export default function InteractiveColoringStudio({
   const [loading, setLoading] = useState<boolean>(true);
   const [showCelebration, setShowCelebration] = useState<boolean>(false);
   const [coloredPreviewUrl, setColoredPreviewUrl] = useState<string | null>(null);
+  const [artistName, setArtistName] = useState<string>('');
+  const [generatingCertificate, setGeneratingCertificate] = useState<boolean>(false);
 
   const launchConfetti = () => {
     if (typeof window ==='undefined') return;
@@ -92,6 +94,140 @@ export default function InteractiveColoringStudio({
       }
     };
     requestAnimationFrame(animate);
+  };
+
+  const handleDownloadCertificate = async () => {
+    if (generatingCertificate || !coloredPreviewUrl) return;
+    setGeneratingCertificate(true);
+
+    try {
+      const { default: jsPDF } = await import('jspdf');
+      const { default: QRCode } = await import('qrcode');
+
+      const pdf = new jsPDF({
+        orientation: 'landscape',
+        unit: 'mm',
+        format: 'a4',
+      });
+
+      const pageWidth = 297;
+      const pageHeight = 210;
+      const margin = 12;
+
+      // Ornate Certificate Borders
+      pdf.setDrawColor(217, 119, 6); // Golden Amber
+      pdf.setLineWidth(2.5);
+      pdf.rect(margin, margin, pageWidth - margin * 2, pageHeight - margin * 2);
+
+      pdf.setDrawColor(79, 70, 229); // Royal Indigo inner border
+      pdf.setLineWidth(1);
+      pdf.rect(margin + 3, margin + 3, pageWidth - margin * 2 - 6, pageHeight - margin * 2 - 6);
+
+      // Certificate Title
+      pdf.setFont('helvetica', 'bold');
+      pdf.setFontSize(24);
+      pdf.setTextColor(30, 41, 59);
+      pdf.text(
+        isEn ? 'OFFICIAL COLORING DIPLOMA' : 'OFFICIEEL KLEUR-DIPLOMA',
+        pageWidth / 2,
+        margin + 18,
+        { align: 'center' }
+      );
+
+      pdf.setFontSize(11);
+      pdf.setTextColor(100, 116, 139);
+      pdf.text(
+        isEn
+          ? 'This official certificate of creativity and imagination is proudly awarded to:'
+          : 'Dit officiële certificaat van creativiteit en vrolijk kleurplezier is uitgereikt aan:',
+        pageWidth / 2,
+        margin + 26,
+        { align: 'center' }
+      );
+
+      // Child's Name in Bold Large Type
+      pdf.setFontSize(22);
+      pdf.setTextColor(79, 70, 229);
+      const recipient = artistName.trim() || (isEn ? 'Our Star Artist' : 'Onze Jonge Meesterkunstenaar');
+      pdf.text(recipient, pageWidth / 2, margin + 38, { align: 'center' });
+
+      pdf.setFont('helvetica', 'normal');
+      pdf.setFontSize(10.5);
+      pdf.setTextColor(71, 85, 105);
+      pdf.text(
+        isEn
+          ? `For beautifully coloring the artwork: "${title}"`
+          : `Voor het fantastisch mooi inkleuren van de tekening: "${title}"`,
+        pageWidth / 2,
+        margin + 46,
+        { align: 'center' }
+      );
+
+      // Centered Artwork Image
+      const img = new Image();
+      img.src = coloredPreviewUrl;
+      await new Promise((res) => { img.onload = res; img.onerror = res; });
+
+      const maxArtWidth = 120;
+      const maxArtHeight = 95;
+      const imgRatio = (img.width || 800) / (img.height || 800);
+      let renderW = maxArtWidth;
+      let renderH = maxArtWidth / imgRatio;
+      if (renderH > maxArtHeight) {
+        renderH = maxArtHeight;
+        renderW = maxArtHeight * imgRatio;
+      }
+
+      const artX = (pageWidth - renderW) / 2;
+      const artY = margin + 50;
+
+      // Draw subtle shadow frame for artwork
+      pdf.setFillColor(248, 250, 252);
+      pdf.roundedRect(artX - 4, artY - 4, renderW + 8, renderH + 8, 3, 3, 'F');
+      pdf.setDrawColor(203, 213, 225);
+      pdf.setLineWidth(0.5);
+      pdf.roundedRect(artX - 4, artY - 4, renderW + 8, renderH + 8, 3, 3, 'D');
+
+      pdf.addImage(img, 'PNG', artX, artY, renderW, renderH);
+
+      // Date and Signature footer
+      const today = new Date().toLocaleDateString(isEn ? 'en-US' : 'nl-NL', {
+        year: 'numeric',
+        month: 'long',
+        day: 'numeric',
+      });
+
+      pdf.setFontSize(9);
+      pdf.setTextColor(100, 116, 139);
+      pdf.text(
+        isEn ? `Date: ${today}` : `Datum: ${today}`,
+        margin + 16,
+        pageHeight - margin - 8
+      );
+
+      pdf.setFont('helvetica', 'bold');
+      pdf.setTextColor(217, 119, 6);
+      pdf.text('★ ColorVaults Art Studio ★', pageWidth / 2, pageHeight - margin - 8, { align: 'center' });
+
+      // QR Code in bottom-right
+      try {
+        const qrUrl = 'https://www.colorvaults.com';
+        const qrDataUrl = await QRCode.toDataURL(qrUrl, { margin: 1, width: 80 });
+        pdf.addImage(qrDataUrl, 'PNG', pageWidth - margin - 22, pageHeight - margin - 18, 14, 14);
+        pdf.setFont('helvetica', 'normal');
+        pdf.setFontSize(6.5);
+        pdf.setTextColor(148, 163, 184);
+        pdf.text('ColorVaults.com', pageWidth - margin - 15, pageHeight - margin - 2, { align: 'center' });
+      } catch (e) {}
+
+      const cleanName = recipient.toLowerCase().replace(/[^a-z0-9]+/g, '-');
+      pdf.save(`kleur-diploma-${cleanName}.pdf`);
+      launchConfetti();
+    } catch (err) {
+      console.error('Failed to generate diploma:', err);
+    } finally {
+      setGeneratingCertificate(false);
+    }
   };
 
   const handleFinishMasterpiece = () => {
@@ -619,7 +755,77 @@ export default function InteractiveColoringStudio({
               </div>
             )}
 
+            {/* Personalized Name Input for Official Certificate */}
+            <div style={{
+              background: '#F8FAFC',
+              border: '1.5px dashed #CBD5E1',
+              borderRadius: '16px',
+              padding: '0.85rem 1.25rem',
+              margin: '1rem 0',
+              textAlign: 'left',
+              width: '100%',
+              maxWidth: '440px',
+            }}>
+              <label style={{
+                fontSize: '0.8rem',
+                fontWeight: 800,
+                color: '#475569',
+                display: 'block',
+                marginBottom: '0.35rem',
+                textTransform: 'uppercase',
+                letterSpacing: '0.04em',
+              }}>
+                🎓 {isEn ? 'Name for Official Coloring Diploma:' : 'Naam voor op het Officiële Kleur-Diploma:'}
+              </label>
+              <input
+                type="text"
+                value={artistName}
+                onChange={(e) => setArtistName(e.target.value)}
+                placeholder={isEn ? 'Enter child name (e.g. Emma)' : 'Typ je naam (bijv. Milan, Sophie)'}
+                maxLength={32}
+                style={{
+                  width: '100%',
+                  padding: '0.6rem 0.85rem',
+                  borderRadius: '10px',
+                  border: '1.5px solid #CBD5E1',
+                  fontSize: '0.95rem',
+                  fontWeight: 700,
+                  outline: 'none',
+                  background: '#FFFFFF',
+                }}
+              />
+            </div>
+
             <div className={styles.modalActionButtons}>
+              <button
+                type="button"
+                style={{
+                  background: 'linear-gradient(135deg, #F59E0B 0%, #D97706 100%)',
+                  color: '#FFFFFF',
+                  fontWeight: 900,
+                  fontSize: '1rem',
+                  padding: '0.85rem 1.5rem',
+                  borderRadius: '9999px',
+                  border: 'none',
+                  cursor: 'pointer',
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  gap: '0.5rem',
+                  boxShadow: '0 4px 16px rgba(217, 119, 6, 0.35)',
+                  width: '100%',
+                }}
+                onClick={handleDownloadCertificate}
+                disabled={generatingCertificate}
+              >
+                <span>🎓</span>
+                <span>
+                  {generatingCertificate
+                    ? (isEn ? 'Creating Diploma PDF...' : 'Diploma PDF Maken...')
+                    : (isEn ? 'Download Official Coloring Diploma (A4 PDF)' : 'Download Officieel Kleur-Diploma (A4 PDF)')}
+                </span>
+              </button>
+
               <button
                 type="button"className={styles.modalDownloadBtn}
                 onClick={handleDownloadColored}

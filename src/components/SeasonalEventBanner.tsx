@@ -2,7 +2,7 @@ import React from 'react';
 import Link from 'next/link';
 
 export default function SeasonalEventBanner({ isEn, lang }: { isEn: boolean; lang: string }) {
-  const month = new Date().getMonth(); // 0 = Jan, 8 = Sep, 9 = Oct, 11 = Dec
+  const month = new Date().getMonth(); // 0 = Jan, 8 = Sep, 9 = Oct, 10 = Nov, 11 = Dec
 
   let seasonalData = {
     emoji: '🍂',
@@ -13,21 +13,42 @@ export default function SeasonalEventBanner({ isEn, lang }: { isEn: boolean; lan
     bg: 'linear-gradient(135deg, #7C2D12 0%, #C2410C 100%)',
   };
 
-  if (month === 9 || month === 10) {
-    // October/November - Halloween
+  if (month === 9) {
+    // October - Halloween
     seasonalData = {
       emoji: '🎃',
       tag: isEn ? 'Halloween Special' : 'Halloween & Spanning',
       title: isEn ? 'Spooky Halloween & Pumpkin Printables' : 'Griezelige Halloween & Pompoen Kleurplaten',
-      desc: isEn ? 'Friendly ghosts, witches, and haunted castles ready to print!' : 'Vriendelijke spookjes, heksen en kastelen om uit te printen!',
+      desc: isEn ? 'Friendly ghosts, witches, and haunted castles ready to print!' : 'Vriendelijke spookjes, heksen en kastelen om gratis uit te printen!',
       href: `/${lang}/holidays-seasons/halloween-spooky-nights`,
       bg: 'linear-gradient(135deg, #451A03 0%, #D97706 100%)',
     };
+  } else if (month === 10) {
+    // November - Sinterklaas (NL) or Thanksgiving / Autumn Harvest (EN/DE/FR)
+    if (lang === 'nl') {
+      seasonalData = {
+        emoji: '🎁',
+        tag: 'Sinterklaas Feest 2026',
+        title: 'Sinterklaas, Zwarte Piet & Schoentje Zetten Kleurplaten',
+        desc: 'Pakjesboot, het paard van Sinterklaas, pepernoten en gezellige schoenzet-tekeningen!',
+        href: `/${lang}/holidays-seasons/sinterklaas-pieten`,
+        bg: 'linear-gradient(135deg, #991B1B 0%, #EA580C 100%)',
+      };
+    } else {
+      seasonalData = {
+        emoji: '🦃',
+        tag: isEn ? 'Harvest & Thanksgiving' : 'Herbst & Erntedank',
+        title: isEn ? 'Autumn Harvest & Thanksgiving Printables' : 'Kuschelige Herbst- & Erntedank Ausmalbilder',
+        desc: isEn ? 'Cozy pumpkins, autumn turkeys, and warm family gatherings!' : 'Kürbisse, bunte Blätter und gemütliche Familienzeit!',
+        href: `/${lang}/holidays-seasons/autumn-harvest-pumpkins`,
+        bg: 'linear-gradient(135deg, #78350F 0%, #D97706 100%)',
+      };
+    }
   } else if (month === 11 || month === 0) {
     // December/January - Christmas & Winter
     seasonalData = {
       emoji: '🎄',
-      tag: isEn ? 'Winter & Christmas Magic' : 'Sinterklaas, Kerst & Winter',
+      tag: isEn ? 'Winter & Christmas Magic' : 'Kerstmis & Winterwonderland',
       title: isEn ? 'Festive Holiday & Snowman Coloring Sheets' : 'Magische Kerst- & Sneeuwpop Kleurplaten',
       desc: isEn ? 'Santa, reindeer, and cozy winter landscapes!' : 'De Kerstman, rendieren, sneeuwpoppen en warme wintertaferelen!',
       href: `/${lang}/holidays-seasons/christmas-winter-holidays`,
@@ -37,7 +58,7 @@ export default function SeasonalEventBanner({ isEn, lang }: { isEn: boolean; lan
     // Spring & Easter
     seasonalData = {
       emoji: '🐰',
-      tag: isEn ? 'Easter & Spring Bloom' : 'Pasen & Lente',
+      tag: isEn ? 'Easter & Spring Bloom' : 'Pasen & Vrolijke Lente',
       title: isEn ? 'Easter Bunnies & Colorful Spring Blooms' : 'Vrolijke Paashaas & Lente Kleurplaten',
       desc: isEn ? 'Cute bunnies, eggs, and blooming gardens!' : 'Lieve paashazen, eieren versieren en bloeiende bloemen!',
       href: `/${lang}/holidays-seasons/easter-spring-bloom`,
@@ -45,14 +66,25 @@ export default function SeasonalEventBanner({ isEn, lang }: { isEn: boolean; lan
     };
   }
 
-  const holidayPills = [
-    { name: isEn ? '🎃 Halloween' : '🎃 Halloween', href: `/${lang}/holidays-seasons/halloween-spooky-nights` },
-    { name: isEn ? '🎄 Christmas' : '🎄 Kerstmis', href: `/${lang}/holidays-seasons/christmas-winter-holidays` },
-    { name: isEn ? '🎁 Sinterklaas' : '🎁 Sinterklaas', href: `/${lang}/holidays-seasons/sinterklaas-pieten` },
-    { name: isEn ? '🐰 Easter' : '🐰 Pasen', href: `/${lang}/holidays-seasons/easter-spring-bloom` },
-    { name: isEn ? '🍂 Autumn' : '🍂 Herfst', href: `/${lang}/holidays-seasons/autumn-harvest-pumpkins` },
-    { name: isEn ? '🎒 School' : '🎒 School', href: `/${lang}/holidays-seasons/school-education` },
-  ];
+  const nameColoringHref = isEn ? `/${lang}/name-coloring-page` : `/${lang}/naam-kleurplaat`;
+
+  const holidayPills = isEn
+    ? [
+        { name: '🎃 Halloween', href: `/${lang}/holidays-seasons/halloween-spooky-nights` },
+        { name: '🎄 Christmas', href: `/${lang}/holidays-seasons/christmas-winter-holidays` },
+        { name: '🍂 Autumn', href: `/${lang}/holidays-seasons/autumn-harvest-pumpkins` },
+        { name: '🐰 Easter', href: `/${lang}/holidays-seasons/easter-spring-bloom` },
+        { name: '✨ Name Maker', href: nameColoringHref },
+        { name: '📅 2026/2027 Calendar', href: `/${lang}/calendars` },
+      ]
+    : [
+        { name: '🎃 Halloween', href: `/${lang}/holidays-seasons/halloween-spooky-nights` },
+        { name: '🎁 Sinterklaas', href: `/${lang}/holidays-seasons/sinterklaas-pieten` },
+        { name: '🎄 Kerstmis', href: `/${lang}/holidays-seasons/christmas-winter-holidays` },
+        { name: '🍂 Herfst', href: `/${lang}/holidays-seasons/autumn-harvest-pumpkins` },
+        { name: '✨ Naam-Kleurplaat', href: nameColoringHref },
+        { name: '📅 2026/2027 Kalender', href: `/${lang}/calendars` },
+      ];
 
   return (
     <div

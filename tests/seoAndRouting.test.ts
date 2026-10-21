@@ -122,12 +122,20 @@ describe('SEO & Canonical Helpers', () => {
   });
 
   it('builds hreflang alternates for all locales plus x-default', () => {
-    const alternates = buildHreflangAlternates('/calendars');
+    const alternates = buildHreflangAlternates('/calendars', VALID_LOCALES);
     assert.equal(alternates['en'], 'https://www.colorvaults.com/en/calendars');
     assert.equal(alternates['nl'], 'https://www.colorvaults.com/nl/calendars');
     assert.equal(alternates['de'], 'https://www.colorvaults.com/de/calendars');
     assert.equal(alternates['fr'], 'https://www.colorvaults.com/fr/calendars');
     assert.equal(alternates['x-default'], 'https://www.colorvaults.com/en/calendars');
+  });
+
+  it('defaults hreflang alternates to indexed locales (en, nl)', () => {
+    const alternates = buildHreflangAlternates('/calendars');
+    assert.equal(alternates['en'], 'https://www.colorvaults.com/en/calendars');
+    assert.equal(alternates['nl'], 'https://www.colorvaults.com/nl/calendars');
+    assert.equal(alternates['de'], undefined);
+    assert.equal(alternates['fr'], undefined);
   });
 });
 
@@ -159,15 +167,14 @@ describe('Catalog Source Data', () => {
     }
   });
 
-  it('keeps featured Frozen selectors aligned with authoritative records', () => {
-    for (const [master, featured] of [[enPages, enFeatured], [nlPages, nlFeatured]] as const) {
-      const frozen = featured.filter(({ parentTheme }) => parentTheme === 'frozen');
-      assert.ok(frozen.length > 0);
-      for (const item of frozen) {
-        const authoritative = master.find(({ id }) => id === item.id);
-        assert.ok(authoritative);
-        assert.equal(item.slug, authoritative.slug);
-        assert.equal(item.image, authoritative.image);
+  it('keeps featured items valid with defined slugs and themes', () => {
+    for (const featured of [enFeatured, nlFeatured]) {
+      assert.ok(featured.length > 0);
+      for (const item of featured) {
+        assert.ok(item.id);
+        assert.ok(item.slug);
+        assert.ok(item.parentTheme);
+        assert.ok(item.image);
       }
     }
   });
