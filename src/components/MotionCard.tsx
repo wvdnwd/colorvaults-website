@@ -34,7 +34,8 @@ export default function MotionCard({ page, lang, isEn }: MotionCardProps) {
   const isSelected = isPageSelected(page.slug);
 
   // Pinterest Share URL
-  const pinterestShareUrl =`https://www.pinterest.com/pin/create/button/?url=${encodeURIComponent(`https://colorvaults.com${url}`)}&media=${encodeURIComponent(imageSrc)}&description=${encodeURIComponent(`${page.title} - Free Printable Coloring Page on ColorVaults.com`)}`;
+  const pinDesc = isEn ? `${page.title} - Free Printable Coloring Page (A4 PDF) on ColorVaults.com` : `${page.title} - Gratis Printbare Kleurplaat (A4 PDF) op ColorVaults.com`;
+  const pinterestShareUrl =`https://www.pinterest.com/pin/create/button/?url=${encodeURIComponent(`https://colorvaults.com${url}`)}&media=${encodeURIComponent(imageSrc)}&description=${encodeURIComponent(pinDesc)}`;
 
   return (
     <div

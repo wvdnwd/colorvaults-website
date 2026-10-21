@@ -273,6 +273,8 @@ export default async function ColoringPageDetail({ params }: { params: Promise<{
             colorPageUrl={`/${lang}/${mainHubSlug}/${themeSlug}/${ageSlug}/${page.slug}/color`}
             lang={lang}
             category={theme.title}
+            title={page.title}
+            slug={page.slug}
           />
 
           {/* Metadata Chips */}

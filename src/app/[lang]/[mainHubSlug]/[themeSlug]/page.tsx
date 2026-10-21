@@ -6,6 +6,7 @@ import RelatedThemes from '@/components/RelatedThemes';
 import CraftIdeasSection from '@/components/CraftIdeasSection';
 import ThemeFaqSection from '@/components/ThemeFaqSection';
 import PinterestThemeCard from '@/components/PinterestThemeCard';
+import ThemeColoringBookPdfButton from '@/components/ThemeColoringBookPdfButton';
 import CharacterIpDisclaimer from '@/components/CharacterIpDisclaimer';
 import NewsletterBox from'@/components/NewsletterBox';
 import DifficultyFilterBar from'@/components/DifficultyFilterBar';
@@ -387,19 +388,12 @@ export default async function ThemePage({
               </p>
             </div>
           </div>
-          <div style={{ display: 'flex', gap: '0.75rem', alignItems: 'center' }}>
-            <span style={{
-              background: '#FFFFFF',
-              border: '1.5px solid #C7D2FE',
-              borderRadius: '9999px',
-              padding: '0.45rem 1.1rem',
-              fontSize: '0.84rem',
-              fontWeight: 800,
-              color: '#4F46E5',
-              boxShadow: '0 2px 8px rgba(79, 70, 229, 0.1)',
-            }}>
-              {isEn ? '✨ 100% Free • Unlimited' : '✨ 100% Gratis • Onbeperkt'}
-            </span>
+          <div style={{ display: 'flex', gap: '0.75rem', alignItems: 'center', flexWrap: 'wrap' }}>
+            <ThemeColoringBookPdfButton
+              themeTitle={theme.title}
+              pages={coloringPages.slice(0, 24).map(p => ({ title: p.title, image: p.image }))}
+              isEn={isEn}
+            />
           </div>
         </div>
 

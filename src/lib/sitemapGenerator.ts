@@ -1,19 +1,27 @@
 import { SITE_ORIGIN, escapeXml, ValidLocale } from '@/lib/site';
-import { getMainHubs, getThemes } from '@/lib/api';
+import { getMainHubs, getThemes, getColoringPagesForTheme } from '@/lib/api';
 import { isOriginalHub } from '@/lib/seo';
 import { blogPosts } from '@/data/blogs';
 import { HOW_TO_DRAW_LESSONS } from '@/data/howToDrawData';
+
+export interface SitemapImageEntry {
+  loc: string;
+  title: string;
+  caption?: string;
+}
 
 export interface SitemapUrlEntry {
   loc: string;
   lastmod?: string;
   changefreq: 'always' | 'hourly' | 'daily' | 'weekly' | 'monthly' | 'yearly' | 'never';
   priority: string;
+  images?: SitemapImageEntry[];
 }
 
 export function generateSitemapUrlsForLocale(lang: ValidLocale): SitemapUrlEntry[] {
   const entries: SitemapUrlEntry[] = [];
   const buildDate = new Date().toISOString().split('T')[0];
+  const isNl = lang === 'nl';
 
   // Homepage
   entries.push({
@@ -79,14 +87,26 @@ export function generateSitemapUrlsForLocale(lang: ValidLocale): SitemapUrlEntry
     });
   }
 
-  // Themes (curated original theme albums with galleries, craft activities, and FAQs)
+  // Themes (curated original theme albums with Google Image Sitemap entries for top clean pages)
   const themes = getThemes(lang).filter(t => isOriginalHub(t.parentHub));
   for (const theme of themes) {
+    const topPages = getColoringPagesForTheme(lang, theme.parentHub, theme.slug).slice(0, 12);
+    const images: SitemapImageEntry[] = topPages
+      .filter(p => p.image && p.image.startsWith('http'))
+      .map(p => ({
+        loc: p.image,
+        title: isNl ? `${p.title} Kleurplaat` : `${p.title} Coloring Page`,
+        caption: isNl
+          ? `Gratis printbare ${p.title} kleurplaat uit de ${theme.title} collectie (A4 PDF)`
+          : `Free printable ${p.title} coloring page from the ${theme.title} collection (A4 PDF)`,
+      }));
+
     entries.push({
       loc: `${SITE_ORIGIN}/${lang}/${theme.parentHub}/${theme.slug}`,
       lastmod: buildDate,
       changefreq: 'weekly',
       priority: '0.8',
+      images,
     });
   }
 
@@ -98,11 +118,19 @@ export function buildSitemapXml(entries: SitemapUrlEntry[]): string {
     .map(entry => {
       const loc = escapeXml(entry.loc);
       const lastmodTag = entry.lastmod ? `\n    <lastmod>${escapeXml(entry.lastmod)}</lastmod>` : '';
-      return `  <url>\n    <loc>${loc}</loc>${lastmodTag}\n    <changefreq>${entry.changefreq}</changefreq>\n    <priority>${entry.priority}</priority>\n  </url>`;
+      const imageNodes = (entry.images || [])
+        .map(
+          img =>
+            `\n    <image:image>\n      <image:loc>${escapeXml(img.loc)}</image:loc>\n      <image:title>${escapeXml(img.title)}</image:title>${
+              img.caption ? `\n      <image:caption>${escapeXml(img.caption)}</image:caption>` : ''
+            }\n    </image:image>`
+        )
+        .join('');
+      return `  <url>\n    <loc>${loc}</loc>${lastmodTag}\n    <changefreq>${entry.changefreq}</changefreq>\n    <priority>${entry.priority}</priority>${imageNodes}\n  </url>`;
     })
     .join('\n');
 
-  return `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${urlNodes}\n</urlset>`;
+  return `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">\n${urlNodes}\n</urlset>`;
 }
 
 export function buildSitemapIndexXml(): string {
@@ -114,5 +142,3 @@ export function buildSitemapIndexXml(): string {
 
   return `<?xml version="1.0" encoding="UTF-8"?>\n<sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${sitemaps}\n</sitemapindex>`;
 }
-
-

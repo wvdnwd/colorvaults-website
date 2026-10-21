@@ -18,8 +18,9 @@ export async function GET(request: Request) {
       return new NextResponse('Duplicate filters are not allowed.', { status: 400 });
     }
 
-    const hubs = getMainHubs('en');
-    const themes = getThemes('en');
+    const langParam = searchParams.get('lang') === 'nl' ? 'nl' : 'en';
+    const hubs = getMainHubs(langParam);
+    const themes = getThemes(langParam);
     const resolved = resolvePinterestFilters(searchParams.get('hub'), searchParams.get('theme'), hubs, themes);
     if ('error' in resolved) return new NextResponse(resolved.error, { status: 400 });
 
@@ -27,13 +28,13 @@ export async function GET(request: Request) {
       (!resolved.filters.hub || theme.parentHub === resolved.filters.hub)
       && (!resolved.filters.theme || theme.slug === resolved.filters.theme),
     );
-    const shardPages = catalogThemes.flatMap(theme => getColoringPagesForTheme('en', theme.parentHub, theme.slug));
+    const shardPages = catalogThemes.flatMap(theme => getColoringPagesForTheme(langParam, theme.parentHub, theme.slug));
     const validPages = filterPinterestPages(shardPages, resolved.filters);
 
     const now = new Date();
     const publicationDate = new Date(Date.UTC(now.getUTCFullYear(), now.getUTCMonth(), now.getUTCDate())).toUTCString();
     const selectedPages = selectDailyPinterestPages(validPages, now);
-    const itemsXml = selectedPages.map(page => renderPinterestRssItem(page, publicationDate)).join('\n');
+    const itemsXml = selectedPages.map(page => renderPinterestRssItem(page, publicationDate, langParam)).join('\n');
 
     const selectedHub = resolved.filters.hub && hubs.find(hub => hub.slug === resolved.filters.hub);
     const selectedTheme = resolved.filters.theme && themes.find(theme =>
@@ -55,7 +56,7 @@ export async function GET(request: Request) {
     <title>${escapeRssXml(channelTitle)}</title>
     <link>${getCanonicalUrl('/')}</link>
     <description>Daily free high-resolution printable coloring pages for kids, toddlers, teens, and adults.</description>
-    <language>en-us</language>
+    <language>${langParam === 'nl' ? 'nl-nl' : 'en-us'}</language>
     <lastBuildDate>${publicationDate}</lastBuildDate>
     <atom:link href="${escapeRssXml(selfUrl)}" rel="self" type="application/rss+xml" />
 ${itemsXml}

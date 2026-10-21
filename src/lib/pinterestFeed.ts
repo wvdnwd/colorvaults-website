@@ -71,7 +71,8 @@ export function getImageMimeType(imageUrl: string): 'image/webp' | 'image/jpeg' 
 
 export function filterPinterestPages(pages: readonly ColoringPage[], filters: PinterestFilters): ColoringPage[] {
   return pages.filter(page =>
-    (!filters.hub || page.parentHub === filters.hub)
+    !page.hidden
+    && (!filters.hub || page.parentHub === filters.hub)
     && (!filters.theme || page.parentTheme === filters.theme)
     && Boolean(page.title?.trim())
     && Boolean(page.slug)
@@ -80,8 +81,11 @@ export function filterPinterestPages(pages: readonly ColoringPage[], filters: Pi
   );
 }
 
-export function getPinterestPageUrl(page: Pick<ColoringPage, 'parentHub' | 'parentTheme' | 'ageGroup' | 'slug'>): string {
-  const segments = ['en', page.parentHub, page.parentTheme, page.ageGroup, page.slug].map(encodeURIComponent);
+export function getPinterestPageUrl(
+  page: Pick<ColoringPage, 'parentHub' | 'parentTheme' | 'ageGroup' | 'slug'>,
+  lang: 'en' | 'nl' = 'en',
+): string {
+  const segments = [lang, page.parentHub, page.parentTheme, page.ageGroup, page.slug].map(encodeURIComponent);
   return getCanonicalUrl(`/${segments.join('/')}`);
 }
 
@@ -92,17 +96,21 @@ export function selectDailyPinterestPages<T>(pages: readonly T[], now: Date, cou
   return Array.from({ length: count }, (_, index) => pages[(start + index) % pages.length]);
 }
 
-export function renderPinterestRssItem(page: ColoringPage, publicationDate: string): string {
+export function renderPinterestRssItem(page: ColoringPage, publicationDate: string, lang: 'en' | 'nl' = 'en'): string {
   const title = page.title.trim();
   const imageUrl = page.image;
   const mimeType = getImageMimeType(imageUrl);
   if (!mimeType) throw new Error(`Unsupported Pinterest image URL: ${imageUrl}`);
 
-  const pageUrl = getPinterestPageUrl(page);
-  const description = `Download and print this free ${title} coloring page. High-resolution A4 and Letter formats are available with no sign-up required.`;
+  const pageUrl = getPinterestPageUrl(page, lang);
+  const isNl = lang === 'nl';
+  const description = isNl
+    ? `Download en print gratis deze ${title} kleurplaat op A4-formaat (PDF) of kleur direct online in op ColorVaults.com! #kleurplaat #kleurplaten #gratisprinten`
+    : `Download and print this free ${title} coloring page. High-resolution A4 and Letter formats are available with no sign-up required.`;
+  const itemTitle = isNl ? `${title} - Gratis Printbare Kleurplaat (PDF)` : `${title} - Free Printable Coloring Page`;
 
   return `    <item>
-      <title>${escapeRssXml(`${title} - Free Printable Coloring Page`)}</title>
+      <title>${escapeRssXml(itemTitle)}</title>
       <link>${escapeRssXml(pageUrl)}</link>
       <guid isPermaLink="true">${escapeRssXml(pageUrl)}</guid>
       <pubDate>${escapeRssXml(publicationDate)}</pubDate>

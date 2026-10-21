@@ -188,7 +188,7 @@ export default async function MainHubPage({ params }: { params: Promise<{ lang: 
                     border:'1px solid rgba(255, 255, 255, 0.3)',
                     boxShadow:'0 2px 8px rgba(0,0,0,0.35)',
                   }}>
-                    {isEn ?'Fan-Art Hub Edition':'Fan-Art & Kleurplaat Editie'}
+                    {isOriginalHub(mainHubSlug) ? (isEn ? '✨ 100% Original Printables' : '✨ 100% Origineel & Gratis') : (isEn ? 'Fan-Art Hub Edition' : 'Fan-Art & Kleurplaat Editie')}
                   </div>
                   {/* eslint-disable-next-line @next/next/no-img-element */}
                   <img

@@ -15,12 +15,16 @@ export default function PrintDownloadButtons({
   category = 'Unknown',
   colorPageUrl,
   lang = 'nl',
+  title,
+  slug,
 }: {
   isEn: boolean;
   fileUrl: string;
   category?: string;
   colorPageUrl?: string;
   lang?: string;
+  title?: string;
+  slug?: string;
 }) {
   const [downloading, setDownloading] = useState(false);
   const [downloadingPdf, setDownloadingPdf] = useState(false);
@@ -45,10 +49,11 @@ export default function PrintDownloadButtons({
   };
 
   const { isPageSelected, toggleSelectPage } = useColoringBook();
-  const pageSlug = fileUrl.split('/').pop()?.replace(/\.[^.]+$/, '') || 'page';
+  const pageSlug = slug || fileUrl.split('/').pop()?.replace(/\.[^.]+$/, '') || 'page';
   const isSelected = isPageSelected(pageSlug);
 
   const pageTitle =
+    title ||
     fileUrl.split('/').pop()?.replace(/_/g, ' ').replace(/\.[^.]+$/, '') ||
     (isEn ? 'Coloring Page' : 'Kleurplaat');
   const previewUrl = `/api/proxy-image?url=${encodeURIComponent(fileUrl)}`;
